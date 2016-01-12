@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>OneOf</title>
+    <authors>Harry McIntyre</authors>
+    <owners>Harry McIntyre</owners>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/mcintyre321/OneOf</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Portable library for easy to use F#-like Discriminated Unions in C#. Implicitly casts objects into OneOf<T0, T1, ..., TN> instances, then use .Match extension to do pattern matching.
+    </description>
+    <copyright>Copyright 2016</copyright>
+    <tags>Discriminated Unions, Pattern Matching</tags>
+  </metadata>
+</package>
