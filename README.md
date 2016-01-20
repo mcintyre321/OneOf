@@ -8,21 +8,17 @@ This library provides F# style discriminated unions for C#, using a custom type 
 Use cases
 ---------
 
-You can use this as a parameter type:
+You can use this as a parameter type, allowing a caller to pass different types without requiring additional overloads. This might not seem that useful for a single parameter, but if you have multiple parameters, the numer of overloads required increases rapidly.
 
 ```
 
 public void SetBackground(OneOf<string, ColorName, Color> backgroundColor) { ... }
 
-//The method above can be called with either a string or an ColorName enum valyr or a Color instance.
+//The method above can be called with either a string, a ColorName enum value or a Color instance.
 
-
-//you could achieve a similar result with overloads, but if you have multiple parameters of different types you would find the number of overloads required would increase very rapidly...
 
 ```
-
-Or as a return type:
-
+Or as a return type, giving the ability to return strongly typed results without having to implement a type with a common base type or interface:
 
 ```
 public OneOf<User, InvalidName, NameTaken> CreateUser(string username)
@@ -34,8 +30,6 @@ public OneOf<User, InvalidName, NameTaken> CreateUser(string username)
     _repo.Save(user);
     return user;
 }
-
-//Typically you would have to make multiple the return types implement a base class or interface and then use casts to access the values.
 
 ```
 
