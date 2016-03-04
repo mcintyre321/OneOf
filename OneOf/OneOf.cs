@@ -32,6 +32,15 @@ namespace OneOf
         }
 
 
+	    public void Match(Action<T0> f0)
+        {
+			
+			if (this.IsT0 && f0 != null) f0(this.AsT0);
+
+	    	throw new InvalidOperationException();
+		}
+
+
 	    public TResult Match<TResult>(Func<T0, TResult> f0)
         {
 			
@@ -108,6 +117,16 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1>(t, 1);
         }
+
+
+	    public void Match(Action<T0> f0, Action<T1> f1)
+        {
+			
+			if (this.IsT0 && f0 != null) f0(this.AsT0);
+			if (this.IsT1 && f1 != null) f1(this.AsT1);
+
+	    	throw new InvalidOperationException();
+		}
 
 
 	    public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1)
@@ -196,6 +215,17 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2>(t, 2);
         }
+
+
+	    public void Match(Action<T0> f0, Action<T1> f1, Action<T2> f2)
+        {
+			
+			if (this.IsT0 && f0 != null) f0(this.AsT0);
+			if (this.IsT1 && f1 != null) f1(this.AsT1);
+			if (this.IsT2 && f2 != null) f2(this.AsT2);
+
+	    	throw new InvalidOperationException();
+		}
 
 
 	    public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2)
@@ -294,6 +324,18 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3>(t, 3);
         }
+
+
+	    public void Match(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3)
+        {
+			
+			if (this.IsT0 && f0 != null) f0(this.AsT0);
+			if (this.IsT1 && f1 != null) f1(this.AsT1);
+			if (this.IsT2 && f2 != null) f2(this.AsT2);
+			if (this.IsT3 && f3 != null) f3(this.AsT3);
+
+	    	throw new InvalidOperationException();
+		}
 
 
 	    public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3)
@@ -402,6 +444,19 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4>(t, 4);
         }
+
+
+	    public void Match(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4)
+        {
+			
+			if (this.IsT0 && f0 != null) f0(this.AsT0);
+			if (this.IsT1 && f1 != null) f1(this.AsT1);
+			if (this.IsT2 && f2 != null) f2(this.AsT2);
+			if (this.IsT3 && f3 != null) f3(this.AsT3);
+			if (this.IsT4 && f4 != null) f4(this.AsT4);
+
+	    	throw new InvalidOperationException();
+		}
 
 
 	    public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4)
@@ -520,6 +575,20 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5>(t, 5);
         }
+
+
+	    public void Match(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5)
+        {
+			
+			if (this.IsT0 && f0 != null) f0(this.AsT0);
+			if (this.IsT1 && f1 != null) f1(this.AsT1);
+			if (this.IsT2 && f2 != null) f2(this.AsT2);
+			if (this.IsT3 && f3 != null) f3(this.AsT3);
+			if (this.IsT4 && f4 != null) f4(this.AsT4);
+			if (this.IsT5 && f5 != null) f5(this.AsT5);
+
+	    	throw new InvalidOperationException();
+		}
 
 
 	    public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5)
@@ -648,6 +717,21 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6>(t, 6);
         }
+
+
+	    public void Match(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6)
+        {
+			
+			if (this.IsT0 && f0 != null) f0(this.AsT0);
+			if (this.IsT1 && f1 != null) f1(this.AsT1);
+			if (this.IsT2 && f2 != null) f2(this.AsT2);
+			if (this.IsT3 && f3 != null) f3(this.AsT3);
+			if (this.IsT4 && f4 != null) f4(this.AsT4);
+			if (this.IsT5 && f5 != null) f5(this.AsT5);
+			if (this.IsT6 && f6 != null) f6(this.AsT6);
+
+	    	throw new InvalidOperationException();
+		}
 
 
 	    public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6)
@@ -786,6 +870,22 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(t, 7);
         }
+
+
+	    public void Match(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7)
+        {
+			
+			if (this.IsT0 && f0 != null) f0(this.AsT0);
+			if (this.IsT1 && f1 != null) f1(this.AsT1);
+			if (this.IsT2 && f2 != null) f2(this.AsT2);
+			if (this.IsT3 && f3 != null) f3(this.AsT3);
+			if (this.IsT4 && f4 != null) f4(this.AsT4);
+			if (this.IsT5 && f5 != null) f5(this.AsT5);
+			if (this.IsT6 && f6 != null) f6(this.AsT6);
+			if (this.IsT7 && f7 != null) f7(this.AsT7);
+
+	    	throw new InvalidOperationException();
+		}
 
 
 	    public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7)
@@ -934,6 +1034,23 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(t, 8);
         }
+
+
+	    public void Match(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8)
+        {
+			
+			if (this.IsT0 && f0 != null) f0(this.AsT0);
+			if (this.IsT1 && f1 != null) f1(this.AsT1);
+			if (this.IsT2 && f2 != null) f2(this.AsT2);
+			if (this.IsT3 && f3 != null) f3(this.AsT3);
+			if (this.IsT4 && f4 != null) f4(this.AsT4);
+			if (this.IsT5 && f5 != null) f5(this.AsT5);
+			if (this.IsT6 && f6 != null) f6(this.AsT6);
+			if (this.IsT7 && f7 != null) f7(this.AsT7);
+			if (this.IsT8 && f8 != null) f8(this.AsT8);
+
+	    	throw new InvalidOperationException();
+		}
 
 
 	    public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8)

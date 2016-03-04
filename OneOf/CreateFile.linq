@@ -50,23 +50,40 @@ namespace OneOf
 ", j, genericArg));
 		}
 
-		var matchArgList = string.Join(", ", Enumerable.Range(0, i).Select(e => "Func<T" + e + ", TResult> f" + e + " = null"));
+		var matchArgList = string.Join(", ", Enumerable.Range(0, i).Select(e => "Func<T" + e + ", TResult> f" + e));
 		sb.AppendLine(string.Format(@"
-	    public static Func<OneOf<{0}>, TResult > Match<TResult>({1}, Func<TResult> otherwise = null)
+	    public TResult Match<TResult>({1})
         {{
-			return oneof =>
-			{{", genericArg, matchArgList));
+			", genericArg, matchArgList));
 
 		for (var j = 0; j < i; j++)
 		{
-			sb.AppendLine(string.Format(@"					if (oneof.IsT{0} && f{0} != null) return f{0}(oneof.AsT{0});", j));
+			sb.AppendLine(string.Format(@"			if (this.IsT{0} && f{0} != null) return f{0}(this.AsT{0});", j));
 		}
 
 		sb.AppendLine(string.Format(@"
-		        if (otherwise != null) return otherwise();
-	    		throw new InvalidOperationException();
-    		}};
+	    	throw new InvalidOperationException();
 		}}
+"));
+
+		var matchArgList2 = string.Join(", ", Enumerable.Range(0, i).Select(e => "Func<T" + e + ", TResult> f" + e + " = null"));
+		sb.AppendLine(string.Format(@"
+	    public TResult MatchSome<TResult>({1}, Func<TResult> otherwise = null)
+        {{
+			", genericArg, matchArgList2));
+
+		for (var j = 0; j < i; j++)
+		{
+			sb.AppendLine(string.Format(@"			if (this.IsT{0} && f{0} != null) return f{0}(this.AsT{0});", j));
+		}
+
+		sb.AppendLine(string.Format(@"
+		    if (otherwise != null) return otherwise();
+	    	throw new InvalidOperationException();
+		}}
+"));
+
+		sb.AppendLine(string.Format(@"
 		
 		bool Equals(OneOf<{0}> other)
         {{
