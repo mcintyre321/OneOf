@@ -35,7 +35,7 @@ namespace OneOf
 	    public void Match(Action<T0> f0)
         {
 			
-			if (this.IsT0 && f0 != null) f0(this.AsT0);
+			if (this.IsT0 && f0 != null) { f0(this.AsT0); return; }
 
 	    	throw new InvalidOperationException();
 		}
@@ -122,8 +122,8 @@ namespace OneOf
 	    public void Match(Action<T0> f0, Action<T1> f1)
         {
 			
-			if (this.IsT0 && f0 != null) f0(this.AsT0);
-			if (this.IsT1 && f1 != null) f1(this.AsT1);
+			if (this.IsT0 && f0 != null) { f0(this.AsT0); return; }
+			if (this.IsT1 && f1 != null) { f1(this.AsT1); return; }
 
 	    	throw new InvalidOperationException();
 		}
@@ -220,9 +220,9 @@ namespace OneOf
 	    public void Match(Action<T0> f0, Action<T1> f1, Action<T2> f2)
         {
 			
-			if (this.IsT0 && f0 != null) f0(this.AsT0);
-			if (this.IsT1 && f1 != null) f1(this.AsT1);
-			if (this.IsT2 && f2 != null) f2(this.AsT2);
+			if (this.IsT0 && f0 != null) { f0(this.AsT0); return; }
+			if (this.IsT1 && f1 != null) { f1(this.AsT1); return; }
+			if (this.IsT2 && f2 != null) { f2(this.AsT2); return; }
 
 	    	throw new InvalidOperationException();
 		}
@@ -329,10 +329,10 @@ namespace OneOf
 	    public void Match(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3)
         {
 			
-			if (this.IsT0 && f0 != null) f0(this.AsT0);
-			if (this.IsT1 && f1 != null) f1(this.AsT1);
-			if (this.IsT2 && f2 != null) f2(this.AsT2);
-			if (this.IsT3 && f3 != null) f3(this.AsT3);
+			if (this.IsT0 && f0 != null) { f0(this.AsT0); return; }
+			if (this.IsT1 && f1 != null) { f1(this.AsT1); return; }
+			if (this.IsT2 && f2 != null) { f2(this.AsT2); return; }
+			if (this.IsT3 && f3 != null) { f3(this.AsT3); return; }
 
 	    	throw new InvalidOperationException();
 		}
@@ -449,11 +449,11 @@ namespace OneOf
 	    public void Match(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4)
         {
 			
-			if (this.IsT0 && f0 != null) f0(this.AsT0);
-			if (this.IsT1 && f1 != null) f1(this.AsT1);
-			if (this.IsT2 && f2 != null) f2(this.AsT2);
-			if (this.IsT3 && f3 != null) f3(this.AsT3);
-			if (this.IsT4 && f4 != null) f4(this.AsT4);
+			if (this.IsT0 && f0 != null) { f0(this.AsT0); return; }
+			if (this.IsT1 && f1 != null) { f1(this.AsT1); return; }
+			if (this.IsT2 && f2 != null) { f2(this.AsT2); return; }
+			if (this.IsT3 && f3 != null) { f3(this.AsT3); return; }
+			if (this.IsT4 && f4 != null) { f4(this.AsT4); return; }
 
 	    	throw new InvalidOperationException();
 		}
@@ -580,12 +580,12 @@ namespace OneOf
 	    public void Match(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5)
         {
 			
-			if (this.IsT0 && f0 != null) f0(this.AsT0);
-			if (this.IsT1 && f1 != null) f1(this.AsT1);
-			if (this.IsT2 && f2 != null) f2(this.AsT2);
-			if (this.IsT3 && f3 != null) f3(this.AsT3);
-			if (this.IsT4 && f4 != null) f4(this.AsT4);
-			if (this.IsT5 && f5 != null) f5(this.AsT5);
+			if (this.IsT0 && f0 != null) { f0(this.AsT0); return; }
+			if (this.IsT1 && f1 != null) { f1(this.AsT1); return; }
+			if (this.IsT2 && f2 != null) { f2(this.AsT2); return; }
+			if (this.IsT3 && f3 != null) { f3(this.AsT3); return; }
+			if (this.IsT4 && f4 != null) { f4(this.AsT4); return; }
+			if (this.IsT5 && f5 != null) { f5(this.AsT5); return; }
 
 	    	throw new InvalidOperationException();
 		}
@@ -722,13 +722,13 @@ namespace OneOf
 	    public void Match(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6)
         {
 			
-			if (this.IsT0 && f0 != null) f0(this.AsT0);
-			if (this.IsT1 && f1 != null) f1(this.AsT1);
-			if (this.IsT2 && f2 != null) f2(this.AsT2);
-			if (this.IsT3 && f3 != null) f3(this.AsT3);
-			if (this.IsT4 && f4 != null) f4(this.AsT4);
-			if (this.IsT5 && f5 != null) f5(this.AsT5);
-			if (this.IsT6 && f6 != null) f6(this.AsT6);
+			if (this.IsT0 && f0 != null) { f0(this.AsT0); return; }
+			if (this.IsT1 && f1 != null) { f1(this.AsT1); return; }
+			if (this.IsT2 && f2 != null) { f2(this.AsT2); return; }
+			if (this.IsT3 && f3 != null) { f3(this.AsT3); return; }
+			if (this.IsT4 && f4 != null) { f4(this.AsT4); return; }
+			if (this.IsT5 && f5 != null) { f5(this.AsT5); return; }
+			if (this.IsT6 && f6 != null) { f6(this.AsT6); return; }
 
 	    	throw new InvalidOperationException();
 		}
@@ -875,14 +875,14 @@ namespace OneOf
 	    public void Match(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7)
         {
 			
-			if (this.IsT0 && f0 != null) f0(this.AsT0);
-			if (this.IsT1 && f1 != null) f1(this.AsT1);
-			if (this.IsT2 && f2 != null) f2(this.AsT2);
-			if (this.IsT3 && f3 != null) f3(this.AsT3);
-			if (this.IsT4 && f4 != null) f4(this.AsT4);
-			if (this.IsT5 && f5 != null) f5(this.AsT5);
-			if (this.IsT6 && f6 != null) f6(this.AsT6);
-			if (this.IsT7 && f7 != null) f7(this.AsT7);
+			if (this.IsT0 && f0 != null) { f0(this.AsT0); return; }
+			if (this.IsT1 && f1 != null) { f1(this.AsT1); return; }
+			if (this.IsT2 && f2 != null) { f2(this.AsT2); return; }
+			if (this.IsT3 && f3 != null) { f3(this.AsT3); return; }
+			if (this.IsT4 && f4 != null) { f4(this.AsT4); return; }
+			if (this.IsT5 && f5 != null) { f5(this.AsT5); return; }
+			if (this.IsT6 && f6 != null) { f6(this.AsT6); return; }
+			if (this.IsT7 && f7 != null) { f7(this.AsT7); return; }
 
 	    	throw new InvalidOperationException();
 		}
@@ -1039,15 +1039,15 @@ namespace OneOf
 	    public void Match(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8)
         {
 			
-			if (this.IsT0 && f0 != null) f0(this.AsT0);
-			if (this.IsT1 && f1 != null) f1(this.AsT1);
-			if (this.IsT2 && f2 != null) f2(this.AsT2);
-			if (this.IsT3 && f3 != null) f3(this.AsT3);
-			if (this.IsT4 && f4 != null) f4(this.AsT4);
-			if (this.IsT5 && f5 != null) f5(this.AsT5);
-			if (this.IsT6 && f6 != null) f6(this.AsT6);
-			if (this.IsT7 && f7 != null) f7(this.AsT7);
-			if (this.IsT8 && f8 != null) f8(this.AsT8);
+			if (this.IsT0 && f0 != null) { f0(this.AsT0); return; }
+			if (this.IsT1 && f1 != null) { f1(this.AsT1); return; }
+			if (this.IsT2 && f2 != null) { f2(this.AsT2); return; }
+			if (this.IsT3 && f3 != null) { f3(this.AsT3); return; }
+			if (this.IsT4 && f4 != null) { f4(this.AsT4); return; }
+			if (this.IsT5 && f5 != null) { f5(this.AsT5); return; }
+			if (this.IsT6 && f6 != null) { f6(this.AsT6); return; }
+			if (this.IsT7 && f7 != null) { f7(this.AsT7); return; }
+			if (this.IsT8 && f8 != null) { f8(this.AsT8); return; }
 
 	    	throw new InvalidOperationException();
 		}

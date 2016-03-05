@@ -50,6 +50,21 @@ namespace OneOf
 ", j, genericArg));
 		}
 
+		var matchArgList0 = string.Join(", ", Enumerable.Range(0, i).Select(e => "Action<T" + e + "> f" + e));
+		sb.AppendLine(string.Format(@"
+	    public void Match({1})
+        {{
+			", genericArg, matchArgList0));
+
+		for (var j = 0; j < i; j++)
+		{
+			sb.AppendLine(string.Format(@"			if (this.IsT{0} && f{0} != null) f{0}(this.AsT{0});", j));
+		}
+
+		sb.AppendLine(string.Format(@"
+		}}
+"));
+
 		var matchArgList = string.Join(", ", Enumerable.Range(0, i).Select(e => "Func<T" + e + ", TResult> f" + e));
 		sb.AppendLine(string.Format(@"
 	    public TResult Match<TResult>({1})
@@ -62,26 +77,11 @@ namespace OneOf
 		}
 
 		sb.AppendLine(string.Format(@"
-	    	throw new InvalidOperationException();
+	    
 		}}
 "));
 
-		var matchArgList2 = string.Join(", ", Enumerable.Range(0, i).Select(e => "Func<T" + e + ", TResult> f" + e + " = null"));
-		sb.AppendLine(string.Format(@"
-	    public TResult MatchSome<TResult>({1}, Func<TResult> otherwise = null)
-        {{
-			", genericArg, matchArgList2));
-
-		for (var j = 0; j < i; j++)
-		{
-			sb.AppendLine(string.Format(@"			if (this.IsT{0} && f{0} != null) return f{0}(this.AsT{0});", j));
-		}
-
-		sb.AppendLine(string.Format(@"
-		    if (otherwise != null) return otherwise();
-	    	throw new InvalidOperationException();
-		}}
-"));
+		 
 
 		sb.AppendLine(string.Format(@"
 		
