@@ -58,10 +58,11 @@ namespace OneOf
 
 		for (var j = 0; j < i; j++)
 		{
-			sb.AppendLine(string.Format(@"			if (this.IsT{0} && f{0} != null) f{0}(this.AsT{0});", j));
+			sb.AppendLine(string.Format(@"			if (this.IsT{0} && f{0} != null) {{ f{0}(this.AsT{0}); return; }}", j));
 		}
 
 		sb.AppendLine(string.Format(@"
+	    	throw new InvalidOperationException();
 		}}
 "));
 
@@ -77,11 +78,26 @@ namespace OneOf
 		}
 
 		sb.AppendLine(string.Format(@"
-	    
+	    	throw new InvalidOperationException();
 		}}
 "));
 
-		 
+		var matchArgList2 = string.Join(", ", Enumerable.Range(0, i).Select(e => "Func<T" + e + ", TResult> f" + e + " = null"));
+		sb.AppendLine(string.Format(@"
+	    public TResult MatchSome<TResult>({1}, Func<TResult> otherwise = null)
+        {{
+			", genericArg, matchArgList2));
+
+		for (var j = 0; j < i; j++)
+		{
+			sb.AppendLine(string.Format(@"			if (this.IsT{0} && f{0} != null) return f{0}(this.AsT{0});", j));
+		}
+
+		sb.AppendLine(string.Format(@"
+		    if (otherwise != null) return otherwise();
+	    	throw new InvalidOperationException();
+		}}
+"));
 
 		sb.AppendLine(string.Format(@"
 		
