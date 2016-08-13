@@ -4,7 +4,6 @@ using Newtonsoft.Json;
 
 namespace OneOf
 {
-    public interface IOneOf { object Value { get ; } }
 	
 
     [JsonConverter(typeof(OneOfJsonConverter))]
