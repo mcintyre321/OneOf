@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace OneOf
 {
-    public class OneOfClassJsonConverter : JsonConverter
+    public class OneOfBaseJsonConverter : JsonConverter
     {
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {

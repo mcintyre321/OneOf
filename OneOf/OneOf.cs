@@ -11,8 +11,8 @@ namespace OneOf
     {
 	    readonly object value;
 	    readonly int index;
-
-	    OneOf(object value, int index)	    { this.value = value; this.index = index;	     }
+	    
+		OneOf(object value, int index)	    { this.value = value; this.index = index;	     }
 	
 		object IOneOf.Value { get { return value; } }
 	
@@ -32,7 +32,6 @@ namespace OneOf
         {
 	         return new OneOf<T0>(t, 0);
         }
-		public OneOf (T0 t):this(t, 0) { }
 
 
 	    public void Switch(Action<T0> f0)
@@ -56,6 +55,7 @@ namespace OneOf
 	    public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<TResult> otherwise = null)
         {
 			
+
 			if (this.IsT0 && f0 != null) return f0(this.AsT0);
 
 		    if (otherwise != null) return otherwise();
@@ -92,8 +92,8 @@ namespace OneOf
     {
 	    readonly object value;
 	    readonly int index;
-
-	    OneOf(object value, int index)	    { this.value = value; this.index = index;	     }
+	    
+		OneOf(object value, int index)	    { this.value = value; this.index = index;	     }
 	
 		object IOneOf.Value { get { return value; } }
 	
@@ -113,7 +113,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1>(t, 0);
         }
-		public OneOf (T0 t):this(t, 0) { }
 
 
         public bool IsT1 { get { return index == 1; } }
@@ -122,7 +121,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1>(t, 1);
         }
-		public OneOf (T1 t):this(t, 1) { }
 
 
 	    public void Switch(Action<T0> f0, Action<T1> f1)
@@ -148,7 +146,9 @@ namespace OneOf
 	    public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<TResult> otherwise = null)
         {
 			
+
 			if (this.IsT0 && f0 != null) return f0(this.AsT0);
+
 			if (this.IsT1 && f1 != null) return f1(this.AsT1);
 
 		    if (otherwise != null) return otherwise();
@@ -185,8 +185,8 @@ namespace OneOf
     {
 	    readonly object value;
 	    readonly int index;
-
-	    OneOf(object value, int index)	    { this.value = value; this.index = index;	     }
+	    
+		OneOf(object value, int index)	    { this.value = value; this.index = index;	     }
 	
 		object IOneOf.Value { get { return value; } }
 	
@@ -206,7 +206,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2>(t, 0);
         }
-		public OneOf (T0 t):this(t, 0) { }
 
 
         public bool IsT1 { get { return index == 1; } }
@@ -215,7 +214,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2>(t, 1);
         }
-		public OneOf (T1 t):this(t, 1) { }
 
 
         public bool IsT2 { get { return index == 2; } }
@@ -224,7 +222,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2>(t, 2);
         }
-		public OneOf (T2 t):this(t, 2) { }
 
 
 	    public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2)
@@ -252,8 +249,11 @@ namespace OneOf
 	    public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<TResult> otherwise = null)
         {
 			
+
 			if (this.IsT0 && f0 != null) return f0(this.AsT0);
+
 			if (this.IsT1 && f1 != null) return f1(this.AsT1);
+
 			if (this.IsT2 && f2 != null) return f2(this.AsT2);
 
 		    if (otherwise != null) return otherwise();
@@ -290,8 +290,8 @@ namespace OneOf
     {
 	    readonly object value;
 	    readonly int index;
-
-	    OneOf(object value, int index)	    { this.value = value; this.index = index;	     }
+	    
+		OneOf(object value, int index)	    { this.value = value; this.index = index;	     }
 	
 		object IOneOf.Value { get { return value; } }
 	
@@ -311,7 +311,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3>(t, 0);
         }
-		public OneOf (T0 t):this(t, 0) { }
 
 
         public bool IsT1 { get { return index == 1; } }
@@ -320,7 +319,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3>(t, 1);
         }
-		public OneOf (T1 t):this(t, 1) { }
 
 
         public bool IsT2 { get { return index == 2; } }
@@ -329,7 +327,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3>(t, 2);
         }
-		public OneOf (T2 t):this(t, 2) { }
 
 
         public bool IsT3 { get { return index == 3; } }
@@ -338,7 +335,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3>(t, 3);
         }
-		public OneOf (T3 t):this(t, 3) { }
 
 
 	    public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3)
@@ -368,9 +364,13 @@ namespace OneOf
 	    public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<TResult> otherwise = null)
         {
 			
+
 			if (this.IsT0 && f0 != null) return f0(this.AsT0);
+
 			if (this.IsT1 && f1 != null) return f1(this.AsT1);
+
 			if (this.IsT2 && f2 != null) return f2(this.AsT2);
+
 			if (this.IsT3 && f3 != null) return f3(this.AsT3);
 
 		    if (otherwise != null) return otherwise();
@@ -407,8 +407,8 @@ namespace OneOf
     {
 	    readonly object value;
 	    readonly int index;
-
-	    OneOf(object value, int index)	    { this.value = value; this.index = index;	     }
+	    
+		OneOf(object value, int index)	    { this.value = value; this.index = index;	     }
 	
 		object IOneOf.Value { get { return value; } }
 	
@@ -428,7 +428,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4>(t, 0);
         }
-		public OneOf (T0 t):this(t, 0) { }
 
 
         public bool IsT1 { get { return index == 1; } }
@@ -437,7 +436,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4>(t, 1);
         }
-		public OneOf (T1 t):this(t, 1) { }
 
 
         public bool IsT2 { get { return index == 2; } }
@@ -446,7 +444,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4>(t, 2);
         }
-		public OneOf (T2 t):this(t, 2) { }
 
 
         public bool IsT3 { get { return index == 3; } }
@@ -455,7 +452,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4>(t, 3);
         }
-		public OneOf (T3 t):this(t, 3) { }
 
 
         public bool IsT4 { get { return index == 4; } }
@@ -464,7 +460,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4>(t, 4);
         }
-		public OneOf (T4 t):this(t, 4) { }
 
 
 	    public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4)
@@ -496,10 +491,15 @@ namespace OneOf
 	    public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<TResult> otherwise = null)
         {
 			
+
 			if (this.IsT0 && f0 != null) return f0(this.AsT0);
+
 			if (this.IsT1 && f1 != null) return f1(this.AsT1);
+
 			if (this.IsT2 && f2 != null) return f2(this.AsT2);
+
 			if (this.IsT3 && f3 != null) return f3(this.AsT3);
+
 			if (this.IsT4 && f4 != null) return f4(this.AsT4);
 
 		    if (otherwise != null) return otherwise();
@@ -536,8 +536,8 @@ namespace OneOf
     {
 	    readonly object value;
 	    readonly int index;
-
-	    OneOf(object value, int index)	    { this.value = value; this.index = index;	     }
+	    
+		OneOf(object value, int index)	    { this.value = value; this.index = index;	     }
 	
 		object IOneOf.Value { get { return value; } }
 	
@@ -557,7 +557,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5>(t, 0);
         }
-		public OneOf (T0 t):this(t, 0) { }
 
 
         public bool IsT1 { get { return index == 1; } }
@@ -566,7 +565,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5>(t, 1);
         }
-		public OneOf (T1 t):this(t, 1) { }
 
 
         public bool IsT2 { get { return index == 2; } }
@@ -575,7 +573,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5>(t, 2);
         }
-		public OneOf (T2 t):this(t, 2) { }
 
 
         public bool IsT3 { get { return index == 3; } }
@@ -584,7 +581,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5>(t, 3);
         }
-		public OneOf (T3 t):this(t, 3) { }
 
 
         public bool IsT4 { get { return index == 4; } }
@@ -593,7 +589,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5>(t, 4);
         }
-		public OneOf (T4 t):this(t, 4) { }
 
 
         public bool IsT5 { get { return index == 5; } }
@@ -602,7 +597,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5>(t, 5);
         }
-		public OneOf (T5 t):this(t, 5) { }
 
 
 	    public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5)
@@ -636,11 +630,17 @@ namespace OneOf
 	    public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<TResult> otherwise = null)
         {
 			
+
 			if (this.IsT0 && f0 != null) return f0(this.AsT0);
+
 			if (this.IsT1 && f1 != null) return f1(this.AsT1);
+
 			if (this.IsT2 && f2 != null) return f2(this.AsT2);
+
 			if (this.IsT3 && f3 != null) return f3(this.AsT3);
+
 			if (this.IsT4 && f4 != null) return f4(this.AsT4);
+
 			if (this.IsT5 && f5 != null) return f5(this.AsT5);
 
 		    if (otherwise != null) return otherwise();
@@ -677,8 +677,8 @@ namespace OneOf
     {
 	    readonly object value;
 	    readonly int index;
-
-	    OneOf(object value, int index)	    { this.value = value; this.index = index;	     }
+	    
+		OneOf(object value, int index)	    { this.value = value; this.index = index;	     }
 	
 		object IOneOf.Value { get { return value; } }
 	
@@ -698,7 +698,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6>(t, 0);
         }
-		public OneOf (T0 t):this(t, 0) { }
 
 
         public bool IsT1 { get { return index == 1; } }
@@ -707,7 +706,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6>(t, 1);
         }
-		public OneOf (T1 t):this(t, 1) { }
 
 
         public bool IsT2 { get { return index == 2; } }
@@ -716,7 +714,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6>(t, 2);
         }
-		public OneOf (T2 t):this(t, 2) { }
 
 
         public bool IsT3 { get { return index == 3; } }
@@ -725,7 +722,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6>(t, 3);
         }
-		public OneOf (T3 t):this(t, 3) { }
 
 
         public bool IsT4 { get { return index == 4; } }
@@ -734,7 +730,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6>(t, 4);
         }
-		public OneOf (T4 t):this(t, 4) { }
 
 
         public bool IsT5 { get { return index == 5; } }
@@ -743,7 +738,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6>(t, 5);
         }
-		public OneOf (T5 t):this(t, 5) { }
 
 
         public bool IsT6 { get { return index == 6; } }
@@ -752,7 +746,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6>(t, 6);
         }
-		public OneOf (T6 t):this(t, 6) { }
 
 
 	    public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6)
@@ -788,12 +781,19 @@ namespace OneOf
 	    public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<TResult> otherwise = null)
         {
 			
+
 			if (this.IsT0 && f0 != null) return f0(this.AsT0);
+
 			if (this.IsT1 && f1 != null) return f1(this.AsT1);
+
 			if (this.IsT2 && f2 != null) return f2(this.AsT2);
+
 			if (this.IsT3 && f3 != null) return f3(this.AsT3);
+
 			if (this.IsT4 && f4 != null) return f4(this.AsT4);
+
 			if (this.IsT5 && f5 != null) return f5(this.AsT5);
+
 			if (this.IsT6 && f6 != null) return f6(this.AsT6);
 
 		    if (otherwise != null) return otherwise();
@@ -830,8 +830,8 @@ namespace OneOf
     {
 	    readonly object value;
 	    readonly int index;
-
-	    OneOf(object value, int index)	    { this.value = value; this.index = index;	     }
+	    
+		OneOf(object value, int index)	    { this.value = value; this.index = index;	     }
 	
 		object IOneOf.Value { get { return value; } }
 	
@@ -851,7 +851,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(t, 0);
         }
-		public OneOf (T0 t):this(t, 0) { }
 
 
         public bool IsT1 { get { return index == 1; } }
@@ -860,7 +859,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(t, 1);
         }
-		public OneOf (T1 t):this(t, 1) { }
 
 
         public bool IsT2 { get { return index == 2; } }
@@ -869,7 +867,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(t, 2);
         }
-		public OneOf (T2 t):this(t, 2) { }
 
 
         public bool IsT3 { get { return index == 3; } }
@@ -878,7 +875,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(t, 3);
         }
-		public OneOf (T3 t):this(t, 3) { }
 
 
         public bool IsT4 { get { return index == 4; } }
@@ -887,7 +883,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(t, 4);
         }
-		public OneOf (T4 t):this(t, 4) { }
 
 
         public bool IsT5 { get { return index == 5; } }
@@ -896,7 +891,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(t, 5);
         }
-		public OneOf (T5 t):this(t, 5) { }
 
 
         public bool IsT6 { get { return index == 6; } }
@@ -905,7 +899,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(t, 6);
         }
-		public OneOf (T6 t):this(t, 6) { }
 
 
         public bool IsT7 { get { return index == 7; } }
@@ -914,7 +907,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(t, 7);
         }
-		public OneOf (T7 t):this(t, 7) { }
 
 
 	    public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7)
@@ -952,13 +944,21 @@ namespace OneOf
 	    public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<TResult> otherwise = null)
         {
 			
+
 			if (this.IsT0 && f0 != null) return f0(this.AsT0);
+
 			if (this.IsT1 && f1 != null) return f1(this.AsT1);
+
 			if (this.IsT2 && f2 != null) return f2(this.AsT2);
+
 			if (this.IsT3 && f3 != null) return f3(this.AsT3);
+
 			if (this.IsT4 && f4 != null) return f4(this.AsT4);
+
 			if (this.IsT5 && f5 != null) return f5(this.AsT5);
+
 			if (this.IsT6 && f6 != null) return f6(this.AsT6);
+
 			if (this.IsT7 && f7 != null) return f7(this.AsT7);
 
 		    if (otherwise != null) return otherwise();
@@ -995,8 +995,8 @@ namespace OneOf
     {
 	    readonly object value;
 	    readonly int index;
-
-	    OneOf(object value, int index)	    { this.value = value; this.index = index;	     }
+	    
+		OneOf(object value, int index)	    { this.value = value; this.index = index;	     }
 	
 		object IOneOf.Value { get { return value; } }
 	
@@ -1016,7 +1016,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(t, 0);
         }
-		public OneOf (T0 t):this(t, 0) { }
 
 
         public bool IsT1 { get { return index == 1; } }
@@ -1025,7 +1024,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(t, 1);
         }
-		public OneOf (T1 t):this(t, 1) { }
 
 
         public bool IsT2 { get { return index == 2; } }
@@ -1034,7 +1032,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(t, 2);
         }
-		public OneOf (T2 t):this(t, 2) { }
 
 
         public bool IsT3 { get { return index == 3; } }
@@ -1043,7 +1040,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(t, 3);
         }
-		public OneOf (T3 t):this(t, 3) { }
 
 
         public bool IsT4 { get { return index == 4; } }
@@ -1052,7 +1048,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(t, 4);
         }
-		public OneOf (T4 t):this(t, 4) { }
 
 
         public bool IsT5 { get { return index == 5; } }
@@ -1061,7 +1056,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(t, 5);
         }
-		public OneOf (T5 t):this(t, 5) { }
 
 
         public bool IsT6 { get { return index == 6; } }
@@ -1070,7 +1064,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(t, 6);
         }
-		public OneOf (T6 t):this(t, 6) { }
 
 
         public bool IsT7 { get { return index == 7; } }
@@ -1079,7 +1072,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(t, 7);
         }
-		public OneOf (T7 t):this(t, 7) { }
 
 
         public bool IsT8 { get { return index == 8; } }
@@ -1088,7 +1080,6 @@ namespace OneOf
         {
 	         return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(t, 8);
         }
-		public OneOf (T8 t):this(t, 8) { }
 
 
 	    public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8)
@@ -1128,14 +1119,23 @@ namespace OneOf
 	    public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<TResult> otherwise = null)
         {
 			
+
 			if (this.IsT0 && f0 != null) return f0(this.AsT0);
+
 			if (this.IsT1 && f1 != null) return f1(this.AsT1);
+
 			if (this.IsT2 && f2 != null) return f2(this.AsT2);
+
 			if (this.IsT3 && f3 != null) return f3(this.AsT3);
+
 			if (this.IsT4 && f4 != null) return f4(this.AsT4);
+
 			if (this.IsT5 && f5 != null) return f5(this.AsT5);
+
 			if (this.IsT6 && f6 != null) return f6(this.AsT6);
+
 			if (this.IsT7 && f7 != null) return f7(this.AsT7);
+
 			if (this.IsT8 && f8 != null) return f8(this.AsT8);
 
 		    if (otherwise != null) return otherwise();
