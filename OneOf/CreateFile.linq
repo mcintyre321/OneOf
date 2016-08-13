@@ -49,6 +49,7 @@ namespace OneOf.Structs
         {{
 	         return new OneOfStruct<{1}>(t, {0});
         }}
+		public OneOfStruct (T{0} t):this(t, {0}) {{ }}
 ", j, genericArg));
 		}
 

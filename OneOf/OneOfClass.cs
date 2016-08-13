@@ -32,6 +32,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0>(t, 0);
         }
+		public OneOfClass (T0 t):this(t, 0) { }
 
 
 	    public void Switch(Action<T0> f0)
@@ -112,6 +113,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1>(t, 0);
         }
+		public OneOfClass (T0 t):this(t, 0) { }
 
 
         public bool IsT1 { get { return index == 1; } }
@@ -120,6 +122,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1>(t, 1);
         }
+		public OneOfClass (T1 t):this(t, 1) { }
 
 
 	    public void Switch(Action<T0> f0, Action<T1> f1)
@@ -203,6 +206,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2>(t, 0);
         }
+		public OneOfClass (T0 t):this(t, 0) { }
 
 
         public bool IsT1 { get { return index == 1; } }
@@ -211,6 +215,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2>(t, 1);
         }
+		public OneOfClass (T1 t):this(t, 1) { }
 
 
         public bool IsT2 { get { return index == 2; } }
@@ -219,6 +224,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2>(t, 2);
         }
+		public OneOfClass (T2 t):this(t, 2) { }
 
 
 	    public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2)
@@ -305,6 +311,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3>(t, 0);
         }
+		public OneOfClass (T0 t):this(t, 0) { }
 
 
         public bool IsT1 { get { return index == 1; } }
@@ -313,6 +320,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3>(t, 1);
         }
+		public OneOfClass (T1 t):this(t, 1) { }
 
 
         public bool IsT2 { get { return index == 2; } }
@@ -321,6 +329,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3>(t, 2);
         }
+		public OneOfClass (T2 t):this(t, 2) { }
 
 
         public bool IsT3 { get { return index == 3; } }
@@ -329,6 +338,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3>(t, 3);
         }
+		public OneOfClass (T3 t):this(t, 3) { }
 
 
 	    public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3)
@@ -418,6 +428,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4>(t, 0);
         }
+		public OneOfClass (T0 t):this(t, 0) { }
 
 
         public bool IsT1 { get { return index == 1; } }
@@ -426,6 +437,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4>(t, 1);
         }
+		public OneOfClass (T1 t):this(t, 1) { }
 
 
         public bool IsT2 { get { return index == 2; } }
@@ -434,6 +446,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4>(t, 2);
         }
+		public OneOfClass (T2 t):this(t, 2) { }
 
 
         public bool IsT3 { get { return index == 3; } }
@@ -442,6 +455,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4>(t, 3);
         }
+		public OneOfClass (T3 t):this(t, 3) { }
 
 
         public bool IsT4 { get { return index == 4; } }
@@ -450,6 +464,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4>(t, 4);
         }
+		public OneOfClass (T4 t):this(t, 4) { }
 
 
 	    public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4)
@@ -542,6 +557,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5>(t, 0);
         }
+		public OneOfClass (T0 t):this(t, 0) { }
 
 
         public bool IsT1 { get { return index == 1; } }
@@ -550,6 +566,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5>(t, 1);
         }
+		public OneOfClass (T1 t):this(t, 1) { }
 
 
         public bool IsT2 { get { return index == 2; } }
@@ -558,6 +575,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5>(t, 2);
         }
+		public OneOfClass (T2 t):this(t, 2) { }
 
 
         public bool IsT3 { get { return index == 3; } }
@@ -566,6 +584,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5>(t, 3);
         }
+		public OneOfClass (T3 t):this(t, 3) { }
 
 
         public bool IsT4 { get { return index == 4; } }
@@ -574,6 +593,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5>(t, 4);
         }
+		public OneOfClass (T4 t):this(t, 4) { }
 
 
         public bool IsT5 { get { return index == 5; } }
@@ -582,6 +602,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5>(t, 5);
         }
+		public OneOfClass (T5 t):this(t, 5) { }
 
 
 	    public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5)
@@ -677,6 +698,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6>(t, 0);
         }
+		public OneOfClass (T0 t):this(t, 0) { }
 
 
         public bool IsT1 { get { return index == 1; } }
@@ -685,6 +707,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6>(t, 1);
         }
+		public OneOfClass (T1 t):this(t, 1) { }
 
 
         public bool IsT2 { get { return index == 2; } }
@@ -693,6 +716,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6>(t, 2);
         }
+		public OneOfClass (T2 t):this(t, 2) { }
 
 
         public bool IsT3 { get { return index == 3; } }
@@ -701,6 +725,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6>(t, 3);
         }
+		public OneOfClass (T3 t):this(t, 3) { }
 
 
         public bool IsT4 { get { return index == 4; } }
@@ -709,6 +734,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6>(t, 4);
         }
+		public OneOfClass (T4 t):this(t, 4) { }
 
 
         public bool IsT5 { get { return index == 5; } }
@@ -717,6 +743,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6>(t, 5);
         }
+		public OneOfClass (T5 t):this(t, 5) { }
 
 
         public bool IsT6 { get { return index == 6; } }
@@ -725,6 +752,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6>(t, 6);
         }
+		public OneOfClass (T6 t):this(t, 6) { }
 
 
 	    public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6)
@@ -823,6 +851,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6, T7>(t, 0);
         }
+		public OneOfClass (T0 t):this(t, 0) { }
 
 
         public bool IsT1 { get { return index == 1; } }
@@ -831,6 +860,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6, T7>(t, 1);
         }
+		public OneOfClass (T1 t):this(t, 1) { }
 
 
         public bool IsT2 { get { return index == 2; } }
@@ -839,6 +869,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6, T7>(t, 2);
         }
+		public OneOfClass (T2 t):this(t, 2) { }
 
 
         public bool IsT3 { get { return index == 3; } }
@@ -847,6 +878,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6, T7>(t, 3);
         }
+		public OneOfClass (T3 t):this(t, 3) { }
 
 
         public bool IsT4 { get { return index == 4; } }
@@ -855,6 +887,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6, T7>(t, 4);
         }
+		public OneOfClass (T4 t):this(t, 4) { }
 
 
         public bool IsT5 { get { return index == 5; } }
@@ -863,6 +896,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6, T7>(t, 5);
         }
+		public OneOfClass (T5 t):this(t, 5) { }
 
 
         public bool IsT6 { get { return index == 6; } }
@@ -871,6 +905,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6, T7>(t, 6);
         }
+		public OneOfClass (T6 t):this(t, 6) { }
 
 
         public bool IsT7 { get { return index == 7; } }
@@ -879,6 +914,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6, T7>(t, 7);
         }
+		public OneOfClass (T7 t):this(t, 7) { }
 
 
 	    public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7)
@@ -980,6 +1016,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6, T7, T8>(t, 0);
         }
+		public OneOfClass (T0 t):this(t, 0) { }
 
 
         public bool IsT1 { get { return index == 1; } }
@@ -988,6 +1025,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6, T7, T8>(t, 1);
         }
+		public OneOfClass (T1 t):this(t, 1) { }
 
 
         public bool IsT2 { get { return index == 2; } }
@@ -996,6 +1034,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6, T7, T8>(t, 2);
         }
+		public OneOfClass (T2 t):this(t, 2) { }
 
 
         public bool IsT3 { get { return index == 3; } }
@@ -1004,6 +1043,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6, T7, T8>(t, 3);
         }
+		public OneOfClass (T3 t):this(t, 3) { }
 
 
         public bool IsT4 { get { return index == 4; } }
@@ -1012,6 +1052,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6, T7, T8>(t, 4);
         }
+		public OneOfClass (T4 t):this(t, 4) { }
 
 
         public bool IsT5 { get { return index == 5; } }
@@ -1020,6 +1061,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6, T7, T8>(t, 5);
         }
+		public OneOfClass (T5 t):this(t, 5) { }
 
 
         public bool IsT6 { get { return index == 6; } }
@@ -1028,6 +1070,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6, T7, T8>(t, 6);
         }
+		public OneOfClass (T6 t):this(t, 6) { }
 
 
         public bool IsT7 { get { return index == 7; } }
@@ -1036,6 +1079,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6, T7, T8>(t, 7);
         }
+		public OneOfClass (T7 t):this(t, 7) { }
 
 
         public bool IsT8 { get { return index == 8; } }
@@ -1044,6 +1088,7 @@ namespace OneOf
         {
 	         return new OneOfClass<T0, T1, T2, T3, T4, T5, T6, T7, T8>(t, 8);
         }
+		public OneOfClass (T8 t):this(t, 8) { }
 
 
 	    public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8)
