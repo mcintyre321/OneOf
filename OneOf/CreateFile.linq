@@ -7,9 +7,8 @@ void Main()
 using System;
 using Newtonsoft.Json;
 
-namespace OneOf
+namespace OneOf.Structs
 {
-    public interface IOneOf { object Value { get ; } }
 	");
 	for (var i = 1; i < 10; i++)
 	{
@@ -21,13 +20,13 @@ namespace OneOf
 		sb.AppendLine(string.Format(
 
 @"
-    [JsonConverter(typeof(OneOfJsonConverter))]
-	public struct OneOf<{0}> : IOneOf
+    [JsonConverter(typeof(OneOfStructJsonConverter))]
+	public struct OneOfStruct<{0}> : IOneOf
     {{
 	    readonly object value;
 	    readonly int index;
 
-	    OneOf(object value, int index)	    {{ this.value = value; this.index = index;	     }}
+	    OneOfStruct(object value, int index)	    {{ this.value = value; this.index = index;	     }}
 	
 		object IOneOf.Value {{ get {{ return value; }} }}
 	
@@ -46,9 +45,9 @@ namespace OneOf
 @"
         public bool IsT{0} {{ get {{ return index == {0}; }} }}
         public T{0} AsT{0} {{ get {{ return Get<T{0}>({0}); }} }} 
-        public static implicit operator OneOf<{1}> (T{0} t)
+        public static implicit operator OneOfStruct<{1}> (T{0} t)
         {{
-	         return new OneOf<{1}>(t, {0});
+	         return new OneOfStruct<{1}>(t, {0});
         }}
 ", j, genericArg));
 		}
@@ -104,7 +103,7 @@ namespace OneOf
 
 		sb.AppendLine(string.Format(@"
 		
-		bool Equals(OneOf<{0}> other)
+		bool Equals(OneOfStruct<{0}> other)
         {{
             return index == other.index && Equals(value, other.value);
         }}
@@ -113,7 +112,7 @@ namespace OneOf
         {{
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj is OneOf<{0}> && Equals(obj);
+            return obj is OneOfStruct<{0}> && Equals(obj);
         }}
 
         public override int GetHashCode()
@@ -128,7 +127,11 @@ namespace OneOf
 ", genericArg));
 	}
 	sb.AppendLine("}");
-	sb.ToString().Dump();
-	var outpath = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "OneOf.cs");
-	File.WriteAllText(outpath.Dump(), sb.ToString());
+	var output = sb.ToString().Replace(".Structs", "").Replace("OneOfStruct", "OneOf").Dump();
+	var outpath = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath),  "OneOf.cs");
+	File.WriteAllText(outpath.Dump(), output);
+
+	var output2 = sb.ToString().Replace("struct", "class").Replace(".Structs", "").Replace("OneOfStruct", "OneOfClass");
+	var outpath2 = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "OneOfClass.cs");
+	File.WriteAllText(outpath2.Dump(), output2);
 }
