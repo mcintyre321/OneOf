@@ -30,8 +30,8 @@ namespace OneOf.Tests
         {
             Response x = new Response.MethodNotAllowed();
             Assert.AreEqual(true, x.Match(
-                allowed => true,
-                response => false));
+                methodNotAllowed => true,
+                invokeSuccessResponse => false));
         }
     }
 
