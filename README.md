@@ -23,7 +23,7 @@ Or as a return type, giving the ability to return strongly typed results without
 ```
 public OneOf<User, InvalidName, NameTaken> CreateUser(string username)
 {
-    if (IsValid(username)) return new InvalidName();
+    if (!IsValid(username)) return new InvalidName();
     var user = _repo.FindByUsername(username);
     if(user != null) return new NameTaken();
     var user = new User(username);
