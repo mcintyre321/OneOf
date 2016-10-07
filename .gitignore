@@ -16,4 +16,3 @@ _ReSharper.*
 packages/*
 /packages
 /*.user
-.vs
