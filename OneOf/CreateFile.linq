@@ -16,7 +16,6 @@ public string GetContent(bool isStruct)
 	var sb = new StringBuilder();
 	sb.AppendLine(@"
 using System;
-using Newtonsoft.Json;
 
 namespace OneOf.Structs
 {
@@ -31,7 +30,6 @@ namespace OneOf.Structs
 		sb.AppendLine(string.Format(
 
 @"
-    [JsonConverter(typeof(OneOfStructJsonConverter))]
 	public struct OneOfStruct<{0}> : IOneOf
     {{
 	    readonly object value;
