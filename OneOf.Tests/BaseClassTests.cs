@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using OneOf;
+using OneOf.Types;
 
 namespace OneOf.Tests
 {
@@ -34,5 +36,4 @@ namespace OneOf.Tests
                 invokeSuccessResponse => false));
         }
     }
-
 }
