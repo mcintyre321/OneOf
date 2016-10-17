@@ -2,161 +2,189 @@
 
 void Main()
 {
-	var output = GetContent(true).Dump();
-	var outpath = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "OneOf.cs");
-	File.WriteAllText(outpath.Dump(), output);
+    var output = GetContent(true)
+        .Dump();
+    var outpath = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "OneOf.cs");
+    File.WriteAllText(outpath.Dump(), output);
 
-	var output2 = GetContent(false);
-	var outpath2 = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "OneOfBase.cs");
-	File.WriteAllText(outpath2.Dump(), output2);
+    var output2 = GetContent(false);
+    var outpath2 = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "OneOfBase.cs");
+    File.WriteAllText(outpath2.Dump(), output2);
 }
 
-public string GetContent(bool isStruct)
+private static string GetContent(bool isStruct)
 {
-	var sb = new StringBuilder();
-	sb.AppendLine(@"
+    var sb = new StringBuilder();
+    sb.AppendLine(@"
 using System;
 
 namespace OneOf.Structs
-{
-	");
-	for (var i = 1; i < 10; i++)
-	{
-		var genericArg = string.Join(", ", Enumerable.Range(0, i).Select(e => "T" + e));
-
-
-
-	
-		sb.AppendLine(string.Format(
-
-@"
-	public struct OneOfStruct<{0}> : IOneOf
+{");
+    for (var i = 1; i < 10; i++)
+    {
+        var genericArg = string.Join(", ", Enumerable.Range(0, i)
+                                                        .Select(e => "T" + e));
+        sb.AppendLine($@"    public struct OneOfStruct<{genericArg}> : IOneOf
     {{
-	    readonly object value;
-	    readonly int index;
-	    
-		OneOfStruct(object value, int index)	    {{ this.value = value; this.index = index;	     }}
-	
-		object IOneOf.Value {{ get {{ return value; }} }}
-	
-	    T Get<T>(int index)
-	    {{
-		    if (index != this.index)
-		    {{
-		    	throw new InvalidOperationException(""Cannot return as T"" + index + "" as result is T"" + this.index);
-            }}
-	        return (T)value;
-	    }}
-", genericArg));
-		for (var j = 0; j < i; j++)
-		{
-			sb.AppendLine(string.Format(
-@"
-        public bool IsT{0} {{ get {{ return index == {0}; }} }}
-        public T{0} AsT{0} {{ get {{ return Get<T{0}>({0}); }} }} 
-        public static implicit operator OneOfStruct<{1}> (T{0} t)
+        private readonly object _value;
+        private readonly int _index;
+
+        private OneOfStruct(object value, int index)
         {{
-	         return new OneOfStruct<{1}>(t, {0});
+            this._value = value;
+            this._index = index;
         }}
-", j, genericArg));
-		}
 
-		var matchArgList0 = string.Join(", ", Enumerable.Range(0, i).Select(e => "Action<T" + e + "> f" + e));
-		sb.AppendLine(string.Format(@"
-	    public void Switch({1})
+        object IOneOf.Value
         {{
-			", genericArg, matchArgList0));
+            get {{ return _value; }}
+        }}
 
-		for (var j = 0; j < i; j++)
-		{
-			sb.AppendLine(string.Format(@"			if (this.IsT{0} && f{0} != null) {{ f{0}(this.AsT{0}); return; }}", j));
-		}
-
-		sb.AppendLine(string.Format(@"
-	    	throw new InvalidOperationException();
-		}}
-"));
-
-		var matchArgList = string.Join(", ", Enumerable.Range(0, i).Select(e => "Func<T" + e + ", TResult> f" + e));
-		sb.AppendLine(string.Format(@"
-	    public TResult Match<TResult>({1})
+        private T Get<T>(int index)
         {{
-			", genericArg, matchArgList));
+            if (index != this._index)
+            {{
+                throw new InvalidOperationException(""Cannot return as T"" + index + "" as result is T"" + this._index);
+            }}
+            return (T)_value;
+        }}");
 
-		for (var j = 0; j < i; j++)
-		{
-			sb.AppendLine(string.Format(@"			if (this.IsT{0} && f{0} != null) return f{0}(this.AsT{0});", j));
-		}
-
-		sb.AppendLine(string.Format(@"
-	    	throw new InvalidOperationException();
-		}}
-"));
-
-		var matchArgList2 = string.Join(", ", Enumerable.Range(0, i).Select(e => "Func<T" + e + ", TResult> f" + e + " = null"));
-		sb.AppendLine(string.Format(@"
-	    public TResult MatchSome<TResult>({1}, Func<TResult> otherwise = null)
+        for (var j = 0; j < i; j++)
+        {
+            sb.AppendLine($@"
+        public bool IsT{j}
         {{
-			", genericArg, matchArgList2));
+            get {{ return _index == {j}; }}
+        }}
 
-		for (var j = 0; j < i; j++)
-		{
-			sb.AppendLine(string.Format(@"
-			if (this.IsT{0} && f{0} != null) return f{0}(this.AsT{0});", j));
-		}
-
-		sb.AppendLine(string.Format(@"
-		    if (otherwise != null) return otherwise();
-	    	throw new InvalidOperationException();
-		}}
-"));
-
-		if (!isStruct)
-		{
-			sb.AppendLine(@"
-		
-		protected OneOfBase()
-		{
-			this.value = this;");
-
-			for (var j = 0; j < i; j++)
-			{
-				
-				sb.AppendLine(string.Format(@"
-			if (this is T{0}) this.index = {0};", j));
-			}
-
-			sb.AppendLine(@"
-		}");
-
-		}
-		sb.AppendLine(string.Format(@"
-		
-		bool Equals(OneOfStruct<{0}> other)
+        public T{j} AsT{j}
         {{
-            return index == other.index && Equals(value, other.value);
+            get {{ return Get<T{j}>({j}); }}
+        }}
+
+        public static implicit operator OneOfStruct<{genericArg}> (T{j} t)
+        {{
+             return new OneOfStruct<{genericArg}>(t, {j});
+        }}");
+        }
+
+        var matchArgList0 = string.Join(", ", Enumerable.Range(0, i)
+                                                        .Select(e => "Action<T" + e + "> f" + e));
+
+        sb.AppendLine($@"
+        public void Switch({matchArgList0})
+        {{");
+
+        for (var j = 0; j < i; j++)
+        {
+            sb.AppendLine($@"            if (this.IsT{j} && f{j} != null)
+            {{
+                f{j}(this.AsT{j});
+                return;
+            }}");
+        }
+
+        sb.AppendLine(@"
+            throw new InvalidOperationException();
+        }");
+
+        var matchArgList = string.Join(", ", Enumerable.Range(0, i)
+                                                        .Select(e => "Func<T" + e + ", TResult> f" + e));
+        sb.AppendLine($@"
+        public TResult Match<TResult>({matchArgList})
+        {{");
+
+        for (var j = 0; j < i; j++)
+        {
+            sb.AppendLine($@"            if (this.IsT{j} && f{j} != null)
+            {{
+                return f{j}(this.AsT{j});
+            }}");
+        }
+
+        sb.AppendLine(@"
+            throw new InvalidOperationException();
+        }");
+
+        var matchArgList2 = string.Join(", ", Enumerable.Range(0, i)
+                                                        .Select(
+                                                                e =>
+                                                                    "Func<T" + e + ", TResult> f" + e +
+                                                                    " = null"));
+        sb.AppendLine($@"
+        public TResult MatchSome<TResult>({matchArgList2}, Func<TResult> otherwise = null)
+        {{");
+
+        for (var j = 0; j < i; j++)
+        {
+            sb.AppendLine($@"            if (this.IsT{j} && f{j} != null)
+            {{
+                return f{j}(this.AsT{j});
+            }}");
+        }
+
+        sb.AppendLine(@"
+            if (otherwise != null) { return otherwise(); }
+
+            throw new InvalidOperationException();
+        }");
+
+        if (!isStruct)
+        {
+            sb.AppendLine(@"
+        protected OneOfBase()
+        {
+            this._value = this;");
+
+            for (var j = 0; j < i; j++)
+            {
+                sb.AppendLine($@"
+            if (this is T{j})
+            {{
+                this._index = {j};
+            }}");
+            }
+
+            sb.AppendLine(@"        }");
+
+        }
+        sb.AppendLine($@"
+        private bool Equals(OneOfStruct<{genericArg}> other)
+        {{
+            return _index == other._index && Equals(_value, other._value);
         }}
 
         public override bool Equals(object obj)
         {{
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj is OneOfStruct<{0}> && Equals(obj);
+            if (ReferenceEquals(null, obj))
+            {{
+                return false;
+            }}
+            if (ReferenceEquals(this, obj))
+            {{
+                return true;
+            }}
+            return obj is OneOfStruct<{genericArg}> && Equals(obj);
         }}
 
         public override int GetHashCode()
         {{
             unchecked
             {{
-                return ((value != null ? value.GetHashCode() : 0)*397) ^ index;
+                return ((_value != null ? _value.GetHashCode() : 0)*397) ^ _index;
             }}
         }}
-
-	}}
-", genericArg));
-	}
-	sb.AppendLine("}");
-	var content = sb.ToString();
-	if (isStruct) return content.Replace(".Structs", "").Replace("OneOfStruct", "OneOf");
-	return content.Replace("struct", "class").Replace(".Structs", "").Replace("OneOfStruct", "OneOfBase");
+    }}
+");
+    }
+    sb.AppendLine("}");
+    var content = sb.ToString();
+    if (isStruct)
+    {
+        return content.Replace(".Structs", "")
+                      .Replace("OneOfStruct", "OneOf");
+    }
+    return content.Replace("struct", "class")
+                  .Replace(".Structs", "")
+                  .Replace("OneOfStruct", "OneOfBase");
 }
