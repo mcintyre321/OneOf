@@ -23,7 +23,7 @@ namespace OneOf.Structs
     for (var i = 1; i < 10; i++)
     {
         var genericArg = string.Join(", ", Enumerable.Range(0, i)
-                                                        .Select(e => "T" + e));
+                                                        .Select(e => $"T{e}"));
         sb.AppendLine($@"    public struct OneOfStruct<{genericArg}> : IOneOf
     {{
         private readonly object _value;
@@ -36,15 +36,13 @@ namespace OneOf.Structs
         }}
 
         object IOneOf.Value
-        {{
-            get {{ return _value; }}
-        }}
+            => _value;
 
         private T Get<T>(int index)
         {{
             if (index != this._index)
             {{
-                throw new InvalidOperationException(""Cannot return as T"" + index + "" as result is T"" + this._index);
+                throw new InvalidOperationException($""Cannot return as T{{index}} as result is T{{this._index}}"");
             }}
             return (T)_value;
         }}");
@@ -53,23 +51,17 @@ namespace OneOf.Structs
         {
             sb.AppendLine($@"
         public bool IsT{j}
-        {{
-            get {{ return _index == {j}; }}
-        }}
+            => _index == {j};
 
         public T{j} AsT{j}
-        {{
-            get {{ return Get<T{j}>({j}); }}
-        }}
+            => Get<T{j}>({j});
 
         public static implicit operator OneOfStruct<{genericArg}> (T{j} t)
-        {{
-             return new OneOfStruct<{genericArg}>(t, {j});
-        }}");
+            => new OneOfStruct<{genericArg}>(t, {j});");
         }
 
         var matchArgList0 = string.Join(", ", Enumerable.Range(0, i)
-                                                        .Select(e => "Action<T" + e + "> f" + e));
+                                                        .Select(e => $"Action<T{e}> f{e}"));
 
         sb.AppendLine($@"
         public void Switch({matchArgList0})
@@ -89,7 +81,7 @@ namespace OneOf.Structs
         }");
 
         var matchArgList = string.Join(", ", Enumerable.Range(0, i)
-                                                        .Select(e => "Func<T" + e + ", TResult> f" + e));
+                                                       .Select(e => $"Func<T{e}, TResult> f{e}"));
         sb.AppendLine($@"
         public TResult Match<TResult>({matchArgList})
         {{");
@@ -107,10 +99,7 @@ namespace OneOf.Structs
         }");
 
         var matchArgList2 = string.Join(", ", Enumerable.Range(0, i)
-                                                        .Select(
-                                                                e =>
-                                                                    "Func<T" + e + ", TResult> f" + e +
-                                                                    " = null"));
+                                                        .Select(e => $"Func<T{e}, TResult> f{e} = null"));
         sb.AppendLine($@"
         public TResult MatchSome<TResult>({matchArgList2}, Func<TResult> otherwise = null)
         {{");
@@ -150,9 +139,7 @@ namespace OneOf.Structs
         }
         sb.AppendLine($@"
         private bool Equals(OneOfStruct<{genericArg}> other)
-        {{
-            return _index == other._index && Equals(_value, other._value);
-        }}
+            => _index == other._index && Equals(_value, other._value);
 
         public override bool Equals(object obj)
         {{
@@ -182,7 +169,7 @@ namespace OneOf.Structs
         {{
             unchecked
             {{
-                return ((_value != null ? _value.GetHashCode() : 0)*397) ^ _index;
+                return ((_value?.GetHashCode() ?? 0)*397) ^ _index;
             }}
         }}
     }}
