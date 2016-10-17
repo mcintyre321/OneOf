@@ -3,6 +3,7 @@ using NUnit.Framework;
 
 namespace OneOf.Tests
 {
+    [TestFixture]
     public class Serialization
     {
         [Test]

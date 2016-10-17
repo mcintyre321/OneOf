@@ -2,6 +2,7 @@
 
 namespace OneOf.Tests
 {
+    [TestFixture]
     public abstract class Response : OneOfBase<
         Response.MethodNotAllowed,
         Response.InvokeSuccessResponse
