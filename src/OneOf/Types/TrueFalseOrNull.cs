@@ -1,6 +1,6 @@
 namespace OneOf.Types
 {
-    public class TrueFalseOrNull
+    public class TrueFalseOrNull : OneOf.OneOfBase<TrueFalseOrNull.True, TrueFalseOrNull.False, TrueFalseOrNull.Null>
     {
         public static implicit operator TrueFalseOrNull(bool? value)
         {
