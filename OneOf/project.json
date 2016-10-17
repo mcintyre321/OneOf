@@ -1,4 +1,4 @@
-{
+﻿{
   "version": "1.0.0-*",
   "title": "OneOf",
   "description": "F#-like discriminated unions for C#",
