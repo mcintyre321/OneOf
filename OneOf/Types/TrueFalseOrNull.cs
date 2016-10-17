@@ -1,6 +1,6 @@
 namespace OneOf.Types
 {
-    public class TrueFalseOrNull
+    public class TrueFalseOrNull : OneOf.OneOf<True, False, Null>
     {
         public class True : TrueFalseOrNull { }
         public class False : TrueFalseOrNull { }
