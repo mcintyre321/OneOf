@@ -31,8 +31,8 @@ namespace OneOf.Structs
 
         private OneOfStruct(object value, int index)
         {{
-            this._value = value;
-            this._index = index;
+            _value = value;
+            _index = index;
         }}
 
         object IOneOf.Value
@@ -40,9 +40,9 @@ namespace OneOf.Structs
 
         private T Get<T>(int index)
         {{
-            if (index != this._index)
+            if (index != _index)
             {{
-                throw new InvalidOperationException($""Cannot return as T{{index}} as result is T{{this._index}}"");
+                throw new InvalidOperationException($""Cannot return as T{{index}} as result is T{{_index}}"");
             }}
             return (T)_value;
         }}");
@@ -69,9 +69,9 @@ namespace OneOf.Structs
 
         for (var j = 0; j < i; j++)
         {
-            sb.AppendLine($@"            if (this.IsT{j} && f{j} != null)
+            sb.AppendLine($@"            if (IsT{j} && f{j} != null)
             {{
-                f{j}(this.AsT{j});
+                f{j}(AsT{j});
                 return;
             }}");
         }
@@ -88,9 +88,9 @@ namespace OneOf.Structs
 
         for (var j = 0; j < i; j++)
         {
-            sb.AppendLine($@"            if (this.IsT{j} && f{j} != null)
+            sb.AppendLine($@"            if (IsT{j} && f{j} != null)
             {{
-                return f{j}(this.AsT{j});
+                return f{j}(AsT{j});
             }}");
         }
 
@@ -106,9 +106,9 @@ namespace OneOf.Structs
 
         for (var j = 0; j < i; j++)
         {
-            sb.AppendLine($@"            if (this.IsT{j} && f{j} != null)
+            sb.AppendLine($@"            if (IsT{j} && f{j} != null)
             {{
-                return f{j}(this.AsT{j});
+                return f{j}(AsT{j});
             }}");
         }
 
@@ -123,14 +123,14 @@ namespace OneOf.Structs
             sb.AppendLine(@"
         protected OneOfBase()
         {
-            this._value = this;");
+            _value = this;");
 
             for (var j = 0; j < i; j++)
             {
                 sb.AppendLine($@"
             if (this is T{j})
             {{
-                this._index = {j};
+                _index = {j};
             }}");
             }
 
