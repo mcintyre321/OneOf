@@ -97,11 +97,14 @@ namespace OneOf
             {
                 return false;
             }
+
             if (ReferenceEquals(this, obj))
             {
                 return true;
             }
-            return obj is OneOfBase<T0> && Equals(obj);
+
+            var other = obj as OneOfBase<T0>;
+            return other != null && Equals(other);
         }
 
         public override int GetHashCode()
@@ -240,11 +243,14 @@ namespace OneOf
             {
                 return false;
             }
+
             if (ReferenceEquals(this, obj))
             {
                 return true;
             }
-            return obj is OneOfBase<T0, T1> && Equals(obj);
+
+            var other = obj as OneOfBase<T0, T1>;
+            return other != null && Equals(other);
         }
 
         public override int GetHashCode()
@@ -416,11 +422,14 @@ namespace OneOf
             {
                 return false;
             }
+
             if (ReferenceEquals(this, obj))
             {
                 return true;
             }
-            return obj is OneOfBase<T0, T1, T2> && Equals(obj);
+
+            var other = obj as OneOfBase<T0, T1, T2>;
+            return other != null && Equals(other);
         }
 
         public override int GetHashCode()
@@ -625,11 +634,14 @@ namespace OneOf
             {
                 return false;
             }
+
             if (ReferenceEquals(this, obj))
             {
                 return true;
             }
-            return obj is OneOfBase<T0, T1, T2, T3> && Equals(obj);
+
+            var other = obj as OneOfBase<T0, T1, T2, T3>;
+            return other != null && Equals(other);
         }
 
         public override int GetHashCode()
@@ -867,11 +879,14 @@ namespace OneOf
             {
                 return false;
             }
+
             if (ReferenceEquals(this, obj))
             {
                 return true;
             }
-            return obj is OneOfBase<T0, T1, T2, T3, T4> && Equals(obj);
+
+            var other = obj as OneOfBase<T0, T1, T2, T3, T4>;
+            return other != null && Equals(other);
         }
 
         public override int GetHashCode()
@@ -1142,11 +1157,14 @@ namespace OneOf
             {
                 return false;
             }
+
             if (ReferenceEquals(this, obj))
             {
                 return true;
             }
-            return obj is OneOfBase<T0, T1, T2, T3, T4, T5> && Equals(obj);
+
+            var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5>;
+            return other != null && Equals(other);
         }
 
         public override int GetHashCode()
@@ -1450,11 +1468,14 @@ namespace OneOf
             {
                 return false;
             }
+
             if (ReferenceEquals(this, obj))
             {
                 return true;
             }
-            return obj is OneOfBase<T0, T1, T2, T3, T4, T5, T6> && Equals(obj);
+
+            var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6>;
+            return other != null && Equals(other);
         }
 
         public override int GetHashCode()
@@ -1791,11 +1812,14 @@ namespace OneOf
             {
                 return false;
             }
+
             if (ReferenceEquals(this, obj))
             {
                 return true;
             }
-            return obj is OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> && Equals(obj);
+
+            var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>;
+            return other != null && Equals(other);
         }
 
         public override int GetHashCode()
@@ -2165,11 +2189,14 @@ namespace OneOf
             {
                 return false;
             }
+
             if (ReferenceEquals(this, obj))
             {
                 return true;
             }
-            return obj is OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> && Equals(obj);
+
+            var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>;
+            return other != null && Equals(other);
         }
 
         public override int GetHashCode()

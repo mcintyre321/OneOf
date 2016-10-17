@@ -160,12 +160,23 @@ namespace OneOf.Structs
             {{
                 return false;
             }}
-            if (ReferenceEquals(this, obj))
+");
+        if(isStruct)
+        {
+            sb.AppendLine($@"            return obj is OneOfStruct<{genericArg}> && Equals((OneOfStruct<{genericArg}>) obj);");
+        }
+        else
+        {
+            sb.AppendLine($@"            if (ReferenceEquals(this, obj))
             {{
                 return true;
             }}
-            return obj is OneOfStruct<{genericArg}> && Equals(obj);
-        }}
+
+            var other = obj as OneOfBase<{genericArg}>;
+            return other != null && Equals(other);");
+        }
+            
+        sb.AppendLine($@"        }}
 
         public override int GetHashCode()
         {{
