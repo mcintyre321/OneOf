@@ -9,6 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneOf.Tests", "OneOf.Tests\OneOf.Tests.csproj", "{82023ED0-3E20-43CF-ACA1-1EA547E70903}"
+	ProjectSection(ProjectDependencies) = postProject
+		{21D0DD1E-D38A-4A76-B2B3-4CEF11B2C6CB} = {21D0DD1E-D38A-4A76-B2B3-4CEF11B2C6CB}
+	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "OneOf", "OneOf\OneOf.xproj", "{21D0DD1E-D38A-4A76-B2B3-4CEF11B2C6CB}"
 EndProject
