@@ -21,7 +21,10 @@ namespace OneOf.Tests
                 Value = "A string value"
             };
             //When that object is serialized
-            var json = JsonConvert.SerializeObject(x);
+            var json = JsonConvert.SerializeObject(x, new JsonSerializerSettings()
+            {
+                Converters = {new OneOfJsonConverter()}
+            });
 
             //Then the OneOfs underlying value should have been written
             Assert.AreEqual("{\"Value\":\"A string value\"}", json);

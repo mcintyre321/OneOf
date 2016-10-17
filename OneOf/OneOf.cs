@@ -1,12 +1,10 @@
 
 using System;
-using Newtonsoft.Json;
 
 namespace OneOf
 {
 	
 
-    [JsonConverter(typeof(OneOfJsonConverter))]
 	public struct OneOf<T0> : IOneOf
     {
 	    readonly object value;
@@ -87,7 +85,6 @@ namespace OneOf
 	}
 
 
-    [JsonConverter(typeof(OneOfJsonConverter))]
 	public struct OneOf<T0, T1> : IOneOf
     {
 	    readonly object value;
@@ -180,7 +177,6 @@ namespace OneOf
 	}
 
 
-    [JsonConverter(typeof(OneOfJsonConverter))]
 	public struct OneOf<T0, T1, T2> : IOneOf
     {
 	    readonly object value;
@@ -285,7 +281,6 @@ namespace OneOf
 	}
 
 
-    [JsonConverter(typeof(OneOfJsonConverter))]
 	public struct OneOf<T0, T1, T2, T3> : IOneOf
     {
 	    readonly object value;
@@ -402,7 +397,6 @@ namespace OneOf
 	}
 
 
-    [JsonConverter(typeof(OneOfJsonConverter))]
 	public struct OneOf<T0, T1, T2, T3, T4> : IOneOf
     {
 	    readonly object value;
@@ -531,7 +525,6 @@ namespace OneOf
 	}
 
 
-    [JsonConverter(typeof(OneOfJsonConverter))]
 	public struct OneOf<T0, T1, T2, T3, T4, T5> : IOneOf
     {
 	    readonly object value;
@@ -672,7 +665,6 @@ namespace OneOf
 	}
 
 
-    [JsonConverter(typeof(OneOfJsonConverter))]
 	public struct OneOf<T0, T1, T2, T3, T4, T5, T6> : IOneOf
     {
 	    readonly object value;
@@ -825,7 +817,6 @@ namespace OneOf
 	}
 
 
-    [JsonConverter(typeof(OneOfJsonConverter))]
 	public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7> : IOneOf
     {
 	    readonly object value;
@@ -990,7 +981,6 @@ namespace OneOf
 	}
 
 
-    [JsonConverter(typeof(OneOfJsonConverter))]
 	public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> : IOneOf
     {
 	    readonly object value;
