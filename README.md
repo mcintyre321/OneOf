@@ -33,6 +33,7 @@ public OneOf<User, InvalidName, NameTaken> CreateUser(string username)
   - True strongly typed method signature
     - No need to return a custom result base type e.g `IActionResult`, or even worse, a non-descriptive type (e.g. object)   
     - The method signature accurately describes all the potential outcomes, making it easier for consumers to understand the code
+    - Method consumer HAS to handle all cases (see 'Matching', below)
   - You can avoid using ["Exceptions for control flow"](http://softwareengineering.stackexchange.com/questions/189222/are-exceptions-as-control-flow-considered-a-serious-antipattern-if-so-why) antipattern by returning custom Typed error objects
   
 ###As a method parameter value
