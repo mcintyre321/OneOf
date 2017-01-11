@@ -25,9 +25,12 @@ namespace OneOf
 
         sb.AppendLine($@"
     public {(isStruct ? "struct" : "class")} {className}<{genericArg}> : IOneOf");
-        for (var j = 0; j < i; j++)
+        if (!isStruct)
         {
-            sb.AppendLine($"        where T{j} : class");
+            for (var j = 0; j < i; j++)
+            {
+                sb.AppendLine($"        where T{j} : class");
+            }
         }
         sb.AppendLine("    {");
         for (var j = 0; j < i; j++)

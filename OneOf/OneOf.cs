@@ -3,7 +3,6 @@ using System;
 namespace OneOf
 {
     public struct OneOf<T0> : IOneOf
-        where T0 : class
     {
         readonly T0 _value0;
         readonly int _index;
@@ -127,8 +126,6 @@ namespace OneOf
     }
 
     public struct OneOf<T0, T1> : IOneOf
-        where T0 : class
-        where T1 : class
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -296,9 +293,6 @@ namespace OneOf
     }
 
     public struct OneOf<T0, T1, T2> : IOneOf
-        where T0 : class
-        where T1 : class
-        where T2 : class
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -510,10 +504,6 @@ namespace OneOf
     }
 
     public struct OneOf<T0, T1, T2, T3> : IOneOf
-        where T0 : class
-        where T1 : class
-        where T2 : class
-        where T3 : class
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -769,11 +759,6 @@ namespace OneOf
     }
 
     public struct OneOf<T0, T1, T2, T3, T4> : IOneOf
-        where T0 : class
-        where T1 : class
-        where T2 : class
-        where T3 : class
-        where T4 : class
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -1073,12 +1058,6 @@ namespace OneOf
     }
 
     public struct OneOf<T0, T1, T2, T3, T4, T5> : IOneOf
-        where T0 : class
-        where T1 : class
-        where T2 : class
-        where T3 : class
-        where T4 : class
-        where T5 : class
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -1422,13 +1401,6 @@ namespace OneOf
     }
 
     public struct OneOf<T0, T1, T2, T3, T4, T5, T6> : IOneOf
-        where T0 : class
-        where T1 : class
-        where T2 : class
-        where T3 : class
-        where T4 : class
-        where T5 : class
-        where T6 : class
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -1816,14 +1788,6 @@ namespace OneOf
     }
 
     public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7> : IOneOf
-        where T0 : class
-        where T1 : class
-        where T2 : class
-        where T3 : class
-        where T4 : class
-        where T5 : class
-        where T6 : class
-        where T7 : class
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -2255,15 +2219,6 @@ namespace OneOf
     }
 
     public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> : IOneOf
-        where T0 : class
-        where T1 : class
-        where T2 : class
-        where T3 : class
-        where T4 : class
-        where T5 : class
-        where T6 : class
-        where T7 : class
-        where T8 : class
     {
         readonly T0 _value0;
         readonly T1 _value1;
