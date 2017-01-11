@@ -78,20 +78,28 @@ namespace OneOf
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj is OneOfBase<T0> && Equals(obj);
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            var other = obj as OneOfBase<T0>;
+            return other != null && Equals(other);
         }
 
         public override int GetHashCode()
         {
             unchecked
             {
-                return ((value != null ? value.GetHashCode() : 0)*397) ^ index;
+                return ((value?.GetHashCode() ?? 0)*397) ^ index;
             }
         }
-
-	}
+}
 
 
 	public class OneOfBase<T0, T1> : IOneOf
@@ -181,20 +189,28 @@ namespace OneOf
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj is OneOfBase<T0, T1> && Equals(obj);
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            var other = obj as OneOfBase<T0, T1>;
+            return other != null && Equals(other);
         }
 
         public override int GetHashCode()
         {
             unchecked
             {
-                return ((value != null ? value.GetHashCode() : 0)*397) ^ index;
+                return ((value?.GetHashCode() ?? 0)*397) ^ index;
             }
         }
-
-	}
+}
 
 
 	public class OneOfBase<T0, T1, T2> : IOneOf
@@ -298,20 +314,28 @@ namespace OneOf
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj is OneOfBase<T0, T1, T2> && Equals(obj);
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            var other = obj as OneOfBase<T0, T1, T2>;
+            return other != null && Equals(other);
         }
 
         public override int GetHashCode()
         {
             unchecked
             {
-                return ((value != null ? value.GetHashCode() : 0)*397) ^ index;
+                return ((value?.GetHashCode() ?? 0)*397) ^ index;
             }
         }
-
-	}
+}
 
 
 	public class OneOfBase<T0, T1, T2, T3> : IOneOf
@@ -429,20 +453,28 @@ namespace OneOf
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj is OneOfBase<T0, T1, T2, T3> && Equals(obj);
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            var other = obj as OneOfBase<T0, T1, T2, T3>;
+            return other != null && Equals(other);
         }
 
         public override int GetHashCode()
         {
             unchecked
             {
-                return ((value != null ? value.GetHashCode() : 0)*397) ^ index;
+                return ((value?.GetHashCode() ?? 0)*397) ^ index;
             }
         }
-
-	}
+}
 
 
 	public class OneOfBase<T0, T1, T2, T3, T4> : IOneOf
@@ -574,20 +606,28 @@ namespace OneOf
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj is OneOfBase<T0, T1, T2, T3, T4> && Equals(obj);
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            var other = obj as OneOfBase<T0, T1, T2, T3, T4>;
+            return other != null && Equals(other);
         }
 
         public override int GetHashCode()
         {
             unchecked
             {
-                return ((value != null ? value.GetHashCode() : 0)*397) ^ index;
+                return ((value?.GetHashCode() ?? 0)*397) ^ index;
             }
         }
-
-	}
+}
 
 
 	public class OneOfBase<T0, T1, T2, T3, T4, T5> : IOneOf
@@ -733,20 +773,28 @@ namespace OneOf
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj is OneOfBase<T0, T1, T2, T3, T4, T5> && Equals(obj);
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5>;
+            return other != null && Equals(other);
         }
 
         public override int GetHashCode()
         {
             unchecked
             {
-                return ((value != null ? value.GetHashCode() : 0)*397) ^ index;
+                return ((value?.GetHashCode() ?? 0)*397) ^ index;
             }
         }
-
-	}
+}
 
 
 	public class OneOfBase<T0, T1, T2, T3, T4, T5, T6> : IOneOf
@@ -906,20 +954,28 @@ namespace OneOf
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj is OneOfBase<T0, T1, T2, T3, T4, T5, T6> && Equals(obj);
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6>;
+            return other != null && Equals(other);
         }
 
         public override int GetHashCode()
         {
             unchecked
             {
-                return ((value != null ? value.GetHashCode() : 0)*397) ^ index;
+                return ((value?.GetHashCode() ?? 0)*397) ^ index;
             }
         }
-
-	}
+}
 
 
 	public class OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> : IOneOf
@@ -1093,20 +1149,28 @@ namespace OneOf
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj is OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> && Equals(obj);
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>;
+            return other != null && Equals(other);
         }
 
         public override int GetHashCode()
         {
             unchecked
             {
-                return ((value != null ? value.GetHashCode() : 0)*397) ^ index;
+                return ((value?.GetHashCode() ?? 0)*397) ^ index;
             }
         }
-
-	}
+}
 
 
 	public class OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> : IOneOf
@@ -1294,19 +1358,27 @@ namespace OneOf
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj is OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> && Equals(obj);
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>;
+            return other != null && Equals(other);
         }
 
         public override int GetHashCode()
         {
             unchecked
             {
-                return ((value != null ? value.GetHashCode() : 0)*397) ^ index;
+                return ((value?.GetHashCode() ?? 0)*397) ^ index;
             }
         }
-
-	}
+}
 
 }
