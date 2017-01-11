@@ -14,8 +14,7 @@ void Main()
 public string GetContent(bool isStruct)
 {
     var sb = new StringBuilder();
-    sb.AppendLine(@"
-using System;
+    sb.AppendLine(@"using System;
 
 namespace OneOf.Structs
 {");
@@ -33,20 +32,40 @@ namespace OneOf.Structs
             _value = value; 
             _index = index;
         }}
+");
     
-        object IOneOf.Value 
-        {{
-            get {{ return _value; }}
-        }}
+        if (!isStruct)
+        {
+            sb.AppendLine(@"        protected OneOfBase()
+        {
+            _value = this;");
+
+            for (var j = 0; j < i; j++)
+            {                
+                sb.AppendLine($@"
+            if (this is T{j})
+            {{
+                _index = {j};
+            }}");
+            }
+
+            sb.AppendLine(@"        }
+");
+        }
+        
+        sb.AppendLine(@"        object IOneOf.Value 
+        {
+            get { return _value; }
+        }
     
         T Get<T>(int index)
-        {{
+        {
             if (index != _index)
-            {{
-                throw new InvalidOperationException($""Cannot return as T{{index}} as result is T{{_index}}"");
-            }}
+            {
+                throw new InvalidOperationException($""Cannot return as T{index} as result is T{_index}"");
+            }
             return (T)_value;
-        }}");
+        }");
         for (var j = 0; j < i; j++)
         {
             sb.AppendLine(
@@ -82,8 +101,7 @@ $@"
         }
 
         sb.AppendLine(@"            throw new InvalidOperationException();
-        }
-");
+        }");
 
         var matchArgList = string.Join(", ", Enumerable.Range(0, i).Select(e => $"Func<T{e}, TResult> f{e}"));
         sb.AppendLine($@"
@@ -120,27 +138,7 @@ $@"
             }
             throw new InvalidOperationException();
         }");
-
-        if (!isStruct)
-        {
-            sb.AppendLine(@"
-        protected OneOfBase()
-        {
-            _value = this;");
-
-            for (var j = 0; j < i; j++)
-            {
-                
-                sb.AppendLine($@"
-            if (this is T{j})
-            {{
-                _index = {j};
-            }}");
-            }
-
-            sb.AppendLine(@"        }");
-
-        }
+        
         sb.AppendLine($@"
         bool Equals(OneOfStruct<{genericArg}> other)
         {{

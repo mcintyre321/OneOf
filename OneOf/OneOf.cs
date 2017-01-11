@@ -1,4 +1,3 @@
-
 using System;
 
 namespace OneOf
@@ -13,7 +12,7 @@ namespace OneOf
             _value = value; 
             _index = index;
         }
-    
+
         object IOneOf.Value 
         {
             get { return _value; }
@@ -52,7 +51,6 @@ namespace OneOf
             }
             throw new InvalidOperationException();
         }
-
 
         public TResult Match<TResult>(Func<T0, TResult> f0)
         {
@@ -110,7 +108,7 @@ namespace OneOf
             _value = value; 
             _index = index;
         }
-    
+
         object IOneOf.Value 
         {
             get { return _value; }
@@ -170,7 +168,6 @@ namespace OneOf
             }
             throw new InvalidOperationException();
         }
-
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1)
         {
@@ -236,7 +233,7 @@ namespace OneOf
             _value = value; 
             _index = index;
         }
-    
+
         object IOneOf.Value 
         {
             get { return _value; }
@@ -318,7 +315,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2)
         {
             if (IsT0 && f0 != null)
@@ -391,7 +387,7 @@ namespace OneOf
             _value = value; 
             _index = index;
         }
-    
+
         object IOneOf.Value 
         {
             get { return _value; }
@@ -494,7 +490,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3)
         {
             if (IsT0 && f0 != null)
@@ -575,7 +570,7 @@ namespace OneOf
             _value = value; 
             _index = index;
         }
-    
+
         object IOneOf.Value 
         {
             get { return _value; }
@@ -699,7 +694,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4)
         {
             if (IsT0 && f0 != null)
@@ -788,7 +782,7 @@ namespace OneOf
             _value = value; 
             _index = index;
         }
-    
+
         object IOneOf.Value 
         {
             get { return _value; }
@@ -933,7 +927,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5)
         {
             if (IsT0 && f0 != null)
@@ -1030,7 +1023,7 @@ namespace OneOf
             _value = value; 
             _index = index;
         }
-    
+
         object IOneOf.Value 
         {
             get { return _value; }
@@ -1196,7 +1189,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6)
         {
             if (IsT0 && f0 != null)
@@ -1301,7 +1293,7 @@ namespace OneOf
             _value = value; 
             _index = index;
         }
-    
+
         object IOneOf.Value 
         {
             get { return _value; }
@@ -1488,7 +1480,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7)
         {
             if (IsT0 && f0 != null)
@@ -1601,7 +1592,7 @@ namespace OneOf
             _value = value; 
             _index = index;
         }
-    
+
         object IOneOf.Value 
         {
             get { return _value; }
@@ -1808,7 +1799,6 @@ namespace OneOf
             }
             throw new InvalidOperationException();
         }
-
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8)
         {

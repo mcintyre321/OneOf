@@ -1,4 +1,3 @@
-
 using System;
 
 namespace OneOf
@@ -13,7 +12,17 @@ namespace OneOf
             _value = value; 
             _index = index;
         }
-    
+
+        protected OneOfBase()
+        {
+            _value = this;
+
+            if (this is T0)
+            {
+                _index = 0;
+            }
+        }
+
         object IOneOf.Value 
         {
             get { return _value; }
@@ -53,7 +62,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-
         public TResult Match<TResult>(Func<T0, TResult> f0)
         {
             if (IsT0 && f0 != null)
@@ -74,16 +82,6 @@ namespace OneOf
                 return otherwise();
             }
             throw new InvalidOperationException();
-        }
-
-        protected OneOfBase()
-        {
-            _value = this;
-
-            if (this is T0)
-            {
-                _index = 0;
-            }
         }
 
         bool Equals(OneOfBase<T0> other)
@@ -126,7 +124,22 @@ namespace OneOf
             _value = value; 
             _index = index;
         }
-    
+
+        protected OneOfBase()
+        {
+            _value = this;
+
+            if (this is T0)
+            {
+                _index = 0;
+            }
+
+            if (this is T1)
+            {
+                _index = 1;
+            }
+        }
+
         object IOneOf.Value 
         {
             get { return _value; }
@@ -187,7 +200,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1)
         {
             if (IsT0 && f0 != null)
@@ -216,21 +228,6 @@ namespace OneOf
                 return otherwise();
             }
             throw new InvalidOperationException();
-        }
-
-        protected OneOfBase()
-        {
-            _value = this;
-
-            if (this is T0)
-            {
-                _index = 0;
-            }
-
-            if (this is T1)
-            {
-                _index = 1;
-            }
         }
 
         bool Equals(OneOfBase<T0, T1> other)
@@ -273,7 +270,27 @@ namespace OneOf
             _value = value; 
             _index = index;
         }
-    
+
+        protected OneOfBase()
+        {
+            _value = this;
+
+            if (this is T0)
+            {
+                _index = 0;
+            }
+
+            if (this is T1)
+            {
+                _index = 1;
+            }
+
+            if (this is T2)
+            {
+                _index = 2;
+            }
+        }
+
         object IOneOf.Value 
         {
             get { return _value; }
@@ -355,7 +372,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2)
         {
             if (IsT0 && f0 != null)
@@ -392,26 +408,6 @@ namespace OneOf
                 return otherwise();
             }
             throw new InvalidOperationException();
-        }
-
-        protected OneOfBase()
-        {
-            _value = this;
-
-            if (this is T0)
-            {
-                _index = 0;
-            }
-
-            if (this is T1)
-            {
-                _index = 1;
-            }
-
-            if (this is T2)
-            {
-                _index = 2;
-            }
         }
 
         bool Equals(OneOfBase<T0, T1, T2> other)
@@ -454,7 +450,32 @@ namespace OneOf
             _value = value; 
             _index = index;
         }
-    
+
+        protected OneOfBase()
+        {
+            _value = this;
+
+            if (this is T0)
+            {
+                _index = 0;
+            }
+
+            if (this is T1)
+            {
+                _index = 1;
+            }
+
+            if (this is T2)
+            {
+                _index = 2;
+            }
+
+            if (this is T3)
+            {
+                _index = 3;
+            }
+        }
+
         object IOneOf.Value 
         {
             get { return _value; }
@@ -557,7 +578,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3)
         {
             if (IsT0 && f0 != null)
@@ -604,31 +624,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        protected OneOfBase()
-        {
-            _value = this;
-
-            if (this is T0)
-            {
-                _index = 0;
-            }
-
-            if (this is T1)
-            {
-                _index = 1;
-            }
-
-            if (this is T2)
-            {
-                _index = 2;
-            }
-
-            if (this is T3)
-            {
-                _index = 3;
-            }
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3> other)
         {
             return _index == other._index && Equals(_value, other._value);
@@ -669,7 +664,37 @@ namespace OneOf
             _value = value; 
             _index = index;
         }
-    
+
+        protected OneOfBase()
+        {
+            _value = this;
+
+            if (this is T0)
+            {
+                _index = 0;
+            }
+
+            if (this is T1)
+            {
+                _index = 1;
+            }
+
+            if (this is T2)
+            {
+                _index = 2;
+            }
+
+            if (this is T3)
+            {
+                _index = 3;
+            }
+
+            if (this is T4)
+            {
+                _index = 4;
+            }
+        }
+
         object IOneOf.Value 
         {
             get { return _value; }
@@ -793,7 +818,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4)
         {
             if (IsT0 && f0 != null)
@@ -848,36 +872,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        protected OneOfBase()
-        {
-            _value = this;
-
-            if (this is T0)
-            {
-                _index = 0;
-            }
-
-            if (this is T1)
-            {
-                _index = 1;
-            }
-
-            if (this is T2)
-            {
-                _index = 2;
-            }
-
-            if (this is T3)
-            {
-                _index = 3;
-            }
-
-            if (this is T4)
-            {
-                _index = 4;
-            }
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4> other)
         {
             return _index == other._index && Equals(_value, other._value);
@@ -918,7 +912,42 @@ namespace OneOf
             _value = value; 
             _index = index;
         }
-    
+
+        protected OneOfBase()
+        {
+            _value = this;
+
+            if (this is T0)
+            {
+                _index = 0;
+            }
+
+            if (this is T1)
+            {
+                _index = 1;
+            }
+
+            if (this is T2)
+            {
+                _index = 2;
+            }
+
+            if (this is T3)
+            {
+                _index = 3;
+            }
+
+            if (this is T4)
+            {
+                _index = 4;
+            }
+
+            if (this is T5)
+            {
+                _index = 5;
+            }
+        }
+
         object IOneOf.Value 
         {
             get { return _value; }
@@ -1063,7 +1092,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5)
         {
             if (IsT0 && f0 != null)
@@ -1126,41 +1154,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        protected OneOfBase()
-        {
-            _value = this;
-
-            if (this is T0)
-            {
-                _index = 0;
-            }
-
-            if (this is T1)
-            {
-                _index = 1;
-            }
-
-            if (this is T2)
-            {
-                _index = 2;
-            }
-
-            if (this is T3)
-            {
-                _index = 3;
-            }
-
-            if (this is T4)
-            {
-                _index = 4;
-            }
-
-            if (this is T5)
-            {
-                _index = 5;
-            }
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5> other)
         {
             return _index == other._index && Equals(_value, other._value);
@@ -1201,7 +1194,47 @@ namespace OneOf
             _value = value; 
             _index = index;
         }
-    
+
+        protected OneOfBase()
+        {
+            _value = this;
+
+            if (this is T0)
+            {
+                _index = 0;
+            }
+
+            if (this is T1)
+            {
+                _index = 1;
+            }
+
+            if (this is T2)
+            {
+                _index = 2;
+            }
+
+            if (this is T3)
+            {
+                _index = 3;
+            }
+
+            if (this is T4)
+            {
+                _index = 4;
+            }
+
+            if (this is T5)
+            {
+                _index = 5;
+            }
+
+            if (this is T6)
+            {
+                _index = 6;
+            }
+        }
+
         object IOneOf.Value 
         {
             get { return _value; }
@@ -1367,7 +1400,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6)
         {
             if (IsT0 && f0 != null)
@@ -1438,46 +1470,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        protected OneOfBase()
-        {
-            _value = this;
-
-            if (this is T0)
-            {
-                _index = 0;
-            }
-
-            if (this is T1)
-            {
-                _index = 1;
-            }
-
-            if (this is T2)
-            {
-                _index = 2;
-            }
-
-            if (this is T3)
-            {
-                _index = 3;
-            }
-
-            if (this is T4)
-            {
-                _index = 4;
-            }
-
-            if (this is T5)
-            {
-                _index = 5;
-            }
-
-            if (this is T6)
-            {
-                _index = 6;
-            }
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6> other)
         {
             return _index == other._index && Equals(_value, other._value);
@@ -1518,7 +1510,52 @@ namespace OneOf
             _value = value; 
             _index = index;
         }
-    
+
+        protected OneOfBase()
+        {
+            _value = this;
+
+            if (this is T0)
+            {
+                _index = 0;
+            }
+
+            if (this is T1)
+            {
+                _index = 1;
+            }
+
+            if (this is T2)
+            {
+                _index = 2;
+            }
+
+            if (this is T3)
+            {
+                _index = 3;
+            }
+
+            if (this is T4)
+            {
+                _index = 4;
+            }
+
+            if (this is T5)
+            {
+                _index = 5;
+            }
+
+            if (this is T6)
+            {
+                _index = 6;
+            }
+
+            if (this is T7)
+            {
+                _index = 7;
+            }
+        }
+
         object IOneOf.Value 
         {
             get { return _value; }
@@ -1705,7 +1742,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7)
         {
             if (IsT0 && f0 != null)
@@ -1784,6 +1820,47 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> other)
+        {
+            return _index == other._index && Equals(_value, other._value);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>;
+            return other != null && Equals(other);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return ((_value?.GetHashCode() ?? 0)*397) ^ _index;
+            }
+        }
+    }
+
+    public class OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> : IOneOf
+    {
+        readonly object _value;
+        readonly int _index;
+        
+        OneOfBase(object value, int index)
+        {
+            _value = value; 
+            _index = index;
+        }
+
         protected OneOfBase()
         {
             _value = this;
@@ -1827,49 +1904,13 @@ namespace OneOf
             {
                 _index = 7;
             }
-        }
 
-        bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> other)
-        {
-            return _index == other._index && Equals(_value, other._value);
-        }
-
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
+            if (this is T8)
             {
-                return false;
-            }
-
-            if (ReferenceEquals(this, obj))
-            {
-                return true;
-            }
-
-            var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>;
-            return other != null && Equals(other);
-        }
-
-        public override int GetHashCode()
-        {
-            unchecked
-            {
-                return ((_value?.GetHashCode() ?? 0)*397) ^ _index;
+                _index = 8;
             }
         }
-    }
 
-    public class OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> : IOneOf
-    {
-        readonly object _value;
-        readonly int _index;
-        
-        OneOfBase(object value, int index)
-        {
-            _value = value; 
-            _index = index;
-        }
-    
         object IOneOf.Value 
         {
             get { return _value; }
@@ -2077,7 +2118,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8)
         {
             if (IsT0 && f0 != null)
@@ -2162,56 +2202,6 @@ namespace OneOf
                 return otherwise();
             }
             throw new InvalidOperationException();
-        }
-
-        protected OneOfBase()
-        {
-            _value = this;
-
-            if (this is T0)
-            {
-                _index = 0;
-            }
-
-            if (this is T1)
-            {
-                _index = 1;
-            }
-
-            if (this is T2)
-            {
-                _index = 2;
-            }
-
-            if (this is T3)
-            {
-                _index = 3;
-            }
-
-            if (this is T4)
-            {
-                _index = 4;
-            }
-
-            if (this is T5)
-            {
-                _index = 5;
-            }
-
-            if (this is T6)
-            {
-                _index = 6;
-            }
-
-            if (this is T7)
-            {
-                _index = 7;
-            }
-
-            if (this is T8)
-            {
-                _index = 8;
-            }
         }
 
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> other)
