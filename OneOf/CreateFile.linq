@@ -13,63 +13,91 @@ void Main()
 
 public string GetContent(bool isStruct)
 {
+    var className = isStruct ? "OneOf" : "OneOfBase";
     var sb = new StringBuilder();
-    sb.AppendLine(@"using System;
+    sb.Append(@"using System;
 
-namespace OneOf.Structs
+namespace OneOf
 {");
     for (var i = 1; i < 10; i++)
     {
         var genericArg = string.Join(", ", Enumerable.Range(0, i).Select(e => $"T{e}"));
+
+        sb.AppendLine($@"
+    public {(isStruct ? "struct" : "class")} {className}<{genericArg}> : IOneOf");
+        for (var j = 0; j < i; j++)
+        {
+            sb.AppendLine($"        where T{j} : class");
+        }
+        sb.AppendLine("    {");
+        for (var j = 0; j < i; j++)
+        {
+            sb.AppendLine($@"        readonly T{j} _value{j};");
+        }
+
+        sb.Append($@"        readonly int _index;
     
-        sb.AppendLine($@"    public struct OneOfStruct<{genericArg}> : IOneOf
-    {{
-        readonly object _value;
-        readonly int _index;
-        
-        OneOfStruct(object value, int index)
-        {{
-            _value = value; 
-            _index = index;
-        }}
-");
-    
+        {className}(int index");
+        for (var j = 0; j < i; j++)
+        {
+            sb.Append($", T{j} value{j} = default(T{j})");
+        }
+        sb.Append(@")
+        { 
+            _index = index;");
+        for (var j = 0; j < i; j++)
+        {
+            sb.Append($@"
+            _value{j} = value{j};");
+        }
+        sb.AppendLine(@"
+        }");
+
         if (!isStruct)
         {
-            sb.AppendLine(@"        protected OneOfBase()
-        {
-            _value = this;");
+            sb.AppendLine($@"
+            protected {className}()
+        {{");
 
             for (var j = 0; j < i; j++)
-            {                
-                sb.AppendLine($@"
-            if (this is T{j})
-            {{
-                _index = {j};
+            {
+                sb.AppendLine($@"            {{
+                var value = this as T{j};
+                if (value != null)
+                {{
+                    _index = {j};
+                    _value{j} = value;
+                    return;
+                }}
             }}");
             }
 
-            sb.AppendLine(@"        }
-");
+            sb.AppendLine(@"        }");
         }
-        
-        sb.AppendLine(@"        object IOneOf.Value 
+
+        sb.Append(@"
+        object IOneOf.Value 
         {
-            get { return _value; }
-        }
-    
-        T Get<T>(int index)
-        {
-            if (index != _index)
+            get
             {
-                throw new InvalidOperationException($""Cannot return as T{index} as result is T{_index}"");
+                switch (_index)
+                {");
+        for (var j = 0; j < i; j++)
+        {
+            sb.Append($@"
+                    case {j}:
+                        return _value{j};");
+        }
+        sb.AppendLine(@"
+                    default:
+                        throw new InvalidOperationException();
+                }
             }
-            return (T)_value;
         }");
         for (var j = 0; j < i; j++)
         {
             sb.AppendLine(
-$@"
+        $@"
         public bool IsT{j}
         {{
             get {{ return _index == {j}; }}
@@ -77,18 +105,25 @@ $@"
         
         public T{j} AsT{j}
         {{
-            get {{ return Get<T{j}>({j}); }}
+            get
+            {{
+                if (_index != {j})
+                {{
+                    throw new InvalidOperationException($""Cannot return as T{j} as result is T{{_index}}"");
+                }}
+                return _value{j};
+            }}
         }}
         
-        public static implicit operator OneOfStruct<{genericArg}> (T{j} t)
+        public static implicit operator {className}<{genericArg}>(T{j} t)
         {{
-             return new OneOfStruct<{genericArg}>(t, {j});
-        }}
-");
+             return new {className}<{genericArg}>({j}, value{j}: t);
+        }}");
         }
 
         var matchArgList0 = string.Join(", ", Enumerable.Range(0, i).Select(e => $"Action<T{e}> f{e}"));
-        sb.AppendLine($@"        public void Switch({matchArgList0})
+        sb.AppendLine($@"
+        public void Switch({matchArgList0})
         {{");
 
         for (var j = 0; j < i; j++)
@@ -117,11 +152,11 @@ $@"
         }
 
         sb.AppendLine(@"            throw new InvalidOperationException();
-        }
-");
+        }");
 
         var matchArgList2 = string.Join(", ", Enumerable.Range(0, i).Select(e => $"Func<T{e}, TResult> f{e} = null"));
-        sb.AppendLine($@"        public TResult MatchSome<TResult>({matchArgList2}, Func<TResult> otherwise = null)
+        sb.AppendLine($@"
+        public TResult MatchSome<TResult>({matchArgList2}, Func<TResult> otherwise = null)
         {{");
 
         for (var j = 0; j < i; j++)
@@ -138,27 +173,41 @@ $@"
             }
             throw new InvalidOperationException();
         }");
-        
-        sb.AppendLine($@"
-        bool Equals(OneOfStruct<{genericArg}> other)
-        {{
-            return _index == other._index && Equals(_value, other._value);
-        }}
 
-        public override bool Equals(object obj)
+       sb.AppendLine($@"
+        bool Equals({className}<{genericArg}> other)
         {{
-            if (ReferenceEquals(null, obj))
+            if (_index != other._index)
             {{
                 return false;
             }}
-");
-        if(isStruct)
+            switch (_index)
+            {{");
+        for (var j = 0; j < i; j++)
         {
-            sb.AppendLine($@"            return obj is OneOfStruct<{genericArg}> && Equals((OneOfStruct<{genericArg}>) obj);");
+            sb.AppendLine($@"                case {j}:
+                    return Equals(_value{j}, other._value{j});");
+        }
+        sb.AppendLine(@"                default:
+                    return false;
+            }
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }");
+        if (isStruct)
+        {
+            sb.AppendLine($@"
+            return obj is {className}<{genericArg}> && Equals(({className}<{genericArg}>)obj);");
         }
         else
         {
-            sb.AppendLine($@"            if (ReferenceEquals(this, obj))
+            sb.AppendLine($@"
+            if (ReferenceEquals(this, obj))
             {{
                 return true;
             }}
@@ -166,21 +215,31 @@ $@"
             var other = obj as OneOfBase<{genericArg}>;
             return other != null && Equals(other);");
         }
-            
-        sb.AppendLine($@"        }}
+
+        sb.AppendLine(@"        }
 
         public override int GetHashCode()
-        {{
+        {
             unchecked
-            {{
-                return ((_value?.GetHashCode() ?? 0)*397) ^ _index;
-            }}
-        }}
-    }}
-");
+            {
+                int hashCode;
+                switch (_index)
+                {");
+        for (var j = 0; j < i; j++)
+        {
+            sb.AppendLine($@"                    case {j}:
+                    hashCode = _value{j}?.GetHashCode() ?? 0;
+                    break;");
+        }
+        sb.AppendLine(@"                    default:
+                        hashCode = 0;
+                        break;
+                }
+                return (hashCode*397) ^ _index;
+            }
+        }
+    }");
     }
     sb.AppendLine("}");
-    var content = sb.ToString();
-    if (isStruct) return content.Replace(".Structs", "").Replace("OneOfStruct", "OneOf");
-    return content.Replace("struct", "class").Replace(".Structs", "").Replace("OneOfStruct", "OneOfBase");
+    return sb.ToString(); ;
 }
