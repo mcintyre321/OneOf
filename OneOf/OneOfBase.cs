@@ -5,32 +5,32 @@ namespace OneOf
 {
     public class OneOfBase<T0> : IOneOf
     {
-        readonly object value;
-        readonly int index;
+        readonly object _value;
+        readonly int _index;
         
         OneOfBase(object value, int index)
         {
-            this.value = value; 
-            this.index = index;
+            _value = value; 
+            _index = index;
         }
     
         object IOneOf.Value 
         {
-            get { return value; }
+            get { return _value; }
         }
     
         T Get<T>(int index)
         {
-            if (index != this.index)
+            if (index != _index)
             {
-                throw new InvalidOperationException($"Cannot return as T{index} as result is T{this.index}");
+                throw new InvalidOperationException($"Cannot return as T{index} as result is T{_index}");
             }
-            return (T)value;
+            return (T)_value;
         }
 
         public bool IsT0
         {
-            get { return index == 0; }
+            get { return _index == 0; }
         }
         
         public T0 AsT0
@@ -43,12 +43,11 @@ namespace OneOf
              return new OneOfBase<T0>(t, 0);
         }
 
-
         public void Switch(Action<T0> f0)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                f0(this.AsT0);
+                f0(AsT0);
                 return; 
             }
             throw new InvalidOperationException();
@@ -57,18 +56,18 @@ namespace OneOf
 
         public TResult Match<TResult>(Func<T0, TResult> f0)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                return f0(this.AsT0);
+                return f0(AsT0);
             }
             throw new InvalidOperationException();
         }
 
         public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<TResult> otherwise = null)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                return f0(this.AsT0);
+                return f0(AsT0);
             }
             if (otherwise != null)
             {
@@ -79,17 +78,17 @@ namespace OneOf
 
         protected OneOfBase()
         {
-            this.value = this;
+            _value = this;
 
             if (this is T0)
             {
-                this.index = 0;
+                _index = 0;
             }
         }
 
         bool Equals(OneOfBase<T0> other)
         {
-            return index == other.index && Equals(value, other.value);
+            return _index == other._index && Equals(_value, other._value);
         }
 
         public override bool Equals(object obj)
@@ -112,39 +111,39 @@ namespace OneOf
         {
             unchecked
             {
-                return ((value?.GetHashCode() ?? 0)*397) ^ index;
+                return ((_value?.GetHashCode() ?? 0)*397) ^ _index;
             }
         }
     }
 
     public class OneOfBase<T0, T1> : IOneOf
     {
-        readonly object value;
-        readonly int index;
+        readonly object _value;
+        readonly int _index;
         
         OneOfBase(object value, int index)
         {
-            this.value = value; 
-            this.index = index;
+            _value = value; 
+            _index = index;
         }
     
         object IOneOf.Value 
         {
-            get { return value; }
+            get { return _value; }
         }
     
         T Get<T>(int index)
         {
-            if (index != this.index)
+            if (index != _index)
             {
-                throw new InvalidOperationException($"Cannot return as T{index} as result is T{this.index}");
+                throw new InvalidOperationException($"Cannot return as T{index} as result is T{_index}");
             }
-            return (T)value;
+            return (T)_value;
         }
 
         public bool IsT0
         {
-            get { return index == 0; }
+            get { return _index == 0; }
         }
         
         public T0 AsT0
@@ -160,7 +159,7 @@ namespace OneOf
 
         public bool IsT1
         {
-            get { return index == 1; }
+            get { return _index == 1; }
         }
         
         public T1 AsT1
@@ -173,17 +172,16 @@ namespace OneOf
              return new OneOfBase<T0, T1>(t, 1);
         }
 
-
         public void Switch(Action<T0> f0, Action<T1> f1)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                f0(this.AsT0);
+                f0(AsT0);
                 return; 
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                f1(this.AsT1);
+                f1(AsT1);
                 return; 
             }
             throw new InvalidOperationException();
@@ -192,26 +190,26 @@ namespace OneOf
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                return f0(this.AsT0);
+                return f0(AsT0);
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                return f1(this.AsT1);
+                return f1(AsT1);
             }
             throw new InvalidOperationException();
         }
 
         public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<TResult> otherwise = null)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                return f0(this.AsT0);
+                return f0(AsT0);
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                return f1(this.AsT1);
+                return f1(AsT1);
             }
             if (otherwise != null)
             {
@@ -222,22 +220,22 @@ namespace OneOf
 
         protected OneOfBase()
         {
-            this.value = this;
+            _value = this;
 
             if (this is T0)
             {
-                this.index = 0;
+                _index = 0;
             }
 
             if (this is T1)
             {
-                this.index = 1;
+                _index = 1;
             }
         }
 
         bool Equals(OneOfBase<T0, T1> other)
         {
-            return index == other.index && Equals(value, other.value);
+            return _index == other._index && Equals(_value, other._value);
         }
 
         public override bool Equals(object obj)
@@ -260,39 +258,39 @@ namespace OneOf
         {
             unchecked
             {
-                return ((value?.GetHashCode() ?? 0)*397) ^ index;
+                return ((_value?.GetHashCode() ?? 0)*397) ^ _index;
             }
         }
     }
 
     public class OneOfBase<T0, T1, T2> : IOneOf
     {
-        readonly object value;
-        readonly int index;
+        readonly object _value;
+        readonly int _index;
         
         OneOfBase(object value, int index)
         {
-            this.value = value; 
-            this.index = index;
+            _value = value; 
+            _index = index;
         }
     
         object IOneOf.Value 
         {
-            get { return value; }
+            get { return _value; }
         }
     
         T Get<T>(int index)
         {
-            if (index != this.index)
+            if (index != _index)
             {
-                throw new InvalidOperationException($"Cannot return as T{index} as result is T{this.index}");
+                throw new InvalidOperationException($"Cannot return as T{index} as result is T{_index}");
             }
-            return (T)value;
+            return (T)_value;
         }
 
         public bool IsT0
         {
-            get { return index == 0; }
+            get { return _index == 0; }
         }
         
         public T0 AsT0
@@ -308,7 +306,7 @@ namespace OneOf
 
         public bool IsT1
         {
-            get { return index == 1; }
+            get { return _index == 1; }
         }
         
         public T1 AsT1
@@ -324,7 +322,7 @@ namespace OneOf
 
         public bool IsT2
         {
-            get { return index == 2; }
+            get { return _index == 2; }
         }
         
         public T2 AsT2
@@ -337,22 +335,21 @@ namespace OneOf
              return new OneOfBase<T0, T1, T2>(t, 2);
         }
 
-
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                f0(this.AsT0);
+                f0(AsT0);
                 return; 
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                f1(this.AsT1);
+                f1(AsT1);
                 return; 
             }
-            if (this.IsT2 && f2 != null)
+            if (IsT2 && f2 != null)
             {
-                f2(this.AsT2);
+                f2(AsT2);
                 return; 
             }
             throw new InvalidOperationException();
@@ -361,34 +358,34 @@ namespace OneOf
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                return f0(this.AsT0);
+                return f0(AsT0);
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                return f1(this.AsT1);
+                return f1(AsT1);
             }
-            if (this.IsT2 && f2 != null)
+            if (IsT2 && f2 != null)
             {
-                return f2(this.AsT2);
+                return f2(AsT2);
             }
             throw new InvalidOperationException();
         }
 
         public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<TResult> otherwise = null)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                return f0(this.AsT0);
+                return f0(AsT0);
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                return f1(this.AsT1);
+                return f1(AsT1);
             }
-            if (this.IsT2 && f2 != null)
+            if (IsT2 && f2 != null)
             {
-                return f2(this.AsT2);
+                return f2(AsT2);
             }
             if (otherwise != null)
             {
@@ -399,27 +396,27 @@ namespace OneOf
 
         protected OneOfBase()
         {
-            this.value = this;
+            _value = this;
 
             if (this is T0)
             {
-                this.index = 0;
+                _index = 0;
             }
 
             if (this is T1)
             {
-                this.index = 1;
+                _index = 1;
             }
 
             if (this is T2)
             {
-                this.index = 2;
+                _index = 2;
             }
         }
 
         bool Equals(OneOfBase<T0, T1, T2> other)
         {
-            return index == other.index && Equals(value, other.value);
+            return _index == other._index && Equals(_value, other._value);
         }
 
         public override bool Equals(object obj)
@@ -442,39 +439,39 @@ namespace OneOf
         {
             unchecked
             {
-                return ((value?.GetHashCode() ?? 0)*397) ^ index;
+                return ((_value?.GetHashCode() ?? 0)*397) ^ _index;
             }
         }
     }
 
     public class OneOfBase<T0, T1, T2, T3> : IOneOf
     {
-        readonly object value;
-        readonly int index;
+        readonly object _value;
+        readonly int _index;
         
         OneOfBase(object value, int index)
         {
-            this.value = value; 
-            this.index = index;
+            _value = value; 
+            _index = index;
         }
     
         object IOneOf.Value 
         {
-            get { return value; }
+            get { return _value; }
         }
     
         T Get<T>(int index)
         {
-            if (index != this.index)
+            if (index != _index)
             {
-                throw new InvalidOperationException($"Cannot return as T{index} as result is T{this.index}");
+                throw new InvalidOperationException($"Cannot return as T{index} as result is T{_index}");
             }
-            return (T)value;
+            return (T)_value;
         }
 
         public bool IsT0
         {
-            get { return index == 0; }
+            get { return _index == 0; }
         }
         
         public T0 AsT0
@@ -490,7 +487,7 @@ namespace OneOf
 
         public bool IsT1
         {
-            get { return index == 1; }
+            get { return _index == 1; }
         }
         
         public T1 AsT1
@@ -506,7 +503,7 @@ namespace OneOf
 
         public bool IsT2
         {
-            get { return index == 2; }
+            get { return _index == 2; }
         }
         
         public T2 AsT2
@@ -522,7 +519,7 @@ namespace OneOf
 
         public bool IsT3
         {
-            get { return index == 3; }
+            get { return _index == 3; }
         }
         
         public T3 AsT3
@@ -535,27 +532,26 @@ namespace OneOf
              return new OneOfBase<T0, T1, T2, T3>(t, 3);
         }
 
-
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                f0(this.AsT0);
+                f0(AsT0);
                 return; 
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                f1(this.AsT1);
+                f1(AsT1);
                 return; 
             }
-            if (this.IsT2 && f2 != null)
+            if (IsT2 && f2 != null)
             {
-                f2(this.AsT2);
+                f2(AsT2);
                 return; 
             }
-            if (this.IsT3 && f3 != null)
+            if (IsT3 && f3 != null)
             {
-                f3(this.AsT3);
+                f3(AsT3);
                 return; 
             }
             throw new InvalidOperationException();
@@ -564,42 +560,42 @@ namespace OneOf
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                return f0(this.AsT0);
+                return f0(AsT0);
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                return f1(this.AsT1);
+                return f1(AsT1);
             }
-            if (this.IsT2 && f2 != null)
+            if (IsT2 && f2 != null)
             {
-                return f2(this.AsT2);
+                return f2(AsT2);
             }
-            if (this.IsT3 && f3 != null)
+            if (IsT3 && f3 != null)
             {
-                return f3(this.AsT3);
+                return f3(AsT3);
             }
             throw new InvalidOperationException();
         }
 
         public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<TResult> otherwise = null)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                return f0(this.AsT0);
+                return f0(AsT0);
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                return f1(this.AsT1);
+                return f1(AsT1);
             }
-            if (this.IsT2 && f2 != null)
+            if (IsT2 && f2 != null)
             {
-                return f2(this.AsT2);
+                return f2(AsT2);
             }
-            if (this.IsT3 && f3 != null)
+            if (IsT3 && f3 != null)
             {
-                return f3(this.AsT3);
+                return f3(AsT3);
             }
             if (otherwise != null)
             {
@@ -610,32 +606,32 @@ namespace OneOf
 
         protected OneOfBase()
         {
-            this.value = this;
+            _value = this;
 
             if (this is T0)
             {
-                this.index = 0;
+                _index = 0;
             }
 
             if (this is T1)
             {
-                this.index = 1;
+                _index = 1;
             }
 
             if (this is T2)
             {
-                this.index = 2;
+                _index = 2;
             }
 
             if (this is T3)
             {
-                this.index = 3;
+                _index = 3;
             }
         }
 
         bool Equals(OneOfBase<T0, T1, T2, T3> other)
         {
-            return index == other.index && Equals(value, other.value);
+            return _index == other._index && Equals(_value, other._value);
         }
 
         public override bool Equals(object obj)
@@ -658,39 +654,39 @@ namespace OneOf
         {
             unchecked
             {
-                return ((value?.GetHashCode() ?? 0)*397) ^ index;
+                return ((_value?.GetHashCode() ?? 0)*397) ^ _index;
             }
         }
     }
 
     public class OneOfBase<T0, T1, T2, T3, T4> : IOneOf
     {
-        readonly object value;
-        readonly int index;
+        readonly object _value;
+        readonly int _index;
         
         OneOfBase(object value, int index)
         {
-            this.value = value; 
-            this.index = index;
+            _value = value; 
+            _index = index;
         }
     
         object IOneOf.Value 
         {
-            get { return value; }
+            get { return _value; }
         }
     
         T Get<T>(int index)
         {
-            if (index != this.index)
+            if (index != _index)
             {
-                throw new InvalidOperationException($"Cannot return as T{index} as result is T{this.index}");
+                throw new InvalidOperationException($"Cannot return as T{index} as result is T{_index}");
             }
-            return (T)value;
+            return (T)_value;
         }
 
         public bool IsT0
         {
-            get { return index == 0; }
+            get { return _index == 0; }
         }
         
         public T0 AsT0
@@ -706,7 +702,7 @@ namespace OneOf
 
         public bool IsT1
         {
-            get { return index == 1; }
+            get { return _index == 1; }
         }
         
         public T1 AsT1
@@ -722,7 +718,7 @@ namespace OneOf
 
         public bool IsT2
         {
-            get { return index == 2; }
+            get { return _index == 2; }
         }
         
         public T2 AsT2
@@ -738,7 +734,7 @@ namespace OneOf
 
         public bool IsT3
         {
-            get { return index == 3; }
+            get { return _index == 3; }
         }
         
         public T3 AsT3
@@ -754,7 +750,7 @@ namespace OneOf
 
         public bool IsT4
         {
-            get { return index == 4; }
+            get { return _index == 4; }
         }
         
         public T4 AsT4
@@ -767,32 +763,31 @@ namespace OneOf
              return new OneOfBase<T0, T1, T2, T3, T4>(t, 4);
         }
 
-
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                f0(this.AsT0);
+                f0(AsT0);
                 return; 
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                f1(this.AsT1);
+                f1(AsT1);
                 return; 
             }
-            if (this.IsT2 && f2 != null)
+            if (IsT2 && f2 != null)
             {
-                f2(this.AsT2);
+                f2(AsT2);
                 return; 
             }
-            if (this.IsT3 && f3 != null)
+            if (IsT3 && f3 != null)
             {
-                f3(this.AsT3);
+                f3(AsT3);
                 return; 
             }
-            if (this.IsT4 && f4 != null)
+            if (IsT4 && f4 != null)
             {
-                f4(this.AsT4);
+                f4(AsT4);
                 return; 
             }
             throw new InvalidOperationException();
@@ -801,50 +796,50 @@ namespace OneOf
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                return f0(this.AsT0);
+                return f0(AsT0);
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                return f1(this.AsT1);
+                return f1(AsT1);
             }
-            if (this.IsT2 && f2 != null)
+            if (IsT2 && f2 != null)
             {
-                return f2(this.AsT2);
+                return f2(AsT2);
             }
-            if (this.IsT3 && f3 != null)
+            if (IsT3 && f3 != null)
             {
-                return f3(this.AsT3);
+                return f3(AsT3);
             }
-            if (this.IsT4 && f4 != null)
+            if (IsT4 && f4 != null)
             {
-                return f4(this.AsT4);
+                return f4(AsT4);
             }
             throw new InvalidOperationException();
         }
 
         public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<TResult> otherwise = null)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                return f0(this.AsT0);
+                return f0(AsT0);
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                return f1(this.AsT1);
+                return f1(AsT1);
             }
-            if (this.IsT2 && f2 != null)
+            if (IsT2 && f2 != null)
             {
-                return f2(this.AsT2);
+                return f2(AsT2);
             }
-            if (this.IsT3 && f3 != null)
+            if (IsT3 && f3 != null)
             {
-                return f3(this.AsT3);
+                return f3(AsT3);
             }
-            if (this.IsT4 && f4 != null)
+            if (IsT4 && f4 != null)
             {
-                return f4(this.AsT4);
+                return f4(AsT4);
             }
             if (otherwise != null)
             {
@@ -855,37 +850,37 @@ namespace OneOf
 
         protected OneOfBase()
         {
-            this.value = this;
+            _value = this;
 
             if (this is T0)
             {
-                this.index = 0;
+                _index = 0;
             }
 
             if (this is T1)
             {
-                this.index = 1;
+                _index = 1;
             }
 
             if (this is T2)
             {
-                this.index = 2;
+                _index = 2;
             }
 
             if (this is T3)
             {
-                this.index = 3;
+                _index = 3;
             }
 
             if (this is T4)
             {
-                this.index = 4;
+                _index = 4;
             }
         }
 
         bool Equals(OneOfBase<T0, T1, T2, T3, T4> other)
         {
-            return index == other.index && Equals(value, other.value);
+            return _index == other._index && Equals(_value, other._value);
         }
 
         public override bool Equals(object obj)
@@ -908,39 +903,39 @@ namespace OneOf
         {
             unchecked
             {
-                return ((value?.GetHashCode() ?? 0)*397) ^ index;
+                return ((_value?.GetHashCode() ?? 0)*397) ^ _index;
             }
         }
     }
 
     public class OneOfBase<T0, T1, T2, T3, T4, T5> : IOneOf
     {
-        readonly object value;
-        readonly int index;
+        readonly object _value;
+        readonly int _index;
         
         OneOfBase(object value, int index)
         {
-            this.value = value; 
-            this.index = index;
+            _value = value; 
+            _index = index;
         }
     
         object IOneOf.Value 
         {
-            get { return value; }
+            get { return _value; }
         }
     
         T Get<T>(int index)
         {
-            if (index != this.index)
+            if (index != _index)
             {
-                throw new InvalidOperationException($"Cannot return as T{index} as result is T{this.index}");
+                throw new InvalidOperationException($"Cannot return as T{index} as result is T{_index}");
             }
-            return (T)value;
+            return (T)_value;
         }
 
         public bool IsT0
         {
-            get { return index == 0; }
+            get { return _index == 0; }
         }
         
         public T0 AsT0
@@ -956,7 +951,7 @@ namespace OneOf
 
         public bool IsT1
         {
-            get { return index == 1; }
+            get { return _index == 1; }
         }
         
         public T1 AsT1
@@ -972,7 +967,7 @@ namespace OneOf
 
         public bool IsT2
         {
-            get { return index == 2; }
+            get { return _index == 2; }
         }
         
         public T2 AsT2
@@ -988,7 +983,7 @@ namespace OneOf
 
         public bool IsT3
         {
-            get { return index == 3; }
+            get { return _index == 3; }
         }
         
         public T3 AsT3
@@ -1004,7 +999,7 @@ namespace OneOf
 
         public bool IsT4
         {
-            get { return index == 4; }
+            get { return _index == 4; }
         }
         
         public T4 AsT4
@@ -1020,7 +1015,7 @@ namespace OneOf
 
         public bool IsT5
         {
-            get { return index == 5; }
+            get { return _index == 5; }
         }
         
         public T5 AsT5
@@ -1033,37 +1028,36 @@ namespace OneOf
              return new OneOfBase<T0, T1, T2, T3, T4, T5>(t, 5);
         }
 
-
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                f0(this.AsT0);
+                f0(AsT0);
                 return; 
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                f1(this.AsT1);
+                f1(AsT1);
                 return; 
             }
-            if (this.IsT2 && f2 != null)
+            if (IsT2 && f2 != null)
             {
-                f2(this.AsT2);
+                f2(AsT2);
                 return; 
             }
-            if (this.IsT3 && f3 != null)
+            if (IsT3 && f3 != null)
             {
-                f3(this.AsT3);
+                f3(AsT3);
                 return; 
             }
-            if (this.IsT4 && f4 != null)
+            if (IsT4 && f4 != null)
             {
-                f4(this.AsT4);
+                f4(AsT4);
                 return; 
             }
-            if (this.IsT5 && f5 != null)
+            if (IsT5 && f5 != null)
             {
-                f5(this.AsT5);
+                f5(AsT5);
                 return; 
             }
             throw new InvalidOperationException();
@@ -1072,58 +1066,58 @@ namespace OneOf
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                return f0(this.AsT0);
+                return f0(AsT0);
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                return f1(this.AsT1);
+                return f1(AsT1);
             }
-            if (this.IsT2 && f2 != null)
+            if (IsT2 && f2 != null)
             {
-                return f2(this.AsT2);
+                return f2(AsT2);
             }
-            if (this.IsT3 && f3 != null)
+            if (IsT3 && f3 != null)
             {
-                return f3(this.AsT3);
+                return f3(AsT3);
             }
-            if (this.IsT4 && f4 != null)
+            if (IsT4 && f4 != null)
             {
-                return f4(this.AsT4);
+                return f4(AsT4);
             }
-            if (this.IsT5 && f5 != null)
+            if (IsT5 && f5 != null)
             {
-                return f5(this.AsT5);
+                return f5(AsT5);
             }
             throw new InvalidOperationException();
         }
 
         public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<TResult> otherwise = null)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                return f0(this.AsT0);
+                return f0(AsT0);
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                return f1(this.AsT1);
+                return f1(AsT1);
             }
-            if (this.IsT2 && f2 != null)
+            if (IsT2 && f2 != null)
             {
-                return f2(this.AsT2);
+                return f2(AsT2);
             }
-            if (this.IsT3 && f3 != null)
+            if (IsT3 && f3 != null)
             {
-                return f3(this.AsT3);
+                return f3(AsT3);
             }
-            if (this.IsT4 && f4 != null)
+            if (IsT4 && f4 != null)
             {
-                return f4(this.AsT4);
+                return f4(AsT4);
             }
-            if (this.IsT5 && f5 != null)
+            if (IsT5 && f5 != null)
             {
-                return f5(this.AsT5);
+                return f5(AsT5);
             }
             if (otherwise != null)
             {
@@ -1134,42 +1128,42 @@ namespace OneOf
 
         protected OneOfBase()
         {
-            this.value = this;
+            _value = this;
 
             if (this is T0)
             {
-                this.index = 0;
+                _index = 0;
             }
 
             if (this is T1)
             {
-                this.index = 1;
+                _index = 1;
             }
 
             if (this is T2)
             {
-                this.index = 2;
+                _index = 2;
             }
 
             if (this is T3)
             {
-                this.index = 3;
+                _index = 3;
             }
 
             if (this is T4)
             {
-                this.index = 4;
+                _index = 4;
             }
 
             if (this is T5)
             {
-                this.index = 5;
+                _index = 5;
             }
         }
 
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5> other)
         {
-            return index == other.index && Equals(value, other.value);
+            return _index == other._index && Equals(_value, other._value);
         }
 
         public override bool Equals(object obj)
@@ -1192,39 +1186,39 @@ namespace OneOf
         {
             unchecked
             {
-                return ((value?.GetHashCode() ?? 0)*397) ^ index;
+                return ((_value?.GetHashCode() ?? 0)*397) ^ _index;
             }
         }
     }
 
     public class OneOfBase<T0, T1, T2, T3, T4, T5, T6> : IOneOf
     {
-        readonly object value;
-        readonly int index;
+        readonly object _value;
+        readonly int _index;
         
         OneOfBase(object value, int index)
         {
-            this.value = value; 
-            this.index = index;
+            _value = value; 
+            _index = index;
         }
     
         object IOneOf.Value 
         {
-            get { return value; }
+            get { return _value; }
         }
     
         T Get<T>(int index)
         {
-            if (index != this.index)
+            if (index != _index)
             {
-                throw new InvalidOperationException($"Cannot return as T{index} as result is T{this.index}");
+                throw new InvalidOperationException($"Cannot return as T{index} as result is T{_index}");
             }
-            return (T)value;
+            return (T)_value;
         }
 
         public bool IsT0
         {
-            get { return index == 0; }
+            get { return _index == 0; }
         }
         
         public T0 AsT0
@@ -1240,7 +1234,7 @@ namespace OneOf
 
         public bool IsT1
         {
-            get { return index == 1; }
+            get { return _index == 1; }
         }
         
         public T1 AsT1
@@ -1256,7 +1250,7 @@ namespace OneOf
 
         public bool IsT2
         {
-            get { return index == 2; }
+            get { return _index == 2; }
         }
         
         public T2 AsT2
@@ -1272,7 +1266,7 @@ namespace OneOf
 
         public bool IsT3
         {
-            get { return index == 3; }
+            get { return _index == 3; }
         }
         
         public T3 AsT3
@@ -1288,7 +1282,7 @@ namespace OneOf
 
         public bool IsT4
         {
-            get { return index == 4; }
+            get { return _index == 4; }
         }
         
         public T4 AsT4
@@ -1304,7 +1298,7 @@ namespace OneOf
 
         public bool IsT5
         {
-            get { return index == 5; }
+            get { return _index == 5; }
         }
         
         public T5 AsT5
@@ -1320,7 +1314,7 @@ namespace OneOf
 
         public bool IsT6
         {
-            get { return index == 6; }
+            get { return _index == 6; }
         }
         
         public T6 AsT6
@@ -1333,42 +1327,41 @@ namespace OneOf
              return new OneOfBase<T0, T1, T2, T3, T4, T5, T6>(t, 6);
         }
 
-
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                f0(this.AsT0);
+                f0(AsT0);
                 return; 
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                f1(this.AsT1);
+                f1(AsT1);
                 return; 
             }
-            if (this.IsT2 && f2 != null)
+            if (IsT2 && f2 != null)
             {
-                f2(this.AsT2);
+                f2(AsT2);
                 return; 
             }
-            if (this.IsT3 && f3 != null)
+            if (IsT3 && f3 != null)
             {
-                f3(this.AsT3);
+                f3(AsT3);
                 return; 
             }
-            if (this.IsT4 && f4 != null)
+            if (IsT4 && f4 != null)
             {
-                f4(this.AsT4);
+                f4(AsT4);
                 return; 
             }
-            if (this.IsT5 && f5 != null)
+            if (IsT5 && f5 != null)
             {
-                f5(this.AsT5);
+                f5(AsT5);
                 return; 
             }
-            if (this.IsT6 && f6 != null)
+            if (IsT6 && f6 != null)
             {
-                f6(this.AsT6);
+                f6(AsT6);
                 return; 
             }
             throw new InvalidOperationException();
@@ -1377,66 +1370,66 @@ namespace OneOf
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                return f0(this.AsT0);
+                return f0(AsT0);
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                return f1(this.AsT1);
+                return f1(AsT1);
             }
-            if (this.IsT2 && f2 != null)
+            if (IsT2 && f2 != null)
             {
-                return f2(this.AsT2);
+                return f2(AsT2);
             }
-            if (this.IsT3 && f3 != null)
+            if (IsT3 && f3 != null)
             {
-                return f3(this.AsT3);
+                return f3(AsT3);
             }
-            if (this.IsT4 && f4 != null)
+            if (IsT4 && f4 != null)
             {
-                return f4(this.AsT4);
+                return f4(AsT4);
             }
-            if (this.IsT5 && f5 != null)
+            if (IsT5 && f5 != null)
             {
-                return f5(this.AsT5);
+                return f5(AsT5);
             }
-            if (this.IsT6 && f6 != null)
+            if (IsT6 && f6 != null)
             {
-                return f6(this.AsT6);
+                return f6(AsT6);
             }
             throw new InvalidOperationException();
         }
 
         public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<TResult> otherwise = null)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                return f0(this.AsT0);
+                return f0(AsT0);
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                return f1(this.AsT1);
+                return f1(AsT1);
             }
-            if (this.IsT2 && f2 != null)
+            if (IsT2 && f2 != null)
             {
-                return f2(this.AsT2);
+                return f2(AsT2);
             }
-            if (this.IsT3 && f3 != null)
+            if (IsT3 && f3 != null)
             {
-                return f3(this.AsT3);
+                return f3(AsT3);
             }
-            if (this.IsT4 && f4 != null)
+            if (IsT4 && f4 != null)
             {
-                return f4(this.AsT4);
+                return f4(AsT4);
             }
-            if (this.IsT5 && f5 != null)
+            if (IsT5 && f5 != null)
             {
-                return f5(this.AsT5);
+                return f5(AsT5);
             }
-            if (this.IsT6 && f6 != null)
+            if (IsT6 && f6 != null)
             {
-                return f6(this.AsT6);
+                return f6(AsT6);
             }
             if (otherwise != null)
             {
@@ -1447,47 +1440,47 @@ namespace OneOf
 
         protected OneOfBase()
         {
-            this.value = this;
+            _value = this;
 
             if (this is T0)
             {
-                this.index = 0;
+                _index = 0;
             }
 
             if (this is T1)
             {
-                this.index = 1;
+                _index = 1;
             }
 
             if (this is T2)
             {
-                this.index = 2;
+                _index = 2;
             }
 
             if (this is T3)
             {
-                this.index = 3;
+                _index = 3;
             }
 
             if (this is T4)
             {
-                this.index = 4;
+                _index = 4;
             }
 
             if (this is T5)
             {
-                this.index = 5;
+                _index = 5;
             }
 
             if (this is T6)
             {
-                this.index = 6;
+                _index = 6;
             }
         }
 
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6> other)
         {
-            return index == other.index && Equals(value, other.value);
+            return _index == other._index && Equals(_value, other._value);
         }
 
         public override bool Equals(object obj)
@@ -1510,39 +1503,39 @@ namespace OneOf
         {
             unchecked
             {
-                return ((value?.GetHashCode() ?? 0)*397) ^ index;
+                return ((_value?.GetHashCode() ?? 0)*397) ^ _index;
             }
         }
     }
 
     public class OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> : IOneOf
     {
-        readonly object value;
-        readonly int index;
+        readonly object _value;
+        readonly int _index;
         
         OneOfBase(object value, int index)
         {
-            this.value = value; 
-            this.index = index;
+            _value = value; 
+            _index = index;
         }
     
         object IOneOf.Value 
         {
-            get { return value; }
+            get { return _value; }
         }
     
         T Get<T>(int index)
         {
-            if (index != this.index)
+            if (index != _index)
             {
-                throw new InvalidOperationException($"Cannot return as T{index} as result is T{this.index}");
+                throw new InvalidOperationException($"Cannot return as T{index} as result is T{_index}");
             }
-            return (T)value;
+            return (T)_value;
         }
 
         public bool IsT0
         {
-            get { return index == 0; }
+            get { return _index == 0; }
         }
         
         public T0 AsT0
@@ -1558,7 +1551,7 @@ namespace OneOf
 
         public bool IsT1
         {
-            get { return index == 1; }
+            get { return _index == 1; }
         }
         
         public T1 AsT1
@@ -1574,7 +1567,7 @@ namespace OneOf
 
         public bool IsT2
         {
-            get { return index == 2; }
+            get { return _index == 2; }
         }
         
         public T2 AsT2
@@ -1590,7 +1583,7 @@ namespace OneOf
 
         public bool IsT3
         {
-            get { return index == 3; }
+            get { return _index == 3; }
         }
         
         public T3 AsT3
@@ -1606,7 +1599,7 @@ namespace OneOf
 
         public bool IsT4
         {
-            get { return index == 4; }
+            get { return _index == 4; }
         }
         
         public T4 AsT4
@@ -1622,7 +1615,7 @@ namespace OneOf
 
         public bool IsT5
         {
-            get { return index == 5; }
+            get { return _index == 5; }
         }
         
         public T5 AsT5
@@ -1638,7 +1631,7 @@ namespace OneOf
 
         public bool IsT6
         {
-            get { return index == 6; }
+            get { return _index == 6; }
         }
         
         public T6 AsT6
@@ -1654,7 +1647,7 @@ namespace OneOf
 
         public bool IsT7
         {
-            get { return index == 7; }
+            get { return _index == 7; }
         }
         
         public T7 AsT7
@@ -1667,47 +1660,46 @@ namespace OneOf
              return new OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>(t, 7);
         }
 
-
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                f0(this.AsT0);
+                f0(AsT0);
                 return; 
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                f1(this.AsT1);
+                f1(AsT1);
                 return; 
             }
-            if (this.IsT2 && f2 != null)
+            if (IsT2 && f2 != null)
             {
-                f2(this.AsT2);
+                f2(AsT2);
                 return; 
             }
-            if (this.IsT3 && f3 != null)
+            if (IsT3 && f3 != null)
             {
-                f3(this.AsT3);
+                f3(AsT3);
                 return; 
             }
-            if (this.IsT4 && f4 != null)
+            if (IsT4 && f4 != null)
             {
-                f4(this.AsT4);
+                f4(AsT4);
                 return; 
             }
-            if (this.IsT5 && f5 != null)
+            if (IsT5 && f5 != null)
             {
-                f5(this.AsT5);
+                f5(AsT5);
                 return; 
             }
-            if (this.IsT6 && f6 != null)
+            if (IsT6 && f6 != null)
             {
-                f6(this.AsT6);
+                f6(AsT6);
                 return; 
             }
-            if (this.IsT7 && f7 != null)
+            if (IsT7 && f7 != null)
             {
-                f7(this.AsT7);
+                f7(AsT7);
                 return; 
             }
             throw new InvalidOperationException();
@@ -1716,74 +1708,74 @@ namespace OneOf
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                return f0(this.AsT0);
+                return f0(AsT0);
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                return f1(this.AsT1);
+                return f1(AsT1);
             }
-            if (this.IsT2 && f2 != null)
+            if (IsT2 && f2 != null)
             {
-                return f2(this.AsT2);
+                return f2(AsT2);
             }
-            if (this.IsT3 && f3 != null)
+            if (IsT3 && f3 != null)
             {
-                return f3(this.AsT3);
+                return f3(AsT3);
             }
-            if (this.IsT4 && f4 != null)
+            if (IsT4 && f4 != null)
             {
-                return f4(this.AsT4);
+                return f4(AsT4);
             }
-            if (this.IsT5 && f5 != null)
+            if (IsT5 && f5 != null)
             {
-                return f5(this.AsT5);
+                return f5(AsT5);
             }
-            if (this.IsT6 && f6 != null)
+            if (IsT6 && f6 != null)
             {
-                return f6(this.AsT6);
+                return f6(AsT6);
             }
-            if (this.IsT7 && f7 != null)
+            if (IsT7 && f7 != null)
             {
-                return f7(this.AsT7);
+                return f7(AsT7);
             }
             throw new InvalidOperationException();
         }
 
         public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<TResult> otherwise = null)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                return f0(this.AsT0);
+                return f0(AsT0);
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                return f1(this.AsT1);
+                return f1(AsT1);
             }
-            if (this.IsT2 && f2 != null)
+            if (IsT2 && f2 != null)
             {
-                return f2(this.AsT2);
+                return f2(AsT2);
             }
-            if (this.IsT3 && f3 != null)
+            if (IsT3 && f3 != null)
             {
-                return f3(this.AsT3);
+                return f3(AsT3);
             }
-            if (this.IsT4 && f4 != null)
+            if (IsT4 && f4 != null)
             {
-                return f4(this.AsT4);
+                return f4(AsT4);
             }
-            if (this.IsT5 && f5 != null)
+            if (IsT5 && f5 != null)
             {
-                return f5(this.AsT5);
+                return f5(AsT5);
             }
-            if (this.IsT6 && f6 != null)
+            if (IsT6 && f6 != null)
             {
-                return f6(this.AsT6);
+                return f6(AsT6);
             }
-            if (this.IsT7 && f7 != null)
+            if (IsT7 && f7 != null)
             {
-                return f7(this.AsT7);
+                return f7(AsT7);
             }
             if (otherwise != null)
             {
@@ -1794,52 +1786,52 @@ namespace OneOf
 
         protected OneOfBase()
         {
-            this.value = this;
+            _value = this;
 
             if (this is T0)
             {
-                this.index = 0;
+                _index = 0;
             }
 
             if (this is T1)
             {
-                this.index = 1;
+                _index = 1;
             }
 
             if (this is T2)
             {
-                this.index = 2;
+                _index = 2;
             }
 
             if (this is T3)
             {
-                this.index = 3;
+                _index = 3;
             }
 
             if (this is T4)
             {
-                this.index = 4;
+                _index = 4;
             }
 
             if (this is T5)
             {
-                this.index = 5;
+                _index = 5;
             }
 
             if (this is T6)
             {
-                this.index = 6;
+                _index = 6;
             }
 
             if (this is T7)
             {
-                this.index = 7;
+                _index = 7;
             }
         }
 
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> other)
         {
-            return index == other.index && Equals(value, other.value);
+            return _index == other._index && Equals(_value, other._value);
         }
 
         public override bool Equals(object obj)
@@ -1862,39 +1854,39 @@ namespace OneOf
         {
             unchecked
             {
-                return ((value?.GetHashCode() ?? 0)*397) ^ index;
+                return ((_value?.GetHashCode() ?? 0)*397) ^ _index;
             }
         }
     }
 
     public class OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> : IOneOf
     {
-        readonly object value;
-        readonly int index;
+        readonly object _value;
+        readonly int _index;
         
         OneOfBase(object value, int index)
         {
-            this.value = value; 
-            this.index = index;
+            _value = value; 
+            _index = index;
         }
     
         object IOneOf.Value 
         {
-            get { return value; }
+            get { return _value; }
         }
     
         T Get<T>(int index)
         {
-            if (index != this.index)
+            if (index != _index)
             {
-                throw new InvalidOperationException($"Cannot return as T{index} as result is T{this.index}");
+                throw new InvalidOperationException($"Cannot return as T{index} as result is T{_index}");
             }
-            return (T)value;
+            return (T)_value;
         }
 
         public bool IsT0
         {
-            get { return index == 0; }
+            get { return _index == 0; }
         }
         
         public T0 AsT0
@@ -1910,7 +1902,7 @@ namespace OneOf
 
         public bool IsT1
         {
-            get { return index == 1; }
+            get { return _index == 1; }
         }
         
         public T1 AsT1
@@ -1926,7 +1918,7 @@ namespace OneOf
 
         public bool IsT2
         {
-            get { return index == 2; }
+            get { return _index == 2; }
         }
         
         public T2 AsT2
@@ -1942,7 +1934,7 @@ namespace OneOf
 
         public bool IsT3
         {
-            get { return index == 3; }
+            get { return _index == 3; }
         }
         
         public T3 AsT3
@@ -1958,7 +1950,7 @@ namespace OneOf
 
         public bool IsT4
         {
-            get { return index == 4; }
+            get { return _index == 4; }
         }
         
         public T4 AsT4
@@ -1974,7 +1966,7 @@ namespace OneOf
 
         public bool IsT5
         {
-            get { return index == 5; }
+            get { return _index == 5; }
         }
         
         public T5 AsT5
@@ -1990,7 +1982,7 @@ namespace OneOf
 
         public bool IsT6
         {
-            get { return index == 6; }
+            get { return _index == 6; }
         }
         
         public T6 AsT6
@@ -2006,7 +1998,7 @@ namespace OneOf
 
         public bool IsT7
         {
-            get { return index == 7; }
+            get { return _index == 7; }
         }
         
         public T7 AsT7
@@ -2022,7 +2014,7 @@ namespace OneOf
 
         public bool IsT8
         {
-            get { return index == 8; }
+            get { return _index == 8; }
         }
         
         public T8 AsT8
@@ -2035,52 +2027,51 @@ namespace OneOf
              return new OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>(t, 8);
         }
 
-
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                f0(this.AsT0);
+                f0(AsT0);
                 return; 
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                f1(this.AsT1);
+                f1(AsT1);
                 return; 
             }
-            if (this.IsT2 && f2 != null)
+            if (IsT2 && f2 != null)
             {
-                f2(this.AsT2);
+                f2(AsT2);
                 return; 
             }
-            if (this.IsT3 && f3 != null)
+            if (IsT3 && f3 != null)
             {
-                f3(this.AsT3);
+                f3(AsT3);
                 return; 
             }
-            if (this.IsT4 && f4 != null)
+            if (IsT4 && f4 != null)
             {
-                f4(this.AsT4);
+                f4(AsT4);
                 return; 
             }
-            if (this.IsT5 && f5 != null)
+            if (IsT5 && f5 != null)
             {
-                f5(this.AsT5);
+                f5(AsT5);
                 return; 
             }
-            if (this.IsT6 && f6 != null)
+            if (IsT6 && f6 != null)
             {
-                f6(this.AsT6);
+                f6(AsT6);
                 return; 
             }
-            if (this.IsT7 && f7 != null)
+            if (IsT7 && f7 != null)
             {
-                f7(this.AsT7);
+                f7(AsT7);
                 return; 
             }
-            if (this.IsT8 && f8 != null)
+            if (IsT8 && f8 != null)
             {
-                f8(this.AsT8);
+                f8(AsT8);
                 return; 
             }
             throw new InvalidOperationException();
@@ -2089,82 +2080,82 @@ namespace OneOf
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                return f0(this.AsT0);
+                return f0(AsT0);
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                return f1(this.AsT1);
+                return f1(AsT1);
             }
-            if (this.IsT2 && f2 != null)
+            if (IsT2 && f2 != null)
             {
-                return f2(this.AsT2);
+                return f2(AsT2);
             }
-            if (this.IsT3 && f3 != null)
+            if (IsT3 && f3 != null)
             {
-                return f3(this.AsT3);
+                return f3(AsT3);
             }
-            if (this.IsT4 && f4 != null)
+            if (IsT4 && f4 != null)
             {
-                return f4(this.AsT4);
+                return f4(AsT4);
             }
-            if (this.IsT5 && f5 != null)
+            if (IsT5 && f5 != null)
             {
-                return f5(this.AsT5);
+                return f5(AsT5);
             }
-            if (this.IsT6 && f6 != null)
+            if (IsT6 && f6 != null)
             {
-                return f6(this.AsT6);
+                return f6(AsT6);
             }
-            if (this.IsT7 && f7 != null)
+            if (IsT7 && f7 != null)
             {
-                return f7(this.AsT7);
+                return f7(AsT7);
             }
-            if (this.IsT8 && f8 != null)
+            if (IsT8 && f8 != null)
             {
-                return f8(this.AsT8);
+                return f8(AsT8);
             }
             throw new InvalidOperationException();
         }
 
         public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<TResult> otherwise = null)
         {
-            if (this.IsT0 && f0 != null)
+            if (IsT0 && f0 != null)
             {
-                return f0(this.AsT0);
+                return f0(AsT0);
             }
-            if (this.IsT1 && f1 != null)
+            if (IsT1 && f1 != null)
             {
-                return f1(this.AsT1);
+                return f1(AsT1);
             }
-            if (this.IsT2 && f2 != null)
+            if (IsT2 && f2 != null)
             {
-                return f2(this.AsT2);
+                return f2(AsT2);
             }
-            if (this.IsT3 && f3 != null)
+            if (IsT3 && f3 != null)
             {
-                return f3(this.AsT3);
+                return f3(AsT3);
             }
-            if (this.IsT4 && f4 != null)
+            if (IsT4 && f4 != null)
             {
-                return f4(this.AsT4);
+                return f4(AsT4);
             }
-            if (this.IsT5 && f5 != null)
+            if (IsT5 && f5 != null)
             {
-                return f5(this.AsT5);
+                return f5(AsT5);
             }
-            if (this.IsT6 && f6 != null)
+            if (IsT6 && f6 != null)
             {
-                return f6(this.AsT6);
+                return f6(AsT6);
             }
-            if (this.IsT7 && f7 != null)
+            if (IsT7 && f7 != null)
             {
-                return f7(this.AsT7);
+                return f7(AsT7);
             }
-            if (this.IsT8 && f8 != null)
+            if (IsT8 && f8 != null)
             {
-                return f8(this.AsT8);
+                return f8(AsT8);
             }
             if (otherwise != null)
             {
@@ -2175,57 +2166,57 @@ namespace OneOf
 
         protected OneOfBase()
         {
-            this.value = this;
+            _value = this;
 
             if (this is T0)
             {
-                this.index = 0;
+                _index = 0;
             }
 
             if (this is T1)
             {
-                this.index = 1;
+                _index = 1;
             }
 
             if (this is T2)
             {
-                this.index = 2;
+                _index = 2;
             }
 
             if (this is T3)
             {
-                this.index = 3;
+                _index = 3;
             }
 
             if (this is T4)
             {
-                this.index = 4;
+                _index = 4;
             }
 
             if (this is T5)
             {
-                this.index = 5;
+                _index = 5;
             }
 
             if (this is T6)
             {
-                this.index = 6;
+                _index = 6;
             }
 
             if (this is T7)
             {
-                this.index = 7;
+                _index = 7;
             }
 
             if (this is T8)
             {
-                this.index = 8;
+                _index = 8;
             }
         }
 
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> other)
         {
-            return index == other.index && Equals(value, other.value);
+            return _index == other._index && Equals(_value, other._value);
         }
 
         public override bool Equals(object obj)
@@ -2248,7 +2239,7 @@ namespace OneOf
         {
             unchecked
             {
-                return ((value?.GetHashCode() ?? 0)*397) ^ index;
+                return ((_value?.GetHashCode() ?? 0)*397) ^ _index;
             }
         }
     }

@@ -25,27 +25,27 @@ namespace OneOf.Structs
     
         sb.AppendLine($@"    public struct OneOfStruct<{genericArg}> : IOneOf
     {{
-        readonly object value;
-        readonly int index;
+        readonly object _value;
+        readonly int _index;
         
         OneOfStruct(object value, int index)
         {{
-            this.value = value; 
-            this.index = index;
+            _value = value; 
+            _index = index;
         }}
     
         object IOneOf.Value 
         {{
-            get {{ return value; }}
+            get {{ return _value; }}
         }}
     
         T Get<T>(int index)
         {{
-            if (index != this.index)
+            if (index != _index)
             {{
-                throw new InvalidOperationException($""Cannot return as T{{index}} as result is T{{this.index}}"");
+                throw new InvalidOperationException($""Cannot return as T{{index}} as result is T{{_index}}"");
             }}
-            return (T)value;
+            return (T)_value;
         }}");
         for (var j = 0; j < i; j++)
         {
@@ -53,7 +53,7 @@ namespace OneOf.Structs
 $@"
         public bool IsT{j}
         {{
-            get {{ return index == {j}; }}
+            get {{ return _index == {j}; }}
         }}
         
         public T{j} AsT{j}
@@ -69,15 +69,14 @@ $@"
         }
 
         var matchArgList0 = string.Join(", ", Enumerable.Range(0, i).Select(e => $"Action<T{e}> f{e}"));
-        sb.AppendLine($@"
-        public void Switch({matchArgList0})
+        sb.AppendLine($@"        public void Switch({matchArgList0})
         {{");
 
         for (var j = 0; j < i; j++)
         {
-            sb.AppendLine($@"            if (this.IsT{j} && f{j} != null)
+            sb.AppendLine($@"            if (IsT{j} && f{j} != null)
             {{
-                f{j}(this.AsT{j});
+                f{j}(AsT{j});
                 return; 
             }}");
         }
@@ -93,9 +92,9 @@ $@"
 
         for (var j = 0; j < i; j++)
         {
-            sb.AppendLine($@"            if (this.IsT{j} && f{j} != null)
+            sb.AppendLine($@"            if (IsT{j} && f{j} != null)
             {{
-                return f{j}(this.AsT{j});
+                return f{j}(AsT{j});
             }}");
         }
 
@@ -109,9 +108,9 @@ $@"
 
         for (var j = 0; j < i; j++)
         {
-            sb.AppendLine($@"            if (this.IsT{j} && f{j} != null)
+            sb.AppendLine($@"            if (IsT{j} && f{j} != null)
             {{
-                return f{j}(this.AsT{j});
+                return f{j}(AsT{j});
             }}");
         }
 
@@ -127,7 +126,7 @@ $@"
             sb.AppendLine(@"
         protected OneOfBase()
         {
-            this.value = this;");
+            _value = this;");
 
             for (var j = 0; j < i; j++)
             {
@@ -135,7 +134,7 @@ $@"
                 sb.AppendLine($@"
             if (this is T{j})
             {{
-                this.index = {j};
+                _index = {j};
             }}");
             }
 
@@ -145,7 +144,7 @@ $@"
         sb.AppendLine($@"
         bool Equals(OneOfStruct<{genericArg}> other)
         {{
-            return index == other.index && Equals(value, other.value);
+            return _index == other._index && Equals(_value, other._value);
         }}
 
         public override bool Equals(object obj)
@@ -176,7 +175,7 @@ $@"
         {{
             unchecked
             {{
-                return ((value?.GetHashCode() ?? 0)*397) ^ index;
+                return ((_value?.GetHashCode() ?? 0)*397) ^ _index;
             }}
         }}
     }}
