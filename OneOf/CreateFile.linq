@@ -131,9 +131,9 @@ namespace OneOf
 
         for (var j = 0; j < i; j++)
         {
-            sb.AppendLine($@"            if (IsT{j} && f{j} != null)
+            sb.AppendLine($@"            if (_index == {j} && f{j} != null)
             {{
-                f{j}(AsT{j});
+                f{j}(_value{j});
                 return; 
             }}");
         }
@@ -148,9 +148,9 @@ namespace OneOf
 
         for (var j = 0; j < i; j++)
         {
-            sb.AppendLine($@"            if (IsT{j} && f{j} != null)
+            sb.AppendLine($@"            if (_index == {j} && f{j} != null)
             {{
-                return f{j}(AsT{j});
+                return f{j}(_value{j});
             }}");
         }
 
@@ -164,9 +164,9 @@ namespace OneOf
 
         for (var j = 0; j < i; j++)
         {
-            sb.AppendLine($@"            if (IsT{j} && f{j} != null)
+            sb.AppendLine($@"            if (_index == {j} && f{j} != null)
             {{
-                return f{j}(AsT{j});
+                return f{j}(_value{j});
             }}");
         }
 

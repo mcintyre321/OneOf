@@ -51,9 +51,9 @@ namespace OneOf
 
         public void Switch(Action<T0> f0)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                f0(AsT0);
+                f0(_value0);
                 return; 
             }
             throw new InvalidOperationException();
@@ -61,18 +61,18 @@ namespace OneOf
 
         public TResult Match<TResult>(Func<T0, TResult> f0)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                return f0(AsT0);
+                return f0(_value0);
             }
             throw new InvalidOperationException();
         }
 
         public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<TResult> otherwise = null)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                return f0(AsT0);
+                return f0(_value0);
             }
             if (otherwise != null)
             {
@@ -200,14 +200,14 @@ namespace OneOf
 
         public void Switch(Action<T0> f0, Action<T1> f1)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                f0(AsT0);
+                f0(_value0);
                 return; 
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                f1(AsT1);
+                f1(_value1);
                 return; 
             }
             throw new InvalidOperationException();
@@ -215,26 +215,26 @@ namespace OneOf
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                return f0(AsT0);
+                return f0(_value0);
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                return f1(AsT1);
+                return f1(_value1);
             }
             throw new InvalidOperationException();
         }
 
         public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<TResult> otherwise = null)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                return f0(AsT0);
+                return f0(_value0);
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                return f1(AsT1);
+                return f1(_value1);
             }
             if (otherwise != null)
             {
@@ -393,19 +393,19 @@ namespace OneOf
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                f0(AsT0);
+                f0(_value0);
                 return; 
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                f1(AsT1);
+                f1(_value1);
                 return; 
             }
-            if (IsT2 && f2 != null)
+            if (_index == 2 && f2 != null)
             {
-                f2(AsT2);
+                f2(_value2);
                 return; 
             }
             throw new InvalidOperationException();
@@ -413,34 +413,34 @@ namespace OneOf
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                return f0(AsT0);
+                return f0(_value0);
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                return f1(AsT1);
+                return f1(_value1);
             }
-            if (IsT2 && f2 != null)
+            if (_index == 2 && f2 != null)
             {
-                return f2(AsT2);
+                return f2(_value2);
             }
             throw new InvalidOperationException();
         }
 
         public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<TResult> otherwise = null)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                return f0(AsT0);
+                return f0(_value0);
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                return f1(AsT1);
+                return f1(_value1);
             }
-            if (IsT2 && f2 != null)
+            if (_index == 2 && f2 != null)
             {
-                return f2(AsT2);
+                return f2(_value2);
             }
             if (otherwise != null)
             {
@@ -630,24 +630,24 @@ namespace OneOf
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                f0(AsT0);
+                f0(_value0);
                 return; 
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                f1(AsT1);
+                f1(_value1);
                 return; 
             }
-            if (IsT2 && f2 != null)
+            if (_index == 2 && f2 != null)
             {
-                f2(AsT2);
+                f2(_value2);
                 return; 
             }
-            if (IsT3 && f3 != null)
+            if (_index == 3 && f3 != null)
             {
-                f3(AsT3);
+                f3(_value3);
                 return; 
             }
             throw new InvalidOperationException();
@@ -655,42 +655,42 @@ namespace OneOf
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                return f0(AsT0);
+                return f0(_value0);
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                return f1(AsT1);
+                return f1(_value1);
             }
-            if (IsT2 && f2 != null)
+            if (_index == 2 && f2 != null)
             {
-                return f2(AsT2);
+                return f2(_value2);
             }
-            if (IsT3 && f3 != null)
+            if (_index == 3 && f3 != null)
             {
-                return f3(AsT3);
+                return f3(_value3);
             }
             throw new InvalidOperationException();
         }
 
         public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<TResult> otherwise = null)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                return f0(AsT0);
+                return f0(_value0);
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                return f1(AsT1);
+                return f1(_value1);
             }
-            if (IsT2 && f2 != null)
+            if (_index == 2 && f2 != null)
             {
-                return f2(AsT2);
+                return f2(_value2);
             }
-            if (IsT3 && f3 != null)
+            if (_index == 3 && f3 != null)
             {
-                return f3(AsT3);
+                return f3(_value3);
             }
             if (otherwise != null)
             {
@@ -911,29 +911,29 @@ namespace OneOf
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                f0(AsT0);
+                f0(_value0);
                 return; 
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                f1(AsT1);
+                f1(_value1);
                 return; 
             }
-            if (IsT2 && f2 != null)
+            if (_index == 2 && f2 != null)
             {
-                f2(AsT2);
+                f2(_value2);
                 return; 
             }
-            if (IsT3 && f3 != null)
+            if (_index == 3 && f3 != null)
             {
-                f3(AsT3);
+                f3(_value3);
                 return; 
             }
-            if (IsT4 && f4 != null)
+            if (_index == 4 && f4 != null)
             {
-                f4(AsT4);
+                f4(_value4);
                 return; 
             }
             throw new InvalidOperationException();
@@ -941,50 +941,50 @@ namespace OneOf
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                return f0(AsT0);
+                return f0(_value0);
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                return f1(AsT1);
+                return f1(_value1);
             }
-            if (IsT2 && f2 != null)
+            if (_index == 2 && f2 != null)
             {
-                return f2(AsT2);
+                return f2(_value2);
             }
-            if (IsT3 && f3 != null)
+            if (_index == 3 && f3 != null)
             {
-                return f3(AsT3);
+                return f3(_value3);
             }
-            if (IsT4 && f4 != null)
+            if (_index == 4 && f4 != null)
             {
-                return f4(AsT4);
+                return f4(_value4);
             }
             throw new InvalidOperationException();
         }
 
         public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<TResult> otherwise = null)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                return f0(AsT0);
+                return f0(_value0);
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                return f1(AsT1);
+                return f1(_value1);
             }
-            if (IsT2 && f2 != null)
+            if (_index == 2 && f2 != null)
             {
-                return f2(AsT2);
+                return f2(_value2);
             }
-            if (IsT3 && f3 != null)
+            if (_index == 3 && f3 != null)
             {
-                return f3(AsT3);
+                return f3(_value3);
             }
-            if (IsT4 && f4 != null)
+            if (_index == 4 && f4 != null)
             {
-                return f4(AsT4);
+                return f4(_value4);
             }
             if (otherwise != null)
             {
@@ -1236,34 +1236,34 @@ namespace OneOf
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                f0(AsT0);
+                f0(_value0);
                 return; 
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                f1(AsT1);
+                f1(_value1);
                 return; 
             }
-            if (IsT2 && f2 != null)
+            if (_index == 2 && f2 != null)
             {
-                f2(AsT2);
+                f2(_value2);
                 return; 
             }
-            if (IsT3 && f3 != null)
+            if (_index == 3 && f3 != null)
             {
-                f3(AsT3);
+                f3(_value3);
                 return; 
             }
-            if (IsT4 && f4 != null)
+            if (_index == 4 && f4 != null)
             {
-                f4(AsT4);
+                f4(_value4);
                 return; 
             }
-            if (IsT5 && f5 != null)
+            if (_index == 5 && f5 != null)
             {
-                f5(AsT5);
+                f5(_value5);
                 return; 
             }
             throw new InvalidOperationException();
@@ -1271,58 +1271,58 @@ namespace OneOf
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                return f0(AsT0);
+                return f0(_value0);
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                return f1(AsT1);
+                return f1(_value1);
             }
-            if (IsT2 && f2 != null)
+            if (_index == 2 && f2 != null)
             {
-                return f2(AsT2);
+                return f2(_value2);
             }
-            if (IsT3 && f3 != null)
+            if (_index == 3 && f3 != null)
             {
-                return f3(AsT3);
+                return f3(_value3);
             }
-            if (IsT4 && f4 != null)
+            if (_index == 4 && f4 != null)
             {
-                return f4(AsT4);
+                return f4(_value4);
             }
-            if (IsT5 && f5 != null)
+            if (_index == 5 && f5 != null)
             {
-                return f5(AsT5);
+                return f5(_value5);
             }
             throw new InvalidOperationException();
         }
 
         public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<TResult> otherwise = null)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                return f0(AsT0);
+                return f0(_value0);
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                return f1(AsT1);
+                return f1(_value1);
             }
-            if (IsT2 && f2 != null)
+            if (_index == 2 && f2 != null)
             {
-                return f2(AsT2);
+                return f2(_value2);
             }
-            if (IsT3 && f3 != null)
+            if (_index == 3 && f3 != null)
             {
-                return f3(AsT3);
+                return f3(_value3);
             }
-            if (IsT4 && f4 != null)
+            if (_index == 4 && f4 != null)
             {
-                return f4(AsT4);
+                return f4(_value4);
             }
-            if (IsT5 && f5 != null)
+            if (_index == 5 && f5 != null)
             {
-                return f5(AsT5);
+                return f5(_value5);
             }
             if (otherwise != null)
             {
@@ -1605,39 +1605,39 @@ namespace OneOf
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                f0(AsT0);
+                f0(_value0);
                 return; 
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                f1(AsT1);
+                f1(_value1);
                 return; 
             }
-            if (IsT2 && f2 != null)
+            if (_index == 2 && f2 != null)
             {
-                f2(AsT2);
+                f2(_value2);
                 return; 
             }
-            if (IsT3 && f3 != null)
+            if (_index == 3 && f3 != null)
             {
-                f3(AsT3);
+                f3(_value3);
                 return; 
             }
-            if (IsT4 && f4 != null)
+            if (_index == 4 && f4 != null)
             {
-                f4(AsT4);
+                f4(_value4);
                 return; 
             }
-            if (IsT5 && f5 != null)
+            if (_index == 5 && f5 != null)
             {
-                f5(AsT5);
+                f5(_value5);
                 return; 
             }
-            if (IsT6 && f6 != null)
+            if (_index == 6 && f6 != null)
             {
-                f6(AsT6);
+                f6(_value6);
                 return; 
             }
             throw new InvalidOperationException();
@@ -1645,66 +1645,66 @@ namespace OneOf
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                return f0(AsT0);
+                return f0(_value0);
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                return f1(AsT1);
+                return f1(_value1);
             }
-            if (IsT2 && f2 != null)
+            if (_index == 2 && f2 != null)
             {
-                return f2(AsT2);
+                return f2(_value2);
             }
-            if (IsT3 && f3 != null)
+            if (_index == 3 && f3 != null)
             {
-                return f3(AsT3);
+                return f3(_value3);
             }
-            if (IsT4 && f4 != null)
+            if (_index == 4 && f4 != null)
             {
-                return f4(AsT4);
+                return f4(_value4);
             }
-            if (IsT5 && f5 != null)
+            if (_index == 5 && f5 != null)
             {
-                return f5(AsT5);
+                return f5(_value5);
             }
-            if (IsT6 && f6 != null)
+            if (_index == 6 && f6 != null)
             {
-                return f6(AsT6);
+                return f6(_value6);
             }
             throw new InvalidOperationException();
         }
 
         public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<TResult> otherwise = null)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                return f0(AsT0);
+                return f0(_value0);
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                return f1(AsT1);
+                return f1(_value1);
             }
-            if (IsT2 && f2 != null)
+            if (_index == 2 && f2 != null)
             {
-                return f2(AsT2);
+                return f2(_value2);
             }
-            if (IsT3 && f3 != null)
+            if (_index == 3 && f3 != null)
             {
-                return f3(AsT3);
+                return f3(_value3);
             }
-            if (IsT4 && f4 != null)
+            if (_index == 4 && f4 != null)
             {
-                return f4(AsT4);
+                return f4(_value4);
             }
-            if (IsT5 && f5 != null)
+            if (_index == 5 && f5 != null)
             {
-                return f5(AsT5);
+                return f5(_value5);
             }
-            if (IsT6 && f6 != null)
+            if (_index == 6 && f6 != null)
             {
-                return f6(AsT6);
+                return f6(_value6);
             }
             if (otherwise != null)
             {
@@ -2018,44 +2018,44 @@ namespace OneOf
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                f0(AsT0);
+                f0(_value0);
                 return; 
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                f1(AsT1);
+                f1(_value1);
                 return; 
             }
-            if (IsT2 && f2 != null)
+            if (_index == 2 && f2 != null)
             {
-                f2(AsT2);
+                f2(_value2);
                 return; 
             }
-            if (IsT3 && f3 != null)
+            if (_index == 3 && f3 != null)
             {
-                f3(AsT3);
+                f3(_value3);
                 return; 
             }
-            if (IsT4 && f4 != null)
+            if (_index == 4 && f4 != null)
             {
-                f4(AsT4);
+                f4(_value4);
                 return; 
             }
-            if (IsT5 && f5 != null)
+            if (_index == 5 && f5 != null)
             {
-                f5(AsT5);
+                f5(_value5);
                 return; 
             }
-            if (IsT6 && f6 != null)
+            if (_index == 6 && f6 != null)
             {
-                f6(AsT6);
+                f6(_value6);
                 return; 
             }
-            if (IsT7 && f7 != null)
+            if (_index == 7 && f7 != null)
             {
-                f7(AsT7);
+                f7(_value7);
                 return; 
             }
             throw new InvalidOperationException();
@@ -2063,74 +2063,74 @@ namespace OneOf
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                return f0(AsT0);
+                return f0(_value0);
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                return f1(AsT1);
+                return f1(_value1);
             }
-            if (IsT2 && f2 != null)
+            if (_index == 2 && f2 != null)
             {
-                return f2(AsT2);
+                return f2(_value2);
             }
-            if (IsT3 && f3 != null)
+            if (_index == 3 && f3 != null)
             {
-                return f3(AsT3);
+                return f3(_value3);
             }
-            if (IsT4 && f4 != null)
+            if (_index == 4 && f4 != null)
             {
-                return f4(AsT4);
+                return f4(_value4);
             }
-            if (IsT5 && f5 != null)
+            if (_index == 5 && f5 != null)
             {
-                return f5(AsT5);
+                return f5(_value5);
             }
-            if (IsT6 && f6 != null)
+            if (_index == 6 && f6 != null)
             {
-                return f6(AsT6);
+                return f6(_value6);
             }
-            if (IsT7 && f7 != null)
+            if (_index == 7 && f7 != null)
             {
-                return f7(AsT7);
+                return f7(_value7);
             }
             throw new InvalidOperationException();
         }
 
         public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<TResult> otherwise = null)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                return f0(AsT0);
+                return f0(_value0);
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                return f1(AsT1);
+                return f1(_value1);
             }
-            if (IsT2 && f2 != null)
+            if (_index == 2 && f2 != null)
             {
-                return f2(AsT2);
+                return f2(_value2);
             }
-            if (IsT3 && f3 != null)
+            if (_index == 3 && f3 != null)
             {
-                return f3(AsT3);
+                return f3(_value3);
             }
-            if (IsT4 && f4 != null)
+            if (_index == 4 && f4 != null)
             {
-                return f4(AsT4);
+                return f4(_value4);
             }
-            if (IsT5 && f5 != null)
+            if (_index == 5 && f5 != null)
             {
-                return f5(AsT5);
+                return f5(_value5);
             }
-            if (IsT6 && f6 != null)
+            if (_index == 6 && f6 != null)
             {
-                return f6(AsT6);
+                return f6(_value6);
             }
-            if (IsT7 && f7 != null)
+            if (_index == 7 && f7 != null)
             {
-                return f7(AsT7);
+                return f7(_value7);
             }
             if (otherwise != null)
             {
@@ -2475,49 +2475,49 @@ namespace OneOf
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                f0(AsT0);
+                f0(_value0);
                 return; 
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                f1(AsT1);
+                f1(_value1);
                 return; 
             }
-            if (IsT2 && f2 != null)
+            if (_index == 2 && f2 != null)
             {
-                f2(AsT2);
+                f2(_value2);
                 return; 
             }
-            if (IsT3 && f3 != null)
+            if (_index == 3 && f3 != null)
             {
-                f3(AsT3);
+                f3(_value3);
                 return; 
             }
-            if (IsT4 && f4 != null)
+            if (_index == 4 && f4 != null)
             {
-                f4(AsT4);
+                f4(_value4);
                 return; 
             }
-            if (IsT5 && f5 != null)
+            if (_index == 5 && f5 != null)
             {
-                f5(AsT5);
+                f5(_value5);
                 return; 
             }
-            if (IsT6 && f6 != null)
+            if (_index == 6 && f6 != null)
             {
-                f6(AsT6);
+                f6(_value6);
                 return; 
             }
-            if (IsT7 && f7 != null)
+            if (_index == 7 && f7 != null)
             {
-                f7(AsT7);
+                f7(_value7);
                 return; 
             }
-            if (IsT8 && f8 != null)
+            if (_index == 8 && f8 != null)
             {
-                f8(AsT8);
+                f8(_value8);
                 return; 
             }
             throw new InvalidOperationException();
@@ -2525,82 +2525,82 @@ namespace OneOf
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                return f0(AsT0);
+                return f0(_value0);
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                return f1(AsT1);
+                return f1(_value1);
             }
-            if (IsT2 && f2 != null)
+            if (_index == 2 && f2 != null)
             {
-                return f2(AsT2);
+                return f2(_value2);
             }
-            if (IsT3 && f3 != null)
+            if (_index == 3 && f3 != null)
             {
-                return f3(AsT3);
+                return f3(_value3);
             }
-            if (IsT4 && f4 != null)
+            if (_index == 4 && f4 != null)
             {
-                return f4(AsT4);
+                return f4(_value4);
             }
-            if (IsT5 && f5 != null)
+            if (_index == 5 && f5 != null)
             {
-                return f5(AsT5);
+                return f5(_value5);
             }
-            if (IsT6 && f6 != null)
+            if (_index == 6 && f6 != null)
             {
-                return f6(AsT6);
+                return f6(_value6);
             }
-            if (IsT7 && f7 != null)
+            if (_index == 7 && f7 != null)
             {
-                return f7(AsT7);
+                return f7(_value7);
             }
-            if (IsT8 && f8 != null)
+            if (_index == 8 && f8 != null)
             {
-                return f8(AsT8);
+                return f8(_value8);
             }
             throw new InvalidOperationException();
         }
 
         public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<TResult> otherwise = null)
         {
-            if (IsT0 && f0 != null)
+            if (_index == 0 && f0 != null)
             {
-                return f0(AsT0);
+                return f0(_value0);
             }
-            if (IsT1 && f1 != null)
+            if (_index == 1 && f1 != null)
             {
-                return f1(AsT1);
+                return f1(_value1);
             }
-            if (IsT2 && f2 != null)
+            if (_index == 2 && f2 != null)
             {
-                return f2(AsT2);
+                return f2(_value2);
             }
-            if (IsT3 && f3 != null)
+            if (_index == 3 && f3 != null)
             {
-                return f3(AsT3);
+                return f3(_value3);
             }
-            if (IsT4 && f4 != null)
+            if (_index == 4 && f4 != null)
             {
-                return f4(AsT4);
+                return f4(_value4);
             }
-            if (IsT5 && f5 != null)
+            if (_index == 5 && f5 != null)
             {
-                return f5(AsT5);
+                return f5(_value5);
             }
-            if (IsT6 && f6 != null)
+            if (_index == 6 && f6 != null)
             {
-                return f6(AsT6);
+                return f6(_value6);
             }
-            if (IsT7 && f7 != null)
+            if (_index == 7 && f7 != null)
             {
-                return f7(AsT7);
+                return f7(_value7);
             }
-            if (IsT8 && f8 != null)
+            if (_index == 8 && f8 != null)
             {
-                return f8(AsT8);
+                return f8(_value8);
             }
             if (otherwise != null)
             {
