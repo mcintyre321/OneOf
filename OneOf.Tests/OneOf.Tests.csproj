@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseClassTests.cs" />
+    <Compile Include="EqualsTests.cs" />
     <Compile Include="OneOfJsonConverter.cs" />
     <Compile Include="Serialization.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

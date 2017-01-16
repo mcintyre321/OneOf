@@ -130,30 +130,46 @@ namespace OneOf.Structs
 		}");
 
 		}
-		sb.AppendLine(string.Format(@"
+		sb.AppendLine($@"
 		
-		bool Equals(OneOfStruct<{0}> other)
+		bool Equals(OneOfStruct<{genericArg}> other)
         {{
             return index == other.index && Equals(value, other.value);
         }}
 
         public override bool Equals(object obj)
         {{
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj is OneOfStruct<{0}> && Equals(obj);
-        }}
+            if (ReferenceEquals(null, obj))
+            {{
+                return false;
+            }}
+");
+        if(isStruct)
+        {
+            sb.AppendLine($@"            return obj is OneOfStruct<{genericArg}> && Equals((OneOfStruct<{genericArg}>) obj);");
+        }
+        else
+        {
+            sb.AppendLine($@"            if (ReferenceEquals(this, obj))
+            {{
+                return true;
+            }}
+
+            var other = obj as OneOfBase<{genericArg}>;
+            return other != null && Equals(other);");
+        }
+            
+        sb.AppendLine($@"        }}
 
         public override int GetHashCode()
         {{
             unchecked
             {{
-                return ((value != null ? value.GetHashCode() : 0)*397) ^ index;
+                return ((value?.GetHashCode() ?? 0)*397) ^ index;
             }}
         }}
-
-	}}
-", genericArg));
+}}
+");
 	}
 	sb.AppendLine("}");
 	var content = sb.ToString();
