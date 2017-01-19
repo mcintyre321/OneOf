@@ -3,27 +3,23 @@ using System;
 namespace OneOf
 {
     public class OneOfBase<T0> : IOneOf
-        where T0 : class
     {
         readonly T0 _value0;
         readonly int _index;
     
-        OneOfBase(int index, T0 value0 = default(T0))
+        protected OneOfBase(int index, T0 value0 = default(T0))
         { 
             _index = index;
             _value0 = value0;
         }
 
-            protected OneOfBase()
+        protected OneOfBase()
         {
+            if (this is T0)
             {
-                var value = this as T0;
-                if (value != null)
-                {
-                    _index = 0;
-                    _value0 = value;
-                    return;
-                }
+                _index = 0;
+                _value0 = (T0)(object)this;
+                return;
             }
         }
 
@@ -146,39 +142,31 @@ namespace OneOf
     }
 
     public class OneOfBase<T0, T1> : IOneOf
-        where T0 : class
-        where T1 : class
     {
         readonly T0 _value0;
         readonly T1 _value1;
         readonly int _index;
     
-        OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1))
+        protected OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1))
         { 
             _index = index;
             _value0 = value0;
             _value1 = value1;
         }
 
-            protected OneOfBase()
+        protected OneOfBase()
         {
+            if (this is T0)
             {
-                var value = this as T0;
-                if (value != null)
-                {
-                    _index = 0;
-                    _value0 = value;
-                    return;
-                }
+                _index = 0;
+                _value0 = (T0)(object)this;
+                return;
             }
+            if (this is T1)
             {
-                var value = this as T1;
-                if (value != null)
-                {
-                    _index = 1;
-                    _value1 = value;
-                    return;
-                }
+                _index = 1;
+                _value1 = (T1)(object)this;
+                return;
             }
         }
 
@@ -343,16 +331,13 @@ namespace OneOf
     }
 
     public class OneOfBase<T0, T1, T2> : IOneOf
-        where T0 : class
-        where T1 : class
-        where T2 : class
     {
         readonly T0 _value0;
         readonly T1 _value1;
         readonly T2 _value2;
         readonly int _index;
     
-        OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2))
+        protected OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2))
         { 
             _index = index;
             _value0 = value0;
@@ -360,34 +345,25 @@ namespace OneOf
             _value2 = value2;
         }
 
-            protected OneOfBase()
+        protected OneOfBase()
         {
+            if (this is T0)
             {
-                var value = this as T0;
-                if (value != null)
-                {
-                    _index = 0;
-                    _value0 = value;
-                    return;
-                }
+                _index = 0;
+                _value0 = (T0)(object)this;
+                return;
             }
+            if (this is T1)
             {
-                var value = this as T1;
-                if (value != null)
-                {
-                    _index = 1;
-                    _value1 = value;
-                    return;
-                }
+                _index = 1;
+                _value1 = (T1)(object)this;
+                return;
             }
+            if (this is T2)
             {
-                var value = this as T2;
-                if (value != null)
-                {
-                    _index = 2;
-                    _value2 = value;
-                    return;
-                }
+                _index = 2;
+                _value2 = (T2)(object)this;
+                return;
             }
         }
 
@@ -594,10 +570,6 @@ namespace OneOf
     }
 
     public class OneOfBase<T0, T1, T2, T3> : IOneOf
-        where T0 : class
-        where T1 : class
-        where T2 : class
-        where T3 : class
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -605,7 +577,7 @@ namespace OneOf
         readonly T3 _value3;
         readonly int _index;
     
-        OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3))
+        protected OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3))
         { 
             _index = index;
             _value0 = value0;
@@ -614,43 +586,31 @@ namespace OneOf
             _value3 = value3;
         }
 
-            protected OneOfBase()
+        protected OneOfBase()
         {
+            if (this is T0)
             {
-                var value = this as T0;
-                if (value != null)
-                {
-                    _index = 0;
-                    _value0 = value;
-                    return;
-                }
+                _index = 0;
+                _value0 = (T0)(object)this;
+                return;
             }
+            if (this is T1)
             {
-                var value = this as T1;
-                if (value != null)
-                {
-                    _index = 1;
-                    _value1 = value;
-                    return;
-                }
+                _index = 1;
+                _value1 = (T1)(object)this;
+                return;
             }
+            if (this is T2)
             {
-                var value = this as T2;
-                if (value != null)
-                {
-                    _index = 2;
-                    _value2 = value;
-                    return;
-                }
+                _index = 2;
+                _value2 = (T2)(object)this;
+                return;
             }
+            if (this is T3)
             {
-                var value = this as T3;
-                if (value != null)
-                {
-                    _index = 3;
-                    _value3 = value;
-                    return;
-                }
+                _index = 3;
+                _value3 = (T3)(object)this;
+                return;
             }
         }
 
@@ -899,11 +859,6 @@ namespace OneOf
     }
 
     public class OneOfBase<T0, T1, T2, T3, T4> : IOneOf
-        where T0 : class
-        where T1 : class
-        where T2 : class
-        where T3 : class
-        where T4 : class
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -912,7 +867,7 @@ namespace OneOf
         readonly T4 _value4;
         readonly int _index;
     
-        OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4))
+        protected OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4))
         { 
             _index = index;
             _value0 = value0;
@@ -922,52 +877,37 @@ namespace OneOf
             _value4 = value4;
         }
 
-            protected OneOfBase()
+        protected OneOfBase()
         {
+            if (this is T0)
             {
-                var value = this as T0;
-                if (value != null)
-                {
-                    _index = 0;
-                    _value0 = value;
-                    return;
-                }
+                _index = 0;
+                _value0 = (T0)(object)this;
+                return;
             }
+            if (this is T1)
             {
-                var value = this as T1;
-                if (value != null)
-                {
-                    _index = 1;
-                    _value1 = value;
-                    return;
-                }
+                _index = 1;
+                _value1 = (T1)(object)this;
+                return;
             }
+            if (this is T2)
             {
-                var value = this as T2;
-                if (value != null)
-                {
-                    _index = 2;
-                    _value2 = value;
-                    return;
-                }
+                _index = 2;
+                _value2 = (T2)(object)this;
+                return;
             }
+            if (this is T3)
             {
-                var value = this as T3;
-                if (value != null)
-                {
-                    _index = 3;
-                    _value3 = value;
-                    return;
-                }
+                _index = 3;
+                _value3 = (T3)(object)this;
+                return;
             }
+            if (this is T4)
             {
-                var value = this as T4;
-                if (value != null)
-                {
-                    _index = 4;
-                    _value4 = value;
-                    return;
-                }
+                _index = 4;
+                _value4 = (T4)(object)this;
+                return;
             }
         }
 
@@ -1258,12 +1198,6 @@ namespace OneOf
     }
 
     public class OneOfBase<T0, T1, T2, T3, T4, T5> : IOneOf
-        where T0 : class
-        where T1 : class
-        where T2 : class
-        where T3 : class
-        where T4 : class
-        where T5 : class
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -1273,7 +1207,7 @@ namespace OneOf
         readonly T5 _value5;
         readonly int _index;
     
-        OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5))
+        protected OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5))
         { 
             _index = index;
             _value0 = value0;
@@ -1284,61 +1218,43 @@ namespace OneOf
             _value5 = value5;
         }
 
-            protected OneOfBase()
+        protected OneOfBase()
         {
+            if (this is T0)
             {
-                var value = this as T0;
-                if (value != null)
-                {
-                    _index = 0;
-                    _value0 = value;
-                    return;
-                }
+                _index = 0;
+                _value0 = (T0)(object)this;
+                return;
             }
+            if (this is T1)
             {
-                var value = this as T1;
-                if (value != null)
-                {
-                    _index = 1;
-                    _value1 = value;
-                    return;
-                }
+                _index = 1;
+                _value1 = (T1)(object)this;
+                return;
             }
+            if (this is T2)
             {
-                var value = this as T2;
-                if (value != null)
-                {
-                    _index = 2;
-                    _value2 = value;
-                    return;
-                }
+                _index = 2;
+                _value2 = (T2)(object)this;
+                return;
             }
+            if (this is T3)
             {
-                var value = this as T3;
-                if (value != null)
-                {
-                    _index = 3;
-                    _value3 = value;
-                    return;
-                }
+                _index = 3;
+                _value3 = (T3)(object)this;
+                return;
             }
+            if (this is T4)
             {
-                var value = this as T4;
-                if (value != null)
-                {
-                    _index = 4;
-                    _value4 = value;
-                    return;
-                }
+                _index = 4;
+                _value4 = (T4)(object)this;
+                return;
             }
+            if (this is T5)
             {
-                var value = this as T5;
-                if (value != null)
-                {
-                    _index = 5;
-                    _value5 = value;
-                    return;
-                }
+                _index = 5;
+                _value5 = (T5)(object)this;
+                return;
             }
         }
 
@@ -1671,13 +1587,6 @@ namespace OneOf
     }
 
     public class OneOfBase<T0, T1, T2, T3, T4, T5, T6> : IOneOf
-        where T0 : class
-        where T1 : class
-        where T2 : class
-        where T3 : class
-        where T4 : class
-        where T5 : class
-        where T6 : class
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -1688,7 +1597,7 @@ namespace OneOf
         readonly T6 _value6;
         readonly int _index;
     
-        OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6))
+        protected OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6))
         { 
             _index = index;
             _value0 = value0;
@@ -1700,70 +1609,49 @@ namespace OneOf
             _value6 = value6;
         }
 
-            protected OneOfBase()
+        protected OneOfBase()
         {
+            if (this is T0)
             {
-                var value = this as T0;
-                if (value != null)
-                {
-                    _index = 0;
-                    _value0 = value;
-                    return;
-                }
+                _index = 0;
+                _value0 = (T0)(object)this;
+                return;
             }
+            if (this is T1)
             {
-                var value = this as T1;
-                if (value != null)
-                {
-                    _index = 1;
-                    _value1 = value;
-                    return;
-                }
+                _index = 1;
+                _value1 = (T1)(object)this;
+                return;
             }
+            if (this is T2)
             {
-                var value = this as T2;
-                if (value != null)
-                {
-                    _index = 2;
-                    _value2 = value;
-                    return;
-                }
+                _index = 2;
+                _value2 = (T2)(object)this;
+                return;
             }
+            if (this is T3)
             {
-                var value = this as T3;
-                if (value != null)
-                {
-                    _index = 3;
-                    _value3 = value;
-                    return;
-                }
+                _index = 3;
+                _value3 = (T3)(object)this;
+                return;
             }
+            if (this is T4)
             {
-                var value = this as T4;
-                if (value != null)
-                {
-                    _index = 4;
-                    _value4 = value;
-                    return;
-                }
+                _index = 4;
+                _value4 = (T4)(object)this;
+                return;
             }
+            if (this is T5)
             {
-                var value = this as T5;
-                if (value != null)
-                {
-                    _index = 5;
-                    _value5 = value;
-                    return;
-                }
+                _index = 5;
+                _value5 = (T5)(object)this;
+                return;
             }
+            if (this is T6)
             {
-                var value = this as T6;
-                if (value != null)
-                {
-                    _index = 6;
-                    _value6 = value;
-                    return;
-                }
+                _index = 6;
+                _value6 = (T6)(object)this;
+                return;
             }
         }
 
@@ -2138,14 +2026,6 @@ namespace OneOf
     }
 
     public class OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> : IOneOf
-        where T0 : class
-        where T1 : class
-        where T2 : class
-        where T3 : class
-        where T4 : class
-        where T5 : class
-        where T6 : class
-        where T7 : class
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -2157,7 +2037,7 @@ namespace OneOf
         readonly T7 _value7;
         readonly int _index;
     
-        OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7))
+        protected OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7))
         { 
             _index = index;
             _value0 = value0;
@@ -2170,79 +2050,55 @@ namespace OneOf
             _value7 = value7;
         }
 
-            protected OneOfBase()
+        protected OneOfBase()
         {
+            if (this is T0)
             {
-                var value = this as T0;
-                if (value != null)
-                {
-                    _index = 0;
-                    _value0 = value;
-                    return;
-                }
+                _index = 0;
+                _value0 = (T0)(object)this;
+                return;
             }
+            if (this is T1)
             {
-                var value = this as T1;
-                if (value != null)
-                {
-                    _index = 1;
-                    _value1 = value;
-                    return;
-                }
+                _index = 1;
+                _value1 = (T1)(object)this;
+                return;
             }
+            if (this is T2)
             {
-                var value = this as T2;
-                if (value != null)
-                {
-                    _index = 2;
-                    _value2 = value;
-                    return;
-                }
+                _index = 2;
+                _value2 = (T2)(object)this;
+                return;
             }
+            if (this is T3)
             {
-                var value = this as T3;
-                if (value != null)
-                {
-                    _index = 3;
-                    _value3 = value;
-                    return;
-                }
+                _index = 3;
+                _value3 = (T3)(object)this;
+                return;
             }
+            if (this is T4)
             {
-                var value = this as T4;
-                if (value != null)
-                {
-                    _index = 4;
-                    _value4 = value;
-                    return;
-                }
+                _index = 4;
+                _value4 = (T4)(object)this;
+                return;
             }
+            if (this is T5)
             {
-                var value = this as T5;
-                if (value != null)
-                {
-                    _index = 5;
-                    _value5 = value;
-                    return;
-                }
+                _index = 5;
+                _value5 = (T5)(object)this;
+                return;
             }
+            if (this is T6)
             {
-                var value = this as T6;
-                if (value != null)
-                {
-                    _index = 6;
-                    _value6 = value;
-                    return;
-                }
+                _index = 6;
+                _value6 = (T6)(object)this;
+                return;
             }
+            if (this is T7)
             {
-                var value = this as T7;
-                if (value != null)
-                {
-                    _index = 7;
-                    _value7 = value;
-                    return;
-                }
+                _index = 7;
+                _value7 = (T7)(object)this;
+                return;
             }
         }
 
@@ -2659,15 +2515,6 @@ namespace OneOf
     }
 
     public class OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> : IOneOf
-        where T0 : class
-        where T1 : class
-        where T2 : class
-        where T3 : class
-        where T4 : class
-        where T5 : class
-        where T6 : class
-        where T7 : class
-        where T8 : class
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -2680,7 +2527,7 @@ namespace OneOf
         readonly T8 _value8;
         readonly int _index;
     
-        OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8))
+        protected OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8))
         { 
             _index = index;
             _value0 = value0;
@@ -2694,88 +2541,61 @@ namespace OneOf
             _value8 = value8;
         }
 
-            protected OneOfBase()
+        protected OneOfBase()
         {
+            if (this is T0)
             {
-                var value = this as T0;
-                if (value != null)
-                {
-                    _index = 0;
-                    _value0 = value;
-                    return;
-                }
+                _index = 0;
+                _value0 = (T0)(object)this;
+                return;
             }
+            if (this is T1)
             {
-                var value = this as T1;
-                if (value != null)
-                {
-                    _index = 1;
-                    _value1 = value;
-                    return;
-                }
+                _index = 1;
+                _value1 = (T1)(object)this;
+                return;
             }
+            if (this is T2)
             {
-                var value = this as T2;
-                if (value != null)
-                {
-                    _index = 2;
-                    _value2 = value;
-                    return;
-                }
+                _index = 2;
+                _value2 = (T2)(object)this;
+                return;
             }
+            if (this is T3)
             {
-                var value = this as T3;
-                if (value != null)
-                {
-                    _index = 3;
-                    _value3 = value;
-                    return;
-                }
+                _index = 3;
+                _value3 = (T3)(object)this;
+                return;
             }
+            if (this is T4)
             {
-                var value = this as T4;
-                if (value != null)
-                {
-                    _index = 4;
-                    _value4 = value;
-                    return;
-                }
+                _index = 4;
+                _value4 = (T4)(object)this;
+                return;
             }
+            if (this is T5)
             {
-                var value = this as T5;
-                if (value != null)
-                {
-                    _index = 5;
-                    _value5 = value;
-                    return;
-                }
+                _index = 5;
+                _value5 = (T5)(object)this;
+                return;
             }
+            if (this is T6)
             {
-                var value = this as T6;
-                if (value != null)
-                {
-                    _index = 6;
-                    _value6 = value;
-                    return;
-                }
+                _index = 6;
+                _value6 = (T6)(object)this;
+                return;
             }
+            if (this is T7)
             {
-                var value = this as T7;
-                if (value != null)
-                {
-                    _index = 7;
-                    _value7 = value;
-                    return;
-                }
+                _index = 7;
+                _value7 = (T7)(object)this;
+                return;
             }
+            if (this is T8)
             {
-                var value = this as T8;
-                if (value != null)
-                {
-                    _index = 8;
-                    _value8 = value;
-                    return;
-                }
+                _index = 8;
+                _value8 = (T8)(object)this;
+                return;
             }
         }
 

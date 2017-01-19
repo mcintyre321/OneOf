@@ -57,6 +57,7 @@
     <Compile Include="EqualsTests.cs" />
     <Compile Include="OneOfJsonConverter.cs" />
     <Compile Include="Serialization.cs" />
+    <Compile Include="MixedReferenceAndValueTypeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

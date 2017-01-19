@@ -25,13 +25,6 @@ namespace OneOf
 
         sb.AppendLine($@"
     public {(isStruct ? "struct" : "class")} {className}<{genericArg}> : IOneOf");
-        if (!isStruct)
-        {
-            for (var j = 0; j < i; j++)
-            {
-                sb.AppendLine($"        where T{j} : class");
-            }
-        }
         sb.AppendLine("    {");
         for (var j = 0; j < i; j++)
         {
@@ -40,7 +33,7 @@ namespace OneOf
 
         sb.Append($@"        readonly int _index;
     
-        {className}(int index");
+        {(isStruct ? "" : "protected ")}{className}(int index");
         for (var j = 0; j < i; j++)
         {
             sb.Append($", T{j} value{j} = default(T{j})");
@@ -59,19 +52,16 @@ namespace OneOf
         if (!isStruct)
         {
             sb.AppendLine($@"
-            protected {className}()
+        protected {className}()
         {{");
 
             for (var j = 0; j < i; j++)
             {
-                sb.AppendLine($@"            {{
-                var value = this as T{j};
-                if (value != null)
-                {{
-                    _index = {j};
-                    _value{j} = value;
-                    return;
-                }}
+                sb.AppendLine($@"            if (this is T{j})
+            {{
+                _index = {j};
+                _value{j} = (T{j})(object)this;
+                return;
             }}");
             }
 
