@@ -1,6 +1,6 @@
 ﻿{
   "version": "1.0.0-*",
-  "title": "OneOf",
+  "title": "OneOf - Discriminated Unions",
   "description": "F#-like discriminated unions for C#",
   "authors": [ "Harry McIntyre" ],
   "packOptions": {
