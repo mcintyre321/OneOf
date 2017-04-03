@@ -3,11 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{89D74895-BC8F-413E-99FA-090E7E14A02B}"
-	ProjectSection(SolutionItems) = preProject
-		appveyor.yml = appveyor.yml
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneOf.Tests", "OneOf.Tests\OneOf.Tests.csproj", "{82023ED0-3E20-43CF-ACA1-1EA547E70903}"
 	ProjectSection(ProjectDependencies) = postProject
 		{21D0DD1E-D38A-4A76-B2B3-4CEF11B2C6CB} = {21D0DD1E-D38A-4A76-B2B3-4CEF11B2C6CB}
