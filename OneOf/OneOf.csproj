@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net451;netstandard1.3</TargetFrameworks>
+    <Authors>Harry McIntyre</Authors>
+    <Title>OneOf - Easy Discriminated Unions for c#</Title>
+    <Company>Harry McIntyre</Company>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Product>Harry McIntyre</Product>
+    <Description>F# style discriminated unions or C#, using a custom type OneOf&lt;T0, ... Tn&gt; which holds a single value and has a .Match(...) method on it for exhaustive matching. Simple but powerful.</Description>
+    <PackageProjectUrl>https://github.com/mcintyre321/OneOf/</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/mcintyre321/OneOf/blob/master/licence.md</PackageLicenseUrl>
+    <PackageTags>discriminated unions, return type, match switch</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>OneOf</PackageId>
+    <Copyright>Harry McIntyre</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
+  </ItemGroup>
+
+</Project>
