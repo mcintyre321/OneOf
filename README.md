@@ -7,10 +7,10 @@ This library provides F# style discriminated unions for C#, using a custom type 
 
 I can't encourage you enough to give it a try! Due to exhaustive matching DUs provide an alternative to polymorphism when you want to have a method with guaranteed behaviour-per-type (i.e. adding an abstract method on a base type, and then implementing that method in each type). It's a really powerful tool, ask any f#/Scala dev! :)
 
-##Use cases
+## Use cases
 
 
-###As a method return value
+### As a method return value
 
 The most frequent use case is as a return value, when you need to return different results from a method
 
@@ -36,7 +36,7 @@ public OneOf<User, InvalidName, NameTaken> CreateUser(string username)
     - Method consumer HAS to handle all cases (see 'Matching', below)
   - You can avoid using ["Exceptions for control flow"](http://softwareengineering.stackexchange.com/questions/189222/are-exceptions-as-control-flow-considered-a-serious-antipattern-if-so-why) antipattern by returning custom Typed error objects
   
-###As a method parameter value
+### As a method parameter value
 
 You can use also use `OneOf` as a parameter type, allowing a caller to pass different types without requiring additional overloads. This might not seem that useful for a single parameter, but if you have multiple parameters, the numer of overloads required increases rapidly.
 
