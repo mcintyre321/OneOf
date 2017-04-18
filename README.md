@@ -1,6 +1,6 @@
 # OneOf
 
-> "Ah! It's like a statically typed switch statement" - Mike Giorgaras
+> "Ah! It's like a compile time checked switch statement!" - Mike Giorgaras
 
 ## Getting Started
 
