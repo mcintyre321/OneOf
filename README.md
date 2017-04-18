@@ -1,5 +1,9 @@
 # OneOf
 
+> "Ah! It's like a statically typed switch statement" - Mike Giorgaras
+
+## Getting Started
+
 > install-package OneOf
 
 
