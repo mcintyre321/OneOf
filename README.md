@@ -76,7 +76,7 @@ Matching
 You use the `TOut Match(Func<T0, TOut> f0, ... Func<Tn,TOut> fn)` method to get a value out. 
 
 
-### Advantages over `switch` or `if`:
+### Advantages over `switch` or `if` or `exception` based control flow:
 
 This has a major advantage over a switch statement, as it
   - requires every case to be handled
