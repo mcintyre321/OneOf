@@ -16,10 +16,9 @@ I can't encourage you enough to give it a try! Due to exhaustive matching DUs pr
 
 ### As a method return value
 
-The most frequent use case is as a return value, when you need to return different results from a method
+The most frequent use case is as a return value, when you need to return different results from a method. Here's how you might use it in an MVC controller action:
 
 ```
-
 public OneOf<User, InvalidName, NameTaken> CreateUser(string username)
 {
     if (!IsValid(username)) return new InvalidName();
@@ -28,6 +27,23 @@ public OneOf<User, InvalidName, NameTaken> CreateUser(string username)
     var user = new User(username);
     _repo.Save(user);
     return user;
+}
+
+[HttpPost]
+public IActionResult Register(string username)
+{
+    OneOf<User, InvalidName, NameTaken> createUserResult = CreateUser(username);
+    return createUserResult.Match(
+        user => new RedirectResult("/dashboard"),
+        invalidName => { 
+            ModelState.AddModelError(nameof(username), $"Sorry, that is not a valid username.");
+            return View("Register");
+        },
+        nameTaken => {
+            ModelState.AddModelError(nameof(username), "Sorry, that name is already in use.");
+            return View("Register");
+        }
+    );            
 }
 
 ```
