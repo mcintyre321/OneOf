@@ -81,6 +81,22 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public static OneOf<T0> Result(T0 input)
+        {
+            return input;
+        }
+
+        public OneOf<TResult> MapT0<TResult>(Func<T0, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<TResult>>(
+                input0 => mapFunc(input0)
+            );
+        }
+
         bool Equals(OneOf<T0> other)
         {
             if (_index != other._index)
@@ -241,6 +257,40 @@ namespace OneOf
                 return otherwise();
             }
             throw new InvalidOperationException();
+        }
+
+        public static OneOf<T0, T1> Result(T0 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1> Result(T1 input)
+        {
+            return input;
+        }
+
+        public OneOf<TResult, T1> MapT0<TResult>(Func<T0, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<TResult, T1>>(
+                input0 => mapFunc(input0),
+                input1 => input1
+            );
+        }
+
+        public OneOf<T0, TResult> MapT1<TResult>(Func<T1, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, TResult>>(
+                input0 => input0,
+                input1 => mapFunc(input1)
+            );
         }
 
         bool Equals(OneOf<T0, T1> other)
@@ -447,6 +497,60 @@ namespace OneOf
                 return otherwise();
             }
             throw new InvalidOperationException();
+        }
+
+        public static OneOf<T0, T1, T2> Result(T0 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2> Result(T1 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2> Result(T2 input)
+        {
+            return input;
+        }
+
+        public OneOf<TResult, T1, T2> MapT0<TResult>(Func<T0, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<TResult, T1, T2>>(
+                input0 => mapFunc(input0),
+                input1 => input1,
+                input2 => input2
+            );
+        }
+
+        public OneOf<T0, TResult, T2> MapT1<TResult>(Func<T1, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, TResult, T2>>(
+                input0 => input0,
+                input1 => mapFunc(input1),
+                input2 => input2
+            );
+        }
+
+        public OneOf<T0, T1, TResult> MapT2<TResult>(Func<T2, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, TResult>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => mapFunc(input2)
+            );
         }
 
         bool Equals(OneOf<T0, T1, T2> other)
@@ -697,6 +801,82 @@ namespace OneOf
                 return otherwise();
             }
             throw new InvalidOperationException();
+        }
+
+        public static OneOf<T0, T1, T2, T3> Result(T0 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3> Result(T1 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3> Result(T2 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3> Result(T3 input)
+        {
+            return input;
+        }
+
+        public OneOf<TResult, T1, T2, T3> MapT0<TResult>(Func<T0, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<TResult, T1, T2, T3>>(
+                input0 => mapFunc(input0),
+                input1 => input1,
+                input2 => input2,
+                input3 => input3
+            );
+        }
+
+        public OneOf<T0, TResult, T2, T3> MapT1<TResult>(Func<T1, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, TResult, T2, T3>>(
+                input0 => input0,
+                input1 => mapFunc(input1),
+                input2 => input2,
+                input3 => input3
+            );
+        }
+
+        public OneOf<T0, T1, TResult, T3> MapT2<TResult>(Func<T2, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, TResult, T3>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => mapFunc(input2),
+                input3 => input3
+            );
+        }
+
+        public OneOf<T0, T1, T2, TResult> MapT3<TResult>(Func<T3, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, T2, TResult>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => input2,
+                input3 => mapFunc(input3)
+            );
         }
 
         bool Equals(OneOf<T0, T1, T2, T3> other)
@@ -991,6 +1171,106 @@ namespace OneOf
                 return otherwise();
             }
             throw new InvalidOperationException();
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4> Result(T0 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4> Result(T1 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4> Result(T2 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4> Result(T3 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4> Result(T4 input)
+        {
+            return input;
+        }
+
+        public OneOf<TResult, T1, T2, T3, T4> MapT0<TResult>(Func<T0, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<TResult, T1, T2, T3, T4>>(
+                input0 => mapFunc(input0),
+                input1 => input1,
+                input2 => input2,
+                input3 => input3,
+                input4 => input4
+            );
+        }
+
+        public OneOf<T0, TResult, T2, T3, T4> MapT1<TResult>(Func<T1, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, TResult, T2, T3, T4>>(
+                input0 => input0,
+                input1 => mapFunc(input1),
+                input2 => input2,
+                input3 => input3,
+                input4 => input4
+            );
+        }
+
+        public OneOf<T0, T1, TResult, T3, T4> MapT2<TResult>(Func<T2, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, TResult, T3, T4>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => mapFunc(input2),
+                input3 => input3,
+                input4 => input4
+            );
+        }
+
+        public OneOf<T0, T1, T2, TResult, T4> MapT3<TResult>(Func<T3, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, T2, TResult, T4>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => input2,
+                input3 => mapFunc(input3),
+                input4 => input4
+            );
+        }
+
+        public OneOf<T0, T1, T2, T3, TResult> MapT4<TResult>(Func<T4, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, T2, T3, TResult>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => input2,
+                input3 => input3,
+                input4 => mapFunc(input4)
+            );
         }
 
         bool Equals(OneOf<T0, T1, T2, T3, T4> other)
@@ -1329,6 +1609,132 @@ namespace OneOf
                 return otherwise();
             }
             throw new InvalidOperationException();
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5> Result(T0 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5> Result(T1 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5> Result(T2 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5> Result(T3 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5> Result(T4 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5> Result(T5 input)
+        {
+            return input;
+        }
+
+        public OneOf<TResult, T1, T2, T3, T4, T5> MapT0<TResult>(Func<T0, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<TResult, T1, T2, T3, T4, T5>>(
+                input0 => mapFunc(input0),
+                input1 => input1,
+                input2 => input2,
+                input3 => input3,
+                input4 => input4,
+                input5 => input5
+            );
+        }
+
+        public OneOf<T0, TResult, T2, T3, T4, T5> MapT1<TResult>(Func<T1, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, TResult, T2, T3, T4, T5>>(
+                input0 => input0,
+                input1 => mapFunc(input1),
+                input2 => input2,
+                input3 => input3,
+                input4 => input4,
+                input5 => input5
+            );
+        }
+
+        public OneOf<T0, T1, TResult, T3, T4, T5> MapT2<TResult>(Func<T2, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, TResult, T3, T4, T5>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => mapFunc(input2),
+                input3 => input3,
+                input4 => input4,
+                input5 => input5
+            );
+        }
+
+        public OneOf<T0, T1, T2, TResult, T4, T5> MapT3<TResult>(Func<T3, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, T2, TResult, T4, T5>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => input2,
+                input3 => mapFunc(input3),
+                input4 => input4,
+                input5 => input5
+            );
+        }
+
+        public OneOf<T0, T1, T2, T3, TResult, T5> MapT4<TResult>(Func<T4, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, T2, T3, TResult, T5>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => input2,
+                input3 => input3,
+                input4 => mapFunc(input4),
+                input5 => input5
+            );
+        }
+
+        public OneOf<T0, T1, T2, T3, T4, TResult> MapT5<TResult>(Func<T5, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, T2, T3, T4, TResult>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => input2,
+                input3 => input3,
+                input4 => input4,
+                input5 => mapFunc(input5)
+            );
         }
 
         bool Equals(OneOf<T0, T1, T2, T3, T4, T5> other)
@@ -1711,6 +2117,160 @@ namespace OneOf
                 return otherwise();
             }
             throw new InvalidOperationException();
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6> Result(T0 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6> Result(T1 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6> Result(T2 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6> Result(T3 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6> Result(T4 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6> Result(T5 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6> Result(T6 input)
+        {
+            return input;
+        }
+
+        public OneOf<TResult, T1, T2, T3, T4, T5, T6> MapT0<TResult>(Func<T0, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<TResult, T1, T2, T3, T4, T5, T6>>(
+                input0 => mapFunc(input0),
+                input1 => input1,
+                input2 => input2,
+                input3 => input3,
+                input4 => input4,
+                input5 => input5,
+                input6 => input6
+            );
+        }
+
+        public OneOf<T0, TResult, T2, T3, T4, T5, T6> MapT1<TResult>(Func<T1, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, TResult, T2, T3, T4, T5, T6>>(
+                input0 => input0,
+                input1 => mapFunc(input1),
+                input2 => input2,
+                input3 => input3,
+                input4 => input4,
+                input5 => input5,
+                input6 => input6
+            );
+        }
+
+        public OneOf<T0, T1, TResult, T3, T4, T5, T6> MapT2<TResult>(Func<T2, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, TResult, T3, T4, T5, T6>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => mapFunc(input2),
+                input3 => input3,
+                input4 => input4,
+                input5 => input5,
+                input6 => input6
+            );
+        }
+
+        public OneOf<T0, T1, T2, TResult, T4, T5, T6> MapT3<TResult>(Func<T3, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, T2, TResult, T4, T5, T6>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => input2,
+                input3 => mapFunc(input3),
+                input4 => input4,
+                input5 => input5,
+                input6 => input6
+            );
+        }
+
+        public OneOf<T0, T1, T2, T3, TResult, T5, T6> MapT4<TResult>(Func<T4, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, T2, T3, TResult, T5, T6>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => input2,
+                input3 => input3,
+                input4 => mapFunc(input4),
+                input5 => input5,
+                input6 => input6
+            );
+        }
+
+        public OneOf<T0, T1, T2, T3, T4, TResult, T6> MapT5<TResult>(Func<T5, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, T2, T3, T4, TResult, T6>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => input2,
+                input3 => input3,
+                input4 => input4,
+                input5 => mapFunc(input5),
+                input6 => input6
+            );
+        }
+
+        public OneOf<T0, T1, T2, T3, T4, T5, TResult> MapT6<TResult>(Func<T6, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, T2, T3, T4, T5, TResult>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => input2,
+                input3 => input3,
+                input4 => input4,
+                input5 => input5,
+                input6 => mapFunc(input6)
+            );
         }
 
         bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6> other)
@@ -2137,6 +2697,190 @@ namespace OneOf
                 return otherwise();
             }
             throw new InvalidOperationException();
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> Result(T0 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> Result(T1 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> Result(T2 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> Result(T3 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> Result(T4 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> Result(T5 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> Result(T6 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> Result(T7 input)
+        {
+            return input;
+        }
+
+        public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7> MapT0<TResult>(Func<T0, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<TResult, T1, T2, T3, T4, T5, T6, T7>>(
+                input0 => mapFunc(input0),
+                input1 => input1,
+                input2 => input2,
+                input3 => input3,
+                input4 => input4,
+                input5 => input5,
+                input6 => input6,
+                input7 => input7
+            );
+        }
+
+        public OneOf<T0, TResult, T2, T3, T4, T5, T6, T7> MapT1<TResult>(Func<T1, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, TResult, T2, T3, T4, T5, T6, T7>>(
+                input0 => input0,
+                input1 => mapFunc(input1),
+                input2 => input2,
+                input3 => input3,
+                input4 => input4,
+                input5 => input5,
+                input6 => input6,
+                input7 => input7
+            );
+        }
+
+        public OneOf<T0, T1, TResult, T3, T4, T5, T6, T7> MapT2<TResult>(Func<T2, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, TResult, T3, T4, T5, T6, T7>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => mapFunc(input2),
+                input3 => input3,
+                input4 => input4,
+                input5 => input5,
+                input6 => input6,
+                input7 => input7
+            );
+        }
+
+        public OneOf<T0, T1, T2, TResult, T4, T5, T6, T7> MapT3<TResult>(Func<T3, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, T2, TResult, T4, T5, T6, T7>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => input2,
+                input3 => mapFunc(input3),
+                input4 => input4,
+                input5 => input5,
+                input6 => input6,
+                input7 => input7
+            );
+        }
+
+        public OneOf<T0, T1, T2, T3, TResult, T5, T6, T7> MapT4<TResult>(Func<T4, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, T2, T3, TResult, T5, T6, T7>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => input2,
+                input3 => input3,
+                input4 => mapFunc(input4),
+                input5 => input5,
+                input6 => input6,
+                input7 => input7
+            );
+        }
+
+        public OneOf<T0, T1, T2, T3, T4, TResult, T6, T7> MapT5<TResult>(Func<T5, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, T2, T3, T4, TResult, T6, T7>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => input2,
+                input3 => input3,
+                input4 => input4,
+                input5 => mapFunc(input5),
+                input6 => input6,
+                input7 => input7
+            );
+        }
+
+        public OneOf<T0, T1, T2, T3, T4, T5, TResult, T7> MapT6<TResult>(Func<T6, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, T2, T3, T4, T5, TResult, T7>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => input2,
+                input3 => input3,
+                input4 => input4,
+                input5 => input5,
+                input6 => mapFunc(input6),
+                input7 => input7
+            );
+        }
+
+        public OneOf<T0, T1, T2, T3, T4, T5, T6, TResult> MapT7<TResult>(Func<T7, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, TResult>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => input2,
+                input3 => input3,
+                input4 => input4,
+                input5 => input5,
+                input6 => input6,
+                input7 => mapFunc(input7)
+            );
         }
 
         bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7> other)
@@ -2607,6 +3351,222 @@ namespace OneOf
                 return otherwise();
             }
             throw new InvalidOperationException();
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> Result(T0 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> Result(T1 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> Result(T2 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> Result(T3 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> Result(T4 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> Result(T5 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> Result(T6 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> Result(T7 input)
+        {
+            return input;
+        }
+
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> Result(T8 input)
+        {
+            return input;
+        }
+
+        public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8> MapT0<TResult>(Func<T0, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8>>(
+                input0 => mapFunc(input0),
+                input1 => input1,
+                input2 => input2,
+                input3 => input3,
+                input4 => input4,
+                input5 => input5,
+                input6 => input6,
+                input7 => input7,
+                input8 => input8
+            );
+        }
+
+        public OneOf<T0, TResult, T2, T3, T4, T5, T6, T7, T8> MapT1<TResult>(Func<T1, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, TResult, T2, T3, T4, T5, T6, T7, T8>>(
+                input0 => input0,
+                input1 => mapFunc(input1),
+                input2 => input2,
+                input3 => input3,
+                input4 => input4,
+                input5 => input5,
+                input6 => input6,
+                input7 => input7,
+                input8 => input8
+            );
+        }
+
+        public OneOf<T0, T1, TResult, T3, T4, T5, T6, T7, T8> MapT2<TResult>(Func<T2, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, TResult, T3, T4, T5, T6, T7, T8>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => mapFunc(input2),
+                input3 => input3,
+                input4 => input4,
+                input5 => input5,
+                input6 => input6,
+                input7 => input7,
+                input8 => input8
+            );
+        }
+
+        public OneOf<T0, T1, T2, TResult, T4, T5, T6, T7, T8> MapT3<TResult>(Func<T3, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, T2, TResult, T4, T5, T6, T7, T8>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => input2,
+                input3 => mapFunc(input3),
+                input4 => input4,
+                input5 => input5,
+                input6 => input6,
+                input7 => input7,
+                input8 => input8
+            );
+        }
+
+        public OneOf<T0, T1, T2, T3, TResult, T5, T6, T7, T8> MapT4<TResult>(Func<T4, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, T2, T3, TResult, T5, T6, T7, T8>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => input2,
+                input3 => input3,
+                input4 => mapFunc(input4),
+                input5 => input5,
+                input6 => input6,
+                input7 => input7,
+                input8 => input8
+            );
+        }
+
+        public OneOf<T0, T1, T2, T3, T4, TResult, T6, T7, T8> MapT5<TResult>(Func<T5, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, T2, T3, T4, TResult, T6, T7, T8>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => input2,
+                input3 => input3,
+                input4 => input4,
+                input5 => mapFunc(input5),
+                input6 => input6,
+                input7 => input7,
+                input8 => input8
+            );
+        }
+
+        public OneOf<T0, T1, T2, T3, T4, T5, TResult, T7, T8> MapT6<TResult>(Func<T6, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, T2, T3, T4, T5, TResult, T7, T8>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => input2,
+                input3 => input3,
+                input4 => input4,
+                input5 => input5,
+                input6 => mapFunc(input6),
+                input7 => input7,
+                input8 => input8
+            );
+        }
+
+        public OneOf<T0, T1, T2, T3, T4, T5, T6, TResult, T8> MapT7<TResult>(Func<T7, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, TResult, T8>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => input2,
+                input3 => input3,
+                input4 => input4,
+                input5 => input5,
+                input6 => input6,
+                input7 => mapFunc(input7),
+                input8 => input8
+            );
+        }
+
+        public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, TResult> MapT8<TResult>(Func<T8, TResult> mapFunc)
+        {
+            if(mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, TResult>>(
+                input0 => input0,
+                input1 => input1,
+                input2 => input2,
+                input3 => input3,
+                input4 => input4,
+                input5 => input5,
+                input6 => input6,
+                input7 => input7,
+                input8 => mapFunc(input8)
+            );
         }
 
         bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> other)

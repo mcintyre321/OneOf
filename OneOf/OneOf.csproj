@@ -16,8 +16,4 @@
     <Copyright>Harry McIntyre</Copyright>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
-  </ItemGroup>
-
 </Project>
