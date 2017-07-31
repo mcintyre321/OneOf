@@ -6,14 +6,14 @@ namespace OneOf
     {
         readonly T0 _value0;
         readonly int _index;
-    
+
         OneOf(int index, T0 value0 = default(T0))
-        { 
+        {
             _index = index;
             _value0 = value0;
         }
 
-        object IOneOf.Value 
+        object IOneOf.Value
         {
             get
             {
@@ -31,7 +31,7 @@ namespace OneOf
         {
             get { return _index == 0; }
         }
-        
+
         public T0 AsT0
         {
             get
@@ -43,7 +43,7 @@ namespace OneOf
                 return _value0;
             }
         }
-        
+
         public static implicit operator OneOf<T0>(T0 t)
         {
              return new OneOf<T0>(0, value0: t);
@@ -54,7 +54,7 @@ namespace OneOf
             if (_index == 0 && f0 != null)
             {
                 f0(_value0);
-                return; 
+                return;
             }
             throw new InvalidOperationException();
         }
@@ -146,15 +146,15 @@ namespace OneOf
         readonly T0 _value0;
         readonly T1 _value1;
         readonly int _index;
-    
+
         OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1))
-        { 
+        {
             _index = index;
             _value0 = value0;
             _value1 = value1;
         }
 
-        object IOneOf.Value 
+        object IOneOf.Value
         {
             get
             {
@@ -174,7 +174,7 @@ namespace OneOf
         {
             get { return _index == 0; }
         }
-        
+
         public T0 AsT0
         {
             get
@@ -186,7 +186,7 @@ namespace OneOf
                 return _value0;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1>(T0 t)
         {
              return new OneOf<T0, T1>(0, value0: t);
@@ -196,7 +196,7 @@ namespace OneOf
         {
             get { return _index == 1; }
         }
-        
+
         public T1 AsT1
         {
             get
@@ -208,7 +208,7 @@ namespace OneOf
                 return _value1;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1>(T1 t)
         {
              return new OneOf<T0, T1>(1, value1: t);
@@ -219,12 +219,12 @@ namespace OneOf
             if (_index == 0 && f0 != null)
             {
                 f0(_value0);
-                return; 
+                return;
             }
             if (_index == 1 && f1 != null)
             {
                 f1(_value1);
-                return; 
+                return;
             }
             throw new InvalidOperationException();
         }
@@ -348,16 +348,16 @@ namespace OneOf
         readonly T1 _value1;
         readonly T2 _value2;
         readonly int _index;
-    
+
         OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2))
-        { 
+        {
             _index = index;
             _value0 = value0;
             _value1 = value1;
             _value2 = value2;
         }
 
-        object IOneOf.Value 
+        object IOneOf.Value
         {
             get
             {
@@ -379,7 +379,7 @@ namespace OneOf
         {
             get { return _index == 0; }
         }
-        
+
         public T0 AsT0
         {
             get
@@ -391,7 +391,7 @@ namespace OneOf
                 return _value0;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2>(T0 t)
         {
              return new OneOf<T0, T1, T2>(0, value0: t);
@@ -401,7 +401,7 @@ namespace OneOf
         {
             get { return _index == 1; }
         }
-        
+
         public T1 AsT1
         {
             get
@@ -413,7 +413,7 @@ namespace OneOf
                 return _value1;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2>(T1 t)
         {
              return new OneOf<T0, T1, T2>(1, value1: t);
@@ -423,7 +423,7 @@ namespace OneOf
         {
             get { return _index == 2; }
         }
-        
+
         public T2 AsT2
         {
             get
@@ -435,7 +435,7 @@ namespace OneOf
                 return _value2;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2>(T2 t)
         {
              return new OneOf<T0, T1, T2>(2, value2: t);
@@ -446,17 +446,17 @@ namespace OneOf
             if (_index == 0 && f0 != null)
             {
                 f0(_value0);
-                return; 
+                return;
             }
             if (_index == 1 && f1 != null)
             {
                 f1(_value1);
-                return; 
+                return;
             }
             if (_index == 2 && f2 != null)
             {
                 f2(_value2);
-                return; 
+                return;
             }
             throw new InvalidOperationException();
         }
@@ -614,9 +614,9 @@ namespace OneOf
         readonly T2 _value2;
         readonly T3 _value3;
         readonly int _index;
-    
+
         OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3))
-        { 
+        {
             _index = index;
             _value0 = value0;
             _value1 = value1;
@@ -624,7 +624,7 @@ namespace OneOf
             _value3 = value3;
         }
 
-        object IOneOf.Value 
+        object IOneOf.Value
         {
             get
             {
@@ -648,7 +648,7 @@ namespace OneOf
         {
             get { return _index == 0; }
         }
-        
+
         public T0 AsT0
         {
             get
@@ -660,7 +660,7 @@ namespace OneOf
                 return _value0;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3>(T0 t)
         {
              return new OneOf<T0, T1, T2, T3>(0, value0: t);
@@ -670,7 +670,7 @@ namespace OneOf
         {
             get { return _index == 1; }
         }
-        
+
         public T1 AsT1
         {
             get
@@ -682,7 +682,7 @@ namespace OneOf
                 return _value1;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3>(T1 t)
         {
              return new OneOf<T0, T1, T2, T3>(1, value1: t);
@@ -692,7 +692,7 @@ namespace OneOf
         {
             get { return _index == 2; }
         }
-        
+
         public T2 AsT2
         {
             get
@@ -704,7 +704,7 @@ namespace OneOf
                 return _value2;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3>(T2 t)
         {
              return new OneOf<T0, T1, T2, T3>(2, value2: t);
@@ -714,7 +714,7 @@ namespace OneOf
         {
             get { return _index == 3; }
         }
-        
+
         public T3 AsT3
         {
             get
@@ -726,7 +726,7 @@ namespace OneOf
                 return _value3;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3>(T3 t)
         {
              return new OneOf<T0, T1, T2, T3>(3, value3: t);
@@ -737,22 +737,22 @@ namespace OneOf
             if (_index == 0 && f0 != null)
             {
                 f0(_value0);
-                return; 
+                return;
             }
             if (_index == 1 && f1 != null)
             {
                 f1(_value1);
-                return; 
+                return;
             }
             if (_index == 2 && f2 != null)
             {
                 f2(_value2);
-                return; 
+                return;
             }
             if (_index == 3 && f3 != null)
             {
                 f3(_value3);
-                return; 
+                return;
             }
             throw new InvalidOperationException();
         }
@@ -946,9 +946,9 @@ namespace OneOf
         readonly T3 _value3;
         readonly T4 _value4;
         readonly int _index;
-    
+
         OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4))
-        { 
+        {
             _index = index;
             _value0 = value0;
             _value1 = value1;
@@ -957,7 +957,7 @@ namespace OneOf
             _value4 = value4;
         }
 
-        object IOneOf.Value 
+        object IOneOf.Value
         {
             get
             {
@@ -983,7 +983,7 @@ namespace OneOf
         {
             get { return _index == 0; }
         }
-        
+
         public T0 AsT0
         {
             get
@@ -995,7 +995,7 @@ namespace OneOf
                 return _value0;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4>(T0 t)
         {
              return new OneOf<T0, T1, T2, T3, T4>(0, value0: t);
@@ -1005,7 +1005,7 @@ namespace OneOf
         {
             get { return _index == 1; }
         }
-        
+
         public T1 AsT1
         {
             get
@@ -1017,7 +1017,7 @@ namespace OneOf
                 return _value1;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4>(T1 t)
         {
              return new OneOf<T0, T1, T2, T3, T4>(1, value1: t);
@@ -1027,7 +1027,7 @@ namespace OneOf
         {
             get { return _index == 2; }
         }
-        
+
         public T2 AsT2
         {
             get
@@ -1039,7 +1039,7 @@ namespace OneOf
                 return _value2;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4>(T2 t)
         {
              return new OneOf<T0, T1, T2, T3, T4>(2, value2: t);
@@ -1049,7 +1049,7 @@ namespace OneOf
         {
             get { return _index == 3; }
         }
-        
+
         public T3 AsT3
         {
             get
@@ -1061,7 +1061,7 @@ namespace OneOf
                 return _value3;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4>(T3 t)
         {
              return new OneOf<T0, T1, T2, T3, T4>(3, value3: t);
@@ -1071,7 +1071,7 @@ namespace OneOf
         {
             get { return _index == 4; }
         }
-        
+
         public T4 AsT4
         {
             get
@@ -1083,7 +1083,7 @@ namespace OneOf
                 return _value4;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4>(T4 t)
         {
              return new OneOf<T0, T1, T2, T3, T4>(4, value4: t);
@@ -1094,27 +1094,27 @@ namespace OneOf
             if (_index == 0 && f0 != null)
             {
                 f0(_value0);
-                return; 
+                return;
             }
             if (_index == 1 && f1 != null)
             {
                 f1(_value1);
-                return; 
+                return;
             }
             if (_index == 2 && f2 != null)
             {
                 f2(_value2);
-                return; 
+                return;
             }
             if (_index == 3 && f3 != null)
             {
                 f3(_value3);
-                return; 
+                return;
             }
             if (_index == 4 && f4 != null)
             {
                 f4(_value4);
-                return; 
+                return;
             }
             throw new InvalidOperationException();
         }
@@ -1346,9 +1346,9 @@ namespace OneOf
         readonly T4 _value4;
         readonly T5 _value5;
         readonly int _index;
-    
+
         OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5))
-        { 
+        {
             _index = index;
             _value0 = value0;
             _value1 = value1;
@@ -1358,7 +1358,7 @@ namespace OneOf
             _value5 = value5;
         }
 
-        object IOneOf.Value 
+        object IOneOf.Value
         {
             get
             {
@@ -1386,7 +1386,7 @@ namespace OneOf
         {
             get { return _index == 0; }
         }
-        
+
         public T0 AsT0
         {
             get
@@ -1398,7 +1398,7 @@ namespace OneOf
                 return _value0;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5>(T0 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5>(0, value0: t);
@@ -1408,7 +1408,7 @@ namespace OneOf
         {
             get { return _index == 1; }
         }
-        
+
         public T1 AsT1
         {
             get
@@ -1420,7 +1420,7 @@ namespace OneOf
                 return _value1;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5>(T1 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5>(1, value1: t);
@@ -1430,7 +1430,7 @@ namespace OneOf
         {
             get { return _index == 2; }
         }
-        
+
         public T2 AsT2
         {
             get
@@ -1442,7 +1442,7 @@ namespace OneOf
                 return _value2;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5>(T2 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5>(2, value2: t);
@@ -1452,7 +1452,7 @@ namespace OneOf
         {
             get { return _index == 3; }
         }
-        
+
         public T3 AsT3
         {
             get
@@ -1464,7 +1464,7 @@ namespace OneOf
                 return _value3;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5>(T3 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5>(3, value3: t);
@@ -1474,7 +1474,7 @@ namespace OneOf
         {
             get { return _index == 4; }
         }
-        
+
         public T4 AsT4
         {
             get
@@ -1486,7 +1486,7 @@ namespace OneOf
                 return _value4;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5>(T4 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5>(4, value4: t);
@@ -1496,7 +1496,7 @@ namespace OneOf
         {
             get { return _index == 5; }
         }
-        
+
         public T5 AsT5
         {
             get
@@ -1508,7 +1508,7 @@ namespace OneOf
                 return _value5;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5>(T5 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5>(5, value5: t);
@@ -1519,32 +1519,32 @@ namespace OneOf
             if (_index == 0 && f0 != null)
             {
                 f0(_value0);
-                return; 
+                return;
             }
             if (_index == 1 && f1 != null)
             {
                 f1(_value1);
-                return; 
+                return;
             }
             if (_index == 2 && f2 != null)
             {
                 f2(_value2);
-                return; 
+                return;
             }
             if (_index == 3 && f3 != null)
             {
                 f3(_value3);
-                return; 
+                return;
             }
             if (_index == 4 && f4 != null)
             {
                 f4(_value4);
-                return; 
+                return;
             }
             if (_index == 5 && f5 != null)
             {
                 f5(_value5);
-                return; 
+                return;
             }
             throw new InvalidOperationException();
         }
@@ -1816,9 +1816,9 @@ namespace OneOf
         readonly T5 _value5;
         readonly T6 _value6;
         readonly int _index;
-    
+
         OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6))
-        { 
+        {
             _index = index;
             _value0 = value0;
             _value1 = value1;
@@ -1829,7 +1829,7 @@ namespace OneOf
             _value6 = value6;
         }
 
-        object IOneOf.Value 
+        object IOneOf.Value
         {
             get
             {
@@ -1859,7 +1859,7 @@ namespace OneOf
         {
             get { return _index == 0; }
         }
-        
+
         public T0 AsT0
         {
             get
@@ -1871,7 +1871,7 @@ namespace OneOf
                 return _value0;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6>(T0 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6>(0, value0: t);
@@ -1881,7 +1881,7 @@ namespace OneOf
         {
             get { return _index == 1; }
         }
-        
+
         public T1 AsT1
         {
             get
@@ -1893,7 +1893,7 @@ namespace OneOf
                 return _value1;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6>(T1 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6>(1, value1: t);
@@ -1903,7 +1903,7 @@ namespace OneOf
         {
             get { return _index == 2; }
         }
-        
+
         public T2 AsT2
         {
             get
@@ -1915,7 +1915,7 @@ namespace OneOf
                 return _value2;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6>(T2 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6>(2, value2: t);
@@ -1925,7 +1925,7 @@ namespace OneOf
         {
             get { return _index == 3; }
         }
-        
+
         public T3 AsT3
         {
             get
@@ -1937,7 +1937,7 @@ namespace OneOf
                 return _value3;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6>(T3 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6>(3, value3: t);
@@ -1947,7 +1947,7 @@ namespace OneOf
         {
             get { return _index == 4; }
         }
-        
+
         public T4 AsT4
         {
             get
@@ -1959,7 +1959,7 @@ namespace OneOf
                 return _value4;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6>(T4 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6>(4, value4: t);
@@ -1969,7 +1969,7 @@ namespace OneOf
         {
             get { return _index == 5; }
         }
-        
+
         public T5 AsT5
         {
             get
@@ -1981,7 +1981,7 @@ namespace OneOf
                 return _value5;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6>(T5 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6>(5, value5: t);
@@ -1991,7 +1991,7 @@ namespace OneOf
         {
             get { return _index == 6; }
         }
-        
+
         public T6 AsT6
         {
             get
@@ -2003,7 +2003,7 @@ namespace OneOf
                 return _value6;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6>(T6 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6>(6, value6: t);
@@ -2014,37 +2014,37 @@ namespace OneOf
             if (_index == 0 && f0 != null)
             {
                 f0(_value0);
-                return; 
+                return;
             }
             if (_index == 1 && f1 != null)
             {
                 f1(_value1);
-                return; 
+                return;
             }
             if (_index == 2 && f2 != null)
             {
                 f2(_value2);
-                return; 
+                return;
             }
             if (_index == 3 && f3 != null)
             {
                 f3(_value3);
-                return; 
+                return;
             }
             if (_index == 4 && f4 != null)
             {
                 f4(_value4);
-                return; 
+                return;
             }
             if (_index == 5 && f5 != null)
             {
                 f5(_value5);
-                return; 
+                return;
             }
             if (_index == 6 && f6 != null)
             {
                 f6(_value6);
-                return; 
+                return;
             }
             throw new InvalidOperationException();
         }
@@ -2358,9 +2358,9 @@ namespace OneOf
         readonly T6 _value6;
         readonly T7 _value7;
         readonly int _index;
-    
+
         OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7))
-        { 
+        {
             _index = index;
             _value0 = value0;
             _value1 = value1;
@@ -2372,7 +2372,7 @@ namespace OneOf
             _value7 = value7;
         }
 
-        object IOneOf.Value 
+        object IOneOf.Value
         {
             get
             {
@@ -2404,7 +2404,7 @@ namespace OneOf
         {
             get { return _index == 0; }
         }
-        
+
         public T0 AsT0
         {
             get
@@ -2416,7 +2416,7 @@ namespace OneOf
                 return _value0;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(T0 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(0, value0: t);
@@ -2426,7 +2426,7 @@ namespace OneOf
         {
             get { return _index == 1; }
         }
-        
+
         public T1 AsT1
         {
             get
@@ -2438,7 +2438,7 @@ namespace OneOf
                 return _value1;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(T1 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(1, value1: t);
@@ -2448,7 +2448,7 @@ namespace OneOf
         {
             get { return _index == 2; }
         }
-        
+
         public T2 AsT2
         {
             get
@@ -2460,7 +2460,7 @@ namespace OneOf
                 return _value2;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(T2 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(2, value2: t);
@@ -2470,7 +2470,7 @@ namespace OneOf
         {
             get { return _index == 3; }
         }
-        
+
         public T3 AsT3
         {
             get
@@ -2482,7 +2482,7 @@ namespace OneOf
                 return _value3;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(T3 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(3, value3: t);
@@ -2492,7 +2492,7 @@ namespace OneOf
         {
             get { return _index == 4; }
         }
-        
+
         public T4 AsT4
         {
             get
@@ -2504,7 +2504,7 @@ namespace OneOf
                 return _value4;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(T4 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(4, value4: t);
@@ -2514,7 +2514,7 @@ namespace OneOf
         {
             get { return _index == 5; }
         }
-        
+
         public T5 AsT5
         {
             get
@@ -2526,7 +2526,7 @@ namespace OneOf
                 return _value5;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(T5 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(5, value5: t);
@@ -2536,7 +2536,7 @@ namespace OneOf
         {
             get { return _index == 6; }
         }
-        
+
         public T6 AsT6
         {
             get
@@ -2548,7 +2548,7 @@ namespace OneOf
                 return _value6;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(T6 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(6, value6: t);
@@ -2558,7 +2558,7 @@ namespace OneOf
         {
             get { return _index == 7; }
         }
-        
+
         public T7 AsT7
         {
             get
@@ -2570,7 +2570,7 @@ namespace OneOf
                 return _value7;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(T7 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(7, value7: t);
@@ -2581,42 +2581,42 @@ namespace OneOf
             if (_index == 0 && f0 != null)
             {
                 f0(_value0);
-                return; 
+                return;
             }
             if (_index == 1 && f1 != null)
             {
                 f1(_value1);
-                return; 
+                return;
             }
             if (_index == 2 && f2 != null)
             {
                 f2(_value2);
-                return; 
+                return;
             }
             if (_index == 3 && f3 != null)
             {
                 f3(_value3);
-                return; 
+                return;
             }
             if (_index == 4 && f4 != null)
             {
                 f4(_value4);
-                return; 
+                return;
             }
             if (_index == 5 && f5 != null)
             {
                 f5(_value5);
-                return; 
+                return;
             }
             if (_index == 6 && f6 != null)
             {
                 f6(_value6);
-                return; 
+                return;
             }
             if (_index == 7 && f7 != null)
             {
                 f7(_value7);
-                return; 
+                return;
             }
             throw new InvalidOperationException();
         }
@@ -2974,9 +2974,9 @@ namespace OneOf
         readonly T7 _value7;
         readonly T8 _value8;
         readonly int _index;
-    
+
         OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8))
-        { 
+        {
             _index = index;
             _value0 = value0;
             _value1 = value1;
@@ -2989,7 +2989,7 @@ namespace OneOf
             _value8 = value8;
         }
 
-        object IOneOf.Value 
+        object IOneOf.Value
         {
             get
             {
@@ -3023,7 +3023,7 @@ namespace OneOf
         {
             get { return _index == 0; }
         }
-        
+
         public T0 AsT0
         {
             get
@@ -3035,7 +3035,7 @@ namespace OneOf
                 return _value0;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T0 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(0, value0: t);
@@ -3045,7 +3045,7 @@ namespace OneOf
         {
             get { return _index == 1; }
         }
-        
+
         public T1 AsT1
         {
             get
@@ -3057,7 +3057,7 @@ namespace OneOf
                 return _value1;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T1 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(1, value1: t);
@@ -3067,7 +3067,7 @@ namespace OneOf
         {
             get { return _index == 2; }
         }
-        
+
         public T2 AsT2
         {
             get
@@ -3079,7 +3079,7 @@ namespace OneOf
                 return _value2;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T2 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(2, value2: t);
@@ -3089,7 +3089,7 @@ namespace OneOf
         {
             get { return _index == 3; }
         }
-        
+
         public T3 AsT3
         {
             get
@@ -3101,7 +3101,7 @@ namespace OneOf
                 return _value3;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T3 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(3, value3: t);
@@ -3111,7 +3111,7 @@ namespace OneOf
         {
             get { return _index == 4; }
         }
-        
+
         public T4 AsT4
         {
             get
@@ -3123,7 +3123,7 @@ namespace OneOf
                 return _value4;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T4 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(4, value4: t);
@@ -3133,7 +3133,7 @@ namespace OneOf
         {
             get { return _index == 5; }
         }
-        
+
         public T5 AsT5
         {
             get
@@ -3145,7 +3145,7 @@ namespace OneOf
                 return _value5;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T5 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(5, value5: t);
@@ -3155,7 +3155,7 @@ namespace OneOf
         {
             get { return _index == 6; }
         }
-        
+
         public T6 AsT6
         {
             get
@@ -3167,7 +3167,7 @@ namespace OneOf
                 return _value6;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T6 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(6, value6: t);
@@ -3177,7 +3177,7 @@ namespace OneOf
         {
             get { return _index == 7; }
         }
-        
+
         public T7 AsT7
         {
             get
@@ -3189,7 +3189,7 @@ namespace OneOf
                 return _value7;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T7 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(7, value7: t);
@@ -3199,7 +3199,7 @@ namespace OneOf
         {
             get { return _index == 8; }
         }
-        
+
         public T8 AsT8
         {
             get
@@ -3211,7 +3211,7 @@ namespace OneOf
                 return _value8;
             }
         }
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T8 t)
         {
              return new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(8, value8: t);
@@ -3222,47 +3222,47 @@ namespace OneOf
             if (_index == 0 && f0 != null)
             {
                 f0(_value0);
-                return; 
+                return;
             }
             if (_index == 1 && f1 != null)
             {
                 f1(_value1);
-                return; 
+                return;
             }
             if (_index == 2 && f2 != null)
             {
                 f2(_value2);
-                return; 
+                return;
             }
             if (_index == 3 && f3 != null)
             {
                 f3(_value3);
-                return; 
+                return;
             }
             if (_index == 4 && f4 != null)
             {
                 f4(_value4);
-                return; 
+                return;
             }
             if (_index == 5 && f5 != null)
             {
                 f5(_value5);
-                return; 
+                return;
             }
             if (_index == 6 && f6 != null)
             {
                 f6(_value6);
-                return; 
+                return;
             }
             if (_index == 7 && f7 != null)
             {
                 f7(_value7);
-                return; 
+                return;
             }
             if (_index == 8 && f8 != null)
             {
                 f8(_value8);
-                return; 
+                return;
             }
             throw new InvalidOperationException();
         }

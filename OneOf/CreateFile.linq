@@ -6,6 +6,10 @@ void Main()
     var outpath = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "OneOf.cs");
     File.WriteAllText(outpath.Dump(), output);
 
+    var output2 = GetContent(false);
+    var outpath2 = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "OneOfBase.cs");
+    File.WriteAllText(outpath2.Dump(), output2);
+
 }
 
 public string GetContent(bool isStruct)
