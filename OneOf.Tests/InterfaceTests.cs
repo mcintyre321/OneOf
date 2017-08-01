@@ -8,7 +8,7 @@ namespace OneOf.Tests
         [Test]
         public void ResolveIFooFromResultMethod()
         {
-            var result = OneOf<IFoo, int>.Result(new Foo());
+            var result = OneOf<IFoo, int>.FromT0(new Foo());
         }
     }
 

@@ -81,7 +81,7 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0> Result(T0 input)
+        public static OneOf<T0> FromT0(T0 input)
         {
             return input;
         }
@@ -259,12 +259,12 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1> Result(T0 input)
+        public static OneOf<T0, T1> FromT0(T0 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1> Result(T1 input)
+        public static OneOf<T0, T1> FromT1(T1 input)
         {
             return input;
         }
@@ -499,17 +499,17 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2> Result(T0 input)
+        public static OneOf<T0, T1, T2> FromT0(T0 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2> Result(T1 input)
+        public static OneOf<T0, T1, T2> FromT1(T1 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2> Result(T2 input)
+        public static OneOf<T0, T1, T2> FromT2(T2 input)
         {
             return input;
         }
@@ -803,22 +803,22 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3> Result(T0 input)
+        public static OneOf<T0, T1, T2, T3> FromT0(T0 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3> Result(T1 input)
+        public static OneOf<T0, T1, T2, T3> FromT1(T1 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3> Result(T2 input)
+        public static OneOf<T0, T1, T2, T3> FromT2(T2 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3> Result(T3 input)
+        public static OneOf<T0, T1, T2, T3> FromT3(T3 input)
         {
             return input;
         }
@@ -1173,27 +1173,27 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4> Result(T0 input)
+        public static OneOf<T0, T1, T2, T3, T4> FromT0(T0 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4> Result(T1 input)
+        public static OneOf<T0, T1, T2, T3, T4> FromT1(T1 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4> Result(T2 input)
+        public static OneOf<T0, T1, T2, T3, T4> FromT2(T2 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4> Result(T3 input)
+        public static OneOf<T0, T1, T2, T3, T4> FromT3(T3 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4> Result(T4 input)
+        public static OneOf<T0, T1, T2, T3, T4> FromT4(T4 input)
         {
             return input;
         }
@@ -1611,32 +1611,32 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5> Result(T0 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5> FromT0(T0 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5> Result(T1 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5> FromT1(T1 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5> Result(T2 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5> FromT2(T2 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5> Result(T3 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5> FromT3(T3 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5> Result(T4 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5> FromT4(T4 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5> Result(T5 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5> FromT5(T5 input)
         {
             return input;
         }
@@ -2119,37 +2119,37 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6> Result(T0 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6> FromT0(T0 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6> Result(T1 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6> FromT1(T1 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6> Result(T2 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6> FromT2(T2 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6> Result(T3 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6> FromT3(T3 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6> Result(T4 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6> FromT4(T4 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6> Result(T5 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6> FromT5(T5 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6> Result(T6 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6> FromT6(T6 input)
         {
             return input;
         }
@@ -2699,42 +2699,42 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> Result(T0 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> FromT0(T0 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> Result(T1 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> FromT1(T1 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> Result(T2 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> FromT2(T2 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> Result(T3 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> FromT3(T3 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> Result(T4 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> FromT4(T4 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> Result(T5 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> FromT5(T5 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> Result(T6 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> FromT6(T6 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> Result(T7 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7> FromT7(T7 input)
         {
             return input;
         }
@@ -3353,47 +3353,47 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> Result(T0 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> FromT0(T0 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> Result(T1 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> FromT1(T1 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> Result(T2 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> FromT2(T2 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> Result(T3 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> FromT3(T3 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> Result(T4 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> FromT4(T4 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> Result(T5 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> FromT5(T5 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> Result(T6 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> FromT6(T6 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> Result(T7 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> FromT7(T7 input)
         {
             return input;
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> Result(T8 input)
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> FromT8(T8 input)
         {
             return input;
         }

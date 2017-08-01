@@ -175,7 +175,7 @@ namespace OneOf
 
             foreach(var bindToType in genericArgs){
                 sb.AppendLine($@"
-        public static OneOf<{genericArgsPrinted}> Result({bindToType} input)
+        public static OneOf<{genericArgsPrinted}> From{bindToType}({bindToType} input)
         {{
             return input;
         }}");
