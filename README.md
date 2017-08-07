@@ -70,17 +70,16 @@ public void SetBackground(OneOf<string, ColorName, Color> backgroundColor) { ...
 ```
 
 
-Matching
-##
+## Matching
 
-You use the `TOut Match(Func<T0, TOut> f0, ... Func<Tn,TOut> fn)` method to get a value out. 
+You use the `TOut Match(Func<T0, TOut> f0, ... Func<Tn,TOut> fn)` method to get a value out. Note how the number of handlers matches the number of generic arguments.
 
 
 ### Advantages over `switch` or `if` or `exception` based control flow:
 
 This has a major advantage over a switch statement, as it
-  - requires every case to be handled
-  - No fallback - if you extend a methods return types, you HAVE to update all the calling code to handle your changes.
+  - requires every parameter to be handled
+  - No fallback - if you add another generic parameter, you HAVE to update all the calling code to handle your changes.
     In brown-field code-bases this is incredibly useful, as the default handler is often a runtime `throw NotImplementedException`, or behaviour that wouldn't suit the new result type.
 
 
@@ -106,5 +105,22 @@ There is also a .Switch method, for when you aren't returning a value:
      int => AddEntry(int, foo)
    );
    
-}
 
+
+```
+
+### Reusable OneOf Types using OneOfBase
+
+You can declare a OneOf as a Type, by inheriting from `OneOfBase`. 
+
+```
+    public abstract class PaymentResult : OneOfBase<PaymentResult.Success, PaymentResult.Declined, PaymentStatus.Failed>
+    {
+        public class Success : PaymentResult { }  
+        public class Declined : PaymentResult { }
+        public class Failed  : PaymentResult { public string Reason { get; set; } }
+    }
+    
+    
+```
+The PaymentResult class will inherit the `.Match` and `.Switch` methods.
