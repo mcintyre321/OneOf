@@ -20,7 +20,7 @@ public string GetContent(bool isStruct)
 
 namespace OneOf
 {");
-    for (var i = 1; i < 10; i++)
+    for (var i = 1; i < 33; i++)
     {
         var genericArg = string.Join(", ", Enumerable.Range(0, i).Select(e => $"T{e}"));
 
