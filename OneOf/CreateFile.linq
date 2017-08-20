@@ -9,6 +9,7 @@ void Main()
     var output2 = GetContent(false);
     var outpath2 = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "OneOfBase.cs");
     File.WriteAllText(outpath2.Dump(), output2);
+
 }
 
 public string GetContent(bool isStruct)
@@ -32,14 +33,14 @@ namespace OneOf
         }
 
         sb.Append($@"        readonly int _index;
-    
+
         {(isStruct ? "" : "protected ")}{className}(int index");
         for (var j = 0; j < i; j++)
         {
             sb.Append($", T{j} value{j} = default(T{j})");
         }
         sb.Append(@")
-        { 
+        {
             _index = index;");
         for (var j = 0; j < i; j++)
         {
@@ -69,7 +70,7 @@ namespace OneOf
         }
 
         sb.Append(@"
-        object IOneOf.Value 
+        object IOneOf.Value
         {
             get
             {
@@ -95,7 +96,7 @@ namespace OneOf
         {{
             get {{ return _index == {j}; }}
         }}
-        
+
         public T{j} AsT{j}
         {{
             get
@@ -107,7 +108,7 @@ namespace OneOf
                 return _value{j};
             }}
         }}
-        
+
         public static implicit operator {className}<{genericArg}>(T{j} t)
         {{
              return new {className}<{genericArg}>({j}, value{j}: t);
@@ -124,7 +125,7 @@ namespace OneOf
             sb.AppendLine($@"            if (_index == {j} && f{j} != null)
             {{
                 f{j}(_value{j});
-                return; 
+                return;
             }}");
         }
 
@@ -166,6 +167,61 @@ namespace OneOf
             }
             throw new InvalidOperationException();
         }");
+
+        if(isStruct){
+            var argIndexList = Enumerable.Range(0, i).ToList();
+            var genericArgs = argIndexList.Select(e => $"T{e}").ToList();
+            var genericArgsPrinted = string.Join(", ", genericArgs);
+
+            foreach(var bindToType in genericArgs){
+                sb.AppendLine($@"
+        public static OneOf<{genericArgsPrinted}> From{bindToType}({bindToType} input)
+        {{
+            return input;
+        }}");
+            }
+
+            foreach(var bindToType in genericArgs){
+
+                var resultType = "TResult";
+                var resultArgs = genericArgs.Select(x => {
+                    return x == bindToType ? resultType : x;
+                }).ToList();
+                var resultArgsPrinted = string.Join(", ", resultArgs);
+                var funcType =
+                sb.Append($@"
+        public OneOf<{resultArgsPrinted}> Map{bindToType}<{resultType}>(Func<{bindToType}, {resultType}> mapFunc)
+        {{");
+                sb.Append($@"
+            if(mapFunc == null)
+            {{
+                throw new ArgumentNullException(nameof(mapFunc));
+            }}");
+
+                sb.Append($@"
+            return Match<OneOf<{resultArgsPrinted}>>(");
+                var appendStrings = argIndexList.Select(x => {
+                    return $"T{x}" == bindToType ?
+                        $"input{x} => mapFunc(input{x})":
+                        $"input{x} => input{x}";
+                }).ToList();
+                for (var appendedStringIndex = 0; appendedStringIndex < appendStrings.Count; appendedStringIndex++)
+                {
+                    if(appendedStringIndex != appendStrings.Count -1){
+                        sb.Append($@"
+                {appendStrings[appendedStringIndex]},");
+                    }else{
+                        sb.Append($@"
+                {appendStrings[appendedStringIndex]}");
+                    }
+                }
+                sb.Append($@"
+            );");
+                sb.AppendLine($@"
+        }}");
+            }
+
+        }
 
        sb.AppendLine($@"
         bool Equals({className}<{genericArg}> other)
