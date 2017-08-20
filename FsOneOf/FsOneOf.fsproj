@@ -50,8 +50,8 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
-    <Compile Include="AssemblyInfo.fs" />
     <Compile Include="FsOneOf.fs" />
+    <None Include="CreateFile.linq" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
