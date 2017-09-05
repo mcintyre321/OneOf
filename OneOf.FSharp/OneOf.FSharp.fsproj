@@ -1,0 +1,38 @@
+<Project Sdk="FSharp.NET.Sdk;Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>FsOneOf</AssemblyName>
+    <TargetFrameworks>net451;netstandard1.6</TargetFrameworks>
+    <DebugType>portable</DebugType>
+    <Authors>Harry McIntyre</Authors>
+    <Title>OneOf - Easy Discriminated Unions for c#</Title>
+    <Company>Harry McIntyre</Company>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Product>Harry McIntyre</Product>
+    <Description>This is an FSharp library for interop with the C# OneOf Types</Description>
+    <PackageProjectUrl>https://github.com/mcintyre321/OneOf/</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/mcintyre321/OneOf/blob/master/licence.md</PackageLicenseUrl>
+    <PackageTags>discriminated unions, return type, match switch</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>OneOf.FSharp</PackageId>
+    <Copyright>Harry McIntyre</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="FsOneOf.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FSharp.Core" Version="4.1.*" />
+	  <PackageReference Include="FSharp.NET.Sdk" Version="1.0.*" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="CreateFile.linq" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OneOf\OneOf.csproj" />
+  </ItemGroup>
+
+</Project>

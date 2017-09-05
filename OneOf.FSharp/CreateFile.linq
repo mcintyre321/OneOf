@@ -30,7 +30,7 @@ let getType index =
     sprintf "%s%s%s%s%s%s" typeDeclaration cases toOneOf fromOneOf Environment.NewLine Environment.NewLine
     
 let getContent =     
-    let fileIntro = @"module FsOneOf
+    let fileIntro = @"module OneOf.FSharp
 
 open OneOf
 "

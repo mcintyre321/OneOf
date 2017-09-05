@@ -1,4 +1,4 @@
-module FsOneOf
+module OneOf.FSharp
 
 open OneOf
 type FsOneOf1<'t0> = 
