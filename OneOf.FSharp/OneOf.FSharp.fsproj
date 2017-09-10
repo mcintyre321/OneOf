@@ -1,7 +1,7 @@
 <Project Sdk="FSharp.NET.Sdk;Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyName>FsOneOf</AssemblyName>
+    <AssemblyName>OneOf.FSharp</AssemblyName>
     <TargetFrameworks>net451;netstandard1.6</TargetFrameworks>
     <DebugType>portable</DebugType>
     <Authors>Harry McIntyre</Authors>
