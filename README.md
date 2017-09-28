@@ -58,7 +58,7 @@ public IActionResult Register(string username)
   
 ### As a method parameter value
 
-You can use also use `OneOf` as a parameter type, allowing a caller to pass different types without requiring additional overloads. This might not seem that useful for a single parameter, but if you have multiple parameters, the numer of overloads required increases rapidly.
+You can use also use `OneOf` as a parameter type, allowing a caller to pass different types without requiring additional overloads. This might not seem that useful for a single parameter, but if you have multiple parameters, the number of overloads required increases rapidly.
 
 ```
 
