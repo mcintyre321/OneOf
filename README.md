@@ -18,7 +18,7 @@ I can't encourage you enough to give it a try! Due to exhaustive matching DUs pr
 
 The most frequent use case is as a return value, when you need to return different results from a method. Here's how you might use it in an MVC controller action:
 
-```
+```csharp
 public OneOf<User, InvalidName, NameTaken> CreateUser(string username)
 {
     if (!IsValid(username)) return new InvalidName();
@@ -60,7 +60,7 @@ public IActionResult Register(string username)
 
 You can use also use `OneOf` as a parameter type, allowing a caller to pass different types without requiring additional overloads. This might not seem that useful for a single parameter, but if you have multiple parameters, the number of overloads required increases rapidly.
 
-```
+```csharp
 
 public void SetBackground(OneOf<string, ColorName, Color> backgroundColor) { ... }
 
@@ -85,7 +85,7 @@ This has a major advantage over a switch statement, as it
 
 E.g.
 
-```
+```csharp
    OneOf<string, ColorName, Color> backgroundColor = ...;
    Color c = backgroundColor.Match(
      str => CssHelper.GetColorFromString(str),
@@ -98,7 +98,7 @@ E.g.
 ```
 There is also a .Switch method, for when you aren't returning a value:
 
-```
+```csharp
    OneOf<string, DateTime> dateValue = ...;
    dateValue.Switch(
      str => AddEntry(DateTime.Parse(str), foo),
@@ -113,7 +113,7 @@ There is also a .Switch method, for when you aren't returning a value:
 
 You can declare a OneOf as a Type, by inheriting from `OneOfBase`. 
 
-```
+```csharp
     public abstract class PaymentResult : OneOfBase<PaymentResult.Success, PaymentResult.Declined, PaymentStatus.Failed>
     {
         public class Success : PaymentResult { }  
