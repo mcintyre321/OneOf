@@ -2,7 +2,7 @@ using System;
 
 namespace OneOf
 {
-    public struct OneOf<T0> : IOneOf
+    public struct OneOf<T0> : IOneOf, IOneOf<T0>
     {
         readonly T0 _value0;
         readonly int _index;
@@ -141,7 +141,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1> : IOneOf
+    public struct OneOf<T0, T1> : IOneOf, IOneOf<T0, T1>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -342,7 +342,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2> : IOneOf
+    public struct OneOf<T0, T1, T2> : IOneOf, IOneOf<T0, T1, T2>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -607,7 +607,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3> : IOneOf
+    public struct OneOf<T0, T1, T2, T3> : IOneOf, IOneOf<T0, T1, T2, T3>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -938,7 +938,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4> : IOneOf, IOneOf<T0, T1, T2, T3, T4>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -1337,7 +1337,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -1806,7 +1806,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -2347,7 +2347,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -2962,7 +2962,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -3653,7 +3653,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -4422,7 +4422,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -5271,7 +5271,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -6202,7 +6202,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -7217,7 +7217,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -8318,7 +8318,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -9507,7 +9507,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -10786,7 +10786,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -12157,7 +12157,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -13622,7 +13622,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -15183,7 +15183,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -16842,7 +16842,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -18601,7 +18601,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -20462,7 +20462,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -22427,7 +22427,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -24498,7 +24498,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -26677,7 +26677,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -28966,7 +28966,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -31367,7 +31367,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -33882,7 +33882,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -36513,7 +36513,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -39262,7 +39262,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>
     {
         readonly T0 _value0;
         readonly T1 _value1;
@@ -42131,7 +42131,7 @@ namespace OneOf
         }
     }
 
-    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> : IOneOf
+    public struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> : IOneOf, IOneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>
     {
         readonly T0 _value0;
         readonly T1 _value1;
