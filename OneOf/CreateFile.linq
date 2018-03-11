@@ -9,7 +9,40 @@ void Main()
     var output2 = GetContent(false);
     var outpath2 = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "OneOfBase.cs");
     File.WriteAllText(outpath2.Dump(), output2);
+    
+    var output3 = GetInterfaceContent();
+    var outpath3 = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "IOneOf.cs");
+    File.WriteAllText(outpath3.Dump(), output3);
+}
 
+public string GetInterfaceContent(){
+    var sb = new StringBuilder();
+    sb.Append(@"using System;
+
+namespace OneOf
+{
+    public interface IOneOf { object Value { get ; } }
+");
+    for (var i = 1; i < 33; i++)
+    {
+        var genericArg = string.Join(", ", Enumerable.Range(0, i).Select(e => $"T{e}"));
+
+        sb.Append($@"
+    public interface IOneOf<{genericArg}>
+    {{");
+        var matchArgList0 = string.Join(", ", Enumerable.Range(0, i).Select(e => $"Action<T{e}> f{e}"));
+        sb.Append($@"
+        void Switch({matchArgList0});");
+
+        var matchArgList = string.Join(", ", Enumerable.Range(0, i).Select(e => $"Func<T{e}, TResult> f{e}"));
+        sb.Append($@"
+        TResult Match<TResult>({matchArgList});");
+
+        sb.AppendLine(@"
+    }");
+    }
+    sb.AppendLine("}");
+    return sb.ToString();
 }
 
 public string GetContent(bool isStruct)
@@ -25,7 +58,7 @@ namespace OneOf
         var genericArg = string.Join(", ", Enumerable.Range(0, i).Select(e => $"T{e}"));
 
         sb.AppendLine($@"
-    public {(isStruct ? "struct" : "class")} {className}<{genericArg}> : IOneOf");
+    public {(isStruct ? "struct" : "class")} {className}<{genericArg}> : IOneOf, IOneOf<{genericArg}>");
         sb.AppendLine("    {");
         for (var j = 0; j < i; j++)
         {
@@ -290,5 +323,5 @@ namespace OneOf
     }");
     }
     sb.AppendLine("}");
-    return sb.ToString(); ;
+    return sb.ToString();
 }
