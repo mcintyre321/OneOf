@@ -23,7 +23,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -74,19 +74,6 @@ namespace OneOf
             if (_index == 0 && f0 != null)
             {
                 return f0(_value0);
-            }
-            throw new InvalidOperationException();
-        }
-
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
             }
             throw new InvalidOperationException();
         }
@@ -170,7 +157,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -254,23 +241,6 @@ namespace OneOf
             if (_index == 1 && f1 != null)
             {
                 return f1(_value1);
-            }
-            throw new InvalidOperationException();
-        }
-
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
             }
             throw new InvalidOperationException();
         }
@@ -367,7 +337,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -488,27 +458,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2> other)
         {
             if (_index != other._index)
@@ -614,7 +563,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -768,31 +717,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3> other)
         {
             if (_index != other._index)
@@ -911,7 +835,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -1098,35 +1022,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4> other)
         {
             if (_index != other._index)
@@ -1258,7 +1153,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -1478,39 +1373,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5> other)
         {
             if (_index != other._index)
@@ -1655,7 +1517,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -1908,43 +1770,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6> other)
         {
             if (_index != other._index)
@@ -2102,7 +1927,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -2388,47 +2213,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> other)
         {
             if (_index != other._index)
@@ -2599,7 +2383,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -2918,51 +2702,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> other)
         {
             if (_index != other._index)
@@ -3146,7 +2885,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -3498,55 +3237,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> other)
         {
             if (_index != other._index)
@@ -3743,7 +3433,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -4128,59 +3818,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> other)
         {
             if (_index != other._index)
@@ -4390,7 +4027,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -4808,63 +4445,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<T11, TResult> f11 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (_index == 11 && f11 != null)
-            {
-                return f11(_value11);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> other)
         {
             if (_index != other._index)
@@ -5087,7 +4667,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -5538,67 +5118,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<T11, TResult> f11 = null, Func<T12, TResult> f12 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (_index == 11 && f11 != null)
-            {
-                return f11(_value11);
-            }
-            if (_index == 12 && f12 != null)
-            {
-                return f12(_value12);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> other)
         {
             if (_index != other._index)
@@ -5834,7 +5353,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -6318,71 +5837,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<T11, TResult> f11 = null, Func<T12, TResult> f12 = null, Func<T13, TResult> f13 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (_index == 11 && f11 != null)
-            {
-                return f11(_value11);
-            }
-            if (_index == 12 && f12 != null)
-            {
-                return f12(_value12);
-            }
-            if (_index == 13 && f13 != null)
-            {
-                return f13(_value13);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> other)
         {
             if (_index != other._index)
@@ -6631,7 +6085,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -7148,75 +6602,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<T11, TResult> f11 = null, Func<T12, TResult> f12 = null, Func<T13, TResult> f13 = null, Func<T14, TResult> f14 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (_index == 11 && f11 != null)
-            {
-                return f11(_value11);
-            }
-            if (_index == 12 && f12 != null)
-            {
-                return f12(_value12);
-            }
-            if (_index == 13 && f13 != null)
-            {
-                return f13(_value13);
-            }
-            if (_index == 14 && f14 != null)
-            {
-                return f14(_value14);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> other)
         {
             if (_index != other._index)
@@ -7478,7 +6863,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -8028,79 +7413,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<T11, TResult> f11 = null, Func<T12, TResult> f12 = null, Func<T13, TResult> f13 = null, Func<T14, TResult> f14 = null, Func<T15, TResult> f15 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (_index == 11 && f11 != null)
-            {
-                return f11(_value11);
-            }
-            if (_index == 12 && f12 != null)
-            {
-                return f12(_value12);
-            }
-            if (_index == 13 && f13 != null)
-            {
-                return f13(_value13);
-            }
-            if (_index == 14 && f14 != null)
-            {
-                return f14(_value14);
-            }
-            if (_index == 15 && f15 != null)
-            {
-                return f15(_value15);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> other)
         {
             if (_index != other._index)
@@ -8375,7 +7687,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -8958,83 +8270,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<T11, TResult> f11 = null, Func<T12, TResult> f12 = null, Func<T13, TResult> f13 = null, Func<T14, TResult> f14 = null, Func<T15, TResult> f15 = null, Func<T16, TResult> f16 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (_index == 11 && f11 != null)
-            {
-                return f11(_value11);
-            }
-            if (_index == 12 && f12 != null)
-            {
-                return f12(_value12);
-            }
-            if (_index == 13 && f13 != null)
-            {
-                return f13(_value13);
-            }
-            if (_index == 14 && f14 != null)
-            {
-                return f14(_value14);
-            }
-            if (_index == 15 && f15 != null)
-            {
-                return f15(_value15);
-            }
-            if (_index == 16 && f16 != null)
-            {
-                return f16(_value16);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> other)
         {
             if (_index != other._index)
@@ -9322,7 +8557,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -9938,87 +9173,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<T11, TResult> f11 = null, Func<T12, TResult> f12 = null, Func<T13, TResult> f13 = null, Func<T14, TResult> f14 = null, Func<T15, TResult> f15 = null, Func<T16, TResult> f16 = null, Func<T17, TResult> f17 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (_index == 11 && f11 != null)
-            {
-                return f11(_value11);
-            }
-            if (_index == 12 && f12 != null)
-            {
-                return f12(_value12);
-            }
-            if (_index == 13 && f13 != null)
-            {
-                return f13(_value13);
-            }
-            if (_index == 14 && f14 != null)
-            {
-                return f14(_value14);
-            }
-            if (_index == 15 && f15 != null)
-            {
-                return f15(_value15);
-            }
-            if (_index == 16 && f16 != null)
-            {
-                return f16(_value16);
-            }
-            if (_index == 17 && f17 != null)
-            {
-                return f17(_value17);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> other)
         {
             if (_index != other._index)
@@ -10319,7 +9473,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -10968,91 +10122,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<T11, TResult> f11 = null, Func<T12, TResult> f12 = null, Func<T13, TResult> f13 = null, Func<T14, TResult> f14 = null, Func<T15, TResult> f15 = null, Func<T16, TResult> f16 = null, Func<T17, TResult> f17 = null, Func<T18, TResult> f18 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (_index == 11 && f11 != null)
-            {
-                return f11(_value11);
-            }
-            if (_index == 12 && f12 != null)
-            {
-                return f12(_value12);
-            }
-            if (_index == 13 && f13 != null)
-            {
-                return f13(_value13);
-            }
-            if (_index == 14 && f14 != null)
-            {
-                return f14(_value14);
-            }
-            if (_index == 15 && f15 != null)
-            {
-                return f15(_value15);
-            }
-            if (_index == 16 && f16 != null)
-            {
-                return f16(_value16);
-            }
-            if (_index == 17 && f17 != null)
-            {
-                return f17(_value17);
-            }
-            if (_index == 18 && f18 != null)
-            {
-                return f18(_value18);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> other)
         {
             if (_index != other._index)
@@ -11366,7 +10435,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -12048,95 +11117,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<T11, TResult> f11 = null, Func<T12, TResult> f12 = null, Func<T13, TResult> f13 = null, Func<T14, TResult> f14 = null, Func<T15, TResult> f15 = null, Func<T16, TResult> f16 = null, Func<T17, TResult> f17 = null, Func<T18, TResult> f18 = null, Func<T19, TResult> f19 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (_index == 11 && f11 != null)
-            {
-                return f11(_value11);
-            }
-            if (_index == 12 && f12 != null)
-            {
-                return f12(_value12);
-            }
-            if (_index == 13 && f13 != null)
-            {
-                return f13(_value13);
-            }
-            if (_index == 14 && f14 != null)
-            {
-                return f14(_value14);
-            }
-            if (_index == 15 && f15 != null)
-            {
-                return f15(_value15);
-            }
-            if (_index == 16 && f16 != null)
-            {
-                return f16(_value16);
-            }
-            if (_index == 17 && f17 != null)
-            {
-                return f17(_value17);
-            }
-            if (_index == 18 && f18 != null)
-            {
-                return f18(_value18);
-            }
-            if (_index == 19 && f19 != null)
-            {
-                return f19(_value19);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> other)
         {
             if (_index != other._index)
@@ -12463,7 +11443,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -13178,99 +12158,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<T11, TResult> f11 = null, Func<T12, TResult> f12 = null, Func<T13, TResult> f13 = null, Func<T14, TResult> f14 = null, Func<T15, TResult> f15 = null, Func<T16, TResult> f16 = null, Func<T17, TResult> f17 = null, Func<T18, TResult> f18 = null, Func<T19, TResult> f19 = null, Func<T20, TResult> f20 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (_index == 11 && f11 != null)
-            {
-                return f11(_value11);
-            }
-            if (_index == 12 && f12 != null)
-            {
-                return f12(_value12);
-            }
-            if (_index == 13 && f13 != null)
-            {
-                return f13(_value13);
-            }
-            if (_index == 14 && f14 != null)
-            {
-                return f14(_value14);
-            }
-            if (_index == 15 && f15 != null)
-            {
-                return f15(_value15);
-            }
-            if (_index == 16 && f16 != null)
-            {
-                return f16(_value16);
-            }
-            if (_index == 17 && f17 != null)
-            {
-                return f17(_value17);
-            }
-            if (_index == 18 && f18 != null)
-            {
-                return f18(_value18);
-            }
-            if (_index == 19 && f19 != null)
-            {
-                return f19(_value19);
-            }
-            if (_index == 20 && f20 != null)
-            {
-                return f20(_value20);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> other)
         {
             if (_index != other._index)
@@ -13610,7 +12497,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -14358,103 +13245,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<T11, TResult> f11 = null, Func<T12, TResult> f12 = null, Func<T13, TResult> f13 = null, Func<T14, TResult> f14 = null, Func<T15, TResult> f15 = null, Func<T16, TResult> f16 = null, Func<T17, TResult> f17 = null, Func<T18, TResult> f18 = null, Func<T19, TResult> f19 = null, Func<T20, TResult> f20 = null, Func<T21, TResult> f21 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (_index == 11 && f11 != null)
-            {
-                return f11(_value11);
-            }
-            if (_index == 12 && f12 != null)
-            {
-                return f12(_value12);
-            }
-            if (_index == 13 && f13 != null)
-            {
-                return f13(_value13);
-            }
-            if (_index == 14 && f14 != null)
-            {
-                return f14(_value14);
-            }
-            if (_index == 15 && f15 != null)
-            {
-                return f15(_value15);
-            }
-            if (_index == 16 && f16 != null)
-            {
-                return f16(_value16);
-            }
-            if (_index == 17 && f17 != null)
-            {
-                return f17(_value17);
-            }
-            if (_index == 18 && f18 != null)
-            {
-                return f18(_value18);
-            }
-            if (_index == 19 && f19 != null)
-            {
-                return f19(_value19);
-            }
-            if (_index == 20 && f20 != null)
-            {
-                return f20(_value20);
-            }
-            if (_index == 21 && f21 != null)
-            {
-                return f21(_value21);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> other)
         {
             if (_index != other._index)
@@ -14807,7 +13597,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -15588,107 +14378,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<T11, TResult> f11 = null, Func<T12, TResult> f12 = null, Func<T13, TResult> f13 = null, Func<T14, TResult> f14 = null, Func<T15, TResult> f15 = null, Func<T16, TResult> f16 = null, Func<T17, TResult> f17 = null, Func<T18, TResult> f18 = null, Func<T19, TResult> f19 = null, Func<T20, TResult> f20 = null, Func<T21, TResult> f21 = null, Func<T22, TResult> f22 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (_index == 11 && f11 != null)
-            {
-                return f11(_value11);
-            }
-            if (_index == 12 && f12 != null)
-            {
-                return f12(_value12);
-            }
-            if (_index == 13 && f13 != null)
-            {
-                return f13(_value13);
-            }
-            if (_index == 14 && f14 != null)
-            {
-                return f14(_value14);
-            }
-            if (_index == 15 && f15 != null)
-            {
-                return f15(_value15);
-            }
-            if (_index == 16 && f16 != null)
-            {
-                return f16(_value16);
-            }
-            if (_index == 17 && f17 != null)
-            {
-                return f17(_value17);
-            }
-            if (_index == 18 && f18 != null)
-            {
-                return f18(_value18);
-            }
-            if (_index == 19 && f19 != null)
-            {
-                return f19(_value19);
-            }
-            if (_index == 20 && f20 != null)
-            {
-                return f20(_value20);
-            }
-            if (_index == 21 && f21 != null)
-            {
-                return f21(_value21);
-            }
-            if (_index == 22 && f22 != null)
-            {
-                return f22(_value22);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> other)
         {
             if (_index != other._index)
@@ -16054,7 +14743,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -16868,111 +15557,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<T11, TResult> f11 = null, Func<T12, TResult> f12 = null, Func<T13, TResult> f13 = null, Func<T14, TResult> f14 = null, Func<T15, TResult> f15 = null, Func<T16, TResult> f16 = null, Func<T17, TResult> f17 = null, Func<T18, TResult> f18 = null, Func<T19, TResult> f19 = null, Func<T20, TResult> f20 = null, Func<T21, TResult> f21 = null, Func<T22, TResult> f22 = null, Func<T23, TResult> f23 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (_index == 11 && f11 != null)
-            {
-                return f11(_value11);
-            }
-            if (_index == 12 && f12 != null)
-            {
-                return f12(_value12);
-            }
-            if (_index == 13 && f13 != null)
-            {
-                return f13(_value13);
-            }
-            if (_index == 14 && f14 != null)
-            {
-                return f14(_value14);
-            }
-            if (_index == 15 && f15 != null)
-            {
-                return f15(_value15);
-            }
-            if (_index == 16 && f16 != null)
-            {
-                return f16(_value16);
-            }
-            if (_index == 17 && f17 != null)
-            {
-                return f17(_value17);
-            }
-            if (_index == 18 && f18 != null)
-            {
-                return f18(_value18);
-            }
-            if (_index == 19 && f19 != null)
-            {
-                return f19(_value19);
-            }
-            if (_index == 20 && f20 != null)
-            {
-                return f20(_value20);
-            }
-            if (_index == 21 && f21 != null)
-            {
-                return f21(_value21);
-            }
-            if (_index == 22 && f22 != null)
-            {
-                return f22(_value22);
-            }
-            if (_index == 23 && f23 != null)
-            {
-                return f23(_value23);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> other)
         {
             if (_index != other._index)
@@ -17351,7 +15935,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -18198,115 +16782,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<T11, TResult> f11 = null, Func<T12, TResult> f12 = null, Func<T13, TResult> f13 = null, Func<T14, TResult> f14 = null, Func<T15, TResult> f15 = null, Func<T16, TResult> f16 = null, Func<T17, TResult> f17 = null, Func<T18, TResult> f18 = null, Func<T19, TResult> f19 = null, Func<T20, TResult> f20 = null, Func<T21, TResult> f21 = null, Func<T22, TResult> f22 = null, Func<T23, TResult> f23 = null, Func<T24, TResult> f24 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (_index == 11 && f11 != null)
-            {
-                return f11(_value11);
-            }
-            if (_index == 12 && f12 != null)
-            {
-                return f12(_value12);
-            }
-            if (_index == 13 && f13 != null)
-            {
-                return f13(_value13);
-            }
-            if (_index == 14 && f14 != null)
-            {
-                return f14(_value14);
-            }
-            if (_index == 15 && f15 != null)
-            {
-                return f15(_value15);
-            }
-            if (_index == 16 && f16 != null)
-            {
-                return f16(_value16);
-            }
-            if (_index == 17 && f17 != null)
-            {
-                return f17(_value17);
-            }
-            if (_index == 18 && f18 != null)
-            {
-                return f18(_value18);
-            }
-            if (_index == 19 && f19 != null)
-            {
-                return f19(_value19);
-            }
-            if (_index == 20 && f20 != null)
-            {
-                return f20(_value20);
-            }
-            if (_index == 21 && f21 != null)
-            {
-                return f21(_value21);
-            }
-            if (_index == 22 && f22 != null)
-            {
-                return f22(_value22);
-            }
-            if (_index == 23 && f23 != null)
-            {
-                return f23(_value23);
-            }
-            if (_index == 24 && f24 != null)
-            {
-                return f24(_value24);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> other)
         {
             if (_index != other._index)
@@ -18698,7 +17173,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -19578,119 +18053,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<T11, TResult> f11 = null, Func<T12, TResult> f12 = null, Func<T13, TResult> f13 = null, Func<T14, TResult> f14 = null, Func<T15, TResult> f15 = null, Func<T16, TResult> f16 = null, Func<T17, TResult> f17 = null, Func<T18, TResult> f18 = null, Func<T19, TResult> f19 = null, Func<T20, TResult> f20 = null, Func<T21, TResult> f21 = null, Func<T22, TResult> f22 = null, Func<T23, TResult> f23 = null, Func<T24, TResult> f24 = null, Func<T25, TResult> f25 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (_index == 11 && f11 != null)
-            {
-                return f11(_value11);
-            }
-            if (_index == 12 && f12 != null)
-            {
-                return f12(_value12);
-            }
-            if (_index == 13 && f13 != null)
-            {
-                return f13(_value13);
-            }
-            if (_index == 14 && f14 != null)
-            {
-                return f14(_value14);
-            }
-            if (_index == 15 && f15 != null)
-            {
-                return f15(_value15);
-            }
-            if (_index == 16 && f16 != null)
-            {
-                return f16(_value16);
-            }
-            if (_index == 17 && f17 != null)
-            {
-                return f17(_value17);
-            }
-            if (_index == 18 && f18 != null)
-            {
-                return f18(_value18);
-            }
-            if (_index == 19 && f19 != null)
-            {
-                return f19(_value19);
-            }
-            if (_index == 20 && f20 != null)
-            {
-                return f20(_value20);
-            }
-            if (_index == 21 && f21 != null)
-            {
-                return f21(_value21);
-            }
-            if (_index == 22 && f22 != null)
-            {
-                return f22(_value22);
-            }
-            if (_index == 23 && f23 != null)
-            {
-                return f23(_value23);
-            }
-            if (_index == 24 && f24 != null)
-            {
-                return f24(_value24);
-            }
-            if (_index == 25 && f25 != null)
-            {
-                return f25(_value25);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> other)
         {
             if (_index != other._index)
@@ -20095,7 +18457,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -21008,123 +19370,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<T11, TResult> f11 = null, Func<T12, TResult> f12 = null, Func<T13, TResult> f13 = null, Func<T14, TResult> f14 = null, Func<T15, TResult> f15 = null, Func<T16, TResult> f16 = null, Func<T17, TResult> f17 = null, Func<T18, TResult> f18 = null, Func<T19, TResult> f19 = null, Func<T20, TResult> f20 = null, Func<T21, TResult> f21 = null, Func<T22, TResult> f22 = null, Func<T23, TResult> f23 = null, Func<T24, TResult> f24 = null, Func<T25, TResult> f25 = null, Func<T26, TResult> f26 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (_index == 11 && f11 != null)
-            {
-                return f11(_value11);
-            }
-            if (_index == 12 && f12 != null)
-            {
-                return f12(_value12);
-            }
-            if (_index == 13 && f13 != null)
-            {
-                return f13(_value13);
-            }
-            if (_index == 14 && f14 != null)
-            {
-                return f14(_value14);
-            }
-            if (_index == 15 && f15 != null)
-            {
-                return f15(_value15);
-            }
-            if (_index == 16 && f16 != null)
-            {
-                return f16(_value16);
-            }
-            if (_index == 17 && f17 != null)
-            {
-                return f17(_value17);
-            }
-            if (_index == 18 && f18 != null)
-            {
-                return f18(_value18);
-            }
-            if (_index == 19 && f19 != null)
-            {
-                return f19(_value19);
-            }
-            if (_index == 20 && f20 != null)
-            {
-                return f20(_value20);
-            }
-            if (_index == 21 && f21 != null)
-            {
-                return f21(_value21);
-            }
-            if (_index == 22 && f22 != null)
-            {
-                return f22(_value22);
-            }
-            if (_index == 23 && f23 != null)
-            {
-                return f23(_value23);
-            }
-            if (_index == 24 && f24 != null)
-            {
-                return f24(_value24);
-            }
-            if (_index == 25 && f25 != null)
-            {
-                return f25(_value25);
-            }
-            if (_index == 26 && f26 != null)
-            {
-                return f26(_value26);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> other)
         {
             if (_index != other._index)
@@ -21542,7 +19787,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -22488,127 +20733,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<T11, TResult> f11 = null, Func<T12, TResult> f12 = null, Func<T13, TResult> f13 = null, Func<T14, TResult> f14 = null, Func<T15, TResult> f15 = null, Func<T16, TResult> f16 = null, Func<T17, TResult> f17 = null, Func<T18, TResult> f18 = null, Func<T19, TResult> f19 = null, Func<T20, TResult> f20 = null, Func<T21, TResult> f21 = null, Func<T22, TResult> f22 = null, Func<T23, TResult> f23 = null, Func<T24, TResult> f24 = null, Func<T25, TResult> f25 = null, Func<T26, TResult> f26 = null, Func<T27, TResult> f27 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (_index == 11 && f11 != null)
-            {
-                return f11(_value11);
-            }
-            if (_index == 12 && f12 != null)
-            {
-                return f12(_value12);
-            }
-            if (_index == 13 && f13 != null)
-            {
-                return f13(_value13);
-            }
-            if (_index == 14 && f14 != null)
-            {
-                return f14(_value14);
-            }
-            if (_index == 15 && f15 != null)
-            {
-                return f15(_value15);
-            }
-            if (_index == 16 && f16 != null)
-            {
-                return f16(_value16);
-            }
-            if (_index == 17 && f17 != null)
-            {
-                return f17(_value17);
-            }
-            if (_index == 18 && f18 != null)
-            {
-                return f18(_value18);
-            }
-            if (_index == 19 && f19 != null)
-            {
-                return f19(_value19);
-            }
-            if (_index == 20 && f20 != null)
-            {
-                return f20(_value20);
-            }
-            if (_index == 21 && f21 != null)
-            {
-                return f21(_value21);
-            }
-            if (_index == 22 && f22 != null)
-            {
-                return f22(_value22);
-            }
-            if (_index == 23 && f23 != null)
-            {
-                return f23(_value23);
-            }
-            if (_index == 24 && f24 != null)
-            {
-                return f24(_value24);
-            }
-            if (_index == 25 && f25 != null)
-            {
-                return f25(_value25);
-            }
-            if (_index == 26 && f26 != null)
-            {
-                return f26(_value26);
-            }
-            if (_index == 27 && f27 != null)
-            {
-                return f27(_value27);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> other)
         {
             if (_index != other._index)
@@ -23039,7 +21163,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -24018,131 +22142,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<T11, TResult> f11 = null, Func<T12, TResult> f12 = null, Func<T13, TResult> f13 = null, Func<T14, TResult> f14 = null, Func<T15, TResult> f15 = null, Func<T16, TResult> f16 = null, Func<T17, TResult> f17 = null, Func<T18, TResult> f18 = null, Func<T19, TResult> f19 = null, Func<T20, TResult> f20 = null, Func<T21, TResult> f21 = null, Func<T22, TResult> f22 = null, Func<T23, TResult> f23 = null, Func<T24, TResult> f24 = null, Func<T25, TResult> f25 = null, Func<T26, TResult> f26 = null, Func<T27, TResult> f27 = null, Func<T28, TResult> f28 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (_index == 11 && f11 != null)
-            {
-                return f11(_value11);
-            }
-            if (_index == 12 && f12 != null)
-            {
-                return f12(_value12);
-            }
-            if (_index == 13 && f13 != null)
-            {
-                return f13(_value13);
-            }
-            if (_index == 14 && f14 != null)
-            {
-                return f14(_value14);
-            }
-            if (_index == 15 && f15 != null)
-            {
-                return f15(_value15);
-            }
-            if (_index == 16 && f16 != null)
-            {
-                return f16(_value16);
-            }
-            if (_index == 17 && f17 != null)
-            {
-                return f17(_value17);
-            }
-            if (_index == 18 && f18 != null)
-            {
-                return f18(_value18);
-            }
-            if (_index == 19 && f19 != null)
-            {
-                return f19(_value19);
-            }
-            if (_index == 20 && f20 != null)
-            {
-                return f20(_value20);
-            }
-            if (_index == 21 && f21 != null)
-            {
-                return f21(_value21);
-            }
-            if (_index == 22 && f22 != null)
-            {
-                return f22(_value22);
-            }
-            if (_index == 23 && f23 != null)
-            {
-                return f23(_value23);
-            }
-            if (_index == 24 && f24 != null)
-            {
-                return f24(_value24);
-            }
-            if (_index == 25 && f25 != null)
-            {
-                return f25(_value25);
-            }
-            if (_index == 26 && f26 != null)
-            {
-                return f26(_value26);
-            }
-            if (_index == 27 && f27 != null)
-            {
-                return f27(_value27);
-            }
-            if (_index == 28 && f28 != null)
-            {
-                return f28(_value28);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> other)
         {
             if (_index != other._index)
@@ -24586,7 +22585,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -25598,135 +23597,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<T11, TResult> f11 = null, Func<T12, TResult> f12 = null, Func<T13, TResult> f13 = null, Func<T14, TResult> f14 = null, Func<T15, TResult> f15 = null, Func<T16, TResult> f16 = null, Func<T17, TResult> f17 = null, Func<T18, TResult> f18 = null, Func<T19, TResult> f19 = null, Func<T20, TResult> f20 = null, Func<T21, TResult> f21 = null, Func<T22, TResult> f22 = null, Func<T23, TResult> f23 = null, Func<T24, TResult> f24 = null, Func<T25, TResult> f25 = null, Func<T26, TResult> f26 = null, Func<T27, TResult> f27 = null, Func<T28, TResult> f28 = null, Func<T29, TResult> f29 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (_index == 11 && f11 != null)
-            {
-                return f11(_value11);
-            }
-            if (_index == 12 && f12 != null)
-            {
-                return f12(_value12);
-            }
-            if (_index == 13 && f13 != null)
-            {
-                return f13(_value13);
-            }
-            if (_index == 14 && f14 != null)
-            {
-                return f14(_value14);
-            }
-            if (_index == 15 && f15 != null)
-            {
-                return f15(_value15);
-            }
-            if (_index == 16 && f16 != null)
-            {
-                return f16(_value16);
-            }
-            if (_index == 17 && f17 != null)
-            {
-                return f17(_value17);
-            }
-            if (_index == 18 && f18 != null)
-            {
-                return f18(_value18);
-            }
-            if (_index == 19 && f19 != null)
-            {
-                return f19(_value19);
-            }
-            if (_index == 20 && f20 != null)
-            {
-                return f20(_value20);
-            }
-            if (_index == 21 && f21 != null)
-            {
-                return f21(_value21);
-            }
-            if (_index == 22 && f22 != null)
-            {
-                return f22(_value22);
-            }
-            if (_index == 23 && f23 != null)
-            {
-                return f23(_value23);
-            }
-            if (_index == 24 && f24 != null)
-            {
-                return f24(_value24);
-            }
-            if (_index == 25 && f25 != null)
-            {
-                return f25(_value25);
-            }
-            if (_index == 26 && f26 != null)
-            {
-                return f26(_value26);
-            }
-            if (_index == 27 && f27 != null)
-            {
-                return f27(_value27);
-            }
-            if (_index == 28 && f28 != null)
-            {
-                return f28(_value28);
-            }
-            if (_index == 29 && f29 != null)
-            {
-                return f29(_value29);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> other)
         {
             if (_index != other._index)
@@ -26183,7 +24053,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -27228,139 +25098,6 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<T11, TResult> f11 = null, Func<T12, TResult> f12 = null, Func<T13, TResult> f13 = null, Func<T14, TResult> f14 = null, Func<T15, TResult> f15 = null, Func<T16, TResult> f16 = null, Func<T17, TResult> f17 = null, Func<T18, TResult> f18 = null, Func<T19, TResult> f19 = null, Func<T20, TResult> f20 = null, Func<T21, TResult> f21 = null, Func<T22, TResult> f22 = null, Func<T23, TResult> f23 = null, Func<T24, TResult> f24 = null, Func<T25, TResult> f25 = null, Func<T26, TResult> f26 = null, Func<T27, TResult> f27 = null, Func<T28, TResult> f28 = null, Func<T29, TResult> f29 = null, Func<T30, TResult> f30 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (_index == 11 && f11 != null)
-            {
-                return f11(_value11);
-            }
-            if (_index == 12 && f12 != null)
-            {
-                return f12(_value12);
-            }
-            if (_index == 13 && f13 != null)
-            {
-                return f13(_value13);
-            }
-            if (_index == 14 && f14 != null)
-            {
-                return f14(_value14);
-            }
-            if (_index == 15 && f15 != null)
-            {
-                return f15(_value15);
-            }
-            if (_index == 16 && f16 != null)
-            {
-                return f16(_value16);
-            }
-            if (_index == 17 && f17 != null)
-            {
-                return f17(_value17);
-            }
-            if (_index == 18 && f18 != null)
-            {
-                return f18(_value18);
-            }
-            if (_index == 19 && f19 != null)
-            {
-                return f19(_value19);
-            }
-            if (_index == 20 && f20 != null)
-            {
-                return f20(_value20);
-            }
-            if (_index == 21 && f21 != null)
-            {
-                return f21(_value21);
-            }
-            if (_index == 22 && f22 != null)
-            {
-                return f22(_value22);
-            }
-            if (_index == 23 && f23 != null)
-            {
-                return f23(_value23);
-            }
-            if (_index == 24 && f24 != null)
-            {
-                return f24(_value24);
-            }
-            if (_index == 25 && f25 != null)
-            {
-                return f25(_value25);
-            }
-            if (_index == 26 && f26 != null)
-            {
-                return f26(_value26);
-            }
-            if (_index == 27 && f27 != null)
-            {
-                return f27(_value27);
-            }
-            if (_index == 28 && f28 != null)
-            {
-                return f28(_value28);
-            }
-            if (_index == 29 && f29 != null)
-            {
-                return f29(_value29);
-            }
-            if (_index == 30 && f30 != null)
-            {
-                return f30(_value30);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }
-
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> other)
         {
             if (_index != other._index)
@@ -27830,7 +25567,7 @@ namespace OneOf
             }
         }
 
-        object IOneOf.Value
+        public object Value
         {
             get
             {
@@ -28904,143 +26641,6 @@ namespace OneOf
             if (_index == 31 && f31 != null)
             {
                 return f31(_value31);
-            }
-            throw new InvalidOperationException();
-        }
-
-        public TResult MatchSome<TResult>(Func<T0, TResult> f0 = null, Func<T1, TResult> f1 = null, Func<T2, TResult> f2 = null, Func<T3, TResult> f3 = null, Func<T4, TResult> f4 = null, Func<T5, TResult> f5 = null, Func<T6, TResult> f6 = null, Func<T7, TResult> f7 = null, Func<T8, TResult> f8 = null, Func<T9, TResult> f9 = null, Func<T10, TResult> f10 = null, Func<T11, TResult> f11 = null, Func<T12, TResult> f12 = null, Func<T13, TResult> f13 = null, Func<T14, TResult> f14 = null, Func<T15, TResult> f15 = null, Func<T16, TResult> f16 = null, Func<T17, TResult> f17 = null, Func<T18, TResult> f18 = null, Func<T19, TResult> f19 = null, Func<T20, TResult> f20 = null, Func<T21, TResult> f21 = null, Func<T22, TResult> f22 = null, Func<T23, TResult> f23 = null, Func<T24, TResult> f24 = null, Func<T25, TResult> f25 = null, Func<T26, TResult> f26 = null, Func<T27, TResult> f27 = null, Func<T28, TResult> f28 = null, Func<T29, TResult> f29 = null, Func<T30, TResult> f30 = null, Func<T31, TResult> f31 = null, Func<TResult> otherwise = null)
-        {
-            if (_index == 0 && f0 != null)
-            {
-                return f0(_value0);
-            }
-            if (_index == 1 && f1 != null)
-            {
-                return f1(_value1);
-            }
-            if (_index == 2 && f2 != null)
-            {
-                return f2(_value2);
-            }
-            if (_index == 3 && f3 != null)
-            {
-                return f3(_value3);
-            }
-            if (_index == 4 && f4 != null)
-            {
-                return f4(_value4);
-            }
-            if (_index == 5 && f5 != null)
-            {
-                return f5(_value5);
-            }
-            if (_index == 6 && f6 != null)
-            {
-                return f6(_value6);
-            }
-            if (_index == 7 && f7 != null)
-            {
-                return f7(_value7);
-            }
-            if (_index == 8 && f8 != null)
-            {
-                return f8(_value8);
-            }
-            if (_index == 9 && f9 != null)
-            {
-                return f9(_value9);
-            }
-            if (_index == 10 && f10 != null)
-            {
-                return f10(_value10);
-            }
-            if (_index == 11 && f11 != null)
-            {
-                return f11(_value11);
-            }
-            if (_index == 12 && f12 != null)
-            {
-                return f12(_value12);
-            }
-            if (_index == 13 && f13 != null)
-            {
-                return f13(_value13);
-            }
-            if (_index == 14 && f14 != null)
-            {
-                return f14(_value14);
-            }
-            if (_index == 15 && f15 != null)
-            {
-                return f15(_value15);
-            }
-            if (_index == 16 && f16 != null)
-            {
-                return f16(_value16);
-            }
-            if (_index == 17 && f17 != null)
-            {
-                return f17(_value17);
-            }
-            if (_index == 18 && f18 != null)
-            {
-                return f18(_value18);
-            }
-            if (_index == 19 && f19 != null)
-            {
-                return f19(_value19);
-            }
-            if (_index == 20 && f20 != null)
-            {
-                return f20(_value20);
-            }
-            if (_index == 21 && f21 != null)
-            {
-                return f21(_value21);
-            }
-            if (_index == 22 && f22 != null)
-            {
-                return f22(_value22);
-            }
-            if (_index == 23 && f23 != null)
-            {
-                return f23(_value23);
-            }
-            if (_index == 24 && f24 != null)
-            {
-                return f24(_value24);
-            }
-            if (_index == 25 && f25 != null)
-            {
-                return f25(_value25);
-            }
-            if (_index == 26 && f26 != null)
-            {
-                return f26(_value26);
-            }
-            if (_index == 27 && f27 != null)
-            {
-                return f27(_value27);
-            }
-            if (_index == 28 && f28 != null)
-            {
-                return f28(_value28);
-            }
-            if (_index == 29 && f29 != null)
-            {
-                return f29(_value29);
-            }
-            if (_index == 30 && f30 != null)
-            {
-                return f30(_value30);
-            }
-            if (_index == 31 && f31 != null)
-            {
-                return f31(_value31);
-            }
-            if (otherwise != null)
-            {
-                return otherwise();
             }
             throw new InvalidOperationException();
         }
