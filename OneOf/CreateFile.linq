@@ -14,88 +14,85 @@ void Main()
 
 public string GetContent(bool isStruct)
 {
-    var className = isStruct ? "OneOf" : "OneOfBase";
-    var sb = new StringBuilder();
-    sb.Append(@"using System;
+	var className = isStruct ? "OneOf" : "OneOfBase";
+	var sb = new StringBuilder();
+	sb.Append(@"using System;
 
 namespace OneOf
 {");
-    for (var i = 1; i < 33; i++)
-    {
-        var genericArg = string.Join(", ", Enumerable.Range(0, i).Select(e => $"T{e}"));
+	for (var i = 1; i < 33; i++)
+	{
+		var genericArg = string.Join(", ", Enumerable.Range(0, i).Select(e => $"T{e}"));
 
-        sb.AppendLine($@"
+		sb.AppendLine($@"
     public {(isStruct ? "struct" : "class")} {className}<{genericArg}> : IOneOf");
-        sb.AppendLine("    {");
-        for (var j = 0; j < i; j++)
-        {
-            sb.AppendLine($@"        readonly T{j} _value{j};");
-        }
+		sb.AppendLine("    {");
+		for (var j = 0; j < i; j++)
+		{
+			sb.AppendLine($@"        readonly T{j} _value{j};");
+		}
 
-        sb.Append($@"        readonly int _index;
+		sb.Append($@"        readonly int _index;
 
         {(isStruct ? "" : "protected ")}{className}(int index");
-        for (var j = 0; j < i; j++)
-        {
-            sb.Append($", T{j} value{j} = default(T{j})");
-        }
-        sb.Append(@")
+		for (var j = 0; j < i; j++)
+		{
+			sb.Append($", T{j} value{j} = default(T{j})");
+		}
+		sb.Append(@")
         {
             _index = index;");
-        for (var j = 0; j < i; j++)
-        {
-            sb.Append($@"
+		for (var j = 0; j < i; j++)
+		{
+			sb.Append($@"
             _value{j} = value{j};");
-        }
-        sb.AppendLine(@"
+		}
+		sb.AppendLine(@"
         }");
 
-        if (!isStruct)
-        {
-            sb.AppendLine($@"
+		if (!isStruct)
+		{
+			sb.AppendLine($@"
         protected {className}()
         {{");
 
-            for (var j = 0; j < i; j++)
-            {
-                sb.AppendLine($@"            if (this is T{j})
+			for (var j = 0; j < i; j++)
+			{
+				sb.AppendLine($@"            if (this is T{j})
             {{
                 _index = {j};
                 _value{j} = (T{j})(object)this;
                 return;
             }}");
-            }
+			}
 
-            sb.AppendLine(@"        }");
-        }
+			sb.AppendLine(@"        }");
+		}
 
-        sb.Append(@"
-        object IOneOf.Value
+		sb.Append(@"
+        public object Value
         {
             get
             {
                 switch (_index)
                 {");
-        for (var j = 0; j < i; j++)
-        {
-            sb.Append($@"
+		for (var j = 0; j < i; j++)
+		{
+			sb.Append($@"
                     case {j}:
                         return _value{j};");
-        }
-        sb.AppendLine(@"
+		}
+		sb.AppendLine(@"
                     default:
                         throw new InvalidOperationException();
                 }
             }
         }");
-        for (var j = 0; j < i; j++)
-        {
-            sb.AppendLine(
-        $@"
-        public bool IsT{j}
-        {{
-            get {{ return _index == {j}; }}
-        }}
+		for (var j = 0; j < i; j++)
+		{
+			sb.AppendLine(
+		$@"
+        public bool IsT{j} => _index == {j};
 
         public T{j} AsT{j}
         {{
@@ -109,121 +106,123 @@ namespace OneOf
             }}
         }}
 
-        public static implicit operator {className}<{genericArg}>(T{j} t)
-        {{
-             return new {className}<{genericArg}>({j}, value{j}: t);
-        }}");
-        }
+        public static implicit operator {className}<{genericArg}>(T{j} t) => new {className}<{genericArg}>({j}, value{j}: t);
+");
+		}
 
-        var matchArgList0 = string.Join(", ", Enumerable.Range(0, i).Select(e => $"Action<T{e}> f{e}"));
-        sb.AppendLine($@"
+		var matchArgList0 = string.Join(", ", Enumerable.Range(0, i).Select(e => $"Action<T{e}> f{e}"));
+		sb.AppendLine($@"
         public void Switch({matchArgList0})
         {{");
 
-        for (var j = 0; j < i; j++)
-        {
-            sb.AppendLine($@"            if (_index == {j} && f{j} != null)
+		for (var j = 0; j < i; j++)
+		{
+			sb.AppendLine($@"            if (_index == {j} && f{j} != null)
             {{
                 f{j}(_value{j});
                 return;
             }}");
-        }
+		}
 
-        sb.AppendLine(@"            throw new InvalidOperationException();
+		sb.AppendLine(@"            throw new InvalidOperationException();
         }");
 
-        var matchArgList = string.Join(", ", Enumerable.Range(0, i).Select(e => $"Func<T{e}, TResult> f{e}"));
-        sb.AppendLine($@"
+		var matchArgList = string.Join(", ", Enumerable.Range(0, i).Select(e => $"Func<T{e}, TResult> f{e}"));
+		sb.AppendLine($@"
         public TResult Match<TResult>({matchArgList})
         {{");
 
-        for (var j = 0; j < i; j++)
-        {
-            sb.AppendLine($@"            if (_index == {j} && f{j} != null)
+		for (var j = 0; j < i; j++)
+		{
+			sb.AppendLine($@"            if (_index == {j} && f{j} != null)
             {{
                 return f{j}(_value{j});
             }}");
-        }
+		}
 
-        sb.AppendLine(@"            throw new InvalidOperationException();
+		sb.AppendLine(@"            throw new InvalidOperationException();
         }");
 
-        var matchArgList2 = string.Join(", ", Enumerable.Range(0, i).Select(e => $"Func<T{e}, TResult> f{e} = null"));
-        sb.AppendLine($@"
-        public TResult MatchSome<TResult>({matchArgList2}, Func<TResult> otherwise = null)
-        {{");
+		if (isStruct)
+		{
+			var argIndexList = Enumerable.Range(0, i).ToList();
+			var genericArgs = argIndexList.Select(e => $"T{e}").ToList();
+			var genericArgsPrinted = string.Join(", ", genericArgs);
 
-        for (var j = 0; j < i; j++)
-        {
-            sb.AppendLine($@"            if (_index == {j} && f{j} != null)
-            {{
-                return f{j}(_value{j});
-            }}");
-        }
-
-        sb.AppendLine(@"            if (otherwise != null)
-            {
-                return otherwise();
-            }
-            throw new InvalidOperationException();
-        }");
-
-        if(isStruct){
-            var argIndexList = Enumerable.Range(0, i).ToList();
-            var genericArgs = argIndexList.Select(e => $"T{e}").ToList();
-            var genericArgsPrinted = string.Join(", ", genericArgs);
-
-            foreach(var bindToType in genericArgs){
-                sb.AppendLine($@"
+			foreach (var bindToType in genericArgs)
+			{
+				sb.AppendLine($@"
         public static OneOf<{genericArgsPrinted}> From{bindToType}({bindToType} input)
         {{
             return input;
         }}");
-            }
+			}
 
-            foreach(var bindToType in genericArgs){
+			foreach (var bindToType in genericArgs)
+			{
 
-                var resultType = "TResult";
-                var resultArgs = genericArgs.Select(x => {
-                    return x == bindToType ? resultType : x;
-                }).ToList();
-                var resultArgsPrinted = string.Join(", ", resultArgs);
-                var funcType =
-                sb.Append($@"
+				var resultType = "TResult";
+				var resultArgs = genericArgs.Select(x =>
+				{
+					return x == bindToType ? resultType : x;
+				}).ToList();
+				var resultArgsPrinted = string.Join(", ", resultArgs);
+				var funcType =
+				sb.Append($@"
         public OneOf<{resultArgsPrinted}> Map{bindToType}<{resultType}>(Func<{bindToType}, {resultType}> mapFunc)
         {{");
-                sb.Append($@"
+				sb.Append($@"
             if(mapFunc == null)
             {{
                 throw new ArgumentNullException(nameof(mapFunc));
             }}");
 
-                sb.Append($@"
+				sb.Append($@"
             return Match<OneOf<{resultArgsPrinted}>>(");
-                var appendStrings = argIndexList.Select(x => {
-                    return $"T{x}" == bindToType ?
-                        $"input{x} => mapFunc(input{x})":
-                        $"input{x} => input{x}";
-                }).ToList();
-                for (var appendedStringIndex = 0; appendedStringIndex < appendStrings.Count; appendedStringIndex++)
-                {
-                    if(appendedStringIndex != appendStrings.Count -1){
-                        sb.Append($@"
+				var appendStrings = argIndexList.Select(x =>
+				{
+					return $"T{x}" == bindToType ?
+						$"input{x} => mapFunc(input{x})" :
+						$"input{x} => input{x}";
+				}).ToList();
+				for (var appendedStringIndex = 0; appendedStringIndex < appendStrings.Count; appendedStringIndex++)
+				{
+					if (appendedStringIndex != appendStrings.Count - 1)
+					{
+						sb.Append($@"
                 {appendStrings[appendedStringIndex]},");
-                    }else{
-                        sb.Append($@"
+					}
+					else
+					{
+						sb.Append($@"
                 {appendStrings[appendedStringIndex]}");
-                    }
-                }
-                sb.Append($@"
+					}
+				}
+				sb.Append($@"
             );");
-                sb.AppendLine($@"
+				sb.AppendLine($@"
         }}");
-            }
+			}
 
-        }
+		}
+		if (i > 1)
+			for (var j = 0; j < i; j++)
+			{
 
-       sb.AppendLine($@"
+				var genericArgWithSkip = string.Join(", ", Enumerable.Range(0, i).Except(new[] { j }).Select(e => $"T{e}"));
+				var remainderType = i == 2 ? genericArgWithSkip : $"OneOf<{genericArgWithSkip}>";
+				sb.AppendLine($@"
+		public bool TryPickT{j}(out T{j} value, out {remainderType} remainder)
+		{{
+			value = this.IsT{j} ? this.AsT{j} : default(T{j});
+			remainder = " + ((i == 2)  ? ("this.AsT" + (j == 1 ? "0" : "1") + ";") : $@"this.IsT{j}
+				? default(OneOf<{genericArgWithSkip}>) 
+				: this.Match<{remainderType}>(" + String.Join(", ", Enumerable.Range(0, i).Select(k => $"t{k} =>" + (k == j ? "throw new InvalidOperationException()" : $"t{k}"))) + $@");")
+				+ $@"
+			return this.IsT{j};
+		}}");
+			}
+		sb.AppendLine($@"
         bool Equals({className}<{genericArg}> other)
         {{
             if (_index != other._index)
@@ -232,40 +231,35 @@ namespace OneOf
             }}
             switch (_index)
             {{");
-        for (var j = 0; j < i; j++)
-        {
-            sb.AppendLine($@"                case {j}:
-                    return Equals(_value{j}, other._value{j});");
-        }
-        sb.AppendLine(@"                default:
-                    return false;
+		for (var j = 0; j < i; j++)
+		{
+			sb.AppendLine($@"                case {j}: return Equals(_value{j}, other._value{j});");
+		}
+		sb.AppendLine(@"                default: return false;
             }
         }
 
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
-            {
                 return false;
-            }");
-        if (isStruct)
-        {
-            sb.AppendLine($@"
+            ");
+		if (isStruct)
+		{
+			sb.AppendLine($@"
             return obj is {className}<{genericArg}> && Equals(({className}<{genericArg}>)obj);");
-        }
-        else
-        {
-            sb.AppendLine($@"
+		}
+		else
+		{
+			sb.AppendLine($@"
             if (ReferenceEquals(this, obj))
-            {{
                 return true;
-            }}
 
             var other = obj as OneOfBase<{genericArg}>;
             return other != null && Equals(other);");
-        }
+		}
 
-        sb.AppendLine(@"        }
+		sb.AppendLine(@"        }
 
         public override int GetHashCode()
         {
@@ -274,13 +268,13 @@ namespace OneOf
                 int hashCode;
                 switch (_index)
                 {");
-        for (var j = 0; j < i; j++)
-        {
-            sb.AppendLine($@"                    case {j}:
+		for (var j = 0; j < i; j++)
+		{
+			sb.AppendLine($@"                    case {j}:
                     hashCode = _value{j}?.GetHashCode() ?? 0;
                     break;");
-        }
-        sb.AppendLine(@"                    default:
+		}
+		sb.AppendLine(@"                    default:
                         hashCode = 0;
                         break;
                 }
@@ -288,7 +282,7 @@ namespace OneOf
             }
         }
     }");
-    }
-    sb.AppendLine("}");
-    return sb.ToString(); ;
+	}
+	sb.AppendLine("}");
+	return sb.ToString(); ;
 }
