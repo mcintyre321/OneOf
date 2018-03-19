@@ -109,6 +109,40 @@ There is also a .Switch method, for when you aren't returning a value:
 
 ```
 
+### TryPick𝑥 method
+
+As an alternative to `.Switch` or `.Match` you can use the `.TryPick𝑥` methods.
+
+```csharp
+    //TryPick𝑥 methods for OneOf<T0, T1, T2>
+    public bool TryPickT0(out T0 value, out OneOf<T1, T2> remainder) { ... } 
+    public bool TryPickT1(out T1 value, out OneOf<T0, T2> remainder) { ... } 
+    public bool TryPickT2(out T2 value, out OneOf<T0, T1> remainder) { ... } 
+```
+
+The return value indicates if the OneOf contains a T𝑥 or not. If so, then `value` will be set to the inner value from the OneOf. If not, then the remainder will be a OneOf of the remaining generic types. You can use them like this:
+
+```csharp
+
+IActionResult Get(string id)
+{
+	OneOf<Thing, NotFound, Error> thingOrNotFoundOrError = GetThingFromDb(string id);
+
+	if (thingOrNotFoundOrError.TryPickT1(out NotFound notFound, out var thingOrError)) //thingOrError is a OneOf<Thing, Error>
+		return StatusCode(404);
+
+	if (thingOrError.TryPickT1(out var error, out var thing)) //note that thing is a Thing rather than a OneOf<Thing>
+	{
+		_logger.LogError(error.Message);
+		return StatusCode(500);
+	}
+
+	return Ok(thing);
+}
+
+```
+
+
 ### Reusable OneOf Types using OneOfBase
 
 You can declare a OneOf as a Type, by inheriting from `OneOfBase`. 
