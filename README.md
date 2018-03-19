@@ -70,6 +70,11 @@ public void SetBackground(OneOf<string, ColorName, Color> backgroundColor) { ...
 ```
 
 
+## Matching
+
+You use the `TOut Match(Func<T0, TOut> f0, ... Func<Tn,TOut> fn)` method to get a value out. Note how the number of handlers matches the number of generic arguments.
+
+
 ### Advantages over `switch` or `if` or `exception` based control flow:
 
 This has a major advantage over a switch statement, as it
@@ -118,51 +123,4 @@ You can declare a OneOf as a Type, by inheriting from `OneOfBase`.
     
     
 ```
-
 The PaymentResult class will inherit the `.Match` and `.Switch` methods.
-
-
-### TryPick𝑥 method
-
-As an alternative to `.Switch` or `.Match` you can use the `.TryPick𝑥` methods.
-
-```csharp
-    //TryPick𝑥 methods for OneOf<T0, T1, T2>
-    public bool TryPickT0(out T0 value, out OneOf<T1, T2> remainder) { ... } 
-    public bool TryPickT1(out T1 value, out OneOf<T0, T2> remainder) { ... } 
-    public bool TryPickT2(out T2 value, out OneOf<T0, T1> remainder) { ... } 
-```
-
-The return value indicates if the OneOf contains a T𝑥 or not. If so, then `value` will be set to the inner value from the OneOf. If not, then the remainder will be a OneOf of the remaining generic types. You can use them like this:
-
-```csharp
-
-//Suppose you have a method call returning a OneOf...
-OneOf<Thing, NotFound, Error> GetThingFromDb(string id){ ... }
-
-IActionResult Get(string id)
-{
-	OneOf<Thing, NotFound, Error> thingOrNotFoundOrError = GetThingFromDb(string id);
-
-	if (thingOrNotFoundOrError.TryPickT1(out NotFound notFound, out var thingOrError))
-		return StatusCode(404);
-
-	if (thingOrError.TryPickT1(out var error, out var thing))
-	{
-		_logger.LogError(error.Message);
-		return StatusCode(500);
-	}
-
-	return Ok(thing);
-}
-
-```
-
-## Matching
-
-You use the `TOut Match(Func<T0, TOut> f0, ... Func<Tn,TOut> fn)` method to get a value out. Note how the number of handlers matches the number of generic arguments.
-
-
-## See also:
-
-If you liked this, you may also like [ValueOf](https://github.com/mcintyre321/OneOf), a library for creating one-line Value Object Types.
