@@ -118,6 +118,7 @@ You can declare a OneOf as a Type, by inheriting from `OneOfBase`.
     
     
 ```
+
 The PaymentResult class will inherit the `.Match` and `.Switch` methods.
 
 
@@ -135,6 +136,7 @@ As an alternative to `.Switch` or `.Match` you can use the `.TryPick𝑥` method
 The return value indicates if the OneOf contains a T𝑥 or not. If so, then `value` will be set to the inner value from the OneOf. If not, then the remainder will be a OneOf of the remaining generic types. You can use them like this:
 
 ```csharp
+
 //Suppose you have a method call returning a OneOf...
 OneOf<Thing, NotFound, Error> GetThingFromDb(string id){ ... }
 
@@ -154,13 +156,13 @@ IActionResult Get(string id)
 	return Ok(thing);
 }
 
-
+```
 
 ## Matching
 
 You use the `TOut Match(Func<T0, TOut> f0, ... Func<Tn,TOut> fn)` method to get a value out. Note how the number of handlers matches the number of generic arguments.
 
 
-# See also:
+## See also:
 
 If you liked this, you may also like [ValueOf](https://github.com/mcintyre321/OneOf), a library for creating one-line Value Object Types.
