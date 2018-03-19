@@ -70,11 +70,6 @@ public void SetBackground(OneOf<string, ColorName, Color> backgroundColor) { ...
 ```
 
 
-## Matching
-
-You use the `TOut Match(Func<T0, TOut> f0, ... Func<Tn,TOut> fn)` method to get a value out. Note how the number of handlers matches the number of generic arguments.
-
-
 ### Advantages over `switch` or `if` or `exception` based control flow:
 
 This has a major advantage over a switch statement, as it
@@ -158,3 +153,14 @@ IActionResult Get(string id)
 
 	return Ok(thing);
 }
+
+
+
+## Matching
+
+You use the `TOut Match(Func<T0, TOut> f0, ... Func<Tn,TOut> fn)` method to get a value out. Note how the number of handlers matches the number of generic arguments.
+
+
+# See also:
+
+If you liked this, you may also like [ValueOf](https://github.com/mcintyre321/OneOf), a library for creating one-line Value Object Types.
