@@ -215,7 +215,7 @@ namespace OneOf
 		public bool TryPickT{j}(out T{j} value, out {remainderType} remainder)
 		{{
 			value = this.IsT{j} ? this.AsT{j} : default(T{j});
-			remainder = " + ((i == 2)  ? ("this.AsT" + (j == 1 ? "0" : "1") + ";") : $@"this.IsT{j}
+			remainder = " + ((i == 2) ? ($"this.IsT{j} ? default({remainderType}) : this.As{remainderType};") : $@"this.IsT{j}
 				? default(OneOf<{genericArgWithSkip}>) 
 				: this.Match<{remainderType}>(" + String.Join(", ", Enumerable.Range(0, i).Select(k => $"t{k} =>" + (k == j ? "throw new InvalidOperationException()" : $"t{k}"))) + $@");")
 				+ $@"

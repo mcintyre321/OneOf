@@ -228,14 +228,14 @@ namespace OneOf
 		public bool TryPickT0(out T0 value, out T1 remainder)
 		{
 			value = this.IsT0 ? this.AsT0 : default(T0);
-			remainder = this.AsT1;
+			remainder = this.IsT0 ? default(T1) : this.AsT1;
 			return this.IsT0;
 		}
 
 		public bool TryPickT1(out T1 value, out T0 remainder)
 		{
 			value = this.IsT1 ? this.AsT1 : default(T1);
-			remainder = this.AsT0;
+			remainder = this.IsT1 ? default(T0) : this.AsT0;
 			return this.IsT1;
 		}
 
