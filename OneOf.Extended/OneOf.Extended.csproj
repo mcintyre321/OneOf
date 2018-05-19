@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net451;netstandard1.3</TargetFrameworks>
+    <Authors>Harry McIntyre</Authors>
+    <Title>OneOf - Easy Discriminated Unions for c#</Title>
+    <Company>Harry McIntyre</Company>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Product>Harry McIntyre</Product>
+    <Description>This package extends the OneOf types from OneOf&lt;T0, .., T9&gt; to OneOf&lt;T0, .., T32&gt; for when you really have a lot of options</Description>
+    <PackageProjectUrl>https://github.com/mcintyre321/OneOf/</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/mcintyre321/OneOf/blob/master/licence.md</PackageLicenseUrl>
+    <PackageTags>discriminated unions, return type, match switch</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>OneOf.Extended</PackageId>
+    <Copyright>Harry McIntyre</Copyright>
+    <RootNamespace>OneOf</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OneOf\OneOf.csproj" />
+  </ItemGroup>
+
+</Project>

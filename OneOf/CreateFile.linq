@@ -2,17 +2,25 @@
 
 void Main()
 {
-    var output = GetContent(true).Dump();
-    var outpath = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "OneOf.cs");
-    File.WriteAllText(outpath.Dump(), output);
+	var output = GetContent(true, 1, 10).Dump();
+	var outpath = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "OneOf.cs");
+	File.WriteAllText(outpath.Dump(), output);
 
-    var output2 = GetContent(false);
-    var outpath2 = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "OneOfBase.cs");
-    File.WriteAllText(outpath2.Dump(), output2);
+	var output2 = GetContent(false, 1, 10);
+	var outpath2 = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "OneOfBase.cs");
+	File.WriteAllText(outpath2.Dump(), output2);
+	
+	var output3 = GetContent(true, 10, 33).Dump();
+	var outpath3 = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "..\\OneOf.Extended\\OneOf.cs");
+	File.WriteAllText(outpath3.Dump(), output3);
+
+	var output4 = GetContent(false, 10, 33);
+	var outpath4 = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "..\\OneOf.Extended\\OneOfBase.cs");
+	File.WriteAllText(outpath4.Dump(), output4);
 
 }
 
-public string GetContent(bool isStruct)
+public string GetContent(bool isStruct, int indexStart, int indexEnd)
 {
 	var className = isStruct ? "OneOf" : "OneOfBase";
 	var sb = new StringBuilder();
@@ -20,7 +28,7 @@ public string GetContent(bool isStruct)
 
 namespace OneOf
 {");
-	for (var i = 1; i < 33; i++)
+	for (var i = indexStart; i < indexEnd; i++)
 	{
 		var genericArg = string.Join(", ", Enumerable.Range(0, i).Select(e => $"T{e}"));
 

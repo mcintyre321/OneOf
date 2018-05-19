@@ -34,7 +34,7 @@ let getContent =
 
 open OneOf
 "
-    let results = List.Cons(fileIntro, [for i in 0 .. 31 -> getType i])
+    let results = List.Cons(fileIntro, [for i in 0 .. 8 -> getType i])
     String.concat "" results
 
 let main =
