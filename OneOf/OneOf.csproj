@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net451;netstandard1.3</TargetFrameworks>
+    <TargetFrameworks>net45;netstandard1.3</TargetFrameworks>
     <Authors>Harry McIntyre</Authors>
     <Title>OneOf - Easy Discriminated Unions for c#</Title>
     <Company>Harry McIntyre</Company>
