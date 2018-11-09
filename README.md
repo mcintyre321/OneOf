@@ -50,7 +50,7 @@ public IActionResult Register(string username)
 ```
 #### As an 'Option' Type
 
-It's simple to use OneOf as an `Option` type - just declare a `OneOf<Something, None>`. OneOf comes with a variety of useful Types in the `OneOf.Types` namespace, including  `Yes`, `No`, `Maybe`, `Unknown`, `True`, `False`, `All`, `Some`, and `None`. Of course
+It's simple to use OneOf as an `Option` type - just declare a `OneOf<Something, None>`. OneOf comes with a variety of useful Types in the `OneOf.Types` namespace, including  `Yes`, `No`, `Maybe`, `Unknown`, `True`, `False`, `All`, `Some`, and `None`.
 
 
 
