@@ -15,7 +15,6 @@ PS If you like OneOf, you might want to check out [ValueOf](https://github.com/m
 
 ## Use cases
 
-
 ### As a method return value
 
 The most frequent use case is as a return value, when you need to return different results from a method. Here's how you might use it in an MVC controller action:
@@ -49,6 +48,11 @@ public IActionResult Register(string username)
 }
 
 ```
+#### As an 'Option' Type
+
+It's simple to use OneOf as an `Option` type - just declare a `OneOf<Something, None>`. OneOf comes with a variety of useful Types in the `OneOf.Types` namespace, including  `Yes`, `No`, `Maybe`, `Unknown`, `True`, `False`, `All`, `Some`, and `None`. Of course
+
+
 
 #### Benefits
 
@@ -67,7 +71,6 @@ You can use also use `OneOf` as a parameter type, allowing a caller to pass diff
 public void SetBackground(OneOf<string, ColorName, Color> backgroundColor) { ... }
 
 //The method above can be called with either a string, a ColorName enum value or a Color instance.
-
 
 ```
 
@@ -143,7 +146,6 @@ IActionResult Get(string id)
 }
 
 ```
-
 
 ### Reusable OneOf Types using OneOfBase
 
