@@ -3,26 +3,13 @@ using OneOf;
 
 namespace OneOf.Tests
 {
-    using System;
-
     public class DefaultConstructorTests
     {
         [Test]
-        public void DefaultValueIsUndefined()
+        public void DefaultConstructorSetsValueToDefaultValueOfT0()
         {
-            var value = default(OneOf<int>);
-
-            Assert.IsFalse(value.IsT0);
-            Assert.Throws<InvalidOperationException>(
-                () =>
-                {
-                    var unused = value.Value;
-                });
-            Assert.Throws<InvalidOperationException>(
-                () =>
-                {
-                    var unused = value.AsT0;
-                });
+            var x = new OneOf<int, bool>();
+            var result = x.Match(n => n == default(int), n => false);
         }
     }
 }
