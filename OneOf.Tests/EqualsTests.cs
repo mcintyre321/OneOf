@@ -3,6 +3,8 @@ using OneOf;
 
 namespace OneOf.Tests
 {
+    using System;
+
     public class EqualsTests
     {
         [Test]
