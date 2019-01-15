@@ -49,7 +49,7 @@ namespace OneOf
 		}
 		sb.Append(@")
         {
-            _index = index + 1;");
+            _index = index;");
 		for (var j = 0; j < i; j++)
 		{
 			sb.Append($@"
@@ -68,7 +68,7 @@ namespace OneOf
 			{
 				sb.AppendLine($@"            if (this is T{j})
             {{
-                _index = {j + 1};
+                _index = {j};
                 _value{j} = (T{j})(object)this;
                 return;
             }}");
@@ -87,7 +87,7 @@ namespace OneOf
 		for (var j = 0; j < i; j++)
 		{
 			sb.Append($@"
-                    case {j + 1}:
+                    case {j}:
                         return _value{j};");
 		}
 		sb.AppendLine(@"
@@ -100,15 +100,15 @@ namespace OneOf
 		{
 			sb.AppendLine(
 		$@"
-        public bool IsT{j} => _index == {j + 1};
+        public bool IsT{j} => _index == {j};
 
         public T{j} AsT{j}
         {{
             get
             {{
-                if (_index != {j + 1})
+                if (_index != {j})
                 {{
-                    throw new InvalidOperationException($""Cannot return as T{j} as result is T{{_index - 1}}"");
+                    throw new InvalidOperationException($""Cannot return as T{j} as result is T{{_index}}"");
                 }}
                 return _value{j};
             }}
@@ -125,7 +125,7 @@ namespace OneOf
 
 		for (var j = 0; j < i; j++)
 		{
-			sb.AppendLine($@"            if (_index == {j + 1} && f{j} != null)
+			sb.AppendLine($@"            if (_index == {j} && f{j} != null)
             {{
                 f{j}(_value{j});
                 return;
@@ -142,7 +142,7 @@ namespace OneOf
 
 		for (var j = 0; j < i; j++)
 		{
-			sb.AppendLine($@"            if (_index == {j + 1} && f{j} != null)
+			sb.AppendLine($@"            if (_index == {j} && f{j} != null)
             {{
                 return f{j}(_value{j});
             }}");
@@ -241,7 +241,7 @@ namespace OneOf
             {{");
 		for (var j = 0; j < i; j++)
 		{
-			sb.AppendLine($@"                case {j + 1}: return Equals(_value{j}, other._value{j});");
+			sb.AppendLine($@"                case {j}: return Equals(_value{j}, other._value{j});");
 		}
 		sb.AppendLine(@"                default: return false;
             }
@@ -278,7 +278,7 @@ namespace OneOf
                 {");
 		for (var j = 0; j < i; j++)
 		{
-			sb.AppendLine($@"                    case {j + 1}:
+			sb.AppendLine($@"                    case {j}:
                     hashCode = _value{j}?.GetHashCode() ?? 0;
                     break;");
 		}
