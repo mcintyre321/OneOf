@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 
 namespace OneOf
 {
@@ -64,11 +65,30 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public async Task SwitchAsync(Func<T0, Task> f0)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                await f0(_value0);
+                return;
+            }
+            throw new InvalidOperationException();
+        }
+
         public TResult Match<TResult>(Func<T0, TResult> f0)
         {
             if (_index == 0 && f0 != null)
             {
                 return f0(_value0);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public async Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return await f0(_value0);
             }
             throw new InvalidOperationException();
         }
@@ -212,6 +232,21 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public async Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                await f0(_value0);
+                return;
+            }
+            if (_index == 1 && f1 != null)
+            {
+                await f1(_value1);
+                return;
+            }
+            throw new InvalidOperationException();
+        }
+
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1)
         {
             if (_index == 0 && f0 != null)
@@ -221,6 +256,19 @@ namespace OneOf
             if (_index == 1 && f1 != null)
             {
                 return f1(_value1);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public async Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return await f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return await f1(_value1);
             }
             throw new InvalidOperationException();
         }
@@ -414,6 +462,26 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public async Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                await f0(_value0);
+                return;
+            }
+            if (_index == 1 && f1 != null)
+            {
+                await f1(_value1);
+                return;
+            }
+            if (_index == 2 && f2 != null)
+            {
+                await f2(_value2);
+                return;
+            }
+            throw new InvalidOperationException();
+        }
+
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2)
         {
             if (_index == 0 && f0 != null)
@@ -427,6 +495,23 @@ namespace OneOf
             if (_index == 2 && f2 != null)
             {
                 return f2(_value2);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public async Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return await f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return await f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return await f2(_value2);
             }
             throw new InvalidOperationException();
         }
@@ -669,6 +754,31 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public async Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                await f0(_value0);
+                return;
+            }
+            if (_index == 1 && f1 != null)
+            {
+                await f1(_value1);
+                return;
+            }
+            if (_index == 2 && f2 != null)
+            {
+                await f2(_value2);
+                return;
+            }
+            if (_index == 3 && f3 != null)
+            {
+                await f3(_value3);
+                return;
+            }
+            throw new InvalidOperationException();
+        }
+
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3)
         {
             if (_index == 0 && f0 != null)
@@ -686,6 +796,27 @@ namespace OneOf
             if (_index == 3 && f3 != null)
             {
                 return f3(_value3);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public async Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return await f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return await f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return await f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return await f3(_value3);
             }
             throw new InvalidOperationException();
         }
@@ -973,6 +1104,36 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public async Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                await f0(_value0);
+                return;
+            }
+            if (_index == 1 && f1 != null)
+            {
+                await f1(_value1);
+                return;
+            }
+            if (_index == 2 && f2 != null)
+            {
+                await f2(_value2);
+                return;
+            }
+            if (_index == 3 && f3 != null)
+            {
+                await f3(_value3);
+                return;
+            }
+            if (_index == 4 && f4 != null)
+            {
+                await f4(_value4);
+                return;
+            }
+            throw new InvalidOperationException();
+        }
+
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4)
         {
             if (_index == 0 && f0 != null)
@@ -994,6 +1155,31 @@ namespace OneOf
             if (_index == 4 && f4 != null)
             {
                 return f4(_value4);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public async Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return await f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return await f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return await f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return await f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return await f4(_value4);
             }
             throw new InvalidOperationException();
         }
@@ -1326,6 +1512,41 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public async Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                await f0(_value0);
+                return;
+            }
+            if (_index == 1 && f1 != null)
+            {
+                await f1(_value1);
+                return;
+            }
+            if (_index == 2 && f2 != null)
+            {
+                await f2(_value2);
+                return;
+            }
+            if (_index == 3 && f3 != null)
+            {
+                await f3(_value3);
+                return;
+            }
+            if (_index == 4 && f4 != null)
+            {
+                await f4(_value4);
+                return;
+            }
+            if (_index == 5 && f5 != null)
+            {
+                await f5(_value5);
+                return;
+            }
+            throw new InvalidOperationException();
+        }
+
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5)
         {
             if (_index == 0 && f0 != null)
@@ -1351,6 +1572,35 @@ namespace OneOf
             if (_index == 5 && f5 != null)
             {
                 return f5(_value5);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public async Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return await f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return await f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return await f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return await f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return await f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return await f5(_value5);
             }
             throw new InvalidOperationException();
         }
@@ -1728,6 +1978,46 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public async Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                await f0(_value0);
+                return;
+            }
+            if (_index == 1 && f1 != null)
+            {
+                await f1(_value1);
+                return;
+            }
+            if (_index == 2 && f2 != null)
+            {
+                await f2(_value2);
+                return;
+            }
+            if (_index == 3 && f3 != null)
+            {
+                await f3(_value3);
+                return;
+            }
+            if (_index == 4 && f4 != null)
+            {
+                await f4(_value4);
+                return;
+            }
+            if (_index == 5 && f5 != null)
+            {
+                await f5(_value5);
+                return;
+            }
+            if (_index == 6 && f6 != null)
+            {
+                await f6(_value6);
+                return;
+            }
+            throw new InvalidOperationException();
+        }
+
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6)
         {
             if (_index == 0 && f0 != null)
@@ -1757,6 +2047,39 @@ namespace OneOf
             if (_index == 6 && f6 != null)
             {
                 return f6(_value6);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public async Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return await f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return await f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return await f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return await f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return await f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return await f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return await f6(_value6);
             }
             throw new InvalidOperationException();
         }
@@ -2179,6 +2502,51 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public async Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                await f0(_value0);
+                return;
+            }
+            if (_index == 1 && f1 != null)
+            {
+                await f1(_value1);
+                return;
+            }
+            if (_index == 2 && f2 != null)
+            {
+                await f2(_value2);
+                return;
+            }
+            if (_index == 3 && f3 != null)
+            {
+                await f3(_value3);
+                return;
+            }
+            if (_index == 4 && f4 != null)
+            {
+                await f4(_value4);
+                return;
+            }
+            if (_index == 5 && f5 != null)
+            {
+                await f5(_value5);
+                return;
+            }
+            if (_index == 6 && f6 != null)
+            {
+                await f6(_value6);
+                return;
+            }
+            if (_index == 7 && f7 != null)
+            {
+                await f7(_value7);
+                return;
+            }
+            throw new InvalidOperationException();
+        }
+
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7)
         {
             if (_index == 0 && f0 != null)
@@ -2212,6 +2580,43 @@ namespace OneOf
             if (_index == 7 && f7 != null)
             {
                 return f7(_value7);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public async Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return await f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return await f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return await f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return await f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return await f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return await f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return await f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return await f7(_value7);
             }
             throw new InvalidOperationException();
         }
@@ -2679,6 +3084,56 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public async Task SwitchAsync(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                await f0(_value0);
+                return;
+            }
+            if (_index == 1 && f1 != null)
+            {
+                await f1(_value1);
+                return;
+            }
+            if (_index == 2 && f2 != null)
+            {
+                await f2(_value2);
+                return;
+            }
+            if (_index == 3 && f3 != null)
+            {
+                await f3(_value3);
+                return;
+            }
+            if (_index == 4 && f4 != null)
+            {
+                await f4(_value4);
+                return;
+            }
+            if (_index == 5 && f5 != null)
+            {
+                await f5(_value5);
+                return;
+            }
+            if (_index == 6 && f6 != null)
+            {
+                await f6(_value6);
+                return;
+            }
+            if (_index == 7 && f7 != null)
+            {
+                await f7(_value7);
+                return;
+            }
+            if (_index == 8 && f8 != null)
+            {
+                await f8(_value8);
+                return;
+            }
+            throw new InvalidOperationException();
+        }
+
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8)
         {
             if (_index == 0 && f0 != null)
@@ -2716,6 +3171,47 @@ namespace OneOf
             if (_index == 8 && f8 != null)
             {
                 return f8(_value8);
+            }
+            throw new InvalidOperationException();
+        }
+
+        public async Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return await f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return await f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return await f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return await f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return await f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return await f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return await f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return await f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return await f8(_value8);
             }
             throw new InvalidOperationException();
         }

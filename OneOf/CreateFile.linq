@@ -25,6 +25,7 @@ public string GetContent(bool isStruct, int indexStart, int indexEnd)
 	var className = isStruct ? "OneOf" : "OneOfBase";
 	var sb = new StringBuilder();
 	sb.Append(@"using System;
+using System.Threading.Tasks;
 
 namespace OneOf
 {");
@@ -135,6 +136,24 @@ namespace OneOf
 		sb.AppendLine(@"            throw new InvalidOperationException();
         }");
 
+
+		var matchAsyncArgList0 = string.Join(", ", Enumerable.Range(0, i).Select(e => $"Func<T{e}, Task> f{e}"));
+		sb.AppendLine($@"
+        public async Task SwitchAsync({matchAsyncArgList0})
+        {{");
+
+		for (var j = 0; j < i; j++)
+		{
+			sb.AppendLine($@"            if (_index == {j} && f{j} != null)
+            {{
+                await f{j}(_value{j});
+                return;
+            }}");
+		}
+
+		sb.AppendLine(@"            throw new InvalidOperationException();
+        }");
+
 		var matchArgList = string.Join(", ", Enumerable.Range(0, i).Select(e => $"Func<T{e}, TResult> f{e}"));
 		sb.AppendLine($@"
         public TResult Match<TResult>({matchArgList})
@@ -145,6 +164,22 @@ namespace OneOf
 			sb.AppendLine($@"            if (_index == {j} && f{j} != null)
             {{
                 return f{j}(_value{j});
+            }}");
+		}
+
+		sb.AppendLine(@"            throw new InvalidOperationException();
+        }");
+
+		var matchAsyncArgList = string.Join(", ", Enumerable.Range(0, i).Select(e => $"Func<T{e}, Task<TResult>> f{e}"));
+		sb.AppendLine($@"
+        public async Task<TResult> MatchAsync<TResult>({matchAsyncArgList})
+        {{");
+
+		for (var j = 0; j < i; j++)
+		{
+			sb.AppendLine($@"            if (_index == {j} && f{j} != null)
+            {{
+                return await f{j}(_value{j});
             }}");
 		}
 
