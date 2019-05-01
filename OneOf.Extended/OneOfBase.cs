@@ -522,24 +522,6 @@ namespace OneOf
             return other != null && Equals(other);
         }
 
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
-        }
-
         public override int GetHashCode()
         {
             unchecked
@@ -1150,25 +1132,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
@@ -1830,26 +1793,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
@@ -2560,27 +2503,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
@@ -3340,28 +3262,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
@@ -4170,29 +4070,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
@@ -5050,30 +4927,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
@@ -5980,31 +5833,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
@@ -6960,32 +6788,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
@@ -7990,33 +7792,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
@@ -9070,34 +8845,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
@@ -10200,35 +9947,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
@@ -11380,36 +11098,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
@@ -12610,37 +12298,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                case 22: return FormatValue(typeof(T22), _value22);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
@@ -13890,38 +13547,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                case 22: return FormatValue(typeof(T22), _value22);
-                case 23: return FormatValue(typeof(T23), _value23);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
@@ -15220,39 +14845,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                case 22: return FormatValue(typeof(T22), _value22);
-                case 23: return FormatValue(typeof(T23), _value23);
-                case 24: return FormatValue(typeof(T24), _value24);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
@@ -16600,40 +16192,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                case 22: return FormatValue(typeof(T22), _value22);
-                case 23: return FormatValue(typeof(T23), _value23);
-                case 24: return FormatValue(typeof(T24), _value24);
-                case 25: return FormatValue(typeof(T25), _value25);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
@@ -18030,41 +17588,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                case 22: return FormatValue(typeof(T22), _value22);
-                case 23: return FormatValue(typeof(T23), _value23);
-                case 24: return FormatValue(typeof(T24), _value24);
-                case 25: return FormatValue(typeof(T25), _value25);
-                case 26: return FormatValue(typeof(T26), _value26);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
@@ -19510,42 +19033,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                case 22: return FormatValue(typeof(T22), _value22);
-                case 23: return FormatValue(typeof(T23), _value23);
-                case 24: return FormatValue(typeof(T24), _value24);
-                case 25: return FormatValue(typeof(T25), _value25);
-                case 26: return FormatValue(typeof(T26), _value26);
-                case 27: return FormatValue(typeof(T27), _value27);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
@@ -21040,43 +20527,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                case 22: return FormatValue(typeof(T22), _value22);
-                case 23: return FormatValue(typeof(T23), _value23);
-                case 24: return FormatValue(typeof(T24), _value24);
-                case 25: return FormatValue(typeof(T25), _value25);
-                case 26: return FormatValue(typeof(T26), _value26);
-                case 27: return FormatValue(typeof(T27), _value27);
-                case 28: return FormatValue(typeof(T28), _value28);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
@@ -22620,44 +22070,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                case 22: return FormatValue(typeof(T22), _value22);
-                case 23: return FormatValue(typeof(T23), _value23);
-                case 24: return FormatValue(typeof(T24), _value24);
-                case 25: return FormatValue(typeof(T25), _value25);
-                case 26: return FormatValue(typeof(T26), _value26);
-                case 27: return FormatValue(typeof(T27), _value27);
-                case 28: return FormatValue(typeof(T28), _value28);
-                case 29: return FormatValue(typeof(T29), _value29);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
@@ -24250,45 +23662,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                case 22: return FormatValue(typeof(T22), _value22);
-                case 23: return FormatValue(typeof(T23), _value23);
-                case 24: return FormatValue(typeof(T24), _value24);
-                case 25: return FormatValue(typeof(T25), _value25);
-                case 26: return FormatValue(typeof(T26), _value26);
-                case 27: return FormatValue(typeof(T27), _value27);
-                case 28: return FormatValue(typeof(T28), _value28);
-                case 29: return FormatValue(typeof(T29), _value29);
-                case 30: return FormatValue(typeof(T30), _value30);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
@@ -25930,46 +25303,6 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>;
             return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                case 22: return FormatValue(typeof(T22), _value22);
-                case 23: return FormatValue(typeof(T23), _value23);
-                case 24: return FormatValue(typeof(T24), _value24);
-                case 25: return FormatValue(typeof(T25), _value25);
-                case 26: return FormatValue(typeof(T26), _value26);
-                case 27: return FormatValue(typeof(T27), _value27);
-                case 28: return FormatValue(typeof(T28), _value28);
-                case 29: return FormatValue(typeof(T29), _value29);
-                case 30: return FormatValue(typeof(T30), _value30);
-                case 31: return FormatValue(typeof(T31), _value31);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
         }
 
         public override int GetHashCode()
