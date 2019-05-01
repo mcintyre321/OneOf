@@ -152,7 +152,7 @@ IActionResult Get(string id)
 You can declare a OneOf as a Type, by inheriting from `OneOfBase`. 
 
 ```csharp
-    public abstract class PaymentResult : OneOfBase<PaymentResult.Success, PaymentResult.Declined, PaymentStatus.Failed>
+    public abstract class PaymentResult : OneOfBase<PaymentResult.Success, PaymentResult.Declined, PaymentResult.Failed>
     {
         public class Success : PaymentResult { }  
         public class Declined : PaymentResult { }
