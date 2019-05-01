@@ -49,5 +49,27 @@ namespace OneOf.Tests
             OneOf<string, int, DateTime, decimal> a = 42;
             Assert.AreEqual("System.Int32: 42", a.ToString());
         }
+
+        public abstract class RecursiveOneOf : OneOfBase<RecursiveOneOf.InnerOne, RecursiveOneOf.InnerTwo>
+        {
+            public class InnerOne : RecursiveOneOf { }
+            public class InnerTwo : RecursiveOneOf { }
+        }
+
+        [Test]
+        public void CallingToStringOnARecursiveTypeWorks()
+        {
+            var innerTypeOfRecursiveOneOf = new RecursiveOneOf.InnerOne();
+
+            Assert.AreEqual("OneOf.Tests.ToStringTests+RecursiveOneOf+InnerOne", innerTypeOfRecursiveOneOf.ToString());
+        }
+
+        [Test]
+        public void CallingToStringOnANestedNonRecursiveTypeWorks()
+        {
+            OneOf<OneOf<string, bool>, OneOf<bool, string>> nestedType = (OneOf<string, bool>)true;
+
+            Assert.AreEqual("OneOf.OneOf`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]: System.Boolean: True", nestedType.ToString());
+        }
     }
 }
