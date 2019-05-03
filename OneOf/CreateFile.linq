@@ -267,7 +267,25 @@ namespace OneOf
             return other != null && Equals(other);");
 		}
 
-		sb.AppendLine(@"        }
+        sb.AppendLine(@"        }");
+        sb.AppendLine(@"
+        public override string ToString()
+        {");
+        if(isStruct){
+            sb.AppendLine(@"            string FormatValue<T>(Type type, T value) => $""{type.FullName}: {value.ToString()}"";");
+        }
+        else
+        {
+            sb.AppendLine(@"            string FormatValue<T>(Type type, T value) => object.ReferenceEquals(this, value) ? base.ToString() : $""{type.FullName}: {value.ToString()}"";");
+        }
+        sb.AppendLine(@"            switch(_index) {");
+        for(var j = 0; j < i; j++) {
+            sb.AppendLine($"                case {j}: return FormatValue(typeof(T{j}), _value{j});");
+        }
+        sb.Append(@"                default: throw new InvalidOperationException(""Unexpected index, which indicates a problem in the OneOf codegen."");
+            }
+        }");
+        sb.AppendLine(@"
 
         public override int GetHashCode()
         {

@@ -99,6 +99,15 @@ namespace OneOf
             return other != null && Equals(other);
         }
 
+        public override string ToString()
+        {
+            string FormatValue<T>(Type type, T value) => object.ReferenceEquals(this, value) ? base.ToString() : $"{type.FullName}: {value.ToString()}";
+            switch(_index) {
+                case 0: return FormatValue(typeof(T0), _value0);
+                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
+            }
+        }
+
         public override int GetHashCode()
         {
             unchecked
@@ -264,6 +273,16 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1>;
             return other != null && Equals(other);
+        }
+
+        public override string ToString()
+        {
+            string FormatValue<T>(Type type, T value) => object.ReferenceEquals(this, value) ? base.ToString() : $"{type.FullName}: {value.ToString()}";
+            switch(_index) {
+                case 0: return FormatValue(typeof(T0), _value0);
+                case 1: return FormatValue(typeof(T1), _value1);
+                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
+            }
         }
 
         public override int GetHashCode()
@@ -484,6 +503,17 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2>;
             return other != null && Equals(other);
+        }
+
+        public override string ToString()
+        {
+            string FormatValue<T>(Type type, T value) => object.ReferenceEquals(this, value) ? base.ToString() : $"{type.FullName}: {value.ToString()}";
+            switch(_index) {
+                case 0: return FormatValue(typeof(T0), _value0);
+                case 1: return FormatValue(typeof(T1), _value1);
+                case 2: return FormatValue(typeof(T2), _value2);
+                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
+            }
         }
 
         public override int GetHashCode()
@@ -753,6 +783,18 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3>;
             return other != null && Equals(other);
+        }
+
+        public override string ToString()
+        {
+            string FormatValue<T>(Type type, T value) => object.ReferenceEquals(this, value) ? base.ToString() : $"{type.FullName}: {value.ToString()}";
+            switch(_index) {
+                case 0: return FormatValue(typeof(T0), _value0);
+                case 1: return FormatValue(typeof(T1), _value1);
+                case 2: return FormatValue(typeof(T2), _value2);
+                case 3: return FormatValue(typeof(T3), _value3);
+                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
+            }
         }
 
         public override int GetHashCode()
@@ -1071,6 +1113,19 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4>;
             return other != null && Equals(other);
+        }
+
+        public override string ToString()
+        {
+            string FormatValue<T>(Type type, T value) => object.ReferenceEquals(this, value) ? base.ToString() : $"{type.FullName}: {value.ToString()}";
+            switch(_index) {
+                case 0: return FormatValue(typeof(T0), _value0);
+                case 1: return FormatValue(typeof(T1), _value1);
+                case 2: return FormatValue(typeof(T2), _value2);
+                case 3: return FormatValue(typeof(T3), _value3);
+                case 4: return FormatValue(typeof(T4), _value4);
+                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
+            }
         }
 
         public override int GetHashCode()
@@ -1438,6 +1493,20 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5>;
             return other != null && Equals(other);
+        }
+
+        public override string ToString()
+        {
+            string FormatValue<T>(Type type, T value) => object.ReferenceEquals(this, value) ? base.ToString() : $"{type.FullName}: {value.ToString()}";
+            switch(_index) {
+                case 0: return FormatValue(typeof(T0), _value0);
+                case 1: return FormatValue(typeof(T1), _value1);
+                case 2: return FormatValue(typeof(T2), _value2);
+                case 3: return FormatValue(typeof(T3), _value3);
+                case 4: return FormatValue(typeof(T4), _value4);
+                case 5: return FormatValue(typeof(T5), _value5);
+                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
+            }
         }
 
         public override int GetHashCode()
@@ -1854,6 +1923,21 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6>;
             return other != null && Equals(other);
+        }
+
+        public override string ToString()
+        {
+            string FormatValue<T>(Type type, T value) => object.ReferenceEquals(this, value) ? base.ToString() : $"{type.FullName}: {value.ToString()}";
+            switch(_index) {
+                case 0: return FormatValue(typeof(T0), _value0);
+                case 1: return FormatValue(typeof(T1), _value1);
+                case 2: return FormatValue(typeof(T2), _value2);
+                case 3: return FormatValue(typeof(T3), _value3);
+                case 4: return FormatValue(typeof(T4), _value4);
+                case 5: return FormatValue(typeof(T5), _value5);
+                case 6: return FormatValue(typeof(T6), _value6);
+                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
+            }
         }
 
         public override int GetHashCode()
@@ -2319,6 +2403,22 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>;
             return other != null && Equals(other);
+        }
+
+        public override string ToString()
+        {
+            string FormatValue<T>(Type type, T value) => object.ReferenceEquals(this, value) ? base.ToString() : $"{type.FullName}: {value.ToString()}";
+            switch(_index) {
+                case 0: return FormatValue(typeof(T0), _value0);
+                case 1: return FormatValue(typeof(T1), _value1);
+                case 2: return FormatValue(typeof(T2), _value2);
+                case 3: return FormatValue(typeof(T3), _value3);
+                case 4: return FormatValue(typeof(T4), _value4);
+                case 5: return FormatValue(typeof(T5), _value5);
+                case 6: return FormatValue(typeof(T6), _value6);
+                case 7: return FormatValue(typeof(T7), _value7);
+                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
+            }
         }
 
         public override int GetHashCode()
@@ -2833,6 +2933,23 @@ namespace OneOf
 
             var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>;
             return other != null && Equals(other);
+        }
+
+        public override string ToString()
+        {
+            string FormatValue<T>(Type type, T value) => object.ReferenceEquals(this, value) ? base.ToString() : $"{type.FullName}: {value.ToString()}";
+            switch(_index) {
+                case 0: return FormatValue(typeof(T0), _value0);
+                case 1: return FormatValue(typeof(T1), _value1);
+                case 2: return FormatValue(typeof(T2), _value2);
+                case 3: return FormatValue(typeof(T3), _value3);
+                case 4: return FormatValue(typeof(T4), _value4);
+                case 5: return FormatValue(typeof(T5), _value5);
+                case 6: return FormatValue(typeof(T6), _value6);
+                case 7: return FormatValue(typeof(T7), _value7);
+                case 8: return FormatValue(typeof(T8), _value8);
+                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
+            }
         }
 
         public override int GetHashCode()
