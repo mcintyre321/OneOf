@@ -272,11 +272,11 @@ namespace OneOf
         public override string ToString()
         {");
         if(isStruct){
-            sb.AppendLine(@"            string FormatValue<T>(Type type, T value) => $""{type.FullName}: {value.ToString()}"";");
+            sb.AppendLine(@"            string FormatValue<T>(Type type, T value) => $""{type.FullName}: {value?.ToString()}"";");
         }
         else
         {
-            sb.AppendLine(@"            string FormatValue<T>(Type type, T value) => object.ReferenceEquals(this, value) ? base.ToString() : $""{type.FullName}: {value.ToString()}"";");
+            sb.AppendLine(@"            string FormatValue<T>(Type type, T value) => object.ReferenceEquals(this, value) ? base.ToString() : $""{type.FullName}: {value?.ToString()}"";");
         }
         sb.AppendLine(@"            switch(_index) {");
         for(var j = 0; j < i; j++) {

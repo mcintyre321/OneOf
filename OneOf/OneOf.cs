@@ -103,7 +103,7 @@ namespace OneOf
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
+            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
             switch(_index) {
                 case 0: return FormatValue(typeof(T0), _value0);
                 default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
@@ -293,7 +293,7 @@ namespace OneOf
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
+            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
             switch(_index) {
                 case 0: return FormatValue(typeof(T0), _value0);
                 case 1: return FormatValue(typeof(T1), _value1);
@@ -551,7 +551,7 @@ namespace OneOf
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
+            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
             switch(_index) {
                 case 0: return FormatValue(typeof(T0), _value0);
                 case 1: return FormatValue(typeof(T1), _value1);
@@ -875,7 +875,7 @@ namespace OneOf
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
+            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
             switch(_index) {
                 case 0: return FormatValue(typeof(T0), _value0);
                 case 1: return FormatValue(typeof(T1), _value1);
@@ -1267,7 +1267,7 @@ namespace OneOf
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
+            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
             switch(_index) {
                 case 0: return FormatValue(typeof(T0), _value0);
                 case 1: return FormatValue(typeof(T1), _value1);
@@ -1729,7 +1729,7 @@ namespace OneOf
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
+            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
             switch(_index) {
                 case 0: return FormatValue(typeof(T0), _value0);
                 case 1: return FormatValue(typeof(T1), _value1);
@@ -2263,7 +2263,7 @@ namespace OneOf
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
+            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
             switch(_index) {
                 case 0: return FormatValue(typeof(T0), _value0);
                 case 1: return FormatValue(typeof(T1), _value1);
@@ -2871,7 +2871,7 @@ namespace OneOf
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
+            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
             switch(_index) {
                 case 0: return FormatValue(typeof(T0), _value0);
                 case 1: return FormatValue(typeof(T1), _value1);
@@ -3555,7 +3555,7 @@ namespace OneOf
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value.ToString()}";
+            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
             switch(_index) {
                 case 0: return FormatValue(typeof(T0), _value0);
                 case 1: return FormatValue(typeof(T1), _value1);
