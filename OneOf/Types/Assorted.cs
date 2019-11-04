@@ -13,7 +13,11 @@ namespace OneOf.Types
 
     public struct All { }
     public struct Some { }
-    public struct None { }
+    
+    public struct None 
+    {
+        public static OneOf<T, None> Of<T>(T t) => new None();
+    }
 
     public struct NotFound { }
 
