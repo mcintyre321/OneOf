@@ -14,6 +14,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>OneOf</PackageId>
     <Copyright>Harry McIntyre</Copyright>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
 
 </Project>

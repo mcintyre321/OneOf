@@ -130,6 +130,29 @@ namespace OneOf
 
         public static OneOfBase<T0> RearrangeFrom( OneOfBase<T0> other ) => other.Match< OneOfBase<T0> >( v0 => v0 );
 
+#endregion
+
+#region Extend (Explicit addition of (empty) type arguments)
+
+        public OneOfBase<T0, T1> Extend<T1>() => this.Match< OneOfBase<T0, T1> >( v0 => v0 );
+
+        public OneOfBase<T0, T1, T2> Extend<T1, T2>() => this.Match< OneOfBase<T0, T1, T2> >( v0 => v0 );
+
+        public OneOfBase<T0, T1, T2, T3> Extend<T1, T2, T3>() => this.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0 );
+
+        public OneOfBase<T0, T1, T2, T3, T4> Extend<T1, T2, T3, T4>() => this.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5> Extend<T1, T2, T3, T4, T5>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5> >( v0 => v0 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5, T6> Extend<T1, T2, T3, T4, T5, T6>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5, T6> >( v0 => v0 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> Extend<T1, T2, T3, T4, T5, T6, T7>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> >( v0 => v0 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> Extend<T1, T2, T3, T4, T5, T6, T7, T8>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> >( v0 => v0 );
+
+#endregion
+
+#region Implicit conversion from subset (without rearranging type arguments)
 
 #endregion
 
@@ -320,6 +343,29 @@ namespace OneOf
 
         public static OneOfBase<T0, T1> RearrangeFrom( OneOfBase<T1, T0> other ) => other.Match< OneOfBase<T0, T1> >( v0 => v0, v1 => v1 );
 
+#endregion
+
+#region Extend (Explicit addition of (empty) type arguments)
+
+        public OneOfBase<T0, T1, T2> Extend<T2>() => this.Match< OneOfBase<T0, T1, T2> >( v0 => v0, v1 => v1 );
+
+        public OneOfBase<T0, T1, T2, T3> Extend<T2, T3>() => this.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1 );
+
+        public OneOfBase<T0, T1, T2, T3, T4> Extend<T2, T3, T4>() => this.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5> Extend<T2, T3, T4, T5>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5> >( v0 => v0, v1 => v1 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5, T6> Extend<T2, T3, T4, T5, T6>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5, T6> >( v0 => v0, v1 => v1 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> Extend<T2, T3, T4, T5, T6, T7>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> >( v0 => v0, v1 => v1 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> Extend<T2, T3, T4, T5, T6, T7, T8>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> >( v0 => v0, v1 => v1 );
+
+#endregion
+
+#region Implicit conversion from subset (without rearranging type arguments)
+
+        public static implicit operator OneOfBase<T0, T1>( OneOfBase<T0> smaller ) => smaller.Extend<T1>();
 
 #endregion
 
@@ -572,6 +618,29 @@ namespace OneOf
 
         public static OneOfBase<T0, T1, T2> RearrangeFrom( OneOfBase<T2, T1, T0> other ) => other.Match< OneOfBase<T0, T1, T2> >( v0 => v0, v1 => v1, v2 => v2 );
 
+#endregion
+
+#region Extend (Explicit addition of (empty) type arguments)
+
+        public OneOfBase<T0, T1, T2, T3> Extend<T3>() => this.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2 );
+
+        public OneOfBase<T0, T1, T2, T3, T4> Extend<T3, T4>() => this.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5> Extend<T3, T4, T5>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5> >( v0 => v0, v1 => v1, v2 => v2 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5, T6> Extend<T3, T4, T5, T6>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5, T6> >( v0 => v0, v1 => v1, v2 => v2 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> Extend<T3, T4, T5, T6, T7>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> >( v0 => v0, v1 => v1, v2 => v2 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> Extend<T3, T4, T5, T6, T7, T8>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> >( v0 => v0, v1 => v1, v2 => v2 );
+
+#endregion
+
+#region Implicit conversion from subset (without rearranging type arguments)
+
+        public static implicit operator OneOfBase<T0, T1, T2>( OneOfBase<T0, T1> smaller ) => smaller.Extend<T2>();
+
+        public static implicit operator OneOfBase<T0, T1, T2>( OneOfBase<T0> smaller ) => smaller.Extend<T1, T2>();
 
 #endregion
 
@@ -910,6 +979,29 @@ namespace OneOf
 
         public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T3, T2, T1, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
+#endregion
+
+#region Extend (Explicit addition of (empty) type arguments)
+
+        public OneOfBase<T0, T1, T2, T3, T4> Extend<T4>() => this.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5> Extend<T4, T5>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5, T6> Extend<T4, T5, T6>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5, T6> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> Extend<T4, T5, T6, T7>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> Extend<T4, T5, T6, T7, T8>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+
+#endregion
+
+#region Implicit conversion from subset (without rearranging type arguments)
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3>( OneOfBase<T0, T1, T2> smaller ) => smaller.Extend<T3>();
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3>( OneOfBase<T0, T1> smaller ) => smaller.Extend<T2, T3>();
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3>( OneOfBase<T0> smaller ) => smaller.Extend<T1, T2, T3>();
 
 #endregion
 
@@ -1490,6 +1582,29 @@ namespace OneOf
 
         public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T3, T2, T1, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
+#endregion
+
+#region Extend (Explicit addition of (empty) type arguments)
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5> Extend<T5>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5, T6> Extend<T5, T6>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5, T6> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> Extend<T5, T6, T7>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> Extend<T5, T6, T7, T8>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+
+#endregion
+
+#region Implicit conversion from subset (without rearranging type arguments)
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4>( OneOfBase<T0, T1, T2, T3> smaller ) => smaller.Extend<T4>();
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4>( OneOfBase<T0, T1, T2> smaller ) => smaller.Extend<T3, T4>();
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4>( OneOfBase<T0, T1> smaller ) => smaller.Extend<T2, T3, T4>();
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4>( OneOfBase<T0> smaller ) => smaller.Extend<T1, T2, T3, T4>();
 
 #endregion
 
@@ -1877,6 +1992,30 @@ namespace OneOf
                 return (hashCode*397) ^ _index;
             }
         }
+#region Extend (Explicit addition of (empty) type arguments)
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5, T6> Extend<T6>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5, T6> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4, v5 => v5 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> Extend<T6, T7>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4, v5 => v5 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> Extend<T6, T7, T8>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4, v5 => v5 );
+
+#endregion
+
+#region Implicit conversion from subset (without rearranging type arguments)
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5>( OneOfBase<T0, T1, T2, T3, T4> smaller ) => smaller.Extend<T5>();
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5>( OneOfBase<T0, T1, T2, T3> smaller ) => smaller.Extend<T4, T5>();
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5>( OneOfBase<T0, T1, T2> smaller ) => smaller.Extend<T3, T4, T5>();
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5>( OneOfBase<T0, T1> smaller ) => smaller.Extend<T2, T3, T4, T5>();
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5>( OneOfBase<T0> smaller ) => smaller.Extend<T1, T2, T3, T4, T5>();
+
+#endregion
+
     }
 
     public class OneOfBase<T0, T1, T2, T3, T4, T5, T6> : IOneOf
@@ -2311,6 +2450,30 @@ namespace OneOf
                 return (hashCode*397) ^ _index;
             }
         }
+#region Extend (Explicit addition of (empty) type arguments)
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> Extend<T7>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4, v5 => v5, v6 => v6 );
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> Extend<T7, T8>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4, v5 => v5, v6 => v6 );
+
+#endregion
+
+#region Implicit conversion from subset (without rearranging type arguments)
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6>( OneOfBase<T0, T1, T2, T3, T4, T5> smaller ) => smaller.Extend<T6>();
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6>( OneOfBase<T0, T1, T2, T3, T4> smaller ) => smaller.Extend<T5, T6>();
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6>( OneOfBase<T0, T1, T2, T3> smaller ) => smaller.Extend<T4, T5, T6>();
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6>( OneOfBase<T0, T1, T2> smaller ) => smaller.Extend<T3, T4, T5, T6>();
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6>( OneOfBase<T0, T1> smaller ) => smaller.Extend<T2, T3, T4, T5, T6>();
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6>( OneOfBase<T0> smaller ) => smaller.Extend<T1, T2, T3, T4, T5, T6>();
+
+#endregion
+
     }
 
     public class OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> : IOneOf
@@ -2795,6 +2958,30 @@ namespace OneOf
                 return (hashCode*397) ^ _index;
             }
         }
+#region Extend (Explicit addition of (empty) type arguments)
+
+        public OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> Extend<T8>() => this.Match< OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4, v5 => v5, v6 => v6, v7 => v7 );
+
+#endregion
+
+#region Implicit conversion from subset (without rearranging type arguments)
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>( OneOfBase<T0, T1, T2, T3, T4, T5, T6> smaller ) => smaller.Extend<T7>();
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>( OneOfBase<T0, T1, T2, T3, T4, T5> smaller ) => smaller.Extend<T6, T7>();
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>( OneOfBase<T0, T1, T2, T3, T4> smaller ) => smaller.Extend<T5, T6, T7>();
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>( OneOfBase<T0, T1, T2, T3> smaller ) => smaller.Extend<T4, T5, T6, T7>();
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>( OneOfBase<T0, T1, T2> smaller ) => smaller.Extend<T3, T4, T5, T6, T7>();
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>( OneOfBase<T0, T1> smaller ) => smaller.Extend<T2, T3, T4, T5, T6, T7>();
+
+        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>( OneOfBase<T0> smaller ) => smaller.Extend<T1, T2, T3, T4, T5, T6, T7>();
+
+#endregion
+
     }
 
     public class OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> : IOneOf

@@ -332,7 +332,6 @@ public void RenderOneOf(StringBuilder sb, string className, string genericArg, b
 	{
 		sb.AppendLine();
 		sb.AppendLine("#region Rearrange (not subset)");
-		sb.AppendLine();
 
 		String[] typeParameters = Enumerable.Range(0, i).Select(e => $"T{e}").ToArray();
 		var permutations = GetPermutations(typeParameters);
@@ -342,15 +341,58 @@ public void RenderOneOf(StringBuilder sb, string className, string genericArg, b
 
 			String matchFuncs = String.Join(", ", Enumerable.Range(0, i).Select(n => $"v{n} => v{n}"));
 
-			sb.AppendLine($@"        public static {className}<{genericArg}> RearrangeFrom( {className}<{permutation}> other ) => other.Match< {className}<{genericArg}> >( {matchFuncs} );");
 			sb.AppendLine();
+			sb.AppendLine($@"        public static {className}<{genericArg}> RearrangeFrom( {className}<{permutation}> other ) => other.Match< {className}<{genericArg}> >( {matchFuncs} );");
 		}
 
 		sb.AppendLine();
 		sb.AppendLine("#endregion");
-
 		sb.AppendLine();
 	}
 
+	if( i <= 8 )
+	{
+		sb.AppendLine("#region Extend (Explicit addition of (empty) type arguments)");
+
+		String matchFuncs = String.Join(", ", Enumerable.Range(0, i).Select(n => $"v{n} => v{n}"));
+
+		Int32 ei = 1;
+		for( int s = i; s < 9; s++ )
+		{
+			String genericArgExtend = String.Join(", ", Enumerable.Range( i, ei ).Select(n => $"T{n}"));
+
+
+			sb.AppendLine();
+			sb.AppendLine($@"        public {className}<{genericArg}, {genericArgExtend}> Extend<{genericArgExtend}>() => this.Match< {className}<{genericArg}, {genericArgExtend}> >( {matchFuncs} );");
+
+			ei++;
+		}
+
+		sb.AppendLine();
+		sb.AppendLine("#endregion");
+		sb.AppendLine();
+	}
+
+	if( i <= 8 )
+	{
+		sb.AppendLine("#region Implicit conversion from subset (without rearranging type arguments)");
+
+		Int32 ei = 1;
+		for( int s = i - 1; s > 0; s-- )
+		{
+			String genericArgMinus  = String.Join( ", ", Enumerable.Range( 0, s  ).Select(n => $"T{n}") );
+			String genericArgExtend = String.Join( ", ", Enumerable.Range( s, ei ).Select(n => $"T{n}") );
+
+			sb.AppendLine();
+			sb.AppendLine($@"        public static implicit operator {className}<{genericArg}>( {className}<{genericArgMinus}> smaller ) => smaller.Extend<{genericArgExtend}>();" );
+
+			ei++;
+		}
+
+		sb.AppendLine();
+		sb.AppendLine("#endregion");
+		sb.AppendLine();
+	}
+	
 	sb.AppendLine(@"    }");
 }
