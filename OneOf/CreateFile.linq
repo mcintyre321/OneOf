@@ -20,6 +20,15 @@ void Main()
 
 }
 
+public static IEnumerable<T[]> GetPermutations<T>(T[] values)
+{
+	if (values.Length == 1)
+		return new[] { values };
+
+	return values.SelectMany(v => GetPermutations(values.Except(new[] { v }).ToArray()),
+		(v, p) => new[] { v }.Concat(p).ToArray());
+}
+
 public string GetContent(bool isStruct, int indexStart, int indexEnd)
 {
 	var className = isStruct ? "OneOf" : "OneOfBase";
@@ -317,6 +326,31 @@ public void RenderOneOf(StringBuilder sb, string className, string genericArg, b
                 }
                 return (hashCode*397) ^ _index;
             }
-        }
-    }");
+        }");
+	
+	if( i <= 5 )
+	{
+		sb.AppendLine();
+		sb.AppendLine("#region Rearrange (not subset)");
+		sb.AppendLine();
+
+		String[] typeParameters = Enumerable.Range(0, i).Select(e => $"T{e}").ToArray();
+		var permutations = GetPermutations(typeParameters);
+		foreach (String[] typeParameterPermutation in permutations)
+		{
+			String permutation = String.Join(",", typeParameterPermutation);
+
+			String matchFuncs = String.Join(", ", Enumerable.Range(0, i).Select(n => $"v{n} => v{n}"));
+
+			sb.AppendLine($@"        public static {className}<{genericArg}> RearrangeFrom( {className}<{permutation}> other ) => other.Match< {className}<{genericArg}> >( {matchFuncs} );");
+			sb.AppendLine();
+		}
+
+		sb.AppendLine();
+		sb.AppendLine("#endregion");
+
+		sb.AppendLine();
+	}
+	
+	sb.AppendLine(@"    }");
 }
