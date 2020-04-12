@@ -338,7 +338,7 @@ public void RenderOneOf(StringBuilder sb, string className, string genericArg, b
 		var permutations = GetPermutations(typeParameters);
 		foreach (String[] typeParameterPermutation in permutations)
 		{
-			String permutation = String.Join(",", typeParameterPermutation);
+			String permutation = String.Join(", ", typeParameterPermutation);
 
 			String matchFuncs = String.Join(", ", Enumerable.Range(0, i).Select(n => $"v{n} => v{n}"));
 
@@ -351,6 +351,6 @@ public void RenderOneOf(StringBuilder sb, string className, string genericArg, b
 
 		sb.AppendLine();
 	}
-	
+
 	sb.AppendLine(@"    }");
 }

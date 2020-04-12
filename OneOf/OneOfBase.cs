@@ -316,9 +316,9 @@ namespace OneOf
 
 #region Rearrange (not subset)
 
-        public static OneOfBase<T0, T1> RearrangeFrom( OneOfBase<T0,T1> other ) => other.Match< OneOfBase<T0, T1> >( v0 => v0, v1 => v1 );
+        public static OneOfBase<T0, T1> RearrangeFrom( OneOfBase<T0, T1> other ) => other.Match< OneOfBase<T0, T1> >( v0 => v0, v1 => v1 );
 
-        public static OneOfBase<T0, T1> RearrangeFrom( OneOfBase<T1,T0> other ) => other.Match< OneOfBase<T0, T1> >( v0 => v0, v1 => v1 );
+        public static OneOfBase<T0, T1> RearrangeFrom( OneOfBase<T1, T0> other ) => other.Match< OneOfBase<T0, T1> >( v0 => v0, v1 => v1 );
 
 
 #endregion
@@ -560,17 +560,17 @@ namespace OneOf
 
 #region Rearrange (not subset)
 
-        public static OneOfBase<T0, T1, T2> RearrangeFrom( OneOfBase<T0,T1,T2> other ) => other.Match< OneOfBase<T0, T1, T2> >( v0 => v0, v1 => v1, v2 => v2 );
+        public static OneOfBase<T0, T1, T2> RearrangeFrom( OneOfBase<T0, T1, T2> other ) => other.Match< OneOfBase<T0, T1, T2> >( v0 => v0, v1 => v1, v2 => v2 );
 
-        public static OneOfBase<T0, T1, T2> RearrangeFrom( OneOfBase<T0,T2,T1> other ) => other.Match< OneOfBase<T0, T1, T2> >( v0 => v0, v1 => v1, v2 => v2 );
+        public static OneOfBase<T0, T1, T2> RearrangeFrom( OneOfBase<T0, T2, T1> other ) => other.Match< OneOfBase<T0, T1, T2> >( v0 => v0, v1 => v1, v2 => v2 );
 
-        public static OneOfBase<T0, T1, T2> RearrangeFrom( OneOfBase<T1,T0,T2> other ) => other.Match< OneOfBase<T0, T1, T2> >( v0 => v0, v1 => v1, v2 => v2 );
+        public static OneOfBase<T0, T1, T2> RearrangeFrom( OneOfBase<T1, T0, T2> other ) => other.Match< OneOfBase<T0, T1, T2> >( v0 => v0, v1 => v1, v2 => v2 );
 
-        public static OneOfBase<T0, T1, T2> RearrangeFrom( OneOfBase<T1,T2,T0> other ) => other.Match< OneOfBase<T0, T1, T2> >( v0 => v0, v1 => v1, v2 => v2 );
+        public static OneOfBase<T0, T1, T2> RearrangeFrom( OneOfBase<T1, T2, T0> other ) => other.Match< OneOfBase<T0, T1, T2> >( v0 => v0, v1 => v1, v2 => v2 );
 
-        public static OneOfBase<T0, T1, T2> RearrangeFrom( OneOfBase<T2,T0,T1> other ) => other.Match< OneOfBase<T0, T1, T2> >( v0 => v0, v1 => v1, v2 => v2 );
+        public static OneOfBase<T0, T1, T2> RearrangeFrom( OneOfBase<T2, T0, T1> other ) => other.Match< OneOfBase<T0, T1, T2> >( v0 => v0, v1 => v1, v2 => v2 );
 
-        public static OneOfBase<T0, T1, T2> RearrangeFrom( OneOfBase<T2,T1,T0> other ) => other.Match< OneOfBase<T0, T1, T2> >( v0 => v0, v1 => v1, v2 => v2 );
+        public static OneOfBase<T0, T1, T2> RearrangeFrom( OneOfBase<T2, T1, T0> other ) => other.Match< OneOfBase<T0, T1, T2> >( v0 => v0, v1 => v1, v2 => v2 );
 
 
 #endregion
@@ -862,53 +862,53 @@ namespace OneOf
 
 #region Rearrange (not subset)
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T0,T1,T2,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T0, T1, T2, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T0,T1,T3,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T0, T1, T3, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T0,T2,T1,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T0, T2, T1, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T0,T2,T3,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T0, T2, T3, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T0,T3,T1,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T0, T3, T1, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T0,T3,T2,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T0, T3, T2, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T1,T0,T2,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T1, T0, T2, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T1,T0,T3,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T1, T0, T3, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T1,T2,T0,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T1, T2, T0, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T1,T2,T3,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T1, T2, T3, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T1,T3,T0,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T1, T3, T0, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T1,T3,T2,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T1, T3, T2, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T2,T0,T1,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T2, T0, T1, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T2,T0,T3,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T2, T0, T3, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T2,T1,T0,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T2, T1, T0, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T2,T1,T3,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T2, T1, T3, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T2,T3,T0,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T2, T3, T0, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T2,T3,T1,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T2, T3, T1, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T3,T0,T1,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T3, T0, T1, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T3,T0,T2,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T3, T0, T2, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T3,T1,T0,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T3, T1, T0, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T3,T1,T2,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T3, T1, T2, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T3,T2,T0,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T3, T2, T0, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
-        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T3,T2,T1,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
+        public static OneOfBase<T0, T1, T2, T3> RearrangeFrom( OneOfBase<T3, T2, T1, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3 );
 
 
 #endregion
@@ -1250,245 +1250,245 @@ namespace OneOf
 
 #region Rearrange (not subset)
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T1,T2,T3,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T1, T2, T3, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T1,T2,T4,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T1, T2, T4, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T1,T3,T2,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T1, T3, T2, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T1,T3,T4,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T1, T3, T4, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T1,T4,T2,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T1, T4, T2, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T1,T4,T3,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T1, T4, T3, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T2,T1,T3,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T2, T1, T3, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T2,T1,T4,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T2, T1, T4, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T2,T3,T1,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T2, T3, T1, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T2,T3,T4,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T2, T3, T4, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T2,T4,T1,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T2, T4, T1, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T2,T4,T3,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T2, T4, T3, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T3,T1,T2,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T3, T1, T2, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T3,T1,T4,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T3, T1, T4, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T3,T2,T1,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T3, T2, T1, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T3,T2,T4,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T3, T2, T4, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T3,T4,T1,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T3, T4, T1, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T3,T4,T2,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T3, T4, T2, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T4,T1,T2,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T4, T1, T2, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T4,T1,T3,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T4, T1, T3, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T4,T2,T1,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T4, T2, T1, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T4,T2,T3,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T4, T2, T3, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T4,T3,T1,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T4, T3, T1, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0,T4,T3,T2,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T0, T4, T3, T2, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T0,T2,T3,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T0, T2, T3, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T0,T2,T4,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T0, T2, T4, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T0,T3,T2,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T0, T3, T2, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T0,T3,T4,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T0, T3, T4, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T0,T4,T2,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T0, T4, T2, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T0,T4,T3,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T0, T4, T3, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T2,T0,T3,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T2, T0, T3, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T2,T0,T4,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T2, T0, T4, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T2,T3,T0,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T2, T3, T0, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T2,T3,T4,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T2, T3, T4, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T2,T4,T0,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T2, T4, T0, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T2,T4,T3,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T2, T4, T3, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T3,T0,T2,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T3, T0, T2, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T3,T0,T4,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T3, T0, T4, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T3,T2,T0,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T3, T2, T0, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T3,T2,T4,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T3, T2, T4, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T3,T4,T0,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T3, T4, T0, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T3,T4,T2,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T3, T4, T2, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T4,T0,T2,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T4, T0, T2, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T4,T0,T3,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T4, T0, T3, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T4,T2,T0,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T4, T2, T0, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T4,T2,T3,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T4, T2, T3, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T4,T3,T0,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T4, T3, T0, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1,T4,T3,T2,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T1, T4, T3, T2, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T0,T1,T3,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T0, T1, T3, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T0,T1,T4,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T0, T1, T4, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T0,T3,T1,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T0, T3, T1, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T0,T3,T4,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T0, T3, T4, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T0,T4,T1,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T0, T4, T1, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T0,T4,T3,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T0, T4, T3, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T1,T0,T3,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T1, T0, T3, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T1,T0,T4,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T1, T0, T4, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T1,T3,T0,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T1, T3, T0, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T1,T3,T4,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T1, T3, T4, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T1,T4,T0,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T1, T4, T0, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T1,T4,T3,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T1, T4, T3, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T3,T0,T1,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T3, T0, T1, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T3,T0,T4,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T3, T0, T4, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T3,T1,T0,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T3, T1, T0, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T3,T1,T4,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T3, T1, T4, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T3,T4,T0,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T3, T4, T0, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T3,T4,T1,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T3, T4, T1, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T4,T0,T1,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T4, T0, T1, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T4,T0,T3,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T4, T0, T3, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T4,T1,T0,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T4, T1, T0, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T4,T1,T3,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T4, T1, T3, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T4,T3,T0,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T4, T3, T0, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2,T4,T3,T1,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T2, T4, T3, T1, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T0,T1,T2,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T0, T1, T2, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T0,T1,T4,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T0, T1, T4, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T0,T2,T1,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T0, T2, T1, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T0,T2,T4,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T0, T2, T4, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T0,T4,T1,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T0, T4, T1, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T0,T4,T2,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T0, T4, T2, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T1,T0,T2,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T1, T0, T2, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T1,T0,T4,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T1, T0, T4, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T1,T2,T0,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T1, T2, T0, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T1,T2,T4,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T1, T2, T4, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T1,T4,T0,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T1, T4, T0, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T1,T4,T2,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T1, T4, T2, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T2,T0,T1,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T2, T0, T1, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T2,T0,T4,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T2, T0, T4, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T2,T1,T0,T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T2, T1, T0, T4> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T2,T1,T4,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T2, T1, T4, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T2,T4,T0,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T2, T4, T0, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T2,T4,T1,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T2, T4, T1, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T4,T0,T1,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T4, T0, T1, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T4,T0,T2,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T4, T0, T2, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T4,T1,T0,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T4, T1, T0, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T4,T1,T2,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T4, T1, T2, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T4,T2,T0,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T4, T2, T0, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3,T4,T2,T1,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T3, T4, T2, T1, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T0,T1,T2,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T0, T1, T2, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T0,T1,T3,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T0, T1, T3, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T0,T2,T1,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T0, T2, T1, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T0,T2,T3,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T0, T2, T3, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T0,T3,T1,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T0, T3, T1, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T0,T3,T2,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T0, T3, T2, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T1,T0,T2,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T1, T0, T2, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T1,T0,T3,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T1, T0, T3, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T1,T2,T0,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T1, T2, T0, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T1,T2,T3,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T1, T2, T3, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T1,T3,T0,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T1, T3, T0, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T1,T3,T2,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T1, T3, T2, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T2,T0,T1,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T2, T0, T1, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T2,T0,T3,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T2, T0, T3, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T2,T1,T0,T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T2, T1, T0, T3> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T2,T1,T3,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T2, T1, T3, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T2,T3,T0,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T2, T3, T0, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T2,T3,T1,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T2, T3, T1, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T3,T0,T1,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T3, T0, T1, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T3,T0,T2,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T3, T0, T2, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T3,T1,T0,T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T3, T1, T0, T2> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T3,T1,T2,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T3, T1, T2, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T3,T2,T0,T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T3, T2, T0, T1> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
-        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4,T3,T2,T1,T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
+        public static OneOfBase<T0, T1, T2, T3, T4> RearrangeFrom( OneOfBase<T4, T3, T2, T1, T0> other ) => other.Match< OneOfBase<T0, T1, T2, T3, T4> >( v0 => v0, v1 => v1, v2 => v2, v3 => v3, v4 => v4 );
 
 
 #endregion
