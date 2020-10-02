@@ -2,7 +2,7 @@ using System;
 
 namespace OneOf
 {
-    public class OneOfBase<T0> : IOneOf
+    public abstract class OneOfBase<T0> : IOneOf
     {
         readonly T0 _value0;
         readonly int _index;
