@@ -6,7 +6,7 @@ namespace OneOf.Tests
     public class RetryStrategy : OneOfBase<RetryStrategy.Never, int>
     {
         private RetryStrategy() { }
-        private RetryStrategy(int attempts):base(1, value1:attempts) { }
+        private RetryStrategy(int attempts):base(attempts) { }
 
         public static implicit operator RetryStrategy(int attempts)
         {

@@ -7,20 +7,27 @@ namespace OneOf
         readonly T0 _value0;
         readonly int _index;
 
-        protected OneOfBase(int index, T0 value0 = default(T0))
+        protected OneOfBase(OneOf<T0> input)
         {
-            _index = index;
-            _value0 = value0;
+            _index = input.Index;
+            switch (_index)
+            {
+                case 0: _value0 = input.AsT0; break;
+                default: throw new InvalidOperationException();
+            }
         }
-
+        
         protected OneOfBase()
         {
+
             if (this is T0)
             {
                 _index = 0;
                 _value0 = (T0)(object)this;
                 return;
             }
+
+            throw new InvalidOperationException("OneOfBase<T0> parameterless constructor can only be invoked from a derived class of OneOfBase<T0>.");
         }
 
         public object Value
@@ -36,6 +43,8 @@ namespace OneOf
                 }
             }
         }
+        
+        public int Index => _index;
 
         public bool IsT0 => _index == 0;
 
@@ -50,9 +59,6 @@ namespace OneOf
                 return _value0;
             }
         }
-
-        public static implicit operator OneOfBase<T0>(T0 t) => new OneOfBase<T0>(0, value0: t);
-
 
         public void Switch(Action<T0> f0)
         {
@@ -133,27 +139,35 @@ namespace OneOf
         readonly T1 _value1;
         readonly int _index;
 
-        protected OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1))
+        protected OneOfBase(OneOf<T0, T1> input)
         {
-            _index = index;
-            _value0 = value0;
-            _value1 = value1;
+            _index = input.Index;
+            switch (_index)
+            {
+                case 0: _value0 = input.AsT0; break;
+                case 1: _value1 = input.AsT1; break;
+                default: throw new InvalidOperationException();
+            }
         }
-
+        
         protected OneOfBase()
         {
+
             if (this is T0)
             {
                 _index = 0;
                 _value0 = (T0)(object)this;
                 return;
             }
+
             if (this is T1)
             {
                 _index = 1;
                 _value1 = (T1)(object)this;
                 return;
             }
+
+            throw new InvalidOperationException("OneOfBase<T0, T1> parameterless constructor can only be invoked from a derived class of OneOfBase<T0, T1>.");
         }
 
         public object Value
@@ -171,6 +185,8 @@ namespace OneOf
                 }
             }
         }
+        
+        public int Index => _index;
 
         public bool IsT0 => _index == 0;
 
@@ -186,9 +202,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1>(T0 t) => new OneOfBase<T0, T1>(0, value0: t);
-
-
         public bool IsT1 => _index == 1;
 
         public T1 AsT1
@@ -202,9 +215,6 @@ namespace OneOf
                 return _value1;
             }
         }
-
-        public static implicit operator OneOfBase<T0, T1>(T1 t) => new OneOfBase<T0, T1>(1, value1: t);
-
 
         public void Switch(Action<T0> f0, Action<T1> f1)
         {
@@ -314,34 +324,43 @@ namespace OneOf
         readonly T2 _value2;
         readonly int _index;
 
-        protected OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2))
+        protected OneOfBase(OneOf<T0, T1, T2> input)
         {
-            _index = index;
-            _value0 = value0;
-            _value1 = value1;
-            _value2 = value2;
+            _index = input.Index;
+            switch (_index)
+            {
+                case 0: _value0 = input.AsT0; break;
+                case 1: _value1 = input.AsT1; break;
+                case 2: _value2 = input.AsT2; break;
+                default: throw new InvalidOperationException();
+            }
         }
-
+        
         protected OneOfBase()
         {
+
             if (this is T0)
             {
                 _index = 0;
                 _value0 = (T0)(object)this;
                 return;
             }
+
             if (this is T1)
             {
                 _index = 1;
                 _value1 = (T1)(object)this;
                 return;
             }
+
             if (this is T2)
             {
                 _index = 2;
                 _value2 = (T2)(object)this;
                 return;
             }
+
+            throw new InvalidOperationException("OneOfBase<T0, T1, T2> parameterless constructor can only be invoked from a derived class of OneOfBase<T0, T1, T2>.");
         }
 
         public object Value
@@ -361,6 +380,8 @@ namespace OneOf
                 }
             }
         }
+        
+        public int Index => _index;
 
         public bool IsT0 => _index == 0;
 
@@ -376,9 +397,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2>(T0 t) => new OneOfBase<T0, T1, T2>(0, value0: t);
-
-
         public bool IsT1 => _index == 1;
 
         public T1 AsT1
@@ -393,9 +411,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2>(T1 t) => new OneOfBase<T0, T1, T2>(1, value1: t);
-
-
         public bool IsT2 => _index == 2;
 
         public T2 AsT2
@@ -409,9 +424,6 @@ namespace OneOf
                 return _value2;
             }
         }
-
-        public static implicit operator OneOfBase<T0, T1, T2>(T2 t) => new OneOfBase<T0, T1, T2>(2, value2: t);
-
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2)
         {
@@ -549,41 +561,51 @@ namespace OneOf
         readonly T3 _value3;
         readonly int _index;
 
-        protected OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3))
+        protected OneOfBase(OneOf<T0, T1, T2, T3> input)
         {
-            _index = index;
-            _value0 = value0;
-            _value1 = value1;
-            _value2 = value2;
-            _value3 = value3;
+            _index = input.Index;
+            switch (_index)
+            {
+                case 0: _value0 = input.AsT0; break;
+                case 1: _value1 = input.AsT1; break;
+                case 2: _value2 = input.AsT2; break;
+                case 3: _value3 = input.AsT3; break;
+                default: throw new InvalidOperationException();
+            }
         }
-
+        
         protected OneOfBase()
         {
+
             if (this is T0)
             {
                 _index = 0;
                 _value0 = (T0)(object)this;
                 return;
             }
+
             if (this is T1)
             {
                 _index = 1;
                 _value1 = (T1)(object)this;
                 return;
             }
+
             if (this is T2)
             {
                 _index = 2;
                 _value2 = (T2)(object)this;
                 return;
             }
+
             if (this is T3)
             {
                 _index = 3;
                 _value3 = (T3)(object)this;
                 return;
             }
+
+            throw new InvalidOperationException("OneOfBase<T0, T1, T2, T3> parameterless constructor can only be invoked from a derived class of OneOfBase<T0, T1, T2, T3>.");
         }
 
         public object Value
@@ -605,6 +627,8 @@ namespace OneOf
                 }
             }
         }
+        
+        public int Index => _index;
 
         public bool IsT0 => _index == 0;
 
@@ -620,9 +644,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2, T3>(T0 t) => new OneOfBase<T0, T1, T2, T3>(0, value0: t);
-
-
         public bool IsT1 => _index == 1;
 
         public T1 AsT1
@@ -636,9 +657,6 @@ namespace OneOf
                 return _value1;
             }
         }
-
-        public static implicit operator OneOfBase<T0, T1, T2, T3>(T1 t) => new OneOfBase<T0, T1, T2, T3>(1, value1: t);
-
 
         public bool IsT2 => _index == 2;
 
@@ -654,9 +672,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2, T3>(T2 t) => new OneOfBase<T0, T1, T2, T3>(2, value2: t);
-
-
         public bool IsT3 => _index == 3;
 
         public T3 AsT3
@@ -670,9 +685,6 @@ namespace OneOf
                 return _value3;
             }
         }
-
-        public static implicit operator OneOfBase<T0, T1, T2, T3>(T3 t) => new OneOfBase<T0, T1, T2, T3>(3, value3: t);
-
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3)
         {
@@ -834,48 +846,59 @@ namespace OneOf
         readonly T4 _value4;
         readonly int _index;
 
-        protected OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4))
+        protected OneOfBase(OneOf<T0, T1, T2, T3, T4> input)
         {
-            _index = index;
-            _value0 = value0;
-            _value1 = value1;
-            _value2 = value2;
-            _value3 = value3;
-            _value4 = value4;
+            _index = input.Index;
+            switch (_index)
+            {
+                case 0: _value0 = input.AsT0; break;
+                case 1: _value1 = input.AsT1; break;
+                case 2: _value2 = input.AsT2; break;
+                case 3: _value3 = input.AsT3; break;
+                case 4: _value4 = input.AsT4; break;
+                default: throw new InvalidOperationException();
+            }
         }
-
+        
         protected OneOfBase()
         {
+
             if (this is T0)
             {
                 _index = 0;
                 _value0 = (T0)(object)this;
                 return;
             }
+
             if (this is T1)
             {
                 _index = 1;
                 _value1 = (T1)(object)this;
                 return;
             }
+
             if (this is T2)
             {
                 _index = 2;
                 _value2 = (T2)(object)this;
                 return;
             }
+
             if (this is T3)
             {
                 _index = 3;
                 _value3 = (T3)(object)this;
                 return;
             }
+
             if (this is T4)
             {
                 _index = 4;
                 _value4 = (T4)(object)this;
                 return;
             }
+
+            throw new InvalidOperationException("OneOfBase<T0, T1, T2, T3, T4> parameterless constructor can only be invoked from a derived class of OneOfBase<T0, T1, T2, T3, T4>.");
         }
 
         public object Value
@@ -899,6 +922,8 @@ namespace OneOf
                 }
             }
         }
+        
+        public int Index => _index;
 
         public bool IsT0 => _index == 0;
 
@@ -914,9 +939,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4>(T0 t) => new OneOfBase<T0, T1, T2, T3, T4>(0, value0: t);
-
-
         public bool IsT1 => _index == 1;
 
         public T1 AsT1
@@ -930,9 +952,6 @@ namespace OneOf
                 return _value1;
             }
         }
-
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4>(T1 t) => new OneOfBase<T0, T1, T2, T3, T4>(1, value1: t);
-
 
         public bool IsT2 => _index == 2;
 
@@ -948,9 +967,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4>(T2 t) => new OneOfBase<T0, T1, T2, T3, T4>(2, value2: t);
-
-
         public bool IsT3 => _index == 3;
 
         public T3 AsT3
@@ -965,9 +981,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4>(T3 t) => new OneOfBase<T0, T1, T2, T3, T4>(3, value3: t);
-
-
         public bool IsT4 => _index == 4;
 
         public T4 AsT4
@@ -981,9 +994,6 @@ namespace OneOf
                 return _value4;
             }
         }
-
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4>(T4 t) => new OneOfBase<T0, T1, T2, T3, T4>(4, value4: t);
-
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4)
         {
@@ -1169,55 +1179,67 @@ namespace OneOf
         readonly T5 _value5;
         readonly int _index;
 
-        protected OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5))
+        protected OneOfBase(OneOf<T0, T1, T2, T3, T4, T5> input)
         {
-            _index = index;
-            _value0 = value0;
-            _value1 = value1;
-            _value2 = value2;
-            _value3 = value3;
-            _value4 = value4;
-            _value5 = value5;
+            _index = input.Index;
+            switch (_index)
+            {
+                case 0: _value0 = input.AsT0; break;
+                case 1: _value1 = input.AsT1; break;
+                case 2: _value2 = input.AsT2; break;
+                case 3: _value3 = input.AsT3; break;
+                case 4: _value4 = input.AsT4; break;
+                case 5: _value5 = input.AsT5; break;
+                default: throw new InvalidOperationException();
+            }
         }
-
+        
         protected OneOfBase()
         {
+
             if (this is T0)
             {
                 _index = 0;
                 _value0 = (T0)(object)this;
                 return;
             }
+
             if (this is T1)
             {
                 _index = 1;
                 _value1 = (T1)(object)this;
                 return;
             }
+
             if (this is T2)
             {
                 _index = 2;
                 _value2 = (T2)(object)this;
                 return;
             }
+
             if (this is T3)
             {
                 _index = 3;
                 _value3 = (T3)(object)this;
                 return;
             }
+
             if (this is T4)
             {
                 _index = 4;
                 _value4 = (T4)(object)this;
                 return;
             }
+
             if (this is T5)
             {
                 _index = 5;
                 _value5 = (T5)(object)this;
                 return;
             }
+
+            throw new InvalidOperationException("OneOfBase<T0, T1, T2, T3, T4, T5> parameterless constructor can only be invoked from a derived class of OneOfBase<T0, T1, T2, T3, T4, T5>.");
         }
 
         public object Value
@@ -1243,6 +1265,8 @@ namespace OneOf
                 }
             }
         }
+        
+        public int Index => _index;
 
         public bool IsT0 => _index == 0;
 
@@ -1258,9 +1282,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5>(T0 t) => new OneOfBase<T0, T1, T2, T3, T4, T5>(0, value0: t);
-
-
         public bool IsT1 => _index == 1;
 
         public T1 AsT1
@@ -1274,9 +1295,6 @@ namespace OneOf
                 return _value1;
             }
         }
-
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5>(T1 t) => new OneOfBase<T0, T1, T2, T3, T4, T5>(1, value1: t);
-
 
         public bool IsT2 => _index == 2;
 
@@ -1292,9 +1310,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5>(T2 t) => new OneOfBase<T0, T1, T2, T3, T4, T5>(2, value2: t);
-
-
         public bool IsT3 => _index == 3;
 
         public T3 AsT3
@@ -1308,9 +1323,6 @@ namespace OneOf
                 return _value3;
             }
         }
-
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5>(T3 t) => new OneOfBase<T0, T1, T2, T3, T4, T5>(3, value3: t);
-
 
         public bool IsT4 => _index == 4;
 
@@ -1326,9 +1338,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5>(T4 t) => new OneOfBase<T0, T1, T2, T3, T4, T5>(4, value4: t);
-
-
         public bool IsT5 => _index == 5;
 
         public T5 AsT5
@@ -1342,9 +1351,6 @@ namespace OneOf
                 return _value5;
             }
         }
-
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5>(T5 t) => new OneOfBase<T0, T1, T2, T3, T4, T5>(5, value5: t);
-
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5)
         {
@@ -1554,62 +1560,75 @@ namespace OneOf
         readonly T6 _value6;
         readonly int _index;
 
-        protected OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6))
+        protected OneOfBase(OneOf<T0, T1, T2, T3, T4, T5, T6> input)
         {
-            _index = index;
-            _value0 = value0;
-            _value1 = value1;
-            _value2 = value2;
-            _value3 = value3;
-            _value4 = value4;
-            _value5 = value5;
-            _value6 = value6;
+            _index = input.Index;
+            switch (_index)
+            {
+                case 0: _value0 = input.AsT0; break;
+                case 1: _value1 = input.AsT1; break;
+                case 2: _value2 = input.AsT2; break;
+                case 3: _value3 = input.AsT3; break;
+                case 4: _value4 = input.AsT4; break;
+                case 5: _value5 = input.AsT5; break;
+                case 6: _value6 = input.AsT6; break;
+                default: throw new InvalidOperationException();
+            }
         }
-
+        
         protected OneOfBase()
         {
+
             if (this is T0)
             {
                 _index = 0;
                 _value0 = (T0)(object)this;
                 return;
             }
+
             if (this is T1)
             {
                 _index = 1;
                 _value1 = (T1)(object)this;
                 return;
             }
+
             if (this is T2)
             {
                 _index = 2;
                 _value2 = (T2)(object)this;
                 return;
             }
+
             if (this is T3)
             {
                 _index = 3;
                 _value3 = (T3)(object)this;
                 return;
             }
+
             if (this is T4)
             {
                 _index = 4;
                 _value4 = (T4)(object)this;
                 return;
             }
+
             if (this is T5)
             {
                 _index = 5;
                 _value5 = (T5)(object)this;
                 return;
             }
+
             if (this is T6)
             {
                 _index = 6;
                 _value6 = (T6)(object)this;
                 return;
             }
+
+            throw new InvalidOperationException("OneOfBase<T0, T1, T2, T3, T4, T5, T6> parameterless constructor can only be invoked from a derived class of OneOfBase<T0, T1, T2, T3, T4, T5, T6>.");
         }
 
         public object Value
@@ -1637,6 +1656,8 @@ namespace OneOf
                 }
             }
         }
+        
+        public int Index => _index;
 
         public bool IsT0 => _index == 0;
 
@@ -1652,9 +1673,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6>(T0 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6>(0, value0: t);
-
-
         public bool IsT1 => _index == 1;
 
         public T1 AsT1
@@ -1668,9 +1686,6 @@ namespace OneOf
                 return _value1;
             }
         }
-
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6>(T1 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6>(1, value1: t);
-
 
         public bool IsT2 => _index == 2;
 
@@ -1686,9 +1701,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6>(T2 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6>(2, value2: t);
-
-
         public bool IsT3 => _index == 3;
 
         public T3 AsT3
@@ -1702,9 +1714,6 @@ namespace OneOf
                 return _value3;
             }
         }
-
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6>(T3 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6>(3, value3: t);
-
 
         public bool IsT4 => _index == 4;
 
@@ -1720,9 +1729,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6>(T4 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6>(4, value4: t);
-
-
         public bool IsT5 => _index == 5;
 
         public T5 AsT5
@@ -1737,9 +1743,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6>(T5 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6>(5, value5: t);
-
-
         public bool IsT6 => _index == 6;
 
         public T6 AsT6
@@ -1753,9 +1756,6 @@ namespace OneOf
                 return _value6;
             }
         }
-
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6>(T6 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6>(6, value6: t);
-
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6)
         {
@@ -1989,69 +1989,83 @@ namespace OneOf
         readonly T7 _value7;
         readonly int _index;
 
-        protected OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7))
+        protected OneOfBase(OneOf<T0, T1, T2, T3, T4, T5, T6, T7> input)
         {
-            _index = index;
-            _value0 = value0;
-            _value1 = value1;
-            _value2 = value2;
-            _value3 = value3;
-            _value4 = value4;
-            _value5 = value5;
-            _value6 = value6;
-            _value7 = value7;
+            _index = input.Index;
+            switch (_index)
+            {
+                case 0: _value0 = input.AsT0; break;
+                case 1: _value1 = input.AsT1; break;
+                case 2: _value2 = input.AsT2; break;
+                case 3: _value3 = input.AsT3; break;
+                case 4: _value4 = input.AsT4; break;
+                case 5: _value5 = input.AsT5; break;
+                case 6: _value6 = input.AsT6; break;
+                case 7: _value7 = input.AsT7; break;
+                default: throw new InvalidOperationException();
+            }
         }
-
+        
         protected OneOfBase()
         {
+
             if (this is T0)
             {
                 _index = 0;
                 _value0 = (T0)(object)this;
                 return;
             }
+
             if (this is T1)
             {
                 _index = 1;
                 _value1 = (T1)(object)this;
                 return;
             }
+
             if (this is T2)
             {
                 _index = 2;
                 _value2 = (T2)(object)this;
                 return;
             }
+
             if (this is T3)
             {
                 _index = 3;
                 _value3 = (T3)(object)this;
                 return;
             }
+
             if (this is T4)
             {
                 _index = 4;
                 _value4 = (T4)(object)this;
                 return;
             }
+
             if (this is T5)
             {
                 _index = 5;
                 _value5 = (T5)(object)this;
                 return;
             }
+
             if (this is T6)
             {
                 _index = 6;
                 _value6 = (T6)(object)this;
                 return;
             }
+
             if (this is T7)
             {
                 _index = 7;
                 _value7 = (T7)(object)this;
                 return;
             }
+
+            throw new InvalidOperationException("OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> parameterless constructor can only be invoked from a derived class of OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>.");
         }
 
         public object Value
@@ -2081,6 +2095,8 @@ namespace OneOf
                 }
             }
         }
+        
+        public int Index => _index;
 
         public bool IsT0 => _index == 0;
 
@@ -2096,9 +2112,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>(T0 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>(0, value0: t);
-
-
         public bool IsT1 => _index == 1;
 
         public T1 AsT1
@@ -2112,9 +2125,6 @@ namespace OneOf
                 return _value1;
             }
         }
-
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>(T1 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>(1, value1: t);
-
 
         public bool IsT2 => _index == 2;
 
@@ -2130,9 +2140,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>(T2 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>(2, value2: t);
-
-
         public bool IsT3 => _index == 3;
 
         public T3 AsT3
@@ -2146,9 +2153,6 @@ namespace OneOf
                 return _value3;
             }
         }
-
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>(T3 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>(3, value3: t);
-
 
         public bool IsT4 => _index == 4;
 
@@ -2164,9 +2168,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>(T4 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>(4, value4: t);
-
-
         public bool IsT5 => _index == 5;
 
         public T5 AsT5
@@ -2180,9 +2181,6 @@ namespace OneOf
                 return _value5;
             }
         }
-
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>(T5 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>(5, value5: t);
-
 
         public bool IsT6 => _index == 6;
 
@@ -2198,9 +2196,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>(T6 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>(6, value6: t);
-
-
         public bool IsT7 => _index == 7;
 
         public T7 AsT7
@@ -2214,9 +2209,6 @@ namespace OneOf
                 return _value7;
             }
         }
-
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>(T7 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>(7, value7: t);
-
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7)
         {
@@ -2474,76 +2466,91 @@ namespace OneOf
         readonly T8 _value8;
         readonly int _index;
 
-        protected OneOfBase(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8))
+        protected OneOfBase(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> input)
         {
-            _index = index;
-            _value0 = value0;
-            _value1 = value1;
-            _value2 = value2;
-            _value3 = value3;
-            _value4 = value4;
-            _value5 = value5;
-            _value6 = value6;
-            _value7 = value7;
-            _value8 = value8;
+            _index = input.Index;
+            switch (_index)
+            {
+                case 0: _value0 = input.AsT0; break;
+                case 1: _value1 = input.AsT1; break;
+                case 2: _value2 = input.AsT2; break;
+                case 3: _value3 = input.AsT3; break;
+                case 4: _value4 = input.AsT4; break;
+                case 5: _value5 = input.AsT5; break;
+                case 6: _value6 = input.AsT6; break;
+                case 7: _value7 = input.AsT7; break;
+                case 8: _value8 = input.AsT8; break;
+                default: throw new InvalidOperationException();
+            }
         }
-
+        
         protected OneOfBase()
         {
+
             if (this is T0)
             {
                 _index = 0;
                 _value0 = (T0)(object)this;
                 return;
             }
+
             if (this is T1)
             {
                 _index = 1;
                 _value1 = (T1)(object)this;
                 return;
             }
+
             if (this is T2)
             {
                 _index = 2;
                 _value2 = (T2)(object)this;
                 return;
             }
+
             if (this is T3)
             {
                 _index = 3;
                 _value3 = (T3)(object)this;
                 return;
             }
+
             if (this is T4)
             {
                 _index = 4;
                 _value4 = (T4)(object)this;
                 return;
             }
+
             if (this is T5)
             {
                 _index = 5;
                 _value5 = (T5)(object)this;
                 return;
             }
+
             if (this is T6)
             {
                 _index = 6;
                 _value6 = (T6)(object)this;
                 return;
             }
+
             if (this is T7)
             {
                 _index = 7;
                 _value7 = (T7)(object)this;
                 return;
             }
+
             if (this is T8)
             {
                 _index = 8;
                 _value8 = (T8)(object)this;
                 return;
             }
+
+            throw new InvalidOperationException("OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> parameterless constructor can only be invoked from a derived class of OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>.");
         }
 
         public object Value
@@ -2575,6 +2582,8 @@ namespace OneOf
                 }
             }
         }
+        
+        public int Index => _index;
 
         public bool IsT0 => _index == 0;
 
@@ -2590,9 +2599,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T0 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>(0, value0: t);
-
-
         public bool IsT1 => _index == 1;
 
         public T1 AsT1
@@ -2606,9 +2612,6 @@ namespace OneOf
                 return _value1;
             }
         }
-
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T1 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>(1, value1: t);
-
 
         public bool IsT2 => _index == 2;
 
@@ -2624,9 +2627,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T2 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>(2, value2: t);
-
-
         public bool IsT3 => _index == 3;
 
         public T3 AsT3
@@ -2640,9 +2640,6 @@ namespace OneOf
                 return _value3;
             }
         }
-
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T3 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>(3, value3: t);
-
 
         public bool IsT4 => _index == 4;
 
@@ -2658,9 +2655,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T4 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>(4, value4: t);
-
-
         public bool IsT5 => _index == 5;
 
         public T5 AsT5
@@ -2674,9 +2668,6 @@ namespace OneOf
                 return _value5;
             }
         }
-
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T5 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>(5, value5: t);
-
 
         public bool IsT6 => _index == 6;
 
@@ -2692,9 +2683,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T6 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>(6, value6: t);
-
-
         public bool IsT7 => _index == 7;
 
         public T7 AsT7
@@ -2709,9 +2697,6 @@ namespace OneOf
             }
         }
 
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T7 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>(7, value7: t);
-
-
         public bool IsT8 => _index == 8;
 
         public T8 AsT8
@@ -2725,9 +2710,6 @@ namespace OneOf
                 return _value8;
             }
         }
-
-        public static implicit operator OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T8 t) => new OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>(8, value8: t);
-
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8)
         {
