@@ -40,9 +40,11 @@ namespace OneOf
 			sb.AppendLine($@"        readonly T{j} _value{j};");
 		}
 
-		sb.Append($@"        readonly int _index;
+		sb.AppendLine($@"        readonly int _index;");
 
-        {(isStruct ? "" : "protected ")}{className}(int index");
+        if (isStruct) {
+        sb.Append($@"
+        {className}(int index");
 		for (var j = 0; j < i; j++)
 		{
 			sb.Append($", T{j} value{j} = default(T{j})");
@@ -57,24 +59,26 @@ namespace OneOf
 		}
 		sb.AppendLine(@"
         }");
+        }
 
 		if (!isStruct)
 		{
-			sb.AppendLine($@"
-        protected {className}()
-        {{");
-
-			for (var j = 0; j < i; j++)
-			{
-				sb.AppendLine($@"            if (this is T{j})
-            {{
-                _index = {j};
-                _value{j} = (T{j})(object)this;
-                return;
-            }}");
-			}
-
-			sb.AppendLine(@"        }");
+            sb.Append($@"
+        protected {className}(OneOf<{genericArg}> input)
+        {{
+            _index = input.Index;
+            switch (_index)
+            {{");
+    		for (var j = 0; j < i; j++)
+    		{
+    			sb.Append(@$"
+                case {j}: _value{j} = input.AsT{j}; break;");
+    		}
+            sb.Append($@"
+                default: throw new InvalidOperationException();
+            }}
+        }}
+        ");
 		}
 
 		sb.Append(@"
@@ -95,7 +99,9 @@ namespace OneOf
                         throw new InvalidOperationException();
                 }
             }
-        }");
+        }
+        
+        public int Index => _index;");
 		for (var j = 0; j < i; j++)
 		{
 			sb.AppendLine(
@@ -112,10 +118,14 @@ namespace OneOf
                 }}
                 return _value{j};
             }}
-        }}
-
-        public static implicit operator {className}<{genericArg}>(T{j} t) => new {className}<{genericArg}>({j}, value{j}: t);
-");
+        }}");
+        
+            if (isStruct) {
+                sb.AppendLine(
+        $@"
+        public static implicit operator {className}<{genericArg}>(T{j} t) => new {className}<{genericArg}>({j}, value{j}: t);"
+                );
+            }
 		}
 
 		var matchArgList0 = string.Join(", ", Enumerable.Range(0, i).Select(e => $"Action<T{e}> f{e}"));

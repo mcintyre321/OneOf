@@ -4,8 +4,7 @@
 
 ## Getting Started
 
-> install-package OneOf
-
+> `install-package OneOf`
 
 This library provides F# style ~discriminated~ unions for C#, using a custom type `OneOf<T0, ... Tn>`. An instance of this type holds a single value, which is one of the types in its generic argument list.
 
@@ -36,7 +35,7 @@ public IActionResult Register(string username)
     OneOf<User, InvalidName, NameTaken> createUserResult = CreateUser(username);
     return createUserResult.Match(
         user => new RedirectResult("/dashboard"),
-        invalidName => { 
+        invalidName => {
             ModelState.AddModelError(nameof(username), $"Sorry, that is not a valid username.");
             return View("Register");
         },
@@ -44,74 +43,65 @@ public IActionResult Register(string username)
             ModelState.AddModelError(nameof(username), "Sorry, that name is already in use.");
             return View("Register");
         }
-    );            
+    );
 }
-
 ```
+
 #### As an 'Option' Type
 
 It's simple to use OneOf as an `Option` type - just declare a `OneOf<Something, None>`. OneOf comes with a variety of useful Types in the `OneOf.Types` namespace, including  `Yes`, `No`, `Maybe`, `Unknown`, `True`, `False`, `All`, `Some`, and `None`.
 
-
-
 #### Benefits
 
-  - True strongly typed method signature
-    - No need to return a custom result base type e.g `IActionResult`, or even worse, a non-descriptive type (e.g. object)   
-    - The method signature accurately describes all the potential outcomes, making it easier for consumers to understand the code
-    - Method consumer HAS to handle all cases (see 'Matching', below)
-  - You can avoid using ["Exceptions for control flow"](http://softwareengineering.stackexchange.com/questions/189222/are-exceptions-as-control-flow-considered-a-serious-antipattern-if-so-why) antipattern by returning custom Typed error objects
+- True strongly typed method signature
+  - No need to return a custom result base type e.g `IActionResult`, or even worse, a non-descriptive type (e.g. object)
+  - The method signature accurately describes all the potential outcomes, making it easier for consumers to understand the code
+  - Method consumer HAS to handle all cases (see 'Matching', below)
+- You can avoid using ["Exceptions for control flow"](http://softwareengineering.stackexchange.com/questions/189222/are-exceptions-as-control-flow-considered-a-serious-antipattern-if-so-why) antipattern by returning custom Typed error objects
   
 ### As a method parameter value
 
 You can use also use `OneOf` as a parameter type, allowing a caller to pass different types without requiring additional overloads. This might not seem that useful for a single parameter, but if you have multiple parameters, the number of overloads required increases rapidly.
 
 ```csharp
-
 public void SetBackground(OneOf<string, ColorName, Color> backgroundColor) { ... }
 
 //The method above can be called with either a string, a ColorName enum value or a Color instance.
-
 ```
-
 
 ## Matching
 
 You use the `TOut Match(Func<T0, TOut> f0, ... Func<Tn,TOut> fn)` method to get a value out. Note how the number of handlers matches the number of generic arguments.
 
-
 ### Advantages over `switch` or `if` or `exception` based control flow:
 
 This has a major advantage over a switch statement, as it
-  - requires every parameter to be handled
-  - No fallback - if you add another generic parameter, you HAVE to update all the calling code to handle your changes.
-    In brown-field code-bases this is incredibly useful, as the default handler is often a runtime `throw NotImplementedException`, or behaviour that wouldn't suit the new result type.
 
+- requires every parameter to be handled
+- No fallback - if you add another generic parameter, you HAVE to update all the calling code to handle your changes.
+
+    In brown-field code-bases this is incredibly useful, as the default handler is often a runtime `throw NotImplementedException`, or behaviour that wouldn't suit the new result type.
 
 E.g.
 
 ```csharp
-   OneOf<string, ColorName, Color> backgroundColor = ...;
-   Color c = backgroundColor.Match(
-     str => CssHelper.GetColorFromString(str),
-     name => new Color(name),
-     col => col 
-   );
-   _window.BackgroundColor = c;
-}
-
+OneOf<string, ColorName, Color> backgroundColor = ...;
+Color c = backgroundColor.Match(
+    str => CssHelper.GetColorFromString(str),
+    name => new Color(name),
+    col => col
+);
+_window.BackgroundColor = c;
 ```
+
 There is also a .Switch method, for when you aren't returning a value:
 
 ```csharp
-   OneOf<string, DateTime> dateValue = ...;
-   dateValue.Switch(
-     str => AddEntry(DateTime.Parse(str), foo),
-     int => AddEntry(int, foo)
-   );
-   
-
-
+OneOf<string, DateTime> dateValue = ...;
+dateValue.Switch(
+    str => AddEntry(DateTime.Parse(str), foo),
+    int => AddEntry(int, foo)
+);
 ```
 
 ### TryPick𝑥 method
@@ -119,46 +109,69 @@ There is also a .Switch method, for when you aren't returning a value:
 As an alternative to `.Switch` or `.Match` you can use the `.TryPick𝑥` methods.
 
 ```csharp
-    //TryPick𝑥 methods for OneOf<T0, T1, T2>
-    public bool TryPickT0(out T0 value, out OneOf<T1, T2> remainder) { ... } 
-    public bool TryPickT1(out T1 value, out OneOf<T0, T2> remainder) { ... } 
-    public bool TryPickT2(out T2 value, out OneOf<T0, T1> remainder) { ... } 
+//TryPick𝑥 methods for OneOf<T0, T1, T2>
+public bool TryPickT0(out T0 value, out OneOf<T1, T2> remainder) { ... }
+public bool TryPickT1(out T1 value, out OneOf<T0, T2> remainder) { ... }
+public bool TryPickT2(out T2 value, out OneOf<T0, T1> remainder) { ... }
 ```
 
 The return value indicates if the OneOf contains a T𝑥 or not. If so, then `value` will be set to the inner value from the OneOf. If not, then the remainder will be a OneOf of the remaining generic types. You can use them like this:
 
 ```csharp
-
 IActionResult Get(string id)
 {
-	OneOf<Thing, NotFound, Error> thingOrNotFoundOrError = GetThingFromDb(string id);
+    OneOf<Thing, NotFound, Error> thingOrNotFoundOrError = GetThingFromDb(string id);
 
-	if (thingOrNotFoundOrError.TryPickT1(out NotFound notFound, out var thingOrError)) //thingOrError is a OneOf<Thing, Error>
-		return StatusCode(404);
+    if (thingOrNotFoundOrError.TryPickT1(out NotFound notFound, out var thingOrError)) //thingOrError is a OneOf<Thing, Error>
+      return StatusCode(404);
 
-	if (thingOrError.TryPickT1(out var error, out var thing)) //note that thing is a Thing rather than a OneOf<Thing>
-	{
-		_logger.LogError(error.Message);
-		return StatusCode(500);
-	}
+    if (thingOrError.TryPickT1(out var error, out var thing)) //note that thing is a Thing rather than a OneOf<Thing>
+    {
+      _logger.LogError(error.Message);
+      return StatusCode(500);
+    }
 
-	return Ok(thing);
+    return Ok(thing);
 }
-
 ```
 
 ### Reusable OneOf Types using OneOfBase
 
-You can declare a OneOf as a Type, by inheriting from `OneOfBase`. 
+You can declare a OneOf as a type, either for reuse of the type, or to provide additional members, by inheriting from `OneOfBase`.
 
 ```csharp
-    public abstract class PaymentResult : OneOfBase<PaymentResult.Success, PaymentResult.Declined, PaymentStatus.Failed>
-    {
-        public class Success : PaymentResult { }  
-        public class Declined : PaymentResult { }
-        public class Failed  : PaymentResult { public string Reason { get; set; } }
-    }
-    
-    
+public class HttpResponse : OneOfBase<int, Exception>
+{
+    public HttpResponse(OneOf<int, Exception> input) : base(input) {}
+    // you could also have two separate constructors, one for int and one for Exception
+}
 ```
-The PaymentResult class will inherit the `.Match` and `.Switch` methods.
+
+If your type isn't an ancestor type of the subtypes (as above), your constructor must forward the inputs to the `OneOfBase` constructor.
+
+If you wish to create a hierarchy of types which inherit from the `OneOfBase`-derived type, you don't need to pass any input to the `OneOfBase` constructor.
+
+```csharp
+public abstract class PaymentResult : OneOfBase<PaymentResult.Success, PaymentResult.Declined, PaymentStatus.Failed>
+{
+    public class Success : PaymentResult { }  
+    public class Declined : PaymentResult { }
+    public class Failed  : PaymentResult { public string Reason { get; set; } }
+}
+```
+
+Note that you can mix and match between the two:
+
+```csharp
+public class MetaValue : OneOfBase<string, MetaValue.MetaValue_>
+{
+    public MetaValue(string s) : base(s) {}
+
+    // Without this parameterless constructor, MetaValue will only contain the parameterized constructor
+    // MetaValue_ will not be able to use that constructor.
+    protected MetaValue() {}
+    public class MetaValue_ : MetaValue2 {}
+}
+```
+
+The derived class will inherit the `.Match` and `.Switch` methods.
