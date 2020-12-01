@@ -50,10 +50,11 @@ namespace OneOf.Tests
             Assert.AreEqual("System.Int32: 42", a.ToString());
         }
 
-        public abstract class RecursiveOneOf : OneOfBase<RecursiveOneOf.InnerOne, RecursiveOneOf.InnerTwo>
+        public class RecursiveOneOf : OneOfBase<RecursiveOneOf.InnerOne, RecursiveOneOf.InnerTwo>
         {
-            public class InnerOne : RecursiveOneOf { }
-            public class InnerTwo : RecursiveOneOf { }
+            RecursiveOneOf(OneOf<InnerOne, InnerTwo> _) : base(_) { }
+            public class InnerOne { }
+            public class InnerTwo { }
         }
 
         [Test]

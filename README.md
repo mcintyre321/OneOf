@@ -137,41 +137,34 @@ IActionResult Get(string id)
 
 ### Reusable OneOf Types using OneOfBase
 
-You can declare a OneOf as a type, either for reuse of the type, or to provide additional members, by inheriting from `OneOfBase`.
+You can declare a OneOf as a type, either for reuse of the type, or to provide additional members, by inheriting from `OneOfBase`. The derived class will inherit the `.Match`, `.Switch`, and `.TryPick𝑥` methods.
 
 ```csharp
-public class HttpResponse : OneOfBase<int, Exception>
+public class StringOrNumber : OneOfBase<string, int>
 {
-    public HttpResponse(OneOf<int, Exception> input) : base(input) {}
-    // you could also have two separate constructors, one for int and one for Exception
+    StringOrNumber(OneOf<string, int> _) : base(_) { }
+
+    // optionally, define implicit conversions
+    // you could also make the constructor public
+    public static implicit operator StringOrNumber(string _) => new StringOrNumber(_);
+    public static implicit operator StringOrNumber(int _) => new StringOrNumber(_);
+
+    public (bool isNumber, int number) TryGetNumber() =>
+        Match(
+            s => (int.TryParse(s, out var n), n),
+            i => (true, i)
+        );
 }
+
+StringOrNumber x = 5;
+Console.WriteLine(x.TryGetNumber().number);
+// prints 5
+
+x = "5";
+Console.WriteLine(x.TryGetNumber().number);
+// prints 5
+
+x = "abcd";
+Console.WriteLine(x.TryGetNumber().isNumber);
+// prints False
 ```
-
-If your type isn't an ancestor type of the subtypes (as above), your constructor must forward the inputs to the `OneOfBase` constructor.
-
-If you wish to create a hierarchy of types which inherit from the `OneOfBase`-derived type, you don't need to pass any input to the `OneOfBase` constructor.
-
-```csharp
-public abstract class PaymentResult : OneOfBase<PaymentResult.Success, PaymentResult.Declined, PaymentStatus.Failed>
-{
-    public class Success : PaymentResult { }  
-    public class Declined : PaymentResult { }
-    public class Failed  : PaymentResult { public string Reason { get; set; } }
-}
-```
-
-Note that you can mix and match between the two:
-
-```csharp
-public class MetaValue : OneOfBase<string, MetaValue.MetaValue_>
-{
-    public MetaValue(string s) : base(s) {}
-
-    // Without this parameterless constructor, MetaValue will only contain the parameterized constructor
-    // MetaValue_ will not be able to use that constructor.
-    protected MetaValue() {}
-    public class MetaValue_ : MetaValue2 {}
-}
-```
-
-The derived class will inherit the `.Match` and `.Switch` methods.

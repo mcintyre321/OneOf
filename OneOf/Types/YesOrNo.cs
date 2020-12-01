@@ -2,12 +2,16 @@
 {
     public class YesOrNo : OneOfBase<YesOrNo.Yes, YesOrNo.No>
     {
-        public class Yes : YesOrNo { }
-        public class No : YesOrNo { }
+        YesOrNo(OneOf<Yes, No> _) : base(_) { }
+        public class Yes { }
+        public class No { }
 
-        public static implicit operator YesOrNo(bool value)
-        {
-            return value ? (YesOrNo)new YesOrNo.Yes() : new YesOrNo.No();
-        }
+        public static implicit operator YesOrNo(Yes _) => new YesOrNo(_);
+        public static implicit operator YesOrNo(No _) => new YesOrNo(_);
+
+        public static implicit operator YesOrNo(bool value) => new YesOrNo(
+            value ? new Yes() :
+            (OneOf<Yes, No>)new No()
+        );
     }
 }

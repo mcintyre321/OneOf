@@ -17,19 +17,6 @@ namespace OneOf
             }
         }
         
-        protected OneOfBase()
-        {
-
-            if (this is T0)
-            {
-                _index = 0;
-                _value0 = (T0)(object)this;
-                return;
-            }
-
-            throw new InvalidOperationException("OneOfBase<T0> parameterless constructor can only be invoked from a derived class of OneOfBase<T0>.");
-        }
-
         public object Value
         {
             get
@@ -150,26 +137,6 @@ namespace OneOf
             }
         }
         
-        protected OneOfBase()
-        {
-
-            if (this is T0)
-            {
-                _index = 0;
-                _value0 = (T0)(object)this;
-                return;
-            }
-
-            if (this is T1)
-            {
-                _index = 1;
-                _value1 = (T1)(object)this;
-                return;
-            }
-
-            throw new InvalidOperationException("OneOfBase<T0, T1> parameterless constructor can only be invoked from a derived class of OneOfBase<T0, T1>.");
-        }
-
         public object Value
         {
             get
@@ -336,33 +303,6 @@ namespace OneOf
             }
         }
         
-        protected OneOfBase()
-        {
-
-            if (this is T0)
-            {
-                _index = 0;
-                _value0 = (T0)(object)this;
-                return;
-            }
-
-            if (this is T1)
-            {
-                _index = 1;
-                _value1 = (T1)(object)this;
-                return;
-            }
-
-            if (this is T2)
-            {
-                _index = 2;
-                _value2 = (T2)(object)this;
-                return;
-            }
-
-            throw new InvalidOperationException("OneOfBase<T0, T1, T2> parameterless constructor can only be invoked from a derived class of OneOfBase<T0, T1, T2>.");
-        }
-
         public object Value
         {
             get
@@ -574,40 +514,6 @@ namespace OneOf
             }
         }
         
-        protected OneOfBase()
-        {
-
-            if (this is T0)
-            {
-                _index = 0;
-                _value0 = (T0)(object)this;
-                return;
-            }
-
-            if (this is T1)
-            {
-                _index = 1;
-                _value1 = (T1)(object)this;
-                return;
-            }
-
-            if (this is T2)
-            {
-                _index = 2;
-                _value2 = (T2)(object)this;
-                return;
-            }
-
-            if (this is T3)
-            {
-                _index = 3;
-                _value3 = (T3)(object)this;
-                return;
-            }
-
-            throw new InvalidOperationException("OneOfBase<T0, T1, T2, T3> parameterless constructor can only be invoked from a derived class of OneOfBase<T0, T1, T2, T3>.");
-        }
-
         public object Value
         {
             get
@@ -860,47 +766,6 @@ namespace OneOf
             }
         }
         
-        protected OneOfBase()
-        {
-
-            if (this is T0)
-            {
-                _index = 0;
-                _value0 = (T0)(object)this;
-                return;
-            }
-
-            if (this is T1)
-            {
-                _index = 1;
-                _value1 = (T1)(object)this;
-                return;
-            }
-
-            if (this is T2)
-            {
-                _index = 2;
-                _value2 = (T2)(object)this;
-                return;
-            }
-
-            if (this is T3)
-            {
-                _index = 3;
-                _value3 = (T3)(object)this;
-                return;
-            }
-
-            if (this is T4)
-            {
-                _index = 4;
-                _value4 = (T4)(object)this;
-                return;
-            }
-
-            throw new InvalidOperationException("OneOfBase<T0, T1, T2, T3, T4> parameterless constructor can only be invoked from a derived class of OneOfBase<T0, T1, T2, T3, T4>.");
-        }
-
         public object Value
         {
             get
@@ -1194,54 +1059,6 @@ namespace OneOf
             }
         }
         
-        protected OneOfBase()
-        {
-
-            if (this is T0)
-            {
-                _index = 0;
-                _value0 = (T0)(object)this;
-                return;
-            }
-
-            if (this is T1)
-            {
-                _index = 1;
-                _value1 = (T1)(object)this;
-                return;
-            }
-
-            if (this is T2)
-            {
-                _index = 2;
-                _value2 = (T2)(object)this;
-                return;
-            }
-
-            if (this is T3)
-            {
-                _index = 3;
-                _value3 = (T3)(object)this;
-                return;
-            }
-
-            if (this is T4)
-            {
-                _index = 4;
-                _value4 = (T4)(object)this;
-                return;
-            }
-
-            if (this is T5)
-            {
-                _index = 5;
-                _value5 = (T5)(object)this;
-                return;
-            }
-
-            throw new InvalidOperationException("OneOfBase<T0, T1, T2, T3, T4, T5> parameterless constructor can only be invoked from a derived class of OneOfBase<T0, T1, T2, T3, T4, T5>.");
-        }
-
         public object Value
         {
             get
@@ -1576,61 +1393,6 @@ namespace OneOf
             }
         }
         
-        protected OneOfBase()
-        {
-
-            if (this is T0)
-            {
-                _index = 0;
-                _value0 = (T0)(object)this;
-                return;
-            }
-
-            if (this is T1)
-            {
-                _index = 1;
-                _value1 = (T1)(object)this;
-                return;
-            }
-
-            if (this is T2)
-            {
-                _index = 2;
-                _value2 = (T2)(object)this;
-                return;
-            }
-
-            if (this is T3)
-            {
-                _index = 3;
-                _value3 = (T3)(object)this;
-                return;
-            }
-
-            if (this is T4)
-            {
-                _index = 4;
-                _value4 = (T4)(object)this;
-                return;
-            }
-
-            if (this is T5)
-            {
-                _index = 5;
-                _value5 = (T5)(object)this;
-                return;
-            }
-
-            if (this is T6)
-            {
-                _index = 6;
-                _value6 = (T6)(object)this;
-                return;
-            }
-
-            throw new InvalidOperationException("OneOfBase<T0, T1, T2, T3, T4, T5, T6> parameterless constructor can only be invoked from a derived class of OneOfBase<T0, T1, T2, T3, T4, T5, T6>.");
-        }
-
         public object Value
         {
             get
@@ -2006,68 +1768,6 @@ namespace OneOf
             }
         }
         
-        protected OneOfBase()
-        {
-
-            if (this is T0)
-            {
-                _index = 0;
-                _value0 = (T0)(object)this;
-                return;
-            }
-
-            if (this is T1)
-            {
-                _index = 1;
-                _value1 = (T1)(object)this;
-                return;
-            }
-
-            if (this is T2)
-            {
-                _index = 2;
-                _value2 = (T2)(object)this;
-                return;
-            }
-
-            if (this is T3)
-            {
-                _index = 3;
-                _value3 = (T3)(object)this;
-                return;
-            }
-
-            if (this is T4)
-            {
-                _index = 4;
-                _value4 = (T4)(object)this;
-                return;
-            }
-
-            if (this is T5)
-            {
-                _index = 5;
-                _value5 = (T5)(object)this;
-                return;
-            }
-
-            if (this is T6)
-            {
-                _index = 6;
-                _value6 = (T6)(object)this;
-                return;
-            }
-
-            if (this is T7)
-            {
-                _index = 7;
-                _value7 = (T7)(object)this;
-                return;
-            }
-
-            throw new InvalidOperationException("OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> parameterless constructor can only be invoked from a derived class of OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7>.");
-        }
-
         public object Value
         {
             get
@@ -2484,75 +2184,6 @@ namespace OneOf
             }
         }
         
-        protected OneOfBase()
-        {
-
-            if (this is T0)
-            {
-                _index = 0;
-                _value0 = (T0)(object)this;
-                return;
-            }
-
-            if (this is T1)
-            {
-                _index = 1;
-                _value1 = (T1)(object)this;
-                return;
-            }
-
-            if (this is T2)
-            {
-                _index = 2;
-                _value2 = (T2)(object)this;
-                return;
-            }
-
-            if (this is T3)
-            {
-                _index = 3;
-                _value3 = (T3)(object)this;
-                return;
-            }
-
-            if (this is T4)
-            {
-                _index = 4;
-                _value4 = (T4)(object)this;
-                return;
-            }
-
-            if (this is T5)
-            {
-                _index = 5;
-                _value5 = (T5)(object)this;
-                return;
-            }
-
-            if (this is T6)
-            {
-                _index = 6;
-                _value6 = (T6)(object)this;
-                return;
-            }
-
-            if (this is T7)
-            {
-                _index = 7;
-                _value7 = (T7)(object)this;
-                return;
-            }
-
-            if (this is T8)
-            {
-                _index = 8;
-                _value8 = (T8)(object)this;
-                return;
-            }
-
-            throw new InvalidOperationException("OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> parameterless constructor can only be invoked from a derived class of OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8>.");
-        }
-
         public object Value
         {
             get
