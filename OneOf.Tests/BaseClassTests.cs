@@ -1,28 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using OneOf;
-using OneOf.Types;
+﻿using NUnit.Framework;
 
-namespace OneOf.Tests
-{
-    public abstract class Response : OneOfBase<
+namespace OneOf.Tests {
+    public class Response : OneOfBase<
         Response.MethodNotAllowed,
         Response.InvokeSuccessResponse
         >
     {
+        Response(OneOf<MethodNotAllowed, InvokeSuccessResponse> _) : base(_) { }
+        public class MethodNotAllowed {}
+        public class InvokeSuccessResponse {}
 
-        public class MethodNotAllowed : Response
-        {
-        }
-
-        public class InvokeSuccessResponse : Response
-        {
-        }
-
+        public static implicit operator Response(MethodNotAllowed _) => new Response(_);
+        public static implicit operator Response(InvokeSuccessResponse _) => new Response(_);
     }
 
     public class BaseClassTests

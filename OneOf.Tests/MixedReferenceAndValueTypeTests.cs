@@ -1,23 +1,19 @@
 ﻿using NUnit.Framework;
-using OneOf;
 
-namespace OneOf.Tests
+namespace OneOf.Tests 
 {
     public class RetryStrategy : OneOfBase<RetryStrategy.Never, int>
     {
-        private RetryStrategy() { }
-        private RetryStrategy(int attempts):base(attempts) { }
+        RetryStrategy(OneOf<Never, int> _) : base(_) { }
 
-        public static implicit operator RetryStrategy(int attempts)
-        {
-            return new RetryStrategy(attempts);
-        }
-        public class Never : RetryStrategy
-        {
+        public class Never {
             internal int _attempts = 0;
         }
 
         public int Attempts => Match(n => n._attempts, n => n);
+
+        public static implicit operator RetryStrategy(Never never) => new RetryStrategy(never);
+        public static implicit operator RetryStrategy(int attempts) => new RetryStrategy(attempts);
     }
 
     public class MixedReferenceAndValueTypeTests

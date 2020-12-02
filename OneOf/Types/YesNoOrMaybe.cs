@@ -2,15 +2,19 @@
 {
     public class YesNoOrMaybe : OneOfBase<YesNoOrMaybe.Yes, YesNoOrMaybe.No, YesNoOrMaybe.Maybe>
     {
-        public class Yes : YesNoOrMaybe { }
-        public class No : YesNoOrMaybe { }
-        public class Maybe : YesNoOrMaybe { }
+        YesNoOrMaybe(OneOf<Yes, No, Maybe> _) : base(_) { }
+        public class Yes { }
+        public class No { }
+        public class Maybe { }
 
-        public static implicit operator YesNoOrMaybe(bool? value)
-        {
-            return value == null ? new Maybe()
-                : value.Value ? (YesNoOrMaybe) new Yes()
-                    : new No();
-        }
+        public static implicit operator YesNoOrMaybe(Yes _) => new YesNoOrMaybe(_);
+        public static implicit operator YesNoOrMaybe(No _) => new YesNoOrMaybe(_);
+        public static implicit operator YesNoOrMaybe(Maybe _) => new YesNoOrMaybe(_);
+
+        public static implicit operator YesNoOrMaybe(bool? value) => new YesNoOrMaybe(
+            value is null ? new Maybe() :
+            value.Value ? new Yes() :
+            (OneOf<Yes, No, Maybe>)new No()
+        );
     }
 }
