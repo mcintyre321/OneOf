@@ -193,32 +193,19 @@ namespace OneOf
             if(mapFunc == null)
             {{
                 throw new ArgumentNullException(nameof(mapFunc));
-            }}");
-
-				sb.Append($@"
-            return Match<OneOf<{resultArgsPrinted}>>(");
-				var appendStrings = argIndexList.Select(x =>
-				{
-					return $"T{x}" == bindToType ?
-						$"input{x} => mapFunc(input{x})" :
-						$"input{x} => input{x}";
-				}).ToList();
-				for (var appendedStringIndex = 0; appendedStringIndex < appendStrings.Count; appendedStringIndex++)
-				{
-					if (appendedStringIndex != appendStrings.Count - 1)
-					{
-						sb.Append($@"
-                {appendStrings[appendedStringIndex]},");
-					}
-					else
-					{
-						sb.Append($@"
-                {appendStrings[appendedStringIndex]}");
-					}
-				}
-				sb.Append($@"
-            );");
-				sb.AppendLine($@"
+            }}
+            return _index switch
+            {{
+                {String.Join(@"
+                ", Enumerable.Range(0, i).Select(k => {
+                    var arg = 
+                        bindToType != $"T{k}" ? 
+                            $"AsT{k}" :
+                            $"mapFunc(AsT{k})";
+                    return $"{k} => OneOf<{resultArgsPrinted}>.FromT{k}({arg}),";
+                }))}
+                _ => throw new InvalidOperationException()
+            }};
         }}");
 			}
 
@@ -232,12 +219,19 @@ namespace OneOf
 				sb.AppendLine($@"
 		public bool TryPickT{j}(out T{j} value, out {remainderType} remainder)
 		{{
-			value = this.IsT{j} ? this.AsT{j} : default(T{j});
-			remainder = " + ((i == 2) ? ($"this.IsT{j} ? default({remainderType}) : this.As{remainderType};") : $@"this.IsT{j}
-				? default(OneOf<{genericArgWithSkip}>) 
-				: this.Match<{remainderType}>(" + String.Join(", ", Enumerable.Range(0, i).Select(k => $"t{k} =>" + (k == j ? "throw new InvalidOperationException()" : $"t{k}"))) + $@");")
-				+ $@"
-			return this.IsT{j};
+            value = IsT{j} ? AsT{j} : default;
+            remainder = 
+                {String.Join(@"
+                ", Enumerable.Range(0, i) .Select(k => {
+                    var result = 
+                        k == j ? "default" :
+                        i == 2 ? $"AsT{k}" :
+                        k < j ? $"{remainderType}.FromT{k}(AsT{k})" :
+                        $"{remainderType}.FromT{k-1}(AsT{k})";
+                    return $"_index == {k} ? {result} :";
+                }))}
+                throw new InvalidOperationException();
+            return IsT{j};
 		}}");
 			}
 		sb.AppendLine($@"

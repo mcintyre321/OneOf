@@ -213,16 +213,22 @@ namespace OneOf
 
 		public bool TryPickT0(out T0 value, out T1 remainder)
 		{
-			value = this.IsT0 ? this.AsT0 : default(T0);
-			remainder = this.IsT0 ? default(T1) : this.AsT1;
-			return this.IsT0;
+            value = IsT0 ? AsT0 : default;
+            remainder = 
+                _index == 0 ? default :
+                _index == 1 ? AsT1 :
+                throw new InvalidOperationException();
+            return IsT0;
 		}
 
 		public bool TryPickT1(out T1 value, out T0 remainder)
 		{
-			value = this.IsT1 ? this.AsT1 : default(T1);
-			remainder = this.IsT1 ? default(T0) : this.AsT0;
-			return this.IsT1;
+            value = IsT1 ? AsT1 : default;
+            remainder = 
+                _index == 0 ? AsT0 :
+                _index == 1 ? default :
+                throw new InvalidOperationException();
+            return IsT1;
 		}
 
         bool Equals(OneOfBase<T0, T1> other)
@@ -404,29 +410,35 @@ namespace OneOf
 
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2> remainder)
 		{
-			value = this.IsT0 ? this.AsT0 : default(T0);
-			remainder = this.IsT0
-				? default(OneOf<T1, T2>) 
-				: this.Match<OneOf<T1, T2>>(t0 =>throw new InvalidOperationException(), t1 =>t1, t2 =>t2);
-			return this.IsT0;
+            value = IsT0 ? AsT0 : default;
+            remainder = 
+                _index == 0 ? default :
+                _index == 1 ? OneOf<T1, T2>.FromT0(AsT1) :
+                _index == 2 ? OneOf<T1, T2>.FromT1(AsT2) :
+                throw new InvalidOperationException();
+            return IsT0;
 		}
 
 		public bool TryPickT1(out T1 value, out OneOf<T0, T2> remainder)
 		{
-			value = this.IsT1 ? this.AsT1 : default(T1);
-			remainder = this.IsT1
-				? default(OneOf<T0, T2>) 
-				: this.Match<OneOf<T0, T2>>(t0 =>t0, t1 =>throw new InvalidOperationException(), t2 =>t2);
-			return this.IsT1;
+            value = IsT1 ? AsT1 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T2>.FromT0(AsT0) :
+                _index == 1 ? default :
+                _index == 2 ? OneOf<T0, T2>.FromT1(AsT2) :
+                throw new InvalidOperationException();
+            return IsT1;
 		}
 
 		public bool TryPickT2(out T2 value, out OneOf<T0, T1> remainder)
 		{
-			value = this.IsT2 ? this.AsT2 : default(T2);
-			remainder = this.IsT2
-				? default(OneOf<T0, T1>) 
-				: this.Match<OneOf<T0, T1>>(t0 =>t0, t1 =>t1, t2 =>throw new InvalidOperationException());
-			return this.IsT2;
+            value = IsT2 ? AsT2 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1>.FromT1(AsT1) :
+                _index == 2 ? default :
+                throw new InvalidOperationException();
+            return IsT2;
 		}
 
         bool Equals(OneOfBase<T0, T1, T2> other)
@@ -640,38 +652,50 @@ namespace OneOf
 
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3> remainder)
 		{
-			value = this.IsT0 ? this.AsT0 : default(T0);
-			remainder = this.IsT0
-				? default(OneOf<T1, T2, T3>) 
-				: this.Match<OneOf<T1, T2, T3>>(t0 =>throw new InvalidOperationException(), t1 =>t1, t2 =>t2, t3 =>t3);
-			return this.IsT0;
+            value = IsT0 ? AsT0 : default;
+            remainder = 
+                _index == 0 ? default :
+                _index == 1 ? OneOf<T1, T2, T3>.FromT0(AsT1) :
+                _index == 2 ? OneOf<T1, T2, T3>.FromT1(AsT2) :
+                _index == 3 ? OneOf<T1, T2, T3>.FromT2(AsT3) :
+                throw new InvalidOperationException();
+            return IsT0;
 		}
 
 		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3> remainder)
 		{
-			value = this.IsT1 ? this.AsT1 : default(T1);
-			remainder = this.IsT1
-				? default(OneOf<T0, T2, T3>) 
-				: this.Match<OneOf<T0, T2, T3>>(t0 =>t0, t1 =>throw new InvalidOperationException(), t2 =>t2, t3 =>t3);
-			return this.IsT1;
+            value = IsT1 ? AsT1 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T2, T3>.FromT0(AsT0) :
+                _index == 1 ? default :
+                _index == 2 ? OneOf<T0, T2, T3>.FromT1(AsT2) :
+                _index == 3 ? OneOf<T0, T2, T3>.FromT2(AsT3) :
+                throw new InvalidOperationException();
+            return IsT1;
 		}
 
 		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3> remainder)
 		{
-			value = this.IsT2 ? this.AsT2 : default(T2);
-			remainder = this.IsT2
-				? default(OneOf<T0, T1, T3>) 
-				: this.Match<OneOf<T0, T1, T3>>(t0 =>t0, t1 =>t1, t2 =>throw new InvalidOperationException(), t3 =>t3);
-			return this.IsT2;
+            value = IsT2 ? AsT2 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T3>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T3>.FromT1(AsT1) :
+                _index == 2 ? default :
+                _index == 3 ? OneOf<T0, T1, T3>.FromT2(AsT3) :
+                throw new InvalidOperationException();
+            return IsT2;
 		}
 
 		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2> remainder)
 		{
-			value = this.IsT3 ? this.AsT3 : default(T3);
-			remainder = this.IsT3
-				? default(OneOf<T0, T1, T2>) 
-				: this.Match<OneOf<T0, T1, T2>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>throw new InvalidOperationException());
-			return this.IsT3;
+            value = IsT3 ? AsT3 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T2>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T2>.FromT1(AsT1) :
+                _index == 2 ? OneOf<T0, T1, T2>.FromT2(AsT2) :
+                _index == 3 ? default :
+                throw new InvalidOperationException();
+            return IsT3;
 		}
 
         bool Equals(OneOfBase<T0, T1, T2, T3> other)
@@ -917,47 +941,67 @@ namespace OneOf
 
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4> remainder)
 		{
-			value = this.IsT0 ? this.AsT0 : default(T0);
-			remainder = this.IsT0
-				? default(OneOf<T1, T2, T3, T4>) 
-				: this.Match<OneOf<T1, T2, T3, T4>>(t0 =>throw new InvalidOperationException(), t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4);
-			return this.IsT0;
+            value = IsT0 ? AsT0 : default;
+            remainder = 
+                _index == 0 ? default :
+                _index == 1 ? OneOf<T1, T2, T3, T4>.FromT0(AsT1) :
+                _index == 2 ? OneOf<T1, T2, T3, T4>.FromT1(AsT2) :
+                _index == 3 ? OneOf<T1, T2, T3, T4>.FromT2(AsT3) :
+                _index == 4 ? OneOf<T1, T2, T3, T4>.FromT3(AsT4) :
+                throw new InvalidOperationException();
+            return IsT0;
 		}
 
 		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4> remainder)
 		{
-			value = this.IsT1 ? this.AsT1 : default(T1);
-			remainder = this.IsT1
-				? default(OneOf<T0, T2, T3, T4>) 
-				: this.Match<OneOf<T0, T2, T3, T4>>(t0 =>t0, t1 =>throw new InvalidOperationException(), t2 =>t2, t3 =>t3, t4 =>t4);
-			return this.IsT1;
+            value = IsT1 ? AsT1 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T2, T3, T4>.FromT0(AsT0) :
+                _index == 1 ? default :
+                _index == 2 ? OneOf<T0, T2, T3, T4>.FromT1(AsT2) :
+                _index == 3 ? OneOf<T0, T2, T3, T4>.FromT2(AsT3) :
+                _index == 4 ? OneOf<T0, T2, T3, T4>.FromT3(AsT4) :
+                throw new InvalidOperationException();
+            return IsT1;
 		}
 
 		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4> remainder)
 		{
-			value = this.IsT2 ? this.AsT2 : default(T2);
-			remainder = this.IsT2
-				? default(OneOf<T0, T1, T3, T4>) 
-				: this.Match<OneOf<T0, T1, T3, T4>>(t0 =>t0, t1 =>t1, t2 =>throw new InvalidOperationException(), t3 =>t3, t4 =>t4);
-			return this.IsT2;
+            value = IsT2 ? AsT2 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T3, T4>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T3, T4>.FromT1(AsT1) :
+                _index == 2 ? default :
+                _index == 3 ? OneOf<T0, T1, T3, T4>.FromT2(AsT3) :
+                _index == 4 ? OneOf<T0, T1, T3, T4>.FromT3(AsT4) :
+                throw new InvalidOperationException();
+            return IsT2;
 		}
 
 		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4> remainder)
 		{
-			value = this.IsT3 ? this.AsT3 : default(T3);
-			remainder = this.IsT3
-				? default(OneOf<T0, T1, T2, T4>) 
-				: this.Match<OneOf<T0, T1, T2, T4>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>throw new InvalidOperationException(), t4 =>t4);
-			return this.IsT3;
+            value = IsT3 ? AsT3 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T2, T4>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T2, T4>.FromT1(AsT1) :
+                _index == 2 ? OneOf<T0, T1, T2, T4>.FromT2(AsT2) :
+                _index == 3 ? default :
+                _index == 4 ? OneOf<T0, T1, T2, T4>.FromT3(AsT4) :
+                throw new InvalidOperationException();
+            return IsT3;
 		}
 
 		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3> remainder)
 		{
-			value = this.IsT4 ? this.AsT4 : default(T4);
-			remainder = this.IsT4
-				? default(OneOf<T0, T1, T2, T3>) 
-				: this.Match<OneOf<T0, T1, T2, T3>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>throw new InvalidOperationException());
-			return this.IsT4;
+            value = IsT4 ? AsT4 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T2, T3>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T2, T3>.FromT1(AsT1) :
+                _index == 2 ? OneOf<T0, T1, T2, T3>.FromT2(AsT2) :
+                _index == 3 ? OneOf<T0, T1, T2, T3>.FromT3(AsT3) :
+                _index == 4 ? default :
+                throw new InvalidOperationException();
+            return IsT4;
 		}
 
         bool Equals(OneOfBase<T0, T1, T2, T3, T4> other)
@@ -1235,56 +1279,86 @@ namespace OneOf
 
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5> remainder)
 		{
-			value = this.IsT0 ? this.AsT0 : default(T0);
-			remainder = this.IsT0
-				? default(OneOf<T1, T2, T3, T4, T5>) 
-				: this.Match<OneOf<T1, T2, T3, T4, T5>>(t0 =>throw new InvalidOperationException(), t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5);
-			return this.IsT0;
+            value = IsT0 ? AsT0 : default;
+            remainder = 
+                _index == 0 ? default :
+                _index == 1 ? OneOf<T1, T2, T3, T4, T5>.FromT0(AsT1) :
+                _index == 2 ? OneOf<T1, T2, T3, T4, T5>.FromT1(AsT2) :
+                _index == 3 ? OneOf<T1, T2, T3, T4, T5>.FromT2(AsT3) :
+                _index == 4 ? OneOf<T1, T2, T3, T4, T5>.FromT3(AsT4) :
+                _index == 5 ? OneOf<T1, T2, T3, T4, T5>.FromT4(AsT5) :
+                throw new InvalidOperationException();
+            return IsT0;
 		}
 
 		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5> remainder)
 		{
-			value = this.IsT1 ? this.AsT1 : default(T1);
-			remainder = this.IsT1
-				? default(OneOf<T0, T2, T3, T4, T5>) 
-				: this.Match<OneOf<T0, T2, T3, T4, T5>>(t0 =>t0, t1 =>throw new InvalidOperationException(), t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5);
-			return this.IsT1;
+            value = IsT1 ? AsT1 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T2, T3, T4, T5>.FromT0(AsT0) :
+                _index == 1 ? default :
+                _index == 2 ? OneOf<T0, T2, T3, T4, T5>.FromT1(AsT2) :
+                _index == 3 ? OneOf<T0, T2, T3, T4, T5>.FromT2(AsT3) :
+                _index == 4 ? OneOf<T0, T2, T3, T4, T5>.FromT3(AsT4) :
+                _index == 5 ? OneOf<T0, T2, T3, T4, T5>.FromT4(AsT5) :
+                throw new InvalidOperationException();
+            return IsT1;
 		}
 
 		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5> remainder)
 		{
-			value = this.IsT2 ? this.AsT2 : default(T2);
-			remainder = this.IsT2
-				? default(OneOf<T0, T1, T3, T4, T5>) 
-				: this.Match<OneOf<T0, T1, T3, T4, T5>>(t0 =>t0, t1 =>t1, t2 =>throw new InvalidOperationException(), t3 =>t3, t4 =>t4, t5 =>t5);
-			return this.IsT2;
+            value = IsT2 ? AsT2 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T3, T4, T5>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T3, T4, T5>.FromT1(AsT1) :
+                _index == 2 ? default :
+                _index == 3 ? OneOf<T0, T1, T3, T4, T5>.FromT2(AsT3) :
+                _index == 4 ? OneOf<T0, T1, T3, T4, T5>.FromT3(AsT4) :
+                _index == 5 ? OneOf<T0, T1, T3, T4, T5>.FromT4(AsT5) :
+                throw new InvalidOperationException();
+            return IsT2;
 		}
 
 		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5> remainder)
 		{
-			value = this.IsT3 ? this.AsT3 : default(T3);
-			remainder = this.IsT3
-				? default(OneOf<T0, T1, T2, T4, T5>) 
-				: this.Match<OneOf<T0, T1, T2, T4, T5>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>throw new InvalidOperationException(), t4 =>t4, t5 =>t5);
-			return this.IsT3;
+            value = IsT3 ? AsT3 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T2, T4, T5>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T2, T4, T5>.FromT1(AsT1) :
+                _index == 2 ? OneOf<T0, T1, T2, T4, T5>.FromT2(AsT2) :
+                _index == 3 ? default :
+                _index == 4 ? OneOf<T0, T1, T2, T4, T5>.FromT3(AsT4) :
+                _index == 5 ? OneOf<T0, T1, T2, T4, T5>.FromT4(AsT5) :
+                throw new InvalidOperationException();
+            return IsT3;
 		}
 
 		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5> remainder)
 		{
-			value = this.IsT4 ? this.AsT4 : default(T4);
-			remainder = this.IsT4
-				? default(OneOf<T0, T1, T2, T3, T5>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T5>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>throw new InvalidOperationException(), t5 =>t5);
-			return this.IsT4;
+            value = IsT4 ? AsT4 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T2, T3, T5>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T2, T3, T5>.FromT1(AsT1) :
+                _index == 2 ? OneOf<T0, T1, T2, T3, T5>.FromT2(AsT2) :
+                _index == 3 ? OneOf<T0, T1, T2, T3, T5>.FromT3(AsT3) :
+                _index == 4 ? default :
+                _index == 5 ? OneOf<T0, T1, T2, T3, T5>.FromT4(AsT5) :
+                throw new InvalidOperationException();
+            return IsT4;
 		}
 
 		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4> remainder)
 		{
-			value = this.IsT5 ? this.AsT5 : default(T5);
-			remainder = this.IsT5
-				? default(OneOf<T0, T1, T2, T3, T4>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>throw new InvalidOperationException());
-			return this.IsT5;
+            value = IsT5 ? AsT5 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T2, T3, T4>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T2, T3, T4>.FromT1(AsT1) :
+                _index == 2 ? OneOf<T0, T1, T2, T3, T4>.FromT2(AsT2) :
+                _index == 3 ? OneOf<T0, T1, T2, T3, T4>.FromT3(AsT3) :
+                _index == 4 ? OneOf<T0, T1, T2, T3, T4>.FromT4(AsT4) :
+                _index == 5 ? default :
+                throw new InvalidOperationException();
+            return IsT5;
 		}
 
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5> other)
@@ -1594,65 +1668,107 @@ namespace OneOf
 
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6> remainder)
 		{
-			value = this.IsT0 ? this.AsT0 : default(T0);
-			remainder = this.IsT0
-				? default(OneOf<T1, T2, T3, T4, T5, T6>) 
-				: this.Match<OneOf<T1, T2, T3, T4, T5, T6>>(t0 =>throw new InvalidOperationException(), t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6);
-			return this.IsT0;
+            value = IsT0 ? AsT0 : default;
+            remainder = 
+                _index == 0 ? default :
+                _index == 1 ? OneOf<T1, T2, T3, T4, T5, T6>.FromT0(AsT1) :
+                _index == 2 ? OneOf<T1, T2, T3, T4, T5, T6>.FromT1(AsT2) :
+                _index == 3 ? OneOf<T1, T2, T3, T4, T5, T6>.FromT2(AsT3) :
+                _index == 4 ? OneOf<T1, T2, T3, T4, T5, T6>.FromT3(AsT4) :
+                _index == 5 ? OneOf<T1, T2, T3, T4, T5, T6>.FromT4(AsT5) :
+                _index == 6 ? OneOf<T1, T2, T3, T4, T5, T6>.FromT5(AsT6) :
+                throw new InvalidOperationException();
+            return IsT0;
 		}
 
 		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6> remainder)
 		{
-			value = this.IsT1 ? this.AsT1 : default(T1);
-			remainder = this.IsT1
-				? default(OneOf<T0, T2, T3, T4, T5, T6>) 
-				: this.Match<OneOf<T0, T2, T3, T4, T5, T6>>(t0 =>t0, t1 =>throw new InvalidOperationException(), t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6);
-			return this.IsT1;
+            value = IsT1 ? AsT1 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T2, T3, T4, T5, T6>.FromT0(AsT0) :
+                _index == 1 ? default :
+                _index == 2 ? OneOf<T0, T2, T3, T4, T5, T6>.FromT1(AsT2) :
+                _index == 3 ? OneOf<T0, T2, T3, T4, T5, T6>.FromT2(AsT3) :
+                _index == 4 ? OneOf<T0, T2, T3, T4, T5, T6>.FromT3(AsT4) :
+                _index == 5 ? OneOf<T0, T2, T3, T4, T5, T6>.FromT4(AsT5) :
+                _index == 6 ? OneOf<T0, T2, T3, T4, T5, T6>.FromT5(AsT6) :
+                throw new InvalidOperationException();
+            return IsT1;
 		}
 
 		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6> remainder)
 		{
-			value = this.IsT2 ? this.AsT2 : default(T2);
-			remainder = this.IsT2
-				? default(OneOf<T0, T1, T3, T4, T5, T6>) 
-				: this.Match<OneOf<T0, T1, T3, T4, T5, T6>>(t0 =>t0, t1 =>t1, t2 =>throw new InvalidOperationException(), t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6);
-			return this.IsT2;
+            value = IsT2 ? AsT2 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T3, T4, T5, T6>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T3, T4, T5, T6>.FromT1(AsT1) :
+                _index == 2 ? default :
+                _index == 3 ? OneOf<T0, T1, T3, T4, T5, T6>.FromT2(AsT3) :
+                _index == 4 ? OneOf<T0, T1, T3, T4, T5, T6>.FromT3(AsT4) :
+                _index == 5 ? OneOf<T0, T1, T3, T4, T5, T6>.FromT4(AsT5) :
+                _index == 6 ? OneOf<T0, T1, T3, T4, T5, T6>.FromT5(AsT6) :
+                throw new InvalidOperationException();
+            return IsT2;
 		}
 
 		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6> remainder)
 		{
-			value = this.IsT3 ? this.AsT3 : default(T3);
-			remainder = this.IsT3
-				? default(OneOf<T0, T1, T2, T4, T5, T6>) 
-				: this.Match<OneOf<T0, T1, T2, T4, T5, T6>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>throw new InvalidOperationException(), t4 =>t4, t5 =>t5, t6 =>t6);
-			return this.IsT3;
+            value = IsT3 ? AsT3 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T2, T4, T5, T6>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T2, T4, T5, T6>.FromT1(AsT1) :
+                _index == 2 ? OneOf<T0, T1, T2, T4, T5, T6>.FromT2(AsT2) :
+                _index == 3 ? default :
+                _index == 4 ? OneOf<T0, T1, T2, T4, T5, T6>.FromT3(AsT4) :
+                _index == 5 ? OneOf<T0, T1, T2, T4, T5, T6>.FromT4(AsT5) :
+                _index == 6 ? OneOf<T0, T1, T2, T4, T5, T6>.FromT5(AsT6) :
+                throw new InvalidOperationException();
+            return IsT3;
 		}
 
 		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6> remainder)
 		{
-			value = this.IsT4 ? this.AsT4 : default(T4);
-			remainder = this.IsT4
-				? default(OneOf<T0, T1, T2, T3, T5, T6>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T5, T6>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>throw new InvalidOperationException(), t5 =>t5, t6 =>t6);
-			return this.IsT4;
+            value = IsT4 ? AsT4 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T2, T3, T5, T6>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T2, T3, T5, T6>.FromT1(AsT1) :
+                _index == 2 ? OneOf<T0, T1, T2, T3, T5, T6>.FromT2(AsT2) :
+                _index == 3 ? OneOf<T0, T1, T2, T3, T5, T6>.FromT3(AsT3) :
+                _index == 4 ? default :
+                _index == 5 ? OneOf<T0, T1, T2, T3, T5, T6>.FromT4(AsT5) :
+                _index == 6 ? OneOf<T0, T1, T2, T3, T5, T6>.FromT5(AsT6) :
+                throw new InvalidOperationException();
+            return IsT4;
 		}
 
 		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6> remainder)
 		{
-			value = this.IsT5 ? this.AsT5 : default(T5);
-			remainder = this.IsT5
-				? default(OneOf<T0, T1, T2, T3, T4, T6>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T6>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>throw new InvalidOperationException(), t6 =>t6);
-			return this.IsT5;
+            value = IsT5 ? AsT5 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T2, T3, T4, T6>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T2, T3, T4, T6>.FromT1(AsT1) :
+                _index == 2 ? OneOf<T0, T1, T2, T3, T4, T6>.FromT2(AsT2) :
+                _index == 3 ? OneOf<T0, T1, T2, T3, T4, T6>.FromT3(AsT3) :
+                _index == 4 ? OneOf<T0, T1, T2, T3, T4, T6>.FromT4(AsT4) :
+                _index == 5 ? default :
+                _index == 6 ? OneOf<T0, T1, T2, T3, T4, T6>.FromT5(AsT6) :
+                throw new InvalidOperationException();
+            return IsT5;
 		}
 
 		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5> remainder)
 		{
-			value = this.IsT6 ? this.AsT6 : default(T6);
-			remainder = this.IsT6
-				? default(OneOf<T0, T1, T2, T3, T4, T5>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>throw new InvalidOperationException());
-			return this.IsT6;
+            value = IsT6 ? AsT6 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T2, T3, T4, T5>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T2, T3, T4, T5>.FromT1(AsT1) :
+                _index == 2 ? OneOf<T0, T1, T2, T3, T4, T5>.FromT2(AsT2) :
+                _index == 3 ? OneOf<T0, T1, T2, T3, T4, T5>.FromT3(AsT3) :
+                _index == 4 ? OneOf<T0, T1, T2, T3, T4, T5>.FromT4(AsT4) :
+                _index == 5 ? OneOf<T0, T1, T2, T3, T4, T5>.FromT5(AsT5) :
+                _index == 6 ? default :
+                throw new InvalidOperationException();
+            return IsT6;
 		}
 
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6> other)
@@ -1994,74 +2110,130 @@ namespace OneOf
 
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7> remainder)
 		{
-			value = this.IsT0 ? this.AsT0 : default(T0);
-			remainder = this.IsT0
-				? default(OneOf<T1, T2, T3, T4, T5, T6, T7>) 
-				: this.Match<OneOf<T1, T2, T3, T4, T5, T6, T7>>(t0 =>throw new InvalidOperationException(), t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7);
-			return this.IsT0;
+            value = IsT0 ? AsT0 : default;
+            remainder = 
+                _index == 0 ? default :
+                _index == 1 ? OneOf<T1, T2, T3, T4, T5, T6, T7>.FromT0(AsT1) :
+                _index == 2 ? OneOf<T1, T2, T3, T4, T5, T6, T7>.FromT1(AsT2) :
+                _index == 3 ? OneOf<T1, T2, T3, T4, T5, T6, T7>.FromT2(AsT3) :
+                _index == 4 ? OneOf<T1, T2, T3, T4, T5, T6, T7>.FromT3(AsT4) :
+                _index == 5 ? OneOf<T1, T2, T3, T4, T5, T6, T7>.FromT4(AsT5) :
+                _index == 6 ? OneOf<T1, T2, T3, T4, T5, T6, T7>.FromT5(AsT6) :
+                _index == 7 ? OneOf<T1, T2, T3, T4, T5, T6, T7>.FromT6(AsT7) :
+                throw new InvalidOperationException();
+            return IsT0;
 		}
 
 		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7> remainder)
 		{
-			value = this.IsT1 ? this.AsT1 : default(T1);
-			remainder = this.IsT1
-				? default(OneOf<T0, T2, T3, T4, T5, T6, T7>) 
-				: this.Match<OneOf<T0, T2, T3, T4, T5, T6, T7>>(t0 =>t0, t1 =>throw new InvalidOperationException(), t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7);
-			return this.IsT1;
+            value = IsT1 ? AsT1 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T2, T3, T4, T5, T6, T7>.FromT0(AsT0) :
+                _index == 1 ? default :
+                _index == 2 ? OneOf<T0, T2, T3, T4, T5, T6, T7>.FromT1(AsT2) :
+                _index == 3 ? OneOf<T0, T2, T3, T4, T5, T6, T7>.FromT2(AsT3) :
+                _index == 4 ? OneOf<T0, T2, T3, T4, T5, T6, T7>.FromT3(AsT4) :
+                _index == 5 ? OneOf<T0, T2, T3, T4, T5, T6, T7>.FromT4(AsT5) :
+                _index == 6 ? OneOf<T0, T2, T3, T4, T5, T6, T7>.FromT5(AsT6) :
+                _index == 7 ? OneOf<T0, T2, T3, T4, T5, T6, T7>.FromT6(AsT7) :
+                throw new InvalidOperationException();
+            return IsT1;
 		}
 
 		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7> remainder)
 		{
-			value = this.IsT2 ? this.AsT2 : default(T2);
-			remainder = this.IsT2
-				? default(OneOf<T0, T1, T3, T4, T5, T6, T7>) 
-				: this.Match<OneOf<T0, T1, T3, T4, T5, T6, T7>>(t0 =>t0, t1 =>t1, t2 =>throw new InvalidOperationException(), t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7);
-			return this.IsT2;
+            value = IsT2 ? AsT2 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T3, T4, T5, T6, T7>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T3, T4, T5, T6, T7>.FromT1(AsT1) :
+                _index == 2 ? default :
+                _index == 3 ? OneOf<T0, T1, T3, T4, T5, T6, T7>.FromT2(AsT3) :
+                _index == 4 ? OneOf<T0, T1, T3, T4, T5, T6, T7>.FromT3(AsT4) :
+                _index == 5 ? OneOf<T0, T1, T3, T4, T5, T6, T7>.FromT4(AsT5) :
+                _index == 6 ? OneOf<T0, T1, T3, T4, T5, T6, T7>.FromT5(AsT6) :
+                _index == 7 ? OneOf<T0, T1, T3, T4, T5, T6, T7>.FromT6(AsT7) :
+                throw new InvalidOperationException();
+            return IsT2;
 		}
 
 		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7> remainder)
 		{
-			value = this.IsT3 ? this.AsT3 : default(T3);
-			remainder = this.IsT3
-				? default(OneOf<T0, T1, T2, T4, T5, T6, T7>) 
-				: this.Match<OneOf<T0, T1, T2, T4, T5, T6, T7>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>throw new InvalidOperationException(), t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7);
-			return this.IsT3;
+            value = IsT3 ? AsT3 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T2, T4, T5, T6, T7>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T2, T4, T5, T6, T7>.FromT1(AsT1) :
+                _index == 2 ? OneOf<T0, T1, T2, T4, T5, T6, T7>.FromT2(AsT2) :
+                _index == 3 ? default :
+                _index == 4 ? OneOf<T0, T1, T2, T4, T5, T6, T7>.FromT3(AsT4) :
+                _index == 5 ? OneOf<T0, T1, T2, T4, T5, T6, T7>.FromT4(AsT5) :
+                _index == 6 ? OneOf<T0, T1, T2, T4, T5, T6, T7>.FromT5(AsT6) :
+                _index == 7 ? OneOf<T0, T1, T2, T4, T5, T6, T7>.FromT6(AsT7) :
+                throw new InvalidOperationException();
+            return IsT3;
 		}
 
 		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7> remainder)
 		{
-			value = this.IsT4 ? this.AsT4 : default(T4);
-			remainder = this.IsT4
-				? default(OneOf<T0, T1, T2, T3, T5, T6, T7>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T5, T6, T7>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>throw new InvalidOperationException(), t5 =>t5, t6 =>t6, t7 =>t7);
-			return this.IsT4;
+            value = IsT4 ? AsT4 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T2, T3, T5, T6, T7>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T2, T3, T5, T6, T7>.FromT1(AsT1) :
+                _index == 2 ? OneOf<T0, T1, T2, T3, T5, T6, T7>.FromT2(AsT2) :
+                _index == 3 ? OneOf<T0, T1, T2, T3, T5, T6, T7>.FromT3(AsT3) :
+                _index == 4 ? default :
+                _index == 5 ? OneOf<T0, T1, T2, T3, T5, T6, T7>.FromT4(AsT5) :
+                _index == 6 ? OneOf<T0, T1, T2, T3, T5, T6, T7>.FromT5(AsT6) :
+                _index == 7 ? OneOf<T0, T1, T2, T3, T5, T6, T7>.FromT6(AsT7) :
+                throw new InvalidOperationException();
+            return IsT4;
 		}
 
 		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7> remainder)
 		{
-			value = this.IsT5 ? this.AsT5 : default(T5);
-			remainder = this.IsT5
-				? default(OneOf<T0, T1, T2, T3, T4, T6, T7>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T6, T7>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>throw new InvalidOperationException(), t6 =>t6, t7 =>t7);
-			return this.IsT5;
+            value = IsT5 ? AsT5 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T2, T3, T4, T6, T7>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T2, T3, T4, T6, T7>.FromT1(AsT1) :
+                _index == 2 ? OneOf<T0, T1, T2, T3, T4, T6, T7>.FromT2(AsT2) :
+                _index == 3 ? OneOf<T0, T1, T2, T3, T4, T6, T7>.FromT3(AsT3) :
+                _index == 4 ? OneOf<T0, T1, T2, T3, T4, T6, T7>.FromT4(AsT4) :
+                _index == 5 ? default :
+                _index == 6 ? OneOf<T0, T1, T2, T3, T4, T6, T7>.FromT5(AsT6) :
+                _index == 7 ? OneOf<T0, T1, T2, T3, T4, T6, T7>.FromT6(AsT7) :
+                throw new InvalidOperationException();
+            return IsT5;
 		}
 
 		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7> remainder)
 		{
-			value = this.IsT6 ? this.AsT6 : default(T6);
-			remainder = this.IsT6
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T7>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T7>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>throw new InvalidOperationException(), t7 =>t7);
-			return this.IsT6;
+            value = IsT6 ? AsT6 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T2, T3, T4, T5, T7>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T2, T3, T4, T5, T7>.FromT1(AsT1) :
+                _index == 2 ? OneOf<T0, T1, T2, T3, T4, T5, T7>.FromT2(AsT2) :
+                _index == 3 ? OneOf<T0, T1, T2, T3, T4, T5, T7>.FromT3(AsT3) :
+                _index == 4 ? OneOf<T0, T1, T2, T3, T4, T5, T7>.FromT4(AsT4) :
+                _index == 5 ? OneOf<T0, T1, T2, T3, T4, T5, T7>.FromT5(AsT5) :
+                _index == 6 ? default :
+                _index == 7 ? OneOf<T0, T1, T2, T3, T4, T5, T7>.FromT6(AsT7) :
+                throw new InvalidOperationException();
+            return IsT6;
 		}
 
 		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6> remainder)
 		{
-			value = this.IsT7 ? this.AsT7 : default(T7);
-			remainder = this.IsT7
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>throw new InvalidOperationException());
-			return this.IsT7;
+            value = IsT7 ? AsT7 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T2, T3, T4, T5, T6>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T2, T3, T4, T5, T6>.FromT1(AsT1) :
+                _index == 2 ? OneOf<T0, T1, T2, T3, T4, T5, T6>.FromT2(AsT2) :
+                _index == 3 ? OneOf<T0, T1, T2, T3, T4, T5, T6>.FromT3(AsT3) :
+                _index == 4 ? OneOf<T0, T1, T2, T3, T4, T5, T6>.FromT4(AsT4) :
+                _index == 5 ? OneOf<T0, T1, T2, T3, T4, T5, T6>.FromT5(AsT5) :
+                _index == 6 ? OneOf<T0, T1, T2, T3, T4, T5, T6>.FromT6(AsT6) :
+                _index == 7 ? default :
+                throw new InvalidOperationException();
+            return IsT7;
 		}
 
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7> other)
@@ -2435,83 +2607,155 @@ namespace OneOf
 
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8> remainder)
 		{
-			value = this.IsT0 ? this.AsT0 : default(T0);
-			remainder = this.IsT0
-				? default(OneOf<T1, T2, T3, T4, T5, T6, T7, T8>) 
-				: this.Match<OneOf<T1, T2, T3, T4, T5, T6, T7, T8>>(t0 =>throw new InvalidOperationException(), t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8);
-			return this.IsT0;
+            value = IsT0 ? AsT0 : default;
+            remainder = 
+                _index == 0 ? default :
+                _index == 1 ? OneOf<T1, T2, T3, T4, T5, T6, T7, T8>.FromT0(AsT1) :
+                _index == 2 ? OneOf<T1, T2, T3, T4, T5, T6, T7, T8>.FromT1(AsT2) :
+                _index == 3 ? OneOf<T1, T2, T3, T4, T5, T6, T7, T8>.FromT2(AsT3) :
+                _index == 4 ? OneOf<T1, T2, T3, T4, T5, T6, T7, T8>.FromT3(AsT4) :
+                _index == 5 ? OneOf<T1, T2, T3, T4, T5, T6, T7, T8>.FromT4(AsT5) :
+                _index == 6 ? OneOf<T1, T2, T3, T4, T5, T6, T7, T8>.FromT5(AsT6) :
+                _index == 7 ? OneOf<T1, T2, T3, T4, T5, T6, T7, T8>.FromT6(AsT7) :
+                _index == 8 ? OneOf<T1, T2, T3, T4, T5, T6, T7, T8>.FromT7(AsT8) :
+                throw new InvalidOperationException();
+            return IsT0;
 		}
 
 		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8> remainder)
 		{
-			value = this.IsT1 ? this.AsT1 : default(T1);
-			remainder = this.IsT1
-				? default(OneOf<T0, T2, T3, T4, T5, T6, T7, T8>) 
-				: this.Match<OneOf<T0, T2, T3, T4, T5, T6, T7, T8>>(t0 =>t0, t1 =>throw new InvalidOperationException(), t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8);
-			return this.IsT1;
+            value = IsT1 ? AsT1 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T2, T3, T4, T5, T6, T7, T8>.FromT0(AsT0) :
+                _index == 1 ? default :
+                _index == 2 ? OneOf<T0, T2, T3, T4, T5, T6, T7, T8>.FromT1(AsT2) :
+                _index == 3 ? OneOf<T0, T2, T3, T4, T5, T6, T7, T8>.FromT2(AsT3) :
+                _index == 4 ? OneOf<T0, T2, T3, T4, T5, T6, T7, T8>.FromT3(AsT4) :
+                _index == 5 ? OneOf<T0, T2, T3, T4, T5, T6, T7, T8>.FromT4(AsT5) :
+                _index == 6 ? OneOf<T0, T2, T3, T4, T5, T6, T7, T8>.FromT5(AsT6) :
+                _index == 7 ? OneOf<T0, T2, T3, T4, T5, T6, T7, T8>.FromT6(AsT7) :
+                _index == 8 ? OneOf<T0, T2, T3, T4, T5, T6, T7, T8>.FromT7(AsT8) :
+                throw new InvalidOperationException();
+            return IsT1;
 		}
 
 		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8> remainder)
 		{
-			value = this.IsT2 ? this.AsT2 : default(T2);
-			remainder = this.IsT2
-				? default(OneOf<T0, T1, T3, T4, T5, T6, T7, T8>) 
-				: this.Match<OneOf<T0, T1, T3, T4, T5, T6, T7, T8>>(t0 =>t0, t1 =>t1, t2 =>throw new InvalidOperationException(), t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8);
-			return this.IsT2;
+            value = IsT2 ? AsT2 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T3, T4, T5, T6, T7, T8>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T3, T4, T5, T6, T7, T8>.FromT1(AsT1) :
+                _index == 2 ? default :
+                _index == 3 ? OneOf<T0, T1, T3, T4, T5, T6, T7, T8>.FromT2(AsT3) :
+                _index == 4 ? OneOf<T0, T1, T3, T4, T5, T6, T7, T8>.FromT3(AsT4) :
+                _index == 5 ? OneOf<T0, T1, T3, T4, T5, T6, T7, T8>.FromT4(AsT5) :
+                _index == 6 ? OneOf<T0, T1, T3, T4, T5, T6, T7, T8>.FromT5(AsT6) :
+                _index == 7 ? OneOf<T0, T1, T3, T4, T5, T6, T7, T8>.FromT6(AsT7) :
+                _index == 8 ? OneOf<T0, T1, T3, T4, T5, T6, T7, T8>.FromT7(AsT8) :
+                throw new InvalidOperationException();
+            return IsT2;
 		}
 
 		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8> remainder)
 		{
-			value = this.IsT3 ? this.AsT3 : default(T3);
-			remainder = this.IsT3
-				? default(OneOf<T0, T1, T2, T4, T5, T6, T7, T8>) 
-				: this.Match<OneOf<T0, T1, T2, T4, T5, T6, T7, T8>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>throw new InvalidOperationException(), t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8);
-			return this.IsT3;
+            value = IsT3 ? AsT3 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T2, T4, T5, T6, T7, T8>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T2, T4, T5, T6, T7, T8>.FromT1(AsT1) :
+                _index == 2 ? OneOf<T0, T1, T2, T4, T5, T6, T7, T8>.FromT2(AsT2) :
+                _index == 3 ? default :
+                _index == 4 ? OneOf<T0, T1, T2, T4, T5, T6, T7, T8>.FromT3(AsT4) :
+                _index == 5 ? OneOf<T0, T1, T2, T4, T5, T6, T7, T8>.FromT4(AsT5) :
+                _index == 6 ? OneOf<T0, T1, T2, T4, T5, T6, T7, T8>.FromT5(AsT6) :
+                _index == 7 ? OneOf<T0, T1, T2, T4, T5, T6, T7, T8>.FromT6(AsT7) :
+                _index == 8 ? OneOf<T0, T1, T2, T4, T5, T6, T7, T8>.FromT7(AsT8) :
+                throw new InvalidOperationException();
+            return IsT3;
 		}
 
 		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8> remainder)
 		{
-			value = this.IsT4 ? this.AsT4 : default(T4);
-			remainder = this.IsT4
-				? default(OneOf<T0, T1, T2, T3, T5, T6, T7, T8>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T5, T6, T7, T8>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>throw new InvalidOperationException(), t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8);
-			return this.IsT4;
+            value = IsT4 ? AsT4 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T2, T3, T5, T6, T7, T8>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T2, T3, T5, T6, T7, T8>.FromT1(AsT1) :
+                _index == 2 ? OneOf<T0, T1, T2, T3, T5, T6, T7, T8>.FromT2(AsT2) :
+                _index == 3 ? OneOf<T0, T1, T2, T3, T5, T6, T7, T8>.FromT3(AsT3) :
+                _index == 4 ? default :
+                _index == 5 ? OneOf<T0, T1, T2, T3, T5, T6, T7, T8>.FromT4(AsT5) :
+                _index == 6 ? OneOf<T0, T1, T2, T3, T5, T6, T7, T8>.FromT5(AsT6) :
+                _index == 7 ? OneOf<T0, T1, T2, T3, T5, T6, T7, T8>.FromT6(AsT7) :
+                _index == 8 ? OneOf<T0, T1, T2, T3, T5, T6, T7, T8>.FromT7(AsT8) :
+                throw new InvalidOperationException();
+            return IsT4;
 		}
 
 		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8> remainder)
 		{
-			value = this.IsT5 ? this.AsT5 : default(T5);
-			remainder = this.IsT5
-				? default(OneOf<T0, T1, T2, T3, T4, T6, T7, T8>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T6, T7, T8>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>throw new InvalidOperationException(), t6 =>t6, t7 =>t7, t8 =>t8);
-			return this.IsT5;
+            value = IsT5 ? AsT5 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T2, T3, T4, T6, T7, T8>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T2, T3, T4, T6, T7, T8>.FromT1(AsT1) :
+                _index == 2 ? OneOf<T0, T1, T2, T3, T4, T6, T7, T8>.FromT2(AsT2) :
+                _index == 3 ? OneOf<T0, T1, T2, T3, T4, T6, T7, T8>.FromT3(AsT3) :
+                _index == 4 ? OneOf<T0, T1, T2, T3, T4, T6, T7, T8>.FromT4(AsT4) :
+                _index == 5 ? default :
+                _index == 6 ? OneOf<T0, T1, T2, T3, T4, T6, T7, T8>.FromT5(AsT6) :
+                _index == 7 ? OneOf<T0, T1, T2, T3, T4, T6, T7, T8>.FromT6(AsT7) :
+                _index == 8 ? OneOf<T0, T1, T2, T3, T4, T6, T7, T8>.FromT7(AsT8) :
+                throw new InvalidOperationException();
+            return IsT5;
 		}
 
 		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8> remainder)
 		{
-			value = this.IsT6 ? this.AsT6 : default(T6);
-			remainder = this.IsT6
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T7, T8>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T7, T8>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>throw new InvalidOperationException(), t7 =>t7, t8 =>t8);
-			return this.IsT6;
+            value = IsT6 ? AsT6 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T2, T3, T4, T5, T7, T8>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T2, T3, T4, T5, T7, T8>.FromT1(AsT1) :
+                _index == 2 ? OneOf<T0, T1, T2, T3, T4, T5, T7, T8>.FromT2(AsT2) :
+                _index == 3 ? OneOf<T0, T1, T2, T3, T4, T5, T7, T8>.FromT3(AsT3) :
+                _index == 4 ? OneOf<T0, T1, T2, T3, T4, T5, T7, T8>.FromT4(AsT4) :
+                _index == 5 ? OneOf<T0, T1, T2, T3, T4, T5, T7, T8>.FromT5(AsT5) :
+                _index == 6 ? default :
+                _index == 7 ? OneOf<T0, T1, T2, T3, T4, T5, T7, T8>.FromT6(AsT7) :
+                _index == 8 ? OneOf<T0, T1, T2, T3, T4, T5, T7, T8>.FromT7(AsT8) :
+                throw new InvalidOperationException();
+            return IsT6;
 		}
 
 		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8> remainder)
 		{
-			value = this.IsT7 ? this.AsT7 : default(T7);
-			remainder = this.IsT7
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T8>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T8>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>throw new InvalidOperationException(), t8 =>t8);
-			return this.IsT7;
+            value = IsT7 ? AsT7 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T2, T3, T4, T5, T6, T8>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T2, T3, T4, T5, T6, T8>.FromT1(AsT1) :
+                _index == 2 ? OneOf<T0, T1, T2, T3, T4, T5, T6, T8>.FromT2(AsT2) :
+                _index == 3 ? OneOf<T0, T1, T2, T3, T4, T5, T6, T8>.FromT3(AsT3) :
+                _index == 4 ? OneOf<T0, T1, T2, T3, T4, T5, T6, T8>.FromT4(AsT4) :
+                _index == 5 ? OneOf<T0, T1, T2, T3, T4, T5, T6, T8>.FromT5(AsT5) :
+                _index == 6 ? OneOf<T0, T1, T2, T3, T4, T5, T6, T8>.FromT6(AsT6) :
+                _index == 7 ? default :
+                _index == 8 ? OneOf<T0, T1, T2, T3, T4, T5, T6, T8>.FromT7(AsT8) :
+                throw new InvalidOperationException();
+            return IsT7;
 		}
 
 		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7> remainder)
 		{
-			value = this.IsT8 ? this.AsT8 : default(T8);
-			remainder = this.IsT8
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>throw new InvalidOperationException());
-			return this.IsT8;
+            value = IsT8 ? AsT8 : default;
+            remainder = 
+                _index == 0 ? OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT0(AsT0) :
+                _index == 1 ? OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT1(AsT1) :
+                _index == 2 ? OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT2(AsT2) :
+                _index == 3 ? OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT3(AsT3) :
+                _index == 4 ? OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT4(AsT4) :
+                _index == 5 ? OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT5(AsT5) :
+                _index == 6 ? OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT6(AsT6) :
+                _index == 7 ? OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT7(AsT7) :
+                _index == 8 ? default :
+                throw new InvalidOperationException();
+            return IsT8;
 		}
 
         bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8> other)
