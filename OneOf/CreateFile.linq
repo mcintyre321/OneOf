@@ -80,6 +80,15 @@ namespace OneOf
         }}
         ");
 		}
+        
+        sb.Append($@"
+        public object Value => _index switch
+        {{
+            {String.Join(@"
+            ", Enumerable.Range(0, i).Select(k => $"{k} => _value{k},"))}
+            _ => throw new InvalidOperationException()
+        }};
+        ");
 
 		sb.Append(@"
         public object Value

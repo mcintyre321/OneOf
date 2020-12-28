@@ -17,35 +17,22 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0)
         {
@@ -137,51 +124,31 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1)
         {
@@ -309,67 +276,40 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2)
         {
@@ -526,83 +466,49 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3)
         {
@@ -790,99 +696,58 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4)
         {
@@ -1103,115 +968,67 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5)
         {
@@ -1467,131 +1284,76 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6)
         {
@@ -1884,147 +1646,85 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7)
         {
@@ -2356,163 +2056,94 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8)
         {

@@ -35,179 +35,103 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9)
         {
@@ -623,195 +547,112 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10)
         {
@@ -1272,211 +1113,121 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11)
         {
@@ -1984,227 +1735,130 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12)
         {
@@ -2761,243 +2415,139 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13)
         {
@@ -3605,259 +3155,148 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14)
         {
@@ -4518,275 +3957,157 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15)
         {
@@ -5502,291 +4823,166 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16)
         {
@@ -6559,307 +5755,175 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17)
         {
@@ -7691,323 +6755,184 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18)
         {
@@ -8900,339 +7825,193 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19)
         {
@@ -10188,355 +8967,202 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20)
         {
@@ -11557,371 +10183,211 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21)
         {
@@ -13009,387 +11475,220 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    case 22:
-                        return _value22;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            22 => _value22,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
-
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
+        
         public bool IsT22 => _index == 22;
-
-        public T22 AsT22
-        {
-            get
-            {
-                if (_index != 22)
-                {
-                    throw new InvalidOperationException($"Cannot return as T22 as result is T{_index}");
-                }
-                return _value22;
-            }
-        }
+        
+        public T22 AsT22 =>
+            _index == 22 ?
+                _value22 :
+                throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22)
         {
@@ -14546,403 +12845,229 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    case 22:
-                        return _value22;
-                    case 23:
-                        return _value23;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            22 => _value22,
+            23 => _value23,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
-
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
+        
         public bool IsT22 => _index == 22;
-
-        public T22 AsT22
-        {
-            get
-            {
-                if (_index != 22)
-                {
-                    throw new InvalidOperationException($"Cannot return as T22 as result is T{_index}");
-                }
-                return _value22;
-            }
-        }
-
+        
+        public T22 AsT22 =>
+            _index == 22 ?
+                _value22 :
+                throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
+        
+        
         public bool IsT23 => _index == 23;
-
-        public T23 AsT23
-        {
-            get
-            {
-                if (_index != 23)
-                {
-                    throw new InvalidOperationException($"Cannot return as T23 as result is T{_index}");
-                }
-                return _value23;
-            }
-        }
+        
+        public T23 AsT23 =>
+            _index == 23 ?
+                _value23 :
+                throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23)
         {
@@ -16170,419 +14295,238 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    case 22:
-                        return _value22;
-                    case 23:
-                        return _value23;
-                    case 24:
-                        return _value24;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            22 => _value22,
+            23 => _value23,
+            24 => _value24,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
-
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
+        
         public bool IsT22 => _index == 22;
-
-        public T22 AsT22
-        {
-            get
-            {
-                if (_index != 22)
-                {
-                    throw new InvalidOperationException($"Cannot return as T22 as result is T{_index}");
-                }
-                return _value22;
-            }
-        }
-
+        
+        public T22 AsT22 =>
+            _index == 22 ?
+                _value22 :
+                throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
+        
+        
         public bool IsT23 => _index == 23;
-
-        public T23 AsT23
-        {
-            get
-            {
-                if (_index != 23)
-                {
-                    throw new InvalidOperationException($"Cannot return as T23 as result is T{_index}");
-                }
-                return _value23;
-            }
-        }
-
+        
+        public T23 AsT23 =>
+            _index == 23 ?
+                _value23 :
+                throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
+        
+        
         public bool IsT24 => _index == 24;
-
-        public T24 AsT24
-        {
-            get
-            {
-                if (_index != 24)
-                {
-                    throw new InvalidOperationException($"Cannot return as T24 as result is T{_index}");
-                }
-                return _value24;
-            }
-        }
+        
+        public T24 AsT24 =>
+            _index == 24 ?
+                _value24 :
+                throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24)
         {
@@ -17883,435 +15827,247 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    case 22:
-                        return _value22;
-                    case 23:
-                        return _value23;
-                    case 24:
-                        return _value24;
-                    case 25:
-                        return _value25;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            22 => _value22,
+            23 => _value23,
+            24 => _value24,
+            25 => _value25,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
-
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
+        
         public bool IsT22 => _index == 22;
-
-        public T22 AsT22
-        {
-            get
-            {
-                if (_index != 22)
-                {
-                    throw new InvalidOperationException($"Cannot return as T22 as result is T{_index}");
-                }
-                return _value22;
-            }
-        }
-
+        
+        public T22 AsT22 =>
+            _index == 22 ?
+                _value22 :
+                throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
+        
+        
         public bool IsT23 => _index == 23;
-
-        public T23 AsT23
-        {
-            get
-            {
-                if (_index != 23)
-                {
-                    throw new InvalidOperationException($"Cannot return as T23 as result is T{_index}");
-                }
-                return _value23;
-            }
-        }
-
+        
+        public T23 AsT23 =>
+            _index == 23 ?
+                _value23 :
+                throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
+        
+        
         public bool IsT24 => _index == 24;
-
-        public T24 AsT24
-        {
-            get
-            {
-                if (_index != 24)
-                {
-                    throw new InvalidOperationException($"Cannot return as T24 as result is T{_index}");
-                }
-                return _value24;
-            }
-        }
-
+        
+        public T24 AsT24 =>
+            _index == 24 ?
+                _value24 :
+                throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
+        
+        
         public bool IsT25 => _index == 25;
-
-        public T25 AsT25
-        {
-            get
-            {
-                if (_index != 25)
-                {
-                    throw new InvalidOperationException($"Cannot return as T25 as result is T{_index}");
-                }
-                return _value25;
-            }
-        }
+        
+        public T25 AsT25 =>
+            _index == 25 ?
+                _value25 :
+                throw new NotImplementedException($"Cannot return as T25 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24, Action<T25> f25)
         {
@@ -19687,451 +17443,256 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    case 22:
-                        return _value22;
-                    case 23:
-                        return _value23;
-                    case 24:
-                        return _value24;
-                    case 25:
-                        return _value25;
-                    case 26:
-                        return _value26;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            22 => _value22,
+            23 => _value23,
+            24 => _value24,
+            25 => _value25,
+            26 => _value26,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
-
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
+        
         public bool IsT22 => _index == 22;
-
-        public T22 AsT22
-        {
-            get
-            {
-                if (_index != 22)
-                {
-                    throw new InvalidOperationException($"Cannot return as T22 as result is T{_index}");
-                }
-                return _value22;
-            }
-        }
-
+        
+        public T22 AsT22 =>
+            _index == 22 ?
+                _value22 :
+                throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
+        
+        
         public bool IsT23 => _index == 23;
-
-        public T23 AsT23
-        {
-            get
-            {
-                if (_index != 23)
-                {
-                    throw new InvalidOperationException($"Cannot return as T23 as result is T{_index}");
-                }
-                return _value23;
-            }
-        }
-
+        
+        public T23 AsT23 =>
+            _index == 23 ?
+                _value23 :
+                throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
+        
+        
         public bool IsT24 => _index == 24;
-
-        public T24 AsT24
-        {
-            get
-            {
-                if (_index != 24)
-                {
-                    throw new InvalidOperationException($"Cannot return as T24 as result is T{_index}");
-                }
-                return _value24;
-            }
-        }
-
+        
+        public T24 AsT24 =>
+            _index == 24 ?
+                _value24 :
+                throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
+        
+        
         public bool IsT25 => _index == 25;
-
-        public T25 AsT25
-        {
-            get
-            {
-                if (_index != 25)
-                {
-                    throw new InvalidOperationException($"Cannot return as T25 as result is T{_index}");
-                }
-                return _value25;
-            }
-        }
-
+        
+        public T25 AsT25 =>
+            _index == 25 ?
+                _value25 :
+                throw new NotImplementedException($"Cannot return as T25 as result is T{_index}");
+        
+        
         public bool IsT26 => _index == 26;
-
-        public T26 AsT26
-        {
-            get
-            {
-                if (_index != 26)
-                {
-                    throw new InvalidOperationException($"Cannot return as T26 as result is T{_index}");
-                }
-                return _value26;
-            }
-        }
+        
+        public T26 AsT26 =>
+            _index == 26 ?
+                _value26 :
+                throw new NotImplementedException($"Cannot return as T26 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24, Action<T25> f25, Action<T26> f26)
         {
@@ -21584,467 +19145,265 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    case 22:
-                        return _value22;
-                    case 23:
-                        return _value23;
-                    case 24:
-                        return _value24;
-                    case 25:
-                        return _value25;
-                    case 26:
-                        return _value26;
-                    case 27:
-                        return _value27;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            22 => _value22,
+            23 => _value23,
+            24 => _value24,
+            25 => _value25,
+            26 => _value26,
+            27 => _value27,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
-
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
+        
         public bool IsT22 => _index == 22;
-
-        public T22 AsT22
-        {
-            get
-            {
-                if (_index != 22)
-                {
-                    throw new InvalidOperationException($"Cannot return as T22 as result is T{_index}");
-                }
-                return _value22;
-            }
-        }
-
+        
+        public T22 AsT22 =>
+            _index == 22 ?
+                _value22 :
+                throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
+        
+        
         public bool IsT23 => _index == 23;
-
-        public T23 AsT23
-        {
-            get
-            {
-                if (_index != 23)
-                {
-                    throw new InvalidOperationException($"Cannot return as T23 as result is T{_index}");
-                }
-                return _value23;
-            }
-        }
-
+        
+        public T23 AsT23 =>
+            _index == 23 ?
+                _value23 :
+                throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
+        
+        
         public bool IsT24 => _index == 24;
-
-        public T24 AsT24
-        {
-            get
-            {
-                if (_index != 24)
-                {
-                    throw new InvalidOperationException($"Cannot return as T24 as result is T{_index}");
-                }
-                return _value24;
-            }
-        }
-
+        
+        public T24 AsT24 =>
+            _index == 24 ?
+                _value24 :
+                throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
+        
+        
         public bool IsT25 => _index == 25;
-
-        public T25 AsT25
-        {
-            get
-            {
-                if (_index != 25)
-                {
-                    throw new InvalidOperationException($"Cannot return as T25 as result is T{_index}");
-                }
-                return _value25;
-            }
-        }
-
+        
+        public T25 AsT25 =>
+            _index == 25 ?
+                _value25 :
+                throw new NotImplementedException($"Cannot return as T25 as result is T{_index}");
+        
+        
         public bool IsT26 => _index == 26;
-
-        public T26 AsT26
-        {
-            get
-            {
-                if (_index != 26)
-                {
-                    throw new InvalidOperationException($"Cannot return as T26 as result is T{_index}");
-                }
-                return _value26;
-            }
-        }
-
+        
+        public T26 AsT26 =>
+            _index == 26 ?
+                _value26 :
+                throw new NotImplementedException($"Cannot return as T26 as result is T{_index}");
+        
+        
         public bool IsT27 => _index == 27;
-
-        public T27 AsT27
-        {
-            get
-            {
-                if (_index != 27)
-                {
-                    throw new InvalidOperationException($"Cannot return as T27 as result is T{_index}");
-                }
-                return _value27;
-            }
-        }
+        
+        public T27 AsT27 =>
+            _index == 27 ?
+                _value27 :
+                throw new NotImplementedException($"Cannot return as T27 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24, Action<T25> f25, Action<T26> f26, Action<T27> f27)
         {
@@ -23576,483 +20935,274 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    case 22:
-                        return _value22;
-                    case 23:
-                        return _value23;
-                    case 24:
-                        return _value24;
-                    case 25:
-                        return _value25;
-                    case 26:
-                        return _value26;
-                    case 27:
-                        return _value27;
-                    case 28:
-                        return _value28;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            22 => _value22,
+            23 => _value23,
+            24 => _value24,
+            25 => _value25,
+            26 => _value26,
+            27 => _value27,
+            28 => _value28,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
-
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
+        
         public bool IsT22 => _index == 22;
-
-        public T22 AsT22
-        {
-            get
-            {
-                if (_index != 22)
-                {
-                    throw new InvalidOperationException($"Cannot return as T22 as result is T{_index}");
-                }
-                return _value22;
-            }
-        }
-
+        
+        public T22 AsT22 =>
+            _index == 22 ?
+                _value22 :
+                throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
+        
+        
         public bool IsT23 => _index == 23;
-
-        public T23 AsT23
-        {
-            get
-            {
-                if (_index != 23)
-                {
-                    throw new InvalidOperationException($"Cannot return as T23 as result is T{_index}");
-                }
-                return _value23;
-            }
-        }
-
+        
+        public T23 AsT23 =>
+            _index == 23 ?
+                _value23 :
+                throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
+        
+        
         public bool IsT24 => _index == 24;
-
-        public T24 AsT24
-        {
-            get
-            {
-                if (_index != 24)
-                {
-                    throw new InvalidOperationException($"Cannot return as T24 as result is T{_index}");
-                }
-                return _value24;
-            }
-        }
-
+        
+        public T24 AsT24 =>
+            _index == 24 ?
+                _value24 :
+                throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
+        
+        
         public bool IsT25 => _index == 25;
-
-        public T25 AsT25
-        {
-            get
-            {
-                if (_index != 25)
-                {
-                    throw new InvalidOperationException($"Cannot return as T25 as result is T{_index}");
-                }
-                return _value25;
-            }
-        }
-
+        
+        public T25 AsT25 =>
+            _index == 25 ?
+                _value25 :
+                throw new NotImplementedException($"Cannot return as T25 as result is T{_index}");
+        
+        
         public bool IsT26 => _index == 26;
-
-        public T26 AsT26
-        {
-            get
-            {
-                if (_index != 26)
-                {
-                    throw new InvalidOperationException($"Cannot return as T26 as result is T{_index}");
-                }
-                return _value26;
-            }
-        }
-
+        
+        public T26 AsT26 =>
+            _index == 26 ?
+                _value26 :
+                throw new NotImplementedException($"Cannot return as T26 as result is T{_index}");
+        
+        
         public bool IsT27 => _index == 27;
-
-        public T27 AsT27
-        {
-            get
-            {
-                if (_index != 27)
-                {
-                    throw new InvalidOperationException($"Cannot return as T27 as result is T{_index}");
-                }
-                return _value27;
-            }
-        }
-
+        
+        public T27 AsT27 =>
+            _index == 27 ?
+                _value27 :
+                throw new NotImplementedException($"Cannot return as T27 as result is T{_index}");
+        
+        
         public bool IsT28 => _index == 28;
-
-        public T28 AsT28
-        {
-            get
-            {
-                if (_index != 28)
-                {
-                    throw new InvalidOperationException($"Cannot return as T28 as result is T{_index}");
-                }
-                return _value28;
-            }
-        }
+        
+        public T28 AsT28 =>
+            _index == 28 ?
+                _value28 :
+                throw new NotImplementedException($"Cannot return as T28 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24, Action<T25> f25, Action<T26> f26, Action<T27> f27, Action<T28> f28)
         {
@@ -25665,499 +22815,283 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    case 22:
-                        return _value22;
-                    case 23:
-                        return _value23;
-                    case 24:
-                        return _value24;
-                    case 25:
-                        return _value25;
-                    case 26:
-                        return _value26;
-                    case 27:
-                        return _value27;
-                    case 28:
-                        return _value28;
-                    case 29:
-                        return _value29;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            22 => _value22,
+            23 => _value23,
+            24 => _value24,
+            25 => _value25,
+            26 => _value26,
+            27 => _value27,
+            28 => _value28,
+            29 => _value29,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
-
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
+        
         public bool IsT22 => _index == 22;
-
-        public T22 AsT22
-        {
-            get
-            {
-                if (_index != 22)
-                {
-                    throw new InvalidOperationException($"Cannot return as T22 as result is T{_index}");
-                }
-                return _value22;
-            }
-        }
-
+        
+        public T22 AsT22 =>
+            _index == 22 ?
+                _value22 :
+                throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
+        
+        
         public bool IsT23 => _index == 23;
-
-        public T23 AsT23
-        {
-            get
-            {
-                if (_index != 23)
-                {
-                    throw new InvalidOperationException($"Cannot return as T23 as result is T{_index}");
-                }
-                return _value23;
-            }
-        }
-
+        
+        public T23 AsT23 =>
+            _index == 23 ?
+                _value23 :
+                throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
+        
+        
         public bool IsT24 => _index == 24;
-
-        public T24 AsT24
-        {
-            get
-            {
-                if (_index != 24)
-                {
-                    throw new InvalidOperationException($"Cannot return as T24 as result is T{_index}");
-                }
-                return _value24;
-            }
-        }
-
+        
+        public T24 AsT24 =>
+            _index == 24 ?
+                _value24 :
+                throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
+        
+        
         public bool IsT25 => _index == 25;
-
-        public T25 AsT25
-        {
-            get
-            {
-                if (_index != 25)
-                {
-                    throw new InvalidOperationException($"Cannot return as T25 as result is T{_index}");
-                }
-                return _value25;
-            }
-        }
-
+        
+        public T25 AsT25 =>
+            _index == 25 ?
+                _value25 :
+                throw new NotImplementedException($"Cannot return as T25 as result is T{_index}");
+        
+        
         public bool IsT26 => _index == 26;
-
-        public T26 AsT26
-        {
-            get
-            {
-                if (_index != 26)
-                {
-                    throw new InvalidOperationException($"Cannot return as T26 as result is T{_index}");
-                }
-                return _value26;
-            }
-        }
-
+        
+        public T26 AsT26 =>
+            _index == 26 ?
+                _value26 :
+                throw new NotImplementedException($"Cannot return as T26 as result is T{_index}");
+        
+        
         public bool IsT27 => _index == 27;
-
-        public T27 AsT27
-        {
-            get
-            {
-                if (_index != 27)
-                {
-                    throw new InvalidOperationException($"Cannot return as T27 as result is T{_index}");
-                }
-                return _value27;
-            }
-        }
-
+        
+        public T27 AsT27 =>
+            _index == 27 ?
+                _value27 :
+                throw new NotImplementedException($"Cannot return as T27 as result is T{_index}");
+        
+        
         public bool IsT28 => _index == 28;
-
-        public T28 AsT28
-        {
-            get
-            {
-                if (_index != 28)
-                {
-                    throw new InvalidOperationException($"Cannot return as T28 as result is T{_index}");
-                }
-                return _value28;
-            }
-        }
-
+        
+        public T28 AsT28 =>
+            _index == 28 ?
+                _value28 :
+                throw new NotImplementedException($"Cannot return as T28 as result is T{_index}");
+        
+        
         public bool IsT29 => _index == 29;
-
-        public T29 AsT29
-        {
-            get
-            {
-                if (_index != 29)
-                {
-                    throw new InvalidOperationException($"Cannot return as T29 as result is T{_index}");
-                }
-                return _value29;
-            }
-        }
+        
+        public T29 AsT29 =>
+            _index == 29 ?
+                _value29 :
+                throw new NotImplementedException($"Cannot return as T29 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24, Action<T25> f25, Action<T26> f26, Action<T27> f27, Action<T28> f28, Action<T29> f29)
         {
@@ -27853,515 +24787,292 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    case 22:
-                        return _value22;
-                    case 23:
-                        return _value23;
-                    case 24:
-                        return _value24;
-                    case 25:
-                        return _value25;
-                    case 26:
-                        return _value26;
-                    case 27:
-                        return _value27;
-                    case 28:
-                        return _value28;
-                    case 29:
-                        return _value29;
-                    case 30:
-                        return _value30;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            22 => _value22,
+            23 => _value23,
+            24 => _value24,
+            25 => _value25,
+            26 => _value26,
+            27 => _value27,
+            28 => _value28,
+            29 => _value29,
+            30 => _value30,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
-
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
+        
         public bool IsT22 => _index == 22;
-
-        public T22 AsT22
-        {
-            get
-            {
-                if (_index != 22)
-                {
-                    throw new InvalidOperationException($"Cannot return as T22 as result is T{_index}");
-                }
-                return _value22;
-            }
-        }
-
+        
+        public T22 AsT22 =>
+            _index == 22 ?
+                _value22 :
+                throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
+        
+        
         public bool IsT23 => _index == 23;
-
-        public T23 AsT23
-        {
-            get
-            {
-                if (_index != 23)
-                {
-                    throw new InvalidOperationException($"Cannot return as T23 as result is T{_index}");
-                }
-                return _value23;
-            }
-        }
-
+        
+        public T23 AsT23 =>
+            _index == 23 ?
+                _value23 :
+                throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
+        
+        
         public bool IsT24 => _index == 24;
-
-        public T24 AsT24
-        {
-            get
-            {
-                if (_index != 24)
-                {
-                    throw new InvalidOperationException($"Cannot return as T24 as result is T{_index}");
-                }
-                return _value24;
-            }
-        }
-
+        
+        public T24 AsT24 =>
+            _index == 24 ?
+                _value24 :
+                throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
+        
+        
         public bool IsT25 => _index == 25;
-
-        public T25 AsT25
-        {
-            get
-            {
-                if (_index != 25)
-                {
-                    throw new InvalidOperationException($"Cannot return as T25 as result is T{_index}");
-                }
-                return _value25;
-            }
-        }
-
+        
+        public T25 AsT25 =>
+            _index == 25 ?
+                _value25 :
+                throw new NotImplementedException($"Cannot return as T25 as result is T{_index}");
+        
+        
         public bool IsT26 => _index == 26;
-
-        public T26 AsT26
-        {
-            get
-            {
-                if (_index != 26)
-                {
-                    throw new InvalidOperationException($"Cannot return as T26 as result is T{_index}");
-                }
-                return _value26;
-            }
-        }
-
+        
+        public T26 AsT26 =>
+            _index == 26 ?
+                _value26 :
+                throw new NotImplementedException($"Cannot return as T26 as result is T{_index}");
+        
+        
         public bool IsT27 => _index == 27;
-
-        public T27 AsT27
-        {
-            get
-            {
-                if (_index != 27)
-                {
-                    throw new InvalidOperationException($"Cannot return as T27 as result is T{_index}");
-                }
-                return _value27;
-            }
-        }
-
+        
+        public T27 AsT27 =>
+            _index == 27 ?
+                _value27 :
+                throw new NotImplementedException($"Cannot return as T27 as result is T{_index}");
+        
+        
         public bool IsT28 => _index == 28;
-
-        public T28 AsT28
-        {
-            get
-            {
-                if (_index != 28)
-                {
-                    throw new InvalidOperationException($"Cannot return as T28 as result is T{_index}");
-                }
-                return _value28;
-            }
-        }
-
+        
+        public T28 AsT28 =>
+            _index == 28 ?
+                _value28 :
+                throw new NotImplementedException($"Cannot return as T28 as result is T{_index}");
+        
+        
         public bool IsT29 => _index == 29;
-
-        public T29 AsT29
-        {
-            get
-            {
-                if (_index != 29)
-                {
-                    throw new InvalidOperationException($"Cannot return as T29 as result is T{_index}");
-                }
-                return _value29;
-            }
-        }
-
+        
+        public T29 AsT29 =>
+            _index == 29 ?
+                _value29 :
+                throw new NotImplementedException($"Cannot return as T29 as result is T{_index}");
+        
+        
         public bool IsT30 => _index == 30;
-
-        public T30 AsT30
-        {
-            get
-            {
-                if (_index != 30)
-                {
-                    throw new InvalidOperationException($"Cannot return as T30 as result is T{_index}");
-                }
-                return _value30;
-            }
-        }
+        
+        public T30 AsT30 =>
+            _index == 30 ?
+                _value30 :
+                throw new NotImplementedException($"Cannot return as T30 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24, Action<T25> f25, Action<T26> f26, Action<T27> f27, Action<T28> f28, Action<T29> f29, Action<T30> f30)
         {
@@ -30142,531 +26853,301 @@ namespace OneOf
             }
         }
         
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    case 22:
-                        return _value22;
-                    case 23:
-                        return _value23;
-                    case 24:
-                        return _value24;
-                    case 25:
-                        return _value25;
-                    case 26:
-                        return _value26;
-                    case 27:
-                        return _value27;
-                    case 28:
-                        return _value28;
-                    case 29:
-                        return _value29;
-                    case 30:
-                        return _value30;
-                    case 31:
-                        return _value31;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            22 => _value22,
+            23 => _value23,
+            24 => _value24,
+            25 => _value25,
+            26 => _value26,
+            27 => _value27,
+            28 => _value28,
+            29 => _value29,
+            30 => _value30,
+            31 => _value31,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
-
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
+        
         public bool IsT22 => _index == 22;
-
-        public T22 AsT22
-        {
-            get
-            {
-                if (_index != 22)
-                {
-                    throw new InvalidOperationException($"Cannot return as T22 as result is T{_index}");
-                }
-                return _value22;
-            }
-        }
-
+        
+        public T22 AsT22 =>
+            _index == 22 ?
+                _value22 :
+                throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
+        
+        
         public bool IsT23 => _index == 23;
-
-        public T23 AsT23
-        {
-            get
-            {
-                if (_index != 23)
-                {
-                    throw new InvalidOperationException($"Cannot return as T23 as result is T{_index}");
-                }
-                return _value23;
-            }
-        }
-
+        
+        public T23 AsT23 =>
+            _index == 23 ?
+                _value23 :
+                throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
+        
+        
         public bool IsT24 => _index == 24;
-
-        public T24 AsT24
-        {
-            get
-            {
-                if (_index != 24)
-                {
-                    throw new InvalidOperationException($"Cannot return as T24 as result is T{_index}");
-                }
-                return _value24;
-            }
-        }
-
+        
+        public T24 AsT24 =>
+            _index == 24 ?
+                _value24 :
+                throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
+        
+        
         public bool IsT25 => _index == 25;
-
-        public T25 AsT25
-        {
-            get
-            {
-                if (_index != 25)
-                {
-                    throw new InvalidOperationException($"Cannot return as T25 as result is T{_index}");
-                }
-                return _value25;
-            }
-        }
-
+        
+        public T25 AsT25 =>
+            _index == 25 ?
+                _value25 :
+                throw new NotImplementedException($"Cannot return as T25 as result is T{_index}");
+        
+        
         public bool IsT26 => _index == 26;
-
-        public T26 AsT26
-        {
-            get
-            {
-                if (_index != 26)
-                {
-                    throw new InvalidOperationException($"Cannot return as T26 as result is T{_index}");
-                }
-                return _value26;
-            }
-        }
-
+        
+        public T26 AsT26 =>
+            _index == 26 ?
+                _value26 :
+                throw new NotImplementedException($"Cannot return as T26 as result is T{_index}");
+        
+        
         public bool IsT27 => _index == 27;
-
-        public T27 AsT27
-        {
-            get
-            {
-                if (_index != 27)
-                {
-                    throw new InvalidOperationException($"Cannot return as T27 as result is T{_index}");
-                }
-                return _value27;
-            }
-        }
-
+        
+        public T27 AsT27 =>
+            _index == 27 ?
+                _value27 :
+                throw new NotImplementedException($"Cannot return as T27 as result is T{_index}");
+        
+        
         public bool IsT28 => _index == 28;
-
-        public T28 AsT28
-        {
-            get
-            {
-                if (_index != 28)
-                {
-                    throw new InvalidOperationException($"Cannot return as T28 as result is T{_index}");
-                }
-                return _value28;
-            }
-        }
-
+        
+        public T28 AsT28 =>
+            _index == 28 ?
+                _value28 :
+                throw new NotImplementedException($"Cannot return as T28 as result is T{_index}");
+        
+        
         public bool IsT29 => _index == 29;
-
-        public T29 AsT29
-        {
-            get
-            {
-                if (_index != 29)
-                {
-                    throw new InvalidOperationException($"Cannot return as T29 as result is T{_index}");
-                }
-                return _value29;
-            }
-        }
-
+        
+        public T29 AsT29 =>
+            _index == 29 ?
+                _value29 :
+                throw new NotImplementedException($"Cannot return as T29 as result is T{_index}");
+        
+        
         public bool IsT30 => _index == 30;
-
-        public T30 AsT30
-        {
-            get
-            {
-                if (_index != 30)
-                {
-                    throw new InvalidOperationException($"Cannot return as T30 as result is T{_index}");
-                }
-                return _value30;
-            }
-        }
-
+        
+        public T30 AsT30 =>
+            _index == 30 ?
+                _value30 :
+                throw new NotImplementedException($"Cannot return as T30 as result is T{_index}");
+        
+        
         public bool IsT31 => _index == 31;
-
-        public T31 AsT31
-        {
-            get
-            {
-                if (_index != 31)
-                {
-                    throw new InvalidOperationException($"Cannot return as T31 as result is T{_index}");
-                }
-                return _value31;
-            }
-        }
+        
+        public T31 AsT31 =>
+            _index == 31 ?
+                _value31 :
+                throw new NotImplementedException($"Cannot return as T31 as result is T{_index}");
+        
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24, Action<T25> f25, Action<T26> f26, Action<T27> f27, Action<T28> f28, Action<T29> f29, Action<T30> f30, Action<T31> f31)
         {

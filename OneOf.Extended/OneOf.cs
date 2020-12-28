@@ -31,199 +31,113 @@ namespace OneOf
             _value9 = value9;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>(9, value9: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9)
         {
@@ -325,55 +239,16 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> FromT9(T9 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> FromT9(T9 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -891,217 +766,123 @@ namespace OneOf
             _value10 = value10;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(10, value10: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10)
         {
@@ -1212,60 +993,17 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT10(T10 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> FromT10(T10 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -1851,235 +1589,133 @@ namespace OneOf
             _value11 = value11;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(11, value11: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11)
         {
@@ -2199,65 +1835,18 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT11(T11 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> FromT11(T11 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -2915,253 +2504,143 @@ namespace OneOf
             _value12 = value12;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(12, value12: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12)
         {
@@ -3290,70 +2769,19 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT11(T11 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT12(T12 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT11(T11 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> FromT12(T12 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -4087,271 +3515,153 @@ namespace OneOf
             _value13 = value13;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(12, value12: t);
-
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(13, value13: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13)
         {
@@ -4489,75 +3799,20 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT11(T11 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT12(T12 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT13(T13 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT11(T11 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT12(T12 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT13(T13 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -5371,289 +4626,163 @@ namespace OneOf
             _value14 = value14;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(12, value12: t);
-
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(13, value13: t);
-
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(14, value14: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14)
         {
@@ -5800,80 +4929,21 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT11(T11 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT12(T12 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT13(T13 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT14(T14 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT11(T11 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT12(T12 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT13(T13 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> FromT14(T14 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -6771,307 +5841,173 @@ namespace OneOf
             _value15 = value15;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(12, value12: t);
-
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(13, value13: t);
-
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(14, value14: t);
-
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T15 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(15, value15: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15)
         {
@@ -7227,85 +6163,22 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT11(T11 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT12(T12 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT13(T13 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT14(T14 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT15(T15 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT11(T11 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT12(T12 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT13(T13 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT14(T14 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> FromT15(T15 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -8291,325 +7164,183 @@ namespace OneOf
             _value16 = value16;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(12, value12: t);
-
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(13, value13: t);
-
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(14, value14: t);
-
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T15 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(15, value15: t);
-
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T16 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(16, value16: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16)
         {
@@ -8774,90 +7505,23 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT11(T11 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT12(T12 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT13(T13 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT14(T14 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT15(T15 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT16(T16 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT11(T11 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT12(T12 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT13(T13 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT14(T14 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT15(T15 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> FromT16(T16 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -9935,343 +8599,193 @@ namespace OneOf
             _value17 = value17;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(12, value12: t);
-
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(13, value13: t);
-
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(14, value14: t);
-
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T15 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(15, value15: t);
-
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T16 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(16, value16: t);
-
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T17 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(17, value17: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17)
         {
@@ -10445,95 +8959,24 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT11(T11 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT12(T12 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT13(T13 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT14(T14 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT15(T15 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT16(T16 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT17(T17 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT11(T11 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT12(T12 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT13(T13 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT14(T14 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT15(T15 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT16(T16 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT17(T17 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -11707,361 +10150,203 @@ namespace OneOf
             _value18 = value18;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(12, value12: t);
-
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(13, value13: t);
-
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(14, value14: t);
-
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(T15 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(15, value15: t);
-
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(T16 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(16, value16: t);
-
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(T17 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(17, value17: t);
-
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(T18 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>(18, value18: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18)
         {
@@ -12244,100 +10529,25 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT11(T11 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT12(T12 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT13(T13 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT14(T14 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT15(T15 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT16(T16 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT17(T17 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT18(T18 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT11(T11 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT12(T12 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT13(T13 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT14(T14 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT15(T15 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT16(T16 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT17(T17 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> FromT18(T18 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -13611,379 +11821,213 @@ namespace OneOf
             _value19 = value19;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(12, value12: t);
-
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(13, value13: t);
-
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(14, value14: t);
-
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T15 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(15, value15: t);
-
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T16 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(16, value16: t);
-
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T17 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(17, value17: t);
-
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T18 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(18, value18: t);
-
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T19 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(19, value19: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19)
         {
@@ -14175,105 +12219,26 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT11(T11 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT12(T12 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT13(T13 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT14(T14 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT15(T15 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT16(T16 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT17(T17 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT18(T18 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT19(T19 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT11(T11 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT12(T12 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT13(T13 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT14(T14 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT15(T15 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT16(T16 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT17(T17 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT18(T18 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromT19(T19 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -15651,397 +13616,223 @@ namespace OneOf
             _value20 = value20;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(12, value12: t);
-
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(13, value13: t);
-
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(14, value14: t);
-
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T15 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(15, value15: t);
-
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T16 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(16, value16: t);
-
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T17 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(17, value17: t);
-
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T18 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(18, value18: t);
-
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T19 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(19, value19: t);
-
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(T20 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>(20, value20: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20)
         {
@@ -16242,110 +14033,27 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT11(T11 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT12(T12 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT13(T13 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT14(T14 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT15(T15 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT16(T16 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT17(T17 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT18(T18 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT19(T19 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT20(T20 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT11(T11 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT12(T12 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT13(T13 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT14(T14 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT15(T15 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT16(T16 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT17(T17 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT18(T18 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT19(T19 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> FromT20(T20 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -17831,415 +15539,233 @@ namespace OneOf
             _value21 = value21;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(12, value12: t);
-
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(13, value13: t);
-
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(14, value14: t);
-
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T15 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(15, value15: t);
-
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T16 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(16, value16: t);
-
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T17 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(17, value17: t);
-
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T18 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(18, value18: t);
-
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T19 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(19, value19: t);
-
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T20 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(20, value20: t);
-
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
-
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T21 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(21, value21: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21)
         {
@@ -18449,115 +15975,28 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT11(T11 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT12(T12 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT13(T13 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT14(T14 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT15(T15 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT16(T16 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT17(T17 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT18(T18 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT19(T19 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT20(T20 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT21(T21 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT11(T11 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT12(T12 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT13(T13 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT14(T14 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT15(T15 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT16(T16 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT17(T17 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT18(T18 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT19(T19 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT20(T20 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> FromT21(T21 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -20155,433 +17594,243 @@ namespace OneOf
             _value22 = value22;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    case 22:
-                        return _value22;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            22 => _value22,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(12, value12: t);
-
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(13, value13: t);
-
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(14, value14: t);
-
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T15 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(15, value15: t);
-
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T16 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(16, value16: t);
-
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T17 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(17, value17: t);
-
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T18 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(18, value18: t);
-
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T19 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(19, value19: t);
-
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T20 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(20, value20: t);
-
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
-
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T21 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(21, value21: t);
-
+        
         public bool IsT22 => _index == 22;
-
-        public T22 AsT22
-        {
-            get
-            {
-                if (_index != 22)
-                {
-                    throw new InvalidOperationException($"Cannot return as T22 as result is T{_index}");
-                }
-                return _value22;
-            }
-        }
-
+        
+        public T22 AsT22 =>
+            _index == 22 ?
+                _value22 :
+                throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(T22 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>(22, value22: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22)
         {
@@ -20800,120 +18049,29 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT11(T11 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT12(T12 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT13(T13 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT14(T14 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT15(T15 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT16(T16 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT17(T17 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT18(T18 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT19(T19 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT20(T20 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT21(T21 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT22(T22 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT11(T11 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT12(T12 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT13(T13 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT14(T14 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT15(T15 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT16(T16 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT17(T17 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT18(T18 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT19(T19 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT20(T20 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT21(T21 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> FromT22(T22 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -22627,451 +19785,253 @@ namespace OneOf
             _value23 = value23;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    case 22:
-                        return _value22;
-                    case 23:
-                        return _value23;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            22 => _value22,
+            23 => _value23,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(12, value12: t);
-
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(13, value13: t);
-
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(14, value14: t);
-
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T15 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(15, value15: t);
-
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T16 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(16, value16: t);
-
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T17 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(17, value17: t);
-
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T18 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(18, value18: t);
-
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T19 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(19, value19: t);
-
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T20 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(20, value20: t);
-
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
-
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T21 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(21, value21: t);
-
+        
         public bool IsT22 => _index == 22;
-
-        public T22 AsT22
-        {
-            get
-            {
-                if (_index != 22)
-                {
-                    throw new InvalidOperationException($"Cannot return as T22 as result is T{_index}");
-                }
-                return _value22;
-            }
-        }
-
+        
+        public T22 AsT22 =>
+            _index == 22 ?
+                _value22 :
+                throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T22 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(22, value22: t);
-
+        
         public bool IsT23 => _index == 23;
-
-        public T23 AsT23
-        {
-            get
-            {
-                if (_index != 23)
-                {
-                    throw new InvalidOperationException($"Cannot return as T23 as result is T{_index}");
-                }
-                return _value23;
-            }
-        }
-
+        
+        public T23 AsT23 =>
+            _index == 23 ?
+                _value23 :
+                throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(T23 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>(23, value23: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23)
         {
@@ -23299,125 +20259,30 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT11(T11 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT12(T12 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT13(T13 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT14(T14 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT15(T15 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT16(T16 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT17(T17 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT18(T18 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT19(T19 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT20(T20 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT21(T21 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT22(T22 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT23(T23 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT11(T11 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT12(T12 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT13(T13 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT14(T14 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT15(T15 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT16(T16 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT17(T17 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT18(T18 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT19(T19 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT20(T20 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT21(T21 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT22(T22 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> FromT23(T23 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -25251,469 +22116,263 @@ namespace OneOf
             _value24 = value24;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    case 22:
-                        return _value22;
-                    case 23:
-                        return _value23;
-                    case 24:
-                        return _value24;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            22 => _value22,
+            23 => _value23,
+            24 => _value24,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(12, value12: t);
-
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(13, value13: t);
-
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(14, value14: t);
-
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T15 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(15, value15: t);
-
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T16 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(16, value16: t);
-
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T17 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(17, value17: t);
-
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T18 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(18, value18: t);
-
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T19 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(19, value19: t);
-
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T20 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(20, value20: t);
-
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
-
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T21 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(21, value21: t);
-
+        
         public bool IsT22 => _index == 22;
-
-        public T22 AsT22
-        {
-            get
-            {
-                if (_index != 22)
-                {
-                    throw new InvalidOperationException($"Cannot return as T22 as result is T{_index}");
-                }
-                return _value22;
-            }
-        }
-
+        
+        public T22 AsT22 =>
+            _index == 22 ?
+                _value22 :
+                throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T22 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(22, value22: t);
-
+        
         public bool IsT23 => _index == 23;
-
-        public T23 AsT23
-        {
-            get
-            {
-                if (_index != 23)
-                {
-                    throw new InvalidOperationException($"Cannot return as T23 as result is T{_index}");
-                }
-                return _value23;
-            }
-        }
-
+        
+        public T23 AsT23 =>
+            _index == 23 ?
+                _value23 :
+                throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T23 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(23, value23: t);
-
+        
         public bool IsT24 => _index == 24;
-
-        public T24 AsT24
-        {
-            get
-            {
-                if (_index != 24)
-                {
-                    throw new InvalidOperationException($"Cannot return as T24 as result is T{_index}");
-                }
-                return _value24;
-            }
-        }
-
+        
+        public T24 AsT24 =>
+            _index == 24 ?
+                _value24 :
+                throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(T24 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>(24, value24: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24)
         {
@@ -25950,130 +22609,31 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT11(T11 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT12(T12 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT13(T13 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT14(T14 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT15(T15 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT16(T16 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT17(T17 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT18(T18 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT19(T19 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT20(T20 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT21(T21 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT22(T22 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT23(T23 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT24(T24 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT11(T11 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT12(T12 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT13(T13 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT14(T14 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT15(T15 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT16(T16 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT17(T17 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT18(T18 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT19(T19 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT20(T20 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT21(T21 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT22(T22 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT23(T23 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> FromT24(T24 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -28031,487 +24591,273 @@ namespace OneOf
             _value25 = value25;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    case 22:
-                        return _value22;
-                    case 23:
-                        return _value23;
-                    case 24:
-                        return _value24;
-                    case 25:
-                        return _value25;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            22 => _value22,
+            23 => _value23,
+            24 => _value24,
+            25 => _value25,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(12, value12: t);
-
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(13, value13: t);
-
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(14, value14: t);
-
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T15 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(15, value15: t);
-
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T16 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(16, value16: t);
-
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T17 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(17, value17: t);
-
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T18 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(18, value18: t);
-
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T19 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(19, value19: t);
-
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T20 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(20, value20: t);
-
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
-
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T21 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(21, value21: t);
-
+        
         public bool IsT22 => _index == 22;
-
-        public T22 AsT22
-        {
-            get
-            {
-                if (_index != 22)
-                {
-                    throw new InvalidOperationException($"Cannot return as T22 as result is T{_index}");
-                }
-                return _value22;
-            }
-        }
-
+        
+        public T22 AsT22 =>
+            _index == 22 ?
+                _value22 :
+                throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T22 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(22, value22: t);
-
+        
         public bool IsT23 => _index == 23;
-
-        public T23 AsT23
-        {
-            get
-            {
-                if (_index != 23)
-                {
-                    throw new InvalidOperationException($"Cannot return as T23 as result is T{_index}");
-                }
-                return _value23;
-            }
-        }
-
+        
+        public T23 AsT23 =>
+            _index == 23 ?
+                _value23 :
+                throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T23 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(23, value23: t);
-
+        
         public bool IsT24 => _index == 24;
-
-        public T24 AsT24
-        {
-            get
-            {
-                if (_index != 24)
-                {
-                    throw new InvalidOperationException($"Cannot return as T24 as result is T{_index}");
-                }
-                return _value24;
-            }
-        }
-
+        
+        public T24 AsT24 =>
+            _index == 24 ?
+                _value24 :
+                throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T24 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(24, value24: t);
-
+        
         public bool IsT25 => _index == 25;
-
-        public T25 AsT25
-        {
-            get
-            {
-                if (_index != 25)
-                {
-                    throw new InvalidOperationException($"Cannot return as T25 as result is T{_index}");
-                }
-                return _value25;
-            }
-        }
-
+        
+        public T25 AsT25 =>
+            _index == 25 ?
+                _value25 :
+                throw new NotImplementedException($"Cannot return as T25 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(T25 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>(25, value25: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24, Action<T25> f25)
         {
@@ -28757,135 +25103,32 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT11(T11 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT12(T12 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT13(T13 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT14(T14 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT15(T15 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT16(T16 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT17(T17 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT18(T18 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT19(T19 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT20(T20 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT21(T21 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT22(T22 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT23(T23 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT24(T24 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT25(T25 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT11(T11 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT12(T12 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT13(T13 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT14(T14 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT15(T15 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT16(T16 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT17(T17 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT18(T18 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT19(T19 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT20(T20 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT21(T21 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT22(T22 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT23(T23 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT24(T24 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> FromT25(T25 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -30971,505 +27214,283 @@ namespace OneOf
             _value26 = value26;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    case 22:
-                        return _value22;
-                    case 23:
-                        return _value23;
-                    case 24:
-                        return _value24;
-                    case 25:
-                        return _value25;
-                    case 26:
-                        return _value26;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            22 => _value22,
+            23 => _value23,
+            24 => _value24,
+            25 => _value25,
+            26 => _value26,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(12, value12: t);
-
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(13, value13: t);
-
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(14, value14: t);
-
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T15 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(15, value15: t);
-
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T16 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(16, value16: t);
-
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T17 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(17, value17: t);
-
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T18 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(18, value18: t);
-
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T19 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(19, value19: t);
-
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T20 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(20, value20: t);
-
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
-
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T21 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(21, value21: t);
-
+        
         public bool IsT22 => _index == 22;
-
-        public T22 AsT22
-        {
-            get
-            {
-                if (_index != 22)
-                {
-                    throw new InvalidOperationException($"Cannot return as T22 as result is T{_index}");
-                }
-                return _value22;
-            }
-        }
-
+        
+        public T22 AsT22 =>
+            _index == 22 ?
+                _value22 :
+                throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T22 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(22, value22: t);
-
+        
         public bool IsT23 => _index == 23;
-
-        public T23 AsT23
-        {
-            get
-            {
-                if (_index != 23)
-                {
-                    throw new InvalidOperationException($"Cannot return as T23 as result is T{_index}");
-                }
-                return _value23;
-            }
-        }
-
+        
+        public T23 AsT23 =>
+            _index == 23 ?
+                _value23 :
+                throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T23 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(23, value23: t);
-
+        
         public bool IsT24 => _index == 24;
-
-        public T24 AsT24
-        {
-            get
-            {
-                if (_index != 24)
-                {
-                    throw new InvalidOperationException($"Cannot return as T24 as result is T{_index}");
-                }
-                return _value24;
-            }
-        }
-
+        
+        public T24 AsT24 =>
+            _index == 24 ?
+                _value24 :
+                throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T24 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(24, value24: t);
-
+        
         public bool IsT25 => _index == 25;
-
-        public T25 AsT25
-        {
-            get
-            {
-                if (_index != 25)
-                {
-                    throw new InvalidOperationException($"Cannot return as T25 as result is T{_index}");
-                }
-                return _value25;
-            }
-        }
-
+        
+        public T25 AsT25 =>
+            _index == 25 ?
+                _value25 :
+                throw new NotImplementedException($"Cannot return as T25 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T25 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(25, value25: t);
-
+        
         public bool IsT26 => _index == 26;
-
-        public T26 AsT26
-        {
-            get
-            {
-                if (_index != 26)
-                {
-                    throw new InvalidOperationException($"Cannot return as T26 as result is T{_index}");
-                }
-                return _value26;
-            }
-        }
-
+        
+        public T26 AsT26 =>
+            _index == 26 ?
+                _value26 :
+                throw new NotImplementedException($"Cannot return as T26 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(T26 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>(26, value26: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24, Action<T25> f25, Action<T26> f26)
         {
@@ -31724,140 +27745,33 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT11(T11 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT12(T12 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT13(T13 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT14(T14 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT15(T15 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT16(T16 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT17(T17 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT18(T18 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT19(T19 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT20(T20 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT21(T21 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT22(T22 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT23(T23 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT24(T24 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT25(T25 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT26(T26 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT11(T11 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT12(T12 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT13(T13 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT14(T14 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT15(T15 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT16(T16 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT17(T17 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT18(T18 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT19(T19 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT20(T20 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT21(T21 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT22(T22 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT23(T23 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT24(T24 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT25(T25 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> FromT26(T26 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -34075,523 +29989,293 @@ namespace OneOf
             _value27 = value27;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    case 22:
-                        return _value22;
-                    case 23:
-                        return _value23;
-                    case 24:
-                        return _value24;
-                    case 25:
-                        return _value25;
-                    case 26:
-                        return _value26;
-                    case 27:
-                        return _value27;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            22 => _value22,
+            23 => _value23,
+            24 => _value24,
+            25 => _value25,
+            26 => _value26,
+            27 => _value27,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(12, value12: t);
-
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(13, value13: t);
-
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(14, value14: t);
-
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T15 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(15, value15: t);
-
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T16 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(16, value16: t);
-
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T17 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(17, value17: t);
-
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T18 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(18, value18: t);
-
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T19 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(19, value19: t);
-
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T20 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(20, value20: t);
-
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
-
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T21 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(21, value21: t);
-
+        
         public bool IsT22 => _index == 22;
-
-        public T22 AsT22
-        {
-            get
-            {
-                if (_index != 22)
-                {
-                    throw new InvalidOperationException($"Cannot return as T22 as result is T{_index}");
-                }
-                return _value22;
-            }
-        }
-
+        
+        public T22 AsT22 =>
+            _index == 22 ?
+                _value22 :
+                throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T22 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(22, value22: t);
-
+        
         public bool IsT23 => _index == 23;
-
-        public T23 AsT23
-        {
-            get
-            {
-                if (_index != 23)
-                {
-                    throw new InvalidOperationException($"Cannot return as T23 as result is T{_index}");
-                }
-                return _value23;
-            }
-        }
-
+        
+        public T23 AsT23 =>
+            _index == 23 ?
+                _value23 :
+                throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T23 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(23, value23: t);
-
+        
         public bool IsT24 => _index == 24;
-
-        public T24 AsT24
-        {
-            get
-            {
-                if (_index != 24)
-                {
-                    throw new InvalidOperationException($"Cannot return as T24 as result is T{_index}");
-                }
-                return _value24;
-            }
-        }
-
+        
+        public T24 AsT24 =>
+            _index == 24 ?
+                _value24 :
+                throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T24 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(24, value24: t);
-
+        
         public bool IsT25 => _index == 25;
-
-        public T25 AsT25
-        {
-            get
-            {
-                if (_index != 25)
-                {
-                    throw new InvalidOperationException($"Cannot return as T25 as result is T{_index}");
-                }
-                return _value25;
-            }
-        }
-
+        
+        public T25 AsT25 =>
+            _index == 25 ?
+                _value25 :
+                throw new NotImplementedException($"Cannot return as T25 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T25 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(25, value25: t);
-
+        
         public bool IsT26 => _index == 26;
-
-        public T26 AsT26
-        {
-            get
-            {
-                if (_index != 26)
-                {
-                    throw new InvalidOperationException($"Cannot return as T26 as result is T{_index}");
-                }
-                return _value26;
-            }
-        }
-
+        
+        public T26 AsT26 =>
+            _index == 26 ?
+                _value26 :
+                throw new NotImplementedException($"Cannot return as T26 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T26 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(26, value26: t);
-
+        
         public bool IsT27 => _index == 27;
-
-        public T27 AsT27
-        {
-            get
-            {
-                if (_index != 27)
-                {
-                    throw new InvalidOperationException($"Cannot return as T27 as result is T{_index}");
-                }
-                return _value27;
-            }
-        }
-
+        
+        public T27 AsT27 =>
+            _index == 27 ?
+                _value27 :
+                throw new NotImplementedException($"Cannot return as T27 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(T27 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>(27, value27: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24, Action<T25> f25, Action<T26> f26, Action<T27> f27)
         {
@@ -34855,145 +30539,34 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT11(T11 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT12(T12 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT13(T13 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT14(T14 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT15(T15 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT16(T16 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT17(T17 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT18(T18 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT19(T19 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT20(T20 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT21(T21 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT22(T22 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT23(T23 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT24(T24 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT25(T25 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT26(T26 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT27(T27 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT11(T11 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT12(T12 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT13(T13 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT14(T14 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT15(T15 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT16(T16 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT17(T17 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT18(T18 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT19(T19 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT20(T20 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT21(T21 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT22(T22 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT23(T23 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT24(T24 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT25(T25 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT26(T26 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> FromT27(T27 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -37347,541 +32920,303 @@ namespace OneOf
             _value28 = value28;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    case 22:
-                        return _value22;
-                    case 23:
-                        return _value23;
-                    case 24:
-                        return _value24;
-                    case 25:
-                        return _value25;
-                    case 26:
-                        return _value26;
-                    case 27:
-                        return _value27;
-                    case 28:
-                        return _value28;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            22 => _value22,
+            23 => _value23,
+            24 => _value24,
+            25 => _value25,
+            26 => _value26,
+            27 => _value27,
+            28 => _value28,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(12, value12: t);
-
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(13, value13: t);
-
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(14, value14: t);
-
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T15 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(15, value15: t);
-
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T16 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(16, value16: t);
-
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T17 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(17, value17: t);
-
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T18 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(18, value18: t);
-
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T19 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(19, value19: t);
-
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T20 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(20, value20: t);
-
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
-
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T21 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(21, value21: t);
-
+        
         public bool IsT22 => _index == 22;
-
-        public T22 AsT22
-        {
-            get
-            {
-                if (_index != 22)
-                {
-                    throw new InvalidOperationException($"Cannot return as T22 as result is T{_index}");
-                }
-                return _value22;
-            }
-        }
-
+        
+        public T22 AsT22 =>
+            _index == 22 ?
+                _value22 :
+                throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T22 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(22, value22: t);
-
+        
         public bool IsT23 => _index == 23;
-
-        public T23 AsT23
-        {
-            get
-            {
-                if (_index != 23)
-                {
-                    throw new InvalidOperationException($"Cannot return as T23 as result is T{_index}");
-                }
-                return _value23;
-            }
-        }
-
+        
+        public T23 AsT23 =>
+            _index == 23 ?
+                _value23 :
+                throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T23 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(23, value23: t);
-
+        
         public bool IsT24 => _index == 24;
-
-        public T24 AsT24
-        {
-            get
-            {
-                if (_index != 24)
-                {
-                    throw new InvalidOperationException($"Cannot return as T24 as result is T{_index}");
-                }
-                return _value24;
-            }
-        }
-
+        
+        public T24 AsT24 =>
+            _index == 24 ?
+                _value24 :
+                throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T24 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(24, value24: t);
-
+        
         public bool IsT25 => _index == 25;
-
-        public T25 AsT25
-        {
-            get
-            {
-                if (_index != 25)
-                {
-                    throw new InvalidOperationException($"Cannot return as T25 as result is T{_index}");
-                }
-                return _value25;
-            }
-        }
-
+        
+        public T25 AsT25 =>
+            _index == 25 ?
+                _value25 :
+                throw new NotImplementedException($"Cannot return as T25 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T25 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(25, value25: t);
-
+        
         public bool IsT26 => _index == 26;
-
-        public T26 AsT26
-        {
-            get
-            {
-                if (_index != 26)
-                {
-                    throw new InvalidOperationException($"Cannot return as T26 as result is T{_index}");
-                }
-                return _value26;
-            }
-        }
-
+        
+        public T26 AsT26 =>
+            _index == 26 ?
+                _value26 :
+                throw new NotImplementedException($"Cannot return as T26 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T26 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(26, value26: t);
-
+        
         public bool IsT27 => _index == 27;
-
-        public T27 AsT27
-        {
-            get
-            {
-                if (_index != 27)
-                {
-                    throw new InvalidOperationException($"Cannot return as T27 as result is T{_index}");
-                }
-                return _value27;
-            }
-        }
-
+        
+        public T27 AsT27 =>
+            _index == 27 ?
+                _value27 :
+                throw new NotImplementedException($"Cannot return as T27 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T27 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(27, value27: t);
-
+        
         public bool IsT28 => _index == 28;
-
-        public T28 AsT28
-        {
-            get
-            {
-                if (_index != 28)
-                {
-                    throw new InvalidOperationException($"Cannot return as T28 as result is T{_index}");
-                }
-                return _value28;
-            }
-        }
-
+        
+        public T28 AsT28 =>
+            _index == 28 ?
+                _value28 :
+                throw new NotImplementedException($"Cannot return as T28 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(T28 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>(28, value28: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24, Action<T25> f25, Action<T26> f26, Action<T27> f27, Action<T28> f28)
         {
@@ -38154,150 +33489,35 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT11(T11 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT12(T12 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT13(T13 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT14(T14 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT15(T15 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT16(T16 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT17(T17 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT18(T18 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT19(T19 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT20(T20 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT21(T21 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT22(T22 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT23(T23 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT24(T24 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT25(T25 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT26(T26 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT27(T27 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT28(T28 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT11(T11 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT12(T12 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT13(T13 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT14(T14 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT15(T15 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT16(T16 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT17(T17 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT18(T18 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT19(T19 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT20(T20 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT21(T21 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT22(T22 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT23(T23 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT24(T24 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT25(T25 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT26(T26 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT27(T27 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT28(T28 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -40791,559 +36011,313 @@ namespace OneOf
             _value29 = value29;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    case 22:
-                        return _value22;
-                    case 23:
-                        return _value23;
-                    case 24:
-                        return _value24;
-                    case 25:
-                        return _value25;
-                    case 26:
-                        return _value26;
-                    case 27:
-                        return _value27;
-                    case 28:
-                        return _value28;
-                    case 29:
-                        return _value29;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            22 => _value22,
+            23 => _value23,
+            24 => _value24,
+            25 => _value25,
+            26 => _value26,
+            27 => _value27,
+            28 => _value28,
+            29 => _value29,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(12, value12: t);
-
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(13, value13: t);
-
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(14, value14: t);
-
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T15 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(15, value15: t);
-
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T16 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(16, value16: t);
-
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T17 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(17, value17: t);
-
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T18 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(18, value18: t);
-
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T19 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(19, value19: t);
-
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T20 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(20, value20: t);
-
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
-
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T21 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(21, value21: t);
-
+        
         public bool IsT22 => _index == 22;
-
-        public T22 AsT22
-        {
-            get
-            {
-                if (_index != 22)
-                {
-                    throw new InvalidOperationException($"Cannot return as T22 as result is T{_index}");
-                }
-                return _value22;
-            }
-        }
-
+        
+        public T22 AsT22 =>
+            _index == 22 ?
+                _value22 :
+                throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T22 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(22, value22: t);
-
+        
         public bool IsT23 => _index == 23;
-
-        public T23 AsT23
-        {
-            get
-            {
-                if (_index != 23)
-                {
-                    throw new InvalidOperationException($"Cannot return as T23 as result is T{_index}");
-                }
-                return _value23;
-            }
-        }
-
+        
+        public T23 AsT23 =>
+            _index == 23 ?
+                _value23 :
+                throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T23 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(23, value23: t);
-
+        
         public bool IsT24 => _index == 24;
-
-        public T24 AsT24
-        {
-            get
-            {
-                if (_index != 24)
-                {
-                    throw new InvalidOperationException($"Cannot return as T24 as result is T{_index}");
-                }
-                return _value24;
-            }
-        }
-
+        
+        public T24 AsT24 =>
+            _index == 24 ?
+                _value24 :
+                throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T24 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(24, value24: t);
-
+        
         public bool IsT25 => _index == 25;
-
-        public T25 AsT25
-        {
-            get
-            {
-                if (_index != 25)
-                {
-                    throw new InvalidOperationException($"Cannot return as T25 as result is T{_index}");
-                }
-                return _value25;
-            }
-        }
-
+        
+        public T25 AsT25 =>
+            _index == 25 ?
+                _value25 :
+                throw new NotImplementedException($"Cannot return as T25 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T25 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(25, value25: t);
-
+        
         public bool IsT26 => _index == 26;
-
-        public T26 AsT26
-        {
-            get
-            {
-                if (_index != 26)
-                {
-                    throw new InvalidOperationException($"Cannot return as T26 as result is T{_index}");
-                }
-                return _value26;
-            }
-        }
-
+        
+        public T26 AsT26 =>
+            _index == 26 ?
+                _value26 :
+                throw new NotImplementedException($"Cannot return as T26 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T26 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(26, value26: t);
-
+        
         public bool IsT27 => _index == 27;
-
-        public T27 AsT27
-        {
-            get
-            {
-                if (_index != 27)
-                {
-                    throw new InvalidOperationException($"Cannot return as T27 as result is T{_index}");
-                }
-                return _value27;
-            }
-        }
-
+        
+        public T27 AsT27 =>
+            _index == 27 ?
+                _value27 :
+                throw new NotImplementedException($"Cannot return as T27 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T27 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(27, value27: t);
-
+        
         public bool IsT28 => _index == 28;
-
-        public T28 AsT28
-        {
-            get
-            {
-                if (_index != 28)
-                {
-                    throw new InvalidOperationException($"Cannot return as T28 as result is T{_index}");
-                }
-                return _value28;
-            }
-        }
-
+        
+        public T28 AsT28 =>
+            _index == 28 ?
+                _value28 :
+                throw new NotImplementedException($"Cannot return as T28 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T28 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(28, value28: t);
-
+        
         public bool IsT29 => _index == 29;
-
-        public T29 AsT29
-        {
-            get
-            {
-                if (_index != 29)
-                {
-                    throw new InvalidOperationException($"Cannot return as T29 as result is T{_index}");
-                }
-                return _value29;
-            }
-        }
-
+        
+        public T29 AsT29 =>
+            _index == 29 ?
+                _value29 :
+                throw new NotImplementedException($"Cannot return as T29 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(T29 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>(29, value29: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24, Action<T25> f25, Action<T26> f26, Action<T27> f27, Action<T28> f28, Action<T29> f29)
         {
@@ -41625,155 +36599,36 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT11(T11 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT12(T12 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT13(T13 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT14(T14 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT15(T15 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT16(T16 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT17(T17 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT18(T18 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT19(T19 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT20(T20 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT21(T21 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT22(T22 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT23(T23 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT24(T24 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT25(T25 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT26(T26 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT27(T27 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT28(T28 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT29(T29 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT11(T11 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT12(T12 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT13(T13 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT14(T14 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT15(T15 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT16(T16 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT17(T17 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT18(T18 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT19(T19 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT20(T20 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT21(T21 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT22(T22 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT23(T23 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT24(T24 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT25(T25 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT26(T26 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT27(T27 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT28(T28 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> FromT29(T29 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -44411,577 +39266,323 @@ namespace OneOf
             _value30 = value30;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    case 22:
-                        return _value22;
-                    case 23:
-                        return _value23;
-                    case 24:
-                        return _value24;
-                    case 25:
-                        return _value25;
-                    case 26:
-                        return _value26;
-                    case 27:
-                        return _value27;
-                    case 28:
-                        return _value28;
-                    case 29:
-                        return _value29;
-                    case 30:
-                        return _value30;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            22 => _value22,
+            23 => _value23,
+            24 => _value24,
+            25 => _value25,
+            26 => _value26,
+            27 => _value27,
+            28 => _value28,
+            29 => _value29,
+            30 => _value30,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(12, value12: t);
-
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(13, value13: t);
-
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(14, value14: t);
-
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T15 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(15, value15: t);
-
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T16 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(16, value16: t);
-
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T17 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(17, value17: t);
-
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T18 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(18, value18: t);
-
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T19 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(19, value19: t);
-
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T20 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(20, value20: t);
-
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
-
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T21 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(21, value21: t);
-
+        
         public bool IsT22 => _index == 22;
-
-        public T22 AsT22
-        {
-            get
-            {
-                if (_index != 22)
-                {
-                    throw new InvalidOperationException($"Cannot return as T22 as result is T{_index}");
-                }
-                return _value22;
-            }
-        }
-
+        
+        public T22 AsT22 =>
+            _index == 22 ?
+                _value22 :
+                throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T22 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(22, value22: t);
-
+        
         public bool IsT23 => _index == 23;
-
-        public T23 AsT23
-        {
-            get
-            {
-                if (_index != 23)
-                {
-                    throw new InvalidOperationException($"Cannot return as T23 as result is T{_index}");
-                }
-                return _value23;
-            }
-        }
-
+        
+        public T23 AsT23 =>
+            _index == 23 ?
+                _value23 :
+                throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T23 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(23, value23: t);
-
+        
         public bool IsT24 => _index == 24;
-
-        public T24 AsT24
-        {
-            get
-            {
-                if (_index != 24)
-                {
-                    throw new InvalidOperationException($"Cannot return as T24 as result is T{_index}");
-                }
-                return _value24;
-            }
-        }
-
+        
+        public T24 AsT24 =>
+            _index == 24 ?
+                _value24 :
+                throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T24 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(24, value24: t);
-
+        
         public bool IsT25 => _index == 25;
-
-        public T25 AsT25
-        {
-            get
-            {
-                if (_index != 25)
-                {
-                    throw new InvalidOperationException($"Cannot return as T25 as result is T{_index}");
-                }
-                return _value25;
-            }
-        }
-
+        
+        public T25 AsT25 =>
+            _index == 25 ?
+                _value25 :
+                throw new NotImplementedException($"Cannot return as T25 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T25 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(25, value25: t);
-
+        
         public bool IsT26 => _index == 26;
-
-        public T26 AsT26
-        {
-            get
-            {
-                if (_index != 26)
-                {
-                    throw new InvalidOperationException($"Cannot return as T26 as result is T{_index}");
-                }
-                return _value26;
-            }
-        }
-
+        
+        public T26 AsT26 =>
+            _index == 26 ?
+                _value26 :
+                throw new NotImplementedException($"Cannot return as T26 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T26 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(26, value26: t);
-
+        
         public bool IsT27 => _index == 27;
-
-        public T27 AsT27
-        {
-            get
-            {
-                if (_index != 27)
-                {
-                    throw new InvalidOperationException($"Cannot return as T27 as result is T{_index}");
-                }
-                return _value27;
-            }
-        }
-
+        
+        public T27 AsT27 =>
+            _index == 27 ?
+                _value27 :
+                throw new NotImplementedException($"Cannot return as T27 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T27 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(27, value27: t);
-
+        
         public bool IsT28 => _index == 28;
-
-        public T28 AsT28
-        {
-            get
-            {
-                if (_index != 28)
-                {
-                    throw new InvalidOperationException($"Cannot return as T28 as result is T{_index}");
-                }
-                return _value28;
-            }
-        }
-
+        
+        public T28 AsT28 =>
+            _index == 28 ?
+                _value28 :
+                throw new NotImplementedException($"Cannot return as T28 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T28 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(28, value28: t);
-
+        
         public bool IsT29 => _index == 29;
-
-        public T29 AsT29
-        {
-            get
-            {
-                if (_index != 29)
-                {
-                    throw new InvalidOperationException($"Cannot return as T29 as result is T{_index}");
-                }
-                return _value29;
-            }
-        }
-
+        
+        public T29 AsT29 =>
+            _index == 29 ?
+                _value29 :
+                throw new NotImplementedException($"Cannot return as T29 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T29 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(29, value29: t);
-
+        
         public bool IsT30 => _index == 30;
-
-        public T30 AsT30
-        {
-            get
-            {
-                if (_index != 30)
-                {
-                    throw new InvalidOperationException($"Cannot return as T30 as result is T{_index}");
-                }
-                return _value30;
-            }
-        }
-
+        
+        public T30 AsT30 =>
+            _index == 30 ?
+                _value30 :
+                throw new NotImplementedException($"Cannot return as T30 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(T30 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>(30, value30: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24, Action<T25> f25, Action<T26> f26, Action<T27> f27, Action<T28> f28, Action<T29> f29, Action<T30> f30)
         {
@@ -45272,160 +39873,37 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT11(T11 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT12(T12 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT13(T13 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT14(T14 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT15(T15 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT16(T16 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT17(T17 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT18(T18 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT19(T19 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT20(T20 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT21(T21 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT22(T22 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT23(T23 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT24(T24 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT25(T25 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT26(T26 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT27(T27 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT28(T28 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT29(T29 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT30(T30 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT11(T11 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT12(T12 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT13(T13 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT14(T14 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT15(T15 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT16(T16 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT17(T17 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT18(T18 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT19(T19 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT20(T20 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT21(T21 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT22(T22 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT23(T23 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT24(T24 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT25(T25 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT26(T26 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT27(T27 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT28(T28 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT29(T29 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> FromT30(T30 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -48211,595 +42689,333 @@ namespace OneOf
             _value31 = value31;
         }
 
-        public object Value
+        public object Value => _index switch
         {
-            get
-            {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    case 22:
-                        return _value22;
-                    case 23:
-                        return _value23;
-                    case 24:
-                        return _value24;
-                    case 25:
-                        return _value25;
-                    case 26:
-                        return _value26;
-                    case 27:
-                        return _value27;
-                    case 28:
-                        return _value28;
-                    case 29:
-                        return _value29;
-                    case 30:
-                        return _value30;
-                    case 31:
-                        return _value31;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+            0 => _value0,
+            1 => _value1,
+            2 => _value2,
+            3 => _value3,
+            4 => _value4,
+            5 => _value5,
+            6 => _value6,
+            7 => _value7,
+            8 => _value8,
+            9 => _value9,
+            10 => _value10,
+            11 => _value11,
+            12 => _value12,
+            13 => _value13,
+            14 => _value14,
+            15 => _value15,
+            16 => _value16,
+            17 => _value17,
+            18 => _value18,
+            19 => _value19,
+            20 => _value20,
+            21 => _value21,
+            22 => _value22,
+            23 => _value23,
+            24 => _value24,
+            25 => _value25,
+            26 => _value26,
+            27 => _value27,
+            28 => _value28,
+            29 => _value29,
+            30 => _value30,
+            31 => _value31,
+            _ => throw new InvalidOperationException()
+        };
         
         public int Index => _index;
-
+        
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
+        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
+        
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
+        
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
+        
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
+        
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
+        
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
+        
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
+        
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
+        
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
+        
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
+        
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
+        
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
+        
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(12, value12: t);
-
+        
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
+        
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(13, value13: t);
-
+        
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
+        
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(14, value14: t);
-
+        
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
+        
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T15 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(15, value15: t);
-
+        
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
+        
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T16 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(16, value16: t);
-
+        
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
+        
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T17 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(17, value17: t);
-
+        
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
+        
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T18 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(18, value18: t);
-
+        
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
+        
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T19 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(19, value19: t);
-
+        
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
+        
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T20 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(20, value20: t);
-
+        
         public bool IsT21 => _index == 21;
-
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
-
+        
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T21 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(21, value21: t);
-
+        
         public bool IsT22 => _index == 22;
-
-        public T22 AsT22
-        {
-            get
-            {
-                if (_index != 22)
-                {
-                    throw new InvalidOperationException($"Cannot return as T22 as result is T{_index}");
-                }
-                return _value22;
-            }
-        }
-
+        
+        public T22 AsT22 =>
+            _index == 22 ?
+                _value22 :
+                throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T22 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(22, value22: t);
-
+        
         public bool IsT23 => _index == 23;
-
-        public T23 AsT23
-        {
-            get
-            {
-                if (_index != 23)
-                {
-                    throw new InvalidOperationException($"Cannot return as T23 as result is T{_index}");
-                }
-                return _value23;
-            }
-        }
-
+        
+        public T23 AsT23 =>
+            _index == 23 ?
+                _value23 :
+                throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T23 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(23, value23: t);
-
+        
         public bool IsT24 => _index == 24;
-
-        public T24 AsT24
-        {
-            get
-            {
-                if (_index != 24)
-                {
-                    throw new InvalidOperationException($"Cannot return as T24 as result is T{_index}");
-                }
-                return _value24;
-            }
-        }
-
+        
+        public T24 AsT24 =>
+            _index == 24 ?
+                _value24 :
+                throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T24 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(24, value24: t);
-
+        
         public bool IsT25 => _index == 25;
-
-        public T25 AsT25
-        {
-            get
-            {
-                if (_index != 25)
-                {
-                    throw new InvalidOperationException($"Cannot return as T25 as result is T{_index}");
-                }
-                return _value25;
-            }
-        }
-
+        
+        public T25 AsT25 =>
+            _index == 25 ?
+                _value25 :
+                throw new NotImplementedException($"Cannot return as T25 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T25 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(25, value25: t);
-
+        
         public bool IsT26 => _index == 26;
-
-        public T26 AsT26
-        {
-            get
-            {
-                if (_index != 26)
-                {
-                    throw new InvalidOperationException($"Cannot return as T26 as result is T{_index}");
-                }
-                return _value26;
-            }
-        }
-
+        
+        public T26 AsT26 =>
+            _index == 26 ?
+                _value26 :
+                throw new NotImplementedException($"Cannot return as T26 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T26 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(26, value26: t);
-
+        
         public bool IsT27 => _index == 27;
-
-        public T27 AsT27
-        {
-            get
-            {
-                if (_index != 27)
-                {
-                    throw new InvalidOperationException($"Cannot return as T27 as result is T{_index}");
-                }
-                return _value27;
-            }
-        }
-
+        
+        public T27 AsT27 =>
+            _index == 27 ?
+                _value27 :
+                throw new NotImplementedException($"Cannot return as T27 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T27 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(27, value27: t);
-
+        
         public bool IsT28 => _index == 28;
-
-        public T28 AsT28
-        {
-            get
-            {
-                if (_index != 28)
-                {
-                    throw new InvalidOperationException($"Cannot return as T28 as result is T{_index}");
-                }
-                return _value28;
-            }
-        }
-
+        
+        public T28 AsT28 =>
+            _index == 28 ?
+                _value28 :
+                throw new NotImplementedException($"Cannot return as T28 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T28 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(28, value28: t);
-
+        
         public bool IsT29 => _index == 29;
-
-        public T29 AsT29
-        {
-            get
-            {
-                if (_index != 29)
-                {
-                    throw new InvalidOperationException($"Cannot return as T29 as result is T{_index}");
-                }
-                return _value29;
-            }
-        }
-
+        
+        public T29 AsT29 =>
+            _index == 29 ?
+                _value29 :
+                throw new NotImplementedException($"Cannot return as T29 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T29 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(29, value29: t);
-
+        
         public bool IsT30 => _index == 30;
-
-        public T30 AsT30
-        {
-            get
-            {
-                if (_index != 30)
-                {
-                    throw new InvalidOperationException($"Cannot return as T30 as result is T{_index}");
-                }
-                return _value30;
-            }
-        }
-
+        
+        public T30 AsT30 =>
+            _index == 30 ?
+                _value30 :
+                throw new NotImplementedException($"Cannot return as T30 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T30 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(30, value30: t);
-
+        
         public bool IsT31 => _index == 31;
-
-        public T31 AsT31
-        {
-            get
-            {
-                if (_index != 31)
-                {
-                    throw new InvalidOperationException($"Cannot return as T31 as result is T{_index}");
-                }
-                return _value31;
-            }
-        }
-
+        
+        public T31 AsT31 =>
+            _index == 31 ?
+                _value31 :
+                throw new NotImplementedException($"Cannot return as T31 as result is T{_index}");
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(T31 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>(31, value31: t);
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24, Action<T25> f25, Action<T26> f26, Action<T27> f27, Action<T28> f28, Action<T29> f29, Action<T30> f30, Action<T31> f31)
         {
@@ -49099,165 +43315,38 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT11(T11 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT12(T12 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT13(T13 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT14(T14 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT15(T15 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT16(T16 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT17(T17 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT18(T18 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT19(T19 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT20(T20 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT21(T21 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT22(T22 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT23(T23 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT24(T24 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT25(T25 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT26(T26 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT27(T27 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT28(T28 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT29(T29 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT30(T30 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT31(T31 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT11(T11 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT12(T12 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT13(T13 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT14(T14 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT15(T15 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT16(T16 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT17(T17 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT18(T18 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT19(T19 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT20(T20 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT21(T21 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT22(T22 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT23(T23 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT24(T24 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT25(T25 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT26(T26 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT27(T27 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT28(T28 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT29(T29 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT30(T30 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT31(T31 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
