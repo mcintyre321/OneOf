@@ -47,7 +47,7 @@ namespace OneOf
         {className}(int index");
 		for (var j = 0; j < i; j++)
 		{
-			sb.Append($", T{j} value{j} = default(T{j})");
+			sb.Append($", T{j} value{j} = default");
 		}
 		sb.Append(@")
         {
@@ -202,7 +202,7 @@ namespace OneOf
                         bindToType != $"T{k}" ? 
                             $"AsT{k}" :
                             $"mapFunc(AsT{k})";
-                    return $"{k} => OneOf<{resultArgsPrinted}>.FromT{k}({arg}),";
+                    return $"{k} => {arg},";
                 }))}
                 _ => throw new InvalidOperationException()
             }};

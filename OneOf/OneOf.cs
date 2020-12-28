@@ -7,7 +7,7 @@ namespace OneOf
         readonly T0 _value0;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0))
+        OneOf(int index, T0 value0 = default)
         {
             _index = index;
             _value0 = value0;
@@ -137,7 +137,7 @@ namespace OneOf
         readonly T1 _value1;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1))
+        OneOf(int index, T0 value0 = default, T1 value1 = default)
         {
             _index = index;
             _value0 = value0;
@@ -340,7 +340,7 @@ namespace OneOf
         readonly T2 _value2;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default)
         {
             _index = index;
             _value0 = value0;
@@ -611,7 +611,7 @@ namespace OneOf
         readonly T3 _value3;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default)
         {
             _index = index;
             _value0 = value0;
@@ -954,7 +954,7 @@ namespace OneOf
         readonly T4 _value4;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default)
         {
             _index = index;
             _value0 = value0;
@@ -1373,7 +1373,7 @@ namespace OneOf
         readonly T5 _value5;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default)
         {
             _index = index;
             _value0 = value0;
@@ -1872,7 +1872,7 @@ namespace OneOf
         readonly T6 _value6;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default)
         {
             _index = index;
             _value0 = value0;
@@ -2455,7 +2455,7 @@ namespace OneOf
         readonly T7 _value7;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default)
         {
             _index = index;
             _value0 = value0;
@@ -3126,7 +3126,7 @@ namespace OneOf
         readonly T8 _value8;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default)
         {
             _index = index;
             _value0 = value0;

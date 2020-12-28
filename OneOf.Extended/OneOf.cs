@@ -16,7 +16,7 @@ namespace OneOf
         readonly T9 _value9;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default)
         {
             _index = index;
             _value0 = value0;
@@ -875,7 +875,7 @@ namespace OneOf
         readonly T10 _value10;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default)
         {
             _index = index;
             _value0 = value0;
@@ -1834,7 +1834,7 @@ namespace OneOf
         readonly T11 _value11;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default)
         {
             _index = index;
             _value0 = value0;
@@ -2897,7 +2897,7 @@ namespace OneOf
         readonly T12 _value12;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11), T12 value12 = default(T12))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default)
         {
             _index = index;
             _value0 = value0;
@@ -4068,7 +4068,7 @@ namespace OneOf
         readonly T13 _value13;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11), T12 value12 = default(T12), T13 value13 = default(T13))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default, T13 value13 = default)
         {
             _index = index;
             _value0 = value0;
@@ -5351,7 +5351,7 @@ namespace OneOf
         readonly T14 _value14;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11), T12 value12 = default(T12), T13 value13 = default(T13), T14 value14 = default(T14))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default, T13 value13 = default, T14 value14 = default)
         {
             _index = index;
             _value0 = value0;
@@ -6750,7 +6750,7 @@ namespace OneOf
         readonly T15 _value15;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11), T12 value12 = default(T12), T13 value13 = default(T13), T14 value14 = default(T14), T15 value15 = default(T15))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default, T13 value13 = default, T14 value14 = default, T15 value15 = default)
         {
             _index = index;
             _value0 = value0;
@@ -8269,7 +8269,7 @@ namespace OneOf
         readonly T16 _value16;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11), T12 value12 = default(T12), T13 value13 = default(T13), T14 value14 = default(T14), T15 value15 = default(T15), T16 value16 = default(T16))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default, T13 value13 = default, T14 value14 = default, T15 value15 = default, T16 value16 = default)
         {
             _index = index;
             _value0 = value0;
@@ -9912,7 +9912,7 @@ namespace OneOf
         readonly T17 _value17;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11), T12 value12 = default(T12), T13 value13 = default(T13), T14 value14 = default(T14), T15 value15 = default(T15), T16 value16 = default(T16), T17 value17 = default(T17))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default, T13 value13 = default, T14 value14 = default, T15 value15 = default, T16 value16 = default, T17 value17 = default)
         {
             _index = index;
             _value0 = value0;
@@ -11683,7 +11683,7 @@ namespace OneOf
         readonly T18 _value18;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11), T12 value12 = default(T12), T13 value13 = default(T13), T14 value14 = default(T14), T15 value15 = default(T15), T16 value16 = default(T16), T17 value17 = default(T17), T18 value18 = default(T18))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default, T13 value13 = default, T14 value14 = default, T15 value15 = default, T16 value16 = default, T17 value17 = default, T18 value18 = default)
         {
             _index = index;
             _value0 = value0;
@@ -13586,7 +13586,7 @@ namespace OneOf
         readonly T19 _value19;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11), T12 value12 = default(T12), T13 value13 = default(T13), T14 value14 = default(T14), T15 value15 = default(T15), T16 value16 = default(T16), T17 value17 = default(T17), T18 value18 = default(T18), T19 value19 = default(T19))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default, T13 value13 = default, T14 value14 = default, T15 value15 = default, T16 value16 = default, T17 value17 = default, T18 value18 = default, T19 value19 = default)
         {
             _index = index;
             _value0 = value0;
@@ -15625,7 +15625,7 @@ namespace OneOf
         readonly T20 _value20;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11), T12 value12 = default(T12), T13 value13 = default(T13), T14 value14 = default(T14), T15 value15 = default(T15), T16 value16 = default(T16), T17 value17 = default(T17), T18 value18 = default(T18), T19 value19 = default(T19), T20 value20 = default(T20))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default, T13 value13 = default, T14 value14 = default, T15 value15 = default, T16 value16 = default, T17 value17 = default, T18 value18 = default, T19 value19 = default, T20 value20 = default)
         {
             _index = index;
             _value0 = value0;
@@ -17804,7 +17804,7 @@ namespace OneOf
         readonly T21 _value21;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11), T12 value12 = default(T12), T13 value13 = default(T13), T14 value14 = default(T14), T15 value15 = default(T15), T16 value16 = default(T16), T17 value17 = default(T17), T18 value18 = default(T18), T19 value19 = default(T19), T20 value20 = default(T20), T21 value21 = default(T21))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default, T13 value13 = default, T14 value14 = default, T15 value15 = default, T16 value16 = default, T17 value17 = default, T18 value18 = default, T19 value19 = default, T20 value20 = default, T21 value21 = default)
         {
             _index = index;
             _value0 = value0;
@@ -20127,7 +20127,7 @@ namespace OneOf
         readonly T22 _value22;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11), T12 value12 = default(T12), T13 value13 = default(T13), T14 value14 = default(T14), T15 value15 = default(T15), T16 value16 = default(T16), T17 value17 = default(T17), T18 value18 = default(T18), T19 value19 = default(T19), T20 value20 = default(T20), T21 value21 = default(T21), T22 value22 = default(T22))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default, T13 value13 = default, T14 value14 = default, T15 value15 = default, T16 value16 = default, T17 value17 = default, T18 value18 = default, T19 value19 = default, T20 value20 = default, T21 value21 = default, T22 value22 = default)
         {
             _index = index;
             _value0 = value0;
@@ -22598,7 +22598,7 @@ namespace OneOf
         readonly T23 _value23;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11), T12 value12 = default(T12), T13 value13 = default(T13), T14 value14 = default(T14), T15 value15 = default(T15), T16 value16 = default(T16), T17 value17 = default(T17), T18 value18 = default(T18), T19 value19 = default(T19), T20 value20 = default(T20), T21 value21 = default(T21), T22 value22 = default(T22), T23 value23 = default(T23))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default, T13 value13 = default, T14 value14 = default, T15 value15 = default, T16 value16 = default, T17 value17 = default, T18 value18 = default, T19 value19 = default, T20 value20 = default, T21 value21 = default, T22 value22 = default, T23 value23 = default)
         {
             _index = index;
             _value0 = value0;
@@ -25221,7 +25221,7 @@ namespace OneOf
         readonly T24 _value24;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11), T12 value12 = default(T12), T13 value13 = default(T13), T14 value14 = default(T14), T15 value15 = default(T15), T16 value16 = default(T16), T17 value17 = default(T17), T18 value18 = default(T18), T19 value19 = default(T19), T20 value20 = default(T20), T21 value21 = default(T21), T22 value22 = default(T22), T23 value23 = default(T23), T24 value24 = default(T24))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default, T13 value13 = default, T14 value14 = default, T15 value15 = default, T16 value16 = default, T17 value17 = default, T18 value18 = default, T19 value19 = default, T20 value20 = default, T21 value21 = default, T22 value22 = default, T23 value23 = default, T24 value24 = default)
         {
             _index = index;
             _value0 = value0;
@@ -28000,7 +28000,7 @@ namespace OneOf
         readonly T25 _value25;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11), T12 value12 = default(T12), T13 value13 = default(T13), T14 value14 = default(T14), T15 value15 = default(T15), T16 value16 = default(T16), T17 value17 = default(T17), T18 value18 = default(T18), T19 value19 = default(T19), T20 value20 = default(T20), T21 value21 = default(T21), T22 value22 = default(T22), T23 value23 = default(T23), T24 value24 = default(T24), T25 value25 = default(T25))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default, T13 value13 = default, T14 value14 = default, T15 value15 = default, T16 value16 = default, T17 value17 = default, T18 value18 = default, T19 value19 = default, T20 value20 = default, T21 value21 = default, T22 value22 = default, T23 value23 = default, T24 value24 = default, T25 value25 = default)
         {
             _index = index;
             _value0 = value0;
@@ -30939,7 +30939,7 @@ namespace OneOf
         readonly T26 _value26;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11), T12 value12 = default(T12), T13 value13 = default(T13), T14 value14 = default(T14), T15 value15 = default(T15), T16 value16 = default(T16), T17 value17 = default(T17), T18 value18 = default(T18), T19 value19 = default(T19), T20 value20 = default(T20), T21 value21 = default(T21), T22 value22 = default(T22), T23 value23 = default(T23), T24 value24 = default(T24), T25 value25 = default(T25), T26 value26 = default(T26))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default, T13 value13 = default, T14 value14 = default, T15 value15 = default, T16 value16 = default, T17 value17 = default, T18 value18 = default, T19 value19 = default, T20 value20 = default, T21 value21 = default, T22 value22 = default, T23 value23 = default, T24 value24 = default, T25 value25 = default, T26 value26 = default)
         {
             _index = index;
             _value0 = value0;
@@ -34042,7 +34042,7 @@ namespace OneOf
         readonly T27 _value27;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11), T12 value12 = default(T12), T13 value13 = default(T13), T14 value14 = default(T14), T15 value15 = default(T15), T16 value16 = default(T16), T17 value17 = default(T17), T18 value18 = default(T18), T19 value19 = default(T19), T20 value20 = default(T20), T21 value21 = default(T21), T22 value22 = default(T22), T23 value23 = default(T23), T24 value24 = default(T24), T25 value25 = default(T25), T26 value26 = default(T26), T27 value27 = default(T27))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default, T13 value13 = default, T14 value14 = default, T15 value15 = default, T16 value16 = default, T17 value17 = default, T18 value18 = default, T19 value19 = default, T20 value20 = default, T21 value21 = default, T22 value22 = default, T23 value23 = default, T24 value24 = default, T25 value25 = default, T26 value26 = default, T27 value27 = default)
         {
             _index = index;
             _value0 = value0;
@@ -37313,7 +37313,7 @@ namespace OneOf
         readonly T28 _value28;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11), T12 value12 = default(T12), T13 value13 = default(T13), T14 value14 = default(T14), T15 value15 = default(T15), T16 value16 = default(T16), T17 value17 = default(T17), T18 value18 = default(T18), T19 value19 = default(T19), T20 value20 = default(T20), T21 value21 = default(T21), T22 value22 = default(T22), T23 value23 = default(T23), T24 value24 = default(T24), T25 value25 = default(T25), T26 value26 = default(T26), T27 value27 = default(T27), T28 value28 = default(T28))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default, T13 value13 = default, T14 value14 = default, T15 value15 = default, T16 value16 = default, T17 value17 = default, T18 value18 = default, T19 value19 = default, T20 value20 = default, T21 value21 = default, T22 value22 = default, T23 value23 = default, T24 value24 = default, T25 value25 = default, T26 value26 = default, T27 value27 = default, T28 value28 = default)
         {
             _index = index;
             _value0 = value0;
@@ -40756,7 +40756,7 @@ namespace OneOf
         readonly T29 _value29;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11), T12 value12 = default(T12), T13 value13 = default(T13), T14 value14 = default(T14), T15 value15 = default(T15), T16 value16 = default(T16), T17 value17 = default(T17), T18 value18 = default(T18), T19 value19 = default(T19), T20 value20 = default(T20), T21 value21 = default(T21), T22 value22 = default(T22), T23 value23 = default(T23), T24 value24 = default(T24), T25 value25 = default(T25), T26 value26 = default(T26), T27 value27 = default(T27), T28 value28 = default(T28), T29 value29 = default(T29))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default, T13 value13 = default, T14 value14 = default, T15 value15 = default, T16 value16 = default, T17 value17 = default, T18 value18 = default, T19 value19 = default, T20 value20 = default, T21 value21 = default, T22 value22 = default, T23 value23 = default, T24 value24 = default, T25 value25 = default, T26 value26 = default, T27 value27 = default, T28 value28 = default, T29 value29 = default)
         {
             _index = index;
             _value0 = value0;
@@ -44375,7 +44375,7 @@ namespace OneOf
         readonly T30 _value30;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11), T12 value12 = default(T12), T13 value13 = default(T13), T14 value14 = default(T14), T15 value15 = default(T15), T16 value16 = default(T16), T17 value17 = default(T17), T18 value18 = default(T18), T19 value19 = default(T19), T20 value20 = default(T20), T21 value21 = default(T21), T22 value22 = default(T22), T23 value23 = default(T23), T24 value24 = default(T24), T25 value25 = default(T25), T26 value26 = default(T26), T27 value27 = default(T27), T28 value28 = default(T28), T29 value29 = default(T29), T30 value30 = default(T30))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default, T13 value13 = default, T14 value14 = default, T15 value15 = default, T16 value16 = default, T17 value17 = default, T18 value18 = default, T19 value19 = default, T20 value20 = default, T21 value21 = default, T22 value22 = default, T23 value23 = default, T24 value24 = default, T25 value25 = default, T26 value26 = default, T27 value27 = default, T28 value28 = default, T29 value29 = default, T30 value30 = default)
         {
             _index = index;
             _value0 = value0;
@@ -48174,7 +48174,7 @@ namespace OneOf
         readonly T31 _value31;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11), T12 value12 = default(T12), T13 value13 = default(T13), T14 value14 = default(T14), T15 value15 = default(T15), T16 value16 = default(T16), T17 value17 = default(T17), T18 value18 = default(T18), T19 value19 = default(T19), T20 value20 = default(T20), T21 value21 = default(T21), T22 value22 = default(T22), T23 value23 = default(T23), T24 value24 = default(T24), T25 value25 = default(T25), T26 value26 = default(T26), T27 value27 = default(T27), T28 value28 = default(T28), T29 value29 = default(T29), T30 value30 = default(T30), T31 value31 = default(T31))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default, T13 value13 = default, T14 value14 = default, T15 value15 = default, T16 value16 = default, T17 value17 = default, T18 value18 = default, T19 value19 = default, T20 value20 = default, T21 value21 = default, T22 value22 = default, T23 value23 = default, T24 value24 = default, T25 value25 = default, T26 value26 = default, T27 value27 = default, T28 value28 = default, T29 value29 = default, T30 value30 = default, T31 value31 = default)
         {
             _index = index;
             _value0 = value0;
