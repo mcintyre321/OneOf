@@ -88,54 +88,23 @@ namespace OneOf
             ", Enumerable.Range(0, i).Select(k => $"{k} => _value{k},"))}
             _ => throw new InvalidOperationException()
         }};
+        
+        public int Index => _index;
         ");
 
-		sb.Append(@"
-        public object Value
-        {
-            get
-            {
-                switch (_index)
-                {");
-		for (var j = 0; j < i; j++)
-		{
-			sb.Append($@"
-                    case {j}:
-                        return _value{j};");
-		}
-		sb.AppendLine(@"
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
-        
-        public int Index => _index;");
-		for (var j = 0; j < i; j++)
-		{
-			sb.AppendLine(
-		$@"
+		sb.AppendLine(String.Join("", Enumerable.Range(0, i).Select(j => $@"
         public bool IsT{j} => _index == {j};
-
-        public T{j} AsT{j}
-        {{
-            get
-            {{
-                if (_index != {j})
-                {{
-                    throw new InvalidOperationException($""Cannot return as T{j} as result is T{{_index}}"");
-                }}
-                return _value{j};
-            }}
-        }}");
         
-            if (isStruct) {
-                sb.AppendLine(
-        $@"
-        public static implicit operator {className}<{genericArg}>(T{j} t) => new {className}<{genericArg}>({j}, value{j}: t);"
-                );
-            }
-		}
+        public T{j} AsT{j} =>
+            _index == {j} ?
+                _value{j} :
+                throw new NotImplementedException($""Cannot return as T{j} as result is T{{_index}}"");
+        {(
+            isStruct ? $@"
+        public static implicit operator {className}<{genericArg}>(T{j} t) => new {className}<{genericArg}>({j}, value{j}: t);" :
+                ""
+        )}
+        ")));
 
 		var matchArgList0 = string.Join(", ", Enumerable.Range(0, i).Select(e => $"Action<T{e}> f{e}"));
 		sb.AppendLine($@"
@@ -175,15 +144,9 @@ namespace OneOf
 			var argIndexList = Enumerable.Range(0, i).ToList();
 			var genericArgs = argIndexList.Select(e => $"T{e}").ToList();
 			var genericArgsPrinted = string.Join(", ", genericArgs);
-
-			foreach (var bindToType in genericArgs)
-			{
-				sb.AppendLine($@"
-        public static OneOf<{genericArgsPrinted}> From{bindToType}({bindToType} input)
-        {{
-            return input;
-        }}");
-			}
+            
+            sb.AppendLine(String.Join("", Enumerable.Range(0, i).Select(j => @$"
+        public static OneOf<{genericArgsPrinted}> FromT{j}(T{j} input) => input;")));
 
 			foreach (var bindToType in genericArgs)
 			{
@@ -243,42 +206,33 @@ namespace OneOf
             return IsT{j};
 		}}");
 			}
-		sb.AppendLine($@"
-        bool Equals({className}<{genericArg}> other)
-        {{
-            if (_index != other._index)
+            
+        sb.AppendLine($@"
+        bool Equals({className}<{genericArg}> other) =>
+            _index == other._index &&
+            _index switch
             {{
-                return false;
-            }}
-            switch (_index)
-            {{");
-		for (var j = 0; j < i; j++)
-		{
-			sb.AppendLine($@"                case {j}: return Equals(_value{j}, other._value{j});");
-		}
-		sb.AppendLine(@"                default: return false;
-            }
-        }
-
+                {String.Join("", Enumerable.Range(0, i).Select(j => @$"
+                {j} => Equals(_value{j}, other._value{j}),"))}
+                _ => false
+            }};");
+            
+        if (isStruct) {
+            sb.AppendLine(@$"
+        public override bool Equals(object obj) => obj is {className}<{genericArg}> o && Equals(o);");
+        } else {
+            sb.AppendLine(@"
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
                 return false;
-            ");
-		if (isStruct)
-		{
-			sb.AppendLine($@"
-            return obj is {className}<{genericArg}> && Equals(({className}<{genericArg}>)obj);");
-		}
-		else
-		{
-			sb.AppendLine($@"
+
             if (ReferenceEquals(this, obj))
                 return true;
 
-            var other = obj as OneOfBase<{genericArg}>;
-            return other != null && Equals(other);");
-		}
+            return obj is OneOfBase<T0> other && Equals(other);
+        }");
+        }
 
         sb.AppendLine(@"        }");
         sb.AppendLine(@"

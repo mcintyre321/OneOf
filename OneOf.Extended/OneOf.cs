@@ -1,4 +1,5 @@
 using System;
+using static OneOf.Functions;
 
 namespace OneOf
 {
@@ -640,54 +641,44 @@ namespace OneOf
             return IsT9;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -1456,56 +1447,46 @@ namespace OneOf
             return IsT10;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -2364,58 +2345,48 @@ namespace OneOf
             return IsT11;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                11 => FormatValue(typeof(T11), _value11),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -3368,60 +3339,50 @@ namespace OneOf
             return IsT12;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                11 => FormatValue(typeof(T11), _value11),
+                12 => FormatValue(typeof(T12), _value12),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -4472,62 +4433,52 @@ namespace OneOf
             return IsT13;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                11 => FormatValue(typeof(T11), _value11),
+                12 => FormatValue(typeof(T12), _value12),
+                13 => FormatValue(typeof(T13), _value13),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -5680,64 +5631,54 @@ namespace OneOf
             return IsT14;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                case 14: return Equals(_value14, other._value14);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                14 => Equals(_value14, other._value14),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                11 => FormatValue(typeof(T11), _value11),
+                12 => FormatValue(typeof(T12), _value12),
+                13 => FormatValue(typeof(T13), _value13),
+                14 => FormatValue(typeof(T14), _value14),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -6996,66 +6937,56 @@ namespace OneOf
             return IsT15;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                case 14: return Equals(_value14, other._value14);
-                case 15: return Equals(_value15, other._value15);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                14 => Equals(_value14, other._value14),
+                15 => Equals(_value15, other._value15),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                11 => FormatValue(typeof(T11), _value11),
+                12 => FormatValue(typeof(T12), _value12),
+                13 => FormatValue(typeof(T13), _value13),
+                14 => FormatValue(typeof(T14), _value14),
+                15 => FormatValue(typeof(T15), _value15),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -8424,68 +8355,58 @@ namespace OneOf
             return IsT16;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                case 14: return Equals(_value14, other._value14);
-                case 15: return Equals(_value15, other._value15);
-                case 16: return Equals(_value16, other._value16);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                14 => Equals(_value14, other._value14),
+                15 => Equals(_value15, other._value15),
+                16 => Equals(_value16, other._value16),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                11 => FormatValue(typeof(T11), _value11),
+                12 => FormatValue(typeof(T12), _value12),
+                13 => FormatValue(typeof(T13), _value13),
+                14 => FormatValue(typeof(T14), _value14),
+                15 => FormatValue(typeof(T15), _value15),
+                16 => FormatValue(typeof(T16), _value16),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -9968,70 +9889,60 @@ namespace OneOf
             return IsT17;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                case 14: return Equals(_value14, other._value14);
-                case 15: return Equals(_value15, other._value15);
-                case 16: return Equals(_value16, other._value16);
-                case 17: return Equals(_value17, other._value17);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                14 => Equals(_value14, other._value14),
+                15 => Equals(_value15, other._value15),
+                16 => Equals(_value16, other._value16),
+                17 => Equals(_value17, other._value17),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                11 => FormatValue(typeof(T11), _value11),
+                12 => FormatValue(typeof(T12), _value12),
+                13 => FormatValue(typeof(T13), _value13),
+                14 => FormatValue(typeof(T14), _value14),
+                15 => FormatValue(typeof(T15), _value15),
+                16 => FormatValue(typeof(T16), _value16),
+                17 => FormatValue(typeof(T17), _value17),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -11632,72 +11543,62 @@ namespace OneOf
             return IsT18;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                case 14: return Equals(_value14, other._value14);
-                case 15: return Equals(_value15, other._value15);
-                case 16: return Equals(_value16, other._value16);
-                case 17: return Equals(_value17, other._value17);
-                case 18: return Equals(_value18, other._value18);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                14 => Equals(_value14, other._value14),
+                15 => Equals(_value15, other._value15),
+                16 => Equals(_value16, other._value16),
+                17 => Equals(_value17, other._value17),
+                18 => Equals(_value18, other._value18),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                11 => FormatValue(typeof(T11), _value11),
+                12 => FormatValue(typeof(T12), _value12),
+                13 => FormatValue(typeof(T13), _value13),
+                14 => FormatValue(typeof(T14), _value14),
+                15 => FormatValue(typeof(T15), _value15),
+                16 => FormatValue(typeof(T16), _value16),
+                17 => FormatValue(typeof(T17), _value17),
+                18 => FormatValue(typeof(T18), _value18),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -13420,74 +13321,64 @@ namespace OneOf
             return IsT19;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                case 14: return Equals(_value14, other._value14);
-                case 15: return Equals(_value15, other._value15);
-                case 16: return Equals(_value16, other._value16);
-                case 17: return Equals(_value17, other._value17);
-                case 18: return Equals(_value18, other._value18);
-                case 19: return Equals(_value19, other._value19);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                14 => Equals(_value14, other._value14),
+                15 => Equals(_value15, other._value15),
+                16 => Equals(_value16, other._value16),
+                17 => Equals(_value17, other._value17),
+                18 => Equals(_value18, other._value18),
+                19 => Equals(_value19, other._value19),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                11 => FormatValue(typeof(T11), _value11),
+                12 => FormatValue(typeof(T12), _value12),
+                13 => FormatValue(typeof(T13), _value13),
+                14 => FormatValue(typeof(T14), _value14),
+                15 => FormatValue(typeof(T15), _value15),
+                16 => FormatValue(typeof(T16), _value16),
+                17 => FormatValue(typeof(T17), _value17),
+                18 => FormatValue(typeof(T18), _value18),
+                19 => FormatValue(typeof(T19), _value19),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -15336,76 +15227,66 @@ namespace OneOf
             return IsT20;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                case 14: return Equals(_value14, other._value14);
-                case 15: return Equals(_value15, other._value15);
-                case 16: return Equals(_value16, other._value16);
-                case 17: return Equals(_value17, other._value17);
-                case 18: return Equals(_value18, other._value18);
-                case 19: return Equals(_value19, other._value19);
-                case 20: return Equals(_value20, other._value20);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                14 => Equals(_value14, other._value14),
+                15 => Equals(_value15, other._value15),
+                16 => Equals(_value16, other._value16),
+                17 => Equals(_value17, other._value17),
+                18 => Equals(_value18, other._value18),
+                19 => Equals(_value19, other._value19),
+                20 => Equals(_value20, other._value20),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                11 => FormatValue(typeof(T11), _value11),
+                12 => FormatValue(typeof(T12), _value12),
+                13 => FormatValue(typeof(T13), _value13),
+                14 => FormatValue(typeof(T14), _value14),
+                15 => FormatValue(typeof(T15), _value15),
+                16 => FormatValue(typeof(T16), _value16),
+                17 => FormatValue(typeof(T17), _value17),
+                18 => FormatValue(typeof(T18), _value18),
+                19 => FormatValue(typeof(T19), _value19),
+                20 => FormatValue(typeof(T20), _value20),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -17384,78 +17265,68 @@ namespace OneOf
             return IsT21;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                case 14: return Equals(_value14, other._value14);
-                case 15: return Equals(_value15, other._value15);
-                case 16: return Equals(_value16, other._value16);
-                case 17: return Equals(_value17, other._value17);
-                case 18: return Equals(_value18, other._value18);
-                case 19: return Equals(_value19, other._value19);
-                case 20: return Equals(_value20, other._value20);
-                case 21: return Equals(_value21, other._value21);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                14 => Equals(_value14, other._value14),
+                15 => Equals(_value15, other._value15),
+                16 => Equals(_value16, other._value16),
+                17 => Equals(_value17, other._value17),
+                18 => Equals(_value18, other._value18),
+                19 => Equals(_value19, other._value19),
+                20 => Equals(_value20, other._value20),
+                21 => Equals(_value21, other._value21),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                11 => FormatValue(typeof(T11), _value11),
+                12 => FormatValue(typeof(T12), _value12),
+                13 => FormatValue(typeof(T13), _value13),
+                14 => FormatValue(typeof(T14), _value14),
+                15 => FormatValue(typeof(T15), _value15),
+                16 => FormatValue(typeof(T16), _value16),
+                17 => FormatValue(typeof(T17), _value17),
+                18 => FormatValue(typeof(T18), _value18),
+                19 => FormatValue(typeof(T19), _value19),
+                20 => FormatValue(typeof(T20), _value20),
+                21 => FormatValue(typeof(T21), _value21),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -19568,80 +19439,70 @@ namespace OneOf
             return IsT22;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                case 14: return Equals(_value14, other._value14);
-                case 15: return Equals(_value15, other._value15);
-                case 16: return Equals(_value16, other._value16);
-                case 17: return Equals(_value17, other._value17);
-                case 18: return Equals(_value18, other._value18);
-                case 19: return Equals(_value19, other._value19);
-                case 20: return Equals(_value20, other._value20);
-                case 21: return Equals(_value21, other._value21);
-                case 22: return Equals(_value22, other._value22);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                14 => Equals(_value14, other._value14),
+                15 => Equals(_value15, other._value15),
+                16 => Equals(_value16, other._value16),
+                17 => Equals(_value17, other._value17),
+                18 => Equals(_value18, other._value18),
+                19 => Equals(_value19, other._value19),
+                20 => Equals(_value20, other._value20),
+                21 => Equals(_value21, other._value21),
+                22 => Equals(_value22, other._value22),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                case 22: return FormatValue(typeof(T22), _value22);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                11 => FormatValue(typeof(T11), _value11),
+                12 => FormatValue(typeof(T12), _value12),
+                13 => FormatValue(typeof(T13), _value13),
+                14 => FormatValue(typeof(T14), _value14),
+                15 => FormatValue(typeof(T15), _value15),
+                16 => FormatValue(typeof(T16), _value16),
+                17 => FormatValue(typeof(T17), _value17),
+                18 => FormatValue(typeof(T18), _value18),
+                19 => FormatValue(typeof(T19), _value19),
+                20 => FormatValue(typeof(T20), _value20),
+                21 => FormatValue(typeof(T21), _value21),
+                22 => FormatValue(typeof(T22), _value22),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -21892,82 +21753,72 @@ namespace OneOf
             return IsT23;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                case 14: return Equals(_value14, other._value14);
-                case 15: return Equals(_value15, other._value15);
-                case 16: return Equals(_value16, other._value16);
-                case 17: return Equals(_value17, other._value17);
-                case 18: return Equals(_value18, other._value18);
-                case 19: return Equals(_value19, other._value19);
-                case 20: return Equals(_value20, other._value20);
-                case 21: return Equals(_value21, other._value21);
-                case 22: return Equals(_value22, other._value22);
-                case 23: return Equals(_value23, other._value23);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                14 => Equals(_value14, other._value14),
+                15 => Equals(_value15, other._value15),
+                16 => Equals(_value16, other._value16),
+                17 => Equals(_value17, other._value17),
+                18 => Equals(_value18, other._value18),
+                19 => Equals(_value19, other._value19),
+                20 => Equals(_value20, other._value20),
+                21 => Equals(_value21, other._value21),
+                22 => Equals(_value22, other._value22),
+                23 => Equals(_value23, other._value23),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                case 22: return FormatValue(typeof(T22), _value22);
-                case 23: return FormatValue(typeof(T23), _value23);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                11 => FormatValue(typeof(T11), _value11),
+                12 => FormatValue(typeof(T12), _value12),
+                13 => FormatValue(typeof(T13), _value13),
+                14 => FormatValue(typeof(T14), _value14),
+                15 => FormatValue(typeof(T15), _value15),
+                16 => FormatValue(typeof(T16), _value16),
+                17 => FormatValue(typeof(T17), _value17),
+                18 => FormatValue(typeof(T18), _value18),
+                19 => FormatValue(typeof(T19), _value19),
+                20 => FormatValue(typeof(T20), _value20),
+                21 => FormatValue(typeof(T21), _value21),
+                22 => FormatValue(typeof(T22), _value22),
+                23 => FormatValue(typeof(T23), _value23),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -24360,84 +24211,74 @@ namespace OneOf
             return IsT24;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                case 14: return Equals(_value14, other._value14);
-                case 15: return Equals(_value15, other._value15);
-                case 16: return Equals(_value16, other._value16);
-                case 17: return Equals(_value17, other._value17);
-                case 18: return Equals(_value18, other._value18);
-                case 19: return Equals(_value19, other._value19);
-                case 20: return Equals(_value20, other._value20);
-                case 21: return Equals(_value21, other._value21);
-                case 22: return Equals(_value22, other._value22);
-                case 23: return Equals(_value23, other._value23);
-                case 24: return Equals(_value24, other._value24);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                14 => Equals(_value14, other._value14),
+                15 => Equals(_value15, other._value15),
+                16 => Equals(_value16, other._value16),
+                17 => Equals(_value17, other._value17),
+                18 => Equals(_value18, other._value18),
+                19 => Equals(_value19, other._value19),
+                20 => Equals(_value20, other._value20),
+                21 => Equals(_value21, other._value21),
+                22 => Equals(_value22, other._value22),
+                23 => Equals(_value23, other._value23),
+                24 => Equals(_value24, other._value24),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                case 22: return FormatValue(typeof(T22), _value22);
-                case 23: return FormatValue(typeof(T23), _value23);
-                case 24: return FormatValue(typeof(T24), _value24);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                11 => FormatValue(typeof(T11), _value11),
+                12 => FormatValue(typeof(T12), _value12),
+                13 => FormatValue(typeof(T13), _value13),
+                14 => FormatValue(typeof(T14), _value14),
+                15 => FormatValue(typeof(T15), _value15),
+                16 => FormatValue(typeof(T16), _value16),
+                17 => FormatValue(typeof(T17), _value17),
+                18 => FormatValue(typeof(T18), _value18),
+                19 => FormatValue(typeof(T19), _value19),
+                20 => FormatValue(typeof(T20), _value20),
+                21 => FormatValue(typeof(T21), _value21),
+                22 => FormatValue(typeof(T22), _value22),
+                23 => FormatValue(typeof(T23), _value23),
+                24 => FormatValue(typeof(T24), _value24),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -26976,86 +26817,76 @@ namespace OneOf
             return IsT25;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                case 14: return Equals(_value14, other._value14);
-                case 15: return Equals(_value15, other._value15);
-                case 16: return Equals(_value16, other._value16);
-                case 17: return Equals(_value17, other._value17);
-                case 18: return Equals(_value18, other._value18);
-                case 19: return Equals(_value19, other._value19);
-                case 20: return Equals(_value20, other._value20);
-                case 21: return Equals(_value21, other._value21);
-                case 22: return Equals(_value22, other._value22);
-                case 23: return Equals(_value23, other._value23);
-                case 24: return Equals(_value24, other._value24);
-                case 25: return Equals(_value25, other._value25);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                14 => Equals(_value14, other._value14),
+                15 => Equals(_value15, other._value15),
+                16 => Equals(_value16, other._value16),
+                17 => Equals(_value17, other._value17),
+                18 => Equals(_value18, other._value18),
+                19 => Equals(_value19, other._value19),
+                20 => Equals(_value20, other._value20),
+                21 => Equals(_value21, other._value21),
+                22 => Equals(_value22, other._value22),
+                23 => Equals(_value23, other._value23),
+                24 => Equals(_value24, other._value24),
+                25 => Equals(_value25, other._value25),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                case 22: return FormatValue(typeof(T22), _value22);
-                case 23: return FormatValue(typeof(T23), _value23);
-                case 24: return FormatValue(typeof(T24), _value24);
-                case 25: return FormatValue(typeof(T25), _value25);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                11 => FormatValue(typeof(T11), _value11),
+                12 => FormatValue(typeof(T12), _value12),
+                13 => FormatValue(typeof(T13), _value13),
+                14 => FormatValue(typeof(T14), _value14),
+                15 => FormatValue(typeof(T15), _value15),
+                16 => FormatValue(typeof(T16), _value16),
+                17 => FormatValue(typeof(T17), _value17),
+                18 => FormatValue(typeof(T18), _value18),
+                19 => FormatValue(typeof(T19), _value19),
+                20 => FormatValue(typeof(T20), _value20),
+                21 => FormatValue(typeof(T21), _value21),
+                22 => FormatValue(typeof(T22), _value22),
+                23 => FormatValue(typeof(T23), _value23),
+                24 => FormatValue(typeof(T24), _value24),
+                25 => FormatValue(typeof(T25), _value25),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -29744,88 +29575,78 @@ namespace OneOf
             return IsT26;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                case 14: return Equals(_value14, other._value14);
-                case 15: return Equals(_value15, other._value15);
-                case 16: return Equals(_value16, other._value16);
-                case 17: return Equals(_value17, other._value17);
-                case 18: return Equals(_value18, other._value18);
-                case 19: return Equals(_value19, other._value19);
-                case 20: return Equals(_value20, other._value20);
-                case 21: return Equals(_value21, other._value21);
-                case 22: return Equals(_value22, other._value22);
-                case 23: return Equals(_value23, other._value23);
-                case 24: return Equals(_value24, other._value24);
-                case 25: return Equals(_value25, other._value25);
-                case 26: return Equals(_value26, other._value26);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                14 => Equals(_value14, other._value14),
+                15 => Equals(_value15, other._value15),
+                16 => Equals(_value16, other._value16),
+                17 => Equals(_value17, other._value17),
+                18 => Equals(_value18, other._value18),
+                19 => Equals(_value19, other._value19),
+                20 => Equals(_value20, other._value20),
+                21 => Equals(_value21, other._value21),
+                22 => Equals(_value22, other._value22),
+                23 => Equals(_value23, other._value23),
+                24 => Equals(_value24, other._value24),
+                25 => Equals(_value25, other._value25),
+                26 => Equals(_value26, other._value26),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                case 22: return FormatValue(typeof(T22), _value22);
-                case 23: return FormatValue(typeof(T23), _value23);
-                case 24: return FormatValue(typeof(T24), _value24);
-                case 25: return FormatValue(typeof(T25), _value25);
-                case 26: return FormatValue(typeof(T26), _value26);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                11 => FormatValue(typeof(T11), _value11),
+                12 => FormatValue(typeof(T12), _value12),
+                13 => FormatValue(typeof(T13), _value13),
+                14 => FormatValue(typeof(T14), _value14),
+                15 => FormatValue(typeof(T15), _value15),
+                16 => FormatValue(typeof(T16), _value16),
+                17 => FormatValue(typeof(T17), _value17),
+                18 => FormatValue(typeof(T18), _value18),
+                19 => FormatValue(typeof(T19), _value19),
+                20 => FormatValue(typeof(T20), _value20),
+                21 => FormatValue(typeof(T21), _value21),
+                22 => FormatValue(typeof(T22), _value22),
+                23 => FormatValue(typeof(T23), _value23),
+                24 => FormatValue(typeof(T24), _value24),
+                25 => FormatValue(typeof(T25), _value25),
+                26 => FormatValue(typeof(T26), _value26),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -32668,90 +32489,80 @@ namespace OneOf
             return IsT27;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                case 14: return Equals(_value14, other._value14);
-                case 15: return Equals(_value15, other._value15);
-                case 16: return Equals(_value16, other._value16);
-                case 17: return Equals(_value17, other._value17);
-                case 18: return Equals(_value18, other._value18);
-                case 19: return Equals(_value19, other._value19);
-                case 20: return Equals(_value20, other._value20);
-                case 21: return Equals(_value21, other._value21);
-                case 22: return Equals(_value22, other._value22);
-                case 23: return Equals(_value23, other._value23);
-                case 24: return Equals(_value24, other._value24);
-                case 25: return Equals(_value25, other._value25);
-                case 26: return Equals(_value26, other._value26);
-                case 27: return Equals(_value27, other._value27);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                14 => Equals(_value14, other._value14),
+                15 => Equals(_value15, other._value15),
+                16 => Equals(_value16, other._value16),
+                17 => Equals(_value17, other._value17),
+                18 => Equals(_value18, other._value18),
+                19 => Equals(_value19, other._value19),
+                20 => Equals(_value20, other._value20),
+                21 => Equals(_value21, other._value21),
+                22 => Equals(_value22, other._value22),
+                23 => Equals(_value23, other._value23),
+                24 => Equals(_value24, other._value24),
+                25 => Equals(_value25, other._value25),
+                26 => Equals(_value26, other._value26),
+                27 => Equals(_value27, other._value27),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                case 22: return FormatValue(typeof(T22), _value22);
-                case 23: return FormatValue(typeof(T23), _value23);
-                case 24: return FormatValue(typeof(T24), _value24);
-                case 25: return FormatValue(typeof(T25), _value25);
-                case 26: return FormatValue(typeof(T26), _value26);
-                case 27: return FormatValue(typeof(T27), _value27);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                11 => FormatValue(typeof(T11), _value11),
+                12 => FormatValue(typeof(T12), _value12),
+                13 => FormatValue(typeof(T13), _value13),
+                14 => FormatValue(typeof(T14), _value14),
+                15 => FormatValue(typeof(T15), _value15),
+                16 => FormatValue(typeof(T16), _value16),
+                17 => FormatValue(typeof(T17), _value17),
+                18 => FormatValue(typeof(T18), _value18),
+                19 => FormatValue(typeof(T19), _value19),
+                20 => FormatValue(typeof(T20), _value20),
+                21 => FormatValue(typeof(T21), _value21),
+                22 => FormatValue(typeof(T22), _value22),
+                23 => FormatValue(typeof(T23), _value23),
+                24 => FormatValue(typeof(T24), _value24),
+                25 => FormatValue(typeof(T25), _value25),
+                26 => FormatValue(typeof(T26), _value26),
+                27 => FormatValue(typeof(T27), _value27),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -35752,92 +35563,82 @@ namespace OneOf
             return IsT28;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                case 14: return Equals(_value14, other._value14);
-                case 15: return Equals(_value15, other._value15);
-                case 16: return Equals(_value16, other._value16);
-                case 17: return Equals(_value17, other._value17);
-                case 18: return Equals(_value18, other._value18);
-                case 19: return Equals(_value19, other._value19);
-                case 20: return Equals(_value20, other._value20);
-                case 21: return Equals(_value21, other._value21);
-                case 22: return Equals(_value22, other._value22);
-                case 23: return Equals(_value23, other._value23);
-                case 24: return Equals(_value24, other._value24);
-                case 25: return Equals(_value25, other._value25);
-                case 26: return Equals(_value26, other._value26);
-                case 27: return Equals(_value27, other._value27);
-                case 28: return Equals(_value28, other._value28);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                14 => Equals(_value14, other._value14),
+                15 => Equals(_value15, other._value15),
+                16 => Equals(_value16, other._value16),
+                17 => Equals(_value17, other._value17),
+                18 => Equals(_value18, other._value18),
+                19 => Equals(_value19, other._value19),
+                20 => Equals(_value20, other._value20),
+                21 => Equals(_value21, other._value21),
+                22 => Equals(_value22, other._value22),
+                23 => Equals(_value23, other._value23),
+                24 => Equals(_value24, other._value24),
+                25 => Equals(_value25, other._value25),
+                26 => Equals(_value26, other._value26),
+                27 => Equals(_value27, other._value27),
+                28 => Equals(_value28, other._value28),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                case 22: return FormatValue(typeof(T22), _value22);
-                case 23: return FormatValue(typeof(T23), _value23);
-                case 24: return FormatValue(typeof(T24), _value24);
-                case 25: return FormatValue(typeof(T25), _value25);
-                case 26: return FormatValue(typeof(T26), _value26);
-                case 27: return FormatValue(typeof(T27), _value27);
-                case 28: return FormatValue(typeof(T28), _value28);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                11 => FormatValue(typeof(T11), _value11),
+                12 => FormatValue(typeof(T12), _value12),
+                13 => FormatValue(typeof(T13), _value13),
+                14 => FormatValue(typeof(T14), _value14),
+                15 => FormatValue(typeof(T15), _value15),
+                16 => FormatValue(typeof(T16), _value16),
+                17 => FormatValue(typeof(T17), _value17),
+                18 => FormatValue(typeof(T18), _value18),
+                19 => FormatValue(typeof(T19), _value19),
+                20 => FormatValue(typeof(T20), _value20),
+                21 => FormatValue(typeof(T21), _value21),
+                22 => FormatValue(typeof(T22), _value22),
+                23 => FormatValue(typeof(T23), _value23),
+                24 => FormatValue(typeof(T24), _value24),
+                25 => FormatValue(typeof(T25), _value25),
+                26 => FormatValue(typeof(T26), _value26),
+                27 => FormatValue(typeof(T27), _value27),
+                28 => FormatValue(typeof(T28), _value28),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -39000,94 +38801,84 @@ namespace OneOf
             return IsT29;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                case 14: return Equals(_value14, other._value14);
-                case 15: return Equals(_value15, other._value15);
-                case 16: return Equals(_value16, other._value16);
-                case 17: return Equals(_value17, other._value17);
-                case 18: return Equals(_value18, other._value18);
-                case 19: return Equals(_value19, other._value19);
-                case 20: return Equals(_value20, other._value20);
-                case 21: return Equals(_value21, other._value21);
-                case 22: return Equals(_value22, other._value22);
-                case 23: return Equals(_value23, other._value23);
-                case 24: return Equals(_value24, other._value24);
-                case 25: return Equals(_value25, other._value25);
-                case 26: return Equals(_value26, other._value26);
-                case 27: return Equals(_value27, other._value27);
-                case 28: return Equals(_value28, other._value28);
-                case 29: return Equals(_value29, other._value29);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                14 => Equals(_value14, other._value14),
+                15 => Equals(_value15, other._value15),
+                16 => Equals(_value16, other._value16),
+                17 => Equals(_value17, other._value17),
+                18 => Equals(_value18, other._value18),
+                19 => Equals(_value19, other._value19),
+                20 => Equals(_value20, other._value20),
+                21 => Equals(_value21, other._value21),
+                22 => Equals(_value22, other._value22),
+                23 => Equals(_value23, other._value23),
+                24 => Equals(_value24, other._value24),
+                25 => Equals(_value25, other._value25),
+                26 => Equals(_value26, other._value26),
+                27 => Equals(_value27, other._value27),
+                28 => Equals(_value28, other._value28),
+                29 => Equals(_value29, other._value29),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                case 22: return FormatValue(typeof(T22), _value22);
-                case 23: return FormatValue(typeof(T23), _value23);
-                case 24: return FormatValue(typeof(T24), _value24);
-                case 25: return FormatValue(typeof(T25), _value25);
-                case 26: return FormatValue(typeof(T26), _value26);
-                case 27: return FormatValue(typeof(T27), _value27);
-                case 28: return FormatValue(typeof(T28), _value28);
-                case 29: return FormatValue(typeof(T29), _value29);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                11 => FormatValue(typeof(T11), _value11),
+                12 => FormatValue(typeof(T12), _value12),
+                13 => FormatValue(typeof(T13), _value13),
+                14 => FormatValue(typeof(T14), _value14),
+                15 => FormatValue(typeof(T15), _value15),
+                16 => FormatValue(typeof(T16), _value16),
+                17 => FormatValue(typeof(T17), _value17),
+                18 => FormatValue(typeof(T18), _value18),
+                19 => FormatValue(typeof(T19), _value19),
+                20 => FormatValue(typeof(T20), _value20),
+                21 => FormatValue(typeof(T21), _value21),
+                22 => FormatValue(typeof(T22), _value22),
+                23 => FormatValue(typeof(T23), _value23),
+                24 => FormatValue(typeof(T24), _value24),
+                25 => FormatValue(typeof(T25), _value25),
+                26 => FormatValue(typeof(T26), _value26),
+                27 => FormatValue(typeof(T27), _value27),
+                28 => FormatValue(typeof(T28), _value28),
+                29 => FormatValue(typeof(T29), _value29),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -42416,96 +42207,86 @@ namespace OneOf
             return IsT30;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                case 14: return Equals(_value14, other._value14);
-                case 15: return Equals(_value15, other._value15);
-                case 16: return Equals(_value16, other._value16);
-                case 17: return Equals(_value17, other._value17);
-                case 18: return Equals(_value18, other._value18);
-                case 19: return Equals(_value19, other._value19);
-                case 20: return Equals(_value20, other._value20);
-                case 21: return Equals(_value21, other._value21);
-                case 22: return Equals(_value22, other._value22);
-                case 23: return Equals(_value23, other._value23);
-                case 24: return Equals(_value24, other._value24);
-                case 25: return Equals(_value25, other._value25);
-                case 26: return Equals(_value26, other._value26);
-                case 27: return Equals(_value27, other._value27);
-                case 28: return Equals(_value28, other._value28);
-                case 29: return Equals(_value29, other._value29);
-                case 30: return Equals(_value30, other._value30);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                14 => Equals(_value14, other._value14),
+                15 => Equals(_value15, other._value15),
+                16 => Equals(_value16, other._value16),
+                17 => Equals(_value17, other._value17),
+                18 => Equals(_value18, other._value18),
+                19 => Equals(_value19, other._value19),
+                20 => Equals(_value20, other._value20),
+                21 => Equals(_value21, other._value21),
+                22 => Equals(_value22, other._value22),
+                23 => Equals(_value23, other._value23),
+                24 => Equals(_value24, other._value24),
+                25 => Equals(_value25, other._value25),
+                26 => Equals(_value26, other._value26),
+                27 => Equals(_value27, other._value27),
+                28 => Equals(_value28, other._value28),
+                29 => Equals(_value29, other._value29),
+                30 => Equals(_value30, other._value30),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                case 22: return FormatValue(typeof(T22), _value22);
-                case 23: return FormatValue(typeof(T23), _value23);
-                case 24: return FormatValue(typeof(T24), _value24);
-                case 25: return FormatValue(typeof(T25), _value25);
-                case 26: return FormatValue(typeof(T26), _value26);
-                case 27: return FormatValue(typeof(T27), _value27);
-                case 28: return FormatValue(typeof(T28), _value28);
-                case 29: return FormatValue(typeof(T29), _value29);
-                case 30: return FormatValue(typeof(T30), _value30);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                11 => FormatValue(typeof(T11), _value11),
+                12 => FormatValue(typeof(T12), _value12),
+                13 => FormatValue(typeof(T13), _value13),
+                14 => FormatValue(typeof(T14), _value14),
+                15 => FormatValue(typeof(T15), _value15),
+                16 => FormatValue(typeof(T16), _value16),
+                17 => FormatValue(typeof(T17), _value17),
+                18 => FormatValue(typeof(T18), _value18),
+                19 => FormatValue(typeof(T19), _value19),
+                20 => FormatValue(typeof(T20), _value20),
+                21 => FormatValue(typeof(T21), _value21),
+                22 => FormatValue(typeof(T22), _value22),
+                23 => FormatValue(typeof(T23), _value23),
+                24 => FormatValue(typeof(T24), _value24),
+                25 => FormatValue(typeof(T25), _value25),
+                26 => FormatValue(typeof(T26), _value26),
+                27 => FormatValue(typeof(T27), _value27),
+                28 => FormatValue(typeof(T28), _value28),
+                29 => FormatValue(typeof(T29), _value29),
+                30 => FormatValue(typeof(T30), _value30),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -46004,98 +45785,88 @@ namespace OneOf
             return IsT31;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                case 14: return Equals(_value14, other._value14);
-                case 15: return Equals(_value15, other._value15);
-                case 16: return Equals(_value16, other._value16);
-                case 17: return Equals(_value17, other._value17);
-                case 18: return Equals(_value18, other._value18);
-                case 19: return Equals(_value19, other._value19);
-                case 20: return Equals(_value20, other._value20);
-                case 21: return Equals(_value21, other._value21);
-                case 22: return Equals(_value22, other._value22);
-                case 23: return Equals(_value23, other._value23);
-                case 24: return Equals(_value24, other._value24);
-                case 25: return Equals(_value25, other._value25);
-                case 26: return Equals(_value26, other._value26);
-                case 27: return Equals(_value27, other._value27);
-                case 28: return Equals(_value28, other._value28);
-                case 29: return Equals(_value29, other._value29);
-                case 30: return Equals(_value30, other._value30);
-                case 31: return Equals(_value31, other._value31);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                14 => Equals(_value14, other._value14),
+                15 => Equals(_value15, other._value15),
+                16 => Equals(_value16, other._value16),
+                17 => Equals(_value17, other._value17),
+                18 => Equals(_value18, other._value18),
+                19 => Equals(_value19, other._value19),
+                20 => Equals(_value20, other._value20),
+                21 => Equals(_value21, other._value21),
+                22 => Equals(_value22, other._value22),
+                23 => Equals(_value23, other._value23),
+                24 => Equals(_value24, other._value24),
+                25 => Equals(_value25, other._value25),
+                26 => Equals(_value26, other._value26),
+                27 => Equals(_value27, other._value27),
+                28 => Equals(_value28, other._value28),
+                29 => Equals(_value29, other._value29),
+                30 => Equals(_value30, other._value30),
+                31 => Equals(_value31, other._value31),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                case 22: return FormatValue(typeof(T22), _value22);
-                case 23: return FormatValue(typeof(T23), _value23);
-                case 24: return FormatValue(typeof(T24), _value24);
-                case 25: return FormatValue(typeof(T25), _value25);
-                case 26: return FormatValue(typeof(T26), _value26);
-                case 27: return FormatValue(typeof(T27), _value27);
-                case 28: return FormatValue(typeof(T28), _value28);
-                case 29: return FormatValue(typeof(T29), _value29);
-                case 30: return FormatValue(typeof(T30), _value30);
-                case 31: return FormatValue(typeof(T31), _value31);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                9 => FormatValue(typeof(T9), _value9),
+                10 => FormatValue(typeof(T10), _value10),
+                11 => FormatValue(typeof(T11), _value11),
+                12 => FormatValue(typeof(T12), _value12),
+                13 => FormatValue(typeof(T13), _value13),
+                14 => FormatValue(typeof(T14), _value14),
+                15 => FormatValue(typeof(T15), _value15),
+                16 => FormatValue(typeof(T16), _value16),
+                17 => FormatValue(typeof(T17), _value17),
+                18 => FormatValue(typeof(T18), _value18),
+                19 => FormatValue(typeof(T19), _value19),
+                20 => FormatValue(typeof(T20), _value20),
+                21 => FormatValue(typeof(T21), _value21),
+                22 => FormatValue(typeof(T22), _value22),
+                23 => FormatValue(typeof(T23), _value23),
+                24 => FormatValue(typeof(T24), _value24),
+                25 => FormatValue(typeof(T25), _value25),
+                26 => FormatValue(typeof(T26), _value26),
+                27 => FormatValue(typeof(T27), _value27),
+                28 => FormatValue(typeof(T28), _value28),
+                29 => FormatValue(typeof(T29), _value29),
+                30 => FormatValue(typeof(T30), _value30),
+                31 => FormatValue(typeof(T31), _value31),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {

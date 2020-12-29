@@ -1,4 +1,5 @@
 using System;
+using static OneOf.Functions;
 
 namespace OneOf
 {
@@ -64,36 +65,26 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-        bool Equals(OneOf<T0> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0> && Equals((OneOf<T0>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -232,38 +223,28 @@ namespace OneOf
             return IsT1;
 		}
 
-        bool Equals(OneOf<T0, T1> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1> && Equals((OneOf<T0, T1>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -456,40 +437,30 @@ namespace OneOf
             return IsT2;
 		}
 
-        bool Equals(OneOf<T0, T1, T2> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2> && Equals((OneOf<T0, T1, T2>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -740,42 +711,32 @@ namespace OneOf
             return IsT3;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3> && Equals((OneOf<T0, T1, T2, T3>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -1088,44 +1049,34 @@ namespace OneOf
             return IsT4;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4> && Equals((OneOf<T0, T1, T2, T3, T4>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -1504,46 +1455,36 @@ namespace OneOf
             return IsT5;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5> && Equals((OneOf<T0, T1, T2, T3, T4, T5>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -1992,48 +1933,38 @@ namespace OneOf
             return IsT6;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -2556,50 +2487,40 @@ namespace OneOf
             return IsT7;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
@@ -3200,52 +3121,42 @@ namespace OneOf
             return IsT8;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                default: return false;
-            }
-        }
+                
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                _ => false
+            };
 
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>)obj);
-        }
+        public override bool Equals(object obj) => obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> o && Equals(o);
 
         public override string ToString()
         {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
+            return _index switch
+            {
+                0 => FormatValue(typeof(T0), _value0),
+                1 => FormatValue(typeof(T1), _value1),
+                2 => FormatValue(typeof(T2), _value2),
+                3 => FormatValue(typeof(T3), _value3),
+                4 => FormatValue(typeof(T4), _value4),
+                5 => FormatValue(typeof(T5), _value5),
+                6 => FormatValue(typeof(T6), _value6),
+                7 => FormatValue(typeof(T7), _value7),
+                8 => FormatValue(typeof(T8), _value8),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
         }
+
 
         public override int GetHashCode()
         {
