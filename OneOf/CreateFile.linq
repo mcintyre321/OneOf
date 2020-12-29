@@ -195,17 +195,19 @@ namespace OneOf
 		public bool TryPickT{j}(out T{j} value, out {remainderType} remainder)
 		{{
             value = IsT{j} ? AsT{j} : default;
-            remainder = 
+            remainder = _index switch
+            {{
                 {String.Join(@"
-                ", Enumerable.Range(0, i) .Select(k => {
+                ", Enumerable.Range(0, i).Select(k => {
                     var result = 
                         k == j ? "default" :
                         i == 2 ? $"AsT{k}" :
                         k < j ? $"{remainderType}.FromT{k}(AsT{k})" :
                         $"{remainderType}.FromT{k-1}(AsT{k})";
-                    return $"_index == {k} ? {result} :";
+                    return $"{k} => {result},";
                 }))}
-                throw new InvalidOperationException();
+                _ => throw new InvalidOperationException()
+            }};
             return IsT{j};
 		}}");
 			}
