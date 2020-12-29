@@ -24,10 +24,13 @@ public string GetContent(bool isStruct, int indexStart, int indexEnd)
 {
 	var className = isStruct ? "OneOf" : "OneOfBase";
 	var sb = new StringBuilder();
-	sb.Append(@"using System;
+	sb.Append($@"using System;
+{(isStruct ? @"
+using static OneOf.Functions;" : "")}
 
 namespace OneOf
-{");
+{{");
+
 	for (var i = indexStart; i < indexEnd; i++)
 	{
 		var genericArg = string.Join(", ", Enumerable.Range(0, i).Select(e => $"T{e}"));
@@ -221,60 +224,43 @@ namespace OneOf
             sb.AppendLine(@$"
         public override bool Equals(object obj) => obj is {className}<{genericArg}> o && Equals(o);");
         } else {
-            sb.AppendLine(@"
+            sb.AppendLine($@"
         public override bool Equals(object obj)
-        {
+        {{
             if (ReferenceEquals(null, obj))
                 return false;
 
             if (ReferenceEquals(this, obj))
                 return true;
 
-            return obj is OneOfBase<T0> other && Equals(other);
-        }");
+            return obj is {className}<{genericArg}> o && Equals(o);
+        }}");
         }
-
-        sb.AppendLine(@"        }");
-        sb.AppendLine(@"
+        
+        sb.AppendLine($@"
         public override string ToString()
-        {");
-        if(isStruct){
-            sb.AppendLine(@"            string FormatValue<T>(Type type, T value) => $""{type.FullName}: {value?.ToString()}"";");
-        }
-        else
-        {
-            sb.AppendLine(@"            string FormatValue<T>(Type type, T value) => object.ReferenceEquals(this, value) ? base.ToString() : $""{type.FullName}: {value?.ToString()}"";");
-        }
-        sb.AppendLine(@"            switch(_index) {");
-        for(var j = 0; j < i; j++) {
-            sb.AppendLine($"                case {j}: return FormatValue(typeof(T{j}), _value{j});");
-        }
-        sb.Append(@"                default: throw new InvalidOperationException(""Unexpected index, which indicates a problem in the OneOf codegen."");
-            }
-        }");
-        sb.AppendLine(@"
-
+        {{{(isStruct ? "" : @"
+            string FormatValue<T>(Type type, T value) => object.ReferenceEquals(this, value) ? base.ToString() : $""{type.FullName}: {value?.ToString()}"";")}
+            return _index switch
+            {{
+                {String.Join(@"
+                ", Enumerable.Range(0, i).Select(j => $"{j} => FormatValue(typeof(T{j}), _value{j}),"))}
+                _ => throw new InvalidOperationException(""Unexpected index, which indicates a problem in the OneOf codegen."")
+            }};
+        }}");
+        
+        sb.AppendLine($@"
         public override int GetHashCode()
-        {
-            unchecked
-            {
-                int hashCode;
-                switch (_index)
-                {");
-		for (var j = 0; j < i; j++)
-		{
-			sb.AppendLine($@"                    case {j}:
-                    hashCode = _value{j}?.GetHashCode() ?? 0;
-                    break;");
-		}
-		sb.AppendLine(@"                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
-        }
-    }");
+        {{
+            int hashCode = _index switch
+            {{
+                {String.Join(@"
+                ", Enumerable.Range(0, i).Select(j => $"{j} => _value{j}?.GetHashCode() ?? 0,"))}
+                _ => 0
+            }};
+            return (hashCode*397) ^ _index;
+        }}
+    }}");
 	}
 	sb.AppendLine("}");
 	return sb.ToString(); ;

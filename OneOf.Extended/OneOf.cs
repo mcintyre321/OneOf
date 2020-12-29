@@ -1,4 +1,5 @@
 using System;
+
 using static OneOf.Functions;
 
 namespace OneOf
@@ -679,50 +680,23 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -1487,53 +1461,24 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -2387,56 +2332,25 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                11 => _value11?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -3383,59 +3297,26 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                11 => _value11?.GetHashCode() ?? 0,
+                12 => _value12?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -4479,62 +4360,27 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                11 => _value11?.GetHashCode() ?? 0,
+                12 => _value12?.GetHashCode() ?? 0,
+                13 => _value13?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -5679,65 +5525,28 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    case 14:
-                    hashCode = _value14?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                11 => _value11?.GetHashCode() ?? 0,
+                12 => _value12?.GetHashCode() ?? 0,
+                13 => _value13?.GetHashCode() ?? 0,
+                14 => _value14?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -6987,68 +6796,29 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    case 14:
-                    hashCode = _value14?.GetHashCode() ?? 0;
-                    break;
-                    case 15:
-                    hashCode = _value15?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                11 => _value11?.GetHashCode() ?? 0,
+                12 => _value12?.GetHashCode() ?? 0,
+                13 => _value13?.GetHashCode() ?? 0,
+                14 => _value14?.GetHashCode() ?? 0,
+                15 => _value15?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -8407,71 +8177,30 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    case 14:
-                    hashCode = _value14?.GetHashCode() ?? 0;
-                    break;
-                    case 15:
-                    hashCode = _value15?.GetHashCode() ?? 0;
-                    break;
-                    case 16:
-                    hashCode = _value16?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                11 => _value11?.GetHashCode() ?? 0,
+                12 => _value12?.GetHashCode() ?? 0,
+                13 => _value13?.GetHashCode() ?? 0,
+                14 => _value14?.GetHashCode() ?? 0,
+                15 => _value15?.GetHashCode() ?? 0,
+                16 => _value16?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -9943,74 +9672,31 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    case 14:
-                    hashCode = _value14?.GetHashCode() ?? 0;
-                    break;
-                    case 15:
-                    hashCode = _value15?.GetHashCode() ?? 0;
-                    break;
-                    case 16:
-                    hashCode = _value16?.GetHashCode() ?? 0;
-                    break;
-                    case 17:
-                    hashCode = _value17?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                11 => _value11?.GetHashCode() ?? 0,
+                12 => _value12?.GetHashCode() ?? 0,
+                13 => _value13?.GetHashCode() ?? 0,
+                14 => _value14?.GetHashCode() ?? 0,
+                15 => _value15?.GetHashCode() ?? 0,
+                16 => _value16?.GetHashCode() ?? 0,
+                17 => _value17?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -11599,77 +11285,32 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    case 14:
-                    hashCode = _value14?.GetHashCode() ?? 0;
-                    break;
-                    case 15:
-                    hashCode = _value15?.GetHashCode() ?? 0;
-                    break;
-                    case 16:
-                    hashCode = _value16?.GetHashCode() ?? 0;
-                    break;
-                    case 17:
-                    hashCode = _value17?.GetHashCode() ?? 0;
-                    break;
-                    case 18:
-                    hashCode = _value18?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                11 => _value11?.GetHashCode() ?? 0,
+                12 => _value12?.GetHashCode() ?? 0,
+                13 => _value13?.GetHashCode() ?? 0,
+                14 => _value14?.GetHashCode() ?? 0,
+                15 => _value15?.GetHashCode() ?? 0,
+                16 => _value16?.GetHashCode() ?? 0,
+                17 => _value17?.GetHashCode() ?? 0,
+                18 => _value18?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -13379,80 +13020,33 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    case 14:
-                    hashCode = _value14?.GetHashCode() ?? 0;
-                    break;
-                    case 15:
-                    hashCode = _value15?.GetHashCode() ?? 0;
-                    break;
-                    case 16:
-                    hashCode = _value16?.GetHashCode() ?? 0;
-                    break;
-                    case 17:
-                    hashCode = _value17?.GetHashCode() ?? 0;
-                    break;
-                    case 18:
-                    hashCode = _value18?.GetHashCode() ?? 0;
-                    break;
-                    case 19:
-                    hashCode = _value19?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                11 => _value11?.GetHashCode() ?? 0,
+                12 => _value12?.GetHashCode() ?? 0,
+                13 => _value13?.GetHashCode() ?? 0,
+                14 => _value14?.GetHashCode() ?? 0,
+                15 => _value15?.GetHashCode() ?? 0,
+                16 => _value16?.GetHashCode() ?? 0,
+                17 => _value17?.GetHashCode() ?? 0,
+                18 => _value18?.GetHashCode() ?? 0,
+                19 => _value19?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -15287,83 +14881,34 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    case 14:
-                    hashCode = _value14?.GetHashCode() ?? 0;
-                    break;
-                    case 15:
-                    hashCode = _value15?.GetHashCode() ?? 0;
-                    break;
-                    case 16:
-                    hashCode = _value16?.GetHashCode() ?? 0;
-                    break;
-                    case 17:
-                    hashCode = _value17?.GetHashCode() ?? 0;
-                    break;
-                    case 18:
-                    hashCode = _value18?.GetHashCode() ?? 0;
-                    break;
-                    case 19:
-                    hashCode = _value19?.GetHashCode() ?? 0;
-                    break;
-                    case 20:
-                    hashCode = _value20?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                11 => _value11?.GetHashCode() ?? 0,
+                12 => _value12?.GetHashCode() ?? 0,
+                13 => _value13?.GetHashCode() ?? 0,
+                14 => _value14?.GetHashCode() ?? 0,
+                15 => _value15?.GetHashCode() ?? 0,
+                16 => _value16?.GetHashCode() ?? 0,
+                17 => _value17?.GetHashCode() ?? 0,
+                18 => _value18?.GetHashCode() ?? 0,
+                19 => _value19?.GetHashCode() ?? 0,
+                20 => _value20?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -17327,86 +16872,35 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    case 14:
-                    hashCode = _value14?.GetHashCode() ?? 0;
-                    break;
-                    case 15:
-                    hashCode = _value15?.GetHashCode() ?? 0;
-                    break;
-                    case 16:
-                    hashCode = _value16?.GetHashCode() ?? 0;
-                    break;
-                    case 17:
-                    hashCode = _value17?.GetHashCode() ?? 0;
-                    break;
-                    case 18:
-                    hashCode = _value18?.GetHashCode() ?? 0;
-                    break;
-                    case 19:
-                    hashCode = _value19?.GetHashCode() ?? 0;
-                    break;
-                    case 20:
-                    hashCode = _value20?.GetHashCode() ?? 0;
-                    break;
-                    case 21:
-                    hashCode = _value21?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                11 => _value11?.GetHashCode() ?? 0,
+                12 => _value12?.GetHashCode() ?? 0,
+                13 => _value13?.GetHashCode() ?? 0,
+                14 => _value14?.GetHashCode() ?? 0,
+                15 => _value15?.GetHashCode() ?? 0,
+                16 => _value16?.GetHashCode() ?? 0,
+                17 => _value17?.GetHashCode() ?? 0,
+                18 => _value18?.GetHashCode() ?? 0,
+                19 => _value19?.GetHashCode() ?? 0,
+                20 => _value20?.GetHashCode() ?? 0,
+                21 => _value21?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -19503,89 +18997,36 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    case 14:
-                    hashCode = _value14?.GetHashCode() ?? 0;
-                    break;
-                    case 15:
-                    hashCode = _value15?.GetHashCode() ?? 0;
-                    break;
-                    case 16:
-                    hashCode = _value16?.GetHashCode() ?? 0;
-                    break;
-                    case 17:
-                    hashCode = _value17?.GetHashCode() ?? 0;
-                    break;
-                    case 18:
-                    hashCode = _value18?.GetHashCode() ?? 0;
-                    break;
-                    case 19:
-                    hashCode = _value19?.GetHashCode() ?? 0;
-                    break;
-                    case 20:
-                    hashCode = _value20?.GetHashCode() ?? 0;
-                    break;
-                    case 21:
-                    hashCode = _value21?.GetHashCode() ?? 0;
-                    break;
-                    case 22:
-                    hashCode = _value22?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                11 => _value11?.GetHashCode() ?? 0,
+                12 => _value12?.GetHashCode() ?? 0,
+                13 => _value13?.GetHashCode() ?? 0,
+                14 => _value14?.GetHashCode() ?? 0,
+                15 => _value15?.GetHashCode() ?? 0,
+                16 => _value16?.GetHashCode() ?? 0,
+                17 => _value17?.GetHashCode() ?? 0,
+                18 => _value18?.GetHashCode() ?? 0,
+                19 => _value19?.GetHashCode() ?? 0,
+                20 => _value20?.GetHashCode() ?? 0,
+                21 => _value21?.GetHashCode() ?? 0,
+                22 => _value22?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -21819,92 +21260,37 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    case 14:
-                    hashCode = _value14?.GetHashCode() ?? 0;
-                    break;
-                    case 15:
-                    hashCode = _value15?.GetHashCode() ?? 0;
-                    break;
-                    case 16:
-                    hashCode = _value16?.GetHashCode() ?? 0;
-                    break;
-                    case 17:
-                    hashCode = _value17?.GetHashCode() ?? 0;
-                    break;
-                    case 18:
-                    hashCode = _value18?.GetHashCode() ?? 0;
-                    break;
-                    case 19:
-                    hashCode = _value19?.GetHashCode() ?? 0;
-                    break;
-                    case 20:
-                    hashCode = _value20?.GetHashCode() ?? 0;
-                    break;
-                    case 21:
-                    hashCode = _value21?.GetHashCode() ?? 0;
-                    break;
-                    case 22:
-                    hashCode = _value22?.GetHashCode() ?? 0;
-                    break;
-                    case 23:
-                    hashCode = _value23?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                11 => _value11?.GetHashCode() ?? 0,
+                12 => _value12?.GetHashCode() ?? 0,
+                13 => _value13?.GetHashCode() ?? 0,
+                14 => _value14?.GetHashCode() ?? 0,
+                15 => _value15?.GetHashCode() ?? 0,
+                16 => _value16?.GetHashCode() ?? 0,
+                17 => _value17?.GetHashCode() ?? 0,
+                18 => _value18?.GetHashCode() ?? 0,
+                19 => _value19?.GetHashCode() ?? 0,
+                20 => _value20?.GetHashCode() ?? 0,
+                21 => _value21?.GetHashCode() ?? 0,
+                22 => _value22?.GetHashCode() ?? 0,
+                23 => _value23?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -24279,95 +23665,38 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    case 14:
-                    hashCode = _value14?.GetHashCode() ?? 0;
-                    break;
-                    case 15:
-                    hashCode = _value15?.GetHashCode() ?? 0;
-                    break;
-                    case 16:
-                    hashCode = _value16?.GetHashCode() ?? 0;
-                    break;
-                    case 17:
-                    hashCode = _value17?.GetHashCode() ?? 0;
-                    break;
-                    case 18:
-                    hashCode = _value18?.GetHashCode() ?? 0;
-                    break;
-                    case 19:
-                    hashCode = _value19?.GetHashCode() ?? 0;
-                    break;
-                    case 20:
-                    hashCode = _value20?.GetHashCode() ?? 0;
-                    break;
-                    case 21:
-                    hashCode = _value21?.GetHashCode() ?? 0;
-                    break;
-                    case 22:
-                    hashCode = _value22?.GetHashCode() ?? 0;
-                    break;
-                    case 23:
-                    hashCode = _value23?.GetHashCode() ?? 0;
-                    break;
-                    case 24:
-                    hashCode = _value24?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                11 => _value11?.GetHashCode() ?? 0,
+                12 => _value12?.GetHashCode() ?? 0,
+                13 => _value13?.GetHashCode() ?? 0,
+                14 => _value14?.GetHashCode() ?? 0,
+                15 => _value15?.GetHashCode() ?? 0,
+                16 => _value16?.GetHashCode() ?? 0,
+                17 => _value17?.GetHashCode() ?? 0,
+                18 => _value18?.GetHashCode() ?? 0,
+                19 => _value19?.GetHashCode() ?? 0,
+                20 => _value20?.GetHashCode() ?? 0,
+                21 => _value21?.GetHashCode() ?? 0,
+                22 => _value22?.GetHashCode() ?? 0,
+                23 => _value23?.GetHashCode() ?? 0,
+                24 => _value24?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -26887,98 +26216,39 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    case 14:
-                    hashCode = _value14?.GetHashCode() ?? 0;
-                    break;
-                    case 15:
-                    hashCode = _value15?.GetHashCode() ?? 0;
-                    break;
-                    case 16:
-                    hashCode = _value16?.GetHashCode() ?? 0;
-                    break;
-                    case 17:
-                    hashCode = _value17?.GetHashCode() ?? 0;
-                    break;
-                    case 18:
-                    hashCode = _value18?.GetHashCode() ?? 0;
-                    break;
-                    case 19:
-                    hashCode = _value19?.GetHashCode() ?? 0;
-                    break;
-                    case 20:
-                    hashCode = _value20?.GetHashCode() ?? 0;
-                    break;
-                    case 21:
-                    hashCode = _value21?.GetHashCode() ?? 0;
-                    break;
-                    case 22:
-                    hashCode = _value22?.GetHashCode() ?? 0;
-                    break;
-                    case 23:
-                    hashCode = _value23?.GetHashCode() ?? 0;
-                    break;
-                    case 24:
-                    hashCode = _value24?.GetHashCode() ?? 0;
-                    break;
-                    case 25:
-                    hashCode = _value25?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                11 => _value11?.GetHashCode() ?? 0,
+                12 => _value12?.GetHashCode() ?? 0,
+                13 => _value13?.GetHashCode() ?? 0,
+                14 => _value14?.GetHashCode() ?? 0,
+                15 => _value15?.GetHashCode() ?? 0,
+                16 => _value16?.GetHashCode() ?? 0,
+                17 => _value17?.GetHashCode() ?? 0,
+                18 => _value18?.GetHashCode() ?? 0,
+                19 => _value19?.GetHashCode() ?? 0,
+                20 => _value20?.GetHashCode() ?? 0,
+                21 => _value21?.GetHashCode() ?? 0,
+                22 => _value22?.GetHashCode() ?? 0,
+                23 => _value23?.GetHashCode() ?? 0,
+                24 => _value24?.GetHashCode() ?? 0,
+                25 => _value25?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -29647,101 +28917,40 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    case 14:
-                    hashCode = _value14?.GetHashCode() ?? 0;
-                    break;
-                    case 15:
-                    hashCode = _value15?.GetHashCode() ?? 0;
-                    break;
-                    case 16:
-                    hashCode = _value16?.GetHashCode() ?? 0;
-                    break;
-                    case 17:
-                    hashCode = _value17?.GetHashCode() ?? 0;
-                    break;
-                    case 18:
-                    hashCode = _value18?.GetHashCode() ?? 0;
-                    break;
-                    case 19:
-                    hashCode = _value19?.GetHashCode() ?? 0;
-                    break;
-                    case 20:
-                    hashCode = _value20?.GetHashCode() ?? 0;
-                    break;
-                    case 21:
-                    hashCode = _value21?.GetHashCode() ?? 0;
-                    break;
-                    case 22:
-                    hashCode = _value22?.GetHashCode() ?? 0;
-                    break;
-                    case 23:
-                    hashCode = _value23?.GetHashCode() ?? 0;
-                    break;
-                    case 24:
-                    hashCode = _value24?.GetHashCode() ?? 0;
-                    break;
-                    case 25:
-                    hashCode = _value25?.GetHashCode() ?? 0;
-                    break;
-                    case 26:
-                    hashCode = _value26?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                11 => _value11?.GetHashCode() ?? 0,
+                12 => _value12?.GetHashCode() ?? 0,
+                13 => _value13?.GetHashCode() ?? 0,
+                14 => _value14?.GetHashCode() ?? 0,
+                15 => _value15?.GetHashCode() ?? 0,
+                16 => _value16?.GetHashCode() ?? 0,
+                17 => _value17?.GetHashCode() ?? 0,
+                18 => _value18?.GetHashCode() ?? 0,
+                19 => _value19?.GetHashCode() ?? 0,
+                20 => _value20?.GetHashCode() ?? 0,
+                21 => _value21?.GetHashCode() ?? 0,
+                22 => _value22?.GetHashCode() ?? 0,
+                23 => _value23?.GetHashCode() ?? 0,
+                24 => _value24?.GetHashCode() ?? 0,
+                25 => _value25?.GetHashCode() ?? 0,
+                26 => _value26?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -32563,104 +31772,41 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    case 14:
-                    hashCode = _value14?.GetHashCode() ?? 0;
-                    break;
-                    case 15:
-                    hashCode = _value15?.GetHashCode() ?? 0;
-                    break;
-                    case 16:
-                    hashCode = _value16?.GetHashCode() ?? 0;
-                    break;
-                    case 17:
-                    hashCode = _value17?.GetHashCode() ?? 0;
-                    break;
-                    case 18:
-                    hashCode = _value18?.GetHashCode() ?? 0;
-                    break;
-                    case 19:
-                    hashCode = _value19?.GetHashCode() ?? 0;
-                    break;
-                    case 20:
-                    hashCode = _value20?.GetHashCode() ?? 0;
-                    break;
-                    case 21:
-                    hashCode = _value21?.GetHashCode() ?? 0;
-                    break;
-                    case 22:
-                    hashCode = _value22?.GetHashCode() ?? 0;
-                    break;
-                    case 23:
-                    hashCode = _value23?.GetHashCode() ?? 0;
-                    break;
-                    case 24:
-                    hashCode = _value24?.GetHashCode() ?? 0;
-                    break;
-                    case 25:
-                    hashCode = _value25?.GetHashCode() ?? 0;
-                    break;
-                    case 26:
-                    hashCode = _value26?.GetHashCode() ?? 0;
-                    break;
-                    case 27:
-                    hashCode = _value27?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                11 => _value11?.GetHashCode() ?? 0,
+                12 => _value12?.GetHashCode() ?? 0,
+                13 => _value13?.GetHashCode() ?? 0,
+                14 => _value14?.GetHashCode() ?? 0,
+                15 => _value15?.GetHashCode() ?? 0,
+                16 => _value16?.GetHashCode() ?? 0,
+                17 => _value17?.GetHashCode() ?? 0,
+                18 => _value18?.GetHashCode() ?? 0,
+                19 => _value19?.GetHashCode() ?? 0,
+                20 => _value20?.GetHashCode() ?? 0,
+                21 => _value21?.GetHashCode() ?? 0,
+                22 => _value22?.GetHashCode() ?? 0,
+                23 => _value23?.GetHashCode() ?? 0,
+                24 => _value24?.GetHashCode() ?? 0,
+                25 => _value25?.GetHashCode() ?? 0,
+                26 => _value26?.GetHashCode() ?? 0,
+                27 => _value27?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -35639,107 +34785,42 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    case 14:
-                    hashCode = _value14?.GetHashCode() ?? 0;
-                    break;
-                    case 15:
-                    hashCode = _value15?.GetHashCode() ?? 0;
-                    break;
-                    case 16:
-                    hashCode = _value16?.GetHashCode() ?? 0;
-                    break;
-                    case 17:
-                    hashCode = _value17?.GetHashCode() ?? 0;
-                    break;
-                    case 18:
-                    hashCode = _value18?.GetHashCode() ?? 0;
-                    break;
-                    case 19:
-                    hashCode = _value19?.GetHashCode() ?? 0;
-                    break;
-                    case 20:
-                    hashCode = _value20?.GetHashCode() ?? 0;
-                    break;
-                    case 21:
-                    hashCode = _value21?.GetHashCode() ?? 0;
-                    break;
-                    case 22:
-                    hashCode = _value22?.GetHashCode() ?? 0;
-                    break;
-                    case 23:
-                    hashCode = _value23?.GetHashCode() ?? 0;
-                    break;
-                    case 24:
-                    hashCode = _value24?.GetHashCode() ?? 0;
-                    break;
-                    case 25:
-                    hashCode = _value25?.GetHashCode() ?? 0;
-                    break;
-                    case 26:
-                    hashCode = _value26?.GetHashCode() ?? 0;
-                    break;
-                    case 27:
-                    hashCode = _value27?.GetHashCode() ?? 0;
-                    break;
-                    case 28:
-                    hashCode = _value28?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                11 => _value11?.GetHashCode() ?? 0,
+                12 => _value12?.GetHashCode() ?? 0,
+                13 => _value13?.GetHashCode() ?? 0,
+                14 => _value14?.GetHashCode() ?? 0,
+                15 => _value15?.GetHashCode() ?? 0,
+                16 => _value16?.GetHashCode() ?? 0,
+                17 => _value17?.GetHashCode() ?? 0,
+                18 => _value18?.GetHashCode() ?? 0,
+                19 => _value19?.GetHashCode() ?? 0,
+                20 => _value20?.GetHashCode() ?? 0,
+                21 => _value21?.GetHashCode() ?? 0,
+                22 => _value22?.GetHashCode() ?? 0,
+                23 => _value23?.GetHashCode() ?? 0,
+                24 => _value24?.GetHashCode() ?? 0,
+                25 => _value25?.GetHashCode() ?? 0,
+                26 => _value26?.GetHashCode() ?? 0,
+                27 => _value27?.GetHashCode() ?? 0,
+                28 => _value28?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -38879,110 +37960,43 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    case 14:
-                    hashCode = _value14?.GetHashCode() ?? 0;
-                    break;
-                    case 15:
-                    hashCode = _value15?.GetHashCode() ?? 0;
-                    break;
-                    case 16:
-                    hashCode = _value16?.GetHashCode() ?? 0;
-                    break;
-                    case 17:
-                    hashCode = _value17?.GetHashCode() ?? 0;
-                    break;
-                    case 18:
-                    hashCode = _value18?.GetHashCode() ?? 0;
-                    break;
-                    case 19:
-                    hashCode = _value19?.GetHashCode() ?? 0;
-                    break;
-                    case 20:
-                    hashCode = _value20?.GetHashCode() ?? 0;
-                    break;
-                    case 21:
-                    hashCode = _value21?.GetHashCode() ?? 0;
-                    break;
-                    case 22:
-                    hashCode = _value22?.GetHashCode() ?? 0;
-                    break;
-                    case 23:
-                    hashCode = _value23?.GetHashCode() ?? 0;
-                    break;
-                    case 24:
-                    hashCode = _value24?.GetHashCode() ?? 0;
-                    break;
-                    case 25:
-                    hashCode = _value25?.GetHashCode() ?? 0;
-                    break;
-                    case 26:
-                    hashCode = _value26?.GetHashCode() ?? 0;
-                    break;
-                    case 27:
-                    hashCode = _value27?.GetHashCode() ?? 0;
-                    break;
-                    case 28:
-                    hashCode = _value28?.GetHashCode() ?? 0;
-                    break;
-                    case 29:
-                    hashCode = _value29?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                11 => _value11?.GetHashCode() ?? 0,
+                12 => _value12?.GetHashCode() ?? 0,
+                13 => _value13?.GetHashCode() ?? 0,
+                14 => _value14?.GetHashCode() ?? 0,
+                15 => _value15?.GetHashCode() ?? 0,
+                16 => _value16?.GetHashCode() ?? 0,
+                17 => _value17?.GetHashCode() ?? 0,
+                18 => _value18?.GetHashCode() ?? 0,
+                19 => _value19?.GetHashCode() ?? 0,
+                20 => _value20?.GetHashCode() ?? 0,
+                21 => _value21?.GetHashCode() ?? 0,
+                22 => _value22?.GetHashCode() ?? 0,
+                23 => _value23?.GetHashCode() ?? 0,
+                24 => _value24?.GetHashCode() ?? 0,
+                25 => _value25?.GetHashCode() ?? 0,
+                26 => _value26?.GetHashCode() ?? 0,
+                27 => _value27?.GetHashCode() ?? 0,
+                28 => _value28?.GetHashCode() ?? 0,
+                29 => _value29?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -42287,113 +41301,44 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    case 14:
-                    hashCode = _value14?.GetHashCode() ?? 0;
-                    break;
-                    case 15:
-                    hashCode = _value15?.GetHashCode() ?? 0;
-                    break;
-                    case 16:
-                    hashCode = _value16?.GetHashCode() ?? 0;
-                    break;
-                    case 17:
-                    hashCode = _value17?.GetHashCode() ?? 0;
-                    break;
-                    case 18:
-                    hashCode = _value18?.GetHashCode() ?? 0;
-                    break;
-                    case 19:
-                    hashCode = _value19?.GetHashCode() ?? 0;
-                    break;
-                    case 20:
-                    hashCode = _value20?.GetHashCode() ?? 0;
-                    break;
-                    case 21:
-                    hashCode = _value21?.GetHashCode() ?? 0;
-                    break;
-                    case 22:
-                    hashCode = _value22?.GetHashCode() ?? 0;
-                    break;
-                    case 23:
-                    hashCode = _value23?.GetHashCode() ?? 0;
-                    break;
-                    case 24:
-                    hashCode = _value24?.GetHashCode() ?? 0;
-                    break;
-                    case 25:
-                    hashCode = _value25?.GetHashCode() ?? 0;
-                    break;
-                    case 26:
-                    hashCode = _value26?.GetHashCode() ?? 0;
-                    break;
-                    case 27:
-                    hashCode = _value27?.GetHashCode() ?? 0;
-                    break;
-                    case 28:
-                    hashCode = _value28?.GetHashCode() ?? 0;
-                    break;
-                    case 29:
-                    hashCode = _value29?.GetHashCode() ?? 0;
-                    break;
-                    case 30:
-                    hashCode = _value30?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                11 => _value11?.GetHashCode() ?? 0,
+                12 => _value12?.GetHashCode() ?? 0,
+                13 => _value13?.GetHashCode() ?? 0,
+                14 => _value14?.GetHashCode() ?? 0,
+                15 => _value15?.GetHashCode() ?? 0,
+                16 => _value16?.GetHashCode() ?? 0,
+                17 => _value17?.GetHashCode() ?? 0,
+                18 => _value18?.GetHashCode() ?? 0,
+                19 => _value19?.GetHashCode() ?? 0,
+                20 => _value20?.GetHashCode() ?? 0,
+                21 => _value21?.GetHashCode() ?? 0,
+                22 => _value22?.GetHashCode() ?? 0,
+                23 => _value23?.GetHashCode() ?? 0,
+                24 => _value24?.GetHashCode() ?? 0,
+                25 => _value25?.GetHashCode() ?? 0,
+                26 => _value26?.GetHashCode() ?? 0,
+                27 => _value27?.GetHashCode() ?? 0,
+                28 => _value28?.GetHashCode() ?? 0,
+                29 => _value29?.GetHashCode() ?? 0,
+                30 => _value30?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 
@@ -45867,116 +44812,45 @@ namespace OneOf
             };
         }
 
-
         public override int GetHashCode()
         {
-            unchecked
+            int hashCode = _index switch
             {
-                int hashCode;
-                switch (_index)
-                {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    case 14:
-                    hashCode = _value14?.GetHashCode() ?? 0;
-                    break;
-                    case 15:
-                    hashCode = _value15?.GetHashCode() ?? 0;
-                    break;
-                    case 16:
-                    hashCode = _value16?.GetHashCode() ?? 0;
-                    break;
-                    case 17:
-                    hashCode = _value17?.GetHashCode() ?? 0;
-                    break;
-                    case 18:
-                    hashCode = _value18?.GetHashCode() ?? 0;
-                    break;
-                    case 19:
-                    hashCode = _value19?.GetHashCode() ?? 0;
-                    break;
-                    case 20:
-                    hashCode = _value20?.GetHashCode() ?? 0;
-                    break;
-                    case 21:
-                    hashCode = _value21?.GetHashCode() ?? 0;
-                    break;
-                    case 22:
-                    hashCode = _value22?.GetHashCode() ?? 0;
-                    break;
-                    case 23:
-                    hashCode = _value23?.GetHashCode() ?? 0;
-                    break;
-                    case 24:
-                    hashCode = _value24?.GetHashCode() ?? 0;
-                    break;
-                    case 25:
-                    hashCode = _value25?.GetHashCode() ?? 0;
-                    break;
-                    case 26:
-                    hashCode = _value26?.GetHashCode() ?? 0;
-                    break;
-                    case 27:
-                    hashCode = _value27?.GetHashCode() ?? 0;
-                    break;
-                    case 28:
-                    hashCode = _value28?.GetHashCode() ?? 0;
-                    break;
-                    case 29:
-                    hashCode = _value29?.GetHashCode() ?? 0;
-                    break;
-                    case 30:
-                    hashCode = _value30?.GetHashCode() ?? 0;
-                    break;
-                    case 31:
-                    hashCode = _value31?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
-                return (hashCode*397) ^ _index;
-            }
+                0 => _value0?.GetHashCode() ?? 0,
+                1 => _value1?.GetHashCode() ?? 0,
+                2 => _value2?.GetHashCode() ?? 0,
+                3 => _value3?.GetHashCode() ?? 0,
+                4 => _value4?.GetHashCode() ?? 0,
+                5 => _value5?.GetHashCode() ?? 0,
+                6 => _value6?.GetHashCode() ?? 0,
+                7 => _value7?.GetHashCode() ?? 0,
+                8 => _value8?.GetHashCode() ?? 0,
+                9 => _value9?.GetHashCode() ?? 0,
+                10 => _value10?.GetHashCode() ?? 0,
+                11 => _value11?.GetHashCode() ?? 0,
+                12 => _value12?.GetHashCode() ?? 0,
+                13 => _value13?.GetHashCode() ?? 0,
+                14 => _value14?.GetHashCode() ?? 0,
+                15 => _value15?.GetHashCode() ?? 0,
+                16 => _value16?.GetHashCode() ?? 0,
+                17 => _value17?.GetHashCode() ?? 0,
+                18 => _value18?.GetHashCode() ?? 0,
+                19 => _value19?.GetHashCode() ?? 0,
+                20 => _value20?.GetHashCode() ?? 0,
+                21 => _value21?.GetHashCode() ?? 0,
+                22 => _value22?.GetHashCode() ?? 0,
+                23 => _value23?.GetHashCode() ?? 0,
+                24 => _value24?.GetHashCode() ?? 0,
+                25 => _value25?.GetHashCode() ?? 0,
+                26 => _value26?.GetHashCode() ?? 0,
+                27 => _value27?.GetHashCode() ?? 0,
+                28 => _value28?.GetHashCode() ?? 0,
+                29 => _value29?.GetHashCode() ?? 0,
+                30 => _value30?.GetHashCode() ?? 0,
+                31 => _value31?.GetHashCode() ?? 0,
+                _ => 0
+            };
+            return (hashCode*397) ^ _index;
         }
     }
 }
