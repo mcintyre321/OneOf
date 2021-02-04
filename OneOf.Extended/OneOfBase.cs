@@ -35,7 +35,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -52,14 +52,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -67,7 +67,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -75,7 +75,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -83,7 +83,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -91,7 +91,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -99,7 +99,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -107,7 +107,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -115,7 +115,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -123,7 +123,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -131,7 +131,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9)
@@ -536,7 +536,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -554,14 +554,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -569,7 +569,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -577,7 +577,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -585,7 +585,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -593,7 +593,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -601,7 +601,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -609,7 +609,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -617,7 +617,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -625,7 +625,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -633,7 +633,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -641,7 +641,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10)
@@ -1091,7 +1091,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -1110,14 +1110,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -1125,7 +1125,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -1133,7 +1133,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -1141,7 +1141,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -1149,7 +1149,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -1157,7 +1157,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -1165,7 +1165,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -1173,7 +1173,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -1181,7 +1181,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -1189,7 +1189,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -1197,7 +1197,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
         public bool IsT11 => _index == 11;
         
@@ -1205,7 +1205,7 @@ namespace OneOf
             _index == 11 ?
                 _value11 :
                 throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11)
@@ -1702,7 +1702,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -1722,14 +1722,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -1737,7 +1737,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -1745,7 +1745,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -1753,7 +1753,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -1761,7 +1761,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -1769,7 +1769,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -1777,7 +1777,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -1785,7 +1785,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -1793,7 +1793,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -1801,7 +1801,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -1809,7 +1809,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
         public bool IsT11 => _index == 11;
         
@@ -1817,7 +1817,7 @@ namespace OneOf
             _index == 11 ?
                 _value11 :
                 throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
-        
+
         
         public bool IsT12 => _index == 12;
         
@@ -1825,7 +1825,7 @@ namespace OneOf
             _index == 12 ?
                 _value12 :
                 throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12)
@@ -2371,7 +2371,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -2392,14 +2392,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -2407,7 +2407,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -2415,7 +2415,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -2423,7 +2423,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -2431,7 +2431,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -2439,7 +2439,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -2447,7 +2447,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -2455,7 +2455,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -2463,7 +2463,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -2471,7 +2471,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -2479,7 +2479,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
         public bool IsT11 => _index == 11;
         
@@ -2487,7 +2487,7 @@ namespace OneOf
             _index == 11 ?
                 _value11 :
                 throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
-        
+
         
         public bool IsT12 => _index == 12;
         
@@ -2495,7 +2495,7 @@ namespace OneOf
             _index == 12 ?
                 _value12 :
                 throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
-        
+
         
         public bool IsT13 => _index == 13;
         
@@ -2503,7 +2503,7 @@ namespace OneOf
             _index == 13 ?
                 _value13 :
                 throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13)
@@ -3100,7 +3100,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -3122,14 +3122,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -3137,7 +3137,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -3145,7 +3145,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -3153,7 +3153,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -3161,7 +3161,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -3169,7 +3169,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -3177,7 +3177,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -3185,7 +3185,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -3193,7 +3193,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -3201,7 +3201,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -3209,7 +3209,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
         public bool IsT11 => _index == 11;
         
@@ -3217,7 +3217,7 @@ namespace OneOf
             _index == 11 ?
                 _value11 :
                 throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
-        
+
         
         public bool IsT12 => _index == 12;
         
@@ -3225,7 +3225,7 @@ namespace OneOf
             _index == 12 ?
                 _value12 :
                 throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
-        
+
         
         public bool IsT13 => _index == 13;
         
@@ -3233,7 +3233,7 @@ namespace OneOf
             _index == 13 ?
                 _value13 :
                 throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
-        
+
         
         public bool IsT14 => _index == 14;
         
@@ -3241,7 +3241,7 @@ namespace OneOf
             _index == 14 ?
                 _value14 :
                 throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14)
@@ -3891,7 +3891,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -3914,14 +3914,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -3929,7 +3929,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -3937,7 +3937,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -3945,7 +3945,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -3953,7 +3953,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -3961,7 +3961,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -3969,7 +3969,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -3977,7 +3977,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -3985,7 +3985,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -3993,7 +3993,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -4001,7 +4001,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
         public bool IsT11 => _index == 11;
         
@@ -4009,7 +4009,7 @@ namespace OneOf
             _index == 11 ?
                 _value11 :
                 throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
-        
+
         
         public bool IsT12 => _index == 12;
         
@@ -4017,7 +4017,7 @@ namespace OneOf
             _index == 12 ?
                 _value12 :
                 throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
-        
+
         
         public bool IsT13 => _index == 13;
         
@@ -4025,7 +4025,7 @@ namespace OneOf
             _index == 13 ?
                 _value13 :
                 throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
-        
+
         
         public bool IsT14 => _index == 14;
         
@@ -4033,7 +4033,7 @@ namespace OneOf
             _index == 14 ?
                 _value14 :
                 throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
-        
+
         
         public bool IsT15 => _index == 15;
         
@@ -4041,7 +4041,7 @@ namespace OneOf
             _index == 15 ?
                 _value15 :
                 throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15)
@@ -4746,7 +4746,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -4770,14 +4770,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -4785,7 +4785,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -4793,7 +4793,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -4801,7 +4801,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -4809,7 +4809,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -4817,7 +4817,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -4825,7 +4825,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -4833,7 +4833,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -4841,7 +4841,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -4849,7 +4849,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -4857,7 +4857,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
         public bool IsT11 => _index == 11;
         
@@ -4865,7 +4865,7 @@ namespace OneOf
             _index == 11 ?
                 _value11 :
                 throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
-        
+
         
         public bool IsT12 => _index == 12;
         
@@ -4873,7 +4873,7 @@ namespace OneOf
             _index == 12 ?
                 _value12 :
                 throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
-        
+
         
         public bool IsT13 => _index == 13;
         
@@ -4881,7 +4881,7 @@ namespace OneOf
             _index == 13 ?
                 _value13 :
                 throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
-        
+
         
         public bool IsT14 => _index == 14;
         
@@ -4889,7 +4889,7 @@ namespace OneOf
             _index == 14 ?
                 _value14 :
                 throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
-        
+
         
         public bool IsT15 => _index == 15;
         
@@ -4897,7 +4897,7 @@ namespace OneOf
             _index == 15 ?
                 _value15 :
                 throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
-        
+
         
         public bool IsT16 => _index == 16;
         
@@ -4905,7 +4905,7 @@ namespace OneOf
             _index == 16 ?
                 _value16 :
                 throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16)
@@ -5667,7 +5667,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -5692,14 +5692,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -5707,7 +5707,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -5715,7 +5715,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -5723,7 +5723,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -5731,7 +5731,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -5739,7 +5739,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -5747,7 +5747,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -5755,7 +5755,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -5763,7 +5763,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -5771,7 +5771,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -5779,7 +5779,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
         public bool IsT11 => _index == 11;
         
@@ -5787,7 +5787,7 @@ namespace OneOf
             _index == 11 ?
                 _value11 :
                 throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
-        
+
         
         public bool IsT12 => _index == 12;
         
@@ -5795,7 +5795,7 @@ namespace OneOf
             _index == 12 ?
                 _value12 :
                 throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
-        
+
         
         public bool IsT13 => _index == 13;
         
@@ -5803,7 +5803,7 @@ namespace OneOf
             _index == 13 ?
                 _value13 :
                 throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
-        
+
         
         public bool IsT14 => _index == 14;
         
@@ -5811,7 +5811,7 @@ namespace OneOf
             _index == 14 ?
                 _value14 :
                 throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
-        
+
         
         public bool IsT15 => _index == 15;
         
@@ -5819,7 +5819,7 @@ namespace OneOf
             _index == 15 ?
                 _value15 :
                 throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
-        
+
         
         public bool IsT16 => _index == 16;
         
@@ -5827,7 +5827,7 @@ namespace OneOf
             _index == 16 ?
                 _value16 :
                 throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
-        
+
         
         public bool IsT17 => _index == 17;
         
@@ -5835,7 +5835,7 @@ namespace OneOf
             _index == 17 ?
                 _value17 :
                 throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17)
@@ -6656,7 +6656,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -6682,14 +6682,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -6697,7 +6697,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -6705,7 +6705,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -6713,7 +6713,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -6721,7 +6721,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -6729,7 +6729,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -6737,7 +6737,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -6745,7 +6745,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -6753,7 +6753,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -6761,7 +6761,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -6769,7 +6769,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
         public bool IsT11 => _index == 11;
         
@@ -6777,7 +6777,7 @@ namespace OneOf
             _index == 11 ?
                 _value11 :
                 throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
-        
+
         
         public bool IsT12 => _index == 12;
         
@@ -6785,7 +6785,7 @@ namespace OneOf
             _index == 12 ?
                 _value12 :
                 throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
-        
+
         
         public bool IsT13 => _index == 13;
         
@@ -6793,7 +6793,7 @@ namespace OneOf
             _index == 13 ?
                 _value13 :
                 throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
-        
+
         
         public bool IsT14 => _index == 14;
         
@@ -6801,7 +6801,7 @@ namespace OneOf
             _index == 14 ?
                 _value14 :
                 throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
-        
+
         
         public bool IsT15 => _index == 15;
         
@@ -6809,7 +6809,7 @@ namespace OneOf
             _index == 15 ?
                 _value15 :
                 throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
-        
+
         
         public bool IsT16 => _index == 16;
         
@@ -6817,7 +6817,7 @@ namespace OneOf
             _index == 16 ?
                 _value16 :
                 throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
-        
+
         
         public bool IsT17 => _index == 17;
         
@@ -6825,7 +6825,7 @@ namespace OneOf
             _index == 17 ?
                 _value17 :
                 throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
-        
+
         
         public bool IsT18 => _index == 18;
         
@@ -6833,7 +6833,7 @@ namespace OneOf
             _index == 18 ?
                 _value18 :
                 throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18)
@@ -7715,7 +7715,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -7742,14 +7742,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -7757,7 +7757,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -7765,7 +7765,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -7773,7 +7773,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -7781,7 +7781,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -7789,7 +7789,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -7797,7 +7797,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -7805,7 +7805,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -7813,7 +7813,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -7821,7 +7821,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -7829,7 +7829,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
         public bool IsT11 => _index == 11;
         
@@ -7837,7 +7837,7 @@ namespace OneOf
             _index == 11 ?
                 _value11 :
                 throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
-        
+
         
         public bool IsT12 => _index == 12;
         
@@ -7845,7 +7845,7 @@ namespace OneOf
             _index == 12 ?
                 _value12 :
                 throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
-        
+
         
         public bool IsT13 => _index == 13;
         
@@ -7853,7 +7853,7 @@ namespace OneOf
             _index == 13 ?
                 _value13 :
                 throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
-        
+
         
         public bool IsT14 => _index == 14;
         
@@ -7861,7 +7861,7 @@ namespace OneOf
             _index == 14 ?
                 _value14 :
                 throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
-        
+
         
         public bool IsT15 => _index == 15;
         
@@ -7869,7 +7869,7 @@ namespace OneOf
             _index == 15 ?
                 _value15 :
                 throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
-        
+
         
         public bool IsT16 => _index == 16;
         
@@ -7877,7 +7877,7 @@ namespace OneOf
             _index == 16 ?
                 _value16 :
                 throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
-        
+
         
         public bool IsT17 => _index == 17;
         
@@ -7885,7 +7885,7 @@ namespace OneOf
             _index == 17 ?
                 _value17 :
                 throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
-        
+
         
         public bool IsT18 => _index == 18;
         
@@ -7893,7 +7893,7 @@ namespace OneOf
             _index == 18 ?
                 _value18 :
                 throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
-        
+
         
         public bool IsT19 => _index == 19;
         
@@ -7901,7 +7901,7 @@ namespace OneOf
             _index == 19 ?
                 _value19 :
                 throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19)
@@ -8846,7 +8846,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -8874,14 +8874,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -8889,7 +8889,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -8897,7 +8897,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -8905,7 +8905,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -8913,7 +8913,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -8921,7 +8921,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -8929,7 +8929,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -8937,7 +8937,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -8945,7 +8945,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -8953,7 +8953,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -8961,7 +8961,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
         public bool IsT11 => _index == 11;
         
@@ -8969,7 +8969,7 @@ namespace OneOf
             _index == 11 ?
                 _value11 :
                 throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
-        
+
         
         public bool IsT12 => _index == 12;
         
@@ -8977,7 +8977,7 @@ namespace OneOf
             _index == 12 ?
                 _value12 :
                 throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
-        
+
         
         public bool IsT13 => _index == 13;
         
@@ -8985,7 +8985,7 @@ namespace OneOf
             _index == 13 ?
                 _value13 :
                 throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
-        
+
         
         public bool IsT14 => _index == 14;
         
@@ -8993,7 +8993,7 @@ namespace OneOf
             _index == 14 ?
                 _value14 :
                 throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
-        
+
         
         public bool IsT15 => _index == 15;
         
@@ -9001,7 +9001,7 @@ namespace OneOf
             _index == 15 ?
                 _value15 :
                 throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
-        
+
         
         public bool IsT16 => _index == 16;
         
@@ -9009,7 +9009,7 @@ namespace OneOf
             _index == 16 ?
                 _value16 :
                 throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
-        
+
         
         public bool IsT17 => _index == 17;
         
@@ -9017,7 +9017,7 @@ namespace OneOf
             _index == 17 ?
                 _value17 :
                 throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
-        
+
         
         public bool IsT18 => _index == 18;
         
@@ -9025,7 +9025,7 @@ namespace OneOf
             _index == 18 ?
                 _value18 :
                 throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
-        
+
         
         public bool IsT19 => _index == 19;
         
@@ -9033,7 +9033,7 @@ namespace OneOf
             _index == 19 ?
                 _value19 :
                 throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
-        
+
         
         public bool IsT20 => _index == 20;
         
@@ -9041,7 +9041,7 @@ namespace OneOf
             _index == 20 ?
                 _value20 :
                 throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20)
@@ -10051,7 +10051,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -10080,14 +10080,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -10095,7 +10095,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -10103,7 +10103,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -10111,7 +10111,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -10119,7 +10119,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -10127,7 +10127,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -10135,7 +10135,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -10143,7 +10143,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -10151,7 +10151,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -10159,7 +10159,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -10167,7 +10167,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
         public bool IsT11 => _index == 11;
         
@@ -10175,7 +10175,7 @@ namespace OneOf
             _index == 11 ?
                 _value11 :
                 throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
-        
+
         
         public bool IsT12 => _index == 12;
         
@@ -10183,7 +10183,7 @@ namespace OneOf
             _index == 12 ?
                 _value12 :
                 throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
-        
+
         
         public bool IsT13 => _index == 13;
         
@@ -10191,7 +10191,7 @@ namespace OneOf
             _index == 13 ?
                 _value13 :
                 throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
-        
+
         
         public bool IsT14 => _index == 14;
         
@@ -10199,7 +10199,7 @@ namespace OneOf
             _index == 14 ?
                 _value14 :
                 throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
-        
+
         
         public bool IsT15 => _index == 15;
         
@@ -10207,7 +10207,7 @@ namespace OneOf
             _index == 15 ?
                 _value15 :
                 throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
-        
+
         
         public bool IsT16 => _index == 16;
         
@@ -10215,7 +10215,7 @@ namespace OneOf
             _index == 16 ?
                 _value16 :
                 throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
-        
+
         
         public bool IsT17 => _index == 17;
         
@@ -10223,7 +10223,7 @@ namespace OneOf
             _index == 17 ?
                 _value17 :
                 throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
-        
+
         
         public bool IsT18 => _index == 18;
         
@@ -10231,7 +10231,7 @@ namespace OneOf
             _index == 18 ?
                 _value18 :
                 throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
-        
+
         
         public bool IsT19 => _index == 19;
         
@@ -10239,7 +10239,7 @@ namespace OneOf
             _index == 19 ?
                 _value19 :
                 throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
-        
+
         
         public bool IsT20 => _index == 20;
         
@@ -10247,7 +10247,7 @@ namespace OneOf
             _index == 20 ?
                 _value20 :
                 throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
-        
+
         
         public bool IsT21 => _index == 21;
         
@@ -10255,7 +10255,7 @@ namespace OneOf
             _index == 21 ?
                 _value21 :
                 throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21)
@@ -11332,7 +11332,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -11362,14 +11362,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -11377,7 +11377,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -11385,7 +11385,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -11393,7 +11393,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -11401,7 +11401,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -11409,7 +11409,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -11417,7 +11417,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -11425,7 +11425,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -11433,7 +11433,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -11441,7 +11441,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -11449,7 +11449,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
         public bool IsT11 => _index == 11;
         
@@ -11457,7 +11457,7 @@ namespace OneOf
             _index == 11 ?
                 _value11 :
                 throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
-        
+
         
         public bool IsT12 => _index == 12;
         
@@ -11465,7 +11465,7 @@ namespace OneOf
             _index == 12 ?
                 _value12 :
                 throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
-        
+
         
         public bool IsT13 => _index == 13;
         
@@ -11473,7 +11473,7 @@ namespace OneOf
             _index == 13 ?
                 _value13 :
                 throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
-        
+
         
         public bool IsT14 => _index == 14;
         
@@ -11481,7 +11481,7 @@ namespace OneOf
             _index == 14 ?
                 _value14 :
                 throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
-        
+
         
         public bool IsT15 => _index == 15;
         
@@ -11489,7 +11489,7 @@ namespace OneOf
             _index == 15 ?
                 _value15 :
                 throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
-        
+
         
         public bool IsT16 => _index == 16;
         
@@ -11497,7 +11497,7 @@ namespace OneOf
             _index == 16 ?
                 _value16 :
                 throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
-        
+
         
         public bool IsT17 => _index == 17;
         
@@ -11505,7 +11505,7 @@ namespace OneOf
             _index == 17 ?
                 _value17 :
                 throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
-        
+
         
         public bool IsT18 => _index == 18;
         
@@ -11513,7 +11513,7 @@ namespace OneOf
             _index == 18 ?
                 _value18 :
                 throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
-        
+
         
         public bool IsT19 => _index == 19;
         
@@ -11521,7 +11521,7 @@ namespace OneOf
             _index == 19 ?
                 _value19 :
                 throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
-        
+
         
         public bool IsT20 => _index == 20;
         
@@ -11529,7 +11529,7 @@ namespace OneOf
             _index == 20 ?
                 _value20 :
                 throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
-        
+
         
         public bool IsT21 => _index == 21;
         
@@ -11537,7 +11537,7 @@ namespace OneOf
             _index == 21 ?
                 _value21 :
                 throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
-        
+
         
         public bool IsT22 => _index == 22;
         
@@ -11545,7 +11545,7 @@ namespace OneOf
             _index == 22 ?
                 _value22 :
                 throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22)
@@ -12691,7 +12691,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -12722,14 +12722,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -12737,7 +12737,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -12745,7 +12745,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -12753,7 +12753,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -12761,7 +12761,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -12769,7 +12769,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -12777,7 +12777,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -12785,7 +12785,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -12793,7 +12793,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -12801,7 +12801,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -12809,7 +12809,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
         public bool IsT11 => _index == 11;
         
@@ -12817,7 +12817,7 @@ namespace OneOf
             _index == 11 ?
                 _value11 :
                 throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
-        
+
         
         public bool IsT12 => _index == 12;
         
@@ -12825,7 +12825,7 @@ namespace OneOf
             _index == 12 ?
                 _value12 :
                 throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
-        
+
         
         public bool IsT13 => _index == 13;
         
@@ -12833,7 +12833,7 @@ namespace OneOf
             _index == 13 ?
                 _value13 :
                 throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
-        
+
         
         public bool IsT14 => _index == 14;
         
@@ -12841,7 +12841,7 @@ namespace OneOf
             _index == 14 ?
                 _value14 :
                 throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
-        
+
         
         public bool IsT15 => _index == 15;
         
@@ -12849,7 +12849,7 @@ namespace OneOf
             _index == 15 ?
                 _value15 :
                 throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
-        
+
         
         public bool IsT16 => _index == 16;
         
@@ -12857,7 +12857,7 @@ namespace OneOf
             _index == 16 ?
                 _value16 :
                 throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
-        
+
         
         public bool IsT17 => _index == 17;
         
@@ -12865,7 +12865,7 @@ namespace OneOf
             _index == 17 ?
                 _value17 :
                 throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
-        
+
         
         public bool IsT18 => _index == 18;
         
@@ -12873,7 +12873,7 @@ namespace OneOf
             _index == 18 ?
                 _value18 :
                 throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
-        
+
         
         public bool IsT19 => _index == 19;
         
@@ -12881,7 +12881,7 @@ namespace OneOf
             _index == 19 ?
                 _value19 :
                 throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
-        
+
         
         public bool IsT20 => _index == 20;
         
@@ -12889,7 +12889,7 @@ namespace OneOf
             _index == 20 ?
                 _value20 :
                 throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
-        
+
         
         public bool IsT21 => _index == 21;
         
@@ -12897,7 +12897,7 @@ namespace OneOf
             _index == 21 ?
                 _value21 :
                 throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
-        
+
         
         public bool IsT22 => _index == 22;
         
@@ -12905,7 +12905,7 @@ namespace OneOf
             _index == 22 ?
                 _value22 :
                 throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
-        
+
         
         public bool IsT23 => _index == 23;
         
@@ -12913,7 +12913,7 @@ namespace OneOf
             _index == 23 ?
                 _value23 :
                 throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23)
@@ -14130,7 +14130,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -14162,14 +14162,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -14177,7 +14177,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -14185,7 +14185,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -14193,7 +14193,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -14201,7 +14201,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -14209,7 +14209,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -14217,7 +14217,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -14225,7 +14225,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -14233,7 +14233,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -14241,7 +14241,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -14249,7 +14249,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
         public bool IsT11 => _index == 11;
         
@@ -14257,7 +14257,7 @@ namespace OneOf
             _index == 11 ?
                 _value11 :
                 throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
-        
+
         
         public bool IsT12 => _index == 12;
         
@@ -14265,7 +14265,7 @@ namespace OneOf
             _index == 12 ?
                 _value12 :
                 throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
-        
+
         
         public bool IsT13 => _index == 13;
         
@@ -14273,7 +14273,7 @@ namespace OneOf
             _index == 13 ?
                 _value13 :
                 throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
-        
+
         
         public bool IsT14 => _index == 14;
         
@@ -14281,7 +14281,7 @@ namespace OneOf
             _index == 14 ?
                 _value14 :
                 throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
-        
+
         
         public bool IsT15 => _index == 15;
         
@@ -14289,7 +14289,7 @@ namespace OneOf
             _index == 15 ?
                 _value15 :
                 throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
-        
+
         
         public bool IsT16 => _index == 16;
         
@@ -14297,7 +14297,7 @@ namespace OneOf
             _index == 16 ?
                 _value16 :
                 throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
-        
+
         
         public bool IsT17 => _index == 17;
         
@@ -14305,7 +14305,7 @@ namespace OneOf
             _index == 17 ?
                 _value17 :
                 throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
-        
+
         
         public bool IsT18 => _index == 18;
         
@@ -14313,7 +14313,7 @@ namespace OneOf
             _index == 18 ?
                 _value18 :
                 throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
-        
+
         
         public bool IsT19 => _index == 19;
         
@@ -14321,7 +14321,7 @@ namespace OneOf
             _index == 19 ?
                 _value19 :
                 throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
-        
+
         
         public bool IsT20 => _index == 20;
         
@@ -14329,7 +14329,7 @@ namespace OneOf
             _index == 20 ?
                 _value20 :
                 throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
-        
+
         
         public bool IsT21 => _index == 21;
         
@@ -14337,7 +14337,7 @@ namespace OneOf
             _index == 21 ?
                 _value21 :
                 throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
-        
+
         
         public bool IsT22 => _index == 22;
         
@@ -14345,7 +14345,7 @@ namespace OneOf
             _index == 22 ?
                 _value22 :
                 throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
-        
+
         
         public bool IsT23 => _index == 23;
         
@@ -14353,7 +14353,7 @@ namespace OneOf
             _index == 23 ?
                 _value23 :
                 throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
-        
+
         
         public bool IsT24 => _index == 24;
         
@@ -14361,7 +14361,7 @@ namespace OneOf
             _index == 24 ?
                 _value24 :
                 throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24)
@@ -15651,7 +15651,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -15684,14 +15684,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -15699,7 +15699,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -15707,7 +15707,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -15715,7 +15715,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -15723,7 +15723,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -15731,7 +15731,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -15739,7 +15739,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -15747,7 +15747,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -15755,7 +15755,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -15763,7 +15763,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -15771,7 +15771,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
         public bool IsT11 => _index == 11;
         
@@ -15779,7 +15779,7 @@ namespace OneOf
             _index == 11 ?
                 _value11 :
                 throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
-        
+
         
         public bool IsT12 => _index == 12;
         
@@ -15787,7 +15787,7 @@ namespace OneOf
             _index == 12 ?
                 _value12 :
                 throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
-        
+
         
         public bool IsT13 => _index == 13;
         
@@ -15795,7 +15795,7 @@ namespace OneOf
             _index == 13 ?
                 _value13 :
                 throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
-        
+
         
         public bool IsT14 => _index == 14;
         
@@ -15803,7 +15803,7 @@ namespace OneOf
             _index == 14 ?
                 _value14 :
                 throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
-        
+
         
         public bool IsT15 => _index == 15;
         
@@ -15811,7 +15811,7 @@ namespace OneOf
             _index == 15 ?
                 _value15 :
                 throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
-        
+
         
         public bool IsT16 => _index == 16;
         
@@ -15819,7 +15819,7 @@ namespace OneOf
             _index == 16 ?
                 _value16 :
                 throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
-        
+
         
         public bool IsT17 => _index == 17;
         
@@ -15827,7 +15827,7 @@ namespace OneOf
             _index == 17 ?
                 _value17 :
                 throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
-        
+
         
         public bool IsT18 => _index == 18;
         
@@ -15835,7 +15835,7 @@ namespace OneOf
             _index == 18 ?
                 _value18 :
                 throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
-        
+
         
         public bool IsT19 => _index == 19;
         
@@ -15843,7 +15843,7 @@ namespace OneOf
             _index == 19 ?
                 _value19 :
                 throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
-        
+
         
         public bool IsT20 => _index == 20;
         
@@ -15851,7 +15851,7 @@ namespace OneOf
             _index == 20 ?
                 _value20 :
                 throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
-        
+
         
         public bool IsT21 => _index == 21;
         
@@ -15859,7 +15859,7 @@ namespace OneOf
             _index == 21 ?
                 _value21 :
                 throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
-        
+
         
         public bool IsT22 => _index == 22;
         
@@ -15867,7 +15867,7 @@ namespace OneOf
             _index == 22 ?
                 _value22 :
                 throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
-        
+
         
         public bool IsT23 => _index == 23;
         
@@ -15875,7 +15875,7 @@ namespace OneOf
             _index == 23 ?
                 _value23 :
                 throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
-        
+
         
         public bool IsT24 => _index == 24;
         
@@ -15883,7 +15883,7 @@ namespace OneOf
             _index == 24 ?
                 _value24 :
                 throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
-        
+
         
         public bool IsT25 => _index == 25;
         
@@ -15891,7 +15891,7 @@ namespace OneOf
             _index == 25 ?
                 _value25 :
                 throw new NotImplementedException($"Cannot return as T25 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24, Action<T25> f25)
@@ -17256,7 +17256,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -17290,14 +17290,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -17305,7 +17305,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -17313,7 +17313,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -17321,7 +17321,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -17329,7 +17329,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -17337,7 +17337,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -17345,7 +17345,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -17353,7 +17353,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -17361,7 +17361,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -17369,7 +17369,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -17377,7 +17377,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
         public bool IsT11 => _index == 11;
         
@@ -17385,7 +17385,7 @@ namespace OneOf
             _index == 11 ?
                 _value11 :
                 throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
-        
+
         
         public bool IsT12 => _index == 12;
         
@@ -17393,7 +17393,7 @@ namespace OneOf
             _index == 12 ?
                 _value12 :
                 throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
-        
+
         
         public bool IsT13 => _index == 13;
         
@@ -17401,7 +17401,7 @@ namespace OneOf
             _index == 13 ?
                 _value13 :
                 throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
-        
+
         
         public bool IsT14 => _index == 14;
         
@@ -17409,7 +17409,7 @@ namespace OneOf
             _index == 14 ?
                 _value14 :
                 throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
-        
+
         
         public bool IsT15 => _index == 15;
         
@@ -17417,7 +17417,7 @@ namespace OneOf
             _index == 15 ?
                 _value15 :
                 throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
-        
+
         
         public bool IsT16 => _index == 16;
         
@@ -17425,7 +17425,7 @@ namespace OneOf
             _index == 16 ?
                 _value16 :
                 throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
-        
+
         
         public bool IsT17 => _index == 17;
         
@@ -17433,7 +17433,7 @@ namespace OneOf
             _index == 17 ?
                 _value17 :
                 throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
-        
+
         
         public bool IsT18 => _index == 18;
         
@@ -17441,7 +17441,7 @@ namespace OneOf
             _index == 18 ?
                 _value18 :
                 throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
-        
+
         
         public bool IsT19 => _index == 19;
         
@@ -17449,7 +17449,7 @@ namespace OneOf
             _index == 19 ?
                 _value19 :
                 throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
-        
+
         
         public bool IsT20 => _index == 20;
         
@@ -17457,7 +17457,7 @@ namespace OneOf
             _index == 20 ?
                 _value20 :
                 throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
-        
+
         
         public bool IsT21 => _index == 21;
         
@@ -17465,7 +17465,7 @@ namespace OneOf
             _index == 21 ?
                 _value21 :
                 throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
-        
+
         
         public bool IsT22 => _index == 22;
         
@@ -17473,7 +17473,7 @@ namespace OneOf
             _index == 22 ?
                 _value22 :
                 throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
-        
+
         
         public bool IsT23 => _index == 23;
         
@@ -17481,7 +17481,7 @@ namespace OneOf
             _index == 23 ?
                 _value23 :
                 throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
-        
+
         
         public bool IsT24 => _index == 24;
         
@@ -17489,7 +17489,7 @@ namespace OneOf
             _index == 24 ?
                 _value24 :
                 throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
-        
+
         
         public bool IsT25 => _index == 25;
         
@@ -17497,7 +17497,7 @@ namespace OneOf
             _index == 25 ?
                 _value25 :
                 throw new NotImplementedException($"Cannot return as T25 as result is T{_index}");
-        
+
         
         public bool IsT26 => _index == 26;
         
@@ -17505,7 +17505,7 @@ namespace OneOf
             _index == 26 ?
                 _value26 :
                 throw new NotImplementedException($"Cannot return as T26 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24, Action<T25> f25, Action<T26> f26)
@@ -18947,7 +18947,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -18982,14 +18982,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -18997,7 +18997,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -19005,7 +19005,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -19013,7 +19013,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -19021,7 +19021,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -19029,7 +19029,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -19037,7 +19037,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -19045,7 +19045,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -19053,7 +19053,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -19061,7 +19061,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -19069,7 +19069,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
         public bool IsT11 => _index == 11;
         
@@ -19077,7 +19077,7 @@ namespace OneOf
             _index == 11 ?
                 _value11 :
                 throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
-        
+
         
         public bool IsT12 => _index == 12;
         
@@ -19085,7 +19085,7 @@ namespace OneOf
             _index == 12 ?
                 _value12 :
                 throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
-        
+
         
         public bool IsT13 => _index == 13;
         
@@ -19093,7 +19093,7 @@ namespace OneOf
             _index == 13 ?
                 _value13 :
                 throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
-        
+
         
         public bool IsT14 => _index == 14;
         
@@ -19101,7 +19101,7 @@ namespace OneOf
             _index == 14 ?
                 _value14 :
                 throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
-        
+
         
         public bool IsT15 => _index == 15;
         
@@ -19109,7 +19109,7 @@ namespace OneOf
             _index == 15 ?
                 _value15 :
                 throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
-        
+
         
         public bool IsT16 => _index == 16;
         
@@ -19117,7 +19117,7 @@ namespace OneOf
             _index == 16 ?
                 _value16 :
                 throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
-        
+
         
         public bool IsT17 => _index == 17;
         
@@ -19125,7 +19125,7 @@ namespace OneOf
             _index == 17 ?
                 _value17 :
                 throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
-        
+
         
         public bool IsT18 => _index == 18;
         
@@ -19133,7 +19133,7 @@ namespace OneOf
             _index == 18 ?
                 _value18 :
                 throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
-        
+
         
         public bool IsT19 => _index == 19;
         
@@ -19141,7 +19141,7 @@ namespace OneOf
             _index == 19 ?
                 _value19 :
                 throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
-        
+
         
         public bool IsT20 => _index == 20;
         
@@ -19149,7 +19149,7 @@ namespace OneOf
             _index == 20 ?
                 _value20 :
                 throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
-        
+
         
         public bool IsT21 => _index == 21;
         
@@ -19157,7 +19157,7 @@ namespace OneOf
             _index == 21 ?
                 _value21 :
                 throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
-        
+
         
         public bool IsT22 => _index == 22;
         
@@ -19165,7 +19165,7 @@ namespace OneOf
             _index == 22 ?
                 _value22 :
                 throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
-        
+
         
         public bool IsT23 => _index == 23;
         
@@ -19173,7 +19173,7 @@ namespace OneOf
             _index == 23 ?
                 _value23 :
                 throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
-        
+
         
         public bool IsT24 => _index == 24;
         
@@ -19181,7 +19181,7 @@ namespace OneOf
             _index == 24 ?
                 _value24 :
                 throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
-        
+
         
         public bool IsT25 => _index == 25;
         
@@ -19189,7 +19189,7 @@ namespace OneOf
             _index == 25 ?
                 _value25 :
                 throw new NotImplementedException($"Cannot return as T25 as result is T{_index}");
-        
+
         
         public bool IsT26 => _index == 26;
         
@@ -19197,7 +19197,7 @@ namespace OneOf
             _index == 26 ?
                 _value26 :
                 throw new NotImplementedException($"Cannot return as T26 as result is T{_index}");
-        
+
         
         public bool IsT27 => _index == 27;
         
@@ -19205,7 +19205,7 @@ namespace OneOf
             _index == 27 ?
                 _value27 :
                 throw new NotImplementedException($"Cannot return as T27 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24, Action<T25> f25, Action<T26> f26, Action<T27> f27)
@@ -20726,7 +20726,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -20762,14 +20762,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -20777,7 +20777,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -20785,7 +20785,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -20793,7 +20793,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -20801,7 +20801,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -20809,7 +20809,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -20817,7 +20817,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -20825,7 +20825,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -20833,7 +20833,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -20841,7 +20841,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -20849,7 +20849,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
         public bool IsT11 => _index == 11;
         
@@ -20857,7 +20857,7 @@ namespace OneOf
             _index == 11 ?
                 _value11 :
                 throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
-        
+
         
         public bool IsT12 => _index == 12;
         
@@ -20865,7 +20865,7 @@ namespace OneOf
             _index == 12 ?
                 _value12 :
                 throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
-        
+
         
         public bool IsT13 => _index == 13;
         
@@ -20873,7 +20873,7 @@ namespace OneOf
             _index == 13 ?
                 _value13 :
                 throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
-        
+
         
         public bool IsT14 => _index == 14;
         
@@ -20881,7 +20881,7 @@ namespace OneOf
             _index == 14 ?
                 _value14 :
                 throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
-        
+
         
         public bool IsT15 => _index == 15;
         
@@ -20889,7 +20889,7 @@ namespace OneOf
             _index == 15 ?
                 _value15 :
                 throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
-        
+
         
         public bool IsT16 => _index == 16;
         
@@ -20897,7 +20897,7 @@ namespace OneOf
             _index == 16 ?
                 _value16 :
                 throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
-        
+
         
         public bool IsT17 => _index == 17;
         
@@ -20905,7 +20905,7 @@ namespace OneOf
             _index == 17 ?
                 _value17 :
                 throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
-        
+
         
         public bool IsT18 => _index == 18;
         
@@ -20913,7 +20913,7 @@ namespace OneOf
             _index == 18 ?
                 _value18 :
                 throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
-        
+
         
         public bool IsT19 => _index == 19;
         
@@ -20921,7 +20921,7 @@ namespace OneOf
             _index == 19 ?
                 _value19 :
                 throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
-        
+
         
         public bool IsT20 => _index == 20;
         
@@ -20929,7 +20929,7 @@ namespace OneOf
             _index == 20 ?
                 _value20 :
                 throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
-        
+
         
         public bool IsT21 => _index == 21;
         
@@ -20937,7 +20937,7 @@ namespace OneOf
             _index == 21 ?
                 _value21 :
                 throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
-        
+
         
         public bool IsT22 => _index == 22;
         
@@ -20945,7 +20945,7 @@ namespace OneOf
             _index == 22 ?
                 _value22 :
                 throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
-        
+
         
         public bool IsT23 => _index == 23;
         
@@ -20953,7 +20953,7 @@ namespace OneOf
             _index == 23 ?
                 _value23 :
                 throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
-        
+
         
         public bool IsT24 => _index == 24;
         
@@ -20961,7 +20961,7 @@ namespace OneOf
             _index == 24 ?
                 _value24 :
                 throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
-        
+
         
         public bool IsT25 => _index == 25;
         
@@ -20969,7 +20969,7 @@ namespace OneOf
             _index == 25 ?
                 _value25 :
                 throw new NotImplementedException($"Cannot return as T25 as result is T{_index}");
-        
+
         
         public bool IsT26 => _index == 26;
         
@@ -20977,7 +20977,7 @@ namespace OneOf
             _index == 26 ?
                 _value26 :
                 throw new NotImplementedException($"Cannot return as T26 as result is T{_index}");
-        
+
         
         public bool IsT27 => _index == 27;
         
@@ -20985,7 +20985,7 @@ namespace OneOf
             _index == 27 ?
                 _value27 :
                 throw new NotImplementedException($"Cannot return as T27 as result is T{_index}");
-        
+
         
         public bool IsT28 => _index == 28;
         
@@ -20993,7 +20993,7 @@ namespace OneOf
             _index == 28 ?
                 _value28 :
                 throw new NotImplementedException($"Cannot return as T28 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24, Action<T25> f25, Action<T26> f26, Action<T27> f27, Action<T28> f28)
@@ -22595,7 +22595,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -22632,14 +22632,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -22647,7 +22647,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -22655,7 +22655,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -22663,7 +22663,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -22671,7 +22671,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -22679,7 +22679,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -22687,7 +22687,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -22695,7 +22695,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -22703,7 +22703,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -22711,7 +22711,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -22719,7 +22719,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
         public bool IsT11 => _index == 11;
         
@@ -22727,7 +22727,7 @@ namespace OneOf
             _index == 11 ?
                 _value11 :
                 throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
-        
+
         
         public bool IsT12 => _index == 12;
         
@@ -22735,7 +22735,7 @@ namespace OneOf
             _index == 12 ?
                 _value12 :
                 throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
-        
+
         
         public bool IsT13 => _index == 13;
         
@@ -22743,7 +22743,7 @@ namespace OneOf
             _index == 13 ?
                 _value13 :
                 throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
-        
+
         
         public bool IsT14 => _index == 14;
         
@@ -22751,7 +22751,7 @@ namespace OneOf
             _index == 14 ?
                 _value14 :
                 throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
-        
+
         
         public bool IsT15 => _index == 15;
         
@@ -22759,7 +22759,7 @@ namespace OneOf
             _index == 15 ?
                 _value15 :
                 throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
-        
+
         
         public bool IsT16 => _index == 16;
         
@@ -22767,7 +22767,7 @@ namespace OneOf
             _index == 16 ?
                 _value16 :
                 throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
-        
+
         
         public bool IsT17 => _index == 17;
         
@@ -22775,7 +22775,7 @@ namespace OneOf
             _index == 17 ?
                 _value17 :
                 throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
-        
+
         
         public bool IsT18 => _index == 18;
         
@@ -22783,7 +22783,7 @@ namespace OneOf
             _index == 18 ?
                 _value18 :
                 throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
-        
+
         
         public bool IsT19 => _index == 19;
         
@@ -22791,7 +22791,7 @@ namespace OneOf
             _index == 19 ?
                 _value19 :
                 throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
-        
+
         
         public bool IsT20 => _index == 20;
         
@@ -22799,7 +22799,7 @@ namespace OneOf
             _index == 20 ?
                 _value20 :
                 throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
-        
+
         
         public bool IsT21 => _index == 21;
         
@@ -22807,7 +22807,7 @@ namespace OneOf
             _index == 21 ?
                 _value21 :
                 throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
-        
+
         
         public bool IsT22 => _index == 22;
         
@@ -22815,7 +22815,7 @@ namespace OneOf
             _index == 22 ?
                 _value22 :
                 throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
-        
+
         
         public bool IsT23 => _index == 23;
         
@@ -22823,7 +22823,7 @@ namespace OneOf
             _index == 23 ?
                 _value23 :
                 throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
-        
+
         
         public bool IsT24 => _index == 24;
         
@@ -22831,7 +22831,7 @@ namespace OneOf
             _index == 24 ?
                 _value24 :
                 throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
-        
+
         
         public bool IsT25 => _index == 25;
         
@@ -22839,7 +22839,7 @@ namespace OneOf
             _index == 25 ?
                 _value25 :
                 throw new NotImplementedException($"Cannot return as T25 as result is T{_index}");
-        
+
         
         public bool IsT26 => _index == 26;
         
@@ -22847,7 +22847,7 @@ namespace OneOf
             _index == 26 ?
                 _value26 :
                 throw new NotImplementedException($"Cannot return as T26 as result is T{_index}");
-        
+
         
         public bool IsT27 => _index == 27;
         
@@ -22855,7 +22855,7 @@ namespace OneOf
             _index == 27 ?
                 _value27 :
                 throw new NotImplementedException($"Cannot return as T27 as result is T{_index}");
-        
+
         
         public bool IsT28 => _index == 28;
         
@@ -22863,7 +22863,7 @@ namespace OneOf
             _index == 28 ?
                 _value28 :
                 throw new NotImplementedException($"Cannot return as T28 as result is T{_index}");
-        
+
         
         public bool IsT29 => _index == 29;
         
@@ -22871,7 +22871,7 @@ namespace OneOf
             _index == 29 ?
                 _value29 :
                 throw new NotImplementedException($"Cannot return as T29 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24, Action<T25> f25, Action<T26> f26, Action<T27> f27, Action<T28> f28, Action<T29> f29)
@@ -24556,7 +24556,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -24594,14 +24594,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -24609,7 +24609,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -24617,7 +24617,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -24625,7 +24625,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -24633,7 +24633,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -24641,7 +24641,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -24649,7 +24649,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -24657,7 +24657,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -24665,7 +24665,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -24673,7 +24673,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -24681,7 +24681,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
         public bool IsT11 => _index == 11;
         
@@ -24689,7 +24689,7 @@ namespace OneOf
             _index == 11 ?
                 _value11 :
                 throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
-        
+
         
         public bool IsT12 => _index == 12;
         
@@ -24697,7 +24697,7 @@ namespace OneOf
             _index == 12 ?
                 _value12 :
                 throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
-        
+
         
         public bool IsT13 => _index == 13;
         
@@ -24705,7 +24705,7 @@ namespace OneOf
             _index == 13 ?
                 _value13 :
                 throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
-        
+
         
         public bool IsT14 => _index == 14;
         
@@ -24713,7 +24713,7 @@ namespace OneOf
             _index == 14 ?
                 _value14 :
                 throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
-        
+
         
         public bool IsT15 => _index == 15;
         
@@ -24721,7 +24721,7 @@ namespace OneOf
             _index == 15 ?
                 _value15 :
                 throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
-        
+
         
         public bool IsT16 => _index == 16;
         
@@ -24729,7 +24729,7 @@ namespace OneOf
             _index == 16 ?
                 _value16 :
                 throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
-        
+
         
         public bool IsT17 => _index == 17;
         
@@ -24737,7 +24737,7 @@ namespace OneOf
             _index == 17 ?
                 _value17 :
                 throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
-        
+
         
         public bool IsT18 => _index == 18;
         
@@ -24745,7 +24745,7 @@ namespace OneOf
             _index == 18 ?
                 _value18 :
                 throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
-        
+
         
         public bool IsT19 => _index == 19;
         
@@ -24753,7 +24753,7 @@ namespace OneOf
             _index == 19 ?
                 _value19 :
                 throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
-        
+
         
         public bool IsT20 => _index == 20;
         
@@ -24761,7 +24761,7 @@ namespace OneOf
             _index == 20 ?
                 _value20 :
                 throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
-        
+
         
         public bool IsT21 => _index == 21;
         
@@ -24769,7 +24769,7 @@ namespace OneOf
             _index == 21 ?
                 _value21 :
                 throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
-        
+
         
         public bool IsT22 => _index == 22;
         
@@ -24777,7 +24777,7 @@ namespace OneOf
             _index == 22 ?
                 _value22 :
                 throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
-        
+
         
         public bool IsT23 => _index == 23;
         
@@ -24785,7 +24785,7 @@ namespace OneOf
             _index == 23 ?
                 _value23 :
                 throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
-        
+
         
         public bool IsT24 => _index == 24;
         
@@ -24793,7 +24793,7 @@ namespace OneOf
             _index == 24 ?
                 _value24 :
                 throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
-        
+
         
         public bool IsT25 => _index == 25;
         
@@ -24801,7 +24801,7 @@ namespace OneOf
             _index == 25 ?
                 _value25 :
                 throw new NotImplementedException($"Cannot return as T25 as result is T{_index}");
-        
+
         
         public bool IsT26 => _index == 26;
         
@@ -24809,7 +24809,7 @@ namespace OneOf
             _index == 26 ?
                 _value26 :
                 throw new NotImplementedException($"Cannot return as T26 as result is T{_index}");
-        
+
         
         public bool IsT27 => _index == 27;
         
@@ -24817,7 +24817,7 @@ namespace OneOf
             _index == 27 ?
                 _value27 :
                 throw new NotImplementedException($"Cannot return as T27 as result is T{_index}");
-        
+
         
         public bool IsT28 => _index == 28;
         
@@ -24825,7 +24825,7 @@ namespace OneOf
             _index == 28 ?
                 _value28 :
                 throw new NotImplementedException($"Cannot return as T28 as result is T{_index}");
-        
+
         
         public bool IsT29 => _index == 29;
         
@@ -24833,7 +24833,7 @@ namespace OneOf
             _index == 29 ?
                 _value29 :
                 throw new NotImplementedException($"Cannot return as T29 as result is T{_index}");
-        
+
         
         public bool IsT30 => _index == 30;
         
@@ -24841,7 +24841,7 @@ namespace OneOf
             _index == 30 ?
                 _value30 :
                 throw new NotImplementedException($"Cannot return as T30 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24, Action<T25> f25, Action<T26> f26, Action<T27> f27, Action<T28> f28, Action<T29> f29, Action<T30> f30)
@@ -26611,7 +26611,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value => _index switch
         {
             0 => _value0,
@@ -26650,14 +26650,14 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         
         public bool IsT1 => _index == 1;
         
@@ -26665,7 +26665,7 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         
         public bool IsT2 => _index == 2;
         
@@ -26673,7 +26673,7 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         
         public bool IsT3 => _index == 3;
         
@@ -26681,7 +26681,7 @@ namespace OneOf
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         
         public bool IsT4 => _index == 4;
         
@@ -26689,7 +26689,7 @@ namespace OneOf
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         
         public bool IsT5 => _index == 5;
         
@@ -26697,7 +26697,7 @@ namespace OneOf
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         
         public bool IsT6 => _index == 6;
         
@@ -26705,7 +26705,7 @@ namespace OneOf
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         
         public bool IsT7 => _index == 7;
         
@@ -26713,7 +26713,7 @@ namespace OneOf
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         
         public bool IsT8 => _index == 8;
         
@@ -26721,7 +26721,7 @@ namespace OneOf
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         
         public bool IsT9 => _index == 9;
         
@@ -26729,7 +26729,7 @@ namespace OneOf
             _index == 9 ?
                 _value9 :
                 throw new NotImplementedException($"Cannot return as T9 as result is T{_index}");
-        
+
         
         public bool IsT10 => _index == 10;
         
@@ -26737,7 +26737,7 @@ namespace OneOf
             _index == 10 ?
                 _value10 :
                 throw new NotImplementedException($"Cannot return as T10 as result is T{_index}");
-        
+
         
         public bool IsT11 => _index == 11;
         
@@ -26745,7 +26745,7 @@ namespace OneOf
             _index == 11 ?
                 _value11 :
                 throw new NotImplementedException($"Cannot return as T11 as result is T{_index}");
-        
+
         
         public bool IsT12 => _index == 12;
         
@@ -26753,7 +26753,7 @@ namespace OneOf
             _index == 12 ?
                 _value12 :
                 throw new NotImplementedException($"Cannot return as T12 as result is T{_index}");
-        
+
         
         public bool IsT13 => _index == 13;
         
@@ -26761,7 +26761,7 @@ namespace OneOf
             _index == 13 ?
                 _value13 :
                 throw new NotImplementedException($"Cannot return as T13 as result is T{_index}");
-        
+
         
         public bool IsT14 => _index == 14;
         
@@ -26769,7 +26769,7 @@ namespace OneOf
             _index == 14 ?
                 _value14 :
                 throw new NotImplementedException($"Cannot return as T14 as result is T{_index}");
-        
+
         
         public bool IsT15 => _index == 15;
         
@@ -26777,7 +26777,7 @@ namespace OneOf
             _index == 15 ?
                 _value15 :
                 throw new NotImplementedException($"Cannot return as T15 as result is T{_index}");
-        
+
         
         public bool IsT16 => _index == 16;
         
@@ -26785,7 +26785,7 @@ namespace OneOf
             _index == 16 ?
                 _value16 :
                 throw new NotImplementedException($"Cannot return as T16 as result is T{_index}");
-        
+
         
         public bool IsT17 => _index == 17;
         
@@ -26793,7 +26793,7 @@ namespace OneOf
             _index == 17 ?
                 _value17 :
                 throw new NotImplementedException($"Cannot return as T17 as result is T{_index}");
-        
+
         
         public bool IsT18 => _index == 18;
         
@@ -26801,7 +26801,7 @@ namespace OneOf
             _index == 18 ?
                 _value18 :
                 throw new NotImplementedException($"Cannot return as T18 as result is T{_index}");
-        
+
         
         public bool IsT19 => _index == 19;
         
@@ -26809,7 +26809,7 @@ namespace OneOf
             _index == 19 ?
                 _value19 :
                 throw new NotImplementedException($"Cannot return as T19 as result is T{_index}");
-        
+
         
         public bool IsT20 => _index == 20;
         
@@ -26817,7 +26817,7 @@ namespace OneOf
             _index == 20 ?
                 _value20 :
                 throw new NotImplementedException($"Cannot return as T20 as result is T{_index}");
-        
+
         
         public bool IsT21 => _index == 21;
         
@@ -26825,7 +26825,7 @@ namespace OneOf
             _index == 21 ?
                 _value21 :
                 throw new NotImplementedException($"Cannot return as T21 as result is T{_index}");
-        
+
         
         public bool IsT22 => _index == 22;
         
@@ -26833,7 +26833,7 @@ namespace OneOf
             _index == 22 ?
                 _value22 :
                 throw new NotImplementedException($"Cannot return as T22 as result is T{_index}");
-        
+
         
         public bool IsT23 => _index == 23;
         
@@ -26841,7 +26841,7 @@ namespace OneOf
             _index == 23 ?
                 _value23 :
                 throw new NotImplementedException($"Cannot return as T23 as result is T{_index}");
-        
+
         
         public bool IsT24 => _index == 24;
         
@@ -26849,7 +26849,7 @@ namespace OneOf
             _index == 24 ?
                 _value24 :
                 throw new NotImplementedException($"Cannot return as T24 as result is T{_index}");
-        
+
         
         public bool IsT25 => _index == 25;
         
@@ -26857,7 +26857,7 @@ namespace OneOf
             _index == 25 ?
                 _value25 :
                 throw new NotImplementedException($"Cannot return as T25 as result is T{_index}");
-        
+
         
         public bool IsT26 => _index == 26;
         
@@ -26865,7 +26865,7 @@ namespace OneOf
             _index == 26 ?
                 _value26 :
                 throw new NotImplementedException($"Cannot return as T26 as result is T{_index}");
-        
+
         
         public bool IsT27 => _index == 27;
         
@@ -26873,7 +26873,7 @@ namespace OneOf
             _index == 27 ?
                 _value27 :
                 throw new NotImplementedException($"Cannot return as T27 as result is T{_index}");
-        
+
         
         public bool IsT28 => _index == 28;
         
@@ -26881,7 +26881,7 @@ namespace OneOf
             _index == 28 ?
                 _value28 :
                 throw new NotImplementedException($"Cannot return as T28 as result is T{_index}");
-        
+
         
         public bool IsT29 => _index == 29;
         
@@ -26889,7 +26889,7 @@ namespace OneOf
             _index == 29 ?
                 _value29 :
                 throw new NotImplementedException($"Cannot return as T29 as result is T{_index}");
-        
+
         
         public bool IsT30 => _index == 30;
         
@@ -26897,7 +26897,7 @@ namespace OneOf
             _index == 30 ?
                 _value30 :
                 throw new NotImplementedException($"Cannot return as T30 as result is T{_index}");
-        
+
         
         public bool IsT31 => _index == 31;
         
@@ -26905,7 +26905,7 @@ namespace OneOf
             _index == 31 ?
                 _value31 :
                 throw new NotImplementedException($"Cannot return as T31 as result is T{_index}");
-        
+
         
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21, Action<T22> f22, Action<T23> f23, Action<T24> f24, Action<T25> f25, Action<T26> f26, Action<T27> f27, Action<T28> f28, Action<T29> f29, Action<T30> f30, Action<T31> f31)

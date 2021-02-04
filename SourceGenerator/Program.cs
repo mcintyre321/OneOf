@@ -36,135 +36,101 @@ namespace OneOf
 {{");
 
     for (var i = indexStart; i < indexEnd; i++) {
-        var genericArg = Range(0, i).Joined(", ", e => $"T{e}");
+        string RangeJoined(string delimiter, Func<int, string> selector) => Range(0,i).Joined(delimiter,selector);
 
-        sb.AppendLine($@"
-    public {(isStruct ? "struct" : "class")} {className}<{genericArg}> : IOneOf");
-        sb.AppendLine("    {");
-        for (var j = 0; j < i; j++) {
-            sb.AppendLine($@"        readonly T{j} _value{j};");
-        }
+        var genericArg = RangeJoined(", ", e => $"T{e}");
 
-        sb.AppendLine($@"        readonly int _index;");
+        $@"
+    public {(isStruct ? "struct" : "class")} {className}<{genericArg}> : IOneOf
+    {{
+        {RangeJoined(@"
+        ", j => $"readonly T{j} _value{j};")}
+        readonly int _index;
 
-        if (isStruct) {
-            sb.Append($@"
-        {className}(int index");
-            for (var j = 0; j < i; j++) {
-                sb.Append($", T{j} value{j} = default");
-            }
-            sb.Append(@")
-        {
-            _index = index;");
-            for (var j = 0; j < i; j++) {
-                sb.Append($@"
-            _value{j} = value{j};");
-            }
-            sb.AppendLine(@"
-        }");
-        }
-
-        if (!isStruct) {
-            sb.Append($@"
-        protected {className}(OneOf<{genericArg}> input)
+        {If(isStruct, 
+            $@"{className}(int index, {RangeJoined(", ", j => $"T{j} value{j} = default")})
+        {{
+            _index = index;
+            {RangeJoined(@"
+            ", j => $"_value{j} = value{j};")}
+        }}"
+        )}{If(!isStruct,
+            $@"protected {className}(OneOf<{genericArg}> input)
         {{
             _index = input.Index;
             switch (_index)
-            {{");
-            for (var j = 0; j < i; j++) {
-                sb.Append(@$"
-                case {j}: _value{j} = input.AsT{j}; break;");
-            }
-            sb.Append($@"
+            {{
+                {RangeJoined($@"
+                ", j => $"case {j}: _value{j} = input.AsT{j}; break;")}
                 default: throw new InvalidOperationException();
             }}
-        }}
-        ");
-        }
+        }}"
+        )}
 
-        sb.Append($@"
         public object Value => _index switch
         {{
-            {Range(0, i).Joined(@"
+            {RangeJoined(@"
             ", k => $"{k} => _value{k},")}
             _ => throw new InvalidOperationException()
         }};
         
         public int Index => _index;
-        ");
 
-        sb.AppendLine(Range(0, i).Joined("", j => $@"
-        public bool IsT{j} => _index == {j};
+        {RangeJoined(@"
+        ", j => $@"public bool IsT{j} => _index == {j};
         
         public T{j} AsT{j} =>
             _index == {j} ?
                 _value{j} :
                 throw new NotImplementedException($""Cannot return as T{j} as result is T{{_index}}"");
-        {(
-            isStruct ? $@"
-        public static implicit operator {className}<{genericArg}>(T{j} t) => new {className}<{genericArg}>({j}, value{j}: t);" :
-                ""
+
+        {If(isStruct,
+        @$"public static implicit operator {className}<{genericArg}>(T{j} t) => new {className}<{genericArg}>({j}, value{j}: t);
+"
+        )}"
         )}
-        "));
 
-        var matchArgList0 = Range(0, i).Joined(", ", e => $"Action<T{e}> f{e}");
-        sb.AppendLine($@"
-        public void Switch({matchArgList0})
-        {{");
-
-        for (var j = 0; j < i; j++) {
-            sb.AppendLine($@"            if (_index == {j} && f{j} != null)
+        public void Switch({RangeJoined(", ", e => $"Action<T{e}> f{e}")})
+        {{
+            {RangeJoined(@"
+            ", j => $@"if (_index == {j} && f{j} != null)
             {{
                 f{j}(_value{j});
                 return;
-            }}");
-        }
+            }}")}
+            throw new InvalidOperationException();
+        }}
 
-        sb.AppendLine(@"            throw new InvalidOperationException();
-        }");
-
-        var matchArgList = Range(0, i).Joined(", ", e => $"Func<T{e}, TResult> f{e}");
-        sb.AppendLine($@"
-        public TResult Match<TResult>({matchArgList})
-        {{");
-
-        for (var j = 0; j < i; j++) {
-            sb.AppendLine($@"            if (_index == {j} && f{j} != null)
+        public TResult Match<TResult>({RangeJoined(", ", e => $"Func<T{e}, TResult> f{e}")})
+        {{
+            {RangeJoined(@"
+            ", j => $@"if (_index == {j} && f{j} != null)
             {{
                 return f{j}(_value{j});
-            }}");
-        }
-
-        sb.AppendLine(@"            throw new InvalidOperationException();
-        }");
+            }}")}
+            throw new InvalidOperationException();
+        }}".AppendLineTo(sb);
 
         if (isStruct) {
-            var argIndexList = Range(0, i).ToList();
-            var genericArgs = argIndexList.Select(e => $"T{e}").ToList();
-            var genericArgsPrinted = genericArgs.Joined(", ");
+            var genericArgs = Range(0, i).Select(e => $"T{e}").ToList();
 
-            sb.AppendLine(Range(0, i).Joined("", j => @$"
-        public static OneOf<{genericArgsPrinted}> FromT{j}(T{j} input) => input;"));
+            sb.AppendLine(RangeJoined("", j => @$"
+        public static OneOf<{genericArgs.Joined(", ")}> FromT{j}(T{j} input) => input;"));
 
             foreach (var bindToType in genericArgs) {
 
-                var resultType = "TResult";
-                var resultArgs = genericArgs.Select(x => {
-                    return x == bindToType ? resultType : x;
-                }).ToList();
-                var resultArgsPrinted = resultArgs.Joined(", ");
-                var funcType =
+                var resultArgs = genericArgs.Select(x => x == bindToType ? "TResult" : x).ToList();
                 sb.Append($@"
-        public OneOf<{resultArgsPrinted}> Map{bindToType}<{resultType}>(Func<{bindToType}, {resultType}> mapFunc)
+        public OneOf<{resultArgs.Joined(", ")}> Map{bindToType}<TResult>(Func<{bindToType}, TResult> mapFunc)
         {{");
                 sb.Append($@"
-            if(mapFunc == null)
+            if (mapFunc == null)
             {{
                 throw new ArgumentNullException(nameof(mapFunc));
             }}
             return _index switch
             {{
-                {Range(0, i).Joined(@"
+                {RangeJoined(@"
                 ", k => {
                     var arg =
                         bindToType != $"T{k}" ?
@@ -178,7 +144,8 @@ namespace OneOf
             }
 
         }
-        if (i > 1)
+
+        if (i > 1) {
             for (var j = 0; j < i; j++) {
 
                 var genericArgWithSkip = Range(0, i).Except(new[] { j }).Joined(", ", e => $"T{e}");
@@ -189,7 +156,7 @@ namespace OneOf
             value = IsT{j} ? AsT{j} : default;
             remainder = _index switch
             {{
-                {Range(0, i).Joined(@"
+                {RangeJoined(@"
                 ", k => {
                     var result =
                         k == j ? "default" :
@@ -203,23 +170,22 @@ namespace OneOf
             return IsT{j};
 		}}");
             }
+        }
 
-        sb.AppendLine($@"
+        $@"
         bool Equals({className}<{genericArg}> other) =>
             _index == other._index &&
             _index switch
             {{
-                {Range(0, i).Joined("", j => @$"
+                {RangeJoined("", j => @$"
                 {j} => Equals(_value{j}, other._value{j}),")}
                 _ => false
-            }};");
+            }};
 
-        if (isStruct) {
-            sb.AppendLine(@$"
-        public override bool Equals(object obj) => obj is {className}<{genericArg}> o && Equals(o);");
-        } else {
-            sb.AppendLine($@"
-        public override bool Equals(object obj)
+        {(
+            isStruct ?
+                $"public override bool Equals(object obj) => obj is {className}<{genericArg}> o && Equals(o);" :
+                @$"public override bool Equals(object obj)
         {{
             if (ReferenceEquals(null, obj))
                 return false;
@@ -228,37 +194,40 @@ namespace OneOf
                 return true;
 
             return obj is {className}<{genericArg}> o && Equals(o);
-        }}");
-        }
+        }}"
+        )}
 
-        sb.AppendLine($@"
         public override string ToString()
         {{{(isStruct ? "" : @"
             string FormatValue<T>(Type type, T value) => object.ReferenceEquals(this, value) ? base.ToString() : $""{type.FullName}: {value?.ToString()}"";")}
             return _index switch
             {{
-                {Range(0, i).Joined(@"
+                {RangeJoined(@"
                 ", j => $"{j} => FormatValue(typeof(T{j}), _value{j}),")}
                 _ => throw new InvalidOperationException(""Unexpected index, which indicates a problem in the OneOf codegen."")
             }};
-        }}");
+        }}
 
-        sb.AppendLine($@"
         public override int GetHashCode()
         {{
             int hashCode = _index switch
             {{
-                {Range(0, i).Joined(@"
+                {RangeJoined(@"
                 ", j => $"{j} => _value{j}?.GetHashCode() ?? 0,")}
                 _ => 0
             }};
             return (hashCode*397) ^ _index;
         }}
-    }}");
+    }}".AppendLineTo(sb);
     }
     sb.AppendLine("}");
     return sb.ToString(); ;
 }
+
+string If(bool test, string s) =>
+    test ?
+        s :
+        "";
 
 public static class Extensions {
     public static string Joined<T>(this IEnumerable<T> source, string delimiter, Func<T, string>? selector = null) {

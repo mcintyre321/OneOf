@@ -22,16 +22,16 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0>(T0 t) => new OneOf<T0>(0, value0: t);
-        
+
 
         public void Switch(Action<T0> f0)
         {
@@ -56,7 +56,7 @@ namespace OneOf
 
         public OneOf<TResult> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -118,25 +118,25 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1>(T0 t) => new OneOf<T0, T1>(0, value0: t);
-        
+
         public bool IsT1 => _index == 1;
         
         public T1 AsT1 =>
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1>(T1 t) => new OneOf<T0, T1>(1, value1: t);
-        
+
 
         public void Switch(Action<T0> f0, Action<T1> f1)
         {
@@ -171,7 +171,7 @@ namespace OneOf
 
         public OneOf<TResult, T1> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -184,7 +184,7 @@ namespace OneOf
         }
         public OneOf<T0, TResult> MapT1<TResult>(Func<T1, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -277,34 +277,34 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2>(T0 t) => new OneOf<T0, T1, T2>(0, value0: t);
-        
+
         public bool IsT1 => _index == 1;
         
         public T1 AsT1 =>
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2>(T1 t) => new OneOf<T0, T1, T2>(1, value1: t);
-        
+
         public bool IsT2 => _index == 2;
         
         public T2 AsT2 =>
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2>(T2 t) => new OneOf<T0, T1, T2>(2, value2: t);
-        
+
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2)
         {
@@ -349,7 +349,7 @@ namespace OneOf
 
         public OneOf<TResult, T1, T2> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -363,7 +363,7 @@ namespace OneOf
         }
         public OneOf<T0, TResult, T2> MapT1<TResult>(Func<T1, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -377,7 +377,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, TResult> MapT2<TResult>(Func<T2, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -492,43 +492,43 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3>(T0 t) => new OneOf<T0, T1, T2, T3>(0, value0: t);
-        
+
         public bool IsT1 => _index == 1;
         
         public T1 AsT1 =>
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3>(T1 t) => new OneOf<T0, T1, T2, T3>(1, value1: t);
-        
+
         public bool IsT2 => _index == 2;
         
         public T2 AsT2 =>
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3>(T2 t) => new OneOf<T0, T1, T2, T3>(2, value2: t);
-        
+
         public bool IsT3 => _index == 3;
         
         public T3 AsT3 =>
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3>(T3 t) => new OneOf<T0, T1, T2, T3>(3, value3: t);
-        
+
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3)
         {
@@ -583,7 +583,7 @@ namespace OneOf
 
         public OneOf<TResult, T1, T2, T3> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -598,7 +598,7 @@ namespace OneOf
         }
         public OneOf<T0, TResult, T2, T3> MapT1<TResult>(Func<T1, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -613,7 +613,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, TResult, T3> MapT2<TResult>(Func<T2, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -628,7 +628,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, T2, TResult> MapT3<TResult>(Func<T3, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -767,52 +767,52 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4>(T0 t) => new OneOf<T0, T1, T2, T3, T4>(0, value0: t);
-        
+
         public bool IsT1 => _index == 1;
         
         public T1 AsT1 =>
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4>(T1 t) => new OneOf<T0, T1, T2, T3, T4>(1, value1: t);
-        
+
         public bool IsT2 => _index == 2;
         
         public T2 AsT2 =>
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4>(T2 t) => new OneOf<T0, T1, T2, T3, T4>(2, value2: t);
-        
+
         public bool IsT3 => _index == 3;
         
         public T3 AsT3 =>
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4>(T3 t) => new OneOf<T0, T1, T2, T3, T4>(3, value3: t);
-        
+
         public bool IsT4 => _index == 4;
         
         public T4 AsT4 =>
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4>(T4 t) => new OneOf<T0, T1, T2, T3, T4>(4, value4: t);
-        
+
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4)
         {
@@ -877,7 +877,7 @@ namespace OneOf
 
         public OneOf<TResult, T1, T2, T3, T4> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -893,7 +893,7 @@ namespace OneOf
         }
         public OneOf<T0, TResult, T2, T3, T4> MapT1<TResult>(Func<T1, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -909,7 +909,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, TResult, T3, T4> MapT2<TResult>(Func<T2, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -925,7 +925,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, T2, TResult, T4> MapT3<TResult>(Func<T3, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -941,7 +941,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, T2, T3, TResult> MapT4<TResult>(Func<T4, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -1106,61 +1106,61 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5>(0, value0: t);
-        
+
         public bool IsT1 => _index == 1;
         
         public T1 AsT1 =>
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5>(1, value1: t);
-        
+
         public bool IsT2 => _index == 2;
         
         public T2 AsT2 =>
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5>(2, value2: t);
-        
+
         public bool IsT3 => _index == 3;
         
         public T3 AsT3 =>
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5>(3, value3: t);
-        
+
         public bool IsT4 => _index == 4;
         
         public T4 AsT4 =>
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5>(4, value4: t);
-        
+
         public bool IsT5 => _index == 5;
         
         public T5 AsT5 =>
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5>(5, value5: t);
-        
+
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5)
         {
@@ -1235,7 +1235,7 @@ namespace OneOf
 
         public OneOf<TResult, T1, T2, T3, T4, T5> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -1252,7 +1252,7 @@ namespace OneOf
         }
         public OneOf<T0, TResult, T2, T3, T4, T5> MapT1<TResult>(Func<T1, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -1269,7 +1269,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, TResult, T3, T4, T5> MapT2<TResult>(Func<T2, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -1286,7 +1286,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, T2, TResult, T4, T5> MapT3<TResult>(Func<T3, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -1303,7 +1303,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, T2, T3, TResult, T5> MapT4<TResult>(Func<T4, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -1320,7 +1320,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, T2, T3, T4, TResult> MapT5<TResult>(Func<T5, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -1513,70 +1513,70 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6>(0, value0: t);
-        
+
         public bool IsT1 => _index == 1;
         
         public T1 AsT1 =>
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6>(1, value1: t);
-        
+
         public bool IsT2 => _index == 2;
         
         public T2 AsT2 =>
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6>(2, value2: t);
-        
+
         public bool IsT3 => _index == 3;
         
         public T3 AsT3 =>
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6>(3, value3: t);
-        
+
         public bool IsT4 => _index == 4;
         
         public T4 AsT4 =>
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6>(4, value4: t);
-        
+
         public bool IsT5 => _index == 5;
         
         public T5 AsT5 =>
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6>(5, value5: t);
-        
+
         public bool IsT6 => _index == 6;
         
         public T6 AsT6 =>
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6>(6, value6: t);
-        
+
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6)
         {
@@ -1661,7 +1661,7 @@ namespace OneOf
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -1679,7 +1679,7 @@ namespace OneOf
         }
         public OneOf<T0, TResult, T2, T3, T4, T5, T6> MapT1<TResult>(Func<T1, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -1697,7 +1697,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, TResult, T3, T4, T5, T6> MapT2<TResult>(Func<T2, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -1715,7 +1715,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, T2, TResult, T4, T5, T6> MapT3<TResult>(Func<T3, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -1733,7 +1733,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, T2, T3, TResult, T5, T6> MapT4<TResult>(Func<T4, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -1751,7 +1751,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, T2, T3, T4, TResult, T6> MapT5<TResult>(Func<T5, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -1769,7 +1769,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, T2, T3, T4, T5, TResult> MapT6<TResult>(Func<T6, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -1992,79 +1992,79 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(0, value0: t);
-        
+
         public bool IsT1 => _index == 1;
         
         public T1 AsT1 =>
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(1, value1: t);
-        
+
         public bool IsT2 => _index == 2;
         
         public T2 AsT2 =>
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(2, value2: t);
-        
+
         public bool IsT3 => _index == 3;
         
         public T3 AsT3 =>
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(3, value3: t);
-        
+
         public bool IsT4 => _index == 4;
         
         public T4 AsT4 =>
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(4, value4: t);
-        
+
         public bool IsT5 => _index == 5;
         
         public T5 AsT5 =>
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(5, value5: t);
-        
+
         public bool IsT6 => _index == 6;
         
         public T6 AsT6 =>
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(6, value6: t);
-        
+
         public bool IsT7 => _index == 7;
         
         public T7 AsT7 =>
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(7, value7: t);
-        
+
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7)
         {
@@ -2159,7 +2159,7 @@ namespace OneOf
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -2178,7 +2178,7 @@ namespace OneOf
         }
         public OneOf<T0, TResult, T2, T3, T4, T5, T6, T7> MapT1<TResult>(Func<T1, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -2197,7 +2197,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, TResult, T3, T4, T5, T6, T7> MapT2<TResult>(Func<T2, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -2216,7 +2216,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, T2, TResult, T4, T5, T6, T7> MapT3<TResult>(Func<T3, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -2235,7 +2235,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, T2, T3, TResult, T5, T6, T7> MapT4<TResult>(Func<T4, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -2254,7 +2254,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, T2, T3, T4, TResult, T6, T7> MapT5<TResult>(Func<T5, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -2273,7 +2273,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, T2, T3, T4, T5, TResult, T7> MapT6<TResult>(Func<T6, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -2292,7 +2292,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, T2, T3, T4, T5, T6, TResult> MapT7<TResult>(Func<T7, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -2547,88 +2547,88 @@ namespace OneOf
         };
         
         public int Index => _index;
-        
+
         public bool IsT0 => _index == 0;
         
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new NotImplementedException($"Cannot return as T0 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(0, value0: t);
-        
+
         public bool IsT1 => _index == 1;
         
         public T1 AsT1 =>
             _index == 1 ?
                 _value1 :
                 throw new NotImplementedException($"Cannot return as T1 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(1, value1: t);
-        
+
         public bool IsT2 => _index == 2;
         
         public T2 AsT2 =>
             _index == 2 ?
                 _value2 :
                 throw new NotImplementedException($"Cannot return as T2 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(2, value2: t);
-        
+
         public bool IsT3 => _index == 3;
         
         public T3 AsT3 =>
             _index == 3 ?
                 _value3 :
                 throw new NotImplementedException($"Cannot return as T3 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(3, value3: t);
-        
+
         public bool IsT4 => _index == 4;
         
         public T4 AsT4 =>
             _index == 4 ?
                 _value4 :
                 throw new NotImplementedException($"Cannot return as T4 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(4, value4: t);
-        
+
         public bool IsT5 => _index == 5;
         
         public T5 AsT5 =>
             _index == 5 ?
                 _value5 :
                 throw new NotImplementedException($"Cannot return as T5 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(5, value5: t);
-        
+
         public bool IsT6 => _index == 6;
         
         public T6 AsT6 =>
             _index == 6 ?
                 _value6 :
                 throw new NotImplementedException($"Cannot return as T6 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(6, value6: t);
-        
+
         public bool IsT7 => _index == 7;
         
         public T7 AsT7 =>
             _index == 7 ?
                 _value7 :
                 throw new NotImplementedException($"Cannot return as T7 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(7, value7: t);
-        
+
         public bool IsT8 => _index == 8;
         
         public T8 AsT8 =>
             _index == 8 ?
                 _value8 :
                 throw new NotImplementedException($"Cannot return as T8 as result is T{_index}");
-        
+
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(8, value8: t);
-        
+
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8)
         {
@@ -2733,7 +2733,7 @@ namespace OneOf
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -2753,7 +2753,7 @@ namespace OneOf
         }
         public OneOf<T0, TResult, T2, T3, T4, T5, T6, T7, T8> MapT1<TResult>(Func<T1, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -2773,7 +2773,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, TResult, T3, T4, T5, T6, T7, T8> MapT2<TResult>(Func<T2, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -2793,7 +2793,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, T2, TResult, T4, T5, T6, T7, T8> MapT3<TResult>(Func<T3, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -2813,7 +2813,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, T2, T3, TResult, T5, T6, T7, T8> MapT4<TResult>(Func<T4, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -2833,7 +2833,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, T2, T3, T4, TResult, T6, T7, T8> MapT5<TResult>(Func<T5, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -2853,7 +2853,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, T2, T3, T4, T5, TResult, T7, T8> MapT6<TResult>(Func<T6, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -2873,7 +2873,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, T2, T3, T4, T5, T6, TResult, T8> MapT7<TResult>(Func<T7, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
@@ -2893,7 +2893,7 @@ namespace OneOf
         }
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, TResult> MapT8<TResult>(Func<T8, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
