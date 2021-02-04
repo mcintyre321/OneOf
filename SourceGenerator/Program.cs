@@ -6,7 +6,7 @@ using System.Text;
 using static System.Linq.Enumerable;
 
 // the generator exe is in 'bin/$config/$tfm
-var sourceRoot =  Path.GetFullPath(Path.Combine(Assembly.GetExecutingAssembly().Location, @"..\..\..\..\.."));
+var sourceRoot = Path.GetFullPath(Path.Combine(Assembly.GetExecutingAssembly().Location, @"..\..\..\..\.."));
 
 var output = GetContent(true, 1, 10);
 var outpath = Path.Combine(sourceRoot, @"OneOf\OneOf.cs");
@@ -36,25 +36,27 @@ namespace OneOf
 {{");
 
     for (var i = indexStart; i < indexEnd; i++) {
-        string RangeJoined(string delimiter, Func<int, string> selector) => Range(0,i).Joined(delimiter,selector);
+        string RangeJoined(string delimiter, Func<int, string> selector) => Range(0, i).Joined(delimiter, selector);
+        string IfStruct(string s, string s2 = "") => isStruct ? s : s2;
+        string IfNotStruct(string s) => !isStruct ? s : "";
 
         var genericArg = RangeJoined(", ", e => $"T{e}");
 
         $@"
-    public {(isStruct ? "struct" : "class")} {className}<{genericArg}> : IOneOf
+    public {IfStruct("struct", "class")} {className}<{genericArg}> : IOneOf
     {{
         {RangeJoined(@"
         ", j => $"readonly T{j} _value{j};")}
         readonly int _index;
 
-        {If(isStruct, 
+        {IfStruct(
             $@"{className}(int index, {RangeJoined(", ", j => $"T{j} value{j} = default")})
         {{
             _index = index;
             {RangeJoined(@"
             ", j => $"_value{j} = value{j};")}
         }}"
-        )}{If(!isStruct,
+        )}{IfNotStruct(
             $@"protected {className}(OneOf<{genericArg}> input)
         {{
             _index = input.Index;
@@ -84,7 +86,7 @@ namespace OneOf
                 _value{j} :
                 throw new NotImplementedException($""Cannot return as T{j} as result is T{{_index}}"");
 
-        {If(isStruct,
+        {IfStruct(
         @$"public static implicit operator {className}<{genericArg}>(T{j} t) => new {className}<{genericArg}>({j}, value{j}: t);
 "
         )}"
@@ -114,16 +116,13 @@ namespace OneOf
         if (isStruct) {
             var genericArgs = Range(0, i).Select(e => $"T{e}").ToList();
 
-            sb.AppendLine(RangeJoined("", j => @$"
-        public static OneOf<{genericArgs.Joined(", ")}> FromT{j}(T{j} input) => input;"));
+            $@"
+        {RangeJoined(@"
+        ", j => @$"public static OneOf<{genericArgs.Joined(", ")}> FromT{j}(T{j} input) => input;")}
 
-            foreach (var bindToType in genericArgs) {
-
-                var resultArgs = genericArgs.Select(x => x == bindToType ? "TResult" : x).ToList();
-                sb.Append($@"
-        public OneOf<{resultArgs.Joined(", ")}> Map{bindToType}<TResult>(Func<{bindToType}, TResult> mapFunc)
-        {{");
-                sb.Append($@"
+        {genericArgs.Joined(@"
+        ", bindToType => $@"public OneOf<{genericArgs.Joined(", ", x => x == bindToType ? "TResult" : x)}> Map{bindToType}<TResult>(Func<{bindToType}, TResult> mapFunc)
+        {{
             if (mapFunc == null)
             {{
                 throw new ArgumentNullException(nameof(mapFunc));
@@ -132,17 +131,15 @@ namespace OneOf
             {{
                 {RangeJoined(@"
                 ", k => {
-                    var arg =
-                        bindToType != $"T{k}" ?
-                            $"AsT{k}" :
-                            $"mapFunc(AsT{k})";
-                    return $"{k} => {arg},";
-                })}
+                var arg =
+                    bindToType != $"T{k}" ?
+                        $"AsT{k}" :
+                        $"mapFunc(AsT{k})";
+                return $"{k} => {arg},";
+            })}
                 _ => throw new InvalidOperationException()
             }};
-        }}");
-            }
-
+        }}")}".AppendLineTo(sb);
         }
 
         if (i > 1) {
@@ -150,8 +147,8 @@ namespace OneOf
 
                 var genericArgWithSkip = Range(0, i).Except(new[] { j }).Joined(", ", e => $"T{e}");
                 var remainderType = i == 2 ? genericArgWithSkip : $"OneOf<{genericArgWithSkip}>";
-                sb.AppendLine($@"
-		public bool TryPickT{j}(out T{j} value, out {remainderType} remainder)
+                $@"
+        public bool TryPickT{j}(out T{j} value, out {remainderType} remainder)
 		{{
             value = IsT{j} ? AsT{j} : default;
             remainder = _index switch
@@ -168,7 +165,7 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             }};
             return IsT{j};
-		}}");
+		}}".AppendLineTo(sb);
             }
         }
 
@@ -182,10 +179,9 @@ namespace OneOf
                 _ => false
             }};
 
-        {(
-            isStruct ?
-                $"public override bool Equals(object obj) => obj is {className}<{genericArg}> o && Equals(o);" :
-                @$"public override bool Equals(object obj)
+        {IfStruct(
+            $"public override bool Equals(object obj) => obj is {className}<{genericArg}> o && Equals(o);",
+            @$"public override bool Equals(object obj)
         {{
             if (ReferenceEquals(null, obj))
                 return false;
@@ -194,8 +190,7 @@ namespace OneOf
                 return true;
 
             return obj is {className}<{genericArg}> o && Equals(o);
-        }}"
-        )}
+        }}")}
 
         public override string ToString()
         {{{(isStruct ? "" : @"
@@ -221,13 +216,8 @@ namespace OneOf
     }}".AppendLineTo(sb);
     }
     sb.AppendLine("}");
-    return sb.ToString(); ;
+    return sb.ToString();
 }
-
-string If(bool test, string s) =>
-    test ?
-        s :
-        "";
 
 public static class Extensions {
     public static string Joined<T>(this IEnumerable<T> source, string delimiter, Func<T, string>? selector = null) {
@@ -235,6 +225,5 @@ public static class Extensions {
         if (selector == null) { return string.Join(delimiter, source); }
         return string.Join(delimiter, source.Select(selector));
     }
-    public static void AppendTo(this string? s, StringBuilder sb) => sb.Append(s);
     public static void AppendLineTo(this string? s, StringBuilder sb) => sb.AppendLine(s);
 }

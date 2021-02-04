@@ -462,7 +462,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -482,7 +483,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -502,7 +503,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -522,7 +523,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -542,7 +543,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -562,7 +563,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -582,7 +583,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -602,7 +603,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -622,7 +623,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -642,7 +643,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -1232,7 +1233,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -1253,7 +1255,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -1274,7 +1276,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -1295,7 +1297,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -1316,7 +1318,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -1337,7 +1339,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -1358,7 +1360,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -1379,7 +1381,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -1400,7 +1402,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -1421,7 +1423,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -1442,7 +1444,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -2092,7 +2094,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -2114,7 +2117,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -2136,7 +2139,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -2158,7 +2161,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -2180,7 +2183,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -2202,7 +2205,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -2224,7 +2227,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -2246,7 +2249,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -2268,7 +2271,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -2290,7 +2293,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -2312,7 +2315,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -2334,7 +2337,7 @@ namespace OneOf
             return IsT10;
 		}
 
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> remainder)
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> remainder)
 		{
             value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -3046,7 +3049,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -3069,7 +3073,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -3092,7 +3096,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -3115,7 +3119,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -3138,7 +3142,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -3161,7 +3165,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -3184,7 +3188,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -3207,7 +3211,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -3230,7 +3234,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -3253,7 +3257,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -3276,7 +3280,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -3299,7 +3303,7 @@ namespace OneOf
             return IsT10;
 		}
 
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12> remainder)
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12> remainder)
 		{
             value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -3322,7 +3326,7 @@ namespace OneOf
             return IsT11;
 		}
 
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> remainder)
+        public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> remainder)
 		{
             value = IsT12 ? AsT12 : default;
             remainder = _index switch
@@ -4098,7 +4102,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -4122,7 +4127,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -4146,7 +4151,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -4170,7 +4175,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -4194,7 +4199,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -4218,7 +4223,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -4242,7 +4247,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -4266,7 +4271,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -4290,7 +4295,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -4314,7 +4319,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -4338,7 +4343,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -4362,7 +4367,7 @@ namespace OneOf
             return IsT10;
 		}
 
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13> remainder)
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13> remainder)
 		{
             value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -4386,7 +4391,7 @@ namespace OneOf
             return IsT11;
 		}
 
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13> remainder)
+        public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13> remainder)
 		{
             value = IsT12 ? AsT12 : default;
             remainder = _index switch
@@ -4410,7 +4415,7 @@ namespace OneOf
             return IsT12;
 		}
 
-		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> remainder)
+        public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> remainder)
 		{
             value = IsT13 ? AsT13 : default;
             remainder = _index switch
@@ -5252,7 +5257,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -5277,7 +5283,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -5302,7 +5308,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -5327,7 +5333,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -5352,7 +5358,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -5377,7 +5383,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -5402,7 +5408,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -5427,7 +5433,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -5452,7 +5458,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -5477,7 +5483,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -5502,7 +5508,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -5527,7 +5533,7 @@ namespace OneOf
             return IsT10;
 		}
 
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14> remainder)
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14> remainder)
 		{
             value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -5552,7 +5558,7 @@ namespace OneOf
             return IsT11;
 		}
 
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14> remainder)
+        public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14> remainder)
 		{
             value = IsT12 ? AsT12 : default;
             remainder = _index switch
@@ -5577,7 +5583,7 @@ namespace OneOf
             return IsT12;
 		}
 
-		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14> remainder)
+        public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14> remainder)
 		{
             value = IsT13 ? AsT13 : default;
             remainder = _index switch
@@ -5602,7 +5608,7 @@ namespace OneOf
             return IsT13;
 		}
 
-		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> remainder)
+        public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> remainder)
 		{
             value = IsT14 ? AsT14 : default;
             remainder = _index switch
@@ -6512,7 +6518,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -6538,7 +6545,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -6564,7 +6571,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -6590,7 +6597,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -6616,7 +6623,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -6642,7 +6649,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -6668,7 +6675,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -6694,7 +6701,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -6720,7 +6727,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -6746,7 +6753,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -6772,7 +6779,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -6798,7 +6805,7 @@ namespace OneOf
             return IsT10;
 		}
 
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15> remainder)
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15> remainder)
 		{
             value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -6824,7 +6831,7 @@ namespace OneOf
             return IsT11;
 		}
 
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15> remainder)
+        public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15> remainder)
 		{
             value = IsT12 ? AsT12 : default;
             remainder = _index switch
@@ -6850,7 +6857,7 @@ namespace OneOf
             return IsT12;
 		}
 
-		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15> remainder)
+        public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15> remainder)
 		{
             value = IsT13 ? AsT13 : default;
             remainder = _index switch
@@ -6876,7 +6883,7 @@ namespace OneOf
             return IsT13;
 		}
 
-		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15> remainder)
+        public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15> remainder)
 		{
             value = IsT14 ? AsT14 : default;
             remainder = _index switch
@@ -6902,7 +6909,7 @@ namespace OneOf
             return IsT14;
 		}
 
-		public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> remainder)
+        public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> remainder)
 		{
             value = IsT15 ? AsT15 : default;
             remainder = _index switch
@@ -7882,7 +7889,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -7909,7 +7917,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -7936,7 +7944,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -7963,7 +7971,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -7990,7 +7998,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -8017,7 +8025,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -8044,7 +8052,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -8071,7 +8079,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -8098,7 +8106,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -8125,7 +8133,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -8152,7 +8160,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -8179,7 +8187,7 @@ namespace OneOf
             return IsT10;
 		}
 
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16> remainder)
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16> remainder)
 		{
             value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -8206,7 +8214,7 @@ namespace OneOf
             return IsT11;
 		}
 
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16> remainder)
+        public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16> remainder)
 		{
             value = IsT12 ? AsT12 : default;
             remainder = _index switch
@@ -8233,7 +8241,7 @@ namespace OneOf
             return IsT12;
 		}
 
-		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16> remainder)
+        public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16> remainder)
 		{
             value = IsT13 ? AsT13 : default;
             remainder = _index switch
@@ -8260,7 +8268,7 @@ namespace OneOf
             return IsT13;
 		}
 
-		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16> remainder)
+        public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16> remainder)
 		{
             value = IsT14 ? AsT14 : default;
             remainder = _index switch
@@ -8287,7 +8295,7 @@ namespace OneOf
             return IsT14;
 		}
 
-		public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16> remainder)
+        public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16> remainder)
 		{
             value = IsT15 ? AsT15 : default;
             remainder = _index switch
@@ -8314,7 +8322,7 @@ namespace OneOf
             return IsT15;
 		}
 
-		public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> remainder)
+        public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> remainder)
 		{
             value = IsT16 ? AsT16 : default;
             remainder = _index switch
@@ -9366,7 +9374,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -9394,7 +9403,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -9422,7 +9431,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -9450,7 +9459,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -9478,7 +9487,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -9506,7 +9515,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -9534,7 +9543,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -9562,7 +9571,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -9590,7 +9599,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -9618,7 +9627,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -9646,7 +9655,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -9674,7 +9683,7 @@ namespace OneOf
             return IsT10;
 		}
 
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17> remainder)
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17> remainder)
 		{
             value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -9702,7 +9711,7 @@ namespace OneOf
             return IsT11;
 		}
 
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17> remainder)
+        public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17> remainder)
 		{
             value = IsT12 ? AsT12 : default;
             remainder = _index switch
@@ -9730,7 +9739,7 @@ namespace OneOf
             return IsT12;
 		}
 
-		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17> remainder)
+        public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17> remainder)
 		{
             value = IsT13 ? AsT13 : default;
             remainder = _index switch
@@ -9758,7 +9767,7 @@ namespace OneOf
             return IsT13;
 		}
 
-		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17> remainder)
+        public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17> remainder)
 		{
             value = IsT14 ? AsT14 : default;
             remainder = _index switch
@@ -9786,7 +9795,7 @@ namespace OneOf
             return IsT14;
 		}
 
-		public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17> remainder)
+        public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17> remainder)
 		{
             value = IsT15 ? AsT15 : default;
             remainder = _index switch
@@ -9814,7 +9823,7 @@ namespace OneOf
             return IsT15;
 		}
 
-		public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17> remainder)
+        public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17> remainder)
 		{
             value = IsT16 ? AsT16 : default;
             remainder = _index switch
@@ -9842,7 +9851,7 @@ namespace OneOf
             return IsT16;
 		}
 
-		public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> remainder)
+        public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> remainder)
 		{
             value = IsT17 ? AsT17 : default;
             remainder = _index switch
@@ -10968,7 +10977,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -10997,7 +11007,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -11026,7 +11036,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -11055,7 +11065,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -11084,7 +11094,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -11113,7 +11123,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -11142,7 +11152,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -11171,7 +11181,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -11200,7 +11210,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -11229,7 +11239,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -11258,7 +11268,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -11287,7 +11297,7 @@ namespace OneOf
             return IsT10;
 		}
 
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18> remainder)
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18> remainder)
 		{
             value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -11316,7 +11326,7 @@ namespace OneOf
             return IsT11;
 		}
 
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18> remainder)
+        public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18> remainder)
 		{
             value = IsT12 ? AsT12 : default;
             remainder = _index switch
@@ -11345,7 +11355,7 @@ namespace OneOf
             return IsT12;
 		}
 
-		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18> remainder)
+        public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18> remainder)
 		{
             value = IsT13 ? AsT13 : default;
             remainder = _index switch
@@ -11374,7 +11384,7 @@ namespace OneOf
             return IsT13;
 		}
 
-		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18> remainder)
+        public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18> remainder)
 		{
             value = IsT14 ? AsT14 : default;
             remainder = _index switch
@@ -11403,7 +11413,7 @@ namespace OneOf
             return IsT14;
 		}
 
-		public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18> remainder)
+        public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18> remainder)
 		{
             value = IsT15 ? AsT15 : default;
             remainder = _index switch
@@ -11432,7 +11442,7 @@ namespace OneOf
             return IsT15;
 		}
 
-		public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18> remainder)
+        public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18> remainder)
 		{
             value = IsT16 ? AsT16 : default;
             remainder = _index switch
@@ -11461,7 +11471,7 @@ namespace OneOf
             return IsT16;
 		}
 
-		public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18> remainder)
+        public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18> remainder)
 		{
             value = IsT17 ? AsT17 : default;
             remainder = _index switch
@@ -11490,7 +11500,7 @@ namespace OneOf
             return IsT17;
 		}
 
-		public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
+        public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
 		{
             value = IsT18 ? AsT18 : default;
             remainder = _index switch
@@ -12692,7 +12702,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -12722,7 +12733,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -12752,7 +12763,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -12782,7 +12793,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -12812,7 +12823,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -12842,7 +12853,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -12872,7 +12883,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -12902,7 +12913,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -12932,7 +12943,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -12962,7 +12973,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -12992,7 +13003,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -13022,7 +13033,7 @@ namespace OneOf
             return IsT10;
 		}
 
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
 		{
             value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -13052,7 +13063,7 @@ namespace OneOf
             return IsT11;
 		}
 
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19> remainder)
+        public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19> remainder)
 		{
             value = IsT12 ? AsT12 : default;
             remainder = _index switch
@@ -13082,7 +13093,7 @@ namespace OneOf
             return IsT12;
 		}
 
-		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19> remainder)
+        public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19> remainder)
 		{
             value = IsT13 ? AsT13 : default;
             remainder = _index switch
@@ -13112,7 +13123,7 @@ namespace OneOf
             return IsT13;
 		}
 
-		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19> remainder)
+        public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19> remainder)
 		{
             value = IsT14 ? AsT14 : default;
             remainder = _index switch
@@ -13142,7 +13153,7 @@ namespace OneOf
             return IsT14;
 		}
 
-		public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19> remainder)
+        public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19> remainder)
 		{
             value = IsT15 ? AsT15 : default;
             remainder = _index switch
@@ -13172,7 +13183,7 @@ namespace OneOf
             return IsT15;
 		}
 
-		public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19> remainder)
+        public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19> remainder)
 		{
             value = IsT16 ? AsT16 : default;
             remainder = _index switch
@@ -13202,7 +13213,7 @@ namespace OneOf
             return IsT16;
 		}
 
-		public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19> remainder)
+        public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19> remainder)
 		{
             value = IsT17 ? AsT17 : default;
             remainder = _index switch
@@ -13232,7 +13243,7 @@ namespace OneOf
             return IsT17;
 		}
 
-		public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19> remainder)
+        public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19> remainder)
 		{
             value = IsT18 ? AsT18 : default;
             remainder = _index switch
@@ -13262,7 +13273,7 @@ namespace OneOf
             return IsT18;
 		}
 
-		public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
+        public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
 		{
             value = IsT19 ? AsT19 : default;
             remainder = _index switch
@@ -14542,7 +14553,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -14573,7 +14585,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -14604,7 +14616,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -14635,7 +14647,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -14666,7 +14678,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -14697,7 +14709,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -14728,7 +14740,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -14759,7 +14771,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -14790,7 +14802,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -14821,7 +14833,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -14852,7 +14864,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -14883,7 +14895,7 @@ namespace OneOf
             return IsT10;
 		}
 
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
             value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -14914,7 +14926,7 @@ namespace OneOf
             return IsT11;
 		}
 
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
+        public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
             value = IsT12 ? AsT12 : default;
             remainder = _index switch
@@ -14945,7 +14957,7 @@ namespace OneOf
             return IsT12;
 		}
 
-		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20> remainder)
+        public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
             value = IsT13 ? AsT13 : default;
             remainder = _index switch
@@ -14976,7 +14988,7 @@ namespace OneOf
             return IsT13;
 		}
 
-		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20> remainder)
+        public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20> remainder)
 		{
             value = IsT14 ? AsT14 : default;
             remainder = _index switch
@@ -15007,7 +15019,7 @@ namespace OneOf
             return IsT14;
 		}
 
-		public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20> remainder)
+        public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20> remainder)
 		{
             value = IsT15 ? AsT15 : default;
             remainder = _index switch
@@ -15038,7 +15050,7 @@ namespace OneOf
             return IsT15;
 		}
 
-		public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20> remainder)
+        public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20> remainder)
 		{
             value = IsT16 ? AsT16 : default;
             remainder = _index switch
@@ -15069,7 +15081,7 @@ namespace OneOf
             return IsT16;
 		}
 
-		public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20> remainder)
+        public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20> remainder)
 		{
             value = IsT17 ? AsT17 : default;
             remainder = _index switch
@@ -15100,7 +15112,7 @@ namespace OneOf
             return IsT17;
 		}
 
-		public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20> remainder)
+        public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20> remainder)
 		{
             value = IsT18 ? AsT18 : default;
             remainder = _index switch
@@ -15131,7 +15143,7 @@ namespace OneOf
             return IsT18;
 		}
 
-		public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20> remainder)
+        public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20> remainder)
 		{
             value = IsT19 ? AsT19 : default;
             remainder = _index switch
@@ -15162,7 +15174,7 @@ namespace OneOf
             return IsT19;
 		}
 
-		public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
+        public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
 		{
             value = IsT20 ? AsT20 : default;
             remainder = _index switch
@@ -16522,7 +16534,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -16554,7 +16567,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -16586,7 +16599,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -16618,7 +16631,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -16650,7 +16663,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -16682,7 +16695,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -16714,7 +16727,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -16746,7 +16759,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -16778,7 +16791,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -16810,7 +16823,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -16842,7 +16855,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -16874,7 +16887,7 @@ namespace OneOf
             return IsT10;
 		}
 
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
 		{
             value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -16906,7 +16919,7 @@ namespace OneOf
             return IsT11;
 		}
 
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
+        public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
 		{
             value = IsT12 ? AsT12 : default;
             remainder = _index switch
@@ -16938,7 +16951,7 @@ namespace OneOf
             return IsT12;
 		}
 
-		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
+        public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
 		{
             value = IsT13 ? AsT13 : default;
             remainder = _index switch
@@ -16970,7 +16983,7 @@ namespace OneOf
             return IsT13;
 		}
 
-		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21> remainder)
+        public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21> remainder)
 		{
             value = IsT14 ? AsT14 : default;
             remainder = _index switch
@@ -17002,7 +17015,7 @@ namespace OneOf
             return IsT14;
 		}
 
-		public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21> remainder)
+        public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21> remainder)
 		{
             value = IsT15 ? AsT15 : default;
             remainder = _index switch
@@ -17034,7 +17047,7 @@ namespace OneOf
             return IsT15;
 		}
 
-		public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21> remainder)
+        public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21> remainder)
 		{
             value = IsT16 ? AsT16 : default;
             remainder = _index switch
@@ -17066,7 +17079,7 @@ namespace OneOf
             return IsT16;
 		}
 
-		public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21> remainder)
+        public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21> remainder)
 		{
             value = IsT17 ? AsT17 : default;
             remainder = _index switch
@@ -17098,7 +17111,7 @@ namespace OneOf
             return IsT17;
 		}
 
-		public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21> remainder)
+        public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21> remainder)
 		{
             value = IsT18 ? AsT18 : default;
             remainder = _index switch
@@ -17130,7 +17143,7 @@ namespace OneOf
             return IsT18;
 		}
 
-		public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21> remainder)
+        public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21> remainder)
 		{
             value = IsT19 ? AsT19 : default;
             remainder = _index switch
@@ -17162,7 +17175,7 @@ namespace OneOf
             return IsT19;
 		}
 
-		public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21> remainder)
+        public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21> remainder)
 		{
             value = IsT20 ? AsT20 : default;
             remainder = _index switch
@@ -17194,7 +17207,7 @@ namespace OneOf
             return IsT20;
 		}
 
-		public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
+        public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
             value = IsT21 ? AsT21 : default;
             remainder = _index switch
@@ -18636,7 +18649,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -18669,7 +18683,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -18702,7 +18716,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -18735,7 +18749,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -18768,7 +18782,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -18801,7 +18815,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -18834,7 +18848,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -18867,7 +18881,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -18900,7 +18914,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -18933,7 +18947,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -18966,7 +18980,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -18999,7 +19013,7 @@ namespace OneOf
             return IsT10;
 		}
 
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
 		{
             value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -19032,7 +19046,7 @@ namespace OneOf
             return IsT11;
 		}
 
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
+        public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
 		{
             value = IsT12 ? AsT12 : default;
             remainder = _index switch
@@ -19065,7 +19079,7 @@ namespace OneOf
             return IsT12;
 		}
 
-		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
+        public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
 		{
             value = IsT13 ? AsT13 : default;
             remainder = _index switch
@@ -19098,7 +19112,7 @@ namespace OneOf
             return IsT13;
 		}
 
-		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
+        public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
 		{
             value = IsT14 ? AsT14 : default;
             remainder = _index switch
@@ -19131,7 +19145,7 @@ namespace OneOf
             return IsT14;
 		}
 
-		public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22> remainder)
+        public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22> remainder)
 		{
             value = IsT15 ? AsT15 : default;
             remainder = _index switch
@@ -19164,7 +19178,7 @@ namespace OneOf
             return IsT15;
 		}
 
-		public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22> remainder)
+        public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22> remainder)
 		{
             value = IsT16 ? AsT16 : default;
             remainder = _index switch
@@ -19197,7 +19211,7 @@ namespace OneOf
             return IsT16;
 		}
 
-		public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22> remainder)
+        public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22> remainder)
 		{
             value = IsT17 ? AsT17 : default;
             remainder = _index switch
@@ -19230,7 +19244,7 @@ namespace OneOf
             return IsT17;
 		}
 
-		public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22> remainder)
+        public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22> remainder)
 		{
             value = IsT18 ? AsT18 : default;
             remainder = _index switch
@@ -19263,7 +19277,7 @@ namespace OneOf
             return IsT18;
 		}
 
-		public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22> remainder)
+        public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22> remainder)
 		{
             value = IsT19 ? AsT19 : default;
             remainder = _index switch
@@ -19296,7 +19310,7 @@ namespace OneOf
             return IsT19;
 		}
 
-		public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22> remainder)
+        public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22> remainder)
 		{
             value = IsT20 ? AsT20 : default;
             remainder = _index switch
@@ -19329,7 +19343,7 @@ namespace OneOf
             return IsT20;
 		}
 
-		public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22> remainder)
+        public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22> remainder)
 		{
             value = IsT21 ? AsT21 : default;
             remainder = _index switch
@@ -19362,7 +19376,7 @@ namespace OneOf
             return IsT21;
 		}
 
-		public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
+        public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
 		{
             value = IsT22 ? AsT22 : default;
             remainder = _index switch
@@ -20888,7 +20902,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -20922,7 +20937,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -20956,7 +20971,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -20990,7 +21005,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -21024,7 +21039,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -21058,7 +21073,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -21092,7 +21107,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -21126,7 +21141,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -21160,7 +21175,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -21194,7 +21209,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -21228,7 +21243,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -21262,7 +21277,7 @@ namespace OneOf
             return IsT10;
 		}
 
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
 		{
             value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -21296,7 +21311,7 @@ namespace OneOf
             return IsT11;
 		}
 
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
+        public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
 		{
             value = IsT12 ? AsT12 : default;
             remainder = _index switch
@@ -21330,7 +21345,7 @@ namespace OneOf
             return IsT12;
 		}
 
-		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
+        public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
 		{
             value = IsT13 ? AsT13 : default;
             remainder = _index switch
@@ -21364,7 +21379,7 @@ namespace OneOf
             return IsT13;
 		}
 
-		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
+        public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
 		{
             value = IsT14 ? AsT14 : default;
             remainder = _index switch
@@ -21398,7 +21413,7 @@ namespace OneOf
             return IsT14;
 		}
 
-		public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
+        public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
 		{
             value = IsT15 ? AsT15 : default;
             remainder = _index switch
@@ -21432,7 +21447,7 @@ namespace OneOf
             return IsT15;
 		}
 
-		public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23> remainder)
+        public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23> remainder)
 		{
             value = IsT16 ? AsT16 : default;
             remainder = _index switch
@@ -21466,7 +21481,7 @@ namespace OneOf
             return IsT16;
 		}
 
-		public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23> remainder)
+        public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23> remainder)
 		{
             value = IsT17 ? AsT17 : default;
             remainder = _index switch
@@ -21500,7 +21515,7 @@ namespace OneOf
             return IsT17;
 		}
 
-		public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23> remainder)
+        public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23> remainder)
 		{
             value = IsT18 ? AsT18 : default;
             remainder = _index switch
@@ -21534,7 +21549,7 @@ namespace OneOf
             return IsT18;
 		}
 
-		public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23> remainder)
+        public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23> remainder)
 		{
             value = IsT19 ? AsT19 : default;
             remainder = _index switch
@@ -21568,7 +21583,7 @@ namespace OneOf
             return IsT19;
 		}
 
-		public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23> remainder)
+        public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23> remainder)
 		{
             value = IsT20 ? AsT20 : default;
             remainder = _index switch
@@ -21602,7 +21617,7 @@ namespace OneOf
             return IsT20;
 		}
 
-		public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23> remainder)
+        public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23> remainder)
 		{
             value = IsT21 ? AsT21 : default;
             remainder = _index switch
@@ -21636,7 +21651,7 @@ namespace OneOf
             return IsT21;
 		}
 
-		public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23> remainder)
+        public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23> remainder)
 		{
             value = IsT22 ? AsT22 : default;
             remainder = _index switch
@@ -21670,7 +21685,7 @@ namespace OneOf
             return IsT22;
 		}
 
-		public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
+        public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> remainder)
 		{
             value = IsT23 ? AsT23 : default;
             remainder = _index switch
@@ -23282,7 +23297,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -23317,7 +23333,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -23352,7 +23368,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -23387,7 +23403,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -23422,7 +23438,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -23457,7 +23473,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -23492,7 +23508,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -23527,7 +23543,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -23562,7 +23578,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -23597,7 +23613,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -23632,7 +23648,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -23667,7 +23683,7 @@ namespace OneOf
             return IsT10;
 		}
 
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
 		{
             value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -23702,7 +23718,7 @@ namespace OneOf
             return IsT11;
 		}
 
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
+        public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
 		{
             value = IsT12 ? AsT12 : default;
             remainder = _index switch
@@ -23737,7 +23753,7 @@ namespace OneOf
             return IsT12;
 		}
 
-		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
+        public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
 		{
             value = IsT13 ? AsT13 : default;
             remainder = _index switch
@@ -23772,7 +23788,7 @@ namespace OneOf
             return IsT13;
 		}
 
-		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
+        public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
 		{
             value = IsT14 ? AsT14 : default;
             remainder = _index switch
@@ -23807,7 +23823,7 @@ namespace OneOf
             return IsT14;
 		}
 
-		public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
+        public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
 		{
             value = IsT15 ? AsT15 : default;
             remainder = _index switch
@@ -23842,7 +23858,7 @@ namespace OneOf
             return IsT15;
 		}
 
-		public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
+        public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
 		{
             value = IsT16 ? AsT16 : default;
             remainder = _index switch
@@ -23877,7 +23893,7 @@ namespace OneOf
             return IsT16;
 		}
 
-		public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24> remainder)
+        public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24> remainder)
 		{
             value = IsT17 ? AsT17 : default;
             remainder = _index switch
@@ -23912,7 +23928,7 @@ namespace OneOf
             return IsT17;
 		}
 
-		public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24> remainder)
+        public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24> remainder)
 		{
             value = IsT18 ? AsT18 : default;
             remainder = _index switch
@@ -23947,7 +23963,7 @@ namespace OneOf
             return IsT18;
 		}
 
-		public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24> remainder)
+        public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24> remainder)
 		{
             value = IsT19 ? AsT19 : default;
             remainder = _index switch
@@ -23982,7 +23998,7 @@ namespace OneOf
             return IsT19;
 		}
 
-		public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24> remainder)
+        public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24> remainder)
 		{
             value = IsT20 ? AsT20 : default;
             remainder = _index switch
@@ -24017,7 +24033,7 @@ namespace OneOf
             return IsT20;
 		}
 
-		public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24> remainder)
+        public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24> remainder)
 		{
             value = IsT21 ? AsT21 : default;
             remainder = _index switch
@@ -24052,7 +24068,7 @@ namespace OneOf
             return IsT21;
 		}
 
-		public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24> remainder)
+        public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24> remainder)
 		{
             value = IsT22 ? AsT22 : default;
             remainder = _index switch
@@ -24087,7 +24103,7 @@ namespace OneOf
             return IsT22;
 		}
 
-		public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24> remainder)
+        public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24> remainder)
 		{
             value = IsT23 ? AsT23 : default;
             remainder = _index switch
@@ -24122,7 +24138,7 @@ namespace OneOf
             return IsT23;
 		}
 
-		public bool TryPickT24(out T24 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
+        public bool TryPickT24(out T24 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23> remainder)
 		{
             value = IsT24 ? AsT24 : default;
             remainder = _index switch
@@ -25822,7 +25838,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -25858,7 +25875,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -25894,7 +25911,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -25930,7 +25947,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -25966,7 +25983,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -26002,7 +26019,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -26038,7 +26055,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -26074,7 +26091,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -26110,7 +26127,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -26146,7 +26163,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -26182,7 +26199,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -26218,7 +26235,7 @@ namespace OneOf
             return IsT10;
 		}
 
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -26254,7 +26271,7 @@ namespace OneOf
             return IsT11;
 		}
 
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
+        public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT12 ? AsT12 : default;
             remainder = _index switch
@@ -26290,7 +26307,7 @@ namespace OneOf
             return IsT12;
 		}
 
-		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
+        public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT13 ? AsT13 : default;
             remainder = _index switch
@@ -26326,7 +26343,7 @@ namespace OneOf
             return IsT13;
 		}
 
-		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
+        public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT14 ? AsT14 : default;
             remainder = _index switch
@@ -26362,7 +26379,7 @@ namespace OneOf
             return IsT14;
 		}
 
-		public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
+        public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT15 ? AsT15 : default;
             remainder = _index switch
@@ -26398,7 +26415,7 @@ namespace OneOf
             return IsT15;
 		}
 
-		public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
+        public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT16 ? AsT16 : default;
             remainder = _index switch
@@ -26434,7 +26451,7 @@ namespace OneOf
             return IsT16;
 		}
 
-		public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
+        public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT17 ? AsT17 : default;
             remainder = _index switch
@@ -26470,7 +26487,7 @@ namespace OneOf
             return IsT17;
 		}
 
-		public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25> remainder)
+        public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT18 ? AsT18 : default;
             remainder = _index switch
@@ -26506,7 +26523,7 @@ namespace OneOf
             return IsT18;
 		}
 
-		public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25> remainder)
+        public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT19 ? AsT19 : default;
             remainder = _index switch
@@ -26542,7 +26559,7 @@ namespace OneOf
             return IsT19;
 		}
 
-		public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25> remainder)
+        public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT20 ? AsT20 : default;
             remainder = _index switch
@@ -26578,7 +26595,7 @@ namespace OneOf
             return IsT20;
 		}
 
-		public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25> remainder)
+        public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25> remainder)
 		{
             value = IsT21 ? AsT21 : default;
             remainder = _index switch
@@ -26614,7 +26631,7 @@ namespace OneOf
             return IsT21;
 		}
 
-		public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25> remainder)
+        public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25> remainder)
 		{
             value = IsT22 ? AsT22 : default;
             remainder = _index switch
@@ -26650,7 +26667,7 @@ namespace OneOf
             return IsT22;
 		}
 
-		public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25> remainder)
+        public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25> remainder)
 		{
             value = IsT23 ? AsT23 : default;
             remainder = _index switch
@@ -26686,7 +26703,7 @@ namespace OneOf
             return IsT23;
 		}
 
-		public bool TryPickT24(out T24 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25> remainder)
+        public bool TryPickT24(out T24 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25> remainder)
 		{
             value = IsT24 ? AsT24 : default;
             remainder = _index switch
@@ -26722,7 +26739,7 @@ namespace OneOf
             return IsT24;
 		}
 
-		public bool TryPickT25(out T25 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
+        public bool TryPickT25(out T25 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24> remainder)
 		{
             value = IsT25 ? AsT25 : default;
             remainder = _index switch
@@ -28512,7 +28529,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -28549,7 +28567,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -28586,7 +28604,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -28623,7 +28641,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -28660,7 +28678,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -28697,7 +28715,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -28734,7 +28752,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -28771,7 +28789,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -28808,7 +28826,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -28845,7 +28863,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -28882,7 +28900,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -28919,7 +28937,7 @@ namespace OneOf
             return IsT10;
 		}
 
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -28956,7 +28974,7 @@ namespace OneOf
             return IsT11;
 		}
 
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT12 ? AsT12 : default;
             remainder = _index switch
@@ -28993,7 +29011,7 @@ namespace OneOf
             return IsT12;
 		}
 
-		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT13 ? AsT13 : default;
             remainder = _index switch
@@ -29030,7 +29048,7 @@ namespace OneOf
             return IsT13;
 		}
 
-		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT14 ? AsT14 : default;
             remainder = _index switch
@@ -29067,7 +29085,7 @@ namespace OneOf
             return IsT14;
 		}
 
-		public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT15 ? AsT15 : default;
             remainder = _index switch
@@ -29104,7 +29122,7 @@ namespace OneOf
             return IsT15;
 		}
 
-		public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT16 ? AsT16 : default;
             remainder = _index switch
@@ -29141,7 +29159,7 @@ namespace OneOf
             return IsT16;
 		}
 
-		public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT17 ? AsT17 : default;
             remainder = _index switch
@@ -29178,7 +29196,7 @@ namespace OneOf
             return IsT17;
 		}
 
-		public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT18 ? AsT18 : default;
             remainder = _index switch
@@ -29215,7 +29233,7 @@ namespace OneOf
             return IsT18;
 		}
 
-		public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT19 ? AsT19 : default;
             remainder = _index switch
@@ -29252,7 +29270,7 @@ namespace OneOf
             return IsT19;
 		}
 
-		public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT20 ? AsT20 : default;
             remainder = _index switch
@@ -29289,7 +29307,7 @@ namespace OneOf
             return IsT20;
 		}
 
-		public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT21 ? AsT21 : default;
             remainder = _index switch
@@ -29326,7 +29344,7 @@ namespace OneOf
             return IsT21;
 		}
 
-		public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25, T26> remainder)
+        public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25, T26> remainder)
 		{
             value = IsT22 ? AsT22 : default;
             remainder = _index switch
@@ -29363,7 +29381,7 @@ namespace OneOf
             return IsT22;
 		}
 
-		public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25, T26> remainder)
+        public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25, T26> remainder)
 		{
             value = IsT23 ? AsT23 : default;
             remainder = _index switch
@@ -29400,7 +29418,7 @@ namespace OneOf
             return IsT23;
 		}
 
-		public bool TryPickT24(out T24 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25, T26> remainder)
+        public bool TryPickT24(out T24 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25, T26> remainder)
 		{
             value = IsT24 ? AsT24 : default;
             remainder = _index switch
@@ -29437,7 +29455,7 @@ namespace OneOf
             return IsT24;
 		}
 
-		public bool TryPickT25(out T25 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T26> remainder)
+        public bool TryPickT25(out T25 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T26> remainder)
 		{
             value = IsT25 ? AsT25 : default;
             remainder = _index switch
@@ -29474,7 +29492,7 @@ namespace OneOf
             return IsT25;
 		}
 
-		public bool TryPickT26(out T26 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
+        public bool TryPickT26(out T26 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> remainder)
 		{
             value = IsT26 ? AsT26 : default;
             remainder = _index switch
@@ -31356,7 +31374,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -31394,7 +31413,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -31432,7 +31451,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -31470,7 +31489,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -31508,7 +31527,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -31546,7 +31565,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -31584,7 +31603,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -31622,7 +31641,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -31660,7 +31679,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -31698,7 +31717,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -31736,7 +31755,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -31774,7 +31793,7 @@ namespace OneOf
             return IsT10;
 		}
 
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -31812,7 +31831,7 @@ namespace OneOf
             return IsT11;
 		}
 
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT12 ? AsT12 : default;
             remainder = _index switch
@@ -31850,7 +31869,7 @@ namespace OneOf
             return IsT12;
 		}
 
-		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT13 ? AsT13 : default;
             remainder = _index switch
@@ -31888,7 +31907,7 @@ namespace OneOf
             return IsT13;
 		}
 
-		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT14 ? AsT14 : default;
             remainder = _index switch
@@ -31926,7 +31945,7 @@ namespace OneOf
             return IsT14;
 		}
 
-		public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT15 ? AsT15 : default;
             remainder = _index switch
@@ -31964,7 +31983,7 @@ namespace OneOf
             return IsT15;
 		}
 
-		public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT16 ? AsT16 : default;
             remainder = _index switch
@@ -32002,7 +32021,7 @@ namespace OneOf
             return IsT16;
 		}
 
-		public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT17 ? AsT17 : default;
             remainder = _index switch
@@ -32040,7 +32059,7 @@ namespace OneOf
             return IsT17;
 		}
 
-		public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT18 ? AsT18 : default;
             remainder = _index switch
@@ -32078,7 +32097,7 @@ namespace OneOf
             return IsT18;
 		}
 
-		public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT19 ? AsT19 : default;
             remainder = _index switch
@@ -32116,7 +32135,7 @@ namespace OneOf
             return IsT19;
 		}
 
-		public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT20 ? AsT20 : default;
             remainder = _index switch
@@ -32154,7 +32173,7 @@ namespace OneOf
             return IsT20;
 		}
 
-		public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT21 ? AsT21 : default;
             remainder = _index switch
@@ -32192,7 +32211,7 @@ namespace OneOf
             return IsT21;
 		}
 
-		public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT22 ? AsT22 : default;
             remainder = _index switch
@@ -32230,7 +32249,7 @@ namespace OneOf
             return IsT22;
 		}
 
-		public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25, T26, T27> remainder)
+        public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25, T26, T27> remainder)
 		{
             value = IsT23 ? AsT23 : default;
             remainder = _index switch
@@ -32268,7 +32287,7 @@ namespace OneOf
             return IsT23;
 		}
 
-		public bool TryPickT24(out T24 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25, T26, T27> remainder)
+        public bool TryPickT24(out T24 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25, T26, T27> remainder)
 		{
             value = IsT24 ? AsT24 : default;
             remainder = _index switch
@@ -32306,7 +32325,7 @@ namespace OneOf
             return IsT24;
 		}
 
-		public bool TryPickT25(out T25 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T26, T27> remainder)
+        public bool TryPickT25(out T25 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T26, T27> remainder)
 		{
             value = IsT25 ? AsT25 : default;
             remainder = _index switch
@@ -32344,7 +32363,7 @@ namespace OneOf
             return IsT25;
 		}
 
-		public bool TryPickT26(out T26 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T27> remainder)
+        public bool TryPickT26(out T26 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T27> remainder)
 		{
             value = IsT26 ? AsT26 : default;
             remainder = _index switch
@@ -32382,7 +32401,7 @@ namespace OneOf
             return IsT26;
 		}
 
-		public bool TryPickT27(out T27 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
+        public bool TryPickT27(out T27 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26> remainder)
 		{
             value = IsT27 ? AsT27 : default;
             remainder = _index switch
@@ -34358,7 +34377,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -34397,7 +34417,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -34436,7 +34456,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -34475,7 +34495,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -34514,7 +34534,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -34553,7 +34573,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -34592,7 +34612,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -34631,7 +34651,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -34670,7 +34690,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -34709,7 +34729,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -34748,7 +34768,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -34787,7 +34807,7 @@ namespace OneOf
             return IsT10;
 		}
 
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -34826,7 +34846,7 @@ namespace OneOf
             return IsT11;
 		}
 
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT12 ? AsT12 : default;
             remainder = _index switch
@@ -34865,7 +34885,7 @@ namespace OneOf
             return IsT12;
 		}
 
-		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT13 ? AsT13 : default;
             remainder = _index switch
@@ -34904,7 +34924,7 @@ namespace OneOf
             return IsT13;
 		}
 
-		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT14 ? AsT14 : default;
             remainder = _index switch
@@ -34943,7 +34963,7 @@ namespace OneOf
             return IsT14;
 		}
 
-		public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT15 ? AsT15 : default;
             remainder = _index switch
@@ -34982,7 +35002,7 @@ namespace OneOf
             return IsT15;
 		}
 
-		public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT16 ? AsT16 : default;
             remainder = _index switch
@@ -35021,7 +35041,7 @@ namespace OneOf
             return IsT16;
 		}
 
-		public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT17 ? AsT17 : default;
             remainder = _index switch
@@ -35060,7 +35080,7 @@ namespace OneOf
             return IsT17;
 		}
 
-		public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT18 ? AsT18 : default;
             remainder = _index switch
@@ -35099,7 +35119,7 @@ namespace OneOf
             return IsT18;
 		}
 
-		public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT19 ? AsT19 : default;
             remainder = _index switch
@@ -35138,7 +35158,7 @@ namespace OneOf
             return IsT19;
 		}
 
-		public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT20 ? AsT20 : default;
             remainder = _index switch
@@ -35177,7 +35197,7 @@ namespace OneOf
             return IsT20;
 		}
 
-		public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT21 ? AsT21 : default;
             remainder = _index switch
@@ -35216,7 +35236,7 @@ namespace OneOf
             return IsT21;
 		}
 
-		public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT22 ? AsT22 : default;
             remainder = _index switch
@@ -35255,7 +35275,7 @@ namespace OneOf
             return IsT22;
 		}
 
-		public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT23 ? AsT23 : default;
             remainder = _index switch
@@ -35294,7 +35314,7 @@ namespace OneOf
             return IsT23;
 		}
 
-		public bool TryPickT24(out T24 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25, T26, T27, T28> remainder)
+        public bool TryPickT24(out T24 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25, T26, T27, T28> remainder)
 		{
             value = IsT24 ? AsT24 : default;
             remainder = _index switch
@@ -35333,7 +35353,7 @@ namespace OneOf
             return IsT24;
 		}
 
-		public bool TryPickT25(out T25 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T26, T27, T28> remainder)
+        public bool TryPickT25(out T25 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T26, T27, T28> remainder)
 		{
             value = IsT25 ? AsT25 : default;
             remainder = _index switch
@@ -35372,7 +35392,7 @@ namespace OneOf
             return IsT25;
 		}
 
-		public bool TryPickT26(out T26 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T27, T28> remainder)
+        public bool TryPickT26(out T26 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T27, T28> remainder)
 		{
             value = IsT26 ? AsT26 : default;
             remainder = _index switch
@@ -35411,7 +35431,7 @@ namespace OneOf
             return IsT26;
 		}
 
-		public bool TryPickT27(out T27 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T28> remainder)
+        public bool TryPickT27(out T27 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T28> remainder)
 		{
             value = IsT27 ? AsT27 : default;
             remainder = _index switch
@@ -35450,7 +35470,7 @@ namespace OneOf
             return IsT27;
 		}
 
-		public bool TryPickT28(out T28 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+        public bool TryPickT28(out T28 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
 		{
             value = IsT28 ? AsT28 : default;
             remainder = _index switch
@@ -37522,7 +37542,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -37562,7 +37583,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -37602,7 +37623,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -37642,7 +37663,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -37682,7 +37703,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -37722,7 +37743,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -37762,7 +37783,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -37802,7 +37823,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -37842,7 +37863,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -37882,7 +37903,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -37922,7 +37943,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -37962,7 +37983,7 @@ namespace OneOf
             return IsT10;
 		}
 
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -38002,7 +38023,7 @@ namespace OneOf
             return IsT11;
 		}
 
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT12 ? AsT12 : default;
             remainder = _index switch
@@ -38042,7 +38063,7 @@ namespace OneOf
             return IsT12;
 		}
 
-		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT13 ? AsT13 : default;
             remainder = _index switch
@@ -38082,7 +38103,7 @@ namespace OneOf
             return IsT13;
 		}
 
-		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT14 ? AsT14 : default;
             remainder = _index switch
@@ -38122,7 +38143,7 @@ namespace OneOf
             return IsT14;
 		}
 
-		public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT15 ? AsT15 : default;
             remainder = _index switch
@@ -38162,7 +38183,7 @@ namespace OneOf
             return IsT15;
 		}
 
-		public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT16 ? AsT16 : default;
             remainder = _index switch
@@ -38202,7 +38223,7 @@ namespace OneOf
             return IsT16;
 		}
 
-		public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT17 ? AsT17 : default;
             remainder = _index switch
@@ -38242,7 +38263,7 @@ namespace OneOf
             return IsT17;
 		}
 
-		public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT18 ? AsT18 : default;
             remainder = _index switch
@@ -38282,7 +38303,7 @@ namespace OneOf
             return IsT18;
 		}
 
-		public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT19 ? AsT19 : default;
             remainder = _index switch
@@ -38322,7 +38343,7 @@ namespace OneOf
             return IsT19;
 		}
 
-		public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT20 ? AsT20 : default;
             remainder = _index switch
@@ -38362,7 +38383,7 @@ namespace OneOf
             return IsT20;
 		}
 
-		public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT21 ? AsT21 : default;
             remainder = _index switch
@@ -38402,7 +38423,7 @@ namespace OneOf
             return IsT21;
 		}
 
-		public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT22 ? AsT22 : default;
             remainder = _index switch
@@ -38442,7 +38463,7 @@ namespace OneOf
             return IsT22;
 		}
 
-		public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT23 ? AsT23 : default;
             remainder = _index switch
@@ -38482,7 +38503,7 @@ namespace OneOf
             return IsT23;
 		}
 
-		public bool TryPickT24(out T24 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT24(out T24 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT24 ? AsT24 : default;
             remainder = _index switch
@@ -38522,7 +38543,7 @@ namespace OneOf
             return IsT24;
 		}
 
-		public bool TryPickT25(out T25 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T26, T27, T28, T29> remainder)
+        public bool TryPickT25(out T25 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T26, T27, T28, T29> remainder)
 		{
             value = IsT25 ? AsT25 : default;
             remainder = _index switch
@@ -38562,7 +38583,7 @@ namespace OneOf
             return IsT25;
 		}
 
-		public bool TryPickT26(out T26 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T27, T28, T29> remainder)
+        public bool TryPickT26(out T26 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T27, T28, T29> remainder)
 		{
             value = IsT26 ? AsT26 : default;
             remainder = _index switch
@@ -38602,7 +38623,7 @@ namespace OneOf
             return IsT26;
 		}
 
-		public bool TryPickT27(out T27 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T28, T29> remainder)
+        public bool TryPickT27(out T27 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T28, T29> remainder)
 		{
             value = IsT27 ? AsT27 : default;
             remainder = _index switch
@@ -38642,7 +38663,7 @@ namespace OneOf
             return IsT27;
 		}
 
-		public bool TryPickT28(out T28 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T29> remainder)
+        public bool TryPickT28(out T28 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T29> remainder)
 		{
             value = IsT28 ? AsT28 : default;
             remainder = _index switch
@@ -38682,7 +38703,7 @@ namespace OneOf
             return IsT28;
 		}
 
-		public bool TryPickT29(out T29 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+        public bool TryPickT29(out T29 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
 		{
             value = IsT29 ? AsT29 : default;
             remainder = _index switch
@@ -40852,7 +40873,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -40893,7 +40915,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -40934,7 +40956,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -40975,7 +40997,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -41016,7 +41038,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -41057,7 +41079,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -41098,7 +41120,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -41139,7 +41161,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -41180,7 +41202,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -41221,7 +41243,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -41262,7 +41284,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -41303,7 +41325,7 @@ namespace OneOf
             return IsT10;
 		}
 
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -41344,7 +41366,7 @@ namespace OneOf
             return IsT11;
 		}
 
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT12 ? AsT12 : default;
             remainder = _index switch
@@ -41385,7 +41407,7 @@ namespace OneOf
             return IsT12;
 		}
 
-		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT13 ? AsT13 : default;
             remainder = _index switch
@@ -41426,7 +41448,7 @@ namespace OneOf
             return IsT13;
 		}
 
-		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT14 ? AsT14 : default;
             remainder = _index switch
@@ -41467,7 +41489,7 @@ namespace OneOf
             return IsT14;
 		}
 
-		public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT15 ? AsT15 : default;
             remainder = _index switch
@@ -41508,7 +41530,7 @@ namespace OneOf
             return IsT15;
 		}
 
-		public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT16 ? AsT16 : default;
             remainder = _index switch
@@ -41549,7 +41571,7 @@ namespace OneOf
             return IsT16;
 		}
 
-		public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT17 ? AsT17 : default;
             remainder = _index switch
@@ -41590,7 +41612,7 @@ namespace OneOf
             return IsT17;
 		}
 
-		public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT18 ? AsT18 : default;
             remainder = _index switch
@@ -41631,7 +41653,7 @@ namespace OneOf
             return IsT18;
 		}
 
-		public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT19 ? AsT19 : default;
             remainder = _index switch
@@ -41672,7 +41694,7 @@ namespace OneOf
             return IsT19;
 		}
 
-		public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT20 ? AsT20 : default;
             remainder = _index switch
@@ -41713,7 +41735,7 @@ namespace OneOf
             return IsT20;
 		}
 
-		public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT21 ? AsT21 : default;
             remainder = _index switch
@@ -41754,7 +41776,7 @@ namespace OneOf
             return IsT21;
 		}
 
-		public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT22 ? AsT22 : default;
             remainder = _index switch
@@ -41795,7 +41817,7 @@ namespace OneOf
             return IsT22;
 		}
 
-		public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT23 ? AsT23 : default;
             remainder = _index switch
@@ -41836,7 +41858,7 @@ namespace OneOf
             return IsT23;
 		}
 
-		public bool TryPickT24(out T24 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT24(out T24 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT24 ? AsT24 : default;
             remainder = _index switch
@@ -41877,7 +41899,7 @@ namespace OneOf
             return IsT24;
 		}
 
-		public bool TryPickT25(out T25 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT25(out T25 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT25 ? AsT25 : default;
             remainder = _index switch
@@ -41918,7 +41940,7 @@ namespace OneOf
             return IsT25;
 		}
 
-		public bool TryPickT26(out T26 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T27, T28, T29, T30> remainder)
+        public bool TryPickT26(out T26 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T27, T28, T29, T30> remainder)
 		{
             value = IsT26 ? AsT26 : default;
             remainder = _index switch
@@ -41959,7 +41981,7 @@ namespace OneOf
             return IsT26;
 		}
 
-		public bool TryPickT27(out T27 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T28, T29, T30> remainder)
+        public bool TryPickT27(out T27 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T28, T29, T30> remainder)
 		{
             value = IsT27 ? AsT27 : default;
             remainder = _index switch
@@ -42000,7 +42022,7 @@ namespace OneOf
             return IsT27;
 		}
 
-		public bool TryPickT28(out T28 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T29, T30> remainder)
+        public bool TryPickT28(out T28 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T29, T30> remainder)
 		{
             value = IsT28 ? AsT28 : default;
             remainder = _index switch
@@ -42041,7 +42063,7 @@ namespace OneOf
             return IsT28;
 		}
 
-		public bool TryPickT29(out T29 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T30> remainder)
+        public bool TryPickT29(out T29 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T30> remainder)
 		{
             value = IsT29 ? AsT29 : default;
             remainder = _index switch
@@ -42082,7 +42104,7 @@ namespace OneOf
             return IsT29;
 		}
 
-		public bool TryPickT30(out T30 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
+        public bool TryPickT30(out T30 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29> remainder)
 		{
             value = IsT30 ? AsT30 : default;
             remainder = _index switch
@@ -44352,7 +44374,8 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -44394,7 +44417,7 @@ namespace OneOf
             return IsT0;
 		}
 
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -44436,7 +44459,7 @@ namespace OneOf
             return IsT1;
 		}
 
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -44478,7 +44501,7 @@ namespace OneOf
             return IsT2;
 		}
 
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -44520,7 +44543,7 @@ namespace OneOf
             return IsT3;
 		}
 
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -44562,7 +44585,7 @@ namespace OneOf
             return IsT4;
 		}
 
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -44604,7 +44627,7 @@ namespace OneOf
             return IsT5;
 		}
 
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -44646,7 +44669,7 @@ namespace OneOf
             return IsT6;
 		}
 
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -44688,7 +44711,7 @@ namespace OneOf
             return IsT7;
 		}
 
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -44730,7 +44753,7 @@ namespace OneOf
             return IsT8;
 		}
 
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -44772,7 +44795,7 @@ namespace OneOf
             return IsT9;
 		}
 
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -44814,7 +44837,7 @@ namespace OneOf
             return IsT10;
 		}
 
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -44856,7 +44879,7 @@ namespace OneOf
             return IsT11;
 		}
 
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT12 ? AsT12 : default;
             remainder = _index switch
@@ -44898,7 +44921,7 @@ namespace OneOf
             return IsT12;
 		}
 
-		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT13 ? AsT13 : default;
             remainder = _index switch
@@ -44940,7 +44963,7 @@ namespace OneOf
             return IsT13;
 		}
 
-		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT14 ? AsT14 : default;
             remainder = _index switch
@@ -44982,7 +45005,7 @@ namespace OneOf
             return IsT14;
 		}
 
-		public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT15 ? AsT15 : default;
             remainder = _index switch
@@ -45024,7 +45047,7 @@ namespace OneOf
             return IsT15;
 		}
 
-		public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT16 ? AsT16 : default;
             remainder = _index switch
@@ -45066,7 +45089,7 @@ namespace OneOf
             return IsT16;
 		}
 
-		public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT17 ? AsT17 : default;
             remainder = _index switch
@@ -45108,7 +45131,7 @@ namespace OneOf
             return IsT17;
 		}
 
-		public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT18 ? AsT18 : default;
             remainder = _index switch
@@ -45150,7 +45173,7 @@ namespace OneOf
             return IsT18;
 		}
 
-		public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT19 ? AsT19 : default;
             remainder = _index switch
@@ -45192,7 +45215,7 @@ namespace OneOf
             return IsT19;
 		}
 
-		public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT20 ? AsT20 : default;
             remainder = _index switch
@@ -45234,7 +45257,7 @@ namespace OneOf
             return IsT20;
 		}
 
-		public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT21 ? AsT21 : default;
             remainder = _index switch
@@ -45276,7 +45299,7 @@ namespace OneOf
             return IsT21;
 		}
 
-		public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT22 ? AsT22 : default;
             remainder = _index switch
@@ -45318,7 +45341,7 @@ namespace OneOf
             return IsT22;
 		}
 
-		public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT23 ? AsT23 : default;
             remainder = _index switch
@@ -45360,7 +45383,7 @@ namespace OneOf
             return IsT23;
 		}
 
-		public bool TryPickT24(out T24 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT24(out T24 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT24 ? AsT24 : default;
             remainder = _index switch
@@ -45402,7 +45425,7 @@ namespace OneOf
             return IsT24;
 		}
 
-		public bool TryPickT25(out T25 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T26, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT25(out T25 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T26, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT25 ? AsT25 : default;
             remainder = _index switch
@@ -45444,7 +45467,7 @@ namespace OneOf
             return IsT25;
 		}
 
-		public bool TryPickT26(out T26 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T27, T28, T29, T30, T31> remainder)
+        public bool TryPickT26(out T26 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T27, T28, T29, T30, T31> remainder)
 		{
             value = IsT26 ? AsT26 : default;
             remainder = _index switch
@@ -45486,7 +45509,7 @@ namespace OneOf
             return IsT26;
 		}
 
-		public bool TryPickT27(out T27 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T28, T29, T30, T31> remainder)
+        public bool TryPickT27(out T27 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T28, T29, T30, T31> remainder)
 		{
             value = IsT27 ? AsT27 : default;
             remainder = _index switch
@@ -45528,7 +45551,7 @@ namespace OneOf
             return IsT27;
 		}
 
-		public bool TryPickT28(out T28 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T29, T30, T31> remainder)
+        public bool TryPickT28(out T28 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T29, T30, T31> remainder)
 		{
             value = IsT28 ? AsT28 : default;
             remainder = _index switch
@@ -45570,7 +45593,7 @@ namespace OneOf
             return IsT28;
 		}
 
-		public bool TryPickT29(out T29 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T30, T31> remainder)
+        public bool TryPickT29(out T29 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T30, T31> remainder)
 		{
             value = IsT29 ? AsT29 : default;
             remainder = _index switch
@@ -45612,7 +45635,7 @@ namespace OneOf
             return IsT29;
 		}
 
-		public bool TryPickT30(out T30 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T31> remainder)
+        public bool TryPickT30(out T30 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T31> remainder)
 		{
             value = IsT30 ? AsT30 : default;
             remainder = _index switch
@@ -45654,7 +45677,7 @@ namespace OneOf
             return IsT30;
 		}
 
-		public bool TryPickT31(out T31 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        public bool TryPickT31(out T31 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
             value = IsT31 ? AsT31 : default;
             remainder = _index switch
