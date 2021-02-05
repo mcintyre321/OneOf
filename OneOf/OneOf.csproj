@@ -14,14 +14,6 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>OneOf</PackageId>
     <Copyright>Harry McIntyre</Copyright>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
-  </ItemGroup>
-
 
 </Project>
