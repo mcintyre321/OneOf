@@ -2,25 +2,29 @@
 
 void Main()
 {
-	var output = GetContent(true, 1, 10).Dump();
-	var outpath = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "OneOf.cs");
-	File.WriteAllText(outpath.Dump(), output);
+	for (var i = 1; i < 10;i++)
+	{
+		var output = GetContent(true, i).Dump();
+		var outpath = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), $"OneOfT{i - 1}.generated.cs");
+		File.WriteAllText(outpath.Dump(), output);
 
-	var output2 = GetContent(false, 1, 10);
-	var outpath2 = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "OneOfBase.cs");
-	File.WriteAllText(outpath2.Dump(), output2);
-	
-	var output3 = GetContent(true, 10, 33).Dump();
-	var outpath3 = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "..\\OneOf.Extended\\OneOf.cs");
-	File.WriteAllText(outpath3.Dump(), output3);
+		var output2 = GetContent(false, i);
+		var outpath2 = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), $"OneOfBaseT{i - 1}.generated.cs");
+		File.WriteAllText(outpath2.Dump(), output2);
+	}
+	for (var i = 10; i < 33; i++)
+	{
+		var output3 = GetContent(true, i).Dump();
+		var outpath3 = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), $"..\\OneOf.Extended\\OneOfT{i - 1}.generated.cs");
+		File.WriteAllText(outpath3.Dump(), output3);
 
-	var output4 = GetContent(false, 10, 33);
-	var outpath4 = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), "..\\OneOf.Extended\\OneOfBase.cs");
-	File.WriteAllText(outpath4.Dump(), output4);
-
+		var output4 = GetContent(false, i);
+		var outpath4 = Path.Combine(Path.GetDirectoryName(Util.CurrentQueryPath), $"..\\OneOf.Extended\\OneOfBaseT{i - 1}.generated.cs");
+		File.WriteAllText(outpath4.Dump(), output4);
+	}
 }
 
-public string GetContent(bool isStruct, int indexStart, int indexEnd)
+public string GetContent(bool isStruct, int i)
 {
 	var className = isStruct ? "OneOf" : "OneOfBase";
 	var sb = new StringBuilder();
@@ -28,7 +32,6 @@ public string GetContent(bool isStruct, int indexStart, int indexEnd)
 
 namespace OneOf
 {");
-	for (var i = indexStart; i < indexEnd; i++)
 	{
 		var genericArg = string.Join(", ", Enumerable.Range(0, i).Select(e => $"T{e}"));
 
