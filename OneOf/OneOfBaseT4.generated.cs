@@ -122,6 +122,8 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        
+
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4> remainder)
 		{
 			value = this.IsT0 ? this.AsT0 : default(T0);
@@ -167,34 +169,30 @@ namespace OneOf
 			return this.IsT4;
 		}
 
-        bool Equals(OneOfBase<T0, T1, T2, T3, T4> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOfBase<T0, T1, T2, T3, T4> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                default: return false;
-            }
-        }
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                _ => false
+            };
 
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
+            {
                 return false;
+            }
 
+            if (ReferenceEquals(this, obj)) {
+                    return true;
+            }
 
-            if (ReferenceEquals(this, obj))
-                return true;
-
-            var other = obj as OneOfBase<T0, T1, T2, T3, T4>;
-            return other != null && Equals(other);
+            return obj is OneOfBase<T0, T1, T2, T3, T4> o && Equals(o);
         }
 
         public override string ToString()

@@ -108,16 +108,10 @@ namespace OneOf
                 return f{j}(_value{j});
             }}")}
             throw new InvalidOperationException();
-        }}{IfStruct(
-        $@"
+        }}
 
-        {genericArgs.Joined(@"
-
-        ", bindToType => $@"public static OneOf<{genericArgs.Joined(", ")}> From{bindToType}({bindToType} input)
-        {{
-            return input;
-        }}"
-        )}")}
+        {IfStruct(genericArgs.Joined(@"
+        ", bindToType => $@"public static OneOf<{genericArgs.Joined(", ")}> From{bindToType}({bindToType} input) => input;"))}
 ");
 
     if (isStruct) {
@@ -168,33 +162,30 @@ namespace OneOf
     }
 
     sb.AppendLine($@"
-        bool Equals({className}<{genericArg}> other)
-        {{
-            if (_index != other._index)
-            {{
-                return false;
-            }}
-            switch (_index)
+        bool Equals({className}<{genericArg}> other) =>
+            _index == other._index &&
+            _index switch
             {{
                 {RangeJoined(@"
-                ", j => $"case {j}: return Equals(_value{j}, other._value{j});")}
-                default: return false;
-            }}
-        }}
+                ", j => @$"{j} => Equals(_value{j}, other._value{j}),")}
+                _ => false
+            }};
 
         public override bool Equals(object obj)
         {{
             if (ReferenceEquals(null, obj))
+            {{
                 return false;
-
+            }}
 
             {IfStruct(
-        $"return obj is {className}<{genericArg}> && Equals(({className}<{genericArg}>)obj);",
-        $@"if (ReferenceEquals(this, obj))
-                return true;
+            $"return obj is OneOf<{genericArg}> o && Equals(o);",
+            $@"if (ReferenceEquals(this, obj)) {{
+                    return true;
+            }}
 
-            var other = obj as OneOfBase<{genericArg}>;
-            return other != null && Equals(other);")}
+            return obj is OneOfBase<{genericArg}> o && Equals(o);"
+            )}
         }}
 
         public override string ToString()

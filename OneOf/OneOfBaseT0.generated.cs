@@ -54,30 +54,28 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        bool Equals(OneOfBase<T0> other)
-        {
-            if (_index != other._index)
+        
+
+        bool Equals(OneOfBase<T0> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                default: return false;
-            }
-        }
+                0 => Equals(_value0, other._value0),
+                _ => false
+            };
 
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
+            {
                 return false;
+            }
 
+            if (ReferenceEquals(this, obj)) {
+                    return true;
+            }
 
-            if (ReferenceEquals(this, obj))
-                return true;
-
-            var other = obj as OneOfBase<T0>;
-            return other != null && Equals(other);
+            return obj is OneOfBase<T0> o && Equals(o);
         }
 
         public override string ToString()

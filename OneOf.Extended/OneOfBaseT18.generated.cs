@@ -360,6 +360,8 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        
+
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> remainder)
 		{
 			value = this.IsT0 ? this.AsT0 : default(T0);
@@ -531,48 +533,44 @@ namespace OneOf
 			return this.IsT18;
 		}
 
-        bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                case 14: return Equals(_value14, other._value14);
-                case 15: return Equals(_value15, other._value15);
-                case 16: return Equals(_value16, other._value16);
-                case 17: return Equals(_value17, other._value17);
-                case 18: return Equals(_value18, other._value18);
-                default: return false;
-            }
-        }
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                14 => Equals(_value14, other._value14),
+                15 => Equals(_value15, other._value15),
+                16 => Equals(_value16, other._value16),
+                17 => Equals(_value17, other._value17),
+                18 => Equals(_value18, other._value18),
+                _ => false
+            };
 
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
+            {
                 return false;
+            }
 
+            if (ReferenceEquals(this, obj)) {
+                    return true;
+            }
 
-            if (ReferenceEquals(this, obj))
-                return true;
-
-            var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>;
-            return other != null && Equals(other);
+            return obj is OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> o && Equals(o);
         }
 
         public override string ToString()

@@ -86,20 +86,9 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2> FromT2(T2 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2> FromT2(T2 input) => input;
 
         public OneOf<TResult, T1, T2> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -167,28 +156,24 @@ namespace OneOf
 			return this.IsT2;
 		}
 
-        bool Equals(OneOf<T0, T1, T2> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                default: return false;
-            }
-        }
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                _ => false
+            };
 
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
+            {
                 return false;
+            }
 
-
-            return obj is OneOf<T0, T1, T2> && Equals((OneOf<T0, T1, T2>)obj);
+            return obj is OneOf<T0, T1, T2> o && Equals(o);
         }
 
         public override string ToString()
