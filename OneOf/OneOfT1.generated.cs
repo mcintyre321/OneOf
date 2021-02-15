@@ -72,41 +72,56 @@ namespace OneOf
         public static OneOf<T0, T1> FromT0(T0 input) => input;
         public static OneOf<T0, T1> FromT1(T1 input) => input;
 
+        
         public OneOf<TResult, T1> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<TResult, T1>>(
-                input0 => mapFunc(input0),
-                input1 => input1
-            );
+            return _index switch
+            {
+                0 => mapFunc(AsT0),
+                1 => AsT1,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, TResult> MapT1<TResult>(Func<T1, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, TResult>>(
-                input0 => input0,
-                input1 => mapFunc(input1)
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => mapFunc(AsT1),
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+
 		public bool TryPickT0(out T0 value, out T1 remainder)
 		{
-			value = this.IsT0 ? this.AsT0 : default(T0);
-			remainder = this.IsT0 ? default(T1) : this.AsT1;
+			value = IsT0 ? AsT0 : default;
+            remainder = _index switch
+            {
+                0 => default,
+                1 => AsT1,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT0;
 		}
-
+        
 		public bool TryPickT1(out T1 value, out T0 remainder)
 		{
-			value = this.IsT1 ? this.AsT1 : default(T1);
-			remainder = this.IsT1 ? default(T0) : this.AsT0;
+			value = IsT1 ? AsT1 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => default,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT1;
 		}
 

@@ -142,57 +142,101 @@ namespace OneOf
 
         
 
+        
+
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5> remainder)
 		{
-			value = this.IsT0 ? this.AsT0 : default(T0);
-			remainder = this.IsT0
-				? default(OneOf<T1, T2, T3, T4, T5>) 
-				: this.Match<OneOf<T1, T2, T3, T4, T5>>(t0 =>throw new InvalidOperationException(), t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5);
+			value = IsT0 ? AsT0 : default;
+            remainder = _index switch
+            {
+                0 => default,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT0;
 		}
-
+        
 		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5> remainder)
 		{
-			value = this.IsT1 ? this.AsT1 : default(T1);
-			remainder = this.IsT1
-				? default(OneOf<T0, T2, T3, T4, T5>) 
-				: this.Match<OneOf<T0, T2, T3, T4, T5>>(t0 =>t0, t1 =>throw new InvalidOperationException(), t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5);
+			value = IsT1 ? AsT1 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => default,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT1;
 		}
-
+        
 		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5> remainder)
 		{
-			value = this.IsT2 ? this.AsT2 : default(T2);
-			remainder = this.IsT2
-				? default(OneOf<T0, T1, T3, T4, T5>) 
-				: this.Match<OneOf<T0, T1, T3, T4, T5>>(t0 =>t0, t1 =>t1, t2 =>throw new InvalidOperationException(), t3 =>t3, t4 =>t4, t5 =>t5);
+			value = IsT2 ? AsT2 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => default,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT2;
 		}
-
+        
 		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5> remainder)
 		{
-			value = this.IsT3 ? this.AsT3 : default(T3);
-			remainder = this.IsT3
-				? default(OneOf<T0, T1, T2, T4, T5>) 
-				: this.Match<OneOf<T0, T1, T2, T4, T5>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>throw new InvalidOperationException(), t4 =>t4, t5 =>t5);
+			value = IsT3 ? AsT3 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => default,
+                4 => AsT4,
+                5 => AsT5,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT3;
 		}
-
+        
 		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5> remainder)
 		{
-			value = this.IsT4 ? this.AsT4 : default(T4);
-			remainder = this.IsT4
-				? default(OneOf<T0, T1, T2, T3, T5>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T5>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>throw new InvalidOperationException(), t5 =>t5);
+			value = IsT4 ? AsT4 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => default,
+                5 => AsT5,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT4;
 		}
-
+        
 		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4> remainder)
 		{
-			value = this.IsT5 ? this.AsT5 : default(T5);
-			remainder = this.IsT5
-				? default(OneOf<T0, T1, T2, T3, T4>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>throw new InvalidOperationException());
+			value = IsT5 ? AsT5 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => default,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT5;
 		}
 

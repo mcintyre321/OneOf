@@ -642,1635 +642,2756 @@ namespace OneOf
         public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT30(T30 input) => input;
         public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> FromT31(T31 input) => input;
 
+        
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => mapFunc(input0),
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => mapFunc(AsT0),
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, TResult, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT1<TResult>(Func<T1, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, TResult, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => mapFunc(input1),
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => mapFunc(AsT1),
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, TResult, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT2<TResult>(Func<T2, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, TResult, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => mapFunc(input2),
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => mapFunc(AsT2),
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, TResult, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT3<TResult>(Func<T3, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, TResult, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => mapFunc(input3),
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => mapFunc(AsT3),
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, TResult, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT4<TResult>(Func<T4, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, TResult, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => mapFunc(input4),
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => mapFunc(AsT4),
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, TResult, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT5<TResult>(Func<T5, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, TResult, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => mapFunc(input5),
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => mapFunc(AsT5),
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, TResult, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT6<TResult>(Func<T6, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, TResult, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => mapFunc(input6),
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => mapFunc(AsT6),
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, TResult, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT7<TResult>(Func<T7, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, TResult, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => mapFunc(input7),
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => mapFunc(AsT7),
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, TResult, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT8<TResult>(Func<T8, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, TResult, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => mapFunc(input8),
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => mapFunc(AsT8),
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, TResult, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT9<TResult>(Func<T9, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, TResult, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => mapFunc(input9),
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => mapFunc(AsT9),
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, TResult, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT10<TResult>(Func<T10, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, TResult, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => mapFunc(input10),
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => mapFunc(AsT10),
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, TResult, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT11<TResult>(Func<T11, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, TResult, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => mapFunc(input11),
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => mapFunc(AsT11),
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, TResult, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT12<TResult>(Func<T12, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, TResult, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => mapFunc(input12),
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => mapFunc(AsT12),
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, TResult, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT13<TResult>(Func<T13, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, TResult, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => mapFunc(input13),
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => mapFunc(AsT13),
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, TResult, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT14<TResult>(Func<T14, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, TResult, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => mapFunc(input14),
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => mapFunc(AsT14),
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, TResult, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT15<TResult>(Func<T15, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, TResult, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => mapFunc(input15),
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => mapFunc(AsT15),
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, TResult, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT16<TResult>(Func<T16, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, TResult, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => mapFunc(input16),
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => mapFunc(AsT16),
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, TResult, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT17<TResult>(Func<T17, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, TResult, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => mapFunc(input17),
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => mapFunc(AsT17),
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, TResult, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT18<TResult>(Func<T18, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, TResult, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => mapFunc(input18),
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => mapFunc(AsT18),
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, TResult, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT19<TResult>(Func<T19, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, TResult, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => mapFunc(input19),
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => mapFunc(AsT19),
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, TResult, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT20<TResult>(Func<T20, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, TResult, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => mapFunc(input20),
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => mapFunc(AsT20),
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, TResult, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT21<TResult>(Func<T21, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, TResult, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => mapFunc(input21),
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => mapFunc(AsT21),
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, TResult, T23, T24, T25, T26, T27, T28, T29, T30, T31> MapT22<TResult>(Func<T22, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, TResult, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => mapFunc(input22),
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => mapFunc(AsT22),
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, TResult, T24, T25, T26, T27, T28, T29, T30, T31> MapT23<TResult>(Func<T23, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, TResult, T24, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => mapFunc(input23),
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => mapFunc(AsT23),
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, TResult, T25, T26, T27, T28, T29, T30, T31> MapT24<TResult>(Func<T24, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, TResult, T25, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => mapFunc(input24),
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => mapFunc(AsT24),
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, TResult, T26, T27, T28, T29, T30, T31> MapT25<TResult>(Func<T25, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, TResult, T26, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => mapFunc(input25),
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => mapFunc(AsT25),
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, TResult, T27, T28, T29, T30, T31> MapT26<TResult>(Func<T26, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, TResult, T27, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => mapFunc(input26),
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => mapFunc(AsT26),
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, TResult, T28, T29, T30, T31> MapT27<TResult>(Func<T27, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, TResult, T28, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => mapFunc(input27),
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => mapFunc(AsT27),
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, TResult, T29, T30, T31> MapT28<TResult>(Func<T28, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, TResult, T29, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => mapFunc(input28),
-                input29 => input29,
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => mapFunc(AsT28),
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, TResult, T30, T31> MapT29<TResult>(Func<T29, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, TResult, T30, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => mapFunc(input29),
-                input30 => input30,
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => mapFunc(AsT29),
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, TResult, T31> MapT30<TResult>(Func<T30, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, TResult, T31>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => mapFunc(input30),
-                input31 => input31
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => mapFunc(AsT30),
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, TResult> MapT31<TResult>(Func<T31, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, TResult>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8,
-                input9 => input9,
-                input10 => input10,
-                input11 => input11,
-                input12 => input12,
-                input13 => input13,
-                input14 => input14,
-                input15 => input15,
-                input16 => input16,
-                input17 => input17,
-                input18 => input18,
-                input19 => input19,
-                input20 => input20,
-                input21 => input21,
-                input22 => input22,
-                input23 => input23,
-                input24 => input24,
-                input25 => input25,
-                input26 => input26,
-                input27 => input27,
-                input28 => input28,
-                input29 => input29,
-                input30 => input30,
-                input31 => mapFunc(input31)
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => mapFunc(AsT31),
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT0 ? this.AsT0 : default(T0);
-			remainder = this.IsT0
-				? default(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>throw new InvalidOperationException(), t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT0 ? AsT0 : default;
+            remainder = _index switch
+            {
+                0 => default,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT0;
 		}
-
+        
 		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT1 ? this.AsT1 : default(T1);
-			remainder = this.IsT1
-				? default(OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>throw new InvalidOperationException(), t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT1 ? AsT1 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => default,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT1;
 		}
-
+        
 		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT2 ? this.AsT2 : default(T2);
-			remainder = this.IsT2
-				? default(OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>throw new InvalidOperationException(), t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT2 ? AsT2 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => default,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT2;
 		}
-
+        
 		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT3 ? this.AsT3 : default(T3);
-			remainder = this.IsT3
-				? default(OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>throw new InvalidOperationException(), t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT3 ? AsT3 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => default,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT3;
 		}
-
+        
 		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT4 ? this.AsT4 : default(T4);
-			remainder = this.IsT4
-				? default(OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>throw new InvalidOperationException(), t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT4 ? AsT4 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => default,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT4;
 		}
-
+        
 		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT5 ? this.AsT5 : default(T5);
-			remainder = this.IsT5
-				? default(OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>throw new InvalidOperationException(), t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT5 ? AsT5 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => default,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT5;
 		}
-
+        
 		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT6 ? this.AsT6 : default(T6);
-			remainder = this.IsT6
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>throw new InvalidOperationException(), t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT6 ? AsT6 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => default,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT6;
 		}
-
+        
 		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT7 ? this.AsT7 : default(T7);
-			remainder = this.IsT7
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>throw new InvalidOperationException(), t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT7 ? AsT7 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => default,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT7;
 		}
-
+        
 		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT8 ? this.AsT8 : default(T8);
-			remainder = this.IsT8
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>throw new InvalidOperationException(), t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT8 ? AsT8 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => default,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT8;
 		}
-
+        
 		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT9 ? this.AsT9 : default(T9);
-			remainder = this.IsT9
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>throw new InvalidOperationException(), t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT9 ? AsT9 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => default,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT9;
 		}
-
+        
 		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT10 ? this.AsT10 : default(T10);
-			remainder = this.IsT10
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>throw new InvalidOperationException(), t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT10 ? AsT10 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => default,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT10;
 		}
-
+        
 		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT11 ? this.AsT11 : default(T11);
-			remainder = this.IsT11
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>throw new InvalidOperationException(), t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT11 ? AsT11 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => default,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT11;
 		}
-
+        
 		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT12 ? this.AsT12 : default(T12);
-			remainder = this.IsT12
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>throw new InvalidOperationException(), t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT12 ? AsT12 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => default,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT12;
 		}
-
+        
 		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT13 ? this.AsT13 : default(T13);
-			remainder = this.IsT13
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>throw new InvalidOperationException(), t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT13 ? AsT13 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => default,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT13;
 		}
-
+        
 		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT14 ? this.AsT14 : default(T14);
-			remainder = this.IsT14
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>throw new InvalidOperationException(), t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT14 ? AsT14 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => default,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT14;
 		}
-
+        
 		public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT15 ? this.AsT15 : default(T15);
-			remainder = this.IsT15
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>throw new InvalidOperationException(), t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT15 ? AsT15 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => default,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT15;
 		}
-
+        
 		public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT16 ? this.AsT16 : default(T16);
-			remainder = this.IsT16
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>throw new InvalidOperationException(), t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT16 ? AsT16 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => default,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT16;
 		}
-
+        
 		public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT17 ? this.AsT17 : default(T17);
-			remainder = this.IsT17
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>throw new InvalidOperationException(), t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT17 ? AsT17 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => default,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT17;
 		}
-
+        
 		public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT18 ? this.AsT18 : default(T18);
-			remainder = this.IsT18
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>throw new InvalidOperationException(), t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT18 ? AsT18 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => default,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT18;
 		}
-
+        
 		public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT19 ? this.AsT19 : default(T19);
-			remainder = this.IsT19
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>throw new InvalidOperationException(), t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT19 ? AsT19 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => default,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT19;
 		}
-
+        
 		public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT20 ? this.AsT20 : default(T20);
-			remainder = this.IsT20
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>throw new InvalidOperationException(), t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT20 ? AsT20 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => default,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT20;
 		}
-
+        
 		public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT21 ? this.AsT21 : default(T21);
-			remainder = this.IsT21
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>throw new InvalidOperationException(), t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT21 ? AsT21 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => default,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT21;
 		}
-
+        
 		public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT22 ? this.AsT22 : default(T22);
-			remainder = this.IsT22
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>throw new InvalidOperationException(), t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT22 ? AsT22 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => default,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT22;
 		}
-
+        
 		public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT23 ? this.AsT23 : default(T23);
-			remainder = this.IsT23
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>throw new InvalidOperationException(), t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT23 ? AsT23 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => default,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT23;
 		}
-
+        
 		public bool TryPickT24(out T24 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT24 ? this.AsT24 : default(T24);
-			remainder = this.IsT24
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>throw new InvalidOperationException(), t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT24 ? AsT24 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => default,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT24;
 		}
-
+        
 		public bool TryPickT25(out T25 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T26, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT25 ? this.AsT25 : default(T25);
-			remainder = this.IsT25
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T26, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T26, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>throw new InvalidOperationException(), t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT25 ? AsT25 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => default,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT25;
 		}
-
+        
 		public bool TryPickT26(out T26 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T27, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT26 ? this.AsT26 : default(T26);
-			remainder = this.IsT26
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T27, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T27, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>throw new InvalidOperationException(), t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT26 ? AsT26 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => default,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT26;
 		}
-
+        
 		public bool TryPickT27(out T27 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T28, T29, T30, T31> remainder)
 		{
-			value = this.IsT27 ? this.AsT27 : default(T27);
-			remainder = this.IsT27
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T28, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T28, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>throw new InvalidOperationException(), t28 =>t28, t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT27 ? AsT27 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => default,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT27;
 		}
-
+        
 		public bool TryPickT28(out T28 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T29, T30, T31> remainder)
 		{
-			value = this.IsT28 ? this.AsT28 : default(T28);
-			remainder = this.IsT28
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T29, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T29, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>throw new InvalidOperationException(), t29 =>t29, t30 =>t30, t31 =>t31);
+			value = IsT28 ? AsT28 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => default,
+                29 => AsT29,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT28;
 		}
-
+        
 		public bool TryPickT29(out T29 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T30, T31> remainder)
 		{
-			value = this.IsT29 ? this.AsT29 : default(T29);
-			remainder = this.IsT29
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T30, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T30, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>throw new InvalidOperationException(), t30 =>t30, t31 =>t31);
+			value = IsT29 ? AsT29 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => default,
+                30 => AsT30,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT29;
 		}
-
+        
 		public bool TryPickT30(out T30 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T31> remainder)
 		{
-			value = this.IsT30 ? this.AsT30 : default(T30);
-			remainder = this.IsT30
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T31>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T31>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>throw new InvalidOperationException(), t31 =>t31);
+			value = IsT30 ? AsT30 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => default,
+                31 => AsT31,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT30;
 		}
-
+        
 		public bool TryPickT31(out T31 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
 		{
-			value = this.IsT31 ? this.AsT31 : default(T31);
-			remainder = this.IsT31
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20, t21 =>t21, t22 =>t22, t23 =>t23, t24 =>t24, t25 =>t25, t26 =>t26, t27 =>t27, t28 =>t28, t29 =>t29, t30 =>t30, t31 =>throw new InvalidOperationException());
+			value = IsT31 ? AsT31 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                21 => AsT21,
+                22 => AsT22,
+                23 => AsT23,
+                24 => AsT24,
+                25 => AsT25,
+                26 => AsT26,
+                27 => AsT27,
+                28 => AsT28,
+                29 => AsT29,
+                30 => AsT30,
+                31 => default,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT31;
 		}
 
