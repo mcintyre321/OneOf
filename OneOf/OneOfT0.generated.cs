@@ -7,25 +7,18 @@ namespace OneOf
         readonly T0 _value0;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0))
+        OneOf(int index, T0 value0 = default)
         {
             _index = index;
             _value0 = value0;
         }
 
-        public object Value
-        {
-            get
+        public object Value =>
+            _index switch
             {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+                0 => _value0,
+                _ => throw new InvalidOperationException()
+            };
 
         public int Index => _index;
 

@@ -12,7 +12,7 @@ namespace OneOf
         readonly T5 _value5;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default)
         {
             _index = index;
             _value0 = value0;
@@ -23,29 +23,17 @@ namespace OneOf
             _value5 = value5;
         }
 
-        public object Value
-        {
-            get
+        public object Value =>
+            _index switch
             {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+                0 => _value0,
+                1 => _value1,
+                2 => _value2,
+                3 => _value3,
+                4 => _value4,
+                5 => _value5,
+                _ => throw new InvalidOperationException()
+            };
 
         public int Index => _index;
 

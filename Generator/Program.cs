@@ -49,13 +49,12 @@ namespace OneOf
         readonly int _index;
 
         {IfStruct(
-        $@"OneOf(int index, {RangeJoined(", ", j => $"T{j} value{j} = default(T{j})")})
+        $@"OneOf(int index, {RangeJoined(", ", j => $"T{j} value{j} = default")})
         {{
             _index = index;
             {RangeJoined(@"
             ", j => $"_value{j} = value{j};")}
-        }}"
-        )}{IfNotStruct(
+        }}",
         $@"protected OneOfBase(OneOf<{genericArg}> input)
         {{
             _index = input.Index;
@@ -68,20 +67,13 @@ namespace OneOf
         }}"
         )}
 
-        public object Value
-        {{
-            get
+        public object Value =>
+            _index switch
             {{
-                switch (_index)
-                {{
-                    {RangeJoined(@"
-                    ", e => $@"case {e}:
-                        return _value{e};")}
-                    default:
-                        throw new InvalidOperationException();
-                }}
-            }}
-        }}
+                {RangeJoined(@"
+                ", j => $"{j} => _value{j},")}
+                _ => throw new InvalidOperationException()
+            }};
 
         public int Index => _index;
 

@@ -19,21 +19,13 @@ namespace OneOf
             }
         }
 
-        public object Value
-        {
-            get
+        public object Value =>
+            _index switch
             {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
+                0 => _value0,
+                1 => _value1,
+                _ => throw new InvalidOperationException()
+            };
 
         public int Index => _index;
 
