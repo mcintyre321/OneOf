@@ -78,22 +78,17 @@ namespace OneOf
         public int Index => _index;
 
         {RangeJoined(@"
-        ", j => $@"public bool IsT{j} => _index == {j};
+        ", j=> $"public bool IsT{j} => _index == {j};")}
 
-        public T{j} AsT{j}
-        {{
-            get
-            {{
-                if (_index != {j})
-                {{
-                    throw new InvalidOperationException($""Cannot return as T{j} as result is T{{_index}}"");
-                }}
-                return _value{j};
-            }}
-        }}
-        {IfStruct(@$"
-        public static implicit operator {className}<{genericArg}>(T{j} t) => new {className}<{genericArg}>({j}, value{j}: t);
-        ", "")}")}
+        {RangeJoined(@"
+        ", j => $@"public T{j} AsT{j} =>
+            _index == {j} ?
+                _value{j} :
+                throw new InvalidOperationException($""Cannot return as T{j} as result is T{{_index}}"");")}
+
+        {IfStruct(RangeJoined(@"
+        ", j => $"public static implicit operator {className}<{genericArg}>(T{j} t) => new {className}<{genericArg}>({j}, value{j}: t);"))}
+
         public void Switch({RangeJoined(", ", e => $"Action<T{e}> f{e}")})
         {{
             {RangeJoined(@"

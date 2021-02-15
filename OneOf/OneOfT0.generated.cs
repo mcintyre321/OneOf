@@ -24,20 +24,13 @@ namespace OneOf
 
         public bool IsT0 => _index == 0;
 
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-        
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
+
         public static implicit operator OneOf<T0>(T0 t) => new OneOf<T0>(0, value0: t);
-        
+
         public void Switch(Action<T0> f0)
         {
             if (_index == 0 && f0 != null)
