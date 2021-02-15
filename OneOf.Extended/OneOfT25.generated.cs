@@ -1,4 +1,5 @@
 using System;
+using static OneOf.Functions;
 
 namespace OneOf
 {
@@ -1740,39 +1741,36 @@ namespace OneOf
             return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25> o && Equals(o);
         }
 
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                case 22: return FormatValue(typeof(T22), _value22);
-                case 23: return FormatValue(typeof(T23), _value23);
-                case 24: return FormatValue(typeof(T24), _value24);
-                case 25: return FormatValue(typeof(T25), _value25);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
-        }
+        public override string ToString() =>
+            _index switch {
+                0 => FormatValue(_value0),
+                1 => FormatValue(_value1),
+                2 => FormatValue(_value2),
+                3 => FormatValue(_value3),
+                4 => FormatValue(_value4),
+                5 => FormatValue(_value5),
+                6 => FormatValue(_value6),
+                7 => FormatValue(_value7),
+                8 => FormatValue(_value8),
+                9 => FormatValue(_value9),
+                10 => FormatValue(_value10),
+                11 => FormatValue(_value11),
+                12 => FormatValue(_value12),
+                13 => FormatValue(_value13),
+                14 => FormatValue(_value14),
+                15 => FormatValue(_value15),
+                16 => FormatValue(_value16),
+                17 => FormatValue(_value17),
+                18 => FormatValue(_value18),
+                19 => FormatValue(_value19),
+                20 => FormatValue(_value20),
+                21 => FormatValue(_value21),
+                22 => FormatValue(_value22),
+                23 => FormatValue(_value23),
+                24 => FormatValue(_value24),
+                25 => FormatValue(_value25),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
 
         public override int GetHashCode()
         {

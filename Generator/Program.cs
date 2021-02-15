@@ -39,6 +39,7 @@ string GetContent(bool isStruct, int i) {
     var sb = new StringBuilder();
 
     sb.Append(@$"using System;
+using static OneOf.Functions;
 
 namespace OneOf
 {{
@@ -188,17 +189,12 @@ namespace OneOf
             )}
         }}
 
-        public override string ToString()
-        {{
-            {IfStruct(
-        @"string FormatValue<T>(Type type, T value) => $""{type.FullName}: {value?.ToString()}"";",
-        @"string FormatValue<T>(Type type, T value) => object.ReferenceEquals(this, value) ? base.ToString() : $""{type.FullName}: {value?.ToString()}"";")}
-            switch(_index) {{
+        public override string ToString() =>
+            _index switch {{
                 {RangeJoined(@"
-                ", j => $"case {j}: return FormatValue(typeof(T{j}), _value{j});")}
-                default: throw new InvalidOperationException(""Unexpected index, which indicates a problem in the OneOf codegen."");
-            }}
-        }}
+                ", j => $"{j} => FormatValue(_value{j}),")}
+                _ => throw new InvalidOperationException(""Unexpected index, which indicates a problem in the OneOf codegen."")
+            }};
 
         public override int GetHashCode()
         {{

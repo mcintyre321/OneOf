@@ -1,4 +1,5 @@
 using System;
+using static OneOf.Functions;
 
 namespace OneOf
 {
@@ -81,14 +82,11 @@ namespace OneOf
             return obj is OneOf<T0> o && Equals(o);
         }
 
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
-        }
+        public override string ToString() =>
+            _index switch {
+                0 => FormatValue(_value0),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
 
         public override int GetHashCode()
         {

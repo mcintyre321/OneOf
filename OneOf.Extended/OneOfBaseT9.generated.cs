@@ -1,4 +1,5 @@
 using System;
+using static OneOf.Functions;
 
 namespace OneOf
 {
@@ -330,23 +331,20 @@ namespace OneOf
             return obj is OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> o && Equals(o);
         }
 
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => object.ReferenceEquals(this, value) ? base.ToString() : $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
-            }
-        }
+        public override string ToString() =>
+            _index switch {
+                0 => FormatValue(_value0),
+                1 => FormatValue(_value1),
+                2 => FormatValue(_value2),
+                3 => FormatValue(_value3),
+                4 => FormatValue(_value4),
+                5 => FormatValue(_value5),
+                6 => FormatValue(_value6),
+                7 => FormatValue(_value7),
+                8 => FormatValue(_value8),
+                9 => FormatValue(_value9),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
 
         public override int GetHashCode()
         {
