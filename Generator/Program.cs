@@ -31,7 +31,6 @@ for (var i = 10; i < 33; i++) {
 string GetContent(bool isStruct, int i) {
     string RangeJoined(string delimiter, Func<int, string> selector) => Range(0, i).Joined(delimiter, selector);
     string IfStruct(string s, string s2 = "") => isStruct ? s : s2;
-    string IfNotStruct(string s) => !isStruct ? s : "";
 
     var className = isStruct ? "OneOf" : "OneOfBase";
     var genericArgs = Range(0, i).Select(e => $"T{e}").ToList();
@@ -200,17 +199,12 @@ namespace OneOf
         {{
             unchecked
             {{
-                int hashCode;
-                switch (_index)
+                int hashCode = _index switch
                 {{
                     {RangeJoined(@"
-                    ", j => @$"case {j}:
-                    hashCode = _value{j}?.GetHashCode() ?? 0;
-                    break;")}
-                    default:
-                        hashCode = 0;
-                        break;
-                }}
+                    ", j => $"{j} => _value{j}?.GetHashCode(),")}
+                    _ => 0
+                }} ?? 0;
                 return (hashCode*397) ^ _index;
             }}
         }}

@@ -462,55 +462,24 @@ namespace OneOf
         {
             unchecked
             {
-                int hashCode;
-                switch (_index)
+                int hashCode = _index switch
                 {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
+                    0 => _value0?.GetHashCode(),
+                    1 => _value1?.GetHashCode(),
+                    2 => _value2?.GetHashCode(),
+                    3 => _value3?.GetHashCode(),
+                    4 => _value4?.GetHashCode(),
+                    5 => _value5?.GetHashCode(),
+                    6 => _value6?.GetHashCode(),
+                    7 => _value7?.GetHashCode(),
+                    8 => _value8?.GetHashCode(),
+                    9 => _value9?.GetHashCode(),
+                    10 => _value10?.GetHashCode(),
+                    11 => _value11?.GetHashCode(),
+                    12 => _value12?.GetHashCode(),
+                    13 => _value13?.GetHashCode(),
+                    _ => 0
+                } ?? 0;
                 return (hashCode*397) ^ _index;
             }
         }
