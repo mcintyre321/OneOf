@@ -48,7 +48,7 @@ namespace OneOf
         ", j => $"readonly T{j} _value{j};")}
         readonly int _index;
 
-        {IfStruct(
+        {IfStruct( // constructor
         $@"OneOf(int index, {RangeJoined(", ", j => $"T{j} value{j} = default")})
         {{
             _index = index;
@@ -112,53 +112,55 @@ namespace OneOf
 
         {IfStruct(genericArgs.Joined(@"
         ", bindToType => $@"public static OneOf<{genericArgs.Joined(", ")}> From{bindToType}({bindToType} input) => input;"))}
-");
 
-    if (isStruct) {
-        foreach (var bindToType in genericArgs) {
-
-            // TODO once we replace the call in Map from Match to inline code (per #72)
-            //  we'll be able to remove this variable and fold the entire block into the format string
+        {IfStruct(genericArgs.Joined(@"
+            ", bindToType => {
             var resultArgsPrinted = genericArgs.Select(x => {
                 return x == bindToType ? "TResult" : x;
             }).Joined(", ");
-            sb.Append($@"
+            return $@"
         public OneOf<{resultArgsPrinted}> Map{bindToType}<TResult>(Func<{bindToType}, TResult> mapFunc)
         {{
-            if(mapFunc == null)
+            if (mapFunc == null)
             {{
                 throw new ArgumentNullException(nameof(mapFunc));
             }}
-            return Match<OneOf<{resultArgsPrinted}>>(
-                {genericArgs.Joined(@",
+            return _index switch
+            {{
+                {genericArgs.Joined(@"
                 ", (x, k) =>
                     x == bindToType ?
-                        $"input{k} => mapFunc(input{k})" :
-                        $"input{k} => input{k}"
-            )}
-            );
-        }}
-        ");
-
-        }
-    }
+                        $"{k} => mapFunc(As{x})," :
+                        $"{k} => As{x},")}
+                _ => throw new InvalidOperationException()
+            }};
+        }}";
+        }))}
+");
 
     if (i > 1) {
-        // TODO fold this into the format string after implementing #72
-        for (var j = 0; j < i; j++) {
-            var genericArgWithSkip = Range(0, i).ExceptSingle(j).Joined(", ", e => $"T{e}");
-            var remainderType = i == 2 ? genericArgWithSkip : $"OneOf<{genericArgWithSkip}>";
-            sb.AppendLine($@"
+        sb.AppendLine(
+            RangeJoined(@"
+        ", j => {
+                var genericArgWithSkip = Range(0, i).ExceptSingle(j).Joined(", ", e => $"T{e}");
+                var remainderType = i == 2 ? genericArgWithSkip : $"OneOf<{genericArgWithSkip}>";
+                return $@"
 		public bool TryPickT{j}(out T{j} value, out {remainderType} remainder)
 		{{
-			value = this.IsT{j} ? this.AsT{j} : default(T{j});
-			remainder = " + ((i == 2) ? ($"this.IsT{j} ? default({remainderType}) : this.As{remainderType};") : $@"this.IsT{j}
-				? default(OneOf<{genericArgWithSkip}>) 
-				: this.Match<{remainderType}>(" + RangeJoined(", ", k => $"t{k} =>" + (k == j ? "throw new InvalidOperationException()" : $"t{k}")) + $@");")
-            + $@"
+			value = IsT{j} ? AsT{j} : default;
+            remainder = _index switch
+            {{
+                {RangeJoined(@"
+                ", k => 
+                    k == j ?
+                        $"{k} => default," :
+                        $"{k} => AsT{k},")}
+                _ => throw new InvalidOperationException()
+            }};
 			return this.IsT{j};
-		}}");
-        }
+		}}";
+            })
+        );
     }
 
     sb.AppendLine($@"

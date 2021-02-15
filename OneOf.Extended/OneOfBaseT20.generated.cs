@@ -397,192 +397,656 @@ namespace OneOf
 
         
 
+        
+
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
-			value = this.IsT0 ? this.AsT0 : default(T0);
-			remainder = this.IsT0
-				? default(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>) 
-				: this.Match<OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>>(t0 =>throw new InvalidOperationException(), t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20);
+			value = IsT0 ? AsT0 : default;
+            remainder = _index switch
+            {
+                0 => default,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT0;
 		}
-
+        
 		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
-			value = this.IsT1 ? this.AsT1 : default(T1);
-			remainder = this.IsT1
-				? default(OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>) 
-				: this.Match<OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>>(t0 =>t0, t1 =>throw new InvalidOperationException(), t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20);
+			value = IsT1 ? AsT1 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => default,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT1;
 		}
-
+        
 		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
-			value = this.IsT2 ? this.AsT2 : default(T2);
-			remainder = this.IsT2
-				? default(OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>) 
-				: this.Match<OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>>(t0 =>t0, t1 =>t1, t2 =>throw new InvalidOperationException(), t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20);
+			value = IsT2 ? AsT2 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => default,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT2;
 		}
-
+        
 		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
-			value = this.IsT3 ? this.AsT3 : default(T3);
-			remainder = this.IsT3
-				? default(OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>) 
-				: this.Match<OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>throw new InvalidOperationException(), t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20);
+			value = IsT3 ? AsT3 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => default,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT3;
 		}
-
+        
 		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
-			value = this.IsT4 ? this.AsT4 : default(T4);
-			remainder = this.IsT4
-				? default(OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>throw new InvalidOperationException(), t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20);
+			value = IsT4 ? AsT4 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => default,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT4;
 		}
-
+        
 		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
-			value = this.IsT5 ? this.AsT5 : default(T5);
-			remainder = this.IsT5
-				? default(OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>throw new InvalidOperationException(), t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20);
+			value = IsT5 ? AsT5 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => default,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT5;
 		}
-
+        
 		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
-			value = this.IsT6 ? this.AsT6 : default(T6);
-			remainder = this.IsT6
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>throw new InvalidOperationException(), t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20);
+			value = IsT6 ? AsT6 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => default,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT6;
 		}
-
+        
 		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
-			value = this.IsT7 ? this.AsT7 : default(T7);
-			remainder = this.IsT7
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>throw new InvalidOperationException(), t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20);
+			value = IsT7 ? AsT7 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => default,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT7;
 		}
-
+        
 		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
-			value = this.IsT8 ? this.AsT8 : default(T8);
-			remainder = this.IsT8
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>throw new InvalidOperationException(), t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20);
+			value = IsT8 ? AsT8 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => default,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT8;
 		}
-
+        
 		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
-			value = this.IsT9 ? this.AsT9 : default(T9);
-			remainder = this.IsT9
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>throw new InvalidOperationException(), t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20);
+			value = IsT9 ? AsT9 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => default,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT9;
 		}
-
+        
 		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
-			value = this.IsT10 ? this.AsT10 : default(T10);
-			remainder = this.IsT10
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>throw new InvalidOperationException(), t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20);
+			value = IsT10 ? AsT10 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => default,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT10;
 		}
-
+        
 		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
-			value = this.IsT11 ? this.AsT11 : default(T11);
-			remainder = this.IsT11
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>throw new InvalidOperationException(), t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20);
+			value = IsT11 ? AsT11 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => default,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT11;
 		}
-
+        
 		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
-			value = this.IsT12 ? this.AsT12 : default(T12);
-			remainder = this.IsT12
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>throw new InvalidOperationException(), t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20);
+			value = IsT12 ? AsT12 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => default,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT12;
 		}
-
+        
 		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20> remainder)
 		{
-			value = this.IsT13 ? this.AsT13 : default(T13);
-			remainder = this.IsT13
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>throw new InvalidOperationException(), t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20);
+			value = IsT13 ? AsT13 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => default,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT13;
 		}
-
+        
 		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20> remainder)
 		{
-			value = this.IsT14 ? this.AsT14 : default(T14);
-			remainder = this.IsT14
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>throw new InvalidOperationException(), t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20);
+			value = IsT14 ? AsT14 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => default,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT14;
 		}
-
+        
 		public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20> remainder)
 		{
-			value = this.IsT15 ? this.AsT15 : default(T15);
-			remainder = this.IsT15
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>throw new InvalidOperationException(), t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20);
+			value = IsT15 ? AsT15 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => default,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT15;
 		}
-
+        
 		public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20> remainder)
 		{
-			value = this.IsT16 ? this.AsT16 : default(T16);
-			remainder = this.IsT16
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>throw new InvalidOperationException(), t17 =>t17, t18 =>t18, t19 =>t19, t20 =>t20);
+			value = IsT16 ? AsT16 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => default,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT16;
 		}
-
+        
 		public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20> remainder)
 		{
-			value = this.IsT17 ? this.AsT17 : default(T17);
-			remainder = this.IsT17
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>throw new InvalidOperationException(), t18 =>t18, t19 =>t19, t20 =>t20);
+			value = IsT17 ? AsT17 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => default,
+                18 => AsT18,
+                19 => AsT19,
+                20 => AsT20,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT17;
 		}
-
+        
 		public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20> remainder)
 		{
-			value = this.IsT18 ? this.AsT18 : default(T18);
-			remainder = this.IsT18
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>throw new InvalidOperationException(), t19 =>t19, t20 =>t20);
+			value = IsT18 ? AsT18 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => default,
+                19 => AsT19,
+                20 => AsT20,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT18;
 		}
-
+        
 		public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20> remainder)
 		{
-			value = this.IsT19 ? this.AsT19 : default(T19);
-			remainder = this.IsT19
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>throw new InvalidOperationException(), t20 =>t20);
+			value = IsT19 ? AsT19 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => default,
+                20 => AsT20,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT19;
 		}
-
+        
 		public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> remainder)
 		{
-			value = this.IsT20 ? this.AsT20 : default(T20);
-			remainder = this.IsT20
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8, t9 =>t9, t10 =>t10, t11 =>t11, t12 =>t12, t13 =>t13, t14 =>t14, t15 =>t15, t16 =>t16, t17 =>t17, t18 =>t18, t19 =>t19, t20 =>throw new InvalidOperationException());
+			value = IsT20 ? AsT20 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                9 => AsT9,
+                10 => AsT10,
+                11 => AsT11,
+                12 => AsT12,
+                13 => AsT13,
+                14 => AsT14,
+                15 => AsT15,
+                16 => AsT16,
+                17 => AsT17,
+                18 => AsT18,
+                19 => AsT19,
+                20 => default,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT20;
 		}
 

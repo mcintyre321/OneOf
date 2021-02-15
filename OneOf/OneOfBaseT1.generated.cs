@@ -74,17 +74,29 @@ namespace OneOf
 
         
 
+        
+
 		public bool TryPickT0(out T0 value, out T1 remainder)
 		{
-			value = this.IsT0 ? this.AsT0 : default(T0);
-			remainder = this.IsT0 ? default(T1) : this.AsT1;
+			value = IsT0 ? AsT0 : default;
+            remainder = _index switch
+            {
+                0 => default,
+                1 => AsT1,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT0;
 		}
-
+        
 		public bool TryPickT1(out T1 value, out T0 remainder)
 		{
-			value = this.IsT1 ? this.AsT1 : default(T1);
-			remainder = this.IsT1 ? default(T0) : this.AsT0;
+			value = IsT1 ? AsT1 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => default,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT1;
 		}
 

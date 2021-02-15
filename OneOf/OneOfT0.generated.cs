@@ -53,17 +53,20 @@ namespace OneOf
 
         public static OneOf<T0> FromT0(T0 input) => input;
 
+        
         public OneOf<TResult> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<TResult>>(
-                input0 => mapFunc(input0)
-            );
+            return _index switch
+            {
+                0 => mapFunc(AsT0),
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+
         bool Equals(OneOf<T0> other) =>
             _index == other._index &&
             _index switch

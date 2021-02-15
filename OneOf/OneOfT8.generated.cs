@@ -205,255 +205,364 @@ namespace OneOf
         public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> FromT7(T7 input) => input;
         public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8> FromT8(T8 input) => input;
 
+        
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8>>(
-                input0 => mapFunc(input0),
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8
-            );
+            return _index switch
+            {
+                0 => mapFunc(AsT0),
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, TResult, T2, T3, T4, T5, T6, T7, T8> MapT1<TResult>(Func<T1, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, TResult, T2, T3, T4, T5, T6, T7, T8>>(
-                input0 => input0,
-                input1 => mapFunc(input1),
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => mapFunc(AsT1),
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, TResult, T3, T4, T5, T6, T7, T8> MapT2<TResult>(Func<T2, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, TResult, T3, T4, T5, T6, T7, T8>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => mapFunc(input2),
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => mapFunc(AsT2),
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, TResult, T4, T5, T6, T7, T8> MapT3<TResult>(Func<T3, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, TResult, T4, T5, T6, T7, T8>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => mapFunc(input3),
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => mapFunc(AsT3),
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, TResult, T5, T6, T7, T8> MapT4<TResult>(Func<T4, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, TResult, T5, T6, T7, T8>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => mapFunc(input4),
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => input8
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => mapFunc(AsT4),
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, TResult, T6, T7, T8> MapT5<TResult>(Func<T5, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, TResult, T6, T7, T8>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => mapFunc(input5),
-                input6 => input6,
-                input7 => input7,
-                input8 => input8
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => mapFunc(AsT5),
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, TResult, T7, T8> MapT6<TResult>(Func<T6, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, TResult, T7, T8>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => mapFunc(input6),
-                input7 => input7,
-                input8 => input8
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => mapFunc(AsT6),
+                7 => AsT7,
+                8 => AsT8,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, TResult, T8> MapT7<TResult>(Func<T7, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, TResult, T8>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => mapFunc(input7),
-                input8 => input8
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => mapFunc(AsT7),
+                8 => AsT8,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, TResult> MapT8<TResult>(Func<T8, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7, TResult>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => input2,
-                input3 => input3,
-                input4 => input4,
-                input5 => input5,
-                input6 => input6,
-                input7 => input7,
-                input8 => mapFunc(input8)
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => mapFunc(AsT8),
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8> remainder)
 		{
-			value = this.IsT0 ? this.AsT0 : default(T0);
-			remainder = this.IsT0
-				? default(OneOf<T1, T2, T3, T4, T5, T6, T7, T8>) 
-				: this.Match<OneOf<T1, T2, T3, T4, T5, T6, T7, T8>>(t0 =>throw new InvalidOperationException(), t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8);
+			value = IsT0 ? AsT0 : default;
+            remainder = _index switch
+            {
+                0 => default,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT0;
 		}
-
+        
 		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8> remainder)
 		{
-			value = this.IsT1 ? this.AsT1 : default(T1);
-			remainder = this.IsT1
-				? default(OneOf<T0, T2, T3, T4, T5, T6, T7, T8>) 
-				: this.Match<OneOf<T0, T2, T3, T4, T5, T6, T7, T8>>(t0 =>t0, t1 =>throw new InvalidOperationException(), t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8);
+			value = IsT1 ? AsT1 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => default,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT1;
 		}
-
+        
 		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8> remainder)
 		{
-			value = this.IsT2 ? this.AsT2 : default(T2);
-			remainder = this.IsT2
-				? default(OneOf<T0, T1, T3, T4, T5, T6, T7, T8>) 
-				: this.Match<OneOf<T0, T1, T3, T4, T5, T6, T7, T8>>(t0 =>t0, t1 =>t1, t2 =>throw new InvalidOperationException(), t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8);
+			value = IsT2 ? AsT2 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => default,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT2;
 		}
-
+        
 		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8> remainder)
 		{
-			value = this.IsT3 ? this.AsT3 : default(T3);
-			remainder = this.IsT3
-				? default(OneOf<T0, T1, T2, T4, T5, T6, T7, T8>) 
-				: this.Match<OneOf<T0, T1, T2, T4, T5, T6, T7, T8>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>throw new InvalidOperationException(), t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8);
+			value = IsT3 ? AsT3 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => default,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT3;
 		}
-
+        
 		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8> remainder)
 		{
-			value = this.IsT4 ? this.AsT4 : default(T4);
-			remainder = this.IsT4
-				? default(OneOf<T0, T1, T2, T3, T5, T6, T7, T8>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T5, T6, T7, T8>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>throw new InvalidOperationException(), t5 =>t5, t6 =>t6, t7 =>t7, t8 =>t8);
+			value = IsT4 ? AsT4 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => default,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT4;
 		}
-
+        
 		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8> remainder)
 		{
-			value = this.IsT5 ? this.AsT5 : default(T5);
-			remainder = this.IsT5
-				? default(OneOf<T0, T1, T2, T3, T4, T6, T7, T8>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T6, T7, T8>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>throw new InvalidOperationException(), t6 =>t6, t7 =>t7, t8 =>t8);
+			value = IsT5 ? AsT5 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => default,
+                6 => AsT6,
+                7 => AsT7,
+                8 => AsT8,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT5;
 		}
-
+        
 		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8> remainder)
 		{
-			value = this.IsT6 ? this.AsT6 : default(T6);
-			remainder = this.IsT6
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T7, T8>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T7, T8>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>throw new InvalidOperationException(), t7 =>t7, t8 =>t8);
+			value = IsT6 ? AsT6 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => default,
+                7 => AsT7,
+                8 => AsT8,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT6;
 		}
-
+        
 		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8> remainder)
 		{
-			value = this.IsT7 ? this.AsT7 : default(T7);
-			remainder = this.IsT7
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T8>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T8>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>throw new InvalidOperationException(), t8 =>t8);
+			value = IsT7 ? AsT7 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => default,
+                8 => AsT8,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT7;
 		}
-
+        
 		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7> remainder)
 		{
-			value = this.IsT8 ? this.AsT8 : default(T8);
-			remainder = this.IsT8
-				? default(OneOf<T0, T1, T2, T3, T4, T5, T6, T7>) 
-				: this.Match<OneOf<T0, T1, T2, T3, T4, T5, T6, T7>>(t0 =>t0, t1 =>t1, t2 =>t2, t3 =>t3, t4 =>t4, t5 =>t5, t6 =>t6, t7 =>t7, t8 =>throw new InvalidOperationException());
+			value = IsT8 ? AsT8 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => AsT2,
+                3 => AsT3,
+                4 => AsT4,
+                5 => AsT5,
+                6 => AsT6,
+                7 => AsT7,
+                8 => default,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT8;
 		}
 

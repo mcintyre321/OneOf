@@ -57,6 +57,8 @@ namespace OneOf
 
         
 
+        
+
         bool Equals(OneOfBase<T0> other) =>
             _index == other._index &&
             _index switch

@@ -91,69 +91,88 @@ namespace OneOf
         public static OneOf<T0, T1, T2> FromT1(T1 input) => input;
         public static OneOf<T0, T1, T2> FromT2(T2 input) => input;
 
+        
         public OneOf<TResult, T1, T2> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<TResult, T1, T2>>(
-                input0 => mapFunc(input0),
-                input1 => input1,
-                input2 => input2
-            );
+            return _index switch
+            {
+                0 => mapFunc(AsT0),
+                1 => AsT1,
+                2 => AsT2,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, TResult, T2> MapT1<TResult>(Func<T1, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, TResult, T2>>(
-                input0 => input0,
-                input1 => mapFunc(input1),
-                input2 => input2
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => mapFunc(AsT1),
+                2 => AsT2,
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+            
         public OneOf<T0, T1, TResult> MapT2<TResult>(Func<T2, TResult> mapFunc)
         {
-            if(mapFunc == null)
+            if (mapFunc == null)
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return Match<OneOf<T0, T1, TResult>>(
-                input0 => input0,
-                input1 => input1,
-                input2 => mapFunc(input2)
-            );
+            return _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => mapFunc(AsT2),
+                _ => throw new InvalidOperationException()
+            };
         }
-        
+
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2> remainder)
 		{
-			value = this.IsT0 ? this.AsT0 : default(T0);
-			remainder = this.IsT0
-				? default(OneOf<T1, T2>) 
-				: this.Match<OneOf<T1, T2>>(t0 =>throw new InvalidOperationException(), t1 =>t1, t2 =>t2);
+			value = IsT0 ? AsT0 : default;
+            remainder = _index switch
+            {
+                0 => default,
+                1 => AsT1,
+                2 => AsT2,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT0;
 		}
-
+        
 		public bool TryPickT1(out T1 value, out OneOf<T0, T2> remainder)
 		{
-			value = this.IsT1 ? this.AsT1 : default(T1);
-			remainder = this.IsT1
-				? default(OneOf<T0, T2>) 
-				: this.Match<OneOf<T0, T2>>(t0 =>t0, t1 =>throw new InvalidOperationException(), t2 =>t2);
+			value = IsT1 ? AsT1 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => default,
+                2 => AsT2,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT1;
 		}
-
+        
 		public bool TryPickT2(out T2 value, out OneOf<T0, T1> remainder)
 		{
-			value = this.IsT2 ? this.AsT2 : default(T2);
-			remainder = this.IsT2
-				? default(OneOf<T0, T1>) 
-				: this.Match<OneOf<T0, T1>>(t0 =>t0, t1 =>t1, t2 =>throw new InvalidOperationException());
+			value = IsT2 ? AsT2 : default;
+            remainder = _index switch
+            {
+                0 => AsT0,
+                1 => AsT1,
+                2 => default,
+                _ => throw new InvalidOperationException()
+            };
 			return this.IsT2;
 		}
 
