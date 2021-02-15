@@ -34,7 +34,7 @@ namespace OneOf
                 }
             }
         }
-        
+
         public int Index => _index;
 
         public bool IsT0 => _index == 0;
@@ -50,9 +50,9 @@ namespace OneOf
                 return _value0;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2>(T0 t) => new OneOf<T0, T1, T2>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
 
         public T1 AsT1
@@ -66,9 +66,9 @@ namespace OneOf
                 return _value1;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2>(T1 t) => new OneOf<T0, T1, T2>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
 
         public T2 AsT2
@@ -82,9 +82,9 @@ namespace OneOf
                 return _value2;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2>(T2 t) => new OneOf<T0, T1, T2>(2, value2: t);
-
+        
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2)
         {
             if (_index == 0 && f0 != null)
@@ -149,7 +149,7 @@ namespace OneOf
                 input2 => input2
             );
         }
-
+        
         public OneOf<T0, TResult, T2> MapT1<TResult>(Func<T1, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -162,7 +162,7 @@ namespace OneOf
                 input2 => input2
             );
         }
-
+        
         public OneOf<T0, T1, TResult> MapT2<TResult>(Func<T2, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -175,7 +175,7 @@ namespace OneOf
                 input2 => mapFunc(input2)
             );
         }
-
+        
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2> remainder)
 		{
 			value = this.IsT0 ? this.AsT0 : default(T0);
@@ -222,7 +222,7 @@ namespace OneOf
         {
             if (ReferenceEquals(null, obj))
                 return false;
-            
+
 
             return obj is OneOf<T0, T1, T2> && Equals((OneOf<T0, T1, T2>)obj);
         }

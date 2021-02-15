@@ -26,7 +26,7 @@ namespace OneOf
                 }
             }
         }
-        
+
         public int Index => _index;
 
         public bool IsT0 => _index == 0;
@@ -42,9 +42,9 @@ namespace OneOf
                 return _value0;
             }
         }
-
+        
         public static implicit operator OneOf<T0>(T0 t) => new OneOf<T0>(0, value0: t);
-
+        
         public void Switch(Action<T0> f0)
         {
             if (_index == 0 && f0 != null)
@@ -79,7 +79,7 @@ namespace OneOf
                 input0 => mapFunc(input0)
             );
         }
-
+        
         bool Equals(OneOf<T0> other)
         {
             if (_index != other._index)
@@ -97,7 +97,7 @@ namespace OneOf
         {
             if (ReferenceEquals(null, obj))
                 return false;
-            
+
 
             return obj is OneOf<T0> && Equals((OneOf<T0>)obj);
         }

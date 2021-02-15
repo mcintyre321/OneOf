@@ -20,7 +20,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value
         {
             get
@@ -38,7 +38,7 @@ namespace OneOf
                 }
             }
         }
-        
+
         public int Index => _index;
 
         public bool IsT0 => _index == 0;
@@ -54,7 +54,7 @@ namespace OneOf
                 return _value0;
             }
         }
-
+        
         public bool IsT1 => _index == 1;
 
         public T1 AsT1
@@ -68,7 +68,7 @@ namespace OneOf
                 return _value1;
             }
         }
-
+        
         public bool IsT2 => _index == 2;
 
         public T2 AsT2
@@ -82,7 +82,7 @@ namespace OneOf
                 return _value2;
             }
         }
-
+        
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2)
         {
             if (_index == 0 && f0 != null)
@@ -166,7 +166,7 @@ namespace OneOf
         {
             if (ReferenceEquals(null, obj))
                 return false;
-            
+
 
             if (ReferenceEquals(this, obj))
                 return true;

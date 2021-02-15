@@ -30,7 +30,7 @@ namespace OneOf
                 }
             }
         }
-        
+
         public int Index => _index;
 
         public bool IsT0 => _index == 0;
@@ -46,9 +46,9 @@ namespace OneOf
                 return _value0;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1>(T0 t) => new OneOf<T0, T1>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
 
         public T1 AsT1
@@ -62,9 +62,9 @@ namespace OneOf
                 return _value1;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1>(T1 t) => new OneOf<T0, T1>(1, value1: t);
-
+        
         public void Switch(Action<T0> f0, Action<T1> f1)
         {
             if (_index == 0 && f0 != null)
@@ -114,7 +114,7 @@ namespace OneOf
                 input1 => input1
             );
         }
-
+        
         public OneOf<T0, TResult> MapT1<TResult>(Func<T1, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -126,7 +126,7 @@ namespace OneOf
                 input1 => mapFunc(input1)
             );
         }
-
+        
 		public bool TryPickT0(out T0 value, out T1 remainder)
 		{
 			value = this.IsT0 ? this.AsT0 : default(T0);
@@ -159,7 +159,7 @@ namespace OneOf
         {
             if (ReferenceEquals(null, obj))
                 return false;
-            
+
 
             return obj is OneOf<T0, T1> && Equals((OneOf<T0, T1>)obj);
         }

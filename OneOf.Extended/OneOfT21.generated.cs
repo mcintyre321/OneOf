@@ -110,7 +110,7 @@ namespace OneOf
                 }
             }
         }
-        
+
         public int Index => _index;
 
         public bool IsT0 => _index == 0;
@@ -126,9 +126,9 @@ namespace OneOf
                 return _value0;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
 
         public T1 AsT1
@@ -142,9 +142,9 @@ namespace OneOf
                 return _value1;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
 
         public T2 AsT2
@@ -158,9 +158,9 @@ namespace OneOf
                 return _value2;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
 
         public T3 AsT3
@@ -174,9 +174,9 @@ namespace OneOf
                 return _value3;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
 
         public T4 AsT4
@@ -190,9 +190,9 @@ namespace OneOf
                 return _value4;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
 
         public T5 AsT5
@@ -206,9 +206,9 @@ namespace OneOf
                 return _value5;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
 
         public T6 AsT6
@@ -222,9 +222,9 @@ namespace OneOf
                 return _value6;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
 
         public T7 AsT7
@@ -238,9 +238,9 @@ namespace OneOf
                 return _value7;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
 
         public T8 AsT8
@@ -254,9 +254,9 @@ namespace OneOf
                 return _value8;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
 
         public T9 AsT9
@@ -270,9 +270,9 @@ namespace OneOf
                 return _value9;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
 
         public T10 AsT10
@@ -286,9 +286,9 @@ namespace OneOf
                 return _value10;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
 
         public T11 AsT11
@@ -302,9 +302,9 @@ namespace OneOf
                 return _value11;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
 
         public T12 AsT12
@@ -318,9 +318,9 @@ namespace OneOf
                 return _value12;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(12, value12: t);
-
+        
         public bool IsT13 => _index == 13;
 
         public T13 AsT13
@@ -334,9 +334,9 @@ namespace OneOf
                 return _value13;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(13, value13: t);
-
+        
         public bool IsT14 => _index == 14;
 
         public T14 AsT14
@@ -350,9 +350,9 @@ namespace OneOf
                 return _value14;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(14, value14: t);
-
+        
         public bool IsT15 => _index == 15;
 
         public T15 AsT15
@@ -366,9 +366,9 @@ namespace OneOf
                 return _value15;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T15 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(15, value15: t);
-
+        
         public bool IsT16 => _index == 16;
 
         public T16 AsT16
@@ -382,9 +382,9 @@ namespace OneOf
                 return _value16;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T16 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(16, value16: t);
-
+        
         public bool IsT17 => _index == 17;
 
         public T17 AsT17
@@ -398,9 +398,9 @@ namespace OneOf
                 return _value17;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T17 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(17, value17: t);
-
+        
         public bool IsT18 => _index == 18;
 
         public T18 AsT18
@@ -414,9 +414,9 @@ namespace OneOf
                 return _value18;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T18 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(18, value18: t);
-
+        
         public bool IsT19 => _index == 19;
 
         public T19 AsT19
@@ -430,9 +430,9 @@ namespace OneOf
                 return _value19;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T19 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(19, value19: t);
-
+        
         public bool IsT20 => _index == 20;
 
         public T20 AsT20
@@ -446,9 +446,9 @@ namespace OneOf
                 return _value20;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T20 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(20, value20: t);
-
+        
         public bool IsT21 => _index == 21;
 
         public T21 AsT21
@@ -462,9 +462,9 @@ namespace OneOf
                 return _value21;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(T21 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>(21, value21: t);
-
+        
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21)
         {
             if (_index == 0 && f0 != null)
@@ -814,7 +814,7 @@ namespace OneOf
                 input21 => input21
             );
         }
-
+        
         public OneOf<T0, TResult, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> MapT1<TResult>(Func<T1, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -846,7 +846,7 @@ namespace OneOf
                 input21 => input21
             );
         }
-
+        
         public OneOf<T0, T1, TResult, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> MapT2<TResult>(Func<T2, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -878,7 +878,7 @@ namespace OneOf
                 input21 => input21
             );
         }
-
+        
         public OneOf<T0, T1, T2, TResult, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> MapT3<TResult>(Func<T3, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -910,7 +910,7 @@ namespace OneOf
                 input21 => input21
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, TResult, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> MapT4<TResult>(Func<T4, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -942,7 +942,7 @@ namespace OneOf
                 input21 => input21
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, TResult, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> MapT5<TResult>(Func<T5, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -974,7 +974,7 @@ namespace OneOf
                 input21 => input21
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, TResult, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> MapT6<TResult>(Func<T6, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1006,7 +1006,7 @@ namespace OneOf
                 input21 => input21
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, TResult, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> MapT7<TResult>(Func<T7, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1038,7 +1038,7 @@ namespace OneOf
                 input21 => input21
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, TResult, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> MapT8<TResult>(Func<T8, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1070,7 +1070,7 @@ namespace OneOf
                 input21 => input21
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, TResult, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> MapT9<TResult>(Func<T9, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1102,7 +1102,7 @@ namespace OneOf
                 input21 => input21
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, TResult, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> MapT10<TResult>(Func<T10, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1134,7 +1134,7 @@ namespace OneOf
                 input21 => input21
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, TResult, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> MapT11<TResult>(Func<T11, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1166,7 +1166,7 @@ namespace OneOf
                 input21 => input21
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, TResult, T13, T14, T15, T16, T17, T18, T19, T20, T21> MapT12<TResult>(Func<T12, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1198,7 +1198,7 @@ namespace OneOf
                 input21 => input21
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, TResult, T14, T15, T16, T17, T18, T19, T20, T21> MapT13<TResult>(Func<T13, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1230,7 +1230,7 @@ namespace OneOf
                 input21 => input21
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, TResult, T15, T16, T17, T18, T19, T20, T21> MapT14<TResult>(Func<T14, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1262,7 +1262,7 @@ namespace OneOf
                 input21 => input21
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, TResult, T16, T17, T18, T19, T20, T21> MapT15<TResult>(Func<T15, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1294,7 +1294,7 @@ namespace OneOf
                 input21 => input21
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, TResult, T17, T18, T19, T20, T21> MapT16<TResult>(Func<T16, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1326,7 +1326,7 @@ namespace OneOf
                 input21 => input21
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, TResult, T18, T19, T20, T21> MapT17<TResult>(Func<T17, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1358,7 +1358,7 @@ namespace OneOf
                 input21 => input21
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, TResult, T19, T20, T21> MapT18<TResult>(Func<T18, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1390,7 +1390,7 @@ namespace OneOf
                 input21 => input21
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, TResult, T20, T21> MapT19<TResult>(Func<T19, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1422,7 +1422,7 @@ namespace OneOf
                 input21 => input21
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, TResult, T21> MapT20<TResult>(Func<T20, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1454,7 +1454,7 @@ namespace OneOf
                 input21 => input21
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, TResult> MapT21<TResult>(Func<T21, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1486,7 +1486,7 @@ namespace OneOf
                 input21 => mapFunc(input21)
             );
         }
-
+        
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
 		{
 			value = this.IsT0 ? this.AsT0 : default(T0);
@@ -1723,7 +1723,7 @@ namespace OneOf
         {
             if (ReferenceEquals(null, obj))
                 return false;
-            
+
 
             return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>)obj);
         }

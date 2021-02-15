@@ -32,7 +32,7 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
+
         public object Value
         {
             get
@@ -62,7 +62,7 @@ namespace OneOf
                 }
             }
         }
-        
+
         public int Index => _index;
 
         public bool IsT0 => _index == 0;
@@ -78,7 +78,7 @@ namespace OneOf
                 return _value0;
             }
         }
-
+        
         public bool IsT1 => _index == 1;
 
         public T1 AsT1
@@ -92,7 +92,7 @@ namespace OneOf
                 return _value1;
             }
         }
-
+        
         public bool IsT2 => _index == 2;
 
         public T2 AsT2
@@ -106,7 +106,7 @@ namespace OneOf
                 return _value2;
             }
         }
-
+        
         public bool IsT3 => _index == 3;
 
         public T3 AsT3
@@ -120,7 +120,7 @@ namespace OneOf
                 return _value3;
             }
         }
-
+        
         public bool IsT4 => _index == 4;
 
         public T4 AsT4
@@ -134,7 +134,7 @@ namespace OneOf
                 return _value4;
             }
         }
-
+        
         public bool IsT5 => _index == 5;
 
         public T5 AsT5
@@ -148,7 +148,7 @@ namespace OneOf
                 return _value5;
             }
         }
-
+        
         public bool IsT6 => _index == 6;
 
         public T6 AsT6
@@ -162,7 +162,7 @@ namespace OneOf
                 return _value6;
             }
         }
-
+        
         public bool IsT7 => _index == 7;
 
         public T7 AsT7
@@ -176,7 +176,7 @@ namespace OneOf
                 return _value7;
             }
         }
-
+        
         public bool IsT8 => _index == 8;
 
         public T8 AsT8
@@ -190,7 +190,7 @@ namespace OneOf
                 return _value8;
             }
         }
-
+        
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8)
         {
             if (_index == 0 && f0 != null)
@@ -388,7 +388,7 @@ namespace OneOf
         {
             if (ReferenceEquals(null, obj))
                 return false;
-            
+
 
             if (ReferenceEquals(this, obj))
                 return true;

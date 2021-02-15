@@ -86,7 +86,7 @@ namespace OneOf
                 }
             }
         }
-        
+
         public int Index => _index;
 
         public bool IsT0 => _index == 0;
@@ -102,9 +102,9 @@ namespace OneOf
                 return _value0;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(0, value0: t);
-
+        
         public bool IsT1 => _index == 1;
 
         public T1 AsT1
@@ -118,9 +118,9 @@ namespace OneOf
                 return _value1;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(1, value1: t);
-
+        
         public bool IsT2 => _index == 2;
 
         public T2 AsT2
@@ -134,9 +134,9 @@ namespace OneOf
                 return _value2;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(2, value2: t);
-
+        
         public bool IsT3 => _index == 3;
 
         public T3 AsT3
@@ -150,9 +150,9 @@ namespace OneOf
                 return _value3;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(3, value3: t);
-
+        
         public bool IsT4 => _index == 4;
 
         public T4 AsT4
@@ -166,9 +166,9 @@ namespace OneOf
                 return _value4;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(4, value4: t);
-
+        
         public bool IsT5 => _index == 5;
 
         public T5 AsT5
@@ -182,9 +182,9 @@ namespace OneOf
                 return _value5;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(5, value5: t);
-
+        
         public bool IsT6 => _index == 6;
 
         public T6 AsT6
@@ -198,9 +198,9 @@ namespace OneOf
                 return _value6;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(6, value6: t);
-
+        
         public bool IsT7 => _index == 7;
 
         public T7 AsT7
@@ -214,9 +214,9 @@ namespace OneOf
                 return _value7;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(7, value7: t);
-
+        
         public bool IsT8 => _index == 8;
 
         public T8 AsT8
@@ -230,9 +230,9 @@ namespace OneOf
                 return _value8;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(8, value8: t);
-
+        
         public bool IsT9 => _index == 9;
 
         public T9 AsT9
@@ -246,9 +246,9 @@ namespace OneOf
                 return _value9;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(9, value9: t);
-
+        
         public bool IsT10 => _index == 10;
 
         public T10 AsT10
@@ -262,9 +262,9 @@ namespace OneOf
                 return _value10;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(10, value10: t);
-
+        
         public bool IsT11 => _index == 11;
 
         public T11 AsT11
@@ -278,9 +278,9 @@ namespace OneOf
                 return _value11;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(11, value11: t);
-
+        
         public bool IsT12 => _index == 12;
 
         public T12 AsT12
@@ -294,9 +294,9 @@ namespace OneOf
                 return _value12;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(12, value12: t);
-
+        
         public bool IsT13 => _index == 13;
 
         public T13 AsT13
@@ -310,9 +310,9 @@ namespace OneOf
                 return _value13;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(13, value13: t);
-
+        
         public bool IsT14 => _index == 14;
 
         public T14 AsT14
@@ -326,9 +326,9 @@ namespace OneOf
                 return _value14;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(14, value14: t);
-
+        
         public bool IsT15 => _index == 15;
 
         public T15 AsT15
@@ -342,9 +342,9 @@ namespace OneOf
                 return _value15;
             }
         }
-
+        
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T15 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(15, value15: t);
-
+        
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15)
         {
             if (_index == 0 && f0 != null)
@@ -604,7 +604,7 @@ namespace OneOf
                 input15 => input15
             );
         }
-
+        
         public OneOf<T0, TResult, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> MapT1<TResult>(Func<T1, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -630,7 +630,7 @@ namespace OneOf
                 input15 => input15
             );
         }
-
+        
         public OneOf<T0, T1, TResult, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> MapT2<TResult>(Func<T2, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -656,7 +656,7 @@ namespace OneOf
                 input15 => input15
             );
         }
-
+        
         public OneOf<T0, T1, T2, TResult, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> MapT3<TResult>(Func<T3, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -682,7 +682,7 @@ namespace OneOf
                 input15 => input15
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, TResult, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> MapT4<TResult>(Func<T4, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -708,7 +708,7 @@ namespace OneOf
                 input15 => input15
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, TResult, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> MapT5<TResult>(Func<T5, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -734,7 +734,7 @@ namespace OneOf
                 input15 => input15
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, TResult, T7, T8, T9, T10, T11, T12, T13, T14, T15> MapT6<TResult>(Func<T6, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -760,7 +760,7 @@ namespace OneOf
                 input15 => input15
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, TResult, T8, T9, T10, T11, T12, T13, T14, T15> MapT7<TResult>(Func<T7, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -786,7 +786,7 @@ namespace OneOf
                 input15 => input15
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, TResult, T9, T10, T11, T12, T13, T14, T15> MapT8<TResult>(Func<T8, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -812,7 +812,7 @@ namespace OneOf
                 input15 => input15
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, TResult, T10, T11, T12, T13, T14, T15> MapT9<TResult>(Func<T9, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -838,7 +838,7 @@ namespace OneOf
                 input15 => input15
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, TResult, T11, T12, T13, T14, T15> MapT10<TResult>(Func<T10, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -864,7 +864,7 @@ namespace OneOf
                 input15 => input15
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, TResult, T12, T13, T14, T15> MapT11<TResult>(Func<T11, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -890,7 +890,7 @@ namespace OneOf
                 input15 => input15
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, TResult, T13, T14, T15> MapT12<TResult>(Func<T12, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -916,7 +916,7 @@ namespace OneOf
                 input15 => input15
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, TResult, T14, T15> MapT13<TResult>(Func<T13, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -942,7 +942,7 @@ namespace OneOf
                 input15 => input15
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, TResult, T15> MapT14<TResult>(Func<T14, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -968,7 +968,7 @@ namespace OneOf
                 input15 => input15
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, TResult> MapT15<TResult>(Func<T15, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -994,7 +994,7 @@ namespace OneOf
                 input15 => mapFunc(input15)
             );
         }
-
+        
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> remainder)
 		{
 			value = this.IsT0 ? this.AsT0 : default(T0);
@@ -1171,7 +1171,7 @@ namespace OneOf
         {
             if (ReferenceEquals(null, obj))
                 return false;
-            
+
 
             return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>)obj);
         }
