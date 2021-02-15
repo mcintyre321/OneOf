@@ -1,4 +1,5 @@
 using System;
+using static OneOf.Functions;
 
 namespace OneOf
 {
@@ -24,7 +25,7 @@ namespace OneOf
         readonly T17 _value17;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0), T1 value1 = default(T1), T2 value2 = default(T2), T3 value3 = default(T3), T4 value4 = default(T4), T5 value5 = default(T5), T6 value6 = default(T6), T7 value7 = default(T7), T8 value8 = default(T8), T9 value9 = default(T9), T10 value10 = default(T10), T11 value11 = default(T11), T12 value12 = default(T12), T13 value13 = default(T13), T14 value14 = default(T14), T15 value15 = default(T15), T16 value16 = default(T16), T17 value17 = default(T17))
+        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default, T13 value13 = default, T14 value14 = default, T15 value15 = default, T16 value16 = default, T17 value17 = default)
         {
             _index = index;
             _value0 = value0;
@@ -47,342 +48,141 @@ namespace OneOf
             _value17 = value17;
         }
 
-        public object Value
-        {
-            get
+        public object Value =>
+            _index switch
             {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
-        
+                0 => _value0,
+                1 => _value1,
+                2 => _value2,
+                3 => _value3,
+                4 => _value4,
+                5 => _value5,
+                6 => _value6,
+                7 => _value7,
+                8 => _value8,
+                9 => _value9,
+                10 => _value10,
+                11 => _value11,
+                12 => _value12,
+                13 => _value13,
+                14 => _value14,
+                15 => _value15,
+                16 => _value16,
+                17 => _value17,
+                _ => throw new InvalidOperationException()
+            };
+
         public int Index => _index;
 
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
-        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(0, value0: t);
-
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
-        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(1, value1: t);
-
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
-        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(2, value2: t);
-
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
-        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(3, value3: t);
-
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
-        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(4, value4: t);
-
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
-        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(5, value5: t);
-
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
-        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(6, value6: t);
-
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
-        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(7, value7: t);
-
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
-        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(8, value8: t);
-
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
-        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(9, value9: t);
-
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
-        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(10, value10: t);
-
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
-        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(11, value11: t);
-
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
-        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(12, value12: t);
-
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
-        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(13, value13: t);
-
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
-        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(14, value14: t);
-
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
-        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T15 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(15, value15: t);
-
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
-        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T16 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(16, value16: t);
-
         public bool IsT17 => _index == 17;
 
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
 
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(0, value0: t);
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(1, value1: t);
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T2 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(2, value2: t);
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T3 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(3, value3: t);
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T4 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(4, value4: t);
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T5 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(5, value5: t);
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(6, value6: t);
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(7, value7: t);
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T8 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(8, value8: t);
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T9 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(9, value9: t);
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T10 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(10, value10: t);
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T11 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(11, value11: t);
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T12 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(12, value12: t);
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T13 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(13, value13: t);
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T14 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(14, value14: t);
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T15 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(15, value15: t);
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T16 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(16, value16: t);
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(T17 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>(17, value17: t);
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17)
@@ -557,95 +357,24 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT0(T0 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT1(T1 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT2(T2 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT3(T3 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT4(T4 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT5(T5 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT6(T6 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT7(T7 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT8(T8 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT9(T9 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT10(T10 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT11(T11 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT12(T12 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT13(T13 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT14(T14 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT15(T15 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT16(T16 input)
-        {
-            return input;
-        }
-
-        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT17(T17 input)
-        {
-            return input;
-        }
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT0(T0 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT1(T1 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT2(T2 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT3(T3 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT4(T4 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT5(T5 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT6(T6 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT7(T7 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT8(T8 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT9(T9 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT10(T10 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT11(T11 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT12(T12 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT13(T13 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT14(T14 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT15(T15 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT16(T16 input) => input;
+        public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> FromT17(T17 input) => input;
 
         public OneOf<TResult, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -674,7 +403,7 @@ namespace OneOf
                 input17 => input17
             );
         }
-
+        
         public OneOf<T0, TResult, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> MapT1<TResult>(Func<T1, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -702,7 +431,7 @@ namespace OneOf
                 input17 => input17
             );
         }
-
+        
         public OneOf<T0, T1, TResult, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> MapT2<TResult>(Func<T2, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -730,7 +459,7 @@ namespace OneOf
                 input17 => input17
             );
         }
-
+        
         public OneOf<T0, T1, T2, TResult, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> MapT3<TResult>(Func<T3, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -758,7 +487,7 @@ namespace OneOf
                 input17 => input17
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, TResult, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> MapT4<TResult>(Func<T4, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -786,7 +515,7 @@ namespace OneOf
                 input17 => input17
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, TResult, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> MapT5<TResult>(Func<T5, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -814,7 +543,7 @@ namespace OneOf
                 input17 => input17
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, TResult, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> MapT6<TResult>(Func<T6, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -842,7 +571,7 @@ namespace OneOf
                 input17 => input17
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, TResult, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> MapT7<TResult>(Func<T7, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -870,7 +599,7 @@ namespace OneOf
                 input17 => input17
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, TResult, T9, T10, T11, T12, T13, T14, T15, T16, T17> MapT8<TResult>(Func<T8, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -898,7 +627,7 @@ namespace OneOf
                 input17 => input17
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, TResult, T10, T11, T12, T13, T14, T15, T16, T17> MapT9<TResult>(Func<T9, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -926,7 +655,7 @@ namespace OneOf
                 input17 => input17
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, TResult, T11, T12, T13, T14, T15, T16, T17> MapT10<TResult>(Func<T10, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -954,7 +683,7 @@ namespace OneOf
                 input17 => input17
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, TResult, T12, T13, T14, T15, T16, T17> MapT11<TResult>(Func<T11, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -982,7 +711,7 @@ namespace OneOf
                 input17 => input17
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, TResult, T13, T14, T15, T16, T17> MapT12<TResult>(Func<T12, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1010,7 +739,7 @@ namespace OneOf
                 input17 => input17
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, TResult, T14, T15, T16, T17> MapT13<TResult>(Func<T13, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1038,7 +767,7 @@ namespace OneOf
                 input17 => input17
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, TResult, T15, T16, T17> MapT14<TResult>(Func<T14, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1066,7 +795,7 @@ namespace OneOf
                 input17 => input17
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, TResult, T16, T17> MapT15<TResult>(Func<T15, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1094,7 +823,7 @@ namespace OneOf
                 input17 => input17
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, TResult, T17> MapT16<TResult>(Func<T16, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1122,7 +851,7 @@ namespace OneOf
                 input17 => input17
             );
         }
-
+        
         public OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, TResult> MapT17<TResult>(Func<T17, TResult> mapFunc)
         {
             if(mapFunc == null)
@@ -1150,7 +879,7 @@ namespace OneOf
                 input17 => mapFunc(input17)
             );
         }
-
+        
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> remainder)
 		{
 			value = this.IsT0 ? this.AsT0 : default(T0);
@@ -1313,136 +1042,90 @@ namespace OneOf
 			return this.IsT17;
 		}
 
-        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                case 14: return Equals(_value14, other._value14);
-                case 15: return Equals(_value15, other._value15);
-                case 16: return Equals(_value16, other._value16);
-                case 17: return Equals(_value17, other._value17);
-                default: return false;
-            }
-        }
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                14 => Equals(_value14, other._value14),
+                15 => Equals(_value15, other._value15),
+                16 => Equals(_value16, other._value16),
+                17 => Equals(_value17, other._value17),
+                _ => false
+            };
 
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
+            {
                 return false;
-            
-
-            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> && Equals((OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17>)obj);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
             }
+
+            return obj is OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17> o && Equals(o);
         }
+
+        public override string ToString() =>
+            _index switch {
+                0 => FormatValue(_value0),
+                1 => FormatValue(_value1),
+                2 => FormatValue(_value2),
+                3 => FormatValue(_value3),
+                4 => FormatValue(_value4),
+                5 => FormatValue(_value5),
+                6 => FormatValue(_value6),
+                7 => FormatValue(_value7),
+                8 => FormatValue(_value8),
+                9 => FormatValue(_value9),
+                10 => FormatValue(_value10),
+                11 => FormatValue(_value11),
+                12 => FormatValue(_value12),
+                13 => FormatValue(_value13),
+                14 => FormatValue(_value14),
+                15 => FormatValue(_value15),
+                16 => FormatValue(_value16),
+                17 => FormatValue(_value17),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
 
         public override int GetHashCode()
         {
             unchecked
             {
-                int hashCode;
-                switch (_index)
+                int hashCode = _index switch
                 {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    case 14:
-                    hashCode = _value14?.GetHashCode() ?? 0;
-                    break;
-                    case 15:
-                    hashCode = _value15?.GetHashCode() ?? 0;
-                    break;
-                    case 16:
-                    hashCode = _value16?.GetHashCode() ?? 0;
-                    break;
-                    case 17:
-                    hashCode = _value17?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
+                    0 => _value0?.GetHashCode(),
+                    1 => _value1?.GetHashCode(),
+                    2 => _value2?.GetHashCode(),
+                    3 => _value3?.GetHashCode(),
+                    4 => _value4?.GetHashCode(),
+                    5 => _value5?.GetHashCode(),
+                    6 => _value6?.GetHashCode(),
+                    7 => _value7?.GetHashCode(),
+                    8 => _value8?.GetHashCode(),
+                    9 => _value9?.GetHashCode(),
+                    10 => _value10?.GetHashCode(),
+                    11 => _value11?.GetHashCode(),
+                    12 => _value12?.GetHashCode(),
+                    13 => _value13?.GetHashCode(),
+                    14 => _value14?.GetHashCode(),
+                    15 => _value15?.GetHashCode(),
+                    16 => _value16?.GetHashCode(),
+                    17 => _value17?.GetHashCode(),
+                    _ => 0
+                } ?? 0;
                 return (hashCode*397) ^ _index;
             }
         }

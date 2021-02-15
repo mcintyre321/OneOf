@@ -1,4 +1,5 @@
 using System;
+using static OneOf.Functions;
 
 namespace OneOf
 {
@@ -58,372 +59,150 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
-        public object Value
-        {
-            get
+
+        public object Value =>
+            _index switch
             {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    case 6:
-                        return _value6;
-                    case 7:
-                        return _value7;
-                    case 8:
-                        return _value8;
-                    case 9:
-                        return _value9;
-                    case 10:
-                        return _value10;
-                    case 11:
-                        return _value11;
-                    case 12:
-                        return _value12;
-                    case 13:
-                        return _value13;
-                    case 14:
-                        return _value14;
-                    case 15:
-                        return _value15;
-                    case 16:
-                        return _value16;
-                    case 17:
-                        return _value17;
-                    case 18:
-                        return _value18;
-                    case 19:
-                        return _value19;
-                    case 20:
-                        return _value20;
-                    case 21:
-                        return _value21;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
-        
+                0 => _value0,
+                1 => _value1,
+                2 => _value2,
+                3 => _value3,
+                4 => _value4,
+                5 => _value5,
+                6 => _value6,
+                7 => _value7,
+                8 => _value8,
+                9 => _value9,
+                10 => _value10,
+                11 => _value11,
+                12 => _value12,
+                13 => _value13,
+                14 => _value14,
+                15 => _value15,
+                16 => _value16,
+                17 => _value17,
+                18 => _value18,
+                19 => _value19,
+                20 => _value20,
+                21 => _value21,
+                _ => throw new InvalidOperationException()
+            };
+
         public int Index => _index;
 
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
         public bool IsT5 => _index == 5;
-
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
-
         public bool IsT6 => _index == 6;
-
-        public T6 AsT6
-        {
-            get
-            {
-                if (_index != 6)
-                {
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-                }
-                return _value6;
-            }
-        }
-
         public bool IsT7 => _index == 7;
-
-        public T7 AsT7
-        {
-            get
-            {
-                if (_index != 7)
-                {
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-                }
-                return _value7;
-            }
-        }
-
         public bool IsT8 => _index == 8;
-
-        public T8 AsT8
-        {
-            get
-            {
-                if (_index != 8)
-                {
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-                }
-                return _value8;
-            }
-        }
-
         public bool IsT9 => _index == 9;
-
-        public T9 AsT9
-        {
-            get
-            {
-                if (_index != 9)
-                {
-                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-                }
-                return _value9;
-            }
-        }
-
         public bool IsT10 => _index == 10;
-
-        public T10 AsT10
-        {
-            get
-            {
-                if (_index != 10)
-                {
-                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
-                }
-                return _value10;
-            }
-        }
-
         public bool IsT11 => _index == 11;
-
-        public T11 AsT11
-        {
-            get
-            {
-                if (_index != 11)
-                {
-                    throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
-                }
-                return _value11;
-            }
-        }
-
         public bool IsT12 => _index == 12;
-
-        public T12 AsT12
-        {
-            get
-            {
-                if (_index != 12)
-                {
-                    throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
-                }
-                return _value12;
-            }
-        }
-
         public bool IsT13 => _index == 13;
-
-        public T13 AsT13
-        {
-            get
-            {
-                if (_index != 13)
-                {
-                    throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
-                }
-                return _value13;
-            }
-        }
-
         public bool IsT14 => _index == 14;
-
-        public T14 AsT14
-        {
-            get
-            {
-                if (_index != 14)
-                {
-                    throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
-                }
-                return _value14;
-            }
-        }
-
         public bool IsT15 => _index == 15;
-
-        public T15 AsT15
-        {
-            get
-            {
-                if (_index != 15)
-                {
-                    throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
-                }
-                return _value15;
-            }
-        }
-
         public bool IsT16 => _index == 16;
-
-        public T16 AsT16
-        {
-            get
-            {
-                if (_index != 16)
-                {
-                    throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
-                }
-                return _value16;
-            }
-        }
-
         public bool IsT17 => _index == 17;
-
-        public T17 AsT17
-        {
-            get
-            {
-                if (_index != 17)
-                {
-                    throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
-                }
-                return _value17;
-            }
-        }
-
         public bool IsT18 => _index == 18;
-
-        public T18 AsT18
-        {
-            get
-            {
-                if (_index != 18)
-                {
-                    throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
-                }
-                return _value18;
-            }
-        }
-
         public bool IsT19 => _index == 19;
-
-        public T19 AsT19
-        {
-            get
-            {
-                if (_index != 19)
-                {
-                    throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
-                }
-                return _value19;
-            }
-        }
-
         public bool IsT20 => _index == 20;
-
-        public T20 AsT20
-        {
-            get
-            {
-                if (_index != 20)
-                {
-                    throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
-                }
-                return _value20;
-            }
-        }
-
         public bool IsT21 => _index == 21;
 
-        public T21 AsT21
-        {
-            get
-            {
-                if (_index != 21)
-                {
-                    throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
-                }
-                return _value21;
-            }
-        }
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
+        public T9 AsT9 =>
+            _index == 9 ?
+                _value9 :
+                throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
+        public T10 AsT10 =>
+            _index == 10 ?
+                _value10 :
+                throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
+        public T11 AsT11 =>
+            _index == 11 ?
+                _value11 :
+                throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
+        public T12 AsT12 =>
+            _index == 12 ?
+                _value12 :
+                throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
+        public T13 AsT13 =>
+            _index == 13 ?
+                _value13 :
+                throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
+        public T14 AsT14 =>
+            _index == 14 ?
+                _value14 :
+                throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
+        public T15 AsT15 =>
+            _index == 15 ?
+                _value15 :
+                throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
+        public T16 AsT16 =>
+            _index == 16 ?
+                _value16 :
+                throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
+        public T17 AsT17 =>
+            _index == 17 ?
+                _value17 :
+                throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
+        public T18 AsT18 =>
+            _index == 18 ?
+                _value18 :
+                throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
+        public T19 AsT19 =>
+            _index == 19 ?
+                _value19 :
+                throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
+        public T20 AsT20 =>
+            _index == 20 ?
+                _value20 :
+                throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
+        public T21 AsT21 =>
+            _index == 21 ?
+                _value21 :
+                throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
+
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9, Action<T10> f10, Action<T11> f11, Action<T12> f12, Action<T13> f13, Action<T14> f14, Action<T15> f15, Action<T16> f16, Action<T17> f17, Action<T18> f18, Action<T19> f19, Action<T20> f20, Action<T21> f21)
         {
@@ -633,6 +412,8 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        
+
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> remainder)
 		{
 			value = this.IsT0 ? this.AsT0 : default(T0);
@@ -831,160 +612,106 @@ namespace OneOf
 			return this.IsT21;
 		}
 
-        bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                case 6: return Equals(_value6, other._value6);
-                case 7: return Equals(_value7, other._value7);
-                case 8: return Equals(_value8, other._value8);
-                case 9: return Equals(_value9, other._value9);
-                case 10: return Equals(_value10, other._value10);
-                case 11: return Equals(_value11, other._value11);
-                case 12: return Equals(_value12, other._value12);
-                case 13: return Equals(_value13, other._value13);
-                case 14: return Equals(_value14, other._value14);
-                case 15: return Equals(_value15, other._value15);
-                case 16: return Equals(_value16, other._value16);
-                case 17: return Equals(_value17, other._value17);
-                case 18: return Equals(_value18, other._value18);
-                case 19: return Equals(_value19, other._value19);
-                case 20: return Equals(_value20, other._value20);
-                case 21: return Equals(_value21, other._value21);
-                default: return false;
-            }
-        }
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                6 => Equals(_value6, other._value6),
+                7 => Equals(_value7, other._value7),
+                8 => Equals(_value8, other._value8),
+                9 => Equals(_value9, other._value9),
+                10 => Equals(_value10, other._value10),
+                11 => Equals(_value11, other._value11),
+                12 => Equals(_value12, other._value12),
+                13 => Equals(_value13, other._value13),
+                14 => Equals(_value14, other._value14),
+                15 => Equals(_value15, other._value15),
+                16 => Equals(_value16, other._value16),
+                17 => Equals(_value17, other._value17),
+                18 => Equals(_value18, other._value18),
+                19 => Equals(_value19, other._value19),
+                20 => Equals(_value20, other._value20),
+                21 => Equals(_value21, other._value21),
+                _ => false
+            };
 
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
+            {
                 return false;
-            
-
-            if (ReferenceEquals(this, obj))
-                return true;
-
-            var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21>;
-            return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => object.ReferenceEquals(this, value) ? base.ToString() : $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                case 6: return FormatValue(typeof(T6), _value6);
-                case 7: return FormatValue(typeof(T7), _value7);
-                case 8: return FormatValue(typeof(T8), _value8);
-                case 9: return FormatValue(typeof(T9), _value9);
-                case 10: return FormatValue(typeof(T10), _value10);
-                case 11: return FormatValue(typeof(T11), _value11);
-                case 12: return FormatValue(typeof(T12), _value12);
-                case 13: return FormatValue(typeof(T13), _value13);
-                case 14: return FormatValue(typeof(T14), _value14);
-                case 15: return FormatValue(typeof(T15), _value15);
-                case 16: return FormatValue(typeof(T16), _value16);
-                case 17: return FormatValue(typeof(T17), _value17);
-                case 18: return FormatValue(typeof(T18), _value18);
-                case 19: return FormatValue(typeof(T19), _value19);
-                case 20: return FormatValue(typeof(T20), _value20);
-                case 21: return FormatValue(typeof(T21), _value21);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
             }
+
+            if (ReferenceEquals(this, obj)) {
+                    return true;
+            }
+
+            return obj is OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> o && Equals(o);
         }
+
+        public override string ToString() =>
+            _index switch {
+                0 => FormatValue(_value0),
+                1 => FormatValue(_value1),
+                2 => FormatValue(_value2),
+                3 => FormatValue(_value3),
+                4 => FormatValue(_value4),
+                5 => FormatValue(_value5),
+                6 => FormatValue(_value6),
+                7 => FormatValue(_value7),
+                8 => FormatValue(_value8),
+                9 => FormatValue(_value9),
+                10 => FormatValue(_value10),
+                11 => FormatValue(_value11),
+                12 => FormatValue(_value12),
+                13 => FormatValue(_value13),
+                14 => FormatValue(_value14),
+                15 => FormatValue(_value15),
+                16 => FormatValue(_value16),
+                17 => FormatValue(_value17),
+                18 => FormatValue(_value18),
+                19 => FormatValue(_value19),
+                20 => FormatValue(_value20),
+                21 => FormatValue(_value21),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
 
         public override int GetHashCode()
         {
             unchecked
             {
-                int hashCode;
-                switch (_index)
+                int hashCode = _index switch
                 {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    case 6:
-                    hashCode = _value6?.GetHashCode() ?? 0;
-                    break;
-                    case 7:
-                    hashCode = _value7?.GetHashCode() ?? 0;
-                    break;
-                    case 8:
-                    hashCode = _value8?.GetHashCode() ?? 0;
-                    break;
-                    case 9:
-                    hashCode = _value9?.GetHashCode() ?? 0;
-                    break;
-                    case 10:
-                    hashCode = _value10?.GetHashCode() ?? 0;
-                    break;
-                    case 11:
-                    hashCode = _value11?.GetHashCode() ?? 0;
-                    break;
-                    case 12:
-                    hashCode = _value12?.GetHashCode() ?? 0;
-                    break;
-                    case 13:
-                    hashCode = _value13?.GetHashCode() ?? 0;
-                    break;
-                    case 14:
-                    hashCode = _value14?.GetHashCode() ?? 0;
-                    break;
-                    case 15:
-                    hashCode = _value15?.GetHashCode() ?? 0;
-                    break;
-                    case 16:
-                    hashCode = _value16?.GetHashCode() ?? 0;
-                    break;
-                    case 17:
-                    hashCode = _value17?.GetHashCode() ?? 0;
-                    break;
-                    case 18:
-                    hashCode = _value18?.GetHashCode() ?? 0;
-                    break;
-                    case 19:
-                    hashCode = _value19?.GetHashCode() ?? 0;
-                    break;
-                    case 20:
-                    hashCode = _value20?.GetHashCode() ?? 0;
-                    break;
-                    case 21:
-                    hashCode = _value21?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
+                    0 => _value0?.GetHashCode(),
+                    1 => _value1?.GetHashCode(),
+                    2 => _value2?.GetHashCode(),
+                    3 => _value3?.GetHashCode(),
+                    4 => _value4?.GetHashCode(),
+                    5 => _value5?.GetHashCode(),
+                    6 => _value6?.GetHashCode(),
+                    7 => _value7?.GetHashCode(),
+                    8 => _value8?.GetHashCode(),
+                    9 => _value9?.GetHashCode(),
+                    10 => _value10?.GetHashCode(),
+                    11 => _value11?.GetHashCode(),
+                    12 => _value12?.GetHashCode(),
+                    13 => _value13?.GetHashCode(),
+                    14 => _value14?.GetHashCode(),
+                    15 => _value15?.GetHashCode(),
+                    16 => _value16?.GetHashCode(),
+                    17 => _value17?.GetHashCode(),
+                    18 => _value18?.GetHashCode(),
+                    19 => _value19?.GetHashCode(),
+                    20 => _value20?.GetHashCode(),
+                    21 => _value21?.GetHashCode(),
+                    _ => 0
+                } ?? 0;
                 return (hashCode*397) ^ _index;
             }
         }

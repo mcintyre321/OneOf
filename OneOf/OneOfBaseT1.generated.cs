@@ -1,4 +1,5 @@
 using System;
+using static OneOf.Functions;
 
 namespace OneOf
 {
@@ -18,52 +19,30 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
-        public object Value
-        {
-            get
+
+        public object Value =>
+            _index switch
             {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
-        
+                0 => _value0,
+                1 => _value1,
+                _ => throw new InvalidOperationException()
+            };
+
         public int Index => _index;
 
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
         public bool IsT1 => _index == 1;
 
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
+
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1)
         {
@@ -93,6 +72,8 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        
+
 		public bool TryPickT0(out T0 value, out T1 remainder)
 		{
 			value = this.IsT0 ? this.AsT0 : default(T0);
@@ -107,60 +88,46 @@ namespace OneOf
 			return this.IsT1;
 		}
 
-        bool Equals(OneOfBase<T0, T1> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOfBase<T0, T1> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                default: return false;
-            }
-        }
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                _ => false
+            };
 
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
+            {
                 return false;
-            
-
-            if (ReferenceEquals(this, obj))
-                return true;
-
-            var other = obj as OneOfBase<T0, T1>;
-            return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => object.ReferenceEquals(this, value) ? base.ToString() : $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
             }
+
+            if (ReferenceEquals(this, obj)) {
+                    return true;
+            }
+
+            return obj is OneOfBase<T0, T1> o && Equals(o);
         }
+
+        public override string ToString() =>
+            _index switch {
+                0 => FormatValue(_value0),
+                1 => FormatValue(_value1),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
 
         public override int GetHashCode()
         {
             unchecked
             {
-                int hashCode;
-                switch (_index)
+                int hashCode = _index switch
                 {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
+                    0 => _value0?.GetHashCode(),
+                    1 => _value1?.GetHashCode(),
+                    _ => 0
+                } ?? 0;
                 return (hashCode*397) ^ _index;
             }
         }
