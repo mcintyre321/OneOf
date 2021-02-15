@@ -1,4 +1,5 @@
 using System;
+using static OneOf.Functions;
 
 namespace OneOf
 {
@@ -16,36 +17,24 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
-        public object Value
-        {
-            get
+
+        public object Value =>
+            _index switch
             {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
-        
+                0 => _value0,
+                _ => throw new InvalidOperationException()
+            };
+
         public int Index => _index;
 
         public bool IsT0 => _index == 0;
 
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
+
+        
 
         public void Switch(Action<T0> f0)
         {
@@ -66,55 +55,45 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        bool Equals(OneOfBase<T0> other)
-        {
-            if (_index != other._index)
+        
+
+        bool Equals(OneOfBase<T0> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                default: return false;
-            }
-        }
+                0 => Equals(_value0, other._value0),
+                _ => false
+            };
 
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
+            {
                 return false;
-            
-
-            if (ReferenceEquals(this, obj))
-                return true;
-
-            var other = obj as OneOfBase<T0>;
-            return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => object.ReferenceEquals(this, value) ? base.ToString() : $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
             }
+
+            if (ReferenceEquals(this, obj)) {
+                    return true;
+            }
+
+            return obj is OneOfBase<T0> o && Equals(o);
         }
+
+        public override string ToString() =>
+            _index switch {
+                0 => FormatValue(_value0),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
 
         public override int GetHashCode()
         {
             unchecked
             {
-                int hashCode;
-                switch (_index)
+                int hashCode = _index switch
                 {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
+                    0 => _value0?.GetHashCode(),
+                    _ => 0
+                } ?? 0;
                 return (hashCode*397) ^ _index;
             }
         }

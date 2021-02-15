@@ -1,4 +1,5 @@
 using System;
+using static OneOf.Functions;
 
 namespace OneOf
 {
@@ -7,41 +8,27 @@ namespace OneOf
         readonly T0 _value0;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default(T0))
+        OneOf(int index, T0 value0 = default)
         {
             _index = index;
             _value0 = value0;
         }
 
-        public object Value
-        {
-            get
+        public object Value =>
+            _index switch
             {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
-        
+                0 => _value0,
+                _ => throw new InvalidOperationException()
+            };
+
         public int Index => _index;
 
         public bool IsT0 => _index == 0;
 
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
 
         public static implicit operator OneOf<T0>(T0 t) => new OneOf<T0>(0, value0: t);
 
@@ -64,10 +51,7 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public static OneOf<T0> FromT0(T0 input)
-        {
-            return input;
-        }
+        public static OneOf<T0> FromT0(T0 input) => input;
 
         public OneOf<TResult> MapT0<TResult>(Func<T0, TResult> mapFunc)
         {
@@ -79,52 +63,40 @@ namespace OneOf
                 input0 => mapFunc(input0)
             );
         }
-
-        bool Equals(OneOf<T0> other)
-        {
-            if (_index != other._index)
+        
+        bool Equals(OneOf<T0> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                default: return false;
-            }
-        }
+                0 => Equals(_value0, other._value0),
+                _ => false
+            };
 
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
+            {
                 return false;
-            
-
-            return obj is OneOf<T0> && Equals((OneOf<T0>)obj);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
             }
+
+            return obj is OneOf<T0> o && Equals(o);
         }
+
+        public override string ToString() =>
+            _index switch {
+                0 => FormatValue(_value0),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
 
         public override int GetHashCode()
         {
             unchecked
             {
-                int hashCode;
-                switch (_index)
+                int hashCode = _index switch
                 {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
+                    0 => _value0?.GetHashCode(),
+                    _ => 0
+                } ?? 0;
                 return (hashCode*397) ^ _index;
             }
         }

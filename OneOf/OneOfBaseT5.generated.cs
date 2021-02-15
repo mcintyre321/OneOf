@@ -1,4 +1,5 @@
 using System;
+using static OneOf.Functions;
 
 namespace OneOf
 {
@@ -26,116 +27,54 @@ namespace OneOf
                 default: throw new InvalidOperationException();
             }
         }
-        
-        public object Value
-        {
-            get
+
+        public object Value =>
+            _index switch
             {
-                switch (_index)
-                {
-                    case 0:
-                        return _value0;
-                    case 1:
-                        return _value1;
-                    case 2:
-                        return _value2;
-                    case 3:
-                        return _value3;
-                    case 4:
-                        return _value4;
-                    case 5:
-                        return _value5;
-                    default:
-                        throw new InvalidOperationException();
-                }
-            }
-        }
-        
+                0 => _value0,
+                1 => _value1,
+                2 => _value2,
+                3 => _value3,
+                4 => _value4,
+                5 => _value5,
+                _ => throw new InvalidOperationException()
+            };
+
         public int Index => _index;
 
         public bool IsT0 => _index == 0;
-
-        public T0 AsT0
-        {
-            get
-            {
-                if (_index != 0)
-                {
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-                }
-                return _value0;
-            }
-        }
-
         public bool IsT1 => _index == 1;
-
-        public T1 AsT1
-        {
-            get
-            {
-                if (_index != 1)
-                {
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-                }
-                return _value1;
-            }
-        }
-
         public bool IsT2 => _index == 2;
-
-        public T2 AsT2
-        {
-            get
-            {
-                if (_index != 2)
-                {
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-                }
-                return _value2;
-            }
-        }
-
         public bool IsT3 => _index == 3;
-
-        public T3 AsT3
-        {
-            get
-            {
-                if (_index != 3)
-                {
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-                }
-                return _value3;
-            }
-        }
-
         public bool IsT4 => _index == 4;
-
-        public T4 AsT4
-        {
-            get
-            {
-                if (_index != 4)
-                {
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-                }
-                return _value4;
-            }
-        }
-
         public bool IsT5 => _index == 5;
 
-        public T5 AsT5
-        {
-            get
-            {
-                if (_index != 5)
-                {
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-                }
-                return _value5;
-            }
-        }
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
+
+        
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5)
         {
@@ -201,6 +140,8 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        
+
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5> remainder)
 		{
 			value = this.IsT0 ? this.AsT0 : default(T0);
@@ -255,80 +196,58 @@ namespace OneOf
 			return this.IsT5;
 		}
 
-        bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5> other)
-        {
-            if (_index != other._index)
+        bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5> other) =>
+            _index == other._index &&
+            _index switch
             {
-                return false;
-            }
-            switch (_index)
-            {
-                case 0: return Equals(_value0, other._value0);
-                case 1: return Equals(_value1, other._value1);
-                case 2: return Equals(_value2, other._value2);
-                case 3: return Equals(_value3, other._value3);
-                case 4: return Equals(_value4, other._value4);
-                case 5: return Equals(_value5, other._value5);
-                default: return false;
-            }
-        }
+                0 => Equals(_value0, other._value0),
+                1 => Equals(_value1, other._value1),
+                2 => Equals(_value2, other._value2),
+                3 => Equals(_value3, other._value3),
+                4 => Equals(_value4, other._value4),
+                5 => Equals(_value5, other._value5),
+                _ => false
+            };
 
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
+            {
                 return false;
-            
-
-            if (ReferenceEquals(this, obj))
-                return true;
-
-            var other = obj as OneOfBase<T0, T1, T2, T3, T4, T5>;
-            return other != null && Equals(other);
-        }
-
-        public override string ToString()
-        {
-            string FormatValue<T>(Type type, T value) => object.ReferenceEquals(this, value) ? base.ToString() : $"{type.FullName}: {value?.ToString()}";
-            switch(_index) {
-                case 0: return FormatValue(typeof(T0), _value0);
-                case 1: return FormatValue(typeof(T1), _value1);
-                case 2: return FormatValue(typeof(T2), _value2);
-                case 3: return FormatValue(typeof(T3), _value3);
-                case 4: return FormatValue(typeof(T4), _value4);
-                case 5: return FormatValue(typeof(T5), _value5);
-                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
             }
+
+            if (ReferenceEquals(this, obj)) {
+                    return true;
+            }
+
+            return obj is OneOfBase<T0, T1, T2, T3, T4, T5> o && Equals(o);
         }
+
+        public override string ToString() =>
+            _index switch {
+                0 => FormatValue(_value0),
+                1 => FormatValue(_value1),
+                2 => FormatValue(_value2),
+                3 => FormatValue(_value3),
+                4 => FormatValue(_value4),
+                5 => FormatValue(_value5),
+                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
+            };
 
         public override int GetHashCode()
         {
             unchecked
             {
-                int hashCode;
-                switch (_index)
+                int hashCode = _index switch
                 {
-                    case 0:
-                    hashCode = _value0?.GetHashCode() ?? 0;
-                    break;
-                    case 1:
-                    hashCode = _value1?.GetHashCode() ?? 0;
-                    break;
-                    case 2:
-                    hashCode = _value2?.GetHashCode() ?? 0;
-                    break;
-                    case 3:
-                    hashCode = _value3?.GetHashCode() ?? 0;
-                    break;
-                    case 4:
-                    hashCode = _value4?.GetHashCode() ?? 0;
-                    break;
-                    case 5:
-                    hashCode = _value5?.GetHashCode() ?? 0;
-                    break;
-                    default:
-                        hashCode = 0;
-                        break;
-                }
+                    0 => _value0?.GetHashCode(),
+                    1 => _value1?.GetHashCode(),
+                    2 => _value2?.GetHashCode(),
+                    3 => _value3?.GetHashCode(),
+                    4 => _value4?.GetHashCode(),
+                    5 => _value5?.GetHashCode(),
+                    _ => 0
+                } ?? 0;
                 return (hashCode*397) ^ _index;
             }
         }
