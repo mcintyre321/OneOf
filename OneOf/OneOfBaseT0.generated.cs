@@ -18,12 +18,13 @@ namespace OneOf
             }
         }
 
-        public object Value =>
-            _index switch
-            {
-                0 => _value0,
-                _ => throw new InvalidOperationException()
-            };
+    public object Value { get {
+                    switch (_index)
+                    {
+                            case 0: return _value0;
+                            default: throw new InvalidOperationException();
+                        };
+                } }
 
         public int Index => _index;
 
@@ -59,13 +60,15 @@ namespace OneOf
 
         
 
-        bool Equals(OneOfBase<T0> other) =>
-            _index == other._index &&
-            _index switch
+        bool Equals(OneOfBase<T0> other) {
+            var check1 = _index == other._index;
+            if (!check1) { return false; }
+            switch (_index)
             {
-                0 => Equals(_value0, other._value0),
-                _ => false
+                case 0: return check1 && Equals(_value0, other._value0);
+                default: return false;
             };
+                             }
 
         public override bool Equals(object obj)
         {
@@ -81,21 +84,23 @@ namespace OneOf
             return obj is OneOfBase<T0> o && Equals(o);
         }
 
-        public override string ToString() =>
-            _index switch {
-                0 => FormatValue(_value0),
-                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
-            };
+        public override string ToString() {
+            switch (_index) {
+                case 0: return FormatValue(_value0);
+                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
+            }
+                                 }
 
         public override int GetHashCode()
         {
             unchecked
             {
-                int hashCode = _index switch
+                    int hashCode;
+                    switch (_index)
                 {
-                    0 => _value0?.GetHashCode(),
-                    _ => 0
-                } ?? 0;
+                    case 0: { hashCode = _value0?.GetHashCode() ?? 0; break; }
+                    default: { hashCode = 0; break; }
+                }
                 return (hashCode*397) ^ _index;
             }
         }
