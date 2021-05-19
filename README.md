@@ -176,7 +176,7 @@ You can automatically generate `OneOfBase` hierarchies using `GenerateOneOfAttri
 ```csharp
 [GenerateOneOf]
 public partial class StringOrNumber : OneOfBase<string, int> { }
-```
+```csharp
 
 During compilation `OneOfGenerator` will produce a class with all implicit operators already generated
 ```csharp
