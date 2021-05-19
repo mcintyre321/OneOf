@@ -66,13 +66,28 @@ namespace OneOf.SourceGenerator.Tests
 
             Assert.Equal(testClass, test);
         }
+
+        [Fact]
+        public void GenerateOneOf_Works_With_Class_Names_Conflicts()
+        {
+            NotOneOf.OneOf notOneOf = new();
+
+            MyClassOrFakeOneOf myClass2OrFakeOneOf = notOneOf;
+
+            NotOneOf.OneOf test = myClass2OrFakeOneOf;
+
+            Assert.Equal(notOneOf, test);
+        }
     }
 
     [GenerateOneOf]
-    public partial class StringOrNumber : OneOf.OneOfBase<System.String, System.Int32, System.UInt32> { }
+    public partial class StringOrNumber : OneOfBase<string, int, uint> { }
 
     [GenerateOneOf]
-    public partial class MyClass2OrMyClass : OneOf.OneOfBase<MyClass, MyClass2> { }
+    public partial class MyClass2OrMyClass : OneOfBase<MyClass, MyClass2> { }
+
+    [GenerateOneOf]
+    public partial class MyClassOrFakeOneOf : OneOfBase<MyClass, NotOneOf.OneOf> { }
 
     public class MyClass
     {
@@ -80,6 +95,14 @@ namespace OneOf.SourceGenerator.Tests
     }
 
     public class MyClass2
+    {
+
+    }
+}
+
+namespace NotOneOf
+{
+    public class OneOf
     {
 
     }
