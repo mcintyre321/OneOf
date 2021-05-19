@@ -146,11 +146,12 @@ namespace {_attributeNamespace}
 
             string generics = string.Join(", ", typeArguments.Select(x => x.GetFullName()));
 
+            //Partial declarations of '...' must not specify different base classes?
             StringBuilder source = new($@"using System;
 
 namespace {classSymbol.ContainingNamespace.ToDisplayString()}
 {{
-    public partial class {classSymbol.Name} : OneOf.OneOfBase<{generics}>
+    public partial class {classSymbol.Name} //: OneOf.OneOfBase<{generics}>
     {{
         public {classSymbol.Name}(OneOf.OneOf<{generics}> _) : base(_) {{ }}
 ");
@@ -180,8 +181,8 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
 		   // return Value.Equals(other.Value);
 	    //}}
 
-	    public static bool operator ==({classSymbol.Name} left, {classSymbol.Name} right) => Equals(left, right);
-	    public static bool operator !=({classSymbol.Name} left, {classSymbol.Name} right) => !Equals(left, right);
+	    //public static bool operator ==({classSymbol.Name} left, {classSymbol.Name} right) => Equals(left, right);
+	    //public static bool operator !=({classSymbol.Name} left, {classSymbol.Name} right) => !Equals(left, right);
     }}
 }}");
             return source.ToString();
