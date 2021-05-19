@@ -78,7 +78,7 @@ namespace {_attributeNamespace}
                 return;
             }
 
-            List<INamedTypeSymbol> namedTypeSymbols = new();
+            List<(INamedTypeSymbol, Location?)> namedTypeSymbols = new();
             foreach (ClassDeclarationSyntax classDeclaration in receiver.CandidateClasses)
             {
                 SemanticModel model = compilation.GetSemanticModel(classDeclaration.SyntaxTree);
@@ -88,13 +88,13 @@ namespace {_attributeNamespace}
 
                 if (attributeData is object)
                 {
-                    namedTypeSymbols.Add(namedTypeSymbol!);
+                    namedTypeSymbols.Add((namedTypeSymbol!, attributeData.ApplicationSyntaxReference?.GetSyntax().GetLocation()));
                 }
             }
 
-            foreach (INamedTypeSymbol namedSymnbol in namedTypeSymbols)
+            foreach ((INamedTypeSymbol namedSymnbol, Location? attributeLocation) in namedTypeSymbols)
             {
-                string? classSource = ProcessClass(namedSymnbol, context);
+                string? classSource = ProcessClass(namedSymnbol, context, attributeLocation);
 
                 if (classSource is null)
                 {
@@ -105,23 +105,25 @@ namespace {_attributeNamespace}
             }
         }
 
-        private string? ProcessClass(INamedTypeSymbol classSymbol, GeneratorExecutionContext context)
+        private string? ProcessClass(INamedTypeSymbol classSymbol, GeneratorExecutionContext context, Location? attributeLocation)
         {
+            attributeLocation ??= Location.None;
+
             if (!classSymbol.ContainingSymbol.Equals(classSymbol.ContainingNamespace, SymbolEqualityComparer.Default))
             {
-                context.ReportDiagnostic(Diagnostic.Create(_topLevelError, Location.None, classSymbol.Name));
+                context.ReportDiagnostic(Diagnostic.Create(_topLevelError, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
                 return null;
             }
 
             if (classSymbol.BaseType is null || classSymbol.BaseType.Name != "OneOfBase" || classSymbol.BaseType.ContainingNamespace.ToString() != "OneOf")
             {
-                context.ReportDiagnostic(Diagnostic.Create(_wrongBaseType, Location.None, classSymbol.Name));
+                context.ReportDiagnostic(Diagnostic.Create(_wrongBaseType, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
                 return null;
             }
 
             if (classSymbol.DeclaredAccessibility != Accessibility.Public)
             {
-                context.ReportDiagnostic(Diagnostic.Create(_classIsNotPublic, Location.None, classSymbol.Name));
+                context.ReportDiagnostic(Diagnostic.Create(_classIsNotPublic, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
                 return null;
             }
 
@@ -130,7 +132,7 @@ namespace {_attributeNamespace}
 
             if (typeArguments.Any(x => x.Name == nameof(Object)))
             {
-                context.ReportDiagnostic(Diagnostic.Create(_objectIsOneOfType, Location.None, classSymbol.Name));
+                context.ReportDiagnostic(Diagnostic.Create(_objectIsOneOfType, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
                 return null;
             }
 
