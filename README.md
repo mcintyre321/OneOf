@@ -171,23 +171,23 @@ Console.WriteLine(x.TryGetNumber().isNumber);
 
 ### GenerateOneOf attribute
 
-You can automatically generate OneOfBase hierarchies using `GenerateOneOfAttribute` and partial class that extends `OneOfBase`
+You can automatically generate `OneOfBase` hierarchies using `GenerateOneOfAttribute` and partial class that extends `OneOfBase`
 
 ```csharp
 [GenerateOneOf]
 public partial class StringOrNumber : OneOfBase<string, int> { }
-```
+```csharp
 
 During compilation `OneOfGenerator` will produce a class with all implicit operators already generated
 ```
 public partial class StringOrNumber
-    {
-        public StringOrNumber(OneOf.OneOf<System.String, System.Int32> _) : base(_) { }
+{
+	public StringOrNumber(OneOf.OneOf<System.String, System.Int32> _) : base(_) { }
 
-        public static implicit operator StringOrNumber(System.String _) => new StringOrNumber(_);
-        public static implicit operator System.String(StringOrNumber _) => _.AsT0;
+	public static implicit operator StringOrNumber(System.String _) => new StringOrNumber(_);
+	public static implicit operator System.String(StringOrNumber _) => _.AsT0;
 
-        public static implicit operator StringOrNumber(System.Int32 _) => new StringOrNumber(_);
-        public static implicit operator System.Int32(StringOrNumber _) => _.AsT1;
-    }
+	public static implicit operator StringOrNumber(System.Int32 _) => new StringOrNumber(_);
+	public static implicit operator System.Int32(StringOrNumber _) => _.AsT1;
+}
 ```
