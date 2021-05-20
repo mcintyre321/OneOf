@@ -19,8 +19,8 @@ namespace OneOf.SourceGenerator.Tests
             stringOrNumber = testNumber;
             stringOrNumberToCompare = testNumber;
 
-            Assert.Equal<int>(testNumber, stringOrNumber);
-            Assert.True(testNumber == stringOrNumber);
+            Assert.Equal(testNumber, (int)stringOrNumber);
+            Assert.True(testNumber == (int)stringOrNumber);
             Assert.Equal(stringOrNumberToCompare, stringOrNumber);
         }
 
@@ -31,7 +31,7 @@ namespace OneOf.SourceGenerator.Tests
 
             StringOrNumber stringOrNumber = testName;
 
-            string name = stringOrNumber;
+            string name = (string)stringOrNumber;
 
             Assert.Equal(testName, name);
         }
@@ -45,14 +45,14 @@ namespace OneOf.SourceGenerator.Tests
             MyClass2OrMyClass myClass2OrMyClass = testclass;
             MyClass2OrMyClass myClass2OrMyClassToCompare = testclass;
 
-            Assert.Equal<MyClass>(testclass, myClass2OrMyClass);
-            Assert.Equal<MyClass>(myClass2OrMyClass, myClass2OrMyClassToCompare);
+            Assert.Equal(testclass, (MyClass)myClass2OrMyClass);
+            Assert.Equal((MyClass)myClass2OrMyClass, (MyClass)myClass2OrMyClassToCompare);
 
             myClass2OrMyClass = testclass2;
             myClass2OrMyClassToCompare = testclass2;
 
-            Assert.Equal<MyClass2>(testclass2, myClass2OrMyClass);
-            Assert.Equal<MyClass2>(myClass2OrMyClass, myClass2OrMyClassToCompare);
+            Assert.Equal(testclass2, (MyClass2)myClass2OrMyClass);
+            Assert.Equal((MyClass2)myClass2OrMyClass, (MyClass2)myClass2OrMyClassToCompare);
         }
 
         [Fact]
@@ -62,7 +62,7 @@ namespace OneOf.SourceGenerator.Tests
 
             MyClass2OrMyClass myClass2OrMyClass = testClass;
 
-            MyClass test = myClass2OrMyClass;
+            var test = (MyClass)myClass2OrMyClass;
 
             Assert.Equal(testClass, test);
         }
@@ -74,7 +74,7 @@ namespace OneOf.SourceGenerator.Tests
 
             MyClassOrFakeOneOf myClass2OrFakeOneOf = notOneOf;
 
-            NotOneOf.OneOf test = myClass2OrFakeOneOf;
+            var test = (NotOneOf.OneOf)myClass2OrFakeOneOf;
 
             Assert.Equal(notOneOf, test);
         }

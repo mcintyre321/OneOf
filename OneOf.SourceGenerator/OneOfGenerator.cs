@@ -153,7 +153,7 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
             {
                 source.Append($@"
         public static implicit operator {classSymbol.Name}({arg.GetFullName()} _) => new {classSymbol.Name}(_);
-        public static implicit operator {arg.GetFullName()}({classSymbol.Name} _) => _.As{param.Name};
+        public static explicit operator {arg.GetFullName()}({classSymbol.Name} _) => _.As{param.Name};
 ");
             }
 
