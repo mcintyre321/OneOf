@@ -176,7 +176,7 @@ a Source Generator (thanks to @romfir for the contribution :D). Install it via
 
 > Install-Package OneOf.SourceGenerator
 
-and then to use it, create a partial class inheriting from OneOfBase with a `[GenerateOneOf]` attribute:
+and then define a stub like so:
 
 ```csharp
 [GenerateOneOf]
