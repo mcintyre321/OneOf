@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Harry McIntyre, Damian Romanowski</Authors>
+    <Title>OneOf - Easy Discriminated Unions for c#</Title>
+    <Company>Harry McIntyre</Company>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Product>Harry McIntyre</Product>
+    <Description>This source generator automaticly implements OneOfBase hierarchies</Description>
+    <PackageProjectUrl>https://github.com/mcintyre321/OneOf/</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/mcintyre321/OneOf/blob/master/licence.md</PackageLicenseUrl>
+    <PackageTags>discriminated unions, return type, match switch, generator, source generator</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>OneOf.SourceGenerator</PackageId>
+    <Copyright>Harry McIntyre</Copyright>
+    <RootNamespace>OneOf</RootNamespace>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <LangVersion>preview</LangVersion>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.9.0" />
+  </ItemGroup>
+
+</Project>
