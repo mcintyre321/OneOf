@@ -169,16 +169,22 @@ Console.WriteLine(x.TryGetNumber().isNumber);
 // prints False
 ```
 
-### GenerateOneOf attribute
+### OneOfBase Source Generation 
 
-You can automatically generate `OneOfBase` hierarchies using `GenerateOneOfAttribute` and partial class that extends `OneOfBase`
+You can automatically generate `OneOfBase` hierarchies using `GenerateOneOfAttribute` and partial class that extends `OneOfBase` using
+a Source Generator (thanks to @romfir for the contribution :D). Install it via
+
+> Install-Package OneOf.SourceGenerator
+
+and then to use it, create a partial class inheriting from OneOfBase with a `[GenerateOneOf]` attribute:
 
 ```csharp
 [GenerateOneOf]
 public partial class StringOrNumber : OneOfBase<string, int> { }
 ```
 
-During compilation `OneOfGenerator` will produce a class with implicit and explicit operators already generated
+During compilation the source generator will produce a class implementing the OneOfBase boiler plate code for you. e.g.
+
 ```csharp
 public partial class StringOrNumber
 {
