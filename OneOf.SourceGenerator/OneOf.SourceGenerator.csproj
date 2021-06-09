@@ -27,6 +27,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="tools\install.ps1" Pack="true" PackagePath="tools" />
+    <None Include="tools\uninstall.ps1" Pack="true" PackagePath="tools" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
