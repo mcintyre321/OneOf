@@ -18,14 +18,15 @@ namespace OneOf
             _value2 = value2;
         }
 
-        public object Value =>
-            _index switch
-            {
-                0 => _value0,
-                1 => _value1,
-                2 => _value2,
-                _ => throw new InvalidOperationException()
-            };
+    public object Value { get {
+                    switch (_index)
+                    {
+                            case 0: return _value0;
+                case 1: return _value1;
+                case 2: return _value2;
+                            default: throw new InvalidOperationException();
+                        };
+                } }
 
         public int Index => _index;
 
@@ -98,13 +99,13 @@ namespace OneOf
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return _index switch
+            switch (_index)
             {
-                0 => mapFunc(AsT0),
-                1 => AsT1,
-                2 => AsT2,
-                _ => throw new InvalidOperationException()
-            };
+                case 0: return mapFunc(AsT0);
+                case 1: return AsT1;
+                case 2: return AsT2;
+                  default: throw new InvalidOperationException();
+            }
         }
             
         public OneOf<T0, TResult, T2> MapT1<TResult>(Func<T1, TResult> mapFunc)
@@ -113,13 +114,13 @@ namespace OneOf
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return _index switch
+            switch (_index)
             {
-                0 => AsT0,
-                1 => mapFunc(AsT1),
-                2 => AsT2,
-                _ => throw new InvalidOperationException()
-            };
+                case 0: return AsT0;
+                case 1: return mapFunc(AsT1);
+                case 2: return AsT2;
+                  default: throw new InvalidOperationException();
+            }
         }
             
         public OneOf<T0, T1, TResult> MapT2<TResult>(Func<T2, TResult> mapFunc)
@@ -128,63 +129,65 @@ namespace OneOf
             {
                 throw new ArgumentNullException(nameof(mapFunc));
             }
-            return _index switch
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => mapFunc(AsT2),
-                _ => throw new InvalidOperationException()
-            };
+                case 0: return AsT0;
+                case 1: return AsT1;
+                case 2: return mapFunc(AsT2);
+                  default: throw new InvalidOperationException();
+            }
         }
 
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2> remainder)
-		{
-			value = IsT0 ? AsT0 : default;
-            remainder = _index switch
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2> remainder)
+        {
+            value = IsT0 ? AsT0 : default;
+            switch (_index)
             {
-                0 => default,
-                1 => AsT1,
-                2 => AsT2,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT0;
-		}
+                case 0: { remainder = default; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT0;
+        }
         
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2> remainder)
-		{
-			value = IsT1 ? AsT1 : default;
-            remainder = _index switch
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2> remainder)
+        {
+            value = IsT1 ? AsT1 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => default,
-                2 => AsT2,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT1;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = default; break; }
+                case 2: { remainder = AsT2; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT1;
+        }
         
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1> remainder)
-		{
-			value = IsT2 ? AsT2 : default;
-            remainder = _index switch
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1> remainder)
+        {
+            value = IsT2 ? AsT2 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => default,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT2;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = default; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT2;
+        }
 
-        bool Equals(OneOf<T0, T1, T2> other) =>
-            _index == other._index &&
-            _index switch
+        bool Equals(OneOf<T0, T1, T2> other) {
+            var check1 = _index == other._index;
+            if (!check1) { return false; }
+            switch (_index)
             {
-                0 => Equals(_value0, other._value0),
-                1 => Equals(_value1, other._value1),
-                2 => Equals(_value2, other._value2),
-                _ => false
+                case 0: return check1 && Equals(_value0, other._value0);
+                             case 1: return check1 && Equals(_value1, other._value1);
+                             case 2: return check1 && Equals(_value2, other._value2);
+                default: return false;
             };
+                             }
 
         public override bool Equals(object obj)
         {
@@ -196,25 +199,27 @@ namespace OneOf
             return obj is OneOf<T0, T1, T2> o && Equals(o);
         }
 
-        public override string ToString() =>
-            _index switch {
-                0 => FormatValue(_value0),
-                1 => FormatValue(_value1),
-                2 => FormatValue(_value2),
-                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
-            };
+        public override string ToString() {
+            switch (_index) {
+                case 0: return FormatValue(_value0);
+                case 1: return FormatValue(_value1);
+                case 2: return FormatValue(_value2);
+                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
+            }
+                                 }
 
         public override int GetHashCode()
         {
             unchecked
             {
-                int hashCode = _index switch
+                    int hashCode;
+                    switch (_index)
                 {
-                    0 => _value0?.GetHashCode(),
-                    1 => _value1?.GetHashCode(),
-                    2 => _value2?.GetHashCode(),
-                    _ => 0
-                } ?? 0;
+                    case 0: { hashCode = _value0?.GetHashCode() ?? 0; break; }
+                    case 1: { hashCode = _value1?.GetHashCode() ?? 0; break; }
+                    case 2: { hashCode = _value2?.GetHashCode() ?? 0; break; }
+                    default: { hashCode = 0; break; }
+                }
                 return (hashCode*397) ^ _index;
             }
         }
