@@ -92,20 +92,20 @@ namespace {_attributeNamespace}
                 }
             }
 
-            foreach ((INamedTypeSymbol namedSymnbol, Location? attributeLocation) in namedTypeSymbols)
+            foreach ((INamedTypeSymbol namedSymbol, Location? attributeLocation) in namedTypeSymbols)
             {
-                string? classSource = ProcessClass(namedSymnbol, context, attributeLocation);
+                string? classSource = ProcessClass(namedSymbol, context, attributeLocation);
 
                 if (classSource is null)
                 {
                     continue;
                 }
 
-                context.AddSource($"{namedSymnbol.ContainingNamespace}_{namedSymnbol.Name}.generated.cs", SourceText.From(classSource, Encoding.UTF8));
+                context.AddSource($"{namedSymbol.ContainingNamespace}_{namedSymbol.Name}.generated.cs", SourceText.From(classSource, Encoding.UTF8));
             }
         }
 
-        private string? ProcessClass(INamedTypeSymbol classSymbol, GeneratorExecutionContext context, Location? attributeLocation)
+        private static string? ProcessClass(INamedTypeSymbol classSymbol, GeneratorExecutionContext context, Location? attributeLocation)
         {
             attributeLocation ??= Location.None;
 
@@ -138,7 +138,7 @@ namespace {_attributeNamespace}
 
             IEnumerable<(ITypeParameterSymbol param, ITypeSymbol arg)> paramArgPairs = typeParameters.Zip(typeArguments, (param, arg) => (param, arg));
 
-            string generics = string.Join(", ", typeArguments.Select(x => x.GetFullName()));
+            string generics = string.Join(", ", typeArguments.Select(x => x.ToDisplayString()));
 
             StringBuilder source = new($@"using System;
 
@@ -152,13 +152,13 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
             foreach ((ITypeParameterSymbol param, ITypeSymbol arg) in paramArgPairs)
             {
                 source.Append($@"
-        public static implicit operator {classSymbol.Name}({arg.GetFullName()} _) => new {classSymbol.Name}(_);
-        public static explicit operator {arg.GetFullName()}({classSymbol.Name} _) => _.As{param.Name};
+        public static implicit operator {classSymbol.Name}({arg.ToDisplayString()} _) => new {classSymbol.Name}(_);
+        public static explicit operator {arg.ToDisplayString()}({classSymbol.Name} _) => _.As{param.Name};
 ");
             }
 
-            source.Append($@"    }}
-}}");
+            source.Append(@"    }
+}");
             return source.ToString();
         }
 
@@ -166,15 +166,14 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
             => context.RegisterForSyntaxNotifications(() => new OneOfSyntaxReceiver());
     }
 
-    class OneOfSyntaxReceiver : ISyntaxReceiver
+    internal class OneOfSyntaxReceiver : ISyntaxReceiver
     {
         public List<ClassDeclarationSyntax> CandidateClasses { get; } = new();
 
         public void OnVisitSyntaxNode(SyntaxNode syntaxNode)
         {
-            if (syntaxNode is ClassDeclarationSyntax classDeclarationSyntax
-                && classDeclarationSyntax.AttributeLists.Count > 0 &&
-                classDeclarationSyntax.Modifiers.Any(SyntaxKind.PartialKeyword))
+            if (syntaxNode is ClassDeclarationSyntax { AttributeLists: { Count: > 0 } } classDeclarationSyntax
+                && classDeclarationSyntax.Modifiers.Any(SyntaxKind.PartialKeyword))
             {
                 CandidateClasses.Add(classDeclarationSyntax);
             }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Xunit;
 
 namespace OneOf.SourceGenerator.Tests
@@ -78,7 +79,36 @@ namespace OneOf.SourceGenerator.Tests
 
             Assert.Equal(notOneOf, test);
         }
+
+        [Fact]
+        public void GenerateOneOf_Works_With_Simple_Generic_Types()
+        {
+            SimpleGeneric simple1 = new List<string> { "a", "b", "c" };
+            Assert.True(simple1.IsT0);
+
+            SimpleGeneric simple2 = new List<int> { 1, 2, 3 };
+            Assert.True(simple2.IsT1);
+
+            SimpleGeneric simple3 = new Dictionary<long, string> { { 1, "a" }, { 2, "b" }, { 3, "c" } };
+            Assert.True(simple3.IsT2);
+        }
+
+        [Fact]
+        public void GenerateOneOf_Works_With_Nested_Generics()
+        {
+            NestedGeneric nested1 = new List<List<string>> { new() { "a", "b", "c" } };
+            Assert.True(nested1.IsT0);
+
+            NestedGeneric nested2 = new Dictionary<List<string>, string> { { new List<string> { "a", "b", "c" }, "d" } };
+            Assert.True(nested2.IsT2);
+        }
     }
+
+    [GenerateOneOf]
+    public partial class NestedGeneric : OneOfBase<List<List<string>>, List<int>, Dictionary<List<string>, string>> { }
+
+    [GenerateOneOf]
+    public partial class SimpleGeneric : OneOfBase<List<string>, List<int>, Dictionary<long, string>> { }
 
     [GenerateOneOf]
     public partial class StringOrNumber : OneOfBase<string, int, uint> { }
