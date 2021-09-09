@@ -199,7 +199,9 @@ public partial class StringOrNumber
     // when GenerateNamedProperties is true
     public bool IsString => this.IsT0;
     public System.String AsString => this.AsT0;
+    public bool TryPickString(out string value, out System.Int32 remainder) => this.TryPickT0(out value, out remainder);
     public bool IsInt32 => this.IsT1;
     public System.Int32 AsInt32 => this.AsT1;
+    public bool TryPickInt32(out System.Int32 value, out System.String remainder) => this.TryPickT1(out value, out remainder);
 }
 ```
