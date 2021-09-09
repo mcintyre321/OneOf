@@ -106,13 +106,13 @@ namespace OneOf.SourceGenerator.Tests
         [Fact]
         public void GenerateOneOf_Generates_Properties_Is()
         {
-            MyClass2OrMyClass my1 = new MyClass();
-            Assert.True(my1.IsMyClass);
-            Assert.False(my1.IsMyClass2);
+            Result succ = new Result.Success();
+            Assert.True(succ.IsSuccess);
+            Assert.False(succ.IsFailure);
 
-            MyClass2OrMyClass my2 = new MyClass2();
-            Assert.False(my2.IsMyClass);
-            Assert.True(my2.IsMyClass2);
+            Result fail = new Result.Failure();
+            Assert.False(fail.IsSuccess);
+            Assert.True(fail.IsFailure);
 
         }
     }
@@ -131,6 +131,13 @@ namespace OneOf.SourceGenerator.Tests
 
     [GenerateOneOf]
     public partial class MyClassOrFakeOneOf : OneOfBase<MyClass, NotOneOf.OneOf> { }
+
+    [GenerateOneOf(GenerateNamedProperties = true)]
+    public partial class Result : OneOfBase<Result.Success, Result.Failure>
+    {
+        public class Success { }
+        public class Failure { }
+    }
 
     public class MyClass
     {

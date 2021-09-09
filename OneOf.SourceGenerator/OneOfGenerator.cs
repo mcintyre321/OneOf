@@ -51,6 +51,7 @@ namespace {_attributeNamespace}
     [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
     public sealed class {_attributeName} : Attribute
     {{
+        public bool GenerateNamedProperties {{ get; set; }}
     }}
 }}
         ";
@@ -78,7 +79,7 @@ namespace {_attributeNamespace}
                 return;
             }
 
-            List<(INamedTypeSymbol, Location?)> namedTypeSymbols = new();
+            List<(INamedTypeSymbol, AttributeData)> namedTypeSymbols = new();
             foreach (ClassDeclarationSyntax classDeclaration in receiver.CandidateClasses)
             {
                 SemanticModel model = compilation.GetSemanticModel(classDeclaration.SyntaxTree);
@@ -88,13 +89,20 @@ namespace {_attributeNamespace}
 
                 if (attributeData is object)
                 {
-                    namedTypeSymbols.Add((namedTypeSymbol!, attributeData.ApplicationSyntaxReference?.GetSyntax().GetLocation()));
+                    namedTypeSymbols.Add((namedTypeSymbol!, attributeData));
                 }
             }
 
-            foreach ((INamedTypeSymbol namedSymbol, Location? attributeLocation) in namedTypeSymbols)
+            foreach ((INamedTypeSymbol namedSymbol, AttributeData attributeData) in namedTypeSymbols)
             {
-                string? classSource = ProcessClass(namedSymbol, context, attributeLocation);
+                var generateNamedPropertiesArgument = attributeData.NamedArguments
+                    .Where(kv => kv.Key == "GenerateNamedProperties")
+                    .Select(kv => kv.Value)
+                    .SingleOrDefault();
+                var generateNamedProperties = (generateNamedPropertiesArgument.Value as bool?) ?? false;
+
+                Location? attributeLocation =  attributeData.ApplicationSyntaxReference?.GetSyntax().GetLocation();
+                string? classSource = ProcessClass(namedSymbol, context, attributeLocation, generateNamedProperties);
 
                 if (classSource is null)
                 {
@@ -105,7 +113,7 @@ namespace {_attributeNamespace}
             }
         }
 
-        private static string? ProcessClass(INamedTypeSymbol classSymbol, GeneratorExecutionContext context, Location? attributeLocation)
+        private static string? ProcessClass(INamedTypeSymbol classSymbol, GeneratorExecutionContext context, Location? attributeLocation, bool generateNamedProperties)
         {
             attributeLocation ??= Location.None;
 
@@ -155,6 +163,15 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
         public static implicit operator {classSymbol.Name}({arg.ToDisplayString()} _) => new {classSymbol.Name}(_);
         public static explicit operator {arg.ToDisplayString()}({classSymbol.Name} _) => _.As{param.Name};
 ");
+            }
+
+            if (generateNamedProperties) {
+                foreach ((ITypeParameterSymbol param, ITypeSymbol arg) in paramArgPairs)
+                {
+                    source.Append($@"
+        public bool Is{arg.Name} => this.Is{param.Name};
+");
+                }
             }
 
             source.Append(@"    }
