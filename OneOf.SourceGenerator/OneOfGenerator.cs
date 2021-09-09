@@ -101,7 +101,7 @@ namespace {_attributeNamespace}
                     .SingleOrDefault();
                 var generateNamedProperties = (generateNamedPropertiesArgument.Value as bool?) ?? false;
 
-                Location? attributeLocation =  attributeData.ApplicationSyntaxReference?.GetSyntax().GetLocation();
+                Location? attributeLocation = attributeData.ApplicationSyntaxReference?.GetSyntax().GetLocation();
                 string? classSource = ProcessClass(namedSymbol, context, attributeLocation, generateNamedProperties);
 
                 if (classSource is null)
@@ -165,12 +165,13 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
 ");
             }
 
-            if (generateNamedProperties) {
+            if (generateNamedProperties)
+            {
                 foreach ((ITypeParameterSymbol param, ITypeSymbol arg) in paramArgPairs)
                 {
                     source.Append($@"
         public bool Is{arg.Name} => this.Is{param.Name};
-        public {arg.ToDisplayString()} As{arg.Name} => this.Is{param.Name} ? this.As{param.Name} : default;
+        public {arg.ToDisplayString()} As{arg.Name} => this.As{param.Name};
 ");
                 }
             }

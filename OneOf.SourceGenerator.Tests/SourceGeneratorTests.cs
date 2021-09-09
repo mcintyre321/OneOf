@@ -107,25 +107,57 @@ namespace OneOf.SourceGenerator.Tests
         [Fact]
         public void GenerateOneOf_Generates_NamedProperties_Is()
         {
-            Result succ = new Result.Success();
+            SuccessOrFailureOrInt32OrBool succ = new SuccessOrFailureOrInt32OrBool.Success();
             Assert.True(succ.IsSuccess);
             Assert.False(succ.IsFailure);
+            Assert.False(succ.IsInt32);
+            Assert.False(succ.IsBoolean);
 
-            Result fail = new Result.Failure();
+            SuccessOrFailureOrInt32OrBool fail = new SuccessOrFailureOrInt32OrBool.Failure();
             Assert.False(fail.IsSuccess);
             Assert.True(fail.IsFailure);
+            Assert.False(succ.IsInt32);
+            Assert.False(succ.IsBoolean);
+
+            SuccessOrFailureOrInt32OrBool i32 = 9;
+            Assert.False(i32.IsSuccess);
+            Assert.False(i32.IsFailure);
+            Assert.True(i32.IsInt32);
+            Assert.False(i32.IsBoolean);
+
+            SuccessOrFailureOrInt32OrBool b = true;
+            Assert.False(b.IsSuccess);
+            Assert.False(b.IsFailure);
+            Assert.False(b.IsInt32);
+            Assert.True(b.IsBoolean);
         }
 
         [Fact]
         public void GenerateOneOf_Generates_NamedProperties_As()
         {
-            Result succ = new Result.Success();
+            SuccessOrFailureOrInt32OrBool succ = new SuccessOrFailureOrInt32OrBool.Success();
             Assert.NotNull(succ.AsSuccess);
-            Assert.Null(succ.AsFailure);
+            Assert.Throws<InvalidOperationException>(() => succ.AsFailure);
+            Assert.Throws<InvalidOperationException>(() => succ.AsInt32);
+            Assert.Throws<InvalidOperationException>(() => succ.AsBoolean);
 
-            Result fail = new Result.Failure();
-            Assert.Null(fail.AsSuccess);
+            SuccessOrFailureOrInt32OrBool fail = new SuccessOrFailureOrInt32OrBool.Failure();
+            Assert.Throws<InvalidOperationException>(() => fail.AsSuccess);
             Assert.NotNull(fail.AsFailure);
+            Assert.Throws<InvalidOperationException>(() => fail.AsInt32);
+            Assert.Throws<InvalidOperationException>(() => fail.AsBoolean);
+
+            SuccessOrFailureOrInt32OrBool i32 = 9;
+            Assert.Throws<InvalidOperationException>(() => i32.AsSuccess);
+            Assert.Throws<InvalidOperationException>(() => i32.AsFailure);
+            Assert.Equal(9, i32.AsInt32);
+            Assert.Throws<InvalidOperationException>(() => i32.AsBoolean);
+
+            SuccessOrFailureOrInt32OrBool b = true;
+            Assert.Throws<InvalidOperationException>(() => b.AsSuccess);
+            Assert.Throws<InvalidOperationException>(() => b.AsFailure);
+            Assert.Throws<InvalidOperationException>(() => b.AsInt32);
+            Assert.True(b.AsBoolean);
         }
     }
 
@@ -145,7 +177,11 @@ namespace OneOf.SourceGenerator.Tests
     public partial class MyClassOrFakeOneOf : OneOfBase<MyClass, NotOneOf.OneOf> { }
 
     [GenerateOneOf(GenerateNamedProperties = true)]
-    public partial class Result : OneOfBase<Result.Success, Result.Failure>
+    public partial class SuccessOrFailureOrInt32OrBool : OneOfBase<
+        SuccessOrFailureOrInt32OrBool.Success,
+        SuccessOrFailureOrInt32OrBool.Failure,
+        Int32,
+        bool>
     {
         public class Success { }
         public class Failure { }
