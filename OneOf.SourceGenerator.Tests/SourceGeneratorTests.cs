@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Xunit;
 
@@ -104,7 +105,7 @@ namespace OneOf.SourceGenerator.Tests
         }
 
         [Fact]
-        public void GenerateOneOf_Generates_Properties_Is()
+        public void GenerateOneOf_Generates_NamedProperties_Is()
         {
             Result succ = new Result.Success();
             Assert.True(succ.IsSuccess);
@@ -113,7 +114,18 @@ namespace OneOf.SourceGenerator.Tests
             Result fail = new Result.Failure();
             Assert.False(fail.IsSuccess);
             Assert.True(fail.IsFailure);
+        }
 
+        [Fact]
+        public void GenerateOneOf_Generates_NamedProperties_As()
+        {
+            Result succ = new Result.Success();
+            Assert.NotNull(succ.AsSuccess);
+            Assert.Null(succ.AsFailure);
+
+            Result fail = new Result.Failure();
+            Assert.Null(fail.AsSuccess);
+            Assert.NotNull(fail.AsFailure);
         }
     }
 

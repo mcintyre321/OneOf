@@ -170,6 +170,7 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
                 {
                     source.Append($@"
         public bool Is{arg.Name} => this.Is{param.Name};
+        public {arg.ToDisplayString()} As{arg.Name} => this.Is{param.Name} ? this.As{param.Name} : default;
 ");
                 }
             }
