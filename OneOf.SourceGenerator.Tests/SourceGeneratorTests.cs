@@ -159,6 +159,24 @@ namespace OneOf.SourceGenerator.Tests
             Assert.Throws<InvalidOperationException>(() => b.AsInt32);
             Assert.True(b.AsBoolean);
         }
+
+        [Fact]
+        public void GenerateOneOf_Generates_NamedProperties_TryPick()
+        {
+            var myclass1 = new MyClass();
+            MyClass2OrMyClass myclassOneOf = myclass1;
+            var try1 = myclassOneOf.TryPickMyClass(out var value1, out var remainder1);
+            Assert.True(try1);
+            Assert.Equal(myclass1, value1);
+            Assert.Null(remainder1);
+
+            var myclass2 = new MyClass2();
+            MyClass2OrMyClass myclass2OneOf = myclass2;
+            var try2 = myclass2OneOf.TryPickMyClass2(out var value2, out var remainder2);
+            Assert.True(try2);
+            Assert.Equal(myclass2, value2);
+            Assert.Null(remainder2);
+        }
     }
 
     [GenerateOneOf]
@@ -170,7 +188,7 @@ namespace OneOf.SourceGenerator.Tests
     [GenerateOneOf]
     public partial class StringOrNumber : OneOfBase<string, int, uint> { }
 
-    [GenerateOneOf]
+    [GenerateOneOf(GenerateNamedProperties = true)]
     public partial class MyClass2OrMyClass : OneOfBase<MyClass, MyClass2> { }
 
     [GenerateOneOf]

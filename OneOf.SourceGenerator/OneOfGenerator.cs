@@ -169,9 +169,17 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
             {
                 foreach ((ITypeParameterSymbol param, ITypeSymbol arg) in paramArgPairs)
                 {
+                    var remainderArgs = paramArgPairs
+                        .Except(new [] {(param, arg)})
+                        .Select(x => x.arg.ToDisplayString());
+                    var remainderArgsString = remainderArgs.Count() > 1 
+                        ? $"OneOf<{string.Join(", ", remainderArgs)}>"
+                        : remainderArgs.Single();
+
                     source.Append($@"
         public bool Is{arg.Name} => this.Is{param.Name};
         public {arg.ToDisplayString()} As{arg.Name} => this.As{param.Name};
+        public bool TryPick{arg.Name}(out {arg.ToDisplayString()} value, out {remainderArgsString} remainder) => this.TryPick{param.Name}(out value, out remainder);
 ");
                 }
             }
