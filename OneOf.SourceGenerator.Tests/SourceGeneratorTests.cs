@@ -102,6 +102,19 @@ namespace OneOf.SourceGenerator.Tests
             NestedGeneric nested2 = new Dictionary<List<string>, string> { { new List<string> { "a", "b", "c" }, "d" } };
             Assert.True(nested2.IsT2);
         }
+
+        [Fact]
+        public void GenerateOneOf_Generates_Properties_Is()
+        {
+            MyClass2OrMyClass my1 = new MyClass();
+            Assert.True(my1.IsMyClass);
+            Assert.False(my1.IsMyClass2);
+
+            MyClass2OrMyClass my2 = new MyClass2();
+            Assert.False(my2.IsMyClass);
+            Assert.True(my2.IsMyClass2);
+
+        }
     }
 
     [GenerateOneOf]
