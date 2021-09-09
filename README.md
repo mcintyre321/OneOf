@@ -198,10 +198,8 @@ public partial class StringOrNumber
 
     // when GenerateNamedProperties is true
     public bool IsString => this.IsT0;
-    public bool IsInt32 => this.IsT1;
-
-    // when GenerateNamedProperties is true
     public System.String AsString => this.AsT0;
+    public bool IsInt32 => this.IsT1;
     public System.Int32 AsInt32 => this.AsT1;
 }
 ```
