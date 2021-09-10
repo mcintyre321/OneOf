@@ -38,26 +38,26 @@ namespace OneOf.SourceGenerator.Tests
         }
 
         [Fact]
-        public void GenerateOneOf_Generates_Correct_Classes_For_Referance_Types()
+        public void GenerateOneOf_Generates_Correct_Classes_For_Reference_Types()
         {
-            MyClass testclass = new();
-            MyClass2 testclass2 = new();
+            MyClass testClass = new();
+            MyClass2 testClass2 = new();
 
-            MyClass2OrMyClass myClass2OrMyClass = testclass;
-            MyClass2OrMyClass myClass2OrMyClassToCompare = testclass;
+            MyClass2OrMyClass myClass2OrMyClass = testClass;
+            MyClass2OrMyClass myClass2OrMyClassToCompare = testClass;
 
-            Assert.Equal(testclass, (MyClass)myClass2OrMyClass);
+            Assert.Equal(testClass, (MyClass)myClass2OrMyClass);
             Assert.Equal((MyClass)myClass2OrMyClass, (MyClass)myClass2OrMyClassToCompare);
 
-            myClass2OrMyClass = testclass2;
-            myClass2OrMyClassToCompare = testclass2;
+            myClass2OrMyClass = testClass2;
+            myClass2OrMyClassToCompare = testClass2;
 
-            Assert.Equal(testclass2, (MyClass2)myClass2OrMyClass);
+            Assert.Equal(testClass2, (MyClass2)myClass2OrMyClass);
             Assert.Equal((MyClass2)myClass2OrMyClass, (MyClass2)myClass2OrMyClassToCompare);
         }
 
         [Fact]
-        public void GenerateOneOf_Can_Assign_To_Referance_Type()
+        public void GenerateOneOf_Can_Assign_To_Reference_Type()
         {
             MyClass testClass = new();
 
@@ -102,6 +102,33 @@ namespace OneOf.SourceGenerator.Tests
             NestedGeneric nested2 = new Dictionary<List<string>, string> { { new List<string> { "a", "b", "c" }, "d" } };
             Assert.True(nested2.IsT2);
         }
+
+        [Fact]
+        public void GenerateOneOf_Works_With_Open_Generics_With_Records()
+        {
+            OpenGenericWithRecords<MyClass, MyClass2> open = new Ok<MyClass>(new MyClass());
+            Assert.True(open.IsT0);
+
+            OpenGenericWithRecords<MyClass, MyClass2> open2 = new Error<MyClass2>(new MyClass2());
+            Assert.True(open2.IsT1);
+        }
+
+        [Fact]
+        public void GenerateOneOf_Works_With_Open_Generics_And_Nested_Generics()
+        {
+            OpenGenericWithRecords<List<int>, MyClass2> open = new Ok<List<int>>(new List<int> { 1, 2, 3 });
+            Assert.True(open.IsT0);
+        }
+
+        [Fact]
+        public void GenerateOneOf_Works_With_Open_And_Closed_Generics()
+        {
+            OpenGenericWithClosed<MyClass> openWithClosed = new Ok<MyClass>(new MyClass());
+            Assert.True(openWithClosed.IsT0);
+
+            OpenGenericWithClosed<MyClass2> openWithClosed2 = new MyClass();
+            Assert.True(openWithClosed2.IsT1);
+        }
     }
 
     [GenerateOneOf]
@@ -127,6 +154,26 @@ namespace OneOf.SourceGenerator.Tests
     public class MyClass2
     {
 
+    }
+
+    public record Error<TError>
+    (
+        TError ErrorData
+    );
+
+    public record Ok<TResult>
+    (
+        TResult Data
+    );
+
+    [GenerateOneOf]
+    public partial class OpenGenericWithRecords<TOk, TError> : OneOfBase<Ok<TOk>, Error<TError>>
+    {
+    }
+
+    [GenerateOneOf]
+    public partial class OpenGenericWithClosed<TOk> : OneOfBase<Ok<TOk>, MyClass>
+    {
     }
 }
 
