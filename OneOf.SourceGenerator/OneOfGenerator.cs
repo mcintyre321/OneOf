@@ -13,35 +13,6 @@ namespace OneOf.SourceGenerator
     [Generator]
     public class OneOfGenerator : ISourceGenerator
     {
-
-        private static readonly DiagnosticDescriptor _topLevelError = new(id: "ONEOFGEN001",
-                                                                                              title: "Class must be top level",
-                                                                                              messageFormat: "Class '{0}' using OneOfGenerator must be top level",
-                                                                                              category: "OneOfGenerator",
-                                                                                              DiagnosticSeverity.Error,
-                                                                                              isEnabledByDefault: true);
-
-        private static readonly DiagnosticDescriptor _wrongBaseType = new(id: "ONEOFGEN002",
-                                                                                              title: "Class must inherit from OneOfBase",
-                                                                                              messageFormat: "Class '{0}' does not inherit from OneOfBase",
-                                                                                              category: "OneOfGenerator",
-                                                                                              DiagnosticSeverity.Error,
-                                                                                              isEnabledByDefault: true);
-
-        private static readonly DiagnosticDescriptor _classIsNotPublic = new(id: "ONEOFGEN003",
-                                                                                              title: "Class must be public",
-                                                                                              messageFormat: "Class '{0}' is not public",
-                                                                                              category: "OneOfGenerator",
-                                                                                              DiagnosticSeverity.Error,
-                                                                                              isEnabledByDefault: true);
-
-        private static readonly DiagnosticDescriptor _objectIsOneOfType = new(id: "ONEOFGEN004",
-                                                                                              title: "Object is not a valid type parameter",
-                                                                                              messageFormat: "Defined conversions to or from a base type are not allowed for class '{0}'",
-                                                                                              category: "OneOfGenerator",
-                                                                                              DiagnosticSeverity.Error,
-                                                                                              isEnabledByDefault: true);
-
         private const string _attributeName = "GenerateOneOfAttribute";
         private const string _attributeNamespace = "OneOf";
         private readonly string _attributeText = $@"using System;
@@ -51,7 +22,10 @@ namespace {_attributeNamespace}
     [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
     public sealed class {_attributeName} : Attribute
     {{
-        public bool GenerateNamedProperties {{ get; set; }}
+        public string[] TypeNames {{ get; }}
+        public {_attributeName}(params string[] typeNames) {{
+            this.TypeNames = typeNames;
+        }}
     }}
 }}
         ";
@@ -93,16 +67,11 @@ namespace {_attributeNamespace}
                 }
             }
 
-            foreach ((INamedTypeSymbol namedSymbol, AttributeData attributeData) in namedTypeSymbols)
+            foreach (var (namedSymbol, attributeData) in namedTypeSymbols)
             {
-                var generateNamedPropertiesArgument = attributeData.NamedArguments
-                    .Where(kv => kv.Key == "GenerateNamedProperties")
-                    .Select(kv => kv.Value)
-                    .SingleOrDefault();
-                var generateNamedProperties = (generateNamedPropertiesArgument.Value as bool?) ?? false;
-
-                Location? attributeLocation = attributeData.ApplicationSyntaxReference?.GetSyntax().GetLocation();
-                string? classSource = ProcessClass(namedSymbol, context, attributeLocation, generateNamedProperties);
+                var attributeLocation = attributeData.ApplicationSyntaxReference?.GetSyntax().GetLocation();
+                var typeNames = attributeData.ConstructorArguments.First().Values;
+                string? classSource = ProcessClass(namedSymbol, context, attributeLocation, typeNames);
 
                 if (classSource is null)
                 {
@@ -113,40 +82,56 @@ namespace {_attributeNamespace}
             }
         }
 
-        private static string? ProcessClass(INamedTypeSymbol classSymbol, GeneratorExecutionContext context, Location? attributeLocation, bool generateNamedProperties)
+        private static string? ProcessClass(INamedTypeSymbol classSymbol, GeneratorExecutionContext context, Location? attributeLocation, ImmutableArray<TypedConstant> typeNames)
         {
             attributeLocation ??= Location.None;
 
+            var diagnostics = new List<Diagnostic>();
+
             if (!classSymbol.ContainingSymbol.Equals(classSymbol.ContainingNamespace, SymbolEqualityComparer.Default))
-            {
-                context.ReportDiagnostic(Diagnostic.Create(_topLevelError, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
-                return null;
-            }
+                diagnostics.Add(Diagnostic.Create(DiagnosticErrors.TopLevelError, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
 
             if (classSymbol.BaseType is null || classSymbol.BaseType.Name != "OneOfBase" || classSymbol.BaseType.ContainingNamespace.ToString() != "OneOf")
-            {
-                context.ReportDiagnostic(Diagnostic.Create(_wrongBaseType, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
-                return null;
-            }
+                diagnostics.Add(Diagnostic.Create(DiagnosticErrors.WrongBaseType, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
 
             if (classSymbol.DeclaredAccessibility != Accessibility.Public)
+                diagnostics.Add(Diagnostic.Create(DiagnosticErrors.ClassIsNotPublic, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
+
+            if (diagnostics.Any())
             {
-                context.ReportDiagnostic(Diagnostic.Create(_classIsNotPublic, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
+                foreach (var diag in diagnostics)
+                    context.ReportDiagnostic(diag);
+
                 return null;
             }
 
-            ImmutableArray<ITypeParameterSymbol> typeParameters = classSymbol.BaseType.TypeParameters;
-            ImmutableArray<ITypeSymbol> typeArguments = classSymbol.BaseType.TypeArguments;
+            var typeParameters = classSymbol.BaseType.TypeParameters;
+            var typeArguments = classSymbol.BaseType.TypeArguments;
 
             if (typeArguments.Any(x => x.Name == nameof(Object)))
+                diagnostics.Add(Diagnostic.Create(DiagnosticErrors.ObjectIsOneOfType, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
+
+            if (typeNames.Length > 0 && typeNames.Length != typeArguments.Length)
+                diagnostics.Add(Diagnostic.Create(DiagnosticErrors.WrongNumberOfTypeNames, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error, typeArguments.Length, typeNames.Length));
+
+            foreach (var (name, nameIndex) in typeNames.Select((x, i) => (x, i)))
             {
-                context.ReportDiagnostic(Diagnostic.Create(_objectIsOneOfType, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
+                if (string.IsNullOrEmpty(name.Value as string))
+                    diagnostics.Add(Diagnostic.Create(DiagnosticErrors.TypeNameCannotBeNullOrEmpty, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error, name, nameIndex + 1));
+            }
+
+            if (diagnostics.Any())
+            {
+                foreach (var diag in diagnostics)
+                    context.ReportDiagnostic(diag);
+
                 return null;
             }
 
-            IEnumerable<(ITypeParameterSymbol param, ITypeSymbol arg)> paramArgPairs = typeParameters.Zip(typeArguments, (param, arg) => (param, arg));
+            var paramArgPairs = typeParameters.Zip(typeArguments, (param, arg) => (param: param, arg: arg));
+            var paramArgsAndNames = paramArgPairs.Zip(typeNames, (pa, name) => (param: pa.param, arg: pa.arg, name: name));
 
-            string generics = string.Join(", ", typeArguments.Select(x => x.ToDisplayString()));
+            var generics = string.Join(", ", typeArguments.Select(x => x.ToDisplayString()));
 
             StringBuilder source = new($@"using System;
 
@@ -156,8 +141,7 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
     {{
         public {classSymbol.Name}(OneOf.OneOf<{generics}> _) : base(_) {{ }}
 ");
-
-            foreach ((ITypeParameterSymbol param, ITypeSymbol arg) in paramArgPairs)
+            foreach (var (param, arg) in paramArgPairs)
             {
                 source.Append($@"
         public static implicit operator {classSymbol.Name}({arg.ToDisplayString()} _) => new {classSymbol.Name}(_);
@@ -165,23 +149,23 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
 ");
             }
 
-            if (generateNamedProperties)
+            foreach (var (param, arg, name) in paramArgsAndNames)
             {
-                foreach ((ITypeParameterSymbol param, ITypeSymbol arg) in paramArgPairs)
-                {
-                    var remainderArgs = paramArgPairs
-                        .Except(new [] {(param, arg)})
-                        .Select(x => x.arg.ToDisplayString());
-                    var remainderArgsString = remainderArgs.Count() > 1 
-                        ? $"OneOf<{string.Join(", ", remainderArgs)}>"
-                        : remainderArgs.Single();
+                var remainderArgs = paramArgPairs
+                    .Except(new[] { (param, arg) })
+                    .Select(x => x.arg.ToDisplayString());
+                var remainderArgsString = remainderArgs.Count() > 1
+                    ? $"OneOf<{string.Join(", ", remainderArgs)}>"
+                    : remainderArgs.Single();
 
-                    source.Append($@"
-        public bool Is{arg.Name} => this.Is{param.Name};
-        public {arg.ToDisplayString()} As{arg.Name} => this.As{param.Name};
-        public bool TryPick{arg.Name}(out {arg.ToDisplayString()} value, out {remainderArgsString} remainder) => this.TryPick{param.Name}(out value, out remainder);
-");
-                }
+                source.Append($@"
+                    //{RoslynFactory.CreatePropertyIsX(param, arg, name)}
+                    //{RoslynFactory.CreatePropertyAsX(param, arg, name)}
+                    //{RoslynFactory.CreateMethodTryPickX(param, arg, name)}
+
+                    //public {arg.ToDisplayString()} As{arg.Name} => this.As{param.Name};
+                    //public bool TryPick{arg.Name}(out {arg.ToDisplayString()} value, out {remainderArgsString} remainder) => this.TryPick{param.Name}(out value, out remainder);
+            ");
             }
 
             source.Append(@"    }
