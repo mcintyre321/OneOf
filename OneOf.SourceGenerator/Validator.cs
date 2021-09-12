@@ -30,7 +30,6 @@ namespace OneOf
             return diagnostics.ReportAndFailIfAny(context);
         }
 
-
         public static bool ValidateTypeArguments(
             this GeneratorExecutionContext context,
             ITypeSymbol classSymbol,
@@ -65,13 +64,10 @@ namespace OneOf
 
                 if (!SyntaxFacts.IsValidIdentifier("_" + name.Value))
                     diagnostics.Add(Diagnostic.Create(DiagnosticErrors.InvalidTypeName, attributeLocation, name.Value));
-
             }
 
             return diagnostics.ReportAndFailIfAny(context);
         }
-
-
 
         private static bool ReportAndFailIfAny(this IEnumerable<Diagnostic> diagnostics, GeneratorExecutionContext context)
         {
