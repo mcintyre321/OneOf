@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Xunit;
 
@@ -102,6 +103,80 @@ namespace OneOf.SourceGenerator.Tests
             NestedGeneric nested2 = new Dictionary<List<string>, string> { { new List<string> { "a", "b", "c" }, "d" } };
             Assert.True(nested2.IsT2);
         }
+
+        [Fact]
+        public void GenerateOneOf_Generates_NamedProperties_Is()
+        {
+            SuccessOrFailureOrInt32OrBool succ = new SuccessOrFailureOrInt32OrBool.SuccessResult();
+            Assert.True(succ.IsSuccess);
+            Assert.False(succ.IsFailure);
+            Assert.False(succ.IsNumber);
+            Assert.False(succ.IsBit);
+
+            SuccessOrFailureOrInt32OrBool fail = new SuccessOrFailureOrInt32OrBool.FailureResult();
+            Assert.False(fail.IsSuccess);
+            Assert.True(fail.IsFailure);
+            Assert.False(succ.IsNumber);
+            Assert.False(succ.IsBit);
+
+            SuccessOrFailureOrInt32OrBool i32 = 9;
+            Assert.False(i32.IsSuccess);
+            Assert.False(i32.IsFailure);
+            Assert.True(i32.IsNumber);
+            Assert.False(i32.IsBit);
+
+            SuccessOrFailureOrInt32OrBool b = true;
+            Assert.False(b.IsSuccess);
+            Assert.False(b.IsFailure);
+            Assert.False(b.IsNumber);
+            Assert.True(b.IsBit);
+        }
+
+        [Fact]
+        public void GenerateOneOf_Generates_NamedProperties_As()
+        {
+            SuccessOrFailureOrInt32OrBool succ = new SuccessOrFailureOrInt32OrBool.SuccessResult();
+            Assert.NotNull(succ.AsSuccess);
+            Assert.Throws<InvalidOperationException>(() => succ.AsFailure);
+            Assert.Throws<InvalidOperationException>(() => succ.AsNumber);
+            Assert.Throws<InvalidOperationException>(() => succ.AsBit);
+
+            SuccessOrFailureOrInt32OrBool fail = new SuccessOrFailureOrInt32OrBool.FailureResult();
+            Assert.Throws<InvalidOperationException>(() => fail.AsSuccess);
+            Assert.NotNull(fail.AsFailure);
+            Assert.Throws<InvalidOperationException>(() => fail.AsNumber);
+            Assert.Throws<InvalidOperationException>(() => fail.AsBit);
+
+            SuccessOrFailureOrInt32OrBool i32 = 9;
+            Assert.Throws<InvalidOperationException>(() => i32.AsSuccess);
+            Assert.Throws<InvalidOperationException>(() => i32.AsFailure);
+            Assert.Equal(9, i32.AsNumber);
+            Assert.Throws<InvalidOperationException>(() => i32.AsBit);
+
+            SuccessOrFailureOrInt32OrBool b = true;
+            Assert.Throws<InvalidOperationException>(() => b.AsSuccess);
+            Assert.Throws<InvalidOperationException>(() => b.AsFailure);
+            Assert.Throws<InvalidOperationException>(() => b.AsNumber);
+            Assert.True(b.AsBit);
+        }
+
+        [Fact]
+        public void GenerateOneOf_Generates_NamedProperties_TryPick()
+        {
+            var myclass1 = new MyClass();
+            MyClass2OrMyClass myclassOneOf = myclass1;
+            var try1 = myclassOneOf.TryPickMyClass(out var value1, out var remainder1);
+            Assert.True(try1);
+            Assert.Equal(myclass1, value1);
+            Assert.Null(remainder1);
+
+            var myclass2 = new MyClass2();
+            MyClass2OrMyClass myclass2OneOf = myclass2;
+            var try2 = myclass2OneOf.TryPickMyClass2(out var value2, out var remainder2);
+            Assert.True(try2);
+            Assert.Equal(myclass2, value2);
+            Assert.Null(remainder2);
+        }
     }
 
     [GenerateOneOf]
@@ -113,11 +188,21 @@ namespace OneOf.SourceGenerator.Tests
     [GenerateOneOf]
     public partial class StringOrNumber : OneOfBase<string, int, uint> { }
 
-    [GenerateOneOf]
+    [GenerateOneOf("MyClass", "MyClass2")]
     public partial class MyClass2OrMyClass : OneOfBase<MyClass, MyClass2> { }
 
     [GenerateOneOf]
     public partial class MyClassOrFakeOneOf : OneOfBase<MyClass, NotOneOf.OneOf> { }
+
+    [GenerateOneOf("Success", "Failure", "Number", "Bit")]
+    public partial class SuccessOrFailureOrInt32OrBool : OneOfBase<
+        SuccessOrFailureOrInt32OrBool.SuccessResult,
+        SuccessOrFailureOrInt32OrBool.FailureResult,
+        int, bool>
+    {
+        public class SuccessResult { }
+        public class FailureResult { }
+    }
 
     public class MyClass
     {
