@@ -1,5 +1,6 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
+using OneOf.Extensions;
 using OneOf.SourceGenerator;
 using System;
 using System.Collections.Generic;
@@ -14,9 +15,11 @@ namespace OneOf
         public static bool ValidateClass(
             this GeneratorExecutionContext context,
             ITypeSymbol classSymbol,
-            Location attributeLocation)
+            AttributeData attributeData)
         {
             var diagnostics = new List<Diagnostic>();
+
+            var attributeLocation = attributeData.GetSyntax()?.GetLocation();
 
             if (!classSymbol.ContainingSymbol.Equals(classSymbol.ContainingNamespace, SymbolEqualityComparer.Default))
                 diagnostics.Add(Diagnostic.Create(DiagnosticErrors.TopLevelError, attributeLocation, classSymbol.Name));
@@ -27,38 +30,51 @@ namespace OneOf
             if (classSymbol.DeclaredAccessibility != Accessibility.Public)
                 diagnostics.Add(Diagnostic.Create(DiagnosticErrors.ClassIsNotPublic, attributeLocation, classSymbol.Name));
 
-            return diagnostics.ReportAndFailIfAny(context);
+            return diagnostics.ReportIfAny(context);
         }
 
         public static bool ValidateTypeArguments(
             this GeneratorExecutionContext context,
             ITypeSymbol classSymbol,
-            Location attributeLocation,
-            IReadOnlyCollection<ITypeSymbol> typeArguments)
+            AttributeData attributeData)
         {
             var diagnostics = new List<Diagnostic>();
 
+            var typeArguments = classSymbol.BaseType.TypeArguments;
+
             if (typeArguments.Any(x => x.Name == nameof(Object)))
             {
+                var attributeLocation = attributeData.GetSyntax()?.GetLocation();
                 diagnostics.Add(Diagnostic.Create(DiagnosticErrors.ObjectIsOneOfType, attributeLocation, classSymbol.Name));
             }
-            return diagnostics.ReportAndFailIfAny(context);
+            return diagnostics.ReportIfAny(context);
         }
 
         public static bool ValidateTypeNames(
             this GeneratorExecutionContext context,
             ITypeSymbol classSymbol,
-            Location attributeLocation,
-            IReadOnlyCollection<ITypeSymbol> typeArguments,
-            IReadOnlyCollection<TypedConstant> typeNames)
+            AttributeData attributeData)
         {
             var diagnostics = new List<Diagnostic>();
 
-            if (typeNames.Count > 0 && typeNames.Count != typeArguments.Count)
-                diagnostics.Add(Diagnostic.Create(DiagnosticErrors.WrongNumberOfTypeNames, attributeLocation, typeArguments.Count, typeNames.Count));
+            var typeArguments = classSymbol.BaseType.TypeArguments;
+            var attributeSyntax = attributeData.GetSyntax();
+            var attributeLocation = attributeSyntax?.GetLocation();
+
+            var typeNames = attributeData.ConstructorArguments.First().Values;
+            if (typeNames.Length > 0 && typeNames.Length != typeArguments.Length)
+                diagnostics.Add(Diagnostic.Create(DiagnosticErrors.WrongNumberOfTypeNames, attributeLocation, typeArguments.Length, typeNames.Length));
+
+            var typeNameSyntaxes = attributeSyntax.ArgumentList?.Arguments
+                .Where(x => x.NameEquals == null)
+                .Select(x => x.Expression.GetLocation())
+                .ToArray();
 
             foreach (var (name, nameIndex) in typeNames.Select((x, i) => (x, i)))
             {
+                var location = nameIndex < typeNameSyntaxes.Length
+                    ? typeNameSyntaxes[nameIndex]
+                    : attributeLocation;
                 if (string.IsNullOrEmpty(name.Value as string))
                     diagnostics.Add(Diagnostic.Create(DiagnosticErrors.TypeNameCannotBeNullOrEmpty, attributeLocation, nameIndex + 1));
 
@@ -66,20 +82,7 @@ namespace OneOf
                     diagnostics.Add(Diagnostic.Create(DiagnosticErrors.InvalidTypeName, attributeLocation, name.Value));
             }
 
-            return diagnostics.ReportAndFailIfAny(context);
-        }
-
-        private static bool ReportAndFailIfAny(this IEnumerable<Diagnostic> diagnostics, GeneratorExecutionContext context)
-        {
-            if (diagnostics.Any())
-            {
-                foreach (var diag in diagnostics)
-                    context.ReportDiagnostic(diag);
-
-                return false;
-            }
-
-            return true;
+            return diagnostics.ReportIfAny(context);
         }
     }
 }

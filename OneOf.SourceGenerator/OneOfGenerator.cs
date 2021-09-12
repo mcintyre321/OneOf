@@ -69,10 +69,7 @@ namespace {_attributeNamespace}
 
             foreach (var (namedSymbol, attributeData) in namedTypeSymbols)
             {
-                var attributeLocation = attributeData.ApplicationSyntaxReference?.GetSyntax().GetLocation();
-                var typeNames = attributeData.ConstructorArguments.First().Values;
-                string? classSource = ProcessClass(namedSymbol, context, attributeLocation, typeNames);
-
+                string? classSource = ProcessClass(namedSymbol, context, attributeData);
                 if (classSource is null)
                 {
                     continue;
@@ -82,23 +79,21 @@ namespace {_attributeNamespace}
             }
         }
 
-        private static string? ProcessClass(INamedTypeSymbol classSymbol, GeneratorExecutionContext context, Location? attributeLocation, ImmutableArray<TypedConstant> typeNames)
+        private static string? ProcessClass(INamedTypeSymbol classSymbol, GeneratorExecutionContext context, AttributeData attributeData)
         {
-            attributeLocation ??= Location.None;
-
             var diagnostics = new List<Diagnostic>();
-            if (!context.ValidateClass(classSymbol, attributeLocation))
+            if (!context.ValidateClass(classSymbol, attributeData))
+                return null;
+
+            if (!context.ValidateTypeArguments(classSymbol, attributeData))
+                return null;
+
+            if (!context.ValidateTypeNames(classSymbol, attributeData))
                 return null;
 
             var typeParameters = classSymbol.BaseType.TypeParameters;
             var typeArguments = classSymbol.BaseType.TypeArguments;
-
-            if (!context.ValidateTypeArguments(classSymbol, attributeLocation, typeArguments))
-                return null;
-
-            if (!context.ValidateTypeNames(classSymbol, attributeLocation, typeArguments, typeNames))
-                return null;
-
+            var typeNames = attributeData.ConstructorArguments.First().Values;
             var paramArgPairs = typeParameters.Zip(typeArguments, (param, arg) => (param: param, arg: arg));
             var paramArgsAndNames = paramArgPairs.Zip(typeNames, (pa, name) => (param: pa.param, arg: pa.arg, name: name));
 
