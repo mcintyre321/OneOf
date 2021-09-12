@@ -47,6 +47,13 @@ namespace OneOf.SourceGenerator
                                                                                               DiagnosticSeverity.Error,
                                                                                               isEnabledByDefault: true);
 
+        public static readonly DiagnosticDescriptor InvalidTypeName = new(id: "ONEOFGEN007",
+                                                                                              title: "Invalid name",
+                                                                                              messageFormat: "The name '{0}' cannot produce valid property or method names",
+                                                                                              category: "OneOfGenerator",
+                                                                                              DiagnosticSeverity.Error,
+                                                                                              isEnabledByDefault: true);
+
 
     }
 }

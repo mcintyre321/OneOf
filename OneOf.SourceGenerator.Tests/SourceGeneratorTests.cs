@@ -188,7 +188,7 @@ namespace OneOf.SourceGenerator.Tests
     [GenerateOneOf]
     public partial class StringOrNumber : OneOfBase<string, int, uint> { }
 
-    [GenerateOneOf("MyClass", "MyClass2")]
+    [GenerateOneOf("MyClass", "MyClass2-")]
     public partial class MyClass2OrMyClass : OneOfBase<MyClass, MyClass2> { }
 
     [GenerateOneOf]

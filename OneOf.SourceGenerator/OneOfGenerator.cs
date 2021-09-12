@@ -87,46 +87,17 @@ namespace {_attributeNamespace}
             attributeLocation ??= Location.None;
 
             var diagnostics = new List<Diagnostic>();
-
-            if (!classSymbol.ContainingSymbol.Equals(classSymbol.ContainingNamespace, SymbolEqualityComparer.Default))
-                diagnostics.Add(Diagnostic.Create(DiagnosticErrors.TopLevelError, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
-
-            if (classSymbol.BaseType is null || classSymbol.BaseType.Name != "OneOfBase" || classSymbol.BaseType.ContainingNamespace.ToString() != "OneOf")
-                diagnostics.Add(Diagnostic.Create(DiagnosticErrors.WrongBaseType, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
-
-            if (classSymbol.DeclaredAccessibility != Accessibility.Public)
-                diagnostics.Add(Diagnostic.Create(DiagnosticErrors.ClassIsNotPublic, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
-
-            if (diagnostics.Any())
-            {
-                foreach (var diag in diagnostics)
-                    context.ReportDiagnostic(diag);
-
+            if (!context.ValidateClass(classSymbol, attributeLocation))
                 return null;
-            }
 
             var typeParameters = classSymbol.BaseType.TypeParameters;
             var typeArguments = classSymbol.BaseType.TypeArguments;
 
-            if (typeArguments.Any(x => x.Name == nameof(Object)))
-                diagnostics.Add(Diagnostic.Create(DiagnosticErrors.ObjectIsOneOfType, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
-
-            if (typeNames.Length > 0 && typeNames.Length != typeArguments.Length)
-                diagnostics.Add(Diagnostic.Create(DiagnosticErrors.WrongNumberOfTypeNames, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error, typeArguments.Length, typeNames.Length));
-
-            foreach (var (name, nameIndex) in typeNames.Select((x, i) => (x, i)))
-            {
-                if (string.IsNullOrEmpty(name.Value as string))
-                    diagnostics.Add(Diagnostic.Create(DiagnosticErrors.TypeNameCannotBeNullOrEmpty, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error, name, nameIndex + 1));
-            }
-
-            if (diagnostics.Any())
-            {
-                foreach (var diag in diagnostics)
-                    context.ReportDiagnostic(diag);
-
+            if (!context.ValidateTypeArguments(classSymbol, attributeLocation, typeArguments))
                 return null;
-            }
+
+            if (!context.ValidateTypeNames(classSymbol, attributeLocation, typeArguments, typeNames))
+                return null;
 
             var paramArgPairs = typeParameters.Zip(typeArguments, (param, arg) => (param: param, arg: arg));
             var paramArgsAndNames = paramArgPairs.Zip(typeNames, (pa, name) => (param: pa.param, arg: pa.arg, name: name));
