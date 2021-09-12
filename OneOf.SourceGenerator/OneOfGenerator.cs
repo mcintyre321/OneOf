@@ -157,7 +157,6 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
                     {RoslynFactory.CreateMethodTryPickX(paramArgPairs, param, arg, name)}
             ");
             }
-
             source.Append(@"    }
 }");
             return source.ToString();
