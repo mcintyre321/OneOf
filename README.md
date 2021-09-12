@@ -179,7 +179,7 @@ a Source Generator (thanks to @romfir for the contribution :D). Install it via
 and then define a stub like so:
 
 ```csharp
-[GenerateOneOf(GenerateNamedProperties = true)]
+[GenerateOneOf]
 public partial class StringOrNumber : OneOfBase<string, int> { }
 ```
 
@@ -195,13 +195,5 @@ public partial class StringOrNumber
 
 	public static implicit operator StringOrNumber(System.Int32 _) => new StringOrNumber(_);
 	public static explicit operator System.Int32(StringOrNumber _) => _.AsT1;
-
-    // when GenerateNamedProperties is true
-    public bool IsString => this.IsT0;
-    public System.String AsString => this.AsT0;
-    public bool TryPickString(out string value, out System.Int32 remainder) => this.TryPickT0(out value, out remainder);
-    public bool IsInt32 => this.IsT1;
-    public System.Int32 AsInt32 => this.AsT1;
-    public bool TryPickInt32(out System.Int32 value, out System.String remainder) => this.TryPickT1(out value, out remainder);
 }
 ```
