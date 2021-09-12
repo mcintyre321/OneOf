@@ -151,18 +151,6 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
 
             foreach (var (param, arg, name) in paramArgsAndNames)
             {
-                var remainderArgs = paramArgPairs
-                    .Except(new[] { (param, arg) })
-                    .Select(x => x.arg.ToDisplayString());
-                var remainderArgsString = remainderArgs.Count() > 1
-                    ? $"OneOf<{string.Join(", ", remainderArgs)}>"
-                    : remainderArgs.Single();
-
-
-                //throw new Exception(RoslynFactory.CreatePropertyIsX(param, arg, name).ToString());
-                //throw new Exception(RoslynFactory.CreatePropertyAsX(param, arg, name).ToString());
-                //throw new Exception(RoslynFactory.CreateMethodTryPickX(paramArgPairs, param, arg, name).ToString());
-
                 source.Append($@"
                     {RoslynFactory.CreatePropertyIsX(param, arg, name)}
                     {RoslynFactory.CreatePropertyAsX(param, arg, name)}

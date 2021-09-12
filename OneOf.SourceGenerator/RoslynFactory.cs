@@ -44,7 +44,8 @@ namespace OneOf.SourceGenerator
                             SyntaxFactory.ThisExpression(),
                             SyntaxFactory.IdentifierName("As" + param.Name))))
                 .WithSemicolonToken(
-                    SyntaxFactory.Token(SyntaxKind.SemicolonToken));
+                    SyntaxFactory.Token(SyntaxKind.SemicolonToken))
+                .NormalizeWhitespace();
         }
 
         internal static MethodDeclarationSyntax CreateMethodTryPickX(
@@ -104,7 +105,8 @@ namespace OneOf.SourceGenerator
                             .WithRefOrOutKeyword(
                                 SyntaxFactory.Token(SyntaxKind.OutKeyword))})))))
                 .WithSemicolonToken(
-                    SyntaxFactory.Token(SyntaxKind.SemicolonToken));
+                    SyntaxFactory.Token(SyntaxKind.SemicolonToken))
+                .NormalizeWhitespace();
         }
     }
 }
