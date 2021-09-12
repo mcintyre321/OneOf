@@ -158,13 +158,15 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
                     ? $"OneOf<{string.Join(", ", remainderArgs)}>"
                     : remainderArgs.Single();
 
-                source.Append($@"
-                    //{RoslynFactory.CreatePropertyIsX(param, arg, name)}
-                    //{RoslynFactory.CreatePropertyAsX(param, arg, name)}
-                    //{RoslynFactory.CreateMethodTryPickX(param, arg, name)}
 
-                    //public {arg.ToDisplayString()} As{arg.Name} => this.As{param.Name};
-                    //public bool TryPick{arg.Name}(out {arg.ToDisplayString()} value, out {remainderArgsString} remainder) => this.TryPick{param.Name}(out value, out remainder);
+                //throw new Exception(RoslynFactory.CreatePropertyIsX(param, arg, name).ToString());
+                //throw new Exception(RoslynFactory.CreatePropertyAsX(param, arg, name).ToString());
+                //throw new Exception(RoslynFactory.CreateMethodTryPickX(paramArgPairs, param, arg, name).ToString());
+
+                source.Append($@"
+                    {RoslynFactory.CreatePropertyIsX(param, arg, name)}
+                    {RoslynFactory.CreatePropertyAsX(param, arg, name)}
+                    {RoslynFactory.CreateMethodTryPickX(paramArgPairs, param, arg, name)}
             ");
             }
 
