@@ -13,43 +13,15 @@ namespace OneOf.SourceGenerator
     [Generator]
     public class OneOfGenerator : ISourceGenerator
     {
+        private const string AttributeName = "GenerateOneOfAttribute";
+        private const string AttributeNamespace = "OneOf";
 
-        private static readonly DiagnosticDescriptor _topLevelError = new(id: "ONEOFGEN001",
-                                                                                              title: "Class must be top level",
-                                                                                              messageFormat: "Class '{0}' using OneOfGenerator must be top level",
-                                                                                              category: "OneOfGenerator",
-                                                                                              DiagnosticSeverity.Error,
-                                                                                              isEnabledByDefault: true);
-
-        private static readonly DiagnosticDescriptor _wrongBaseType = new(id: "ONEOFGEN002",
-                                                                                              title: "Class must inherit from OneOfBase",
-                                                                                              messageFormat: "Class '{0}' does not inherit from OneOfBase",
-                                                                                              category: "OneOfGenerator",
-                                                                                              DiagnosticSeverity.Error,
-                                                                                              isEnabledByDefault: true);
-
-        private static readonly DiagnosticDescriptor _classIsNotPublic = new(id: "ONEOFGEN003",
-                                                                                              title: "Class must be public",
-                                                                                              messageFormat: "Class '{0}' is not public",
-                                                                                              category: "OneOfGenerator",
-                                                                                              DiagnosticSeverity.Error,
-                                                                                              isEnabledByDefault: true);
-
-        private static readonly DiagnosticDescriptor _objectIsOneOfType = new(id: "ONEOFGEN004",
-                                                                                              title: "Object is not a valid type parameter",
-                                                                                              messageFormat: "Defined conversions to or from a base type are not allowed for class '{0}'",
-                                                                                              category: "OneOfGenerator",
-                                                                                              DiagnosticSeverity.Error,
-                                                                                              isEnabledByDefault: true);
-
-        private const string _attributeName = "GenerateOneOfAttribute";
-        private const string _attributeNamespace = "OneOf";
         private readonly string _attributeText = $@"using System;
 
-namespace {_attributeNamespace}
+namespace {AttributeNamespace}
 {{
     [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
-    public sealed class {_attributeName} : Attribute
+    public sealed class {AttributeName} : Attribute
     {{
     }}
 }}
@@ -57,7 +29,7 @@ namespace {_attributeNamespace}
 
         public void Execute(GeneratorExecutionContext context)
         {
-            context.AddSource(_attributeName, SourceText.From(_attributeText, Encoding.UTF8));
+            context.AddSource(AttributeName, SourceText.From(_attributeText, Encoding.UTF8));
 
             if (context.SyntaxReceiver is not OneOfSyntaxReceiver receiver)
             {
@@ -69,9 +41,12 @@ namespace {_attributeNamespace}
                 return;
             }
 
-            Compilation compilation = context.Compilation.AddSyntaxTrees(CSharpSyntaxTree.ParseText(SourceText.From(_attributeText, Encoding.UTF8), options));
+            Compilation compilation =
+                context.Compilation.AddSyntaxTrees(
+                    CSharpSyntaxTree.ParseText(SourceText.From(_attributeText, Encoding.UTF8), options));
 
-            INamedTypeSymbol? attributeSymbol = compilation.GetTypeByMetadataName($"{_attributeNamespace}.{_attributeName}");
+            INamedTypeSymbol? attributeSymbol =
+                compilation.GetTypeByMetadataName($"{AttributeNamespace}.{AttributeName}");
 
             if (attributeSymbol is null)
             {
@@ -84,11 +59,13 @@ namespace {_attributeNamespace}
                 SemanticModel model = compilation.GetSemanticModel(classDeclaration.SyntaxTree);
                 INamedTypeSymbol? namedTypeSymbol = model.GetDeclaredSymbol(classDeclaration);
 
-                AttributeData? attributeData = namedTypeSymbol?.GetAttributes().FirstOrDefault(ad => ad.AttributeClass?.Equals(attributeSymbol, SymbolEqualityComparer.Default) != false);
+                AttributeData? attributeData = namedTypeSymbol?.GetAttributes().FirstOrDefault(ad =>
+                    ad.AttributeClass?.Equals(attributeSymbol, SymbolEqualityComparer.Default) != false);
 
-                if (attributeData is object)
+                if (attributeData is not null)
                 {
-                    namedTypeSymbols.Add((namedTypeSymbol!, attributeData.ApplicationSyntaxReference?.GetSyntax().GetLocation()));
+                    namedTypeSymbols.Add((namedTypeSymbol!,
+                        attributeData.ApplicationSyntaxReference?.GetSyntax().GetLocation()));
                 }
             }
 
@@ -101,59 +78,76 @@ namespace {_attributeNamespace}
                     continue;
                 }
 
-                context.AddSource($"{namedSymbol.ContainingNamespace}_{namedSymbol.Name}.generated.cs", SourceText.From(classSource, Encoding.UTF8));
+                context.AddSource($"{namedSymbol.ContainingNamespace}_{namedSymbol.Name}.generated.cs",
+                    SourceText.From(classSource, Encoding.UTF8));
             }
         }
 
-        private static string? ProcessClass(INamedTypeSymbol classSymbol, GeneratorExecutionContext context, Location? attributeLocation)
+        private static string? ProcessClass(INamedTypeSymbol classSymbol, GeneratorExecutionContext context,
+            Location? attributeLocation)
         {
             attributeLocation ??= Location.None;
 
             if (!classSymbol.ContainingSymbol.Equals(classSymbol.ContainingNamespace, SymbolEqualityComparer.Default))
             {
-                context.ReportDiagnostic(Diagnostic.Create(_topLevelError, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
+                context.ReportDiagnostic(Diagnostic.Create(GeneratorDiagnosticDescriptors.TopLevelError,
+                    attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
                 return null;
             }
 
-            if (classSymbol.BaseType is null || classSymbol.BaseType.Name != "OneOfBase" || classSymbol.BaseType.ContainingNamespace.ToString() != "OneOf")
+            if (classSymbol.BaseType is null || classSymbol.BaseType.Name != "OneOfBase" ||
+                classSymbol.BaseType.ContainingNamespace.ToString() != "OneOf")
             {
-                context.ReportDiagnostic(Diagnostic.Create(_wrongBaseType, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
+                context.ReportDiagnostic(Diagnostic.Create(GeneratorDiagnosticDescriptors.WrongBaseType,
+                    attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
                 return null;
             }
 
             if (classSymbol.DeclaredAccessibility != Accessibility.Public)
             {
-                context.ReportDiagnostic(Diagnostic.Create(_classIsNotPublic, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
+                context.ReportDiagnostic(Diagnostic.Create(GeneratorDiagnosticDescriptors.ClassIsNotPublic,
+                    attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
                 return null;
             }
 
-            ImmutableArray<ITypeParameterSymbol> typeParameters = classSymbol.BaseType.TypeParameters;
             ImmutableArray<ITypeSymbol> typeArguments = classSymbol.BaseType.TypeArguments;
 
             if (typeArguments.Any(x => x.Name == nameof(Object)))
             {
-                context.ReportDiagnostic(Diagnostic.Create(_objectIsOneOfType, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
+                context.ReportDiagnostic(Diagnostic.Create(GeneratorDiagnosticDescriptors.ObjectIsOneOfType,
+                    attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
                 return null;
             }
 
-            IEnumerable<(ITypeParameterSymbol param, ITypeSymbol arg)> paramArgPairs = typeParameters.Zip(typeArguments, (param, arg) => (param, arg));
+            return GenerateClassSource(classSymbol, classSymbol.BaseType.TypeParameters, typeArguments);
+        }
 
-            string generics = string.Join(", ", typeArguments.Select(x => x.ToDisplayString()));
+        private static string GenerateClassSource(INamedTypeSymbol classSymbol,
+            ImmutableArray<ITypeParameterSymbol> typeParameters, ImmutableArray<ITypeSymbol> typeArguments)
+        {
+            IEnumerable<(ITypeParameterSymbol param, ITypeSymbol arg)> paramArgPairs =
+                typeParameters.Zip(typeArguments, (param, arg) => (param, arg));
+
+            string oneOfGenericPart = GetGenericPart(typeArguments);
+
+            string classNameWithGenericTypes = $"{classSymbol.Name}{GetOpenGenericPart(classSymbol)}";
 
             StringBuilder source = new($@"using System;
 
 namespace {classSymbol.ContainingNamespace.ToDisplayString()}
 {{
-    public partial class {classSymbol.Name}
+    public partial class {classNameWithGenericTypes}");
+
+            source.Append($@"
     {{
-        public {classSymbol.Name}(OneOf.OneOf<{generics}> _) : base(_) {{ }}
+        public {classSymbol.Name}(OneOf.OneOf<{oneOfGenericPart}> _) : base(_) {{ }}
 ");
 
             foreach ((ITypeParameterSymbol param, ITypeSymbol arg) in paramArgPairs)
             {
                 source.Append($@"
-        public static implicit operator {classSymbol.Name}({arg.ToDisplayString()} _) => new {classSymbol.Name}(_);
-        public static explicit operator {arg.ToDisplayString()}({classSymbol.Name} _) => _.As{param.Name};
+        public static implicit operator {classNameWithGenericTypes}({arg.ToDisplayString()} _) => new {classNameWithGenericTypes}(_);
+        public static explicit operator {arg.ToDisplayString()}({classNameWithGenericTypes} _) => _.As{param.Name};
 ");
             }
 
@@ -162,20 +156,33 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
             return source.ToString();
         }
 
+        private static string GetGenericPart(ImmutableArray<ITypeSymbol> typeArguments) =>
+            string.Join(", ", typeArguments.Select(x => x.ToDisplayString()));
+
+        private static string? GetOpenGenericPart(INamedTypeSymbol classSymbol)
+        {
+            if (!classSymbol.TypeArguments.Any())
+            {
+                return null;
+            }
+
+            return $"<{GetGenericPart(classSymbol.TypeArguments)}>";
+        }
+
         public void Initialize(GeneratorInitializationContext context)
             => context.RegisterForSyntaxNotifications(() => new OneOfSyntaxReceiver());
-    }
 
-    internal class OneOfSyntaxReceiver : ISyntaxReceiver
-    {
-        public List<ClassDeclarationSyntax> CandidateClasses { get; } = new();
-
-        public void OnVisitSyntaxNode(SyntaxNode syntaxNode)
+        internal class OneOfSyntaxReceiver : ISyntaxReceiver
         {
-            if (syntaxNode is ClassDeclarationSyntax { AttributeLists: { Count: > 0 } } classDeclarationSyntax
-                && classDeclarationSyntax.Modifiers.Any(SyntaxKind.PartialKeyword))
+            public List<ClassDeclarationSyntax> CandidateClasses { get; } = new();
+
+            public void OnVisitSyntaxNode(SyntaxNode syntaxNode)
             {
-                CandidateClasses.Add(classDeclarationSyntax);
+                if (syntaxNode is ClassDeclarationSyntax { AttributeLists: { Count: > 0 } } classDeclarationSyntax
+                    && classDeclarationSyntax.Modifiers.Any(SyntaxKind.PartialKeyword))
+                {
+                    CandidateClasses.Add(classDeclarationSyntax);
+                }
             }
         }
     }
