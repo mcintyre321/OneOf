@@ -19,3 +19,4 @@ packages/*
 .vs
 *.user
 project.lock.json
+.idea/
