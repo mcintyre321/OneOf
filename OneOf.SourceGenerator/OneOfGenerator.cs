@@ -24,7 +24,7 @@ using System;
 namespace {AttributeNamespace}
 {{
     [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
-    public sealed class {AttributeName} : Attribute
+    internal sealed class {AttributeName} : Attribute
     {{
     }}
 }}
@@ -184,7 +184,7 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
 
             public void OnVisitSyntaxNode(SyntaxNode syntaxNode)
             {
-                if (syntaxNode is ClassDeclarationSyntax { AttributeLists: { Count: > 0 } } classDeclarationSyntax
+                if (syntaxNode is ClassDeclarationSyntax { AttributeLists.Count: > 0 } classDeclarationSyntax
                     && classDeclarationSyntax.Modifiers.Any(SyntaxKind.PartialKeyword))
                 {
                     CandidateClasses.Add(classDeclarationSyntax);
