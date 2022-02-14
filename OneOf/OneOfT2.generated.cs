@@ -1,4 +1,8 @@
 using System;
+
+#if !NET35
+using System.Threading.Tasks;
+#endif
 using static OneOf.Functions;
 
 namespace OneOf
@@ -69,6 +73,25 @@ namespace OneOf
             }
             throw new InvalidOperationException();
         }
+
+#if !NET35
+        public Task Switch(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2)
+        {
+            if (_index == 0 && f0 != null)
+            {                
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {                
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {                
+                return f2(_value2);
+            }
+            throw new InvalidOperationException();
+        }
+#endif
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2)
         {
