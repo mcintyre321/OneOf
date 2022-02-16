@@ -32,7 +32,7 @@ namespace {AttributeNamespace}
 
         public void Execute(GeneratorExecutionContext context)
         {
-            context.AddSource(AttributeName, SourceText.From(_attributeText, Encoding.UTF8));
+            context.AddSource($"{AttributeName}.g.cs", SourceText.From(_attributeText, Encoding.UTF8));
 
             if (context.SyntaxReceiver is not OneOfSyntaxReceiver receiver)
             {
