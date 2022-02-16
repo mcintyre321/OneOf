@@ -81,7 +81,7 @@ namespace {AttributeNamespace}
                     continue;
                 }
 
-                context.AddSource($"{namedSymbol.ContainingNamespace}_{namedSymbol.Name}.generated.cs",
+                context.AddSource($"{namedSymbol.ContainingNamespace}_{namedSymbol.Name}.g.cs",
                     SourceText.From(classSource, Encoding.UTF8));
             }
         }
