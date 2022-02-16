@@ -193,3 +193,4 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
         }
     }
 }
+ 
