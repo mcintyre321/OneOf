@@ -32,7 +32,7 @@ namespace {AttributeNamespace}
 
         public void Execute(GeneratorExecutionContext context)
         {
-            context.AddSource(AttributeName, SourceText.From(_attributeText, Encoding.UTF8));
+            context.AddSource($"{AttributeName}.g.cs", SourceText.From(_attributeText, Encoding.UTF8));
 
             if (context.SyntaxReceiver is not OneOfSyntaxReceiver receiver)
             {
@@ -81,7 +81,7 @@ namespace {AttributeNamespace}
                     continue;
                 }
 
-                context.AddSource($"{namedSymbol.ContainingNamespace}_{namedSymbol.Name}.generated.cs",
+                context.AddSource($"{namedSymbol.ContainingNamespace}_{namedSymbol.Name}.g.cs",
                     SourceText.From(classSource, Encoding.UTF8));
             }
         }
@@ -193,3 +193,4 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
         }
     }
 }
+ 
