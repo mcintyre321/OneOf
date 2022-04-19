@@ -8,7 +8,8 @@ namespace OneOf.Tests
         public void DeconstructT1()
         {
             OneOf<T1> oneOf = new T1();
-            var (value) = oneOf;
+            var (index, value) = oneOf;
+            Assert.AreEqual(0, index);
             Assert.IsNotNull(value);
         }
         
@@ -16,7 +17,8 @@ namespace OneOf.Tests
         public void DeconstructT2()
         {
             OneOf<T1, T2> oneOf = new T2();
-            var (_, value) = oneOf;
+            var (index,_, value) = oneOf;
+            Assert.AreEqual(1, index);
             Assert.IsNotNull(value);
         }
         
@@ -24,7 +26,8 @@ namespace OneOf.Tests
         public void DeconstructT3()
         {
             OneOf<T1, T2, T3> oneOf = new T3();
-            var (_, _, value) = oneOf;
+            var (index,_, _, value) = oneOf;
+            Assert.AreEqual(2, index);
             Assert.IsNotNull(value);
         }
         
@@ -32,7 +35,8 @@ namespace OneOf.Tests
         public void DeconstructT4()
         {
             OneOf<T1, T2, T3, T4> oneOf = new T4();
-            var (_, _, _, value) = oneOf;
+            var (index,_, _, _, value) = oneOf;
+            Assert.AreEqual(3, index);
             Assert.IsNotNull(value);
         }
         
@@ -40,7 +44,8 @@ namespace OneOf.Tests
         public void DeconstructT5()
         {
             OneOf<T1, T2, T3, T4, T5> oneOf = new T5();
-            var (_, _, _, _, value) = oneOf;
+            var (index,_, _, _, _, value) = oneOf;
+            Assert.AreEqual(4, index);
             Assert.IsNotNull(value);
         }
         
@@ -48,7 +53,8 @@ namespace OneOf.Tests
         public void DeconstructT6()
         {
             OneOf<T1, T2, T3, T4, T5, T6> oneOf = new T6();
-            var (_, _, _, _, _, value) = oneOf;
+            var (index,_, _, _, _, _, value) = oneOf;
+            Assert.AreEqual(5, index);
             Assert.IsNotNull(value);
         }
         
@@ -56,7 +62,8 @@ namespace OneOf.Tests
         public void DeconstructT7()
         {
             OneOf<T1, T2, T3, T4, T5, T6, T7> oneOf = new T7();
-            var (_, _, _, _, _, _, value) = oneOf;
+            var (index,_, _, _, _, _, _, value) = oneOf;
+            Assert.AreEqual(6, index);
             Assert.IsNotNull(value);
         }
         
@@ -64,7 +71,8 @@ namespace OneOf.Tests
         public void DeconstructT8()
         {
             OneOf<T1, T2, T3, T4, T5, T6, T7, T8> oneOf = new T8();
-            var (_, _, _, _, _, _, _, value) = oneOf;
+            var (index, _, _, _, _, _, _, _, value) = oneOf;
+            Assert.AreEqual(7, index);
             Assert.IsNotNull(value);
         }
     }

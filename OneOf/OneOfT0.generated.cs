@@ -42,8 +42,9 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public void Deconstruct(out T0 value0)
+        public void Deconstruct(out int index, out T0 value0)
         {
+            index = _index;
             value0 = _value0;
         }
 

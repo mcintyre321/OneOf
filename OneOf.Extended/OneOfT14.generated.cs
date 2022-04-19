@@ -238,8 +238,9 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
-        public void Deconstruct(out T0 value0, out T1 value1, out T2 value2, out T3 value3, out T4 value4, out T5 value5, out T6 value6, out T7 value7, out T8 value8, out T9 value9, out T10 value10, out T11 value11, out T12 value12, out T13 value13, out T14 value14)
+        public void Deconstruct(out int index, out T0 value0, out T1 value1, out T2 value2, out T3 value3, out T4 value4, out T5 value5, out T6 value6, out T7 value7, out T8 value8, out T9 value9, out T10 value10, out T11 value11, out T12 value12, out T13 value13, out T14 value14)
         {
+            index = _index;
             value0 = _value0;
             value1 = _value1;
             value2 = _value2;

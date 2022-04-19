@@ -100,8 +100,9 @@ namespace OneOf
             throw new InvalidOperationException();
         }}
 
-        public void Deconstruct({RangeJoined(", ", e => $"out T{e} value{e}")})
+        public void Deconstruct(out int index, {RangeJoined(", ", e => $"out T{e} value{e}")})
         {{
+            index = _index;
             {RangeJoined(@"
             ", j => $"value{j} = _value{j};")}
         }}
