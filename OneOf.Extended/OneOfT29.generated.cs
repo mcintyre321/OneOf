@@ -448,6 +448,40 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public void Deconstruct(out T0 value0, out T1 value1, out T2 value2, out T3 value3, out T4 value4, out T5 value5, out T6 value6, out T7 value7, out T8 value8, out T9 value9, out T10 value10, out T11 value11, out T12 value12, out T13 value13, out T14 value14, out T15 value15, out T16 value16, out T17 value17, out T18 value18, out T19 value19, out T20 value20, out T21 value21, out T22 value22, out T23 value23, out T24 value24, out T25 value25, out T26 value26, out T27 value27, out T28 value28, out T29 value29)
+        {
+            value0 = _value0;
+            value1 = _value1;
+            value2 = _value2;
+            value3 = _value3;
+            value4 = _value4;
+            value5 = _value5;
+            value6 = _value6;
+            value7 = _value7;
+            value8 = _value8;
+            value9 = _value9;
+            value10 = _value10;
+            value11 = _value11;
+            value12 = _value12;
+            value13 = _value13;
+            value14 = _value14;
+            value15 = _value15;
+            value16 = _value16;
+            value17 = _value17;
+            value18 = _value18;
+            value19 = _value19;
+            value20 = _value20;
+            value21 = _value21;
+            value22 = _value22;
+            value23 = _value23;
+            value24 = _value24;
+            value25 = _value25;
+            value26 = _value26;
+            value27 = _value27;
+            value28 = _value28;
+            value29 = _value29;
+        }
+
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8, Func<T9, TResult> f9, Func<T10, TResult> f10, Func<T11, TResult> f11, Func<T12, TResult> f12, Func<T13, TResult> f13, Func<T14, TResult> f14, Func<T15, TResult> f15, Func<T16, TResult> f16, Func<T17, TResult> f17, Func<T18, TResult> f18, Func<T19, TResult> f19, Func<T20, TResult> f20, Func<T21, TResult> f21, Func<T22, TResult> f22, Func<T23, TResult> f23, Func<T24, TResult> f24, Func<T25, TResult> f25, Func<T26, TResult> f26, Func<T27, TResult> f27, Func<T28, TResult> f28, Func<T29, TResult> f29)
         {
             if (_index == 0 && f0 != null)

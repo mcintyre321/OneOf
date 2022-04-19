@@ -46,6 +46,11 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public void Deconstruct(out T0 value0)
+        {
+            value0 = _value0;
+        }
+
         public TResult Match<TResult>(Func<T0, TResult> f0)
         {
             if (_index == 0 && f0 != null)

@@ -100,6 +100,12 @@ namespace OneOf
             throw new InvalidOperationException();
         }}
 
+        public void Deconstruct({RangeJoined(", ", e => $"out T{e} value{e}")})
+        {{
+            {RangeJoined(@"
+            ", j => $"value{j} = _value{j};")}
+        }}
+
         public TResult Match<TResult>({RangeJoined(", ", e => $"Func<T{e}, TResult> f{e}")})
         {{
             {RangeJoined(@"
