@@ -9,7 +9,7 @@
     <Product>Harry McIntyre</Product>
     <Description>This source generator automaticly implements OneOfBase hierarchies</Description>
     <PackageProjectUrl>https://github.com/mcintyre321/OneOf/</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/mcintyre321/OneOf/blob/master/licence.md</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>discriminated unions, return type, match switch, generator, source generator</PackageTags>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>OneOf.SourceGenerator</PackageId>
