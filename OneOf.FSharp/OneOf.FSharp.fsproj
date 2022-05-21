@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <AssemblyName>OneOf.FSharp</AssemblyName>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <DebugType>portable</DebugType>
     <Authors>Harry McIntyre</Authors>
     <Title>OneOf - Easy Discriminated Unions for c#</Title>
