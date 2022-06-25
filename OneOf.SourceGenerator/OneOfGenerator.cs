@@ -1,7 +1,6 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.CodeAnalysis.Text;
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
@@ -32,21 +31,12 @@ namespace {AttributeNamespace}
 
         public void Execute(GeneratorExecutionContext context)
         {
-            context.AddSource($"{AttributeName}.g.cs", SourceText.From(_attributeText, Encoding.UTF8));
-
             if (context.SyntaxReceiver is not OneOfSyntaxReceiver receiver)
             {
                 return;
             }
 
-            if ((context.Compilation as CSharpCompilation)?.SyntaxTrees[0].Options is not CSharpParseOptions options)
-            {
-                return;
-            }
-
-            Compilation compilation =
-                context.Compilation.AddSyntaxTrees(
-                    CSharpSyntaxTree.ParseText(SourceText.From(_attributeText, Encoding.UTF8), options));
+            Compilation compilation = context.Compilation;
 
             INamedTypeSymbol? attributeSymbol =
                 compilation.GetTypeByMetadataName($"{AttributeNamespace}.{AttributeName}");
@@ -81,8 +71,7 @@ namespace {AttributeNamespace}
                     continue;
                 }
 
-                context.AddSource($"{namedSymbol.ContainingNamespace}_{namedSymbol.Name}.g.cs",
-                    SourceText.From(classSource, Encoding.UTF8));
+                context.AddSource($"{namedSymbol.ContainingNamespace}_{namedSymbol.Name}.g.cs", classSource);
             }
         }
 
@@ -176,7 +165,11 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
         }
 
         public void Initialize(GeneratorInitializationContext context)
-            => context.RegisterForSyntaxNotifications(() => new OneOfSyntaxReceiver());
+        {
+            context.RegisterForPostInitialization(ctx =>
+                ctx.AddSource($"{AttributeName}.g.cs", _attributeText));
+            context.RegisterForSyntaxNotifications(() => new OneOfSyntaxReceiver());
+        }
 
         internal class OneOfSyntaxReceiver : ISyntaxReceiver
         {
@@ -193,4 +186,3 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
         }
     }
 }
- 

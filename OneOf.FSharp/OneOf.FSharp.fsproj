@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <AssemblyName>OneOf.FSharp</AssemblyName>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <DebugType>portable</DebugType>
     <Authors>Harry McIntyre</Authors>
     <Title>OneOf - Easy Discriminated Unions for c#</Title>
@@ -11,7 +11,7 @@
     <Product>Harry McIntyre</Product>
     <Description>This is an FSharp library for interop with the C# OneOf Types</Description>
     <PackageProjectUrl>https://github.com/mcintyre321/OneOf/</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/mcintyre321/OneOf/blob/master/licence.md</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>discriminated unions, return type, match switch</PackageTags>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>OneOf.FSharp</PackageId>
