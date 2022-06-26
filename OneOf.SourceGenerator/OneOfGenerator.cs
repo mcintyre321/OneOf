@@ -75,28 +75,25 @@ namespace {AttributeNamespace}
             }
         }
 
-        private static string? ProcessClass(INamedTypeSymbol classSymbol, GeneratorExecutionContext context,
-            Location? attributeLocation)
+        private static string? ProcessClass(INamedTypeSymbol classSymbol, GeneratorExecutionContext context, Location? attributeLocation)
         {
             attributeLocation ??= Location.None;
 
             if (!classSymbol.ContainingSymbol.Equals(classSymbol.ContainingNamespace, SymbolEqualityComparer.Default))
             {
-                context.ReportDiagnostic(Diagnostic.Create(GeneratorDiagnosticDescriptors.TopLevelError,
-                    attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
+                CreateDiagnosticError(GeneratorDiagnosticDescriptors.TopLevelError);
                 return null;
             }
 
-            if (classSymbol.BaseType is null || classSymbol.BaseType.Name != "OneOfBase" ||
-                classSymbol.BaseType.ContainingNamespace.ToString() != "OneOf")
+            if (classSymbol.BaseType is null || classSymbol.BaseType.Name != "OneOfBase" || classSymbol.BaseType.ContainingNamespace.ToString() != "OneOf")
             {
-                context.ReportDiagnostic(Diagnostic.Create(GeneratorDiagnosticDescriptors.WrongBaseType, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
+                CreateDiagnosticError(GeneratorDiagnosticDescriptors.WrongBaseType);
                 return null;
             }
 
             if (classSymbol.DeclaredAccessibility != Accessibility.Public)
             {
-                context.ReportDiagnostic(Diagnostic.Create(GeneratorDiagnosticDescriptors.ClassIsNotPublic, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
+                CreateDiagnosticError(GeneratorDiagnosticDescriptors.ClassIsNotPublic);
                 return null;
             }
 
@@ -106,18 +103,21 @@ namespace {AttributeNamespace}
             {
                 if (typeSymbol.Name == nameof(Object))
                 {
-                    context.ReportDiagnostic(Diagnostic.Create(GeneratorDiagnosticDescriptors.ObjectIsOneOfType, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
+                    CreateDiagnosticError(GeneratorDiagnosticDescriptors.ObjectIsOneOfType);
                     return null;
                 }
 
                 if (typeSymbol.TypeKind == TypeKind.Interface)
                 {
-                    context.ReportDiagnostic(Diagnostic.Create(GeneratorDiagnosticDescriptors.UserDefinedConversionsToOrFromAnInterfaceAreNotAllowed, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
+                    CreateDiagnosticError(GeneratorDiagnosticDescriptors.UserDefinedConversionsToOrFromAnInterfaceAreNotAllowed);
                     return null;
                 }
             }
 
             return GenerateClassSource(classSymbol, classSymbol.BaseType.TypeParameters, typeArguments);
+
+            void CreateDiagnosticError(DiagnosticDescriptor descriptor)
+                => context.ReportDiagnostic(Diagnostic.Create(descriptor, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
         }
 
         private static string GenerateClassSource(INamedTypeSymbol classSymbol,
