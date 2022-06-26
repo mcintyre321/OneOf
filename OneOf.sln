@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32611.2
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneOf.Tests", "OneOf.Tests\OneOf.Tests.csproj", "{82023ED0-3E20-43CF-ACA1-1EA547E70903}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -16,9 +16,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneOf.Extended", "OneOf.Ext
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generator", "Generator\Generator.csproj", "{508CDAF6-E780-459E-BD8F-776A5EE2C2FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneOf.SourceGenerator", "OneOf.SourceGenerator\OneOf.SourceGenerator.csproj", "{AC54E93D-1DB2-4143-A1AF-3CE2492EAC83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneOf.SourceGenerator", "OneOf.SourceGenerator\OneOf.SourceGenerator.csproj", "{AC54E93D-1DB2-4143-A1AF-3CE2492EAC83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneOf.SourceGenerator.Tests", "OneOf.SourceGenerator.Tests\OneOf.SourceGenerator.Tests.csproj", "{A7D18F0E-8966-4685-8146-34F507356F5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneOf.SourceGenerator.Tests", "OneOf.SourceGenerator.Tests\OneOf.SourceGenerator.Tests.csproj", "{A7D18F0E-8966-4685-8146-34F507356F5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneOf.SourceGenerator.AnalyzerTests", "OneOf.SourceGenerator.AnalyzerTests\OneOf.SourceGenerator.AnalyzerTests.csproj", "{C08F270E-157A-48B9-A7B6-C948FCFC5494}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +56,10 @@ Global
 		{A7D18F0E-8966-4685-8146-34F507356F5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7D18F0E-8966-4685-8146-34F507356F5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7D18F0E-8966-4685-8146-34F507356F5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C08F270E-157A-48B9-A7B6-C948FCFC5494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C08F270E-157A-48B9-A7B6-C948FCFC5494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C08F270E-157A-48B9-A7B6-C948FCFC5494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C08F270E-157A-48B9-A7B6-C948FCFC5494}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
