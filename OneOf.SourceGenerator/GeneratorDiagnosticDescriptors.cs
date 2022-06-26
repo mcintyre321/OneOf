@@ -32,7 +32,7 @@ namespace OneOf
                                                                                               DiagnosticSeverity.Error,
                                                                                               isEnabledByDefault: true);
 
-        public static readonly DiagnosticDescriptor UserDefinedConversionsToOrFromAnInterfaceAreNotAllowed = new(id: "CS0552",
+        public static readonly DiagnosticDescriptor UserDefinedConversionsToOrFromAnInterfaceAreNotAllowed = new(id: "ONEOFGEN005",
                                                                                             title: "user-defined conversions to or from an interface are not allowed",
                                                                                             messageFormat: "user-defined conversions to or from an interface are not allowed",
                                                                                             category: "OneOfGenerator",
