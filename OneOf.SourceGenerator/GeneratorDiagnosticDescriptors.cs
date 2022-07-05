@@ -2,7 +2,7 @@
 
 namespace OneOf
 {
-    internal class GeneratorDiagnosticDescriptors
+    public class GeneratorDiagnosticDescriptors
     {
         public static readonly DiagnosticDescriptor TopLevelError = new(id: "ONEOFGEN001",
                                                                                               title: "Class must be top level",
@@ -31,5 +31,12 @@ namespace OneOf
                                                                                               category: "OneOfGenerator",
                                                                                               DiagnosticSeverity.Error,
                                                                                               isEnabledByDefault: true);
+
+        public static readonly DiagnosticDescriptor UserDefinedConversionsToOrFromAnInterfaceAreNotAllowed = new(id: "ONEOFGEN005",
+                                                                                            title: "user-defined conversions to or from an interface are not allowed",
+                                                                                            messageFormat: "user-defined conversions to or from an interface are not allowed",
+                                                                                            category: "OneOfGenerator",
+                                                                                            DiagnosticSeverity.Error,
+                                                                                            isEnabledByDefault: true);
     }
 }
