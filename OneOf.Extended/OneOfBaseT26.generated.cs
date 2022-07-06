@@ -1,4 +1,8 @@
 using System;
+
+#if !NET35
+using System.Threading.Tasks;
+#endif
 using static OneOf.Functions;
 
 namespace OneOf
@@ -383,6 +387,121 @@ namespace OneOf
             }
             throw new InvalidOperationException();
         }
+
+#if !NET35
+        public Task Switch(Func<T0, Task> f0, Func<T1, Task> f1, Func<T2, Task> f2, Func<T3, Task> f3, Func<T4, Task> f4, Func<T5, Task> f5, Func<T6, Task> f6, Func<T7, Task> f7, Func<T8, Task> f8, Func<T9, Task> f9, Func<T10, Task> f10, Func<T11, Task> f11, Func<T12, Task> f12, Func<T13, Task> f13, Func<T14, Task> f14, Func<T15, Task> f15, Func<T16, Task> f16, Func<T17, Task> f17, Func<T18, Task> f18, Func<T19, Task> f19, Func<T20, Task> f20, Func<T21, Task> f21, Func<T22, Task> f22, Func<T23, Task> f23, Func<T24, Task> f24, Func<T25, Task> f25, Func<T26, Task> f26)
+        {
+            if (_index == 0 && f0 != null)
+            {                
+                return f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {                
+                return f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {                
+                return f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {                
+                return f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {                
+                return f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {                
+                return f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {                
+                return f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {                
+                return f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {                
+                return f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {                
+                return f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {                
+                return f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {                
+                return f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {                
+                return f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {                
+                return f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {                
+                return f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {                
+                return f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {                
+                return f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {                
+                return f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {                
+                return f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {                
+                return f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {                
+                return f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {                
+                return f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {                
+                return f22(_value22);
+            }
+            if (_index == 23 && f23 != null)
+            {                
+                return f23(_value23);
+            }
+            if (_index == 24 && f24 != null)
+            {                
+                return f24(_value24);
+            }
+            if (_index == 25 && f25 != null)
+            {                
+                return f25(_value25);
+            }
+            if (_index == 26 && f26 != null)
+            {                
+                return f26(_value26);
+            }
+            throw new InvalidOperationException();
+        }
+#endif
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8, Func<T9, TResult> f9, Func<T10, TResult> f10, Func<T11, TResult> f11, Func<T12, TResult> f12, Func<T13, TResult> f13, Func<T14, TResult> f14, Func<T15, TResult> f15, Func<T16, TResult> f16, Func<T17, TResult> f17, Func<T18, TResult> f18, Func<T19, TResult> f19, Func<T20, TResult> f20, Func<T21, TResult> f21, Func<T22, TResult> f22, Func<T23, TResult> f23, Func<T24, TResult> f24, Func<T25, TResult> f25, Func<T26, TResult> f26)
         {

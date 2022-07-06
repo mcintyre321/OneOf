@@ -38,6 +38,10 @@ string GetContent(bool isStruct, int i) {
     var sb = new StringBuilder();
 
     sb.Append(@$"using System;
+
+#if !NET35
+using System.Threading.Tasks;
+#endif
 using static OneOf.Functions;
 
 namespace OneOf
@@ -99,6 +103,18 @@ namespace OneOf
             }}")}
             throw new InvalidOperationException();
         }}
+
+#if !NET35
+        public Task Switch({RangeJoined(", ", e => $"Func<T{e}, Task> f{e}")})
+        {{
+            {RangeJoined(@"
+            ", j => @$"if (_index == {j} && f{j} != null)
+            {{                
+                return f{j}(_value{j});
+            }}")}
+            throw new InvalidOperationException();
+        }}
+#endif
 
         public TResult Match<TResult>({RangeJoined(", ", e => $"Func<T{e}, TResult> f{e}")})
         {{
