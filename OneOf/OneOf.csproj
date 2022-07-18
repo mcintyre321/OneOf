@@ -7,7 +7,7 @@
     <Company>Harry McIntyre</Company>
     <PackageVersion>1.0.0</PackageVersion>
     <Product>Harry McIntyre</Product>
-    <Description>F# style discriminated unions or C#, using a custom type OneOf&lt;T0, ... Tn&gt; which holds a single value and has a .Match(...) method on it for exhaustive matching. Simple but powerful.</Description>
+    <Description>F# style discriminated unions for C#, using a custom type OneOf&lt;T0, ... Tn&gt; which holds a single value and has a .Match(...) method on it for exhaustive matching. Simple but powerful.</Description>
     <PackageProjectUrl>https://github.com/mcintyre321/OneOf/</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/mcintyre321/OneOf/blob/master/licence.md</PackageLicenseUrl>
     <PackageTags>discriminated unions, return type, match switch</PackageTags>
