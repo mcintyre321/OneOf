@@ -3,7 +3,7 @@ using static OneOf.Functions;
 
 namespace OneOf
 {
-    public struct OneOf<T0, T1, T2> : IOneOf
+    public readonly struct OneOf<T0, T1, T2> : IOneOf
     {
         readonly T0 _value0;
         readonly T1 _value1;

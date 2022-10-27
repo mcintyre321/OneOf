@@ -36,13 +36,13 @@ string GetContent(bool isStruct, int i) {
     var genericArgs = Range(0, i).Select(e => $"T{e}").ToList();
     var genericArg = genericArgs.Joined(", ");
     var sb = new StringBuilder();
-
+    
     sb.Append(@$"using System;
 using static OneOf.Functions;
 
 namespace OneOf
 {{
-    public {IfStruct("struct", "class")} {className}<{genericArg}> : IOneOf
+    public {IfStruct("readonly struct", "class")} {className}<{genericArg}> : IOneOf
     {{
         {RangeJoined(@"
         ", j => $"readonly T{j} _value{j};")}
