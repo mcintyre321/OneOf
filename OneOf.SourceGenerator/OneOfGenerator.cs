@@ -91,12 +91,6 @@ namespace {AttributeNamespace}
                 return null;
             }
 
-            if (classSymbol.DeclaredAccessibility != Accessibility.Public)
-            {
-                CreateDiagnosticError(GeneratorDiagnosticDescriptors.ClassIsNotPublic);
-                return null;
-            }
-
             ImmutableArray<ITypeSymbol> typeArguments = classSymbol.BaseType.TypeArguments;
 
             foreach (ITypeSymbol typeSymbol in typeArguments)
@@ -135,7 +129,7 @@ namespace {AttributeNamespace}
 
 namespace {classSymbol.ContainingNamespace.ToDisplayString()}
 {{
-    public partial class {classNameWithGenericTypes}");
+    partial class {classNameWithGenericTypes}");
 
             source.Append($@"
     {{
