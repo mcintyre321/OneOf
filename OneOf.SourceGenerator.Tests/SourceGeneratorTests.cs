@@ -138,7 +138,7 @@ namespace OneOf.SourceGenerator.Tests
     public partial class SimpleGeneric : OneOfBase<List<string>, List<int>, Dictionary<long, string>> { }
 
     [GenerateOneOf]
-    public partial class StringOrNumber : OneOfBase<string, int, uint> { }
+    internal partial class StringOrNumber : OneOfBase<string, int, uint> { }
 
     [GenerateOneOf]
     public partial class MyClass2OrMyClass : OneOfBase<MyClass, MyClass2> { }

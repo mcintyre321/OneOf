@@ -18,13 +18,6 @@ namespace OneOf
                                                                                               DiagnosticSeverity.Error,
                                                                                               isEnabledByDefault: true);
 
-        public static readonly DiagnosticDescriptor ClassIsNotPublic = new(id: "ONEOFGEN003",
-                                                                                              title: "Class must be public",
-                                                                                              messageFormat: "Class '{0}' is not public",
-                                                                                              category: "OneOfGenerator",
-                                                                                              DiagnosticSeverity.Error,
-                                                                                              isEnabledByDefault: true);
-
         public static readonly DiagnosticDescriptor ObjectIsOneOfType = new(id: "ONEOFGEN004",
                                                                                               title: "Object is not a valid type parameter",
                                                                                               messageFormat: "Defined conversions to or from a base type are not allowed for class '{0}'",
