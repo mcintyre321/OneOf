@@ -1,4 +1,4 @@
-# OneOf
+# OneOf [![NuGet](https://img.shields.io/nuget/v/OneOf?logo=nuget)](https://www.nuget.org/packages/OneOf/) [![GitHub](https://img.shields.io/github/license/mcintyre321/OneOf)](licence.md)
 
 > "Ah! It's like a compile time checked switch statement!" - Mike Giorgaras
 
