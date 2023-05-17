@@ -61,7 +61,7 @@ namespace {AttributeNamespace}
                 var attributeData = namedTypeSymbol.GetAttributes().FirstOrDefault(ad =>
                     string.Equals(ad.AttributeClass?.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat), $"global::{AttributeNamespace}.{AttributeName}"));
 
-                return attributeData == null ? null : namedTypeSymbol;
+                return attributeData is null ? null : namedTypeSymbol;
             }
         }
 
