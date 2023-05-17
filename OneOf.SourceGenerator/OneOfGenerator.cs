@@ -45,7 +45,9 @@ namespace {AttributeNamespace}
 
             static bool IsSyntaxTargetForGeneration(SyntaxNode node)
             {
-                return node is ClassDeclarationSyntax {AttributeLists.Count: > 0} classDeclarationSyntax
+                return node is ClassDeclarationSyntax classDeclarationSyntax 
+                       && classDeclarationSyntax.AttributeLists is var list 
+                       && list.Count > 0 
                        && classDeclarationSyntax.Modifiers.Any(SyntaxKind.PartialKeyword);
             };
 
