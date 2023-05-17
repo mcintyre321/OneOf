@@ -10,7 +10,7 @@ using System.Text;
 namespace OneOf.SourceGenerator
 {
     [Generator]
-    public class OneOfGenerator : ISourceGenerator
+    public class OneOfGenerator : IIncrementalGenerator
     {
         private const string AttributeName = "GenerateOneOfAttribute";
         private const string AttributeNamespace = "OneOf";
@@ -29,89 +29,52 @@ namespace {AttributeNamespace}
 }}
 ";
 
-        public void Execute(GeneratorExecutionContext context)
+        public void Initialize(IncrementalGeneratorInitializationContext context)
         {
-            if (context.SyntaxReceiver is not OneOfSyntaxReceiver receiver)
+            context.RegisterPostInitializationOutput(ctx => ctx.AddSource($"{AttributeName}.g.cs", _attributeText));
+            
+            var oneOfClasses = context.SyntaxProvider
+                .CreateSyntaxProvider(
+                    predicate: static (s, _) => IsSyntaxTargetForGeneration(s), 
+                    transform: static (ctx, _) => GetSemanticTargetForGeneration(ctx))
+                .Where(static m => m is not null)
+                .Collect();
+            
+            context.RegisterSourceOutput(oneOfClasses, (context, symbols) => Execute(context, symbols));
+
+
+            static bool IsSyntaxTargetForGeneration(SyntaxNode node)
             {
-                return;
-            }
+                return node is ClassDeclarationSyntax {AttributeLists.Count: > 0} classDeclarationSyntax
+                       && classDeclarationSyntax.Modifiers.Any(SyntaxKind.PartialKeyword);
+            };
 
-            Compilation compilation = context.Compilation;
-
-            INamedTypeSymbol? attributeSymbol =
-                compilation.GetTypeByMetadataName($"{AttributeNamespace}.{AttributeName}");
-
-            if (attributeSymbol is null)
+            static INamedTypeSymbol? GetSemanticTargetForGeneration(GeneratorSyntaxContext context)
             {
-                return;
-            }
+                var attributeSymbol = context.SemanticModel.Compilation.GetTypeByMetadataName($"{AttributeNamespace}.{AttributeName}");
 
-            List<(INamedTypeSymbol, Location?)> namedTypeSymbols = new();
-            foreach (ClassDeclarationSyntax classDeclaration in receiver.CandidateClasses)
-            {
-                SemanticModel model = compilation.GetSemanticModel(classDeclaration.SyntaxTree);
-                INamedTypeSymbol? namedTypeSymbol = model.GetDeclaredSymbol(classDeclaration);
+                if (attributeSymbol == null)
+                {
+                    return null;
+                }
 
-                AttributeData? attributeData = namedTypeSymbol?.GetAttributes().FirstOrDefault(ad =>
+                var symbol = context.SemanticModel.GetDeclaredSymbol(context.Node);
+
+                if (symbol is not INamedTypeSymbol namedTypeSymbol)
+                {
+                    return null;
+                }
+                
+                var attributeData = namedTypeSymbol.GetAttributes().FirstOrDefault(ad =>
                     ad.AttributeClass?.Equals(attributeSymbol, SymbolEqualityComparer.Default) != false);
 
-                if (attributeData is not null)
+                if (attributeData == null)
                 {
-                    namedTypeSymbols.Add((namedTypeSymbol!,
-                        attributeData.ApplicationSyntaxReference?.GetSyntax().GetLocation()));
-                }
-            }
-
-            foreach ((INamedTypeSymbol namedSymbol, Location? attributeLocation) in namedTypeSymbols)
-            {
-                string? classSource = ProcessClass(namedSymbol, context, attributeLocation);
-
-                if (classSource is null)
-                {
-                    continue;
-                }
-
-                context.AddSource($"{namedSymbol.ContainingNamespace}_{namedSymbol.Name}.g.cs", classSource);
-            }
-        }
-
-        private static string? ProcessClass(INamedTypeSymbol classSymbol, GeneratorExecutionContext context, Location? attributeLocation)
-        {
-            attributeLocation ??= Location.None;
-
-            if (!classSymbol.ContainingSymbol.Equals(classSymbol.ContainingNamespace, SymbolEqualityComparer.Default))
-            {
-                CreateDiagnosticError(GeneratorDiagnosticDescriptors.TopLevelError);
-                return null;
-            }
-
-            if (classSymbol.BaseType is null || classSymbol.BaseType.Name != "OneOfBase" || classSymbol.BaseType.ContainingNamespace.ToString() != "OneOf")
-            {
-                CreateDiagnosticError(GeneratorDiagnosticDescriptors.WrongBaseType);
-                return null;
-            }
-
-            ImmutableArray<ITypeSymbol> typeArguments = classSymbol.BaseType.TypeArguments;
-
-            foreach (ITypeSymbol typeSymbol in typeArguments)
-            {
-                if (typeSymbol.Name == nameof(Object))
-                {
-                    CreateDiagnosticError(GeneratorDiagnosticDescriptors.ObjectIsOneOfType);
                     return null;
                 }
 
-                if (typeSymbol.TypeKind == TypeKind.Interface)
-                {
-                    CreateDiagnosticError(GeneratorDiagnosticDescriptors.UserDefinedConversionsToOrFromAnInterfaceAreNotAllowed);
-                    return null;
-                }
+                return namedTypeSymbol;
             }
-
-            return GenerateClassSource(classSymbol, classSymbol.BaseType.TypeParameters, typeArguments);
-
-            void CreateDiagnosticError(DiagnosticDescriptor descriptor)
-                => context.ReportDiagnostic(Diagnostic.Create(descriptor, attributeLocation, classSymbol.Name, DiagnosticSeverity.Error));
         }
 
         private static string GenerateClassSource(INamedTypeSymbol classSymbol,
@@ -149,6 +112,63 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
             return source.ToString();
         }
 
+        private static void Execute(SourceProductionContext context, ImmutableArray<INamedTypeSymbol?> symbols)
+        {
+            foreach (var namedTypeSymbol in symbols.Where(symbol => symbol is not null))
+            {
+                var classSource = ProcessClass(namedTypeSymbol!, context);
+                
+                if (classSource is null)
+                {
+                    continue;
+                }
+
+                context.AddSource($"{namedTypeSymbol!.ContainingNamespace}_{namedTypeSymbol.Name}.g.cs", classSource);
+            }
+        }
+
+        private static string? ProcessClass(INamedTypeSymbol classSymbol, SourceProductionContext context)
+        {
+            var attributeLocation = classSymbol.Locations.FirstOrDefault() ?? Location.None;
+
+            if (!classSymbol.ContainingSymbol.Equals(classSymbol.ContainingNamespace, SymbolEqualityComparer.Default))
+            {
+                CreateDiagnosticError(GeneratorDiagnosticDescriptors.TopLevelError);
+                return null;
+            }
+
+            if (classSymbol.BaseType is null || classSymbol.BaseType.Name != "OneOfBase" || classSymbol.BaseType.ContainingNamespace.ToString() != "OneOf")
+            {
+                CreateDiagnosticError(GeneratorDiagnosticDescriptors.WrongBaseType);
+                return null;
+            }
+
+            ImmutableArray<ITypeSymbol> typeArguments = classSymbol.BaseType.TypeArguments;
+
+            foreach (ITypeSymbol typeSymbol in typeArguments)
+            {
+                if (typeSymbol.Name == nameof(Object))
+                {
+                    CreateDiagnosticError(GeneratorDiagnosticDescriptors.ObjectIsOneOfType);
+                    return null;
+                }
+
+                if (typeSymbol.TypeKind == TypeKind.Interface)
+                {
+                    CreateDiagnosticError(GeneratorDiagnosticDescriptors.UserDefinedConversionsToOrFromAnInterfaceAreNotAllowed);
+                    return null;
+                }
+            }
+
+            return GenerateClassSource(classSymbol, classSymbol.BaseType.TypeParameters, typeArguments);
+
+            void CreateDiagnosticError(DiagnosticDescriptor descriptor)
+            {
+                context.ReportDiagnostic(Diagnostic.Create(descriptor, attributeLocation, classSymbol.Name,
+                    DiagnosticSeverity.Error));
+            }
+        }
+
         private static string GetGenericPart(ImmutableArray<ITypeSymbol> typeArguments) =>
             string.Join(", ", typeArguments.Select(x => x.ToDisplayString()));
 
@@ -160,27 +180,6 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
             }
 
             return $"<{GetGenericPart(classSymbol.TypeArguments)}>";
-        }
-
-        public void Initialize(GeneratorInitializationContext context)
-        {
-            context.RegisterForPostInitialization(ctx =>
-                ctx.AddSource($"{AttributeName}.g.cs", _attributeText));
-            context.RegisterForSyntaxNotifications(() => new OneOfSyntaxReceiver());
-        }
-
-        internal class OneOfSyntaxReceiver : ISyntaxReceiver
-        {
-            public List<ClassDeclarationSyntax> CandidateClasses { get; } = new();
-
-            public void OnVisitSyntaxNode(SyntaxNode syntaxNode)
-            {
-                if (syntaxNode is ClassDeclarationSyntax { AttributeLists: { Count: > 0 } } classDeclarationSyntax
-                    && classDeclarationSyntax.Modifiers.Any(SyntaxKind.PartialKeyword))
-                {
-                    CandidateClasses.Add(classDeclarationSyntax);
-                }
-            }
         }
     }
 }
