@@ -51,13 +51,6 @@ namespace {AttributeNamespace}
 
             static INamedTypeSymbol? GetSemanticTargetForGeneration(GeneratorSyntaxContext context)
             {
-                var attributeSymbol = context.SemanticModel.Compilation.GetTypeByMetadataName($"{AttributeNamespace}.{AttributeName}");
-
-                if (attributeSymbol == null)
-                {
-                    return null;
-                }
-
                 var symbol = context.SemanticModel.GetDeclaredSymbol(context.Node);
 
                 if (symbol is not INamedTypeSymbol namedTypeSymbol)
@@ -66,14 +59,9 @@ namespace {AttributeNamespace}
                 }
                 
                 var attributeData = namedTypeSymbol.GetAttributes().FirstOrDefault(ad =>
-                    ad.AttributeClass?.Equals(attributeSymbol, SymbolEqualityComparer.Default) != false);
+                    string.Equals(ad.AttributeClass?.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat), $"global::{AttributeNamespace}.{AttributeName}"));
 
-                if (attributeData == null)
-                {
-                    return null;
-                }
-
-                return namedTypeSymbol;
+                return attributeData == null ? null : namedTypeSymbol;
             }
         }
 
