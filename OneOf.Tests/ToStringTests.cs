@@ -21,7 +21,7 @@ namespace OneOf.Tests
             }
         }
 
-        [TestCase("en-NZ", ExpectedResult = "System.DateTime: 2/01/2019 1:02:03 AM")]
+        [TestCase("en-NZ", ExpectedResult = "System.DateTime: 2/01/2019 1:02:03 am")]
         [TestCase("en-US", ExpectedResult = "System.DateTime: 1/2/2019 1:02:03 AM")]
         public string LeftSideFormatsWithCurrentCulture(string cultureName)
         {
@@ -32,7 +32,7 @@ namespace OneOf.Tests
             });
         }
 
-        [TestCase("en-NZ", ExpectedResult = "System.DateTime: 2/01/2019 1:02:03 AM")]
+        [TestCase("en-NZ", ExpectedResult = "System.DateTime: 2/01/2019 1:02:03 am")]
         [TestCase("en-US", ExpectedResult = "System.DateTime: 1/2/2019 1:02:03 AM")]
         public string RightSideFormatsWithCurrentCulture(string cultureName)
         {
