@@ -183,7 +183,7 @@ $"\t\t/// <param name=\"f{j}\">The delegate to execute if this union represents 
 {RangeJoined(@"
 ", j =>
 $"\t\t/// <param name=\"f{j}\">The projection to execute if this union represents a value of type <typeparamref name=\"T{j}\"/>.</param>")}
-        /// <returns></returns>
+        /// <returns>The projected value.</returns>
         public TResult Match<TResult>({RangeJoined(", ", j => $"Func<T{j}, TResult> f{j}")})
         {{
             switch(_index)
