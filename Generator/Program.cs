@@ -161,7 +161,7 @@ $"\t\t/// <param name=\"f{j}\">The delegate to execute if this union represents 
 {RangeJoined(@"
 ", j =>
 $"\t\t/// <param name=\"f{j}\">The projection to execute if this union represents a value of type <typeparamref name=\"T{j}\"/>.</param>")}
-        /// <returns></returns>
+        /// <returns>The projected value.</returns>
         public TResult Match<TResult>({RangeJoined(", ", e => $"Func<T{e}, TResult> f{e}")})
         {{
             {RangeJoined(@"
@@ -176,7 +176,9 @@ $"\t\t/// <param name=\"f{j}\">The projection to execute if this union represent
         ", bindToType => $@"/// <summary>
         /// Creates an instance of this union representing the value provided.
         /// </summary>
-        /// <param name=""value"">The value to wrap inside a discriminated union instance.</param>public static OneOf<{genericArgs.Joined(", ")}> From{bindToType}({bindToType} input) => input;"))}
+        /// <param name=""input"">The value to wrap inside a discriminated union instance.</param>
+        /// <returns>A new union wrapping the value provided.</returns>
+        public static OneOf<{genericArgs.Joined(", ")}> From{bindToType}({bindToType} input) => input;"))}
 
         {IfStruct(genericArgs.Joined(@"
             ", bindToType =>
