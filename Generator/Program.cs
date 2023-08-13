@@ -8,7 +8,8 @@ using System.Collections.Generic;
 
 var sourceRoot = GetFullPath(Combine(GetDirectoryName(GetExecutingAssembly().Location)!, @"..\..\..\.."));
 
-for (var i = 1; i < 10; i++) {
+for(var i = 1; i < 10; i++)
+{
     var output = GetContent(true, i);
     var outpath = Combine(sourceRoot, $"OneOf\\OneOfT{i - 1}.generated.cs");
     File.WriteAllText(outpath, output);
@@ -18,7 +19,8 @@ for (var i = 1; i < 10; i++) {
     File.WriteAllText(outpath2, output2);
 }
 
-for (var i = 10; i < 33; i++) {
+for(var i = 10; i < 33; i++)
+{
     var output3 = GetContent(true, i);
     var outpath3 = Combine(sourceRoot, $"OneOf.Extended\\OneOfT{i - 1}.generated.cs");
     File.WriteAllText(outpath3, output3);
@@ -28,7 +30,8 @@ for (var i = 10; i < 33; i++) {
     File.WriteAllText(outpath4, output4);
 }
 
-string GetContent(bool isStruct, int i) {
+string GetContent(bool isStruct, int i)
+{
     string RangeJoined(string delimiter, Func<int, string> selector) => Range(0, i).Joined(delimiter, selector);
     string IfStruct(string s, string s2 = "") => isStruct ? s : s2;
     string OrdinalOf(int cardinal) => (cardinal + 1) switch
@@ -207,10 +210,11 @@ t => $@"/// <summary>
         /// Creates an instance of this union representing the value provided.
         /// </summary>
         /// <param name=""value"">The value to wrap inside a discriminated union instance.</param>
+        /// <returns>A union representing the value provided.</returns>
         public static OneOf<{genericArgs.Joined(", ")}> From{t}({t} value) => value;"))}
 
         {IfStruct(genericArgs.Joined(@"
-            ", bindToType =>
+            ", (bindToType, j) =>
 {
     var resultArgsPrinted = genericArgs
         .Select(x => x == bindToType ? "TResult" : x)
@@ -219,13 +223,20 @@ t => $@"/// <summary>
     return $@"
         /// <summary>
         /// Maps this instance onto another union type of the same arity, 
-        /// with its <typeparamref name=""{bindToType}""/> mapped to <typeparamref name=""TResult""/>.
+        /// with its {OrdinalOf(j)} type (<typeparamref name=""{bindToType}""/>) 
+        /// mapped to <typeparamref name=""TResult""/>. If the union is representing
+        /// a corresponding value, it will be mapped using the projection provided.
         /// </summary>
         /// <param name=""mapFunc"">
         /// The delegate used to map this unions value onto <typeparamref name=""TResult""/>,
         /// if this union is representing it.
         /// </param>
         /// <typeparam name=""TResult"">The type to map <typeparamref name=""{bindToType}""/> onto.</typeparam>
+        /// <returns>
+        /// A new union instance of the same arity, representing the same value, 
+        /// but with the {OrdinalOf(j)} type (<typeparamref name=""{bindToType}""/>) 
+        /// mapped onto <typeparamref name=""TResult""/>.
+        /// </returns>
         public OneOf<{resultArgsPrinted}> Map{bindToType}<TResult>(Func<{bindToType}, TResult> mapFunc)
         {{
             if (mapFunc == null)
