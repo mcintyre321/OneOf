@@ -57,11 +57,12 @@ string GetContent(bool isStruct, int i) {
         _ => throw new ArgumentOutOfRangeException(nameof(cardinal), cardinal, $"{nameof(cardinal)} must be between 1 and 32 (inclusive).")
     };
 
+    const string THROW_INDEX_EX = "throw new InvalidOperationException(\"Unexpected index, which indicates a problem in the OneOf codegen.\")";
+
     var className = isStruct ? "OneOf" : "OneOfBase";
     var genericArgs = Range(0, i).Select(e => $"T{e}").ToList();
     var genericArg = genericArgs.Joined(", ");
     var sb = new StringBuilder();
-    
     sb.Append(@$"using System;
 using static OneOf.Functions;
 
@@ -72,7 +73,7 @@ namespace OneOf
     /// </summary>
 {RangeJoined(@"
 ", j => $"    /// <typeparam name=\"T{j}\">The {OrdinalOf(j)} type of value this type of union is able to represent.</typeparam>")}
-    public {IfStruct("readonly struct", "class")} {className}<{genericArg}> : IOneOf
+    public {IfStruct("readonly struct", "class")} {className}<{genericArg}> : IOneOf{IfStruct($", IEquatable<{className}<{genericArg}>>")}
     {{
         {RangeJoined(@"
         ", j => $"readonly T{j} _value{j};")}
@@ -95,11 +96,25 @@ namespace OneOf
             switch (_index)
             {{
                 {RangeJoined($@"
-                ", j => $"case {j}: _value{j} = input.AsT{j}; break;")}
-                default: throw new InvalidOperationException();
+                ", j => $@"case {j}: 
+                    _value{j} = input.AsT{j}; 
+                    break;")}
+                default: 
+                    {THROW_INDEX_EX};
             }}
         }}"
         )}
+        
+        /// <summary>
+        /// Gets the type of value represented by this union.
+        /// </summary>
+        public Type GetRepresentedType()=>
+            _index switch
+            {{
+                {RangeJoined(@"
+                ", j => $"{j} => typeof(T{j}),")}
+                _ => {THROW_INDEX_EX}
+            }};
 
         /// <summary>
         /// Gets the value represented by this union.
@@ -109,7 +124,7 @@ namespace OneOf
             {{
                 {RangeJoined(@"
                 ", j => $"{j} => _value{j},")}
-                _ => throw new InvalidOperationException()
+                _ => {THROW_INDEX_EX}
             }};
 
         /// <summary>
@@ -133,10 +148,10 @@ j => $@"/// <summary>
         public T{j} AsT{j} =>
             _index == {j} ?
                 _value{j} :
-                throw new InvalidOperationException($""Cannot return as T{j} as result is T{{_index}}"");")}
+                throw new InvalidOperationException($""Cannot return the value represented as T{j} ({{typeof(T{j}).FullName}}) because the type of value represented is T{{_index}} ({{GetRepresentedType().FullName}})"");")}
 
         {IfStruct(RangeJoined(@"
-        ", j => $"public static implicit operator {className}<{genericArg}>(T{j} t) => new {className}<{genericArg}>({j}, value{j}: t);"))}
+        ", j => $"public static implicit operator {className}<{genericArg}>(T{j} value) => new {className}<{genericArg}>({j}, value{j}: value);"))}
 
         /// <summary>
         /// Executes a delegate based on the type of value represented by this union.
@@ -144,15 +159,22 @@ j => $@"/// <summary>
 {RangeJoined(@"
 ", j =>
 $"\t\t/// <param name=\"f{j}\">The delegate to execute if this union represents a value of type <typeparamref name=\"T{j}\"/>.</param>")}
-        public void Switch({RangeJoined(", ", e => $"Action<T{e}> f{e}")})
+        public void Switch({RangeJoined(", ", j => $"Action<T{j}> f{j}")})
         {{
-            {RangeJoined(@"
-            ", j => @$"if (_index == {j} && f{j} != null)
+            switch(_index)
             {{
-                f{j}(_value{j});
-                return;
-            }}")}
-            throw new InvalidOperationException();
+                {RangeJoined(@"
+                ",
+        j => $@"case {j}: 
+                    if(f{j} == null)
+                    {{
+                        throw new ArgumentNullException(nameof(f{j}), $""The union is representing a value of type {{typeof(T{j}).FullName}} but no switch delegate was provided for its index."");
+                    }}
+                    f{j}.Invoke(_value{j});
+                    return;")}
+                default:
+                    {THROW_INDEX_EX};
+            }}
         }}
 
         /// <summary>
@@ -161,24 +183,31 @@ $"\t\t/// <param name=\"f{j}\">The delegate to execute if this union represents 
 {RangeJoined(@"
 ", j =>
 $"\t\t/// <param name=\"f{j}\">The projection to execute if this union represents a value of type <typeparamref name=\"T{j}\"/>.</param>")}
-        /// <returns>The projected value.</returns>
-        public TResult Match<TResult>({RangeJoined(", ", e => $"Func<T{e}, TResult> f{e}")})
+        /// <returns></returns>
+        public TResult Match<TResult>({RangeJoined(", ", j => $"Func<T{j}, TResult> f{j}")})
         {{
-            {RangeJoined(@"
-            ", j => $@"if (_index == {j} && f{j} != null)
+            switch(_index)
             {{
-                return f{j}(_value{j});
-            }}")}
-            throw new InvalidOperationException();
+                {RangeJoined(@"
+                ",
+        j => $@"case {j}: 
+                    if(f{j} == null)
+                    {{
+                        throw new ArgumentNullException(nameof(f{j}), $""The union is representing a value of type {{typeof(T{j}).FullName}} but no match projection was provided for its index."");
+                    }}
+                    return f{j}.Invoke(_value{j});")}
+                default:
+                    {THROW_INDEX_EX};
+            }}
         }}
 
         {IfStruct(genericArgs.Joined(@"
-        ", bindToType => $@"/// <summary>
+        ",
+t => $@"/// <summary>
         /// Creates an instance of this union representing the value provided.
         /// </summary>
-        /// <param name=""input"">The value to wrap inside a discriminated union instance.</param>
-        /// <returns>A new union wrapping the value provided.</returns>
-        public static OneOf<{genericArgs.Joined(", ")}> From{bindToType}({bindToType} input) => input;"))}
+        /// <param name=""value"">The value to wrap inside a discriminated union instance.</param>
+        public static OneOf<{genericArgs.Joined(", ")}> From{t}({t} value) => value;"))}
 
         {IfStruct(genericArgs.Joined(@"
             ", bindToType =>
@@ -187,7 +216,7 @@ $"\t\t/// <param name=\"f{j}\">The projection to execute if this union represent
         .Select(x => x == bindToType ? "TResult" : x)
         .Joined(", ");
 
-            return $@"
+    return $@"
         /// <summary>
         /// Maps this instance onto another union type of the same arity, 
         /// with its <typeparamref name=""{bindToType}""/> mapped to <typeparamref name=""TResult""/>.
@@ -203,23 +232,26 @@ $"\t\t/// <param name=\"f{j}\">The projection to execute if this union represent
             {{
                 throw new ArgumentNullException(nameof(mapFunc));
             }}
+
             return _index switch
             {{
                 {genericArgs.Joined(@"
                 ", (x, k) =>
-                    x == bindToType ?
-                        $"{k} => mapFunc(As{x})," :
-                        $"{k} => As{x},")}
-                _ => throw new InvalidOperationException()
+            x == bindToType ?
+                $"{k} => mapFunc.Invoke(As{x})," :
+                $"{k} => As{x},")}
+                _ => {THROW_INDEX_EX}
             }};
         }}";
-        }))}
+}))}
 ");
 
-    if (i > 1) {
+    if(i > 1)
+    {
         sb.AppendLine(
             RangeJoined(@"
-        ", j => {
+        ", j =>
+            {
                 var genericArgWithSkip = Range(0, i).ExceptSingle(j).Joined(", ", e => $"T{e}");
                 var remainderType = i == 2 ? genericArgWithSkip : $"OneOf<{genericArgWithSkip}>";
                 return $@"
@@ -247,11 +279,11 @@ $"\t\t/// <param name=\"f{j}\">The projection to execute if this union represent
             remainder = _index switch
             {{
                 {RangeJoined(@"
-                ", k => 
+                ", k =>
                     k == j ?
                         $"{k} => default," :
                         $"{k} => AsT{k},")}
-                _ => throw new InvalidOperationException()
+                _ => {THROW_INDEX_EX}
             }};
 			return this.IsT{j};
 		}}";
@@ -259,8 +291,10 @@ $"\t\t/// <param name=\"f{j}\">The projection to execute if this union represent
         );
     }
 
-    sb.AppendLine($@"
-        bool Equals({className}<{genericArg}> other) =>
+    sb.AppendLine(
+$@"
+        {IfStruct(@"/// <inheritdoc/>
+        public ")}bool Equals({className}<{genericArg}> other) =>
             _index == other._index &&
             _index switch
             {{
@@ -270,24 +304,18 @@ $"\t\t/// <param name=\"f{j}\">The projection to execute if this union represent
             }};
 
         /// <inheritdoc/>
-        public override bool Equals(object obj)
-        {{
+        public override bool Equals(object obj)=>
             {IfStruct(
-            $"return obj is OneOf<{genericArg}> o && Equals(o);",
-            $@"if (ReferenceEquals(this, obj)) {{
-                    return true;
-            }}
-
-            return obj is OneOfBase<{genericArg}> o && Equals(o);"
+            $"obj is OneOf<{genericArg}> o && Equals(o);",
+            $"obj != null && (ReferenceEquals(this, obj) || obj is OneOfBase<{genericArg}> o && Equals(o));"
             )}
-        }}
 
         /// <inheritdoc/>
         public override string ToString() =>
             _index switch {{
                 {RangeJoined(@"
                 ", j => $"{j} => FormatValue(_value{j}),")}
-                _ => throw new InvalidOperationException(""Unexpected index, which indicates a problem in the OneOf codegen."")
+                _ => {THROW_INDEX_EX}
             }};
 
         /// <inheritdoc/>
@@ -303,21 +331,31 @@ $"\t\t/// <param name=\"f{j}\">The projection to execute if this union represent
                 }} ?? 0;
                 return (hashCode*397) ^ _index;
             }}
-        }}
+        }}{IfStruct(@$"
+        public static bool operator ==(OneOf<{genericArg}> a,OneOf<{genericArg}> b) =>
+            a.Equals(b);
+        public static bool operator !=(OneOf<{genericArg}> a,OneOf<{genericArg}> b) =>
+            !(a == b);")}
     }}
 }}");
 
     return sb.ToString();
 }
 
-public static class Extensions {
-    public static string Joined<T>(this IEnumerable<T> source, string delimiter, Func<T, string>? selector = null) {
-        if (source == null) { return ""; }
-        if (selector == null) { return string.Join(delimiter, source); }
+public static class Extensions
+{
+    public static string Joined<T>(this IEnumerable<T> source, string delimiter, Func<T, string>? selector = null)
+    {
+        if(source == null)
+        { return ""; }
+        if(selector == null)
+        { return string.Join(delimiter, source); }
         return string.Join(delimiter, source.Select(selector));
     }
-    public static string Joined<T>(this IEnumerable<T> source, string delimiter, Func<T, int, string> selector) {
-        if (source == null) { return ""; }
+    public static string Joined<T>(this IEnumerable<T> source, string delimiter, Func<T, int, string> selector)
+    {
+        if(source == null)
+        { return ""; }
         return string.Join(delimiter, source.Select(selector));
     }
     public static IEnumerable<T> ExceptSingle<T>(this IEnumerable<T> source, T single) => source.Except(Repeat(single, 1));
