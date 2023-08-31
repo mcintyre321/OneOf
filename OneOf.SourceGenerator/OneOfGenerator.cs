@@ -89,8 +89,8 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
             foreach (var (param, arg) in paramArgPairs)
             {
                 source.Append($@"
-        public static implicit operator {classNameWithGenericTypes}({arg.ToDisplayString()} _) => new {classNameWithGenericTypes}(_);
-        public static explicit operator {arg.ToDisplayString()}({classNameWithGenericTypes} _) => _.As{param.Name};
+        public static implicit operator {classNameWithGenericTypes}({arg.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)} _) => new {classNameWithGenericTypes}(_);
+        public static explicit operator {arg.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)}({classNameWithGenericTypes} _) => _.As{param.Name};
 ");
             }
 
@@ -157,7 +157,7 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
         }
 
         private static string GetGenericPart(ImmutableArray<ITypeSymbol> typeArguments) =>
-            string.Join(", ", typeArguments.Select(x => x.ToDisplayString()));
+            string.Join(", ", typeArguments.Select(x => x.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)));
 
         private static string? GetOpenGenericPart(INamedTypeSymbol classSymbol)
         {
