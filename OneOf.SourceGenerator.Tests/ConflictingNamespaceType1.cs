@@ -4,8 +4,3 @@
     {
     }
 }
-
-namespace SourceGenerator.Tests
-{
-}
-
