@@ -1,5 +1,6 @@
 ﻿using SourceGenerator.Tests;
 
+// ReSharper disable once CheckNamespace
 namespace OneOf.SourceGenerator.Tests;
 
 [GenerateOneOf]
