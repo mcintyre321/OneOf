@@ -215,6 +215,7 @@ namespace Foo
             const string input = $@"
 using OneOf;
 using Bar;
+using Foo.Bar;
 
 namespace Foo.Bar 
 {{
@@ -233,7 +234,7 @@ namespace Bar
 namespace Foo
 {{
     [GenerateOneOf]
-    partial class FooBar : OneOfBase<global::Foo.Bar.Class1, Class2> {{ }}
+    partial class FooBar : OneOfBase<Class1, Class2> {{ }}
 }}
 ";
 
