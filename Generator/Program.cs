@@ -7,8 +7,9 @@ using System;
 using System.Collections.Generic;
 
 var sourceRoot = GetFullPath(Combine(GetDirectoryName(GetExecutingAssembly().Location)!, @"..\..\..\.."));
+const int extendedSizeLimit = 10;
 
-for (var i = 1; i < 10; i++) {
+for (var i = 1; i < extendedSizeLimit; i++) {
     var output = GetContent(true, i);
     var outpath = Combine(sourceRoot, $"OneOf\\OneOfT{i - 1}.generated.cs");
     File.WriteAllText(outpath, output);
@@ -18,7 +19,7 @@ for (var i = 1; i < 10; i++) {
     File.WriteAllText(outpath2, output2);
 }
 
-for (var i = 10; i < 33; i++) {
+for (var i = extendedSizeLimit; i < 33; i++) {
     var output3 = GetContent(true, i);
     var outpath3 = Combine(sourceRoot, $"OneOf.Extended\\OneOfT{i - 1}.generated.cs");
     File.WriteAllText(outpath3, output3);
@@ -49,13 +50,13 @@ namespace OneOf
         readonly int _index;
 
         {IfStruct( // constructor
-        $@"OneOf(int index, {RangeJoined(", ", j => $"T{j} value{j} = default")})
+        $@"internal OneOf(int index, {RangeJoined(", ", j => $"T{j} value{j} = default")})
         {{
             _index = index;
             {RangeJoined(@"
             ", j => $"_value{j} = value{j};")}
         }}",
-        $@"protected OneOfBase(OneOf<{genericArg}> input)
+        $@"protected internal OneOfBase(OneOf<{genericArg}> input)
         {{
             _index = input.Index;
             switch (_index)
@@ -76,6 +77,12 @@ namespace OneOf
             }};
 
         public int Index => _index;
+
+        {((i < extendedSizeLimit - 1) ?
+        // can go up to the limit before extended because OneOfT8 cannot see OneOfT9
+        $@"public OneOf<{genericArg}, TNew> WithType<TNew>() =>
+            new OneOf<{genericArg}, TNew>(_index, {RangeJoined(", ", j => $"_value{j}")}, default);
+        ":"")}
 
         {RangeJoined(@"
         ", j=> $"public bool IsT{j} => _index == {j};")}

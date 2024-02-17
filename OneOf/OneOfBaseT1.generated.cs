@@ -9,7 +9,7 @@ namespace OneOf
         readonly T1 _value1;
         readonly int _index;
 
-        protected OneOfBase(OneOf<T0, T1> input)
+        protected internal OneOfBase(OneOf<T0, T1> input)
         {
             _index = input.Index;
             switch (_index)
@@ -29,6 +29,10 @@ namespace OneOf
             };
 
         public int Index => _index;
+
+        public OneOf<T0, T1, TNew> WithType<TNew>() =>
+            new OneOf<T0, T1, TNew>(_index, _value0, _value1, default);
+        
 
         public bool IsT0 => _index == 0;
         public bool IsT1 => _index == 1;
