@@ -8,7 +8,7 @@ namespace OneOf
         readonly T0 _value0;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default)
+        internal OneOf(int index, T0 value0 = default)
         {
             _index = index;
             _value0 = value0;
@@ -22,6 +22,10 @@ namespace OneOf
             };
 
         public int Index => _index;
+
+        public OneOf<T0, TNew> WithType<TNew>() =>
+            new OneOf<T0, TNew>(_index, _value0, default);
+        
 
         public bool IsT0 => _index == 0;
 

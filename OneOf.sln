@@ -20,7 +20,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneOf.SourceGenerator", "On
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneOf.SourceGenerator.Tests", "OneOf.SourceGenerator.Tests\OneOf.SourceGenerator.Tests.csproj", "{A7D18F0E-8966-4685-8146-34F507356F5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneOf.SourceGenerator.AnalyzerTests", "OneOf.SourceGenerator.AnalyzerTests\OneOf.SourceGenerator.AnalyzerTests.csproj", "{C08F270E-157A-48B9-A7B6-C948FCFC5494}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneOf.SourceGenerator.AnalyzerTests", "OneOf.SourceGenerator.AnalyzerTests\OneOf.SourceGenerator.AnalyzerTests.csproj", "{C08F270E-157A-48B9-A7B6-C948FCFC5494}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DE277A67-AD12-4F46-B605-45622A0F4BE1}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -135,6 +135,35 @@ IActionResult Get(string id)
 }
 ```
 
+### WithType method
+
+In order that functions that return OneOf can call other functions that return
+OneOf, the `.WithType()` method allows you to return existing OneOf structs but
+with added types.
+
+**Note:** Unfortunately because of the extended assembly design, OneOf types with
+over 8 parameters cannot use `.WithType`.
+
+```csharp
+public OneOf<string, double> ParseDouble(string input) {
+    if(double.TryParse(input, out var result)) {
+        return result;
+    } else {
+        return input;
+    }
+}
+
+public OneOf<string, double, DateTime, int> ParseDoubleOrUTCDateOrInt (string input) {
+    if (DateTime.TryParseExact(input, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal | DateTimeStyles.AssumeUniversal, out var dateResult)) {
+        return dateResult;
+    } else if (int.TryParse(input, out var intResult)) {
+        return intResult;
+    } else {
+        return ParseDouble(input).WithType<DateTime>().WithType<int>();
+    }
+}
+```
+
 ### Reusable OneOf Types using OneOfBase
 
 You can declare a OneOf as a type, either for reuse of the type, or to provide additional members, by inheriting from `OneOfBase`. The derived class will inherit the `.Match`, `.Switch`, and `.TryPick𝑥` methods.
