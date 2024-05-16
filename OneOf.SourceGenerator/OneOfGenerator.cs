@@ -33,7 +33,8 @@ namespace {AttributeNamespace}
             context.RegisterPostInitializationOutput(ctx => ctx.AddSource($"{AttributeName}.g.cs", _attributeText));
             
             var oneOfClasses = context.SyntaxProvider
-                .CreateSyntaxProvider(
+                .ForAttributeWithMetadataName(
+                    fullyQualifiedMetadataName: $"{AttributeNamespace}.{AttributeName}",
                     predicate: static (s, _) => IsSyntaxTargetForGeneration(s), 
                     transform: static (ctx, _) => GetSemanticTargetForGeneration(ctx))
                 .Where(static m => m is not null)
@@ -44,13 +45,13 @@ namespace {AttributeNamespace}
 
             static bool IsSyntaxTargetForGeneration(SyntaxNode node)
             {
-                return node is ClassDeclarationSyntax {AttributeLists: {Count: > 0}} classDeclarationSyntax 
+                return node is ClassDeclarationSyntax classDeclarationSyntax 
                        && classDeclarationSyntax.Modifiers.Any(SyntaxKind.PartialKeyword);
             }
 
-            static INamedTypeSymbol? GetSemanticTargetForGeneration(GeneratorSyntaxContext context)
+            static INamedTypeSymbol? GetSemanticTargetForGeneration(GeneratorAttributeSyntaxContext context)
             {
-                var symbol = context.SemanticModel.GetDeclaredSymbol(context.Node);
+                var symbol = context.TargetSymbol;
 
                 if (symbol is not INamedTypeSymbol namedTypeSymbol)
                 {
