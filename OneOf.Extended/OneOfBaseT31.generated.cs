@@ -80,43 +80,44 @@ namespace OneOf
             }
         }
 
-        public object Value =>
-            _index switch
-            {
-                0 => _value0,
-                1 => _value1,
-                2 => _value2,
-                3 => _value3,
-                4 => _value4,
-                5 => _value5,
-                6 => _value6,
-                7 => _value7,
-                8 => _value8,
-                9 => _value9,
-                10 => _value10,
-                11 => _value11,
-                12 => _value12,
-                13 => _value13,
-                14 => _value14,
-                15 => _value15,
-                16 => _value16,
-                17 => _value17,
-                18 => _value18,
-                19 => _value19,
-                20 => _value20,
-                21 => _value21,
-                22 => _value22,
-                23 => _value23,
-                24 => _value24,
-                25 => _value25,
-                26 => _value26,
-                27 => _value27,
-                28 => _value28,
-                29 => _value29,
-                30 => _value30,
-                31 => _value31,
-                _ => throw new InvalidOperationException()
-            };
+    public object Value { get {
+                    switch (_index)
+                    {
+                            case 0: return _value0;
+                case 1: return _value1;
+                case 2: return _value2;
+                case 3: return _value3;
+                case 4: return _value4;
+                case 5: return _value5;
+                case 6: return _value6;
+                case 7: return _value7;
+                case 8: return _value8;
+                case 9: return _value9;
+                case 10: return _value10;
+                case 11: return _value11;
+                case 12: return _value12;
+                case 13: return _value13;
+                case 14: return _value14;
+                case 15: return _value15;
+                case 16: return _value16;
+                case 17: return _value17;
+                case 18: return _value18;
+                case 19: return _value19;
+                case 20: return _value20;
+                case 21: return _value21;
+                case 22: return _value22;
+                case 23: return _value23;
+                case 24: return _value24;
+                case 25: return _value25;
+                case 26: return _value26;
+                case 27: return _value27;
+                case 28: return _value28;
+                case 29: return _value29;
+                case 30: return _value30;
+                case 31: return _value31;
+                            default: throw new InvalidOperationException();
+                        };
+                } }
 
         public int Index => _index;
 
@@ -586,1388 +587,1390 @@ namespace OneOf
 
         
 
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT0 ? AsT0 : default;
-            remainder = _index switch
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT0 ? AsT0 : default;
+            switch (_index)
             {
-                0 => default,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT0;
-		}
+                case 0: { remainder = default; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT0;
+        }
         
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT1 ? AsT1 : default;
-            remainder = _index switch
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT1 ? AsT1 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => default,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT1;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = default; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT1;
+        }
         
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT2 ? AsT2 : default;
-            remainder = _index switch
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT2 ? AsT2 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => default,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT2;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = default; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT2;
+        }
         
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT3 ? AsT3 : default;
-            remainder = _index switch
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT3 ? AsT3 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => default,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT3;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = default; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT3;
+        }
         
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT4 ? AsT4 : default;
-            remainder = _index switch
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT4 ? AsT4 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => default,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT4;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = default; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT4;
+        }
         
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT5 ? AsT5 : default;
-            remainder = _index switch
+        public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT5 ? AsT5 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => default,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT5;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = default; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT5;
+        }
         
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT6 ? AsT6 : default;
-            remainder = _index switch
+        public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT6 ? AsT6 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => default,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT6;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = default; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT6;
+        }
         
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT7 ? AsT7 : default;
-            remainder = _index switch
+        public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT7 ? AsT7 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => default,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT7;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = default; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT7;
+        }
         
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT8 ? AsT8 : default;
-            remainder = _index switch
+        public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT8 ? AsT8 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => default,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT8;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = default; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT8;
+        }
         
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT9 ? AsT9 : default;
-            remainder = _index switch
+        public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT9 ? AsT9 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => default,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT9;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = default; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT9;
+        }
         
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT10 ? AsT10 : default;
-            remainder = _index switch
+        public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT10 ? AsT10 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => default,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT10;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = default; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT10;
+        }
         
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT11 ? AsT11 : default;
-            remainder = _index switch
+        public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT11 ? AsT11 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => default,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT11;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = default; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT11;
+        }
         
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT12 ? AsT12 : default;
-            remainder = _index switch
+        public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT12 ? AsT12 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => default,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT12;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = default; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT12;
+        }
         
-		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT13 ? AsT13 : default;
-            remainder = _index switch
+        public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT13 ? AsT13 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => default,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT13;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = default; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT13;
+        }
         
-		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT14 ? AsT14 : default;
-            remainder = _index switch
+        public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT14 ? AsT14 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => default,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT14;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = default; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT14;
+        }
         
-		public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT15 ? AsT15 : default;
-            remainder = _index switch
+        public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT15 ? AsT15 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => default,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT15;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = default; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT15;
+        }
         
-		public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT16 ? AsT16 : default;
-            remainder = _index switch
+        public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT16 ? AsT16 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => default,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT16;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = default; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT16;
+        }
         
-		public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT17 ? AsT17 : default;
-            remainder = _index switch
+        public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT17 ? AsT17 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => default,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT17;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = default; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT17;
+        }
         
-		public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT18 ? AsT18 : default;
-            remainder = _index switch
+        public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT18 ? AsT18 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => default,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT18;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = default; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT18;
+        }
         
-		public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT19 ? AsT19 : default;
-            remainder = _index switch
+        public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT19 ? AsT19 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => default,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT19;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = default; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT19;
+        }
         
-		public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT20 ? AsT20 : default;
-            remainder = _index switch
+        public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT20 ? AsT20 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => default,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT20;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = default; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT20;
+        }
         
-		public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT21 ? AsT21 : default;
-            remainder = _index switch
+        public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT21 ? AsT21 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => default,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT21;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = default; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT21;
+        }
         
-		public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT22 ? AsT22 : default;
-            remainder = _index switch
+        public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT22 ? AsT22 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => default,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT22;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = default; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT22;
+        }
         
-		public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT23 ? AsT23 : default;
-            remainder = _index switch
+        public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT23 ? AsT23 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => default,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT23;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = default; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT23;
+        }
         
-		public bool TryPickT24(out T24 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT24 ? AsT24 : default;
-            remainder = _index switch
+        public bool TryPickT24(out T24 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT24 ? AsT24 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => default,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT24;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = default; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT24;
+        }
         
-		public bool TryPickT25(out T25 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T26, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT25 ? AsT25 : default;
-            remainder = _index switch
+        public bool TryPickT25(out T25 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T26, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT25 ? AsT25 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => default,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT25;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = default; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT25;
+        }
         
-		public bool TryPickT26(out T26 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T27, T28, T29, T30, T31> remainder)
-		{
-			value = IsT26 ? AsT26 : default;
-            remainder = _index switch
+        public bool TryPickT26(out T26 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T27, T28, T29, T30, T31> remainder)
+        {
+            value = IsT26 ? AsT26 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => default,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT26;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = default; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT26;
+        }
         
-		public bool TryPickT27(out T27 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T28, T29, T30, T31> remainder)
-		{
-			value = IsT27 ? AsT27 : default;
-            remainder = _index switch
+        public bool TryPickT27(out T27 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T28, T29, T30, T31> remainder)
+        {
+            value = IsT27 ? AsT27 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => default,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT27;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = default; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT27;
+        }
         
-		public bool TryPickT28(out T28 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T29, T30, T31> remainder)
-		{
-			value = IsT28 ? AsT28 : default;
-            remainder = _index switch
+        public bool TryPickT28(out T28 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T29, T30, T31> remainder)
+        {
+            value = IsT28 ? AsT28 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => default,
-                29 => AsT29,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT28;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = default; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT28;
+        }
         
-		public bool TryPickT29(out T29 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T30, T31> remainder)
-		{
-			value = IsT29 ? AsT29 : default;
-            remainder = _index switch
+        public bool TryPickT29(out T29 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T30, T31> remainder)
+        {
+            value = IsT29 ? AsT29 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => default,
-                30 => AsT30,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT29;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = default; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT29;
+        }
         
-		public bool TryPickT30(out T30 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T31> remainder)
-		{
-			value = IsT30 ? AsT30 : default;
-            remainder = _index switch
+        public bool TryPickT30(out T30 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T31> remainder)
+        {
+            value = IsT30 ? AsT30 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => default,
-                31 => AsT31,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT30;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = default; break; }
+                case 31: { remainder = AsT31; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT30;
+        }
         
-		public bool TryPickT31(out T31 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
-		{
-			value = IsT31 ? AsT31 : default;
-            remainder = _index switch
+        public bool TryPickT31(out T31 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30> remainder)
+        {
+            value = IsT31 ? AsT31 : default;
+            switch (_index)
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
-                5 => AsT5,
-                6 => AsT6,
-                7 => AsT7,
-                8 => AsT8,
-                9 => AsT9,
-                10 => AsT10,
-                11 => AsT11,
-                12 => AsT12,
-                13 => AsT13,
-                14 => AsT14,
-                15 => AsT15,
-                16 => AsT16,
-                17 => AsT17,
-                18 => AsT18,
-                19 => AsT19,
-                20 => AsT20,
-                21 => AsT21,
-                22 => AsT22,
-                23 => AsT23,
-                24 => AsT24,
-                25 => AsT25,
-                26 => AsT26,
-                27 => AsT27,
-                28 => AsT28,
-                29 => AsT29,
-                30 => AsT30,
-                31 => default,
-                _ => throw new InvalidOperationException()
-            };
-			return this.IsT31;
-		}
+                case 0: { remainder = AsT0; break; }
+                case 1: { remainder = AsT1; break; }
+                case 2: { remainder = AsT2; break; }
+                case 3: { remainder = AsT3; break; }
+                case 4: { remainder = AsT4; break; }
+                case 5: { remainder = AsT5; break; }
+                case 6: { remainder = AsT6; break; }
+                case 7: { remainder = AsT7; break; }
+                case 8: { remainder = AsT8; break; }
+                case 9: { remainder = AsT9; break; }
+                case 10: { remainder = AsT10; break; }
+                case 11: { remainder = AsT11; break; }
+                case 12: { remainder = AsT12; break; }
+                case 13: { remainder = AsT13; break; }
+                case 14: { remainder = AsT14; break; }
+                case 15: { remainder = AsT15; break; }
+                case 16: { remainder = AsT16; break; }
+                case 17: { remainder = AsT17; break; }
+                case 18: { remainder = AsT18; break; }
+                case 19: { remainder = AsT19; break; }
+                case 20: { remainder = AsT20; break; }
+                case 21: { remainder = AsT21; break; }
+                case 22: { remainder = AsT22; break; }
+                case 23: { remainder = AsT23; break; }
+                case 24: { remainder = AsT24; break; }
+                case 25: { remainder = AsT25; break; }
+                case 26: { remainder = AsT26; break; }
+                case 27: { remainder = AsT27; break; }
+                case 28: { remainder = AsT28; break; }
+                case 29: { remainder = AsT29; break; }
+                case 30: { remainder = AsT30; break; }
+                case 31: { remainder = default; break; }
+                default: throw new InvalidOperationException();
+            }
+            return this.IsT31;
+        }
 
-        bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> other) =>
-            _index == other._index &&
-            _index switch
+        bool Equals(OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> other) {
+            var check1 = _index == other._index;
+            if (!check1) { return false; }
+            switch (_index)
             {
-                0 => Equals(_value0, other._value0),
-                1 => Equals(_value1, other._value1),
-                2 => Equals(_value2, other._value2),
-                3 => Equals(_value3, other._value3),
-                4 => Equals(_value4, other._value4),
-                5 => Equals(_value5, other._value5),
-                6 => Equals(_value6, other._value6),
-                7 => Equals(_value7, other._value7),
-                8 => Equals(_value8, other._value8),
-                9 => Equals(_value9, other._value9),
-                10 => Equals(_value10, other._value10),
-                11 => Equals(_value11, other._value11),
-                12 => Equals(_value12, other._value12),
-                13 => Equals(_value13, other._value13),
-                14 => Equals(_value14, other._value14),
-                15 => Equals(_value15, other._value15),
-                16 => Equals(_value16, other._value16),
-                17 => Equals(_value17, other._value17),
-                18 => Equals(_value18, other._value18),
-                19 => Equals(_value19, other._value19),
-                20 => Equals(_value20, other._value20),
-                21 => Equals(_value21, other._value21),
-                22 => Equals(_value22, other._value22),
-                23 => Equals(_value23, other._value23),
-                24 => Equals(_value24, other._value24),
-                25 => Equals(_value25, other._value25),
-                26 => Equals(_value26, other._value26),
-                27 => Equals(_value27, other._value27),
-                28 => Equals(_value28, other._value28),
-                29 => Equals(_value29, other._value29),
-                30 => Equals(_value30, other._value30),
-                31 => Equals(_value31, other._value31),
-                _ => false
+                case 0: return check1 && Equals(_value0, other._value0);
+                             case 1: return check1 && Equals(_value1, other._value1);
+                             case 2: return check1 && Equals(_value2, other._value2);
+                             case 3: return check1 && Equals(_value3, other._value3);
+                             case 4: return check1 && Equals(_value4, other._value4);
+                             case 5: return check1 && Equals(_value5, other._value5);
+                             case 6: return check1 && Equals(_value6, other._value6);
+                             case 7: return check1 && Equals(_value7, other._value7);
+                             case 8: return check1 && Equals(_value8, other._value8);
+                             case 9: return check1 && Equals(_value9, other._value9);
+                             case 10: return check1 && Equals(_value10, other._value10);
+                             case 11: return check1 && Equals(_value11, other._value11);
+                             case 12: return check1 && Equals(_value12, other._value12);
+                             case 13: return check1 && Equals(_value13, other._value13);
+                             case 14: return check1 && Equals(_value14, other._value14);
+                             case 15: return check1 && Equals(_value15, other._value15);
+                             case 16: return check1 && Equals(_value16, other._value16);
+                             case 17: return check1 && Equals(_value17, other._value17);
+                             case 18: return check1 && Equals(_value18, other._value18);
+                             case 19: return check1 && Equals(_value19, other._value19);
+                             case 20: return check1 && Equals(_value20, other._value20);
+                             case 21: return check1 && Equals(_value21, other._value21);
+                             case 22: return check1 && Equals(_value22, other._value22);
+                             case 23: return check1 && Equals(_value23, other._value23);
+                             case 24: return check1 && Equals(_value24, other._value24);
+                             case 25: return check1 && Equals(_value25, other._value25);
+                             case 26: return check1 && Equals(_value26, other._value26);
+                             case 27: return check1 && Equals(_value27, other._value27);
+                             case 28: return check1 && Equals(_value28, other._value28);
+                             case 29: return check1 && Equals(_value29, other._value29);
+                             case 30: return check1 && Equals(_value30, other._value30);
+                             case 31: return check1 && Equals(_value31, other._value31);
+                default: return false;
             };
+                             }
 
         public override bool Equals(object obj)
         {
@@ -1983,83 +1986,85 @@ namespace OneOf
             return obj is OneOfBase<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31> o && Equals(o);
         }
 
-        public override string ToString() =>
-            _index switch {
-                0 => FormatValue(_value0),
-                1 => FormatValue(_value1),
-                2 => FormatValue(_value2),
-                3 => FormatValue(_value3),
-                4 => FormatValue(_value4),
-                5 => FormatValue(_value5),
-                6 => FormatValue(_value6),
-                7 => FormatValue(_value7),
-                8 => FormatValue(_value8),
-                9 => FormatValue(_value9),
-                10 => FormatValue(_value10),
-                11 => FormatValue(_value11),
-                12 => FormatValue(_value12),
-                13 => FormatValue(_value13),
-                14 => FormatValue(_value14),
-                15 => FormatValue(_value15),
-                16 => FormatValue(_value16),
-                17 => FormatValue(_value17),
-                18 => FormatValue(_value18),
-                19 => FormatValue(_value19),
-                20 => FormatValue(_value20),
-                21 => FormatValue(_value21),
-                22 => FormatValue(_value22),
-                23 => FormatValue(_value23),
-                24 => FormatValue(_value24),
-                25 => FormatValue(_value25),
-                26 => FormatValue(_value26),
-                27 => FormatValue(_value27),
-                28 => FormatValue(_value28),
-                29 => FormatValue(_value29),
-                30 => FormatValue(_value30),
-                31 => FormatValue(_value31),
-                _ => throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.")
-            };
+        public override string ToString() {
+            switch (_index) {
+                case 0: return FormatValue(_value0);
+                case 1: return FormatValue(_value1);
+                case 2: return FormatValue(_value2);
+                case 3: return FormatValue(_value3);
+                case 4: return FormatValue(_value4);
+                case 5: return FormatValue(_value5);
+                case 6: return FormatValue(_value6);
+                case 7: return FormatValue(_value7);
+                case 8: return FormatValue(_value8);
+                case 9: return FormatValue(_value9);
+                case 10: return FormatValue(_value10);
+                case 11: return FormatValue(_value11);
+                case 12: return FormatValue(_value12);
+                case 13: return FormatValue(_value13);
+                case 14: return FormatValue(_value14);
+                case 15: return FormatValue(_value15);
+                case 16: return FormatValue(_value16);
+                case 17: return FormatValue(_value17);
+                case 18: return FormatValue(_value18);
+                case 19: return FormatValue(_value19);
+                case 20: return FormatValue(_value20);
+                case 21: return FormatValue(_value21);
+                case 22: return FormatValue(_value22);
+                case 23: return FormatValue(_value23);
+                case 24: return FormatValue(_value24);
+                case 25: return FormatValue(_value25);
+                case 26: return FormatValue(_value26);
+                case 27: return FormatValue(_value27);
+                case 28: return FormatValue(_value28);
+                case 29: return FormatValue(_value29);
+                case 30: return FormatValue(_value30);
+                case 31: return FormatValue(_value31);
+                default: throw new InvalidOperationException("Unexpected index, which indicates a problem in the OneOf codegen.");
+            }
+                                 }
 
         public override int GetHashCode()
         {
             unchecked
             {
-                int hashCode = _index switch
+                    int hashCode;
+                    switch (_index)
                 {
-                    0 => _value0?.GetHashCode(),
-                    1 => _value1?.GetHashCode(),
-                    2 => _value2?.GetHashCode(),
-                    3 => _value3?.GetHashCode(),
-                    4 => _value4?.GetHashCode(),
-                    5 => _value5?.GetHashCode(),
-                    6 => _value6?.GetHashCode(),
-                    7 => _value7?.GetHashCode(),
-                    8 => _value8?.GetHashCode(),
-                    9 => _value9?.GetHashCode(),
-                    10 => _value10?.GetHashCode(),
-                    11 => _value11?.GetHashCode(),
-                    12 => _value12?.GetHashCode(),
-                    13 => _value13?.GetHashCode(),
-                    14 => _value14?.GetHashCode(),
-                    15 => _value15?.GetHashCode(),
-                    16 => _value16?.GetHashCode(),
-                    17 => _value17?.GetHashCode(),
-                    18 => _value18?.GetHashCode(),
-                    19 => _value19?.GetHashCode(),
-                    20 => _value20?.GetHashCode(),
-                    21 => _value21?.GetHashCode(),
-                    22 => _value22?.GetHashCode(),
-                    23 => _value23?.GetHashCode(),
-                    24 => _value24?.GetHashCode(),
-                    25 => _value25?.GetHashCode(),
-                    26 => _value26?.GetHashCode(),
-                    27 => _value27?.GetHashCode(),
-                    28 => _value28?.GetHashCode(),
-                    29 => _value29?.GetHashCode(),
-                    30 => _value30?.GetHashCode(),
-                    31 => _value31?.GetHashCode(),
-                    _ => 0
-                } ?? 0;
+                    case 0: { hashCode = _value0?.GetHashCode() ?? 0; break; }
+                    case 1: { hashCode = _value1?.GetHashCode() ?? 0; break; }
+                    case 2: { hashCode = _value2?.GetHashCode() ?? 0; break; }
+                    case 3: { hashCode = _value3?.GetHashCode() ?? 0; break; }
+                    case 4: { hashCode = _value4?.GetHashCode() ?? 0; break; }
+                    case 5: { hashCode = _value5?.GetHashCode() ?? 0; break; }
+                    case 6: { hashCode = _value6?.GetHashCode() ?? 0; break; }
+                    case 7: { hashCode = _value7?.GetHashCode() ?? 0; break; }
+                    case 8: { hashCode = _value8?.GetHashCode() ?? 0; break; }
+                    case 9: { hashCode = _value9?.GetHashCode() ?? 0; break; }
+                    case 10: { hashCode = _value10?.GetHashCode() ?? 0; break; }
+                    case 11: { hashCode = _value11?.GetHashCode() ?? 0; break; }
+                    case 12: { hashCode = _value12?.GetHashCode() ?? 0; break; }
+                    case 13: { hashCode = _value13?.GetHashCode() ?? 0; break; }
+                    case 14: { hashCode = _value14?.GetHashCode() ?? 0; break; }
+                    case 15: { hashCode = _value15?.GetHashCode() ?? 0; break; }
+                    case 16: { hashCode = _value16?.GetHashCode() ?? 0; break; }
+                    case 17: { hashCode = _value17?.GetHashCode() ?? 0; break; }
+                    case 18: { hashCode = _value18?.GetHashCode() ?? 0; break; }
+                    case 19: { hashCode = _value19?.GetHashCode() ?? 0; break; }
+                    case 20: { hashCode = _value20?.GetHashCode() ?? 0; break; }
+                    case 21: { hashCode = _value21?.GetHashCode() ?? 0; break; }
+                    case 22: { hashCode = _value22?.GetHashCode() ?? 0; break; }
+                    case 23: { hashCode = _value23?.GetHashCode() ?? 0; break; }
+                    case 24: { hashCode = _value24?.GetHashCode() ?? 0; break; }
+                    case 25: { hashCode = _value25?.GetHashCode() ?? 0; break; }
+                    case 26: { hashCode = _value26?.GetHashCode() ?? 0; break; }
+                    case 27: { hashCode = _value27?.GetHashCode() ?? 0; break; }
+                    case 28: { hashCode = _value28?.GetHashCode() ?? 0; break; }
+                    case 29: { hashCode = _value29?.GetHashCode() ?? 0; break; }
+                    case 30: { hashCode = _value30?.GetHashCode() ?? 0; break; }
+                    case 31: { hashCode = _value31?.GetHashCode() ?? 0; break; }
+                    default: { hashCode = 0; break; }
+                }
                 return (hashCode*397) ^ _index;
             }
         }
