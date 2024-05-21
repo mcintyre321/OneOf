@@ -19,7 +19,7 @@ namespace OneOf
         readonly T11 _value11;
         readonly int _index;
 
-        protected OneOfBase(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> input)
+        protected internal OneOfBase(OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> input)
         {
             _index = input.Index;
             switch (_index)
@@ -59,6 +59,8 @@ namespace OneOf
             };
 
         public int Index => _index;
+
+        
 
         public bool IsT0 => _index == 0;
         public bool IsT1 => _index == 1;

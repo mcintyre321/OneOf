@@ -11,7 +11,7 @@ namespace OneOf
         readonly T3 _value3;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default)
+        internal OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default)
         {
             _index = index;
             _value0 = value0;
@@ -31,6 +31,10 @@ namespace OneOf
             };
 
         public int Index => _index;
+
+        public OneOf<T0, T1, T2, T3, TNew> WithType<TNew>() =>
+            new OneOf<T0, T1, T2, T3, TNew>(_index, _value0, _value1, _value2, _value3, default);
+        
 
         public bool IsT0 => _index == 0;
         public bool IsT1 => _index == 1;

@@ -16,7 +16,7 @@ namespace OneOf
         readonly T8 _value8;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default)
+        internal OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default)
         {
             _index = index;
             _value0 = value0;
@@ -46,6 +46,8 @@ namespace OneOf
             };
 
         public int Index => _index;
+
+        
 
         public bool IsT0 => _index == 0;
         public bool IsT1 => _index == 1;
