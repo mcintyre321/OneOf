@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using OneOf;
 using Xunit;
 
 namespace OneOf.SourceGenerator.Tests
@@ -129,6 +130,13 @@ namespace OneOf.SourceGenerator.Tests
             OpenGenericWithClosed<MyClass2> openWithClosed2 = new MyClass();
             Assert.True(openWithClosed2.IsT1);
         }
+
+        [Fact]
+        public void GenerateOneOf_Works_WithTypesFromOneOfNameSpace()
+        {
+            DifferentLibrary.OneOf.JustLibraryClass justLibraryClass = new DifferentLibrary.OneOf.LibraryClass();
+            Assert.True(justLibraryClass.IsT0);
+        }
     }
 
     [GenerateOneOf]
@@ -182,5 +190,17 @@ namespace NotOneOf
     public class OneOf
     {
 
+    }
+}
+
+namespace DifferentLibrary.OneOf
+{
+    public class LibraryClass
+    {
+    }
+
+    [GenerateOneOf]
+    public partial class JustLibraryClass : OneOfBase<LibraryClass>
+    {
     }
 }
