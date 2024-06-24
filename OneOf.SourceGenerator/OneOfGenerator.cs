@@ -84,7 +84,7 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
 
             source.Append($@"
     {{
-        public {classSymbol.Name}(OneOf.OneOf<{oneOfGenericPart}> _) : base(_) {{ }}
+        public {classSymbol.Name}(global::OneOf.OneOf<{oneOfGenericPart}> _) : base(_) {{ }}
 ");
 
             foreach (var (param, arg) in paramArgPairs)
