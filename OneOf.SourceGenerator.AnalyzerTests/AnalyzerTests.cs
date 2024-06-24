@@ -49,7 +49,7 @@ namespace Foo
 {
     partial class StringOrNumber
     {
-        public StringOrNumber(OneOf.OneOf<string, int, uint> _) : base(_) { }
+        public StringOrNumber(global::OneOf.OneOf<string, int, uint> _) : base(_) { }
 
         public static implicit operator StringOrNumber(string _) => new StringOrNumber(_);
         public static explicit operator string(StringOrNumber _) => _.AsT0;
@@ -85,7 +85,7 @@ namespace Foo
 {
     partial class StringOrNumber
     {
-        public StringOrNumber(OneOf.OneOf<string, int, uint> _) : base(_) { }
+        public StringOrNumber(global::OneOf.OneOf<string, int, uint> _) : base(_) { }
 
         public static implicit operator StringOrNumber(string _) => new StringOrNumber(_);
         public static explicit operator string(StringOrNumber _) => _.AsT0;
@@ -121,7 +121,7 @@ namespace Foo
 {
     partial class StringOrNumber
     {
-        public StringOrNumber(OneOf.OneOf<string, int, uint> _) : base(_) { }
+        public StringOrNumber(global::OneOf.OneOf<string, int, uint> _) : base(_) { }
 
         public static implicit operator StringOrNumber(string _) => new StringOrNumber(_);
         public static explicit operator string(StringOrNumber _) => _.AsT0;
@@ -245,7 +245,7 @@ namespace Foo
 {
     partial class FooBar
     {
-        public FooBar(OneOf.OneOf<global::Foo.Bar.Class1, global::Bar.Class2> _) : base(_) { }
+        public FooBar(global::OneOf.OneOf<global::Foo.Bar.Class1, global::Bar.Class2> _) : base(_) { }
 
         public static implicit operator FooBar(global::Foo.Bar.Class1 _) => new FooBar(_);
         public static explicit operator global::Foo.Bar.Class1(FooBar _) => _.AsT0;
