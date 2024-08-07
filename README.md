@@ -8,7 +8,7 @@
 
 This library provides F# style ~discriminated~ unions for C#, using a custom type `OneOf<T0, ... Tn>`. An instance of this type holds a single value, which is one of the types in its generic argument list.
 
-I can't encourage you enough to give it a try! Due to exhaustive matching DUs provide an alternative to polymorphism when you want to have a method with guaranteed behaviour-per-type (i.e. adding an abstract method on a base type, and then implementing that method in each type). It's a really powerful tool, ask any f#/Scala dev! :)
+I can't encourage you enough to give it a try! Due to exhaustive matching, DUs provide an alternative to polymorphism when you want to have a method with guaranteed behaviour-per-type (i.e. adding an abstract method on a base type, and then implementing that method in each type). It's a really powerful tool, ask any f#/Scala dev! :)
 
 PS If you like OneOf, you might want to check out [ValueOf](https://github.com/mcintyre321/valueof), for one-line Value Object Type definitions.
 
