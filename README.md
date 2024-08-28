@@ -36,7 +36,7 @@ public IActionResult Register(string username)
     return createUserResult.Match(
         user => new RedirectResult("/dashboard"),
         invalidName => {
-            ModelState.AddModelError(nameof(username), $"Sorry, that is not a valid username.");
+            ModelState.AddModelError(nameof(username), "Sorry, that is not a valid username.");
             return View("Register");
         },
         nameTaken => {
@@ -120,7 +120,7 @@ The return value indicates if the OneOf contains a T𝑥 or not. If so, then `va
 ```csharp
 IActionResult Get(string id)
 {
-    OneOf<Thing, NotFound, Error> thingOrNotFoundOrError = GetThingFromDb(string id);
+    OneOf<Thing, NotFound, Error> thingOrNotFoundOrError = GetThingFromDb(id);
 
     if (thingOrNotFoundOrError.TryPickT1(out NotFound notFound, out var thingOrError)) //thingOrError is a OneOf<Thing, Error>
       return StatusCode(404);
