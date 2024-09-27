@@ -11,21 +11,21 @@ var sourceRoot = GetFullPath(Combine(GetDirectoryName(GetExecutingAssembly().Loc
 for (var i = 1; i < 10; i++) {
     var output = GetContent(true, i);
     var outpath = Combine(sourceRoot, $"OneOf\\OneOfT{i - 1}.generated.cs");
-    File.WriteAllText(outpath, output);
+    await File.WriteAllTextAsync(outpath, output);
 
     var output2 = GetContent(false, i);
     var outpath2 = Combine(sourceRoot, $"OneOf\\OneOfBaseT{i - 1}.generated.cs");
-    File.WriteAllText(outpath2, output2);
+    await File.WriteAllTextAsync(outpath2, output2);
 }
 
 for (var i = 10; i < 33; i++) {
     var output3 = GetContent(true, i);
     var outpath3 = Combine(sourceRoot, $"OneOf.Extended\\OneOfT{i - 1}.generated.cs");
-    File.WriteAllText(outpath3, output3);
+    await File.WriteAllTextAsync(outpath3, output3);
 
     var output4 = GetContent(false, i);
     var outpath4 = Combine(sourceRoot, $"OneOf.Extended\\OneOfBaseT{i - 1}.generated.cs");
-    File.WriteAllText(outpath4, output4);
+    await File.WriteAllTextAsync(outpath4, output4);
 }
 
 string GetContent(bool isStruct, int i) {
