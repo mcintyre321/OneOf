@@ -39,6 +39,9 @@ string GetContent(bool isStruct, int i) {
     
     sb.Append(@$"using System;
 using static OneOf.Functions;
+#if NETSTANDARD2_0 || NET40_OR_GREATER
+using System.Threading.Tasks;
+#endif
 
 namespace OneOf
 {{
@@ -100,6 +103,19 @@ namespace OneOf
             throw new InvalidOperationException();
         }}
 
+#if NETSTANDARD2_0 || NET40_OR_GREATER
+        public async Task SwitchAsync({RangeJoined(", ", e => $"Func<T{e},Task> f{e}")})
+        {{
+            {RangeJoined(@"
+            ", j => @$"if (_index == {j} && f{j} != null)
+            {{
+                await f{j}(_value{j});
+                return;
+            }}")}
+            throw new InvalidOperationException();
+        }}
+#endif
+
         public TResult Match<TResult>({RangeJoined(", ", e => $"Func<T{e}, TResult> f{e}")})
         {{
             {RangeJoined(@"
@@ -109,6 +125,18 @@ namespace OneOf
             }}")}
             throw new InvalidOperationException();
         }}
+
+#if NETSTANDARD2_0 || NET40_OR_GREATER
+        public async Task<TResult> MatchAsync<TResult>({RangeJoined(", ", e => $"Func<T{e}, Task<TResult>> f{e}")})
+        {{
+            {RangeJoined(@"
+            ", j => $@"if (_index == {j} && f{j} != null)
+            {{
+                return await f{j}(_value{j});
+            }}")}
+            throw new InvalidOperationException();
+        }}
+#endif
 
         {IfStruct(genericArgs.Joined(@"
         ", bindToType => $@"public static OneOf<{genericArgs.Joined(", ")}> From{bindToType}({bindToType} input) => input;"))}
@@ -134,7 +162,26 @@ namespace OneOf
                         $"{k} => As{x},")}
                 _ => throw new InvalidOperationException()
             }};
-        }}";
+        }}
+
+#if NETSTANDARD2_0 || NET40_OR_GREATER
+        public async Task<OneOf<{resultArgsPrinted}>> Map{bindToType}Async<TResult>(Func<{bindToType}, Task<TResult>> mapFunc)
+        {{
+            if (mapFunc == null)
+            {{
+                throw new ArgumentNullException(nameof(mapFunc));
+            }}
+            return _index switch
+            {{
+                {genericArgs.Joined(@"
+                ", (x, k) =>
+                    x == bindToType ?
+                        $"{k} => await mapFunc(As{x})," :
+                        $"{k} => As{x},")}
+                _ => throw new InvalidOperationException()
+            }};
+        }}
+#endif";
         }))}
 ");
 

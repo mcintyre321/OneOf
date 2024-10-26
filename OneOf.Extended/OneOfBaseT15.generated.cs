@@ -1,5 +1,8 @@
 using System;
 using static OneOf.Functions;
+#if NETSTANDARD2_0 || NET40_OR_GREATER
+using System.Threading.Tasks;
+#endif
 
 namespace OneOf
 {
@@ -241,6 +244,93 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+#if NETSTANDARD2_0 || NET40_OR_GREATER
+        public async Task SwitchAsync(Func<T0,Task> f0, Func<T1,Task> f1, Func<T2,Task> f2, Func<T3,Task> f3, Func<T4,Task> f4, Func<T5,Task> f5, Func<T6,Task> f6, Func<T7,Task> f7, Func<T8,Task> f8, Func<T9,Task> f9, Func<T10,Task> f10, Func<T11,Task> f11, Func<T12,Task> f12, Func<T13,Task> f13, Func<T14,Task> f14, Func<T15,Task> f15)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                await f0(_value0);
+                return;
+            }
+            if (_index == 1 && f1 != null)
+            {
+                await f1(_value1);
+                return;
+            }
+            if (_index == 2 && f2 != null)
+            {
+                await f2(_value2);
+                return;
+            }
+            if (_index == 3 && f3 != null)
+            {
+                await f3(_value3);
+                return;
+            }
+            if (_index == 4 && f4 != null)
+            {
+                await f4(_value4);
+                return;
+            }
+            if (_index == 5 && f5 != null)
+            {
+                await f5(_value5);
+                return;
+            }
+            if (_index == 6 && f6 != null)
+            {
+                await f6(_value6);
+                return;
+            }
+            if (_index == 7 && f7 != null)
+            {
+                await f7(_value7);
+                return;
+            }
+            if (_index == 8 && f8 != null)
+            {
+                await f8(_value8);
+                return;
+            }
+            if (_index == 9 && f9 != null)
+            {
+                await f9(_value9);
+                return;
+            }
+            if (_index == 10 && f10 != null)
+            {
+                await f10(_value10);
+                return;
+            }
+            if (_index == 11 && f11 != null)
+            {
+                await f11(_value11);
+                return;
+            }
+            if (_index == 12 && f12 != null)
+            {
+                await f12(_value12);
+                return;
+            }
+            if (_index == 13 && f13 != null)
+            {
+                await f13(_value13);
+                return;
+            }
+            if (_index == 14 && f14 != null)
+            {
+                await f14(_value14);
+                return;
+            }
+            if (_index == 15 && f15 != null)
+            {
+                await f15(_value15);
+                return;
+            }
+            throw new InvalidOperationException();
+        }
+#endif
+
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8, Func<T9, TResult> f9, Func<T10, TResult> f10, Func<T11, TResult> f11, Func<T12, TResult> f12, Func<T13, TResult> f13, Func<T14, TResult> f14, Func<T15, TResult> f15)
         {
             if (_index == 0 && f0 != null)
@@ -309,6 +399,77 @@ namespace OneOf
             }
             throw new InvalidOperationException();
         }
+
+#if NETSTANDARD2_0 || NET40_OR_GREATER
+        public async Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1, Func<T2, Task<TResult>> f2, Func<T3, Task<TResult>> f3, Func<T4, Task<TResult>> f4, Func<T5, Task<TResult>> f5, Func<T6, Task<TResult>> f6, Func<T7, Task<TResult>> f7, Func<T8, Task<TResult>> f8, Func<T9, Task<TResult>> f9, Func<T10, Task<TResult>> f10, Func<T11, Task<TResult>> f11, Func<T12, Task<TResult>> f12, Func<T13, Task<TResult>> f13, Func<T14, Task<TResult>> f14, Func<T15, Task<TResult>> f15)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return await f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return await f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return await f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return await f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return await f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return await f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return await f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return await f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return await f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return await f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return await f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return await f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return await f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return await f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return await f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return await f15(_value15);
+            }
+            throw new InvalidOperationException();
+        }
+#endif
 
         
 

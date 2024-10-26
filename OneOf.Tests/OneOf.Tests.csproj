@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net451</TargetFramework>
+    <LangVersion>9.0</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,4 +15,5 @@
   <ItemGroup>
     <ProjectReference Include="..\OneOf\OneOf.csproj" />
   </ItemGroup>
+  
 </Project>

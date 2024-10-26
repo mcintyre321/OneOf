@@ -1,5 +1,8 @@
 using System;
 using static OneOf.Functions;
+#if NETSTANDARD2_0 || NET40_OR_GREATER
+using System.Threading.Tasks;
+#endif
 
 namespace OneOf
 {
@@ -56,6 +59,23 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+#if NETSTANDARD2_0 || NET40_OR_GREATER
+        public async Task SwitchAsync(Func<T0,Task> f0, Func<T1,Task> f1)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                await f0(_value0);
+                return;
+            }
+            if (_index == 1 && f1 != null)
+            {
+                await f1(_value1);
+                return;
+            }
+            throw new InvalidOperationException();
+        }
+#endif
+
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1)
         {
             if (_index == 0 && f0 != null)
@@ -68,6 +88,21 @@ namespace OneOf
             }
             throw new InvalidOperationException();
         }
+
+#if NETSTANDARD2_0 || NET40_OR_GREATER
+        public async Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0, Func<T1, Task<TResult>> f1)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return await f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return await f1(_value1);
+            }
+            throw new InvalidOperationException();
+        }
+#endif
 
         public static OneOf<T0, T1> FromT0(T0 input) => input;
         public static OneOf<T0, T1> FromT1(T1 input) => input;
@@ -86,6 +121,22 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
+
+#if NETSTANDARD2_0 || NET40_OR_GREATER
+        public async Task<OneOf<TResult, T1>> MapT0Async<TResult>(Func<T0, Task<TResult>> mapFunc)
+        {
+            if (mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return _index switch
+            {
+                0 => await mapFunc(AsT0),
+                1 => AsT1,
+                _ => throw new InvalidOperationException()
+            };
+        }
+#endif
             
         public OneOf<T0, TResult> MapT1<TResult>(Func<T1, TResult> mapFunc)
         {
@@ -100,6 +151,22 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
         }
+
+#if NETSTANDARD2_0 || NET40_OR_GREATER
+        public async Task<OneOf<T0, TResult>> MapT1Async<TResult>(Func<T1, Task<TResult>> mapFunc)
+        {
+            if (mapFunc == null)
+            {
+                throw new ArgumentNullException(nameof(mapFunc));
+            }
+            return _index switch
+            {
+                0 => AsT0,
+                1 => await mapFunc(AsT1),
+                _ => throw new InvalidOperationException()
+            };
+        }
+#endif
 
 		public bool TryPickT0(out T0 value, out T1 remainder)
 		{

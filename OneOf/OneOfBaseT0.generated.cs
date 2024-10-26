@@ -1,5 +1,8 @@
 using System;
 using static OneOf.Functions;
+#if NETSTANDARD2_0 || NET40_OR_GREATER
+using System.Threading.Tasks;
+#endif
 
 namespace OneOf
 {
@@ -46,6 +49,18 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+#if NETSTANDARD2_0 || NET40_OR_GREATER
+        public async Task SwitchAsync(Func<T0,Task> f0)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                await f0(_value0);
+                return;
+            }
+            throw new InvalidOperationException();
+        }
+#endif
+
         public TResult Match<TResult>(Func<T0, TResult> f0)
         {
             if (_index == 0 && f0 != null)
@@ -54,6 +69,17 @@ namespace OneOf
             }
             throw new InvalidOperationException();
         }
+
+#if NETSTANDARD2_0 || NET40_OR_GREATER
+        public async Task<TResult> MatchAsync<TResult>(Func<T0, Task<TResult>> f0)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return await f0(_value0);
+            }
+            throw new InvalidOperationException();
+        }
+#endif
 
         
 
