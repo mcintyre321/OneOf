@@ -36,6 +36,8 @@ namespace OneOf
 
         
 
+        
+
         public void Switch(Action<T0> f0)
         {
             if (_index == 0 && f0 != null)

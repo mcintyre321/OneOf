@@ -32,6 +32,8 @@ namespace OneOf
 
         public static implicit operator OneOf<T0>(T0 t) => new OneOf<T0>(0, value0: t);
 
+        
+
         public void Switch(Action<T0> f0)
         {
             if (_index == 0 && f0 != null)

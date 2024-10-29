@@ -41,6 +41,14 @@ namespace OneOf
         public static implicit operator OneOf<T0, T1>(T0 t) => new OneOf<T0, T1>(0, value0: t);
         public static implicit operator OneOf<T0, T1>(T1 t) => new OneOf<T0, T1>(1, value1: t);
 
+        
+        public static implicit operator OneOf<T0, T1>(OneOf<T0> o) => 
+            o.Index switch
+            {
+                0 => OneOf<T0, T1>.FromT0(o.AsT0),
+                _ => throw new InvalidOperationException()
+            };
+
         public void Switch(Action<T0> f0, Action<T1> f1)
         {
             if (_index == 0 && f0 != null)

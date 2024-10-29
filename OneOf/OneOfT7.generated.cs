@@ -95,6 +95,77 @@ namespace OneOf
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(T6 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(6, value6: t);
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(T7 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(7, value7: t);
 
+        
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(OneOf<T0> o) => 
+            o.Index switch
+            {
+                0 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT0(o.AsT0),
+                _ => throw new InvalidOperationException()
+            };
+        
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(OneOf<T0, T1> o) => 
+            o.Index switch
+            {
+                0 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT0(o.AsT0),
+                1 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT1(o.AsT1),
+                _ => throw new InvalidOperationException()
+            };
+        
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(OneOf<T0, T1, T2> o) => 
+            o.Index switch
+            {
+                0 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT0(o.AsT0),
+                1 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT1(o.AsT1),
+                2 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT2(o.AsT2),
+                _ => throw new InvalidOperationException()
+            };
+        
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(OneOf<T0, T1, T2, T3> o) => 
+            o.Index switch
+            {
+                0 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT0(o.AsT0),
+                1 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT1(o.AsT1),
+                2 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT2(o.AsT2),
+                3 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT3(o.AsT3),
+                _ => throw new InvalidOperationException()
+            };
+        
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(OneOf<T0, T1, T2, T3, T4> o) => 
+            o.Index switch
+            {
+                0 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT0(o.AsT0),
+                1 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT1(o.AsT1),
+                2 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT2(o.AsT2),
+                3 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT3(o.AsT3),
+                4 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT4(o.AsT4),
+                _ => throw new InvalidOperationException()
+            };
+        
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(OneOf<T0, T1, T2, T3, T4, T5> o) => 
+            o.Index switch
+            {
+                0 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT0(o.AsT0),
+                1 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT1(o.AsT1),
+                2 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT2(o.AsT2),
+                3 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT3(o.AsT3),
+                4 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT4(o.AsT4),
+                5 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT5(o.AsT5),
+                _ => throw new InvalidOperationException()
+            };
+        
+        public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7>(OneOf<T0, T1, T2, T3, T4, T5, T6> o) => 
+            o.Index switch
+            {
+                0 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT0(o.AsT0),
+                1 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT1(o.AsT1),
+                2 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT2(o.AsT2),
+                3 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT3(o.AsT3),
+                4 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT4(o.AsT4),
+                5 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT5(o.AsT5),
+                6 => OneOf<T0, T1, T2, T3, T4, T5, T6, T7>.FromT6(o.AsT6),
+                _ => throw new InvalidOperationException()
+            };
+
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7)
         {
             if (_index == 0 && f0 != null)

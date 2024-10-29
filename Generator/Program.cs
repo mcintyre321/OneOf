@@ -89,6 +89,19 @@ namespace OneOf
         {IfStruct(RangeJoined(@"
         ", j => $"public static implicit operator {className}<{genericArg}>(T{j} t) => new {className}<{genericArg}>({j}, value{j}: t);"))}
 
+        {IfStruct(Range(1, i - 1).Joined(@"
+        ", j => {
+            var shorterGenericArg = Range(0, j).Select(e => $"T{e}").Joined(", ");
+            return $@"
+        public static implicit operator {className}<{genericArg}>({className}<{shorterGenericArg}> o) => 
+            o.Index switch
+            {{
+                {Range(0, j).Joined(@"
+                ", k => @$"{k} => {className}<{genericArg}>.FromT{k}(o.AsT{k}),")}
+                _ => throw new InvalidOperationException()
+            }};";
+        }))}
+
         public void Switch({RangeJoined(", ", e => $"Action<T{e}> f{e}")})
         {{
             {RangeJoined(@"

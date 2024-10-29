@@ -59,6 +59,31 @@ namespace OneOf
         public static implicit operator OneOf<T0, T1, T2, T3>(T2 t) => new OneOf<T0, T1, T2, T3>(2, value2: t);
         public static implicit operator OneOf<T0, T1, T2, T3>(T3 t) => new OneOf<T0, T1, T2, T3>(3, value3: t);
 
+        
+        public static implicit operator OneOf<T0, T1, T2, T3>(OneOf<T0> o) => 
+            o.Index switch
+            {
+                0 => OneOf<T0, T1, T2, T3>.FromT0(o.AsT0),
+                _ => throw new InvalidOperationException()
+            };
+        
+        public static implicit operator OneOf<T0, T1, T2, T3>(OneOf<T0, T1> o) => 
+            o.Index switch
+            {
+                0 => OneOf<T0, T1, T2, T3>.FromT0(o.AsT0),
+                1 => OneOf<T0, T1, T2, T3>.FromT1(o.AsT1),
+                _ => throw new InvalidOperationException()
+            };
+        
+        public static implicit operator OneOf<T0, T1, T2, T3>(OneOf<T0, T1, T2> o) => 
+            o.Index switch
+            {
+                0 => OneOf<T0, T1, T2, T3>.FromT0(o.AsT0),
+                1 => OneOf<T0, T1, T2, T3>.FromT1(o.AsT1),
+                2 => OneOf<T0, T1, T2, T3>.FromT2(o.AsT2),
+                _ => throw new InvalidOperationException()
+            };
+
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3)
         {
             if (_index == 0 && f0 != null)

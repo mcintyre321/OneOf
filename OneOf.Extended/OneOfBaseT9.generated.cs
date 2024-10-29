@@ -108,6 +108,8 @@ namespace OneOf
 
         
 
+        
+
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3, Action<T4> f4, Action<T5> f5, Action<T6> f6, Action<T7> f7, Action<T8> f8, Action<T9> f9)
         {
             if (_index == 0 && f0 != null)
