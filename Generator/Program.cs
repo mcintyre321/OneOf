@@ -145,9 +145,9 @@ namespace OneOf
                 var genericArgWithSkip = Range(0, i).ExceptSingle(j).Joined(", ", e => $"T{e}");
                 var remainderType = i == 2 ? genericArgWithSkip : $"OneOf<{genericArgWithSkip}>";
                 return $@"
-		public bool TryPickT{j}(out T{j} value, out {remainderType} remainder)
-		{{
-			value = IsT{j} ? AsT{j} : default;
+        public bool TryPickT{j}(out T{j} value, out {remainderType} remainder)
+        {{
+            value = IsT{j} ? AsT{j} : default;
             remainder = _index switch
             {{
                 {RangeJoined(@"
@@ -157,8 +157,8 @@ namespace OneOf
                         $"{k} => AsT{k},")}
                 _ => throw new InvalidOperationException()
             }};
-			return this.IsT{j};
-		}}";
+            return this.IsT{j};
+        }}";
             })
         );
     }

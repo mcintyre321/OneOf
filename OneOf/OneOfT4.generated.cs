@@ -215,9 +215,9 @@ namespace OneOf
             };
         }
 
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4> remainder)
-		{
-			value = IsT0 ? AsT0 : default;
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4> remainder)
+        {
+            value = IsT0 ? AsT0 : default;
             remainder = _index switch
             {
                 0 => default,
@@ -227,12 +227,12 @@ namespace OneOf
                 4 => AsT4,
                 _ => throw new InvalidOperationException()
             };
-			return this.IsT0;
-		}
+            return this.IsT0;
+        }
         
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4> remainder)
-		{
-			value = IsT1 ? AsT1 : default;
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4> remainder)
+        {
+            value = IsT1 ? AsT1 : default;
             remainder = _index switch
             {
                 0 => AsT0,
@@ -242,12 +242,12 @@ namespace OneOf
                 4 => AsT4,
                 _ => throw new InvalidOperationException()
             };
-			return this.IsT1;
-		}
+            return this.IsT1;
+        }
         
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4> remainder)
-		{
-			value = IsT2 ? AsT2 : default;
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4> remainder)
+        {
+            value = IsT2 ? AsT2 : default;
             remainder = _index switch
             {
                 0 => AsT0,
@@ -257,12 +257,12 @@ namespace OneOf
                 4 => AsT4,
                 _ => throw new InvalidOperationException()
             };
-			return this.IsT2;
-		}
+            return this.IsT2;
+        }
         
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4> remainder)
-		{
-			value = IsT3 ? AsT3 : default;
+        public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4> remainder)
+        {
+            value = IsT3 ? AsT3 : default;
             remainder = _index switch
             {
                 0 => AsT0,
@@ -272,12 +272,12 @@ namespace OneOf
                 4 => AsT4,
                 _ => throw new InvalidOperationException()
             };
-			return this.IsT3;
-		}
+            return this.IsT3;
+        }
         
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3> remainder)
-		{
-			value = IsT4 ? AsT4 : default;
+        public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3> remainder)
+        {
+            value = IsT4 ? AsT4 : default;
             remainder = _index switch
             {
                 0 => AsT0,
@@ -287,8 +287,8 @@ namespace OneOf
                 4 => default,
                 _ => throw new InvalidOperationException()
             };
-			return this.IsT4;
-		}
+            return this.IsT4;
+        }
 
         bool Equals(OneOf<T0, T1, T2, T3, T4> other) =>
             _index == other._index &&

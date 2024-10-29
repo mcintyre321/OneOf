@@ -93,9 +93,9 @@ namespace OneOf
 
         
 
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2> remainder)
-		{
-			value = IsT0 ? AsT0 : default;
+        public bool TryPickT0(out T0 value, out OneOf<T1, T2> remainder)
+        {
+            value = IsT0 ? AsT0 : default;
             remainder = _index switch
             {
                 0 => default,
@@ -103,12 +103,12 @@ namespace OneOf
                 2 => AsT2,
                 _ => throw new InvalidOperationException()
             };
-			return this.IsT0;
-		}
+            return this.IsT0;
+        }
         
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2> remainder)
-		{
-			value = IsT1 ? AsT1 : default;
+        public bool TryPickT1(out T1 value, out OneOf<T0, T2> remainder)
+        {
+            value = IsT1 ? AsT1 : default;
             remainder = _index switch
             {
                 0 => AsT0,
@@ -116,12 +116,12 @@ namespace OneOf
                 2 => AsT2,
                 _ => throw new InvalidOperationException()
             };
-			return this.IsT1;
-		}
+            return this.IsT1;
+        }
         
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1> remainder)
-		{
-			value = IsT2 ? AsT2 : default;
+        public bool TryPickT2(out T2 value, out OneOf<T0, T1> remainder)
+        {
+            value = IsT2 ? AsT2 : default;
             remainder = _index switch
             {
                 0 => AsT0,
@@ -129,8 +129,8 @@ namespace OneOf
                 2 => default,
                 _ => throw new InvalidOperationException()
             };
-			return this.IsT2;
-		}
+            return this.IsT2;
+        }
 
         bool Equals(OneOfBase<T0, T1, T2> other) =>
             _index == other._index &&

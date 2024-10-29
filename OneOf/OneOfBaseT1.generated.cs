@@ -76,29 +76,29 @@ namespace OneOf
 
         
 
-		public bool TryPickT0(out T0 value, out T1 remainder)
-		{
-			value = IsT0 ? AsT0 : default;
+        public bool TryPickT0(out T0 value, out T1 remainder)
+        {
+            value = IsT0 ? AsT0 : default;
             remainder = _index switch
             {
                 0 => default,
                 1 => AsT1,
                 _ => throw new InvalidOperationException()
             };
-			return this.IsT0;
-		}
+            return this.IsT0;
+        }
         
-		public bool TryPickT1(out T1 value, out T0 remainder)
-		{
-			value = IsT1 ? AsT1 : default;
+        public bool TryPickT1(out T1 value, out T0 remainder)
+        {
+            value = IsT1 ? AsT1 : default;
             remainder = _index switch
             {
                 0 => AsT0,
                 1 => default,
                 _ => throw new InvalidOperationException()
             };
-			return this.IsT1;
-		}
+            return this.IsT1;
+        }
 
         bool Equals(OneOfBase<T0, T1> other) =>
             _index == other._index &&
