@@ -1,11 +1,13 @@
+#nullable enable
 using System;
+using System.Diagnostics.CodeAnalysis;
 using static OneOf.Functions;
 
 namespace OneOf
 {
     public class OneOfBase<T0> : IOneOf
     {
-        readonly T0 _value0;
+        readonly T0 _value0 = default!;
         readonly int _index;
 
         protected OneOfBase(OneOf<T0> input)
@@ -14,15 +16,15 @@ namespace OneOf
             switch (_index)
             {
                 case 0: _value0 = input.AsT0; break;
-                default: throw new InvalidOperationException();
+                default: throw InvalidIndexException(_index);
             }
         }
 
-        public object Value =>
+        public object? Value =>
             _index switch
             {
                 0 => _value0,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 
         public int Index => _index;
@@ -43,7 +45,7 @@ namespace OneOf
                 f0(_value0);
                 return;
             }
-            throw new InvalidOperationException();
+            throw InvalidIndexException(_index);
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0)
@@ -52,7 +54,7 @@ namespace OneOf
             {
                 return f0(_value0);
             }
-            throw new InvalidOperationException();
+            throw InvalidIndexException(_index);
         }
 
         
@@ -67,7 +69,7 @@ namespace OneOf
                 _ => false
             };
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (ReferenceEquals(null, obj))
             {

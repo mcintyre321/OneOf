@@ -36,8 +36,11 @@ string GetContent(bool isStruct, int i) {
     var genericArgs = Range(0, i).Select(e => $"T{e}").ToList();
     var genericArg = genericArgs.Joined(", ");
     var sb = new StringBuilder();
+    const string invalidIndexException = "throw InvalidIndexException(_index)";
     
-    sb.Append(@$"using System;
+    sb.Append(@$"#nullable enable
+using System;
+using System.Diagnostics.CodeAnalysis;
 using static OneOf.Functions;
 
 namespace OneOf
@@ -45,11 +48,11 @@ namespace OneOf
     public {IfStruct("readonly struct", "class")} {className}<{genericArg}> : IOneOf
     {{
         {RangeJoined(@"
-        ", j => $"readonly T{j} _value{j};")}
+        ", j => $"readonly T{j} _value{j}{IfStruct("", " = default!")};")}
         readonly int _index;
 
         {IfStruct( // constructor
-        $@"OneOf(int index, {RangeJoined(", ", j => $"T{j} value{j} = default")})
+        $@"OneOf(int index, {RangeJoined(", ", j => $"T{j} value{j} = default!")})
         {{
             _index = index;
             {RangeJoined(@"
@@ -62,17 +65,17 @@ namespace OneOf
             {{
                 {RangeJoined($@"
                 ", j => $"case {j}: _value{j} = input.AsT{j}; break;")}
-                default: throw new InvalidOperationException();
+                default: {invalidIndexException};
             }}
         }}"
         )}
 
-        public object Value =>
+        public object? Value =>
             _index switch
             {{
                 {RangeJoined(@"
                 ", j => $"{j} => _value{j},")}
-                _ => throw new InvalidOperationException()
+                _ => {invalidIndexException}
             }};
 
         public int Index => _index;
@@ -97,7 +100,7 @@ namespace OneOf
                 f{j}(_value{j});
                 return;
             }}")}
-            throw new InvalidOperationException();
+            {invalidIndexException};
         }}
 
         public TResult Match<TResult>({RangeJoined(", ", e => $"Func<T{e}, TResult> f{e}")})
@@ -107,7 +110,7 @@ namespace OneOf
             {{
                 return f{j}(_value{j});
             }}")}
-            throw new InvalidOperationException();
+            {invalidIndexException};
         }}
 
         {IfStruct(genericArgs.Joined(@"
@@ -132,7 +135,7 @@ namespace OneOf
                     x == bindToType ?
                         $"{k} => mapFunc(As{x})," :
                         $"{k} => As{x},")}
-                _ => throw new InvalidOperationException()
+                _ => {invalidIndexException}
             }};
         }}";
         }))}
@@ -145,17 +148,21 @@ namespace OneOf
                 var genericArgWithSkip = Range(0, i).ExceptSingle(j).Joined(", ", e => $"T{e}");
                 var remainderType = i == 2 ? genericArgWithSkip : $"OneOf<{genericArgWithSkip}>";
                 return $@"
-		public bool TryPickT{j}(out T{j} value, out {remainderType} remainder)
+#if NET
+		public bool TryPickT{j}([NotNullWhen(true)] out T{j}? value, {(i == 2 ? "[NotNullWhen(false)] " : "")}out {remainderType}{(i == 2 ? "?" : "")} remainder)
+#else
+		public bool TryPickT{j}(out T{j}? value, out {remainderType}{(i == 2 ? "?" : "")} remainder)
+#endif
 		{{
 			value = IsT{j} ? AsT{j} : default;
             remainder = _index switch
             {{
                 {RangeJoined(@"
                 ", k => 
-                    k == j ?
-                        $"{k} => default," :
-                        $"{k} => AsT{k},")}
-                _ => throw new InvalidOperationException()
+                       k == j ?
+                           $"{k} => default," :
+                           $"{k} => AsT{k},")}
+                _ => {invalidIndexException}
             }};
 			return this.IsT{j};
 		}}";
@@ -173,7 +180,7 @@ namespace OneOf
                 _ => false
             }};
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {{
             if (ReferenceEquals(null, obj))
             {{
@@ -216,16 +223,13 @@ namespace OneOf
     return sb.ToString();
 }
 
-public static class Extensions {
+internal static class Extensions {
     public static string Joined<T>(this IEnumerable<T> source, string delimiter, Func<T, string>? selector = null) {
-        if (source == null) { return ""; }
         if (selector == null) { return string.Join(delimiter, source); }
         return string.Join(delimiter, source.Select(selector));
     }
     public static string Joined<T>(this IEnumerable<T> source, string delimiter, Func<T, int, string> selector) {
-        if (source == null) { return ""; }
         return string.Join(delimiter, source.Select(selector));
     }
     public static IEnumerable<T> ExceptSingle<T>(this IEnumerable<T> source, T single) => source.Except(Repeat(single, 1));
-    public static void AppendLineTo(this string? s, StringBuilder sb) => sb.AppendLine(s);
 }

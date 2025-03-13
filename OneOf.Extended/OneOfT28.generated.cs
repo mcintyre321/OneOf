@@ -1,4 +1,6 @@
+#nullable enable
 using System;
+using System.Diagnostics.CodeAnalysis;
 using static OneOf.Functions;
 
 namespace OneOf
@@ -36,7 +38,7 @@ namespace OneOf
         readonly T28 _value28;
         readonly int _index;
 
-        OneOf(int index, T0 value0 = default, T1 value1 = default, T2 value2 = default, T3 value3 = default, T4 value4 = default, T5 value5 = default, T6 value6 = default, T7 value7 = default, T8 value8 = default, T9 value9 = default, T10 value10 = default, T11 value11 = default, T12 value12 = default, T13 value13 = default, T14 value14 = default, T15 value15 = default, T16 value16 = default, T17 value17 = default, T18 value18 = default, T19 value19 = default, T20 value20 = default, T21 value21 = default, T22 value22 = default, T23 value23 = default, T24 value24 = default, T25 value25 = default, T26 value26 = default, T27 value27 = default, T28 value28 = default)
+        OneOf(int index, T0 value0 = default!, T1 value1 = default!, T2 value2 = default!, T3 value3 = default!, T4 value4 = default!, T5 value5 = default!, T6 value6 = default!, T7 value7 = default!, T8 value8 = default!, T9 value9 = default!, T10 value10 = default!, T11 value11 = default!, T12 value12 = default!, T13 value13 = default!, T14 value14 = default!, T15 value15 = default!, T16 value16 = default!, T17 value17 = default!, T18 value18 = default!, T19 value19 = default!, T20 value20 = default!, T21 value21 = default!, T22 value22 = default!, T23 value23 = default!, T24 value24 = default!, T25 value25 = default!, T26 value26 = default!, T27 value27 = default!, T28 value28 = default!)
         {
             _index = index;
             _value0 = value0;
@@ -70,7 +72,7 @@ namespace OneOf
             _value28 = value28;
         }
 
-        public object Value =>
+        public object? Value =>
             _index switch
             {
                 0 => _value0,
@@ -102,7 +104,7 @@ namespace OneOf
                 26 => _value26,
                 27 => _value27,
                 28 => _value28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 
         public int Index => _index;
@@ -431,7 +433,7 @@ namespace OneOf
                 f28(_value28);
                 return;
             }
-            throw new InvalidOperationException();
+            throw InvalidIndexException(_index);
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2, Func<T3, TResult> f3, Func<T4, TResult> f4, Func<T5, TResult> f5, Func<T6, TResult> f6, Func<T7, TResult> f7, Func<T8, TResult> f8, Func<T9, TResult> f9, Func<T10, TResult> f10, Func<T11, TResult> f11, Func<T12, TResult> f12, Func<T13, TResult> f13, Func<T14, TResult> f14, Func<T15, TResult> f15, Func<T16, TResult> f16, Func<T17, TResult> f17, Func<T18, TResult> f18, Func<T19, TResult> f19, Func<T20, TResult> f20, Func<T21, TResult> f21, Func<T22, TResult> f22, Func<T23, TResult> f23, Func<T24, TResult> f24, Func<T25, TResult> f25, Func<T26, TResult> f26, Func<T27, TResult> f27, Func<T28, TResult> f28)
@@ -552,7 +554,7 @@ namespace OneOf
             {
                 return f28(_value28);
             }
-            throw new InvalidOperationException();
+            throw InvalidIndexException(_index);
         }
 
         public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> FromT0(T0 input) => input;
@@ -623,7 +625,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -664,7 +666,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -705,7 +707,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -746,7 +748,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -787,7 +789,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -828,7 +830,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -869,7 +871,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -910,7 +912,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -951,7 +953,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -992,7 +994,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -1033,7 +1035,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -1074,7 +1076,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -1115,7 +1117,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -1156,7 +1158,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -1197,7 +1199,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -1238,7 +1240,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -1279,7 +1281,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -1320,7 +1322,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -1361,7 +1363,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -1402,7 +1404,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -1443,7 +1445,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -1484,7 +1486,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -1525,7 +1527,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -1566,7 +1568,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -1607,7 +1609,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -1648,7 +1650,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -1689,7 +1691,7 @@ namespace OneOf
                 26 => mapFunc(AsT26),
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -1730,7 +1732,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => mapFunc(AsT27),
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
             
@@ -1771,11 +1773,15 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => mapFunc(AsT28),
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
         }
 
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT0([NotNullWhen(true)] out T0? value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT0(out T0? value, out OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -1809,12 +1815,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT0;
 		}
         
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT1([NotNullWhen(true)] out T1? value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT1(out T1? value, out OneOf<T0, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -1848,12 +1858,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT1;
 		}
         
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT2([NotNullWhen(true)] out T2? value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT2(out T2? value, out OneOf<T0, T1, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -1887,12 +1901,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT2;
 		}
         
-		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT3([NotNullWhen(true)] out T3? value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT3(out T3? value, out OneOf<T0, T1, T2, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT3 ? AsT3 : default;
             remainder = _index switch
@@ -1926,12 +1944,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT3;
 		}
         
-		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT4([NotNullWhen(true)] out T4? value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT4(out T4? value, out OneOf<T0, T1, T2, T3, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT4 ? AsT4 : default;
             remainder = _index switch
@@ -1965,12 +1987,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT4;
 		}
         
-		public bool TryPickT5(out T5 value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT5([NotNullWhen(true)] out T5? value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT5(out T5? value, out OneOf<T0, T1, T2, T3, T4, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT5 ? AsT5 : default;
             remainder = _index switch
@@ -2004,12 +2030,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT5;
 		}
         
-		public bool TryPickT6(out T6 value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT6([NotNullWhen(true)] out T6? value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT6(out T6? value, out OneOf<T0, T1, T2, T3, T4, T5, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT6 ? AsT6 : default;
             remainder = _index switch
@@ -2043,12 +2073,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT6;
 		}
         
-		public bool TryPickT7(out T7 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT7([NotNullWhen(true)] out T7? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT7(out T7? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT7 ? AsT7 : default;
             remainder = _index switch
@@ -2082,12 +2116,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT7;
 		}
         
-		public bool TryPickT8(out T8 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT8([NotNullWhen(true)] out T8? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT8(out T8? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT8 ? AsT8 : default;
             remainder = _index switch
@@ -2121,12 +2159,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT8;
 		}
         
-		public bool TryPickT9(out T9 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT9([NotNullWhen(true)] out T9? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT9(out T9? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT9 ? AsT9 : default;
             remainder = _index switch
@@ -2160,12 +2202,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT9;
 		}
         
-		public bool TryPickT10(out T10 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT10([NotNullWhen(true)] out T10? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT10(out T10? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT10 ? AsT10 : default;
             remainder = _index switch
@@ -2199,12 +2245,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT10;
 		}
         
-		public bool TryPickT11(out T11 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT11([NotNullWhen(true)] out T11? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT11(out T11? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT11 ? AsT11 : default;
             remainder = _index switch
@@ -2238,12 +2288,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT11;
 		}
         
-		public bool TryPickT12(out T12 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT12([NotNullWhen(true)] out T12? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT12(out T12? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT12 ? AsT12 : default;
             remainder = _index switch
@@ -2277,12 +2331,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT12;
 		}
         
-		public bool TryPickT13(out T13 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT13([NotNullWhen(true)] out T13? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT13(out T13? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT13 ? AsT13 : default;
             remainder = _index switch
@@ -2316,12 +2374,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT13;
 		}
         
-		public bool TryPickT14(out T14 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT14([NotNullWhen(true)] out T14? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT14(out T14? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT14 ? AsT14 : default;
             remainder = _index switch
@@ -2355,12 +2417,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT14;
 		}
         
-		public bool TryPickT15(out T15 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT15([NotNullWhen(true)] out T15? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT15(out T15? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT15 ? AsT15 : default;
             remainder = _index switch
@@ -2394,12 +2460,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT15;
 		}
         
-		public bool TryPickT16(out T16 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT16([NotNullWhen(true)] out T16? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT16(out T16? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT16 ? AsT16 : default;
             remainder = _index switch
@@ -2433,12 +2503,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT16;
 		}
         
-		public bool TryPickT17(out T17 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT17([NotNullWhen(true)] out T17? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT17(out T17? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT17 ? AsT17 : default;
             remainder = _index switch
@@ -2472,12 +2546,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT17;
 		}
         
-		public bool TryPickT18(out T18 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT18([NotNullWhen(true)] out T18? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT18(out T18? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT18 ? AsT18 : default;
             remainder = _index switch
@@ -2511,12 +2589,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT18;
 		}
         
-		public bool TryPickT19(out T19 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT19([NotNullWhen(true)] out T19? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT19(out T19? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T20, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT19 ? AsT19 : default;
             remainder = _index switch
@@ -2550,12 +2632,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT19;
 		}
         
-		public bool TryPickT20(out T20 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT20([NotNullWhen(true)] out T20? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT20(out T20? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T21, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT20 ? AsT20 : default;
             remainder = _index switch
@@ -2589,12 +2675,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT20;
 		}
         
-		public bool TryPickT21(out T21 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT21([NotNullWhen(true)] out T21? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT21(out T21? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T22, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT21 ? AsT21 : default;
             remainder = _index switch
@@ -2628,12 +2718,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT21;
 		}
         
-		public bool TryPickT22(out T22 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT22([NotNullWhen(true)] out T22? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT22(out T22? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T23, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT22 ? AsT22 : default;
             remainder = _index switch
@@ -2667,12 +2761,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT22;
 		}
         
-		public bool TryPickT23(out T23 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT23([NotNullWhen(true)] out T23? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT23(out T23? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T24, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT23 ? AsT23 : default;
             remainder = _index switch
@@ -2706,12 +2804,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT23;
 		}
         
-		public bool TryPickT24(out T24 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT24([NotNullWhen(true)] out T24? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25, T26, T27, T28> remainder)
+#else
+		public bool TryPickT24(out T24? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T25, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT24 ? AsT24 : default;
             remainder = _index switch
@@ -2745,12 +2847,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT24;
 		}
         
-		public bool TryPickT25(out T25 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T26, T27, T28> remainder)
+#if NET
+		public bool TryPickT25([NotNullWhen(true)] out T25? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T26, T27, T28> remainder)
+#else
+		public bool TryPickT25(out T25? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T26, T27, T28> remainder)
+#endif
 		{
 			value = IsT25 ? AsT25 : default;
             remainder = _index switch
@@ -2784,12 +2890,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT25;
 		}
         
-		public bool TryPickT26(out T26 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T27, T28> remainder)
+#if NET
+		public bool TryPickT26([NotNullWhen(true)] out T26? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T27, T28> remainder)
+#else
+		public bool TryPickT26(out T26? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T27, T28> remainder)
+#endif
 		{
 			value = IsT26 ? AsT26 : default;
             remainder = _index switch
@@ -2823,12 +2933,16 @@ namespace OneOf
                 26 => default,
                 27 => AsT27,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT26;
 		}
         
-		public bool TryPickT27(out T27 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T28> remainder)
+#if NET
+		public bool TryPickT27([NotNullWhen(true)] out T27? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T28> remainder)
+#else
+		public bool TryPickT27(out T27? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T28> remainder)
+#endif
 		{
 			value = IsT27 ? AsT27 : default;
             remainder = _index switch
@@ -2862,12 +2976,16 @@ namespace OneOf
                 26 => AsT26,
                 27 => default,
                 28 => AsT28,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT27;
 		}
         
-		public bool TryPickT28(out T28 value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+#if NET
+		public bool TryPickT28([NotNullWhen(true)] out T28? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+#else
+		public bool TryPickT28(out T28? value, out OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27> remainder)
+#endif
 		{
 			value = IsT28 ? AsT28 : default;
             remainder = _index switch
@@ -2901,7 +3019,7 @@ namespace OneOf
                 26 => AsT26,
                 27 => AsT27,
                 28 => default,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT28;
 		}
@@ -2942,7 +3060,7 @@ namespace OneOf
                 _ => false
             };
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (ReferenceEquals(null, obj))
             {

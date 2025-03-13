@@ -1,13 +1,15 @@
+#nullable enable
 using System;
+using System.Diagnostics.CodeAnalysis;
 using static OneOf.Functions;
 
 namespace OneOf
 {
     public class OneOfBase<T0, T1, T2> : IOneOf
     {
-        readonly T0 _value0;
-        readonly T1 _value1;
-        readonly T2 _value2;
+        readonly T0 _value0 = default!;
+        readonly T1 _value1 = default!;
+        readonly T2 _value2 = default!;
         readonly int _index;
 
         protected OneOfBase(OneOf<T0, T1, T2> input)
@@ -18,17 +20,17 @@ namespace OneOf
                 case 0: _value0 = input.AsT0; break;
                 case 1: _value1 = input.AsT1; break;
                 case 2: _value2 = input.AsT2; break;
-                default: throw new InvalidOperationException();
+                default: throw InvalidIndexException(_index);
             }
         }
 
-        public object Value =>
+        public object? Value =>
             _index switch
             {
                 0 => _value0,
                 1 => _value1,
                 2 => _value2,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 
         public int Index => _index;
@@ -69,7 +71,7 @@ namespace OneOf
                 f2(_value2);
                 return;
             }
-            throw new InvalidOperationException();
+            throw InvalidIndexException(_index);
         }
 
         public TResult Match<TResult>(Func<T0, TResult> f0, Func<T1, TResult> f1, Func<T2, TResult> f2)
@@ -86,14 +88,18 @@ namespace OneOf
             {
                 return f2(_value2);
             }
-            throw new InvalidOperationException();
+            throw InvalidIndexException(_index);
         }
 
         
 
         
 
-		public bool TryPickT0(out T0 value, out OneOf<T1, T2> remainder)
+#if NET
+		public bool TryPickT0([NotNullWhen(true)] out T0? value, out OneOf<T1, T2> remainder)
+#else
+		public bool TryPickT0(out T0? value, out OneOf<T1, T2> remainder)
+#endif
 		{
 			value = IsT0 ? AsT0 : default;
             remainder = _index switch
@@ -101,12 +107,16 @@ namespace OneOf
                 0 => default,
                 1 => AsT1,
                 2 => AsT2,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT0;
 		}
         
-		public bool TryPickT1(out T1 value, out OneOf<T0, T2> remainder)
+#if NET
+		public bool TryPickT1([NotNullWhen(true)] out T1? value, out OneOf<T0, T2> remainder)
+#else
+		public bool TryPickT1(out T1? value, out OneOf<T0, T2> remainder)
+#endif
 		{
 			value = IsT1 ? AsT1 : default;
             remainder = _index switch
@@ -114,12 +124,16 @@ namespace OneOf
                 0 => AsT0,
                 1 => default,
                 2 => AsT2,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT1;
 		}
         
-		public bool TryPickT2(out T2 value, out OneOf<T0, T1> remainder)
+#if NET
+		public bool TryPickT2([NotNullWhen(true)] out T2? value, out OneOf<T0, T1> remainder)
+#else
+		public bool TryPickT2(out T2? value, out OneOf<T0, T1> remainder)
+#endif
 		{
 			value = IsT2 ? AsT2 : default;
             remainder = _index switch
@@ -127,7 +141,7 @@ namespace OneOf
                 0 => AsT0,
                 1 => AsT1,
                 2 => default,
-                _ => throw new InvalidOperationException()
+                _ => throw InvalidIndexException(_index)
             };
 			return this.IsT2;
 		}
@@ -142,7 +156,7 @@ namespace OneOf
                 _ => false
             };
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (ReferenceEquals(null, obj))
             {

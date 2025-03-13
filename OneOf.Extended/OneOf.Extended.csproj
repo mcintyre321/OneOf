@@ -32,4 +32,10 @@
     <ProjectReference Include="..\OneOf\OneOf.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Include="..\OneOf\Functions.cs">
+      <Link>Functions.cs</Link>
+    </Compile>
+  </ItemGroup>
+
 </Project>
