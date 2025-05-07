@@ -58,6 +58,16 @@ namespace OneOf
         public static implicit operator OneOf<T0, T1, T2, T3>(T1 t) => new OneOf<T0, T1, T2, T3>(1, value1: t);
         public static implicit operator OneOf<T0, T1, T2, T3>(T2 t) => new OneOf<T0, T1, T2, T3>(2, value2: t);
         public static implicit operator OneOf<T0, T1, T2, T3>(T3 t) => new OneOf<T0, T1, T2, T3>(3, value3: t);
+        public static implicit operator OneOf<T0, T1, T2, T3>(OneOf<T0, T1> subset) => subset.Match<OneOf<T0, T1, T2, T3>>(x => x, x => x);
+        public static implicit operator OneOf<T0, T1, T2, T3>(OneOf<T0, T2> subset) => subset.Match<OneOf<T0, T1, T2, T3>>(x => x, x => x);
+        public static implicit operator OneOf<T0, T1, T2, T3>(OneOf<T0, T3> subset) => subset.Match<OneOf<T0, T1, T2, T3>>(x => x, x => x);
+        public static implicit operator OneOf<T0, T1, T2, T3>(OneOf<T1, T2> subset) => subset.Match<OneOf<T0, T1, T2, T3>>(x => x, x => x);
+        public static implicit operator OneOf<T0, T1, T2, T3>(OneOf<T1, T3> subset) => subset.Match<OneOf<T0, T1, T2, T3>>(x => x, x => x);
+        public static implicit operator OneOf<T0, T1, T2, T3>(OneOf<T2, T3> subset) => subset.Match<OneOf<T0, T1, T2, T3>>(x => x, x => x);
+        public static implicit operator OneOf<T0, T1, T2, T3>(OneOf<T0, T1, T2> subset) => subset.Match<OneOf<T0, T1, T2, T3>>(x => x, x => x, x => x);
+        public static implicit operator OneOf<T0, T1, T2, T3>(OneOf<T0, T1, T3> subset) => subset.Match<OneOf<T0, T1, T2, T3>>(x => x, x => x, x => x);
+        public static implicit operator OneOf<T0, T1, T2, T3>(OneOf<T0, T2, T3> subset) => subset.Match<OneOf<T0, T1, T2, T3>>(x => x, x => x, x => x);
+        public static implicit operator OneOf<T0, T1, T2, T3>(OneOf<T1, T2, T3> subset) => subset.Match<OneOf<T0, T1, T2, T3>>(x => x, x => x, x => x);
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2, Action<T3> f3)
         {

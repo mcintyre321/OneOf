@@ -49,6 +49,9 @@ namespace OneOf
         public static implicit operator OneOf<T0, T1, T2>(T0 t) => new OneOf<T0, T1, T2>(0, value0: t);
         public static implicit operator OneOf<T0, T1, T2>(T1 t) => new OneOf<T0, T1, T2>(1, value1: t);
         public static implicit operator OneOf<T0, T1, T2>(T2 t) => new OneOf<T0, T1, T2>(2, value2: t);
+        public static implicit operator OneOf<T0, T1, T2>(OneOf<T0, T1> subset) => subset.Match<OneOf<T0, T1, T2>>(x => x, x => x);
+        public static implicit operator OneOf<T0, T1, T2>(OneOf<T0, T2> subset) => subset.Match<OneOf<T0, T1, T2>>(x => x, x => x);
+        public static implicit operator OneOf<T0, T1, T2>(OneOf<T1, T2> subset) => subset.Match<OneOf<T0, T1, T2>>(x => x, x => x);
 
         public void Switch(Action<T0> f0, Action<T1> f1, Action<T2> f2)
         {
