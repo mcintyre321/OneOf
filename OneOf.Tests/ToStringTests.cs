@@ -21,26 +21,28 @@ namespace OneOf.Tests
             }
         }
 
-        [TestCase("en-NZ", ExpectedResult = "System.DateTime: 2/01/2019 1:02:03 AM")]
-        [TestCase("en-US", ExpectedResult = "System.DateTime: 1/2/2019 1:02:03 AM")]
-        public string LeftSideFormatsWithCurrentCulture(string cultureName)
+        [TestCase("en-NZ", "System.DateTime: 2/01/2019 1:02:03 AM")]
+        [TestCase("en-US", "System.DateTime: 1/2/2019 1:02:03 AM")]
+        public void LeftSideFormatsWithCurrentCulture(string cultureName, string expectedResult)
         {
-            return RunInCulture(new CultureInfo(cultureName, false), () =>
-            {
-                OneOf<DateTime, string> a = new DateTime(2019, 1, 2, 1, 2, 3);
-                return a.ToString();
-            });
+            StringAssert.AreEqualIgnoringCase(expectedResult,
+                RunInCulture(new CultureInfo(cultureName, false), () =>
+                {
+                    OneOf<DateTime, string> a = new DateTime(2019, 1, 2, 1, 2, 3);
+                    return a.ToString();
+                }));
         }
 
-        [TestCase("en-NZ", ExpectedResult = "System.DateTime: 2/01/2019 1:02:03 AM")]
-        [TestCase("en-US", ExpectedResult = "System.DateTime: 1/2/2019 1:02:03 AM")]
-        public string RightSideFormatsWithCurrentCulture(string cultureName)
+        [TestCase("en-NZ", "System.DateTime: 2/01/2019 1:02:03 AM")]
+        [TestCase("en-US", "System.DateTime: 1/2/2019 1:02:03 AM")]
+        public void RightSideFormatsWithCurrentCulture(string cultureName, string expectedResult)
         {
-            return RunInCulture(new CultureInfo(cultureName, false), () =>
-            {
-                OneOf<string, DateTime> a = new DateTime(2019, 1, 2, 1, 2, 3);
-                return a.ToString();
-            });
+            StringAssert.AreEqualIgnoringCase(expectedResult,
+                RunInCulture(new CultureInfo(cultureName, false), () =>
+                {
+                    OneOf<string, DateTime> a = new DateTime(2019, 1, 2, 1, 2, 3);
+                    return a.ToString();
+                }));
         }
 
         [Test]
@@ -70,7 +72,11 @@ namespace OneOf.Tests
         {
             OneOf<OneOf<string, bool>, OneOf<bool, string>> nestedType = (OneOf<string, bool>)true;
 
+#if NET451
             Assert.AreEqual("OneOf.OneOf`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]: System.Boolean: True", nestedType.ToString());
+#else
+            Assert.AreEqual("OneOf.OneOf`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]: System.Boolean: True", nestedType.ToString());
+#endif
         }
     }
 }

@@ -1,8 +1,8 @@
-<Project Sdk="FSharp.NET.Sdk;Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <AssemblyName>OneOf.FSharp</AssemblyName>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <DebugType>portable</DebugType>
     <Authors>Harry McIntyre</Authors>
     <Title>OneOf - Easy Discriminated Unions for c#</Title>
@@ -16,15 +16,11 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>OneOf.FSharp</PackageId>
     <Copyright>Harry McIntyre</Copyright>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Include="FsOneOf.fs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="FSharp.Core" Version="4.1.*" />
-	  <PackageReference Include="FSharp.NET.Sdk" Version="1.0.*" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>

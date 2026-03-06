@@ -1,11 +1,14 @@
+#nullable enable
+
 using System;
+using System.Diagnostics.CodeAnalysis;
 using static OneOf.Functions;
 
 namespace OneOf
 {
     public class OneOfBase<T0> : IOneOf
     {
-        readonly T0 _value0;
+        readonly T0? _value0;
         readonly int _index;
 
         protected OneOfBase(OneOf<T0> input)
@@ -18,7 +21,7 @@ namespace OneOf
             }
         }
 
-        public object Value =>
+        public object? Value =>
             _index switch
             {
                 0 => _value0,
@@ -31,26 +34,26 @@ namespace OneOf
 
         public T0 AsT0 =>
             _index == 0 ?
-                _value0 :
+                _value0! :
                 throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
 
         
 
-        public void Switch(Action<T0> f0)
+        public void Switch(Action<T0>? f0)
         {
             if (_index == 0 && f0 != null)
             {
-                f0(_value0);
+                f0(_value0!);
                 return;
             }
             throw new InvalidOperationException();
         }
 
-        public TResult Match<TResult>(Func<T0, TResult> f0)
+        public TResult Match<TResult>(Func<T0, TResult>? f0)
         {
             if (_index == 0 && f0 != null)
             {
-                return f0(_value0);
+                return f0(_value0!);
             }
             throw new InvalidOperationException();
         }
@@ -67,7 +70,7 @@ namespace OneOf
                 _ => false
             };
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (ReferenceEquals(null, obj))
             {
