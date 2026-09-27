@@ -1,0 +1,57 @@
+# Build and test only. This workflow never publishes anything and has no secrets.
+#
+# Security notes (keep these properties when editing):
+# - Triggers are `push` and `pull_request` only. Never use `pull_request_target`
+#   or `workflow_run` here: those run with the base repo's token/secrets, and
+#   combined with a checkout of PR code they let a fork take over the pipeline.
+# - For `pull_request` events from forks, GitHub gives the job a read-only
+#   GITHUB_TOKEN and no repository secrets, so untrusted code has nothing to steal.
+# - `permissions: contents: read` caps the token for every event, including pushes.
+# - `persist-credentials: false` stops the token being written to .git/config,
+#   where build scripts / MSBuild targets from the PR could read it.
+# - Third-party actions are pinned to full commit SHAs (tags can be moved).
+#   Dependabot (.github/dependabot.yml) keeps the pins up to date.
+# - Nothing is cached, so a PR cannot poison a cache later read by a trusted run.
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+
+jobs:
+  build:
+    # Windows because the library and tests target .NET Framework (net35/net45/net451).
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          dotnet-version: |
+            6.0.x
+            8.0.x
+
+      - name: Restore
+        run: dotnet restore OneOf.sln
+
+      - name: Build
+        run: dotnet build OneOf.sln --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test OneOf.sln --configuration Release --no-build --verbosity normal
