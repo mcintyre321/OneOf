@@ -1,8 +1,10 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using static OneOf.Functions;
 
 namespace OneOf
 {
+    [System.Runtime.CompilerServices.Union]
     public readonly struct OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> : IOneOf
     {
         readonly T0 _value0;
@@ -46,6 +48,24 @@ namespace OneOf
             _value16 = value16;
         }
 
+        public OneOf(T0 value) : this(0, value0: value) { }
+        public OneOf(T1 value) : this(1, value1: value) { }
+        public OneOf(T2 value) : this(2, value2: value) { }
+        public OneOf(T3 value) : this(3, value3: value) { }
+        public OneOf(T4 value) : this(4, value4: value) { }
+        public OneOf(T5 value) : this(5, value5: value) { }
+        public OneOf(T6 value) : this(6, value6: value) { }
+        public OneOf(T7 value) : this(7, value7: value) { }
+        public OneOf(T8 value) : this(8, value8: value) { }
+        public OneOf(T9 value) : this(9, value9: value) { }
+        public OneOf(T10 value) : this(10, value10: value) { }
+        public OneOf(T11 value) : this(11, value11: value) { }
+        public OneOf(T12 value) : this(12, value12: value) { }
+        public OneOf(T13 value) : this(13, value13: value) { }
+        public OneOf(T14 value) : this(14, value14: value) { }
+        public OneOf(T15 value) : this(15, value15: value) { }
+        public OneOf(T16 value) : this(16, value16: value) { }
+
         public object Value =>
             _index switch
             {
@@ -67,6 +87,29 @@ namespace OneOf
                 15 => _value15,
                 16 => _value16,
                 _ => throw new InvalidOperationException()
+            };
+
+        public bool HasValue =>
+            _index switch
+            {
+                0 => _value0 != null,
+                1 => _value1 != null,
+                2 => _value2 != null,
+                3 => _value3 != null,
+                4 => _value4 != null,
+                5 => _value5 != null,
+                6 => _value6 != null,
+                7 => _value7 != null,
+                8 => _value8 != null,
+                9 => _value9 != null,
+                10 => _value10 != null,
+                11 => _value11 != null,
+                12 => _value12 != null,
+                13 => _value13 != null,
+                14 => _value14 != null,
+                15 => _value15 != null,
+                16 => _value16 != null,
+                _ => false
             };
 
         public int Index => _index;
@@ -157,6 +200,177 @@ namespace OneOf
             _index == 16 ?
                 _value16 :
                 throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
+
+        public bool TryGetValue([MaybeNullWhen(false)] out T0 value)
+        {
+            if (_index == 0 && _value0 != null)
+            {
+                value = _value0;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T1 value)
+        {
+            if (_index == 1 && _value1 != null)
+            {
+                value = _value1;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T2 value)
+        {
+            if (_index == 2 && _value2 != null)
+            {
+                value = _value2;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T3 value)
+        {
+            if (_index == 3 && _value3 != null)
+            {
+                value = _value3;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T4 value)
+        {
+            if (_index == 4 && _value4 != null)
+            {
+                value = _value4;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T5 value)
+        {
+            if (_index == 5 && _value5 != null)
+            {
+                value = _value5;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T6 value)
+        {
+            if (_index == 6 && _value6 != null)
+            {
+                value = _value6;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T7 value)
+        {
+            if (_index == 7 && _value7 != null)
+            {
+                value = _value7;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T8 value)
+        {
+            if (_index == 8 && _value8 != null)
+            {
+                value = _value8;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T9 value)
+        {
+            if (_index == 9 && _value9 != null)
+            {
+                value = _value9;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T10 value)
+        {
+            if (_index == 10 && _value10 != null)
+            {
+                value = _value10;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T11 value)
+        {
+            if (_index == 11 && _value11 != null)
+            {
+                value = _value11;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T12 value)
+        {
+            if (_index == 12 && _value12 != null)
+            {
+                value = _value12;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T13 value)
+        {
+            if (_index == 13 && _value13 != null)
+            {
+                value = _value13;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T14 value)
+        {
+            if (_index == 14 && _value14 != null)
+            {
+                value = _value14;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T15 value)
+        {
+            if (_index == 15 && _value15 != null)
+            {
+                value = _value15;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T16 value)
+        {
+            if (_index == 16 && _value16 != null)
+            {
+                value = _value16;
+                return true;
+            }
+            value = default;
+            return false;
+        }
 
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(0, value0: t);
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(1, value1: t);

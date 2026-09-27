@@ -1,28 +1,15 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net35;net45;netstandard1.3;netstandard2.0</TargetFrameworks>
-    <Authors>Harry McIntyre</Authors>
+    <TargetFrameworks>netstandard2.0;net8.0;net10.0</TargetFrameworks>
     <Title>OneOf - Easy Discriminated Unions for c#</Title>
-    <Company>Harry McIntyre</Company>
-    <PackageVersion>1.0.0</PackageVersion>
-    <Product>Harry McIntyre</Product>
-    <Description>F# style discriminated unions for C#, using a custom type OneOf&lt;T0, ... Tn&gt; which holds a single value and has a .Match(...) method on it for exhaustive matching. Simple but powerful.</Description>
-    <PackageProjectUrl>https://github.com/mcintyre321/OneOf/</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/mcintyre321/OneOf/blob/master/licence.md</PackageLicenseUrl>
-    <PackageTags>discriminated unions, return type, match switch</PackageTags>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Description>F# style discriminated unions for C#, using a custom type OneOf&lt;T0, ... Tn&gt; which holds a single value and has a .Match(...) method on it for exhaustive matching. Simple but powerful. Works as a C# 15 union type.</Description>
+    <PackageTags>discriminated unions, union types, return type, match switch</PackageTags>
     <PackageId>OneOf</PackageId>
-    <Copyright>Harry McIntyre</Copyright>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
     <LangVersion>9.0</LangVersion>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
-  </ItemGroup>
 </Project>

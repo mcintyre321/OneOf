@@ -1,8 +1,10 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using static OneOf.Functions;
 
 namespace OneOf
 {
+    [System.Runtime.CompilerServices.Union]
     public readonly struct OneOf<T0, T1> : IOneOf
     {
         readonly T0 _value0;
@@ -16,12 +18,23 @@ namespace OneOf
             _value1 = value1;
         }
 
+        public OneOf(T0 value) : this(0, value0: value) { }
+        public OneOf(T1 value) : this(1, value1: value) { }
+
         public object Value =>
             _index switch
             {
                 0 => _value0,
                 1 => _value1,
                 _ => throw new InvalidOperationException()
+            };
+
+        public bool HasValue =>
+            _index switch
+            {
+                0 => _value0 != null,
+                1 => _value1 != null,
+                _ => false
             };
 
         public int Index => _index;
@@ -37,6 +50,27 @@ namespace OneOf
             _index == 1 ?
                 _value1 :
                 throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
+
+        public bool TryGetValue([MaybeNullWhen(false)] out T0 value)
+        {
+            if (_index == 0 && _value0 != null)
+            {
+                value = _value0;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T1 value)
+        {
+            if (_index == 1 && _value1 != null)
+            {
+                value = _value1;
+                return true;
+            }
+            value = default;
+            return false;
+        }
 
         public static implicit operator OneOf<T0, T1>(T0 t) => new OneOf<T0, T1>(0, value0: t);
         public static implicit operator OneOf<T0, T1>(T1 t) => new OneOf<T0, T1>(1, value1: t);

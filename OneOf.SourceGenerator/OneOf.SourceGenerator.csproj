@@ -1,25 +1,19 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Harry McIntyre, Damian Romanowski</Authors>
     <Title>OneOf - Easy Discriminated Unions for c#</Title>
-    <Company>Harry McIntyre</Company>
-    <PackageVersion>1.0.0</PackageVersion>
-    <Product>Harry McIntyre</Product>
-    <Description>This source generator automaticly implements OneOfBase hierarchies</Description>
-    <PackageProjectUrl>https://github.com/mcintyre321/OneOf/</PackageProjectUrl>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>This source generator automatically implements OneOfBase hierarchies, including C# 15 union support</Description>
     <PackageTags>discriminated unions, return type, match switch, generator, source generator</PackageTags>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>OneOf.SourceGenerator</PackageId>
-    <Copyright>Harry McIntyre</Copyright>
     <RootNamespace>OneOf</RootNamespace>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <LangVersion>preview</LangVersion>
     <Nullable>enable</Nullable>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeBuildOutput>false</IncludeBuildOutput>
+    <!-- Analyzer-only package: no lib/ folder, and consumers must not inherit its Roslyn dependencies. -->
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <NoWarn>$(NoWarn);NU5128</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,0 +1,24 @@
+<Project>
+  <!-- Shared settings for every project in the repo. -->
+  <PropertyGroup>
+    <!-- Release builds override this from the GitHub release tag (see .github/workflows/release.yml). -->
+    <Version>4.0.0-preview.1</Version>
+
+    <Authors>Harry McIntyre</Authors>
+    <Company>Harry McIntyre</Company>
+    <Product>OneOf</Product>
+    <Copyright>Harry McIntyre</Copyright>
+    <PackageProjectUrl>https://github.com/mcintyre321/OneOf/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mcintyre321/OneOf</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(IsPackable)' != 'false'">
+    <None Include="$(MSBuildThisFileDirectory)README.md" Pack="true" PackagePath="\" Visible="false" />
+  </ItemGroup>
+</Project>

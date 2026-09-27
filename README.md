@@ -186,14 +186,41 @@ public partial class StringOrNumber : OneOfBase<string, int> { }
 During compilation the source generator will produce a class implementing the OneOfBase boiler plate code for you. e.g.
 
 ```csharp
+[System.Runtime.CompilerServices.Union]
 public partial class StringOrNumber
 {
-	public StringOrNumber(OneOf.OneOf<System.String, System.Int32> _) : base(_) { }
+	protected StringOrNumber(OneOf.OneOf<string, int> _) : base(_) { }
 
-	public static implicit operator StringOrNumber(System.String _) => new StringOrNumber(_);
-	public static explicit operator System.String(StringOrNumber _) => _.AsT0;
+	public static implicit operator StringOrNumber(OneOf.OneOf<string, int> _) => new StringOrNumber(_);
 
-	public static implicit operator StringOrNumber(System.Int32 _) => new StringOrNumber(_);
-	public static explicit operator System.Int32(StringOrNumber _) => _.AsT1;
+	public StringOrNumber(string value) : base(value) { }
+	public static implicit operator StringOrNumber(string _) => new StringOrNumber(_);
+	public static explicit operator string(StringOrNumber _) => _.AsT0;
+
+	public StringOrNumber(int value) : base(value) { }
+	public static implicit operator StringOrNumber(int _) => new StringOrNumber(_);
+	public static explicit operator int(StringOrNumber _) => _.AsT1;
 }
 ```
+
+## C# 15 union types
+
+C# 15 (.NET 11) adds [union types](https://github.com/dotnet/csharplang/blob/main/proposals/csharp-15.0/unions.md). From OneOf 4, every `OneOf<...>` type, and every class made with `[GenerateOneOf]`, *is* a C# union. That means you can use normal pattern matching on the value inside it, and the compiler checks that your `switch` handles every case:
+
+```csharp
+OneOf<Thing, NotFound, Error> result = GetThing(id);
+
+IActionResult response = result switch
+{
+    Thing thing => Ok(thing),
+    NotFound => NotFound(),
+    Error error => StatusCode(500, error.Message),
+    // no `_ => ...` needed: leaving out a case is a compiler warning
+};
+
+if (result is Thing { IsActive: true } activeThing) { ... }
+```
+
+This works on every target framework OneOf supports, not just .NET 11, as long as you compile with a C# 15 compiler (for example the .NET 11 SDK, or `<LangVersion>preview</LangVersion>` with a preview compiler). With older compilers nothing changes: `.Match`, `.Switch` and `.TryPick𝑥` work exactly as before.
+
+A hand-written `OneOfBase` subclass (without `[GenerateOneOf]`) can opt in too: add `[System.Runtime.CompilerServices.Union]` and a public single-parameter constructor for each case type. Don't make a `OneOf<...>` constructor public, or `OneOf<...>` itself becomes one of the cases. On frameworks before .NET 11 you also need to declare the attribute yourself, as an `internal sealed class UnionAttribute : Attribute` in `System.Runtime.CompilerServices`.

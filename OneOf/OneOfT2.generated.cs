@@ -1,8 +1,10 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using static OneOf.Functions;
 
 namespace OneOf
 {
+    [System.Runtime.CompilerServices.Union]
     public readonly struct OneOf<T0, T1, T2> : IOneOf
     {
         readonly T0 _value0;
@@ -18,6 +20,10 @@ namespace OneOf
             _value2 = value2;
         }
 
+        public OneOf(T0 value) : this(0, value0: value) { }
+        public OneOf(T1 value) : this(1, value1: value) { }
+        public OneOf(T2 value) : this(2, value2: value) { }
+
         public object Value =>
             _index switch
             {
@@ -25,6 +31,15 @@ namespace OneOf
                 1 => _value1,
                 2 => _value2,
                 _ => throw new InvalidOperationException()
+            };
+
+        public bool HasValue =>
+            _index switch
+            {
+                0 => _value0 != null,
+                1 => _value1 != null,
+                2 => _value2 != null,
+                _ => false
             };
 
         public int Index => _index;
@@ -45,6 +60,37 @@ namespace OneOf
             _index == 2 ?
                 _value2 :
                 throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
+
+        public bool TryGetValue([MaybeNullWhen(false)] out T0 value)
+        {
+            if (_index == 0 && _value0 != null)
+            {
+                value = _value0;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T1 value)
+        {
+            if (_index == 1 && _value1 != null)
+            {
+                value = _value1;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T2 value)
+        {
+            if (_index == 2 && _value2 != null)
+            {
+                value = _value2;
+                return true;
+            }
+            value = default;
+            return false;
+        }
 
         public static implicit operator OneOf<T0, T1, T2>(T0 t) => new OneOf<T0, T1, T2>(0, value0: t);
         public static implicit operator OneOf<T0, T1, T2>(T1 t) => new OneOf<T0, T1, T2>(1, value1: t);

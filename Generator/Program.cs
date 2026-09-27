@@ -6,25 +6,25 @@ using static System.Linq.Enumerable;
 using System;
 using System.Collections.Generic;
 
-var sourceRoot = GetFullPath(Combine(GetDirectoryName(GetExecutingAssembly().Location)!, @"..\..\..\.."));
+var sourceRoot = GetFullPath(Combine(GetDirectoryName(GetExecutingAssembly().Location)!, "..", "..", "..", ".."));
 
 for (var i = 1; i < 10; i++) {
     var output = GetContent(true, i);
-    var outpath = Combine(sourceRoot, $"OneOf\\OneOfT{i - 1}.generated.cs");
+    var outpath = Combine(sourceRoot, "OneOf", $"OneOfT{i - 1}.generated.cs");
     File.WriteAllText(outpath, output);
 
     var output2 = GetContent(false, i);
-    var outpath2 = Combine(sourceRoot, $"OneOf\\OneOfBaseT{i - 1}.generated.cs");
+    var outpath2 = Combine(sourceRoot, "OneOf", $"OneOfBaseT{i - 1}.generated.cs");
     File.WriteAllText(outpath2, output2);
 }
 
 for (var i = 10; i < 33; i++) {
     var output3 = GetContent(true, i);
-    var outpath3 = Combine(sourceRoot, $"OneOf.Extended\\OneOfT{i - 1}.generated.cs");
+    var outpath3 = Combine(sourceRoot, "OneOf.Extended", $"OneOfT{i - 1}.generated.cs");
     File.WriteAllText(outpath3, output3);
 
     var output4 = GetContent(false, i);
-    var outpath4 = Combine(sourceRoot, $"OneOf.Extended\\OneOfBaseT{i - 1}.generated.cs");
+    var outpath4 = Combine(sourceRoot, "OneOf.Extended", $"OneOfBaseT{i - 1}.generated.cs");
     File.WriteAllText(outpath4, output4);
 }
 
@@ -38,11 +38,13 @@ string GetContent(bool isStruct, int i) {
     var sb = new StringBuilder();
     
     sb.Append(@$"using System;
+using System.Diagnostics.CodeAnalysis;
 using static OneOf.Functions;
 
 namespace OneOf
 {{
-    public {IfStruct("readonly struct", "class")} {className}<{genericArg}> : IOneOf
+    {IfStruct(@"[System.Runtime.CompilerServices.Union]
+    ")}public {IfStruct("readonly struct", "class")} {className}<{genericArg}> : IOneOf
     {{
         {RangeJoined(@"
         ", j => $"readonly T{j} _value{j};")}
@@ -54,7 +56,10 @@ namespace OneOf
             _index = index;
             {RangeJoined(@"
             ", j => $"_value{j} = value{j};")}
-        }}",
+        }}
+
+        {RangeJoined(@"
+        ", j => $"public OneOf(T{j} value) : this({j}, value{j}: value) {{ }}")}",
         $@"protected OneOfBase(OneOf<{genericArg}> input)
         {{
             _index = input.Index;
@@ -75,6 +80,14 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             }};
 
+        public bool HasValue =>
+            _index switch
+            {{
+                {RangeJoined(@"
+                ", j => $"{j} => _value{j} != null,")}
+                _ => false
+            }};
+
         public int Index => _index;
 
         {RangeJoined(@"
@@ -85,6 +98,18 @@ namespace OneOf
             _index == {j} ?
                 _value{j} :
                 throw new InvalidOperationException($""Cannot return as T{j} as result is T{{_index}}"");")}
+
+        {RangeJoined(@"
+        ", j => $@"public bool TryGetValue([MaybeNullWhen(false)] out T{j} value)
+        {{
+            if (_index == {j} && _value{j} != null)
+            {{
+                value = _value{j};
+                return true;
+            }}
+            value = default;
+            return false;
+        }}")}
 
         {IfStruct(RangeJoined(@"
         ", j => $"public static implicit operator {className}<{genericArg}>(T{j} t) => new {className}<{genericArg}>({j}, value{j}: t);"))}

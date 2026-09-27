@@ -20,3 +20,4 @@ packages/*
 *.user
 project.lock.json
 .idea/
+artifacts
