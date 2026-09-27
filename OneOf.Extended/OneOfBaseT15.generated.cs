@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using static OneOf.Functions;
 
 namespace OneOf
@@ -68,6 +69,28 @@ namespace OneOf
                 14 => _value14,
                 15 => _value15,
                 _ => throw new InvalidOperationException()
+            };
+
+        public bool HasValue =>
+            _index switch
+            {
+                0 => _value0 != null,
+                1 => _value1 != null,
+                2 => _value2 != null,
+                3 => _value3 != null,
+                4 => _value4 != null,
+                5 => _value5 != null,
+                6 => _value6 != null,
+                7 => _value7 != null,
+                8 => _value8 != null,
+                9 => _value9 != null,
+                10 => _value10 != null,
+                11 => _value11 != null,
+                12 => _value12 != null,
+                13 => _value13 != null,
+                14 => _value14 != null,
+                15 => _value15 != null,
+                _ => false
             };
 
         public int Index => _index;
@@ -153,6 +176,167 @@ namespace OneOf
             _index == 15 ?
                 _value15 :
                 throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
+
+        public bool TryGetValue([MaybeNullWhen(false)] out T0 value)
+        {
+            if (_index == 0 && _value0 != null)
+            {
+                value = _value0;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T1 value)
+        {
+            if (_index == 1 && _value1 != null)
+            {
+                value = _value1;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T2 value)
+        {
+            if (_index == 2 && _value2 != null)
+            {
+                value = _value2;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T3 value)
+        {
+            if (_index == 3 && _value3 != null)
+            {
+                value = _value3;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T4 value)
+        {
+            if (_index == 4 && _value4 != null)
+            {
+                value = _value4;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T5 value)
+        {
+            if (_index == 5 && _value5 != null)
+            {
+                value = _value5;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T6 value)
+        {
+            if (_index == 6 && _value6 != null)
+            {
+                value = _value6;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T7 value)
+        {
+            if (_index == 7 && _value7 != null)
+            {
+                value = _value7;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T8 value)
+        {
+            if (_index == 8 && _value8 != null)
+            {
+                value = _value8;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T9 value)
+        {
+            if (_index == 9 && _value9 != null)
+            {
+                value = _value9;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T10 value)
+        {
+            if (_index == 10 && _value10 != null)
+            {
+                value = _value10;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T11 value)
+        {
+            if (_index == 11 && _value11 != null)
+            {
+                value = _value11;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T12 value)
+        {
+            if (_index == 12 && _value12 != null)
+            {
+                value = _value12;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T13 value)
+        {
+            if (_index == 13 && _value13 != null)
+            {
+                value = _value13;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T14 value)
+        {
+            if (_index == 14 && _value14 != null)
+            {
+                value = _value14;
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        public bool TryGetValue([MaybeNullWhen(false)] out T15 value)
+        {
+            if (_index == 15 && _value15 != null)
+            {
+                value = _value15;
+                return true;
+            }
+            value = default;
+            return false;
+        }
 
         
 

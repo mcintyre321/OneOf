@@ -1,0 +1,128 @@
+# Publishes the NuGet packages when a GitHub release is published.
+#
+# How to release: create a GitHub release with a tag like `v4.0.0` or `v4.0.0-preview.1`
+# (tick "Set as a pre-release" for versions with a suffix). The tag becomes the package version.
+#
+# Security notes (keep these properties when editing):
+# - Only people with write access can publish a release, so pull requests can never reach this workflow.
+# - Jobs are split so each one has only the permissions it needs:
+#     build   - read-only token; runs the repo's code (build, tests, pack).
+#     attach  - may write to the release, but never runs repo code.
+#     publish - runs in the `nuget` environment (required reviewer) and never runs repo code.
+#               It exchanges a short-lived GitHub OIDC token for a short-lived NuGet API key
+#               (NuGet trusted publishing), so no long-lived NuGet key is stored anywhere.
+# - Actions are pinned to full commit SHAs; the tag name only reaches scripts via env vars.
+name: Release
+
+on:
+  release:
+    types: [published]
+
+permissions: {}
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Work out the package version from the tag
+        id: version
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+          PRERELEASE: ${{ github.event.release.prerelease }}
+        run: |
+          version="${TAG#v}"
+          if ! [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "::error::Release tag '$TAG' is not a version like v4.0.0 or v4.0.0-preview.1"
+            exit 1
+          fi
+          if [[ "$version" == *-* && "$PRERELEASE" != "true" ]]; then
+            echo "::error::$version is a prerelease version, so the GitHub release must be marked as a pre-release"
+            exit 1
+          fi
+          if [[ "$version" != *-* && "$PRERELEASE" == "true" ]]; then
+            echo "::error::$version is a stable version, but the GitHub release is marked as a pre-release"
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+
+      - name: Test
+        run: dotnet test OneOf.sln --configuration Release -p:Version=${{ steps.version.outputs.version }}
+
+      - name: Pack
+        run: dotnet pack OneOf.sln --configuration Release --no-build --output artifacts -p:Version=${{ steps.version.outputs.version }}
+
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: packages
+          path: |
+            artifacts/*.nupkg
+            artifacts/*.snupkg
+          if-no-files-found: error
+
+  attach:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: packages
+          path: artifacts
+
+      - name: Attach packages to the GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.release.tag_name }}
+        run: gh release upload "$TAG" artifacts/* --repo "$GITHUB_REPOSITORY" --clobber
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: nuget
+      url: https://www.nuget.org/packages/OneOf/${{ needs.build.outputs.version }}
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: packages
+          path: artifacts
+
+      - name: Log in to NuGet (trusted publishing)
+        id: nuget-login
+        uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1.2.0
+        with:
+          user: ${{ vars.NUGET_USER }}
+
+      - name: Push packages
+        env:
+          NUGET_API_KEY: ${{ steps.nuget-login.outputs.NUGET_API_KEY }}
+        # Pushing a .nupkg also pushes the matching .snupkg from the same folder.
+        run: dotnet nuget push "artifacts/*.nupkg" --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate

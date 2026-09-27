@@ -21,26 +21,37 @@ namespace OneOf.Tests
             }
         }
 
-        [TestCase("en-NZ", ExpectedResult = "System.DateTime: 2/01/2019 1:02:03 AM")]
-        [TestCase("en-US", ExpectedResult = "System.DateTime: 1/2/2019 1:02:03 AM")]
-        public string LeftSideFormatsWithCurrentCulture(string cultureName)
+        // The exact date format differs between Windows (NLS) and ICU, so compare against the
+        // runtime's own formatting in that culture rather than a hard-coded string.
+        static string ExpectedDate(string cultureName) =>
+            RunInCulture(new CultureInfo(cultureName, false), () => "System.DateTime: " + new DateTime(2019, 1, 2, 1, 2, 3));
+
+        [TestCase("en-NZ")]
+        [TestCase("en-US")]
+        public void LeftSideFormatsWithCurrentCulture(string cultureName)
         {
-            return RunInCulture(new CultureInfo(cultureName, false), () =>
+            var result = RunInCulture(new CultureInfo(cultureName, false), () =>
             {
                 OneOf<DateTime, string> a = new DateTime(2019, 1, 2, 1, 2, 3);
                 return a.ToString();
             });
+            Assert.AreEqual(ExpectedDate(cultureName), result);
         }
 
-        [TestCase("en-NZ", ExpectedResult = "System.DateTime: 2/01/2019 1:02:03 AM")]
-        [TestCase("en-US", ExpectedResult = "System.DateTime: 1/2/2019 1:02:03 AM")]
-        public string RightSideFormatsWithCurrentCulture(string cultureName)
+        [Test]
+        public void DateFormattingFollowsCurrentCulture() =>
+            Assert.AreNotEqual(ExpectedDate("en-NZ"), ExpectedDate("en-US"));
+
+        [TestCase("en-NZ")]
+        [TestCase("en-US")]
+        public void RightSideFormatsWithCurrentCulture(string cultureName)
         {
-            return RunInCulture(new CultureInfo(cultureName, false), () =>
+            var result = RunInCulture(new CultureInfo(cultureName, false), () =>
             {
                 OneOf<string, DateTime> a = new DateTime(2019, 1, 2, 1, 2, 3);
                 return a.ToString();
             });
+            Assert.AreEqual(ExpectedDate(cultureName), result);
         }
 
         [Test]
@@ -70,7 +81,7 @@ namespace OneOf.Tests
         {
             OneOf<OneOf<string, bool>, OneOf<bool, string>> nestedType = (OneOf<string, bool>)true;
 
-            Assert.AreEqual("OneOf.OneOf`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]: System.Boolean: True", nestedType.ToString());
+            Assert.AreEqual(typeof(OneOf<string, bool>).FullName + ": System.Boolean: True", nestedType.ToString());
         }
     }
 }

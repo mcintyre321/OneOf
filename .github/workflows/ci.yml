@@ -33,8 +33,11 @@ env:
 
 jobs:
   build:
-    # Windows because the library and tests target .NET Framework (net35/net45/net451).
-    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -44,8 +47,8 @@ jobs:
       - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
         with:
           dotnet-version: |
-            6.0.x
             8.0.x
+            10.0.x
 
       - name: Restore
         run: dotnet restore OneOf.sln
@@ -54,4 +57,17 @@ jobs:
         run: dotnet build OneOf.sln --configuration Release --no-restore
 
       - name: Test
-        run: dotnet test OneOf.sln --configuration Release --no-build --verbosity normal
+        run: dotnet test OneOf.sln --configuration Release --no-build
+
+      - name: Pack
+        run: dotnet pack OneOf.sln --configuration Release --no-build --output artifacts
+
+      - name: Check generated OneOf types are up to date
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          dotnet run --project Generator --configuration Release --no-build
+          if ! git diff --exit-code -- OneOf OneOf.Extended; then
+            echo "::error::The *.generated.cs files are out of date. Run 'dotnet run --project Generator' and commit the result."
+            exit 1
+          fi

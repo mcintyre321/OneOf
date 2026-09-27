@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using static OneOf.Functions;
 
 namespace OneOf
@@ -25,6 +26,13 @@ namespace OneOf
                 _ => throw new InvalidOperationException()
             };
 
+        public bool HasValue =>
+            _index switch
+            {
+                0 => _value0 != null,
+                _ => false
+            };
+
         public int Index => _index;
 
         public bool IsT0 => _index == 0;
@@ -33,6 +41,17 @@ namespace OneOf
             _index == 0 ?
                 _value0 :
                 throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
+
+        public bool TryGetValue([MaybeNullWhen(false)] out T0 value)
+        {
+            if (_index == 0 && _value0 != null)
+            {
+                value = _value0;
+                return true;
+            }
+            value = default;
+            return false;
+        }
 
         
 
